@@ -1,0 +1,2743 @@
+下面我将给出你类似的错误，请根据这些错误的修复方案，帮我修复一下我的代码。
+Demo 1: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+build() {
+  Stack() {
+    Column() {
+      LoadingPanel()
+    }
+    .width('100%')
+    .height('100%')
+
+    Row() {
+      if (this.thumbnail !== null && this.thumbnail !== undefined) {
+        Image(this.thumbnail)
+          .rotate({
+            x: 0,
+            y: 0,
+            z: 1,
+            angle: 0
+          })
+          .onComplete((): void => {
+            Log.info(TAG,
+              'onComplete finish, index: ' + this.item.index + ', item: ' + JSON.stringify(this.item) + ', uri: ' +
+              this.thumbnail + '.');
+          })
+          .onError((): void => {
+            Log.error(TAG, 'image show error ' + this.thumbnail + ' ' + this.item.width + ' ' + this.item.height);
+          })
+      }
+
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+
+问题修复解释: 
+在滚动组件中触发滚动属于高频事件，而 onScroll 函数会在每次滚动时被触发。如果在 onScroll 函数中使用Log来进行记录会产生大量的日志，显著地影响了app的性能
+
+修复代码: 
+
+build() {
+  Stack() {
+    Column() {
+      LoadingPanel()
+    }
+    .width('100%')
+    .height('100%')
+
+    Row() {
+      if (this.thumbnail !== null && this.thumbnail !== undefined) {
+        Image(this.thumbnail)
+          .rotate({
+            x: 0,
+            y: 0,
+            z: 1,
+            angle: 0
+          })
+          .onComplete((): void => {
+            let info = TAG + 
+              'onComplete finish, index: ' + this.item.index + ', item: ' + JSON.stringify(this.item) + ', uri: ' +
+              this.thumbnail + '.';
+          })
+          .onError((): void => {
+            let error = TAG + 'image show error ' + this.thumbnail + ' ' + this.item.width + ' ' + this.item.height;
+          })
+      }
+
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+
+Demo 2: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Slider({ value: 0, min: 0, max: 100 })
+        .enabled(false)
+        .height(4)
+        .width(100)
+        .trackThickness(3)
+        .blockColor(Color.Red)
+        .blockSize({ width: 4, height: 4 })
+        .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number) => {
+          hilog.info(1001, 'Index', 'onVisibleAreaChange') // Avoid printing logs
+        })
+    }
+  }
+}
+
+问题修复解释: 
+在可见区域变化事件中，onVisibleAreaChange 函数会在每次可见区域变化时被触发。如果在 onVisibleAreaChange 函数中使用 hilog.info 进行日志记录，就会导致每次可见区域变化操作都进行一次日志记录，这样的高频操作会对性能造成负面影响。通过移除高频函数中的 hilog 调用，减少了不必要的日志输出，从而降低了对系统性能的影响。
+
+修复代码: 
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Slider({ value: 0, min: 0, max: 100 })
+        .enabled(false)
+        .height(4)
+        .width(100)
+        .trackThickness(3)
+        .blockColor(Color.Red)
+        .blockSize({ width: 4, height: 4 })
+        .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number) => {
+          const TAG = 'onVisibleAreaChange';
+        })
+    }
+  }
+}
+
+Demo 3: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Row(){
+      Image("XXX")
+        .width(200)
+        .height(100)
+        .draggable(true)
+        .margin({ left: 15 })
+        .border({ color: Color.Black, width: 1 })
+        .onDragMove(() => {
+          hilog.info(1001, 'Index', 'onDragMove')
+      })
+    }
+  }
+}
+
+问题修复解释: 
+在拖拽组件中，onDragMove 函数会在每次拖动时被触发。如果在 onDragMove 函数中使用 hilog.warn 进行日志记录，就会导致每次拖动操作都进行一次日志记录，这样的高频操作会对性能造成负面影响。通过移除高频函数中的 hilog 调用，减少了不必要的日志输出，从而降低了对系统性能的影响。
+
+修复代码: 
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Row(){
+      Image("XXX")
+        .width(200)
+        .height(100)
+        .draggable(true)
+        .margin({ left: 15 })
+        .border({ color: Color.Black, width: 1 })
+        .onDragMove(() => {
+          const TAG = 'onDragMove';
+        })
+    }
+  }
+}
+
+Demo 4: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Scroll(this.scroller) {
+      Column() {
+        Text(this.message)
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+      }.onScroll((xOffset: number, yOffset: number) => {
+        console.info(xOffset + ' ' + yOffset)
+      })
+    }
+  }
+}
+
+
+问题修复解释: 
+在滚动组件中触发滚动属于高频事件，而 onScroll 函数会在每次滚动时被触发。如果在 onScroll 函数中使用console.log来进行记录会产生大量的日志，显著地影响了app的性能
+
+修复代码: 
+
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Scroll(this.scroller) {
+      Column() {
+        Text(this.message)
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+      }.onScroll((xOffset: number, yOffset: number) => {
+        const TAG = xOffset + ' ' + yOffset
+      })
+    }
+  }
+}
+
+
+Demo 5: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+build() {
+  Row() {
+    Text('1')
+      .fontWeight(FontWeight.Bold)
+      .backgroundColor('black')
+      .fontColor('white')
+      .fontSize(200)
+      .width(200)
+      .height(200)
+      .lineHeight(200)
+      .textAlign(TextAlign.Center)
+  }
+  .onTouch((event: TouchEvent) => {
+    console.log(JSON.stringify(event.touches))
+  })
+}
+
+问题修复解释: 
+在滚动组件中触发滚动属于高频事件，而 onScroll 函数会在每次滚动时被触发。如果在 onScroll 函数中使用console.log来进行记录会产生大量的日志，显著地影响了app的性能
+
+修复代码: 
+
+build() {
+  Row() {
+    Text('1')
+      .fontWeight(FontWeight.Bold)
+      .backgroundColor('black')
+      .fontColor('white')
+      .fontSize(200)
+      .width(200)
+      .height(200)
+      .lineHeight(200)
+      .textAlign(TextAlign.Center)
+  }
+  .onTouch((event: TouchEvent) => {
+    const text = JSON.stringify(event.touches)
+  })
+}
+
+Demo 6: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct App {
+  build() {
+    Toggle()
+      .onActionUpdate(() => {
+        hilog.debug(3001, 'App', 'Toggle Action Update')
+    })
+  }
+}
+
+问题修复解释: 
+当 Toggle 的状态发生变化时，onActionUpdate 会被持续调用。使用 hilog.debug 会导致过多的日志输出，从而降低性能。
+
+修复代码: 
+
+@Entry
+@Component
+struct App {
+  build() {
+    Toggle()
+      .onActionUpdate(() => {
+        const state = 'Toggle Action Update';
+    })
+  }
+}
+
+Demo 7: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Button("XXX")
+      .width(200)
+      .height(100)
+      .onTouch(() => {
+        hilog.info(1001, 'Index', 'onTouch') // Avoid printing logs
+      })
+  }
+}
+
+问题修复解释: 
+在触摸事件中，onTouch 函数会在每次触摸时被触发。如果在 onTouch 函数中使用 hilog.debug 进行日志记录，就会导致每次触摸操作都进行一次日志记录，这样的高频操作会对性能造成负面影响。通过移除高频函数中的 hilog 调用，减少了不必要的日志输出，从而降低了对系统性能的影响。
+
+修复代码: 
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Button("XXX")
+      .width(200)
+      .height(100)
+      .onTouch(() => {
+        const TAG = 'onTouch';
+      })
+  }
+}
+
+Demo 8: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct App {
+  build() {
+    ListItem()
+      .onMouse(() => {
+        hilog.info(2001, 'App', 'onMouse')
+    })
+  }
+}
+
+问题修复解释: 
+onMouse 是一个高频触发的事件。使用 hilog.info 记录每一次的鼠标事件操作会影响性能。
+
+修复代码: 
+
+@Entry
+@Component
+struct App {
+  build() {
+    ListItem()
+      .onMouse(() => {
+        const TAG = 'onMouse';
+    })
+  }
+}
+
+Demo 9: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Button("")
+      .width(200)
+      .height(100)
+      .onMouse(() => {
+        hilog.info(1001, 'Index', 'onMouse')
+      })
+  }
+}
+
+问题修复解释: 
+在鼠标事件中，onMouse 函数会在每次鼠标操作时被触发。如果在 onMouse 函数中使用 hilog.error 进行日志记录，就会导致每次鼠标操作都进行一次日志记录，这样的高频操作会对性能造成负面影响。通过移除高频函数中的 hilog 调用，减少了不必要的日志输出，从而降低了对系统性能的影响。
+
+修复代码: 
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Button("")
+      .width(200)
+      .height(100)
+      .onMouse(() => {
+        const TAG = 'onMouse';
+      })
+  }
+}
+
+Demo 10: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+// Test.ets
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+    build() {
+            Column() {
+                Scroll()
+                    .onScroll(() => {
+                        hilog.info(1001, 'Index', 'onScroll') // Avoid printing logs
+                })
+            }
+    }
+}
+
+问题修复解释: 
+在滚动组件中触发滚动属于高频事件，而 onScroll 函数会在每次滚动时被触发。如果在 onScroll 函数中使用 hilog.info 进行日志记录，就会导致每次滚动操作都进行一次日志记录，这样的高频操作会对性能造成负面影响。通过移除高频函数中的 hilog 调用，减少了不必要的日志输出，从而降低了对系统性能的影响。
+
+修复代码: 
+
+// Test.ets
+@Entry
+@Component
+struct Index {
+  build() {
+      Column() {
+        Scroll()
+          .onScroll(() => {
+            const TAG = 'onScroll';
+          })
+      }
+  }
+}
+
+
+HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+---------
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Text('PanGesture Offset:\nX: ' + 50 + '\n' + 'Y: ' + 100)
+        .fontSize(28)
+        .height(200)
+        .width(300)
+        .padding(20)
+        .border({ width: 3 })
+        .translate({ x: 50, y: 100, z: 0 })
+        .gesture(
+          PanGesture()
+            .onActionUpdate((event: GestureEvent|undefined) => {
+              hilog.info(1001, 'Index', 'onActionUpdate')
+            })
+        )
+    }
+  }
+}
+---------
+问题修复解释:
+在你的代码中，`PanGesture` 的 `onActionUpdate` 事件会在每次手势更新时被触发。如果在 `onActionUpdate` 函数中使用 `hilog.info` 进行日志记录，就会导致每次手势更新都进行一次日志记录，这样的高频操作会对性能造成负面影响。通过移除高频函数中的 `hilog` 调用，减少了不必要的日志输出，从而降低了对系统性能的影响。
+
+修复代码:
+```typescript
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Text('PanGesture Offset:\nX: ' + 50 + '\n' + 'Y: ' + 100)
+        .fontSize(28)
+        .height(200)
+        .width(300)
+        .padding(20)
+        .border({ width: 3 })
+        .translate({ x: 50, y: 100, z: 0 })
+        .gesture(
+          PanGesture()
+            .onActionUpdate((event: GestureEvent|undefined) => {
+              const TAG = 'onActionUpdate';
+            })
+        )
+    }
+  }
+}
+```
+修复后的代码中，`hilog.info` 调用被移除，取而代之的是一个空的 `const TAG = 'onActionUpdate';` 声明。这样可以避免在每次手势更新时进行日志记录，从而提高性能。
+---------
+下面我将给出你类似的错误，请根据这些错误的修复方案，帮我修复一下我的代码。
+Demo 1: 
+问题类型规则: 
+@performance/no-high-loaded-frame-rate-range
+
+问题描述: 
+不允许锁定最高帧率运行。
+
+问题代码: 
+const frameController = new FrameRateController();
+frameController.setRange(240, 240, 240);
+
+问题修复解释: 
+为帧率设置过高的范围，锁定在 240 FPS，将对 CPU 和 GPU 导致巨大的性能负担。
+
+修复代码: 
+
+const frameController = new FrameRateController();
+frameController.setRange(60, 30, 60);
+
+Demo 2: 
+问题类型规则: 
+@performance/no-high-loaded-frame-rate-range
+
+问题描述: 
+不允许锁定最高帧率运行。
+
+问题代码: 
+Slider({ value: this.curTime, min: 0, max: 100 })
+  .enabled(false)
+  .height(4)
+  .width(this.xComponentWidth)
+  .trackThickness(3)
+  .blockColor(Color.Red)
+  .blockSize({ width: 4, height: 4 })
+  .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number) => {
+    if (isVisible && currentRatio >= 1.0) {
+      animateTo({
+        duration: 30000,
+        iterations: -1,
+        expectedFrameRateRange: {
+          expected: 120,
+          min: 120,
+          max: 120,
+        },
+      }, () => {
+        if (this.curTime >= 100) {
+          this.curTime = 0;
+        }
+        for (let i = 0; i < 101; i++) {
+          this.curTime += 1;
+        }
+      })
+    }
+  })
+
+问题修复解释: 
+在给定的代码中，通过设置expectedFrameRateRange ，将帧率锁定在 120 帧每秒 (FPS)，会对设备的 CPU 和 GPU 造成很大的性能负担，尤其是在移动设备上。通过将帧率范围设置为 0-120 FPS，可以确保应用在大多数设备上都能稳定运行，同时不会对设备造成不必要的性能负担。这样可以平衡性能和电池消耗，同时确保用户体验的一致性。
+
+修复代码: 
+
+Slider({ value: this.curTime, min: 0, max: 100 })
+  .enabled(false)
+  .height(4)
+  .width(this.xComponentWidth)
+  .trackThickness(3)
+  .blockColor(Color.Red)
+  .blockSize({ width: 4, height: 4 })
+  .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number) => {
+    if (isVisible && currentRatio >= 1.0) {
+      animateTo({
+        duration: 30000,
+        iterations: -1,
+        expectedFrameRateRange: {
+          expected: 30,
+          min: 0,
+          max: 120,
+        },
+      }, () => {
+        if (this.curTime >= 100) {
+          this.curTime = 0;
+        }
+        for (let i = 0; i < 101; i++) {
+          this.curTime += 1;
+        }
+      })
+    }
+  })
+
+Demo 3: 
+问题类型规则: 
+@performance/no-high-loaded-frame-rate-range
+
+问题描述: 
+不允许锁定最高帧率运行。
+
+问题代码: 
+let videoSettings = {
+  expectedFrameRate: 200,
+  minFrameRate: 200,
+  maxFrameRate: 200
+};
+mediaPlayer.setRateOptions(videoSettings);
+
+问题修复解释: 
+锁定帧率为 200 FPS 对于大多数设备来说负担过重，可能会导致性能降低。
+
+修复代码: 
+
+let videoSettings = {
+  expectedFrameRate: 60,
+  minFrameRate: 30,
+  maxFrameRate: 60
+};
+mediaPlayer.setRateOptions(videoSettings);
+
+Demo 4: 
+问题类型规则: 
+@performance/no-high-loaded-frame-rate-range
+
+问题描述: 
+不允许锁定最高帧率运行。
+
+问题代码: 
+const rateConfig = {
+  expected: 150,
+  min: 150,
+  max: 150
+};
+displaySync.setRateRange(rateConfig);
+
+问题修复解释: 
+此配置将帧率锁定在 150 FPS，过高的帧率会导致设备性能下降，尤其是在较弱的硬件上。
+
+修复代码: 
+
+const rateConfig = {
+  expected: 60,
+  min: 30,
+  max: 60
+};
+displaySync.setRateRange(rateConfig);
+
+Demo 5: 
+问题类型规则: 
+@performance/no-high-loaded-frame-rate-range
+
+问题描述: 
+不允许锁定最高帧率运行。
+
+问题代码: 
+CreateDisplaySyncSlow() {
+    let range : ExpectedFrameRateRange = {
+      expected: 120,
+      min: 120,
+      max: 120
+    };
+
+    let draw30 = (intervalInfo: displaySync.IntervalInfo) => {
+      if (this.isBigger_30) {
+        this.drawFirstSize += 1;
+        if (this.drawFirstSize > 150) {
+          this.isBigger_30 = false;
+        }
+      } else {
+        this.drawFirstSize -= 1;
+        if (this.drawFirstSize < 25) {
+          this.isBigger_30 = true;
+        }
+      }
+    };
+
+    this.backDisplaySyncSlow = displaySync.create();
+    this.backDisplaySyncSlow.setExpectedFrameRateRange(range);
+    this.backDisplaySyncSlow.on("frame", draw30);
+}
+
+问题修复解释: 
+在给定的代码中，通过设置expectedFrameRateRange ，将帧率锁定在 120 帧每秒 (FPS)，会对设备的 CPU 和 GPU 造成很大的性能负担，尤其是在移动设备上。通过将帧率范围设置为 0-120 FPS，可以确保应用在大多数设备上都能稳定运行，同时不会对设备造成不必要的性能负担。这样可以平衡性能和电池消耗，同时确保用户体验的一致性。
+
+修复代码: 
+
+CreateDisplaySyncSlow() {
+    let range : ExpectedFrameRateRange = {
+      expected: 30,
+      min: 0,
+      max: 120
+    };
+
+    let draw30 = (intervalInfo: displaySync.IntervalInfo) => {
+      if (this.isBigger_30) {
+        this.drawFirstSize += 1;
+        if (this.drawFirstSize > 150) {
+          this.isBigger_30 = false;
+        }
+      } else {
+        this.drawFirstSize -= 1;
+        if (this.drawFirstSize < 25) {
+          this.isBigger_30 = true;
+        }
+      }
+    };
+
+    this.backDisplaySyncSlow = displaySync.create();
+    this.backDisplaySyncSlow.setExpectedFrameRateRange(range);
+    this.backDisplaySyncSlow.on("frame", draw30);
+}
+
+Demo 6: 
+问题类型规则: 
+@performance/no-high-loaded-frame-rate-range
+
+问题描述: 
+不允许锁定最高帧率运行。
+
+问题代码: 
+@Entry
+@Component
+struct AnimationComponent {
+  setup() {
+    animate({
+      duration: 5000,
+      frameRate: {
+        expected: 144,
+        min: 144,
+        max: 144
+      }
+    });
+  }
+}
+
+问题修复解释: 
+代码中将动画帧率锁定在 144 FPS，对设备资源消耗过大，可能会影响设备其他应用的性能表现。
+
+修复代码: 
+
+@Entry
+@Component
+struct AnimationComponent {
+  setup() {
+    animate({
+      duration: 5000,
+      frameRate: {
+        expected: 60,
+        min: 30,
+        max: 60
+      }
+    });
+  }
+}
+
+Demo 7: 
+问题类型规则: 
+@performance/no-high-loaded-frame-rate-range
+
+问题描述: 
+不允许锁定最高帧率运行。
+
+问题代码: 
+@Entry
+@Component
+struct Index {
+  build() {
+    Button()
+      .onClick(() => {
+        animateTo({
+          duration: 1200,
+          iterations: 10,
+          expectedFrameRateRange: { 
+            expected: 120,
+            min: 120,
+            max: 120,
+          },
+        }, () => {
+        })
+      })
+  }
+}
+
+问题修复解释: 
+在给定的代码中，通过设置expectedFrameRateRange ，将帧率锁定在 120 帧每秒 (FPS)，会对设备的 CPU 和 GPU 造成很大的性能负担，尤其是在移动设备上。通过将帧率范围设置为 0-120 FPS，可以确保应用在大多数设备上都能稳定运行，同时不会对设备造成不必要的性能负担。这样可以平衡性能和电池消耗，同时确保用户体验的一致性。
+
+修复代码: 
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Button()
+      .onClick(() => {
+        animateTo({
+          duration: 1200,
+          iterations: 10,
+          expectedFrameRateRange: { 
+            expected: 30,
+            min: 0,
+            max: 120,
+          },
+        }, () => {
+        })
+      })
+  }
+}
+
+Demo 8: 
+问题类型规则: 
+@performance/no-high-loaded-frame-rate-range
+
+问题描述: 
+不允许锁定最高帧率运行。
+
+问题代码: 
+let range : ExpectedFrameRateRange = {
+  expected: 120,
+  min: 120,
+  max: 120
+};
+let backDisplaySyncSlow: displaySync.DisplaySync;
+backDisplaySyncSlow = displaySync.create();
+backDisplaySyncSlow.setExpectedFrameRateRange(range);
+
+问题修复解释: 
+在给定的代码中，通过调用 setExpectedFrameRateRange 方法，将帧率锁定在 120 帧每秒 (FPS)，会对设备的 CPU 和 GPU 造成很大的性能负担，尤其是在移动设备上。通过将帧率范围设置为 0-30 FPS，可以确保应用在大多数设备上都能稳定运行，同时不会对设备造成不必要的性能负担。这样可以平衡性能和电池消耗，同时确保用户体验的一致性。
+
+修复代码: 
+
+let range : ExpectedFrameRateRange = {
+  expected: 30,
+  min: 0,
+  max: 120
+};
+let backDisplaySyncSlow: displaySync.DisplaySync;
+backDisplaySyncSlow = displaySync.create();
+backDisplaySyncSlow.setExpectedFrameRateRange(range);
+
+Demo 9: 
+问题类型规则: 
+@performance/no-high-loaded-frame-rate-range
+
+问题描述: 
+不允许锁定最高帧率运行。
+
+问题代码: 
+function setupSync() {
+  const frameSync = displaySync.create();
+  frameSync.configureRateRange({
+    expected: 144,
+    min: 144,
+    max: 144
+  });
+}
+
+问题修复解释: 
+代码中配置了帧率范围，将其锁定在 144 帧每秒（FPS），给设备的 CPU 和 GPU 带来很大的性能负担。降低帧率范围可以缓解设备负担。
+
+修复代码: 
+
+function setupSync() {
+  const frameSync = displaySync.create();
+  frameSync.configureRateRange({
+    expected: 60,
+    min: 30,
+    max: 60
+  });
+}
+
+Demo 10: 
+问题类型规则: 
+@performance/no-high-loaded-frame-rate-range
+
+问题描述: 
+不允许锁定最高帧率运行。
+
+问题代码: 
+let sync: displaySync.DisplaySync = displaySync.create();
+sync.setExpectedFrameRateRange({
+  expected: 120,
+  min: 120,
+  max: 120,
+});
+
+问题修复解释: 
+在给定的代码中，通过调用 setExpectedFrameRateRange 方法，将帧率锁定在 120 帧每秒 (FPS)，会对设备的 CPU 和 GPU 造成很大的性能负担，尤其是在移动设备上。通过将帧率范围设置为 45-60 FPS，可以确保应用在大多数设备上都能稳定运行，同时不会对设备造成不必要的性能负担。这样可以平衡性能和电池消耗，同时确保用户体验的一致性。
+
+修复代码: 
+
+let sync: displaySync.DisplaySync = displaySync.create();
+sync.setExpectedFrameRateRange({
+  expected: 60,
+  min: 45,
+  max: 60,
+});
+
+
+HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+---------
+let testsync: displaySync.DisplaySync = displaySync.create();
+testsync.setExpectedFrameRateRange({
+  expected: 120,
+  min: 120,
+  max: 120,
+});
+---------
+你的代码中将帧率范围锁定在 120 FPS，这会给设备的 CPU 和 GPU 带来很大的性能负担，尤其是在移动设备上。为了确保应用在大多数设备上都能稳定运行，并且不会对设备造成不必要的性能负担，我们需要调整帧率范围。
+
+问题修复解释:
+代码中配置了帧率范围，将其锁定在 120 帧每秒（FPS），给设备的 CPU 和 GPU 带来很大的性能负担。降低帧率范围可以缓解设备负担。通过将帧率范围设置为 60-90 FPS，可以在大多数设备上确保应用的流畅运行，同时避免对设备造成过高负荷。这样可以平衡性能和电池消耗，同时确保用户体验的一致性。
+
+修复代码:
+```javascript
+let testsync: displaySync.DisplaySync = displaySync.create();
+testsync.setExpectedFrameRateRange({
+  expected: 60,
+  min: 45,
+  max: 90,
+});
+```
+
+这样修改后，帧率范围被调整为 45-90 FPS，既保证了应用的流畅性，又避免了给设备带来过高的性能负担。
+---------
+下面我将给出你类似的错误，请根据这些错误的修复方案，帮我修复一下我的代码。
+Demo 1: 
+问题类型规则: 
+@performance/number-init-check
+
+问题描述: 
+该规则将检查number是否正确使用。
+
+问题代码: 
+let intNum1: number = 2, intNum2: number = 1;
+intNum1 = 3.5;
+intNum2 = 4.3;
+
+问题修复解释: 
+intNum被声明为int类型。应当避免将其转换成float类型
+
+修复代码: 
+
+let intNum1: number = 2, intNum2: number = 1;
+intNum1 = 3;
+intNum2 = 4;
+
+Demo 2: 
+问题类型规则: 
+@performance/number-init-check
+
+问题描述: 
+该规则将检查number是否正确使用。
+
+问题代码: 
+let floatNum = 1.3;
+floatNum = 2; 
+
+问题修复解释: 
+floatNum被声明为float类型。应当避免将其转换成int类型
+
+修复代码: 
+
+let floatNum = 1.3;
+floatNum = 2.4;
+
+Demo 3: 
+问题类型规则: 
+@performance/number-init-check
+
+问题描述: 
+该规则将检查number是否正确使用。
+
+问题代码: 
+let intNum = 1;
+intNum = 1.1; 
+
+问题修复解释: 
+intNum被声明为int类型。应当避免将其转换成float类型
+
+修复代码: 
+
+let intNum = 1;
+intNum = 2;
+
+Demo 4: 
+问题类型规则: 
+@performance/number-init-check
+
+问题描述: 
+该规则将检查number是否正确使用。
+
+问题代码: 
+let floatNum1: number = 2.5, floatNum2: number = 1.5;
+floatNum1 = 3;
+floatNum2 = 4;
+
+问题修复解释: 
+floatNum被声明为float类型。应当避免将其转换成int类型
+
+修复代码: 
+
+let floatNum1: number = 2.5, floatNum2: number = 1.5;
+floatNum1 = 3.5;
+floatNum2 = 4.3;
+
+Demo 5: 
+问题类型规则: 
+@performance/number-init-check
+
+问题描述: 
+该规则将检查number是否正确使用。
+
+问题代码: 
+let maxRate = 3.2; maxRate = 1;
+
+问题修复解释: 
+maxRate被声明为float类型。应当避免将其转换成int类型
+
+修复代码: 
+
+let maxRate = 3.2; maxRate = 2.8;
+
+Demo 6: 
+问题类型规则: 
+@performance/number-init-check
+
+问题描述: 
+该规则将检查number是否正确使用。
+
+问题代码: 
+let halfValue: number = 0.5, bonus: number = 1.5; halfValue = 1; bonus = 2;
+
+问题修复解释: 
+halfValue被声明为float类型。应当避免将其转换成int类型
+
+修复代码: 
+
+let halfValue: number = 0.5, bonus: number = 1.5; halfValue = 0.8; bonus = 1.7;
+
+Demo 7: 
+问题类型规则: 
+@performance/number-init-check
+
+问题描述: 
+该规则将检查number是否正确使用。
+
+问题代码: 
+let minValue = 0; minValue = 0.5;
+
+问题修复解释: 
+minValue被声明为int类型。应当避免将其转换成float类型
+
+修复代码: 
+
+let minValue = 0; minValue = 1;
+
+Demo 8: 
+问题类型规则: 
+@performance/number-init-check
+
+问题描述: 
+该规则将检查number是否正确使用。
+
+问题代码: 
+let fullMarks: number = 10, grade: number = 5; fullMarks = 9.5; grade = 8.4;
+
+问题修复解释: 
+fullMarks被声明为int类型。应当避免将其转换成float类型
+
+修复代码: 
+
+let fullMarks: number = 10, grade: number = 5; fullMarks = 9; grade = 8;
+
+Demo 9: 
+问题类型规则: 
+@performance/number-init-check
+
+问题描述: 
+该规则将检查number是否正确使用。
+
+问题代码: 
+let intNum = 3;
+let floatNum = 2.5;
+floatNum = 4; 
+intNum = 1.8; 
+
+问题修复解释: 
+intNum被声明为int类型。应当避免将其转换成float类型
+floatNum被声明为float类型。应当避免将其转换成int类型
+
+修复代码: 
+
+let intNum = 3;
+let floatNum = 2.5;
+intNum = 4;
+floatNum = 1.8;
+
+Demo 10: 
+问题类型规则: 
+@performance/number-init-check
+
+问题描述: 
+该规则将检查number是否正确使用。
+
+问题代码: 
+let yearCount = 5; let average = 7.9; average = 5; yearCount = 5.5;
+
+问题修复解释: 
+yearCount被声明为int类型。应当避免将其转换成float类型
+average被声明为float类型。应当避免将其转换成int类型
+
+修复代码: 
+
+let yearCount = 5; let average = 7.9; average = 6.3; yearCount = 4;
+
+
+HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+---------
+let intNum = 3;
+let floatNum = 2.5;
+let intNum2 = 4;
+let floatNum2 = 188.3;
+floatNum = 4; 
+intNum = 1.8; 
+intNum2 = 17.02;
+floatNum2 = 9964;
+---------
+根据你提供的错误代码和问题类型，以下是修复后的代码及其解释：
+
+**问题修复解释:**
+1. `intNum` 被声明为 `int` 类型。应当避免将其转换成 `float` 类型。
+2. `floatNum` 被声明为 `float` 类型。应当避免将其转换成 `int` 类型。
+3. `intNum2` 被声明为 `int` 类型。应当避免将其转换成 `float` 类型。
+4. `floatNum2` 被声明为 `float` 类型。应当避免将其转换成 `int` 类型。
+
+**修复代码:**
+```typescript
+let intNum = 3;
+let floatNum = 2.5;
+let intNum2 = 4;
+let floatNum2 = 188.3;
+
+floatNum = 4.0; // 将 floatNum 转换为 float 类型
+intNum = 1; // 将 intNum 转换为 int 类型
+intNum2 = 17; // 将 intNum2 转换为 int 类型
+floatNum2 = 9964.0; // 将 floatNum2 转换为 float 类型
+```
+
+这样修改后，代码中的 `number` 类型的变量将保持其声明时的类型，避免不必要的类型转换。
+---------
+下面我将给出你类似的错误，请根据这些错误的修复方案，帮我修复一下我的代码。
+Demo 1: 
+问题类型规则: 
+@performance/sparse-array-check
+
+问题描述: 
+建议避免使用稀疏数组。
+
+问题代码: 
+let chars: string[] = new Array(500);
+chars[499] = 'z';
+
+问题修复解释: 
+数组长度为 500，但只在索引 499 赋值，形成稀疏数组，浪费内存。
+
+修复代码: 
+
+let chars: string[] = ['z'];
+
+Demo 2: 
+问题类型规则: 
+@performance/sparse-array-check
+
+问题描述: 
+建议避免使用稀疏数组。
+
+问题代码: 
+let flags: boolean[] = [];
+flags[200] = false;
+
+问题修复解释: 
+在索引 200 处赋值，其余未定义，导致稀疏数组。应创建紧凑数组。
+
+修复代码: 
+
+let flags: boolean[] = [false];
+
+Demo 3: 
+问题类型规则: 
+@performance/sparse-array-check
+
+问题描述: 
+建议避免使用稀疏数组。
+
+问题代码: 
+let values: number[] = [];
+values[3333] = 10;
+
+问题修复解释: 
+仅在索引 3333 处赋值，形成稀疏数组，导致性能低下。应避免稀疏数组。
+
+修复代码: 
+
+let values: number[] = [10];
+
+Demo 4: 
+问题类型规则: 
+@performance/sparse-array-check
+
+问题描述: 
+建议避免使用稀疏数组。
+
+问题代码: 
+let points: number[] = [];
+points[1500] = 7;
+
+问题修复解释: 
+在索引 1500 处赋值，其余位置未定义，造成内存浪费。应避免稀疏数组。
+
+修复代码: 
+
+let points: number[] = [7];
+
+Demo 5: 
+问题类型规则: 
+@performance/sparse-array-check
+
+问题描述: 
+建议避免使用稀疏数组。
+
+问题代码: 
+let data: boolean[] = new Array(20000);
+data[19999] = true;
+
+问题修复解释: 
+创建了一个长度为 20000 的数组，但只在索引 19999 赋值，大部分元素未定义，浪费内存。
+
+修复代码: 
+
+let data: boolean[] = [true];
+
+Demo 6: 
+问题类型规则: 
+@performance/sparse-array-check
+
+问题描述: 
+建议避免使用稀疏数组。
+
+问题代码: 
+let numbers: number[] = [];
+numbers[100] = 1;
+numbers[1000] = 2;
+numbers[10000] = 3;
+
+问题修复解释: 
+稀疏数组中仅在索引 100、1000 和 10000 处赋值，其他位置均未定义，导致内存浪费和性能下降。应当创建一个紧凑的数组，避免稀疏数组的使用。
+
+修复代码: 
+
+let numbers: number[] = [1, 2, 3];
+
+Demo 7: 
+问题类型规则: 
+@performance/sparse-array-check
+
+问题描述: 
+建议避免使用稀疏数组。
+
+问题代码: 
+let array: string[] = new Array(10005);
+array[9998] = 'end';
+
+问题修复解释: 
+创建了一个长度为10005的数组，并在索引9998处赋值，造成大部分元素未定义，内存中存在大量无效空间。应使用紧凑数组，避免稀疏数组。
+
+修复代码: 
+
+let array: string[] = ['end'];
+
+Demo 8: 
+问题类型规则: 
+@performance/sparse-array-check
+
+问题描述: 
+建议避免使用稀疏数组。
+
+问题代码: 
+let largeArray: number[] = new Array(1000);
+largeArray[999] = 42;
+
+问题修复解释: 
+创建了一个长度为 1000 的数组，但只在索引 999 处赋值。此时，数组大部分元素未定义，造成内存浪费。应直接创建一个包含所需元素的数组。
+
+修复代码: 
+
+let largeArray: number[] = new Array();
+largeArray.push(42);
+
+Demo 9: 
+问题类型规则: 
+@performance/sparse-array-check
+
+问题描述: 
+建议避免使用稀疏数组。
+
+问题代码: 
+let stringArray: string[] = [];
+stringArray[5000] = 'example';
+
+问题修复解释: 
+稀疏数组在索引 5000 处赋值，其余位置都未定义，导致内存浪费和性能问题。应直接创建一个包含需要元素的紧凑数组，避免稀疏数组的使用
+
+修复代码: 
+
+let stringArray: string[] = [];
+stringArray[0] = 'example';
+
+Demo 10: 
+问题类型规则: 
+@performance/sparse-array-check
+
+问题描述: 
+建议避免使用稀疏数组。
+
+问题代码: 
+let count = 100000;
+let result: number[] = new Array(count);
+result = new Array();
+result[9999] = 0;
+
+问题修复解释: 
+初始创建了一个长度为100000的数组 result，将数组重新初始化为空数组，然后在特定位置9999进行赋值。这种方式创建了一个稀疏数组，大部分元素仍然未定义，内存中保留了大量无效空间。
+应当直接创建一个紧凑且仅包含需要元素的数组，确保内存使用高效。例如，在索引"3"处进行赋值，而不是在一个稀疏数组中进行赋值操作。
+
+修复代码: 
+
+let index = 3;
+let result: number[] = [];
+result[index] = 0;
+
+
+HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+---------
+let test_array: string[] = new Array(9009);
+array[4708] = 'mid';
+---------
+问题修复解释: 
+创建了一个长度为9009的数组，但只在索引4708处赋值，形成稀疏数组，浪费内存。应直接创建一个紧凑数组，包含所需元素。
+
+修复代码: 
+```typescript
+let test_array: string[] = [];
+test_array[4708] = 'mid';
+```
+---------
+下面我将给出你类似的错误，请根据这些错误的修复方案，帮我修复一下我的代码。
+Demo 1: 
+问题类型规则: 
+@performance/typed-array-check
+
+问题描述: 
+数值数组推荐使用TypedArray。
+
+问题代码: 
+let multipliers: number[] = Array(10).fill(1).map((_, index) => index * 1.5);
+
+问题修复解释: 
+普通 number[] 数组对性能不利，可采用Float64Array以提升效率。
+
+修复代码: 
+
+let multipliers = new Float64Array(10); for (let i = 0; i < 10; i++) { multipliers[i] = i * 1.5; }
+
+Demo 2: 
+问题类型规则: 
+@performance/typed-array-check
+
+问题描述: 
+数值数组推荐使用TypedArray。
+
+问题代码: 
+const dataPoints: number[] = Array.from({length: 5}, (_, i) => i * 10);
+
+问题修复解释: 
+使用普通的 number[] 数组来存储数值，效率较低。可改用Int16Array以提高处理性能。
+
+修复代码: 
+
+const dataPoints = new Int16Array(5); for (let i = 0; i < 5; i++) { dataPoints[i] = i * 10; }
+
+Demo 3: 
+问题类型规则: 
+@performance/typed-array-check
+
+问题描述: 
+数值数组推荐使用TypedArray。
+
+问题代码: 
+const pixelValues: number[] = [255, 128, 64, 32, 16];
+
+问题修复解释: 
+使用普通的 number[] 存储大量数值时效率低。建议使用Uint8ClampedArray。
+
+修复代码: 
+
+const pixelValues = new Uint8ClampedArray([255, 128, 64, 32, 16]);
+
+Demo 4: 
+问题类型规则: 
+@performance/typed-array-check
+
+问题描述: 
+数值数组推荐使用TypedArray。
+
+问题代码: 
+let fibonacci: number[] = [0, 1, 1, 2, 3, 5, 8, 13, 21];
+
+问题修复解释: 
+普通的 number[] 数组可能导致性能问题。考虑使用Int32Array以优化处理效率。
+
+修复代码: 
+
+let fibonacci = new Int32Array([0, 1, 1, 2, 3, 5, 8, 13, 21]);
+
+Demo 5: 
+问题类型规则: 
+@performance/typed-array-check
+
+问题描述: 
+数值数组推荐使用TypedArray。
+
+问题代码: 
+const squareArray: number[] = [1, 4, 9, 16, 25];
+
+问题修复解释: 
+使用普通的 number[] 数组来存储数值，效率较低。替换为Uint8Array以优化性能。
+
+修复代码: 
+
+const squareArray = new Uint8Array([1, 4, 9, 16, 25]);
+
+Demo 6: 
+问题类型规则: 
+@performance/typed-array-check
+
+问题描述: 
+数值数组推荐使用TypedArray。
+
+问题代码: 
+const matrix: number[][] = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+const result: number[] = new Array(matrix.length);
+for (let i = 0; i < matrix.length; i++) {
+  result[i] = matrix[i][i];
+}
+
+问题修复解释: 
+原代码使用普通的 number[][] 数组来存储数值。这种做法在处理大量数值数据时效率较低。使用 Float64Array 可以提高内存使用效率和性能。
+
+修复代码: 
+
+const matrix = [
+  new Float64Array([1, 2, 3]),
+  new Float64Array([4, 5, 6]),
+  new Float64Array([7, 8, 9])
+];
+const result = new Float64Array(matrix.length);
+for (let i = 0; i < matrix.length; i++) {
+  result[i] = matrix[i][i];
+}
+
+Demo 7: 
+问题类型规则: 
+@performance/typed-array-check
+
+问题描述: 
+数值数组推荐使用TypedArray。
+
+问题代码: 
+const arr1: number[] = [1, 2, 3, 4, 5];
+const arr2: number[] = [6, 7, 8, 9, 10];
+let sumArray: number[] = new Array(arr1.length);
+for (let i = 0; i < arr1.length; i++) {
+  sumArray[i] = arr1[i] + arr2[i];
+}
+
+问题修复解释: 
+原代码使用普通的 number[] 数组来存储数值，这种做法在处理大量数值数据时效率较低，因为普通数组没有经过优化，性能可能较差。应改用 TypedArray（如 Int8Array）来代替普通数组。TypedArray 是专门为数值数据设计的数据结构，在内存使用和性能方面都经过优化，更适合高效处理大量数值数据。
+
+修复代码: 
+
+const arr1 = new Int8Array([1, 2, 3, 4, 5]);
+const arr2 = new Int8Array([6, 7, 8, 9, 10]);
+let sumArray = new Int8Array(arr1.length);
+for (let i = 0; i < arr1.length; i++) {
+    sumArray[i] = arr1[i] + arr2[i];
+}
+
+Demo 8: 
+问题类型规则: 
+@performance/typed-array-check
+
+问题描述: 
+数值数组推荐使用TypedArray。
+
+问题代码: 
+let floatArray: number[] = [1.1, 2.2, 3.3, 4.4, 5.5];
+let doubleArray: number[] = new Array(floatArray.length);
+for (let i = 0; i < floatArray.length; i++) {
+  doubleArray[i] = floatArray[i] * 2;
+}
+
+问题修复解释: 
+原代码使用普通的 number[] 数组来存储数值，这种做法在处理大量数值数据时效率较低。通过使用 Float32Array 可以提高内存使用效率和性能。
+
+修复代码: 
+
+let floatArray = new Float32Array([1.1, 2.2, 3.3, 4.4, 5.5]);
+let doubleArray = new Float32Array(floatArray.length);
+for (let i = 0; i < floatArray.length; i++) {
+    doubleArray[i] = floatArray[i] * 2;
+}
+
+Demo 9: 
+问题类型规则: 
+@performance/typed-array-check
+
+问题描述: 
+数值数组推荐使用TypedArray。
+
+问题代码: 
+const typedArray1: number[] = new Array(1, 2, 3);
+const typedArray2: number[] = new Array(4, 5, 6);
+let res: number[] = new Array(3);
+for (let i = 0; i < 3; i++) {
+     res[i] = typedArray1[i] + typedArray2[i];
+}
+
+问题修复解释: 
+原代码使用普通的 number[] 数组来存储数值。这种做法在处理大量数值数据时效率较低，因为普通数组没有经过优化，性能可能较差。
+应改用 TypedArray（如 Int8Array）来代替普通数组。TypedArray 是专门为数值数据设计的数据结构，它们在内存使用和性能方面都经过优化，适合高效处理大量数值数据。
+
+修复代码: 
+
+const typedArray1 = new Int8Array([1, 2, 3]); 
+const typedArray2 = new Int8Array([4, 5, 6]);  
+let res = new Int8Array(3);
+for (let i = 0; i < 3; i++) {
+     res[i] = typedArray1[i] + typedArray2[i];
+}
+
+Demo 10: 
+问题类型规则: 
+@performance/typed-array-check
+
+问题描述: 
+数值数组推荐使用TypedArray。
+
+问题代码: 
+let bigNumbers: number[] = new Array(10000);
+for (let i = 0; i < bigNumbers.length; i++) {
+    bigNumbers[i] = i * 2;
+}
+
+问题修复解释: 
+原代码使用普通的 number[] 数组来存储大量的数值，这种做法在处理大量数值数据时效率较低，因为普通数组没有经过优化，性能可能较差。应改用 TypedArray（如 Uint16Array）来代替普通数组。TypedArray 是专门为数值数据设计的数据结构，在内存使用和性能方面都经过优化，更适合高效处理大量数值数据。
+
+修复代码: 
+
+let bigNumbers = new Uint16Array(10000);
+for (let i = 0; i < bigNumbers.length; i++) {
+    bigNumbers[i] = i * 2;
+}
+
+
+
+HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+---------
+let largeArray: number[] = [];
+for (let i = 0; i < 1000000; i++) {
+    largeArray[i] = Math.random();
+}
+---------
+你的代码中使用了普通的 `number[]` 数组来存储大量的随机数，这在处理大量数据时效率较低。为了提高性能和内存使用效率，可以使用 TypedArray（如 Float32Array）来代替普通数组。TypedArray 是专门为数值数据设计的数据结构，它们在内存使用和性能方面都经过优化，适合高效处理大量数值数据。
+
+问题修复解释:
+原代码使用普通的 `number[]` 数组来存储大量的随机数，这种做法在处理大量数值数据时效率较低，因为普通数组没有经过优化，性能可能较差。应改用 TypedArray（如 Float32Array）来代替普通数组。TypedArray 是专门为数值数据设计的数据结构，在内存使用和性能方面都经过优化，更适合高效处理大量数值数据。
+
+修复代码:
+```typescript
+let largeArray = new Float32Array(1000000);
+for (let i = 0; i < largeArray.length; i++) {
+    largeArray[i] = Math.random();
+}
+```
+---------
+下面我将给出你类似的错误，请根据这些错误的修复方案，帮我修复一下我的代码。
+Demo 1: 
+问题类型规则: 
+@performance/waterflow-data-preload-check
+
+问题描述: 
+建议对waterflow子组件进行数据预加载。
+
+问题代码: 
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .width('100%')
+    .height(this.itemHeightArray[item % 100])
+    .backgroundColor(this.colors[item % 5])
+  }, (item: string) => item)
+}
+.onReachEnd(() => {
+  console.info("onReachEnd")
+  setTimeout(() => {
+    for (let i = 0; i < 50; i++) {
+      this.datasource.addNewItem()
+    }
+  }, 500)
+})
+
+
+问题修复解释: 
+在 onReachEnd 事件中加载更多数据可能会导致滚动到底部时的卡顿。通过提前检测 FlowItem 的出现并预加载数据，可以避免这种情况。
+
+修复代码: 
+
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .onAppear(() => {
+      if (item + 20 == this.dataSource.totalCount()) {
+        for (let i = 0; i < 50; i++) {
+          this.dataSource.addNewItem()
+        }
+      }
+    })
+    .width('100%')
+    .height(this.itemHeightArray[item % 100])
+    .backgroundColor(this.colors[item % 5])
+  }, (item: string) => item)
+}
+
+
+Demo 2: 
+问题类型规则: 
+@performance/waterflow-data-preload-check
+
+问题描述: 
+建议对waterflow子组件进行数据预加载。
+
+问题代码: 
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .width('100%')
+    .height(this.itemHeightArray[item % 70])
+    .backgroundColor(this.colors[item % 4])
+  }, (item: string) => item)
+}
+.onReachEnd(() => {
+  console.info("More items coming")
+  setTimeout(() => {
+    for (let i = 0; i < 80; i++) {
+      this.dataSource.loadItems()
+    }
+  }, 1200)
+})
+
+问题修复解释: 
+在 onReachEnd 中异步加载过多数据可能导致反应延迟。通过在 FlowItem 显示时预加载来改善性能。
+
+修复代码: 
+
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .onAppear(() => {
+      if (item + 12 == this.dataSource.totalCount()) {
+        for (let i = 0; i < 80; i++) {
+          this.dataSource.loadItems()
+        }
+      }
+    })
+    .width('100%')
+    .height(this.itemHeightArray[item % 70])
+    .backgroundColor(this.colors[item % 4])
+  }, (item: string) => item)
+}
+
+Demo 3: 
+问题类型规则: 
+@performance/waterflow-data-preload-check
+
+问题描述: 
+建议对waterflow子组件进行数据预加载。
+
+问题代码: 
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .width('100%')
+    .height(this.itemHeightArray[item % 80])
+    .backgroundColor(this.colors[item % 2])
+  }, (item: string) => item)
+}
+.onReachEnd(() => {
+  console.info("End reached")
+  setTimeout(() => {
+    for (let i = 0; i < 40; i++) {
+      this.dataSource.addItems()
+    }
+  }, 1000)
+})
+
+
+问题修复解释: 
+在 onReachEnd 事件中加载更多数据可能会导致滚动到底部时的卡顿。通过提前检测 FlowItem 的出现并预加载数据，可以避免这种情况。
+
+修复代码: 
+
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .onAppear(() => {
+      if (item + 25 == this.dataSource.totalCount()) {
+        for (let i = 0; i < 40; i++) {
+          this.dataSource.addItems()
+        }
+      }
+    })
+    .width('100%')
+    .height(this.itemHeightArray[item % 80])
+    .backgroundColor(this.colors[item % 2])
+  }, (item: string) => item)
+}
+
+
+Demo 4: 
+问题类型规则: 
+@performance/waterflow-data-preload-check
+
+问题描述: 
+建议对waterflow子组件进行数据预加载。
+
+问题代码: 
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .width('100%')
+    .height(this.itemHeightArray[item % 25])
+    .backgroundColor(this.colors[item % 6])
+  }, (item: string) => item)
+}
+.onReachEnd(() => {
+  console.info("Scroll end detected")
+  setTimeout(() => {
+    for (let i = 0; i < 110; i++) {
+      this.dataSource.expandList()
+    }
+  }, 1500)
+})
+
+问题修复解释: 
+在 onReachEnd 中处理大量数据加载可能会造成卡顿。通过检测 FlowItem 滑入视图并提前加载数据，可提升用户体验。
+
+修复代码: 
+
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .onAppear(() => {
+      if (item + 5 == this.dataSource.totalCount()) {
+        for (let i = 0; i < 110; i++) {
+          this.dataSource.expandList()
+        }
+      }
+    })
+    .width('100%')
+    .height(this.itemHeightArray[item % 25])
+    .backgroundColor(this.colors[item % 6])
+  }, (item: string) => item)
+}
+
+Demo 5: 
+问题类型规则: 
+@performance/waterflow-data-preload-check
+
+问题描述: 
+建议对waterflow子组件进行数据预加载。
+
+问题代码: 
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .width('100%')
+    .height(this.itemHeightArray[item % 90])
+    .backgroundColor(this.colors[item % 5])
+  }, (item: string) => item)
+}
+.onReachEnd(() => {
+  console.info("Appending items")
+  for (let i = 0; i < 90; i++) {
+    this.dataSource.increaseCollection()
+  }
+})
+
+问题修复解释: 
+在 onReachEnd 中批量添加数据可能导致滚动的中断。通过更早触发数据加载可优化性能。
+
+修复代码: 
+
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .onAppear(() => {
+      if (item + 22 == this.dataSource.totalCount()) {
+        for (let i = 0; i < 90; i++) {
+          this.dataSource.increaseCollection()
+        }
+      }
+    })
+    .width('100%')
+    .height(this.itemHeightArray[item % 90])
+    .backgroundColor(this.colors[item % 5])
+  }, (item: string) => item)
+}
+
+Demo 6: 
+问题类型规则: 
+@performance/waterflow-data-preload-check
+
+问题描述: 
+建议对waterflow子组件进行数据预加载。
+
+问题代码: 
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .width('100%')
+    .height(this.itemHeightArray[item % 100])
+    .backgroundColor(this.colors[item % 5])
+  }, (item: string) => item)
+}
+.onReachEnd(() => {
+  console.info("onReachEnd")
+  setTimeout(() => {
+    for (let i = 0; i < 100; i++) {
+      this.datasource.AddLastItem()
+    }
+  }, 1000)
+})
+
+问题修复解释: 
+在 onReachEnd 事件中加载更多数据可能会导致滚动到底部时的卡顿。通过提前检测 FlowItem 的出现并预加载数据，可以避免这种情况。
+
+修复代码: 
+
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .onAppear(() => {
+      if (item + 20 == this.dataSource.totalCount()) {
+        for (let i = 0; i < 100; i++) {
+          this.dataSource.addLastItem()
+        }
+      }
+    })
+    .width('100%')
+    .height(this.itemHeightArray[item % 100])
+    .backgroundColor(this.colors[item % 5])
+  }, (item: string) => item)
+}
+
+Demo 7: 
+问题类型规则: 
+@performance/waterflow-data-preload-check
+
+问题描述: 
+建议对waterflow子组件进行数据预加载。
+
+问题代码: 
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .width('100%')
+    .height(this.itemHeightArray[item % 30])
+    .backgroundColor(this.colors[item % 3])
+  }, (item: string) => item)
+}
+.onReachEnd(() => {
+  console.info("Fetching more data")
+  setTimeout(() => {
+    for (let i = 0; i < 60; i++) {
+      this.dataSource.fetchNewData()
+    }
+  }, 700)
+})
+
+问题修复解释: 
+在 onReachEnd 事件中加载更多数据可能导致滞后。通过更早检测FlowItem的出现并预加载数据可避免此问题。
+
+修复代码: 
+
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .onAppear(() => {
+      if (item + 18 == this.dataSource.totalCount()) {
+        for (let i = 0; i < 60; i++) {
+          this.dataSource.fetchNewData()
+        }
+      }
+    })
+    .width('100%')
+    .height(this.itemHeightArray[item % 30])
+    .backgroundColor(this.colors[item % 3])
+  }, (item: string) => item)
+}
+
+Demo 8: 
+问题类型规则: 
+@performance/waterflow-data-preload-check
+
+问题描述: 
+建议对waterflow子组件进行数据预加载。
+
+问题代码: 
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .width('100%')
+    .height(this.itemHeightArray[item % 60])
+    .backgroundColor(this.colors[item % 3])
+  }, (item: string) => item)
+}
+.onReachEnd(() => {
+  console.info("Load end")
+  for (let i = 0; i < 70; i++) {
+    this.dataSource.addBatchItem()
+  }
+})
+
+问题修复解释: 
+在 onReachEnd 事件中加载更多数据可能导致卡顿。通过提前检测 FlowItem 的出现并预加载数据，可以避免这种情况。
+
+修复代码: 
+
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .onAppear(() => {
+      if (item + 15 == this.dataSource.totalCount()) {
+        for (let i = 0; i < 70; i++) {
+          this.dataSource.addBatchItem()
+        }
+      }
+    })
+    .width('100%')
+    .height(this.itemHeightArray[item % 60])
+    .backgroundColor(this.colors[item % 3])
+  }, (item: string) => item)
+}
+
+Demo 9: 
+问题类型规则: 
+@performance/waterflow-data-preload-check
+
+问题描述: 
+建议对waterflow子组件进行数据预加载。
+
+问题代码: 
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .width('100%')
+    .height(this.itemHeightArray[item % 50])
+    .backgroundColor(this.colors[item % 3])
+  }, (item: string) => item)
+}
+.onReachEnd(() => {
+  console.info("End of List")
+  for (let i = 0; i < 30; i++) {
+    this.dataSource.appendItem()
+  }
+})
+
+
+问题修复解释: 
+在 onReachEnd 事件中加载更多数据可能会导致滚动到底部时的卡顿。通过提前检测 FlowItem 的出现并预加载数据，可以避免这种情况。
+
+修复代码: 
+
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .onAppear(() => {
+      if (item + 15 == this.dataSource.totalCount()) {
+        for (let i = 0; i < 30; i++) {
+          this.dataSource.appendItem()
+        }
+      }
+    })
+    .width('100%')
+    .height(this.itemHeightArray[item % 50])
+    .backgroundColor(this.colors[item % 3])
+  }, (item: string) => item)
+}
+
+
+Demo 10: 
+问题类型规则: 
+@performance/waterflow-data-preload-check
+
+问题描述: 
+建议对waterflow子组件进行数据预加载。
+
+问题代码: 
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .width('100%')
+    .height(this.itemHeightArray[item % 20])
+    .backgroundColor(this.colors[item % 4])
+  }, (item: string) => item)
+}
+.onReachEnd(() => {
+  console.info("Loading more items")
+  for (let i = 0; i < 20; i++) {
+    this.dataSource.addMoreItems()
+  }
+})
+
+
+问题修复解释: 
+在 onReachEnd 事件中加载更多数据可能会导致滚动到底部时的卡顿。通过提前检测 FlowItem 的出现并预加载数据，可以避免这种情况。
+
+修复代码: 
+
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .onAppear(() => {
+      if (item + 10 == this.dataSource.totalCount()) {
+        for (let i = 0; i < 20; i++) {
+          this.dataSource.addMoreItems()
+        }
+      }
+    })
+    .width('100%')
+    .height(this.itemHeightArray[item % 20])
+    .backgroundColor(this.colors[item % 4])
+  }, (item: string) => item)
+}
+
+
+
+HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+---------
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .width('100%')
+    .height(this.itemHeightArray[item % 80])
+    .backgroundColor(this.colors[item % 4])
+  }, (item: string) => item)
+}
+.onReachEnd(() => {
+  console.info("End reached")
+  setTimeout(() => {
+    for (let i = 0; i < 20; i++) {
+      this.dataSource.addItems()
+    }
+  }, 1000)
+})
+
+---------
+问题修复解释: 
+在 `onReachEnd` 事件中使用 `setTimeout` 来延迟数据加载可能会导致用户看到列表的卡顿和不一致性，因为 `setTimeout` 会导致渲染和数据加载不同步。通过提前检测 FlowItem 的出现并预加载数据，可以避免这种情况。
+
+修复代码: 
+
+```javascript
+WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .onAppear(() => {
+      if (item + 10 == this.dataSource.totalCount()) {
+        for (let i = 0; i < 20; i++) {
+          this.dataSource.addItems()
+        }
+      }
+    })
+    .width('100%')
+    .height(this.itemHeightArray[item % 80])
+    .backgroundColor(this.colors[item % 4])
+  }, (item: string) => item)
+}
+.onReachEnd(() => {
+  console.info("End reached")
+  for (let i = 0; i < 20; i++) {
+    this.dataSource.addItems()
+  }
+})
+```
+
+修复后的代码会在 `FlowItem` 出现时检查是否需要加载更多数据，并在 `onReachEnd` 事件中直接加载数据，以避免渲染和数据加载不同步的问题。
+---------
+下面我将给出你类似的错误，请根据这些错误的修复方案，帮我修复一下我的代码。
+Demo 1: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+build() {
+  Stack() {
+    Column() {
+      LoadingPanel()
+    }
+    .width('100%')
+    .height('100%')
+
+    Row() {
+      if (this.thumbnail !== null && this.thumbnail !== undefined) {
+        Image(this.thumbnail)
+          .rotate({
+            x: 0,
+            y: 0,
+            z: 1,
+            angle: 0
+          })
+          .onComplete((): void => {
+            Log.info(TAG,
+              'onComplete finish, index: ' + this.item.index + ', item: ' + JSON.stringify(this.item) + ', uri: ' +
+              this.thumbnail + '.');
+          })
+          .onError((): void => {
+            Log.error(TAG, 'image show error ' + this.thumbnail + ' ' + this.item.width + ' ' + this.item.height);
+          })
+      }
+
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+
+问题修复解释: 
+在滚动组件中触发滚动属于高频事件，而 onScroll 函数会在每次滚动时被触发。如果在 onScroll 函数中使用Log来进行记录会产生大量的日志，显著地影响了app的性能
+
+修复代码: 
+
+build() {
+  Stack() {
+    Column() {
+      LoadingPanel()
+    }
+    .width('100%')
+    .height('100%')
+
+    Row() {
+      if (this.thumbnail !== null && this.thumbnail !== undefined) {
+        Image(this.thumbnail)
+          .rotate({
+            x: 0,
+            y: 0,
+            z: 1,
+            angle: 0
+          })
+          .onComplete((): void => {
+            let info = TAG + 
+              'onComplete finish, index: ' + this.item.index + ', item: ' + JSON.stringify(this.item) + ', uri: ' +
+              this.thumbnail + '.';
+          })
+          .onError((): void => {
+            let error = TAG + 'image show error ' + this.thumbnail + ' ' + this.item.width + ' ' + this.item.height;
+          })
+      }
+
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+
+Demo 2: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Slider({ value: 0, min: 0, max: 100 })
+        .enabled(false)
+        .height(4)
+        .width(100)
+        .trackThickness(3)
+        .blockColor(Color.Red)
+        .blockSize({ width: 4, height: 4 })
+        .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number) => {
+          hilog.info(1001, 'Index', 'onVisibleAreaChange') // Avoid printing logs
+        })
+    }
+  }
+}
+
+问题修复解释: 
+在可见区域变化事件中，onVisibleAreaChange 函数会在每次可见区域变化时被触发。如果在 onVisibleAreaChange 函数中使用 hilog.info 进行日志记录，就会导致每次可见区域变化操作都进行一次日志记录，这样的高频操作会对性能造成负面影响。通过移除高频函数中的 hilog 调用，减少了不必要的日志输出，从而降低了对系统性能的影响。
+
+修复代码: 
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Slider({ value: 0, min: 0, max: 100 })
+        .enabled(false)
+        .height(4)
+        .width(100)
+        .trackThickness(3)
+        .blockColor(Color.Red)
+        .blockSize({ width: 4, height: 4 })
+        .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number) => {
+          const TAG = 'onVisibleAreaChange';
+        })
+    }
+  }
+}
+
+Demo 3: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Row(){
+      Image("XXX")
+        .width(200)
+        .height(100)
+        .draggable(true)
+        .margin({ left: 15 })
+        .border({ color: Color.Black, width: 1 })
+        .onDragMove(() => {
+          hilog.info(1001, 'Index', 'onDragMove')
+      })
+    }
+  }
+}
+
+问题修复解释: 
+在拖拽组件中，onDragMove 函数会在每次拖动时被触发。如果在 onDragMove 函数中使用 hilog.warn 进行日志记录，就会导致每次拖动操作都进行一次日志记录，这样的高频操作会对性能造成负面影响。通过移除高频函数中的 hilog 调用，减少了不必要的日志输出，从而降低了对系统性能的影响。
+
+修复代码: 
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Row(){
+      Image("XXX")
+        .width(200)
+        .height(100)
+        .draggable(true)
+        .margin({ left: 15 })
+        .border({ color: Color.Black, width: 1 })
+        .onDragMove(() => {
+          const TAG = 'onDragMove';
+        })
+    }
+  }
+}
+
+Demo 4: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Scroll(this.scroller) {
+      Column() {
+        Text(this.message)
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+      }.onScroll((xOffset: number, yOffset: number) => {
+        console.info(xOffset + ' ' + yOffset)
+      })
+    }
+  }
+}
+
+
+问题修复解释: 
+在滚动组件中触发滚动属于高频事件，而 onScroll 函数会在每次滚动时被触发。如果在 onScroll 函数中使用console.log来进行记录会产生大量的日志，显著地影响了app的性能
+
+修复代码: 
+
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Scroll(this.scroller) {
+      Column() {
+        Text(this.message)
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+      }.onScroll((xOffset: number, yOffset: number) => {
+        const TAG = xOffset + ' ' + yOffset
+      })
+    }
+  }
+}
+
+
+Demo 5: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+build() {
+  Row() {
+    Text('1')
+      .fontWeight(FontWeight.Bold)
+      .backgroundColor('black')
+      .fontColor('white')
+      .fontSize(200)
+      .width(200)
+      .height(200)
+      .lineHeight(200)
+      .textAlign(TextAlign.Center)
+  }
+  .onTouch((event: TouchEvent) => {
+    console.log(JSON.stringify(event.touches))
+  })
+}
+
+问题修复解释: 
+在滚动组件中触发滚动属于高频事件，而 onScroll 函数会在每次滚动时被触发。如果在 onScroll 函数中使用console.log来进行记录会产生大量的日志，显著地影响了app的性能
+
+修复代码: 
+
+build() {
+  Row() {
+    Text('1')
+      .fontWeight(FontWeight.Bold)
+      .backgroundColor('black')
+      .fontColor('white')
+      .fontSize(200)
+      .width(200)
+      .height(200)
+      .lineHeight(200)
+      .textAlign(TextAlign.Center)
+  }
+  .onTouch((event: TouchEvent) => {
+    const text = JSON.stringify(event.touches)
+  })
+}
+
+Demo 6: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct App {
+  build() {
+    Toggle()
+      .onActionUpdate(() => {
+        hilog.debug(3001, 'App', 'Toggle Action Update')
+    })
+  }
+}
+
+问题修复解释: 
+当 Toggle 的状态发生变化时，onActionUpdate 会被持续调用。使用 hilog.debug 会导致过多的日志输出，从而降低性能。
+
+修复代码: 
+
+@Entry
+@Component
+struct App {
+  build() {
+    Toggle()
+      .onActionUpdate(() => {
+        const state = 'Toggle Action Update';
+    })
+  }
+}
+
+Demo 7: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Button("XXX")
+      .width(200)
+      .height(100)
+      .onTouch(() => {
+        hilog.info(1001, 'Index', 'onTouch') // Avoid printing logs
+      })
+  }
+}
+
+问题修复解释: 
+在触摸事件中，onTouch 函数会在每次触摸时被触发。如果在 onTouch 函数中使用 hilog.debug 进行日志记录，就会导致每次触摸操作都进行一次日志记录，这样的高频操作会对性能造成负面影响。通过移除高频函数中的 hilog 调用，减少了不必要的日志输出，从而降低了对系统性能的影响。
+
+修复代码: 
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Button("XXX")
+      .width(200)
+      .height(100)
+      .onTouch(() => {
+        const TAG = 'onTouch';
+      })
+  }
+}
+
+Demo 8: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct App {
+  build() {
+    ListItem()
+      .onMouse(() => {
+        hilog.info(2001, 'App', 'onMouse')
+    })
+  }
+}
+
+问题修复解释: 
+onMouse 是一个高频触发的事件。使用 hilog.info 记录每一次的鼠标事件操作会影响性能。
+
+修复代码: 
+
+@Entry
+@Component
+struct App {
+  build() {
+    ListItem()
+      .onMouse(() => {
+        const TAG = 'onMouse';
+    })
+  }
+}
+
+Demo 9: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Button("")
+      .width(200)
+      .height(100)
+      .onMouse(() => {
+        hilog.info(1001, 'Index', 'onMouse')
+      })
+  }
+}
+
+问题修复解释: 
+在鼠标事件中，onMouse 函数会在每次鼠标操作时被触发。如果在 onMouse 函数中使用 hilog.error 进行日志记录，就会导致每次鼠标操作都进行一次日志记录，这样的高频操作会对性能造成负面影响。通过移除高频函数中的 hilog 调用，减少了不必要的日志输出，从而降低了对系统性能的影响。
+
+修复代码: 
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Button("")
+      .width(200)
+      .height(100)
+      .onMouse(() => {
+        const TAG = 'onMouse';
+      })
+  }
+}
+
+Demo 10: 
+问题类型规则: 
+@performance/high-frequency-log-check
+
+问题描述: 
+不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。
+
+问题代码: 
+// Test.ets
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+    build() {
+            Column() {
+                Scroll()
+                    .onScroll(() => {
+                        hilog.info(1001, 'Index', 'onScroll') // Avoid printing logs
+                })
+            }
+    }
+}
+
+问题修复解释: 
+在滚动组件中触发滚动属于高频事件，而 onScroll 函数会在每次滚动时被触发。如果在 onScroll 函数中使用 hilog.info 进行日志记录，就会导致每次滚动操作都进行一次日志记录，这样的高频操作会对性能造成负面影响。通过移除高频函数中的 hilog 调用，减少了不必要的日志输出，从而降低了对系统性能的影响。
+
+修复代码: 
+
+// Test.ets
+@Entry
+@Component
+struct Index {
+  build() {
+      Column() {
+        Scroll()
+          .onScroll(() => {
+            const TAG = 'onScroll';
+          })
+      }
+  }
+}
+
+
+HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+---------
+import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Text('PanGesture Offset:\nX: ' + 50 + '\n' + 'Y: ' + 100)
+        .fontSize(28)
+        .height(200)
+        .width(300)
+        .padding(20)
+        .border({ width: 3 })
+        .translate({ x: 50, y: 100, z: 0 })
+        .gesture(
+          PanGesture()
+            .onActionUpdate((event: GestureEvent|undefined) => {
+              hilog.info(1001, 'Index', 'onActionUpdate')
+            })
+        )
+    }
+  }
+}
+---------
+问题描述和规则与之前的示例类似，都是在高频函数中使用 `hilog.info` 进行日志记录会导致性能问题。我们需要移除这些不必要的日志记录以提高性能。
+
+### 问题修复解释
+在 `onActionUpdate` 函数中，每次手势更新时都会触发该回调函数。如果在 `onActionUpdate` 函数中使用 `hilog.info` 进行日志记录，就会导致每次手势更新都进行一次日志记录，这样的高频操作会对性能造成负面影响。通过移除高频函数中的 `hilog` 调用，减少了不必要的日志输出，从而降低了对系统性能的影响。
+
+### 修复代码
+```typescript
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Text('PanGesture Offset:\nX: ' + 50 + '\n' + 'Y: ' + 100)
+        .fontSize(28)
+        .height(200)
+        .width(300)
+        .padding(20)
+        .border({ width: 3 })
+        .translate({ x: 50, y: 100, z: 0 })
+        .gesture(
+          PanGesture()
+            .onActionUpdate((event: GestureEvent|undefined) => {
+              const TAG = 'onActionUpdate';
+            })
+        )
+    }
+  }
+}
+```
+
+### 修复后的代码解释
+在修复后的代码中，我们在 `onActionUpdate` 函数内部移除了对 `hilog.info` 的调用，取而代之的是定义了一个常量 `TAG`。这样做既避免了在高频函数中进行日志记录，又保留了调试和跟踪信息的可能性（如果需要的话）。
+---------
