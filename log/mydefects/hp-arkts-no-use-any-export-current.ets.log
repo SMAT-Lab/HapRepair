@@ -1,0 +1,74 @@
+2024-11-11 06:22:29,189 - INFO - 读取文件: ../mydefects/ets/pages/defects/hp-arkts-no-use-any-export-current.ets
+2024-11-11 06:22:29,189 - INFO - 读取Excel文件中的缺陷信息
+2024-11-11 06:22:29,191 - INFO - CodeLinter分析结果:
+2024-11-11 06:22:29,191 - INFO - [
+  {
+    "rule": "@performance/hp-arkts-no-use-any-export-other",
+    "line": 1,
+    "message": "Do not use export * to export types and data defined in the other module",
+    "code": "export * from './product';"
+  },
+  {
+    "rule": "@performance/hp-arkts-no-use-any-export-other",
+    "line": 2,
+    "message": "Do not use export * to export types and data defined in the other module",
+    "code": "export * as Inventory from './product';"
+  }
+]
+2024-11-11 06:22:29,191 - INFO - 分析第1/2个缺陷
+2024-11-11 06:22:35,726 - INFO - {'rule': '@performance/hp-arkts-no-use-any-export-other', 'defect_block': {'code': ["export * from './product';"], 'start_line': 1, 'end_line': 1, 'line of interest': "export * from './product';"}, 'analysis': 'Do not use export * to export types and data defined in the other module. Avoid using it to ensure a more predictable module structure and potentially reduce unwanted data from being exported.'}
+2024-11-11 06:22:35,726 - INFO - 分析第2/2个缺陷
+2024-11-11 06:22:41,202 - INFO - {'rule': '@performance/hp-arkts-no-use-any-export-other', 'defect_block': {'code': ["export * from './product';", "export * as Inventory from './product';"], 'start_line': '1', 'end_line': '2', 'line of interest': "export * as Inventory from './product';"}, 'analysis': "Do not use export * to export types and data defined in the other module. This is inefficient and can cause unnecessary code inclusion, impacting performance, especially during cold start delays. It's suggested to individually export the required members instead."}
+2024-11-11 06:22:41,202 - INFO - 开始生成修复建议
+2024-11-11 06:22:41,924 - INFO - 处理第1/2个修复建议
+2024-11-11 06:22:44,545 - INFO - 修复建议1的结果:
+2024-11-11 06:22:44,545 - INFO - ```json
+{
+  "problem_code": "export * from './product';\n",
+  "problem_fix": "export { ProductType, ProductData } from './product';\n\nclass Order {\n  orderId?: number;\n  productName?: string;\n}"
+}
+```
+2024-11-11 06:22:44,545 - INFO - 处理第2/2个修复建议
+2024-11-11 06:22:46,777 - INFO - 修复建议2的结果:
+2024-11-11 06:22:46,777 - INFO - ```json
+{
+  "problem_code": "export * from './product';\nexport * as Inventory from './product';\n",
+  "problem_fix": "export { specificProduct1, specificProduct2 } from './product';\n\nclass Order {\n  orderId?: number;\n  productName?: string;\n}"
+}
+```
+2024-11-11 06:22:46,777 - INFO - 处理修复结果
+2024-11-11 06:22:46,777 - INFO - 处理第1个修复结果
+2024-11-11 06:22:46,777 - INFO - 原始代码:
+export * from './product';
+
+2024-11-11 06:22:46,777 - INFO - 修复后代码:
+export { ProductType, ProductData } from './product';
+
+class Order {
+  orderId?: number;
+  productName?: string;
+}
+2024-11-11 06:22:46,777 - INFO - 处理第2个修复结果
+2024-11-11 06:22:46,777 - INFO - 原始代码:
+export * from './product';
+export * as Inventory from './product';
+
+2024-11-11 06:22:46,778 - INFO - 修复后代码:
+export { specificProduct1, specificProduct2 } from './product';
+
+class Order {
+  orderId?: number;
+  productName?: string;
+}
+2024-11-11 06:22:46,778 - INFO - 生成最终修复代码
+2024-11-11 06:22:49,068 - INFO - 最终修复结果:
+2024-11-11 06:22:49,068 - INFO - 根据提供的patch，以下是修复后的完整代码：
+
+```arkts
+export { specificProduct1, specificProduct2 } from './product';
+
+class Order {
+  orderId?: number;
+  productName?: string;
+}
+```

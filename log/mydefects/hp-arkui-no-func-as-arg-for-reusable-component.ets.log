@@ -1,0 +1,161 @@
+2024-11-11 06:24:47,553 - INFO - 读取文件: ../mydefects/ets/pages/defects/hp-arkui-no-func-as-arg-for-reusable-component.ets
+2024-11-11 06:24:47,553 - INFO - 读取Excel文件中的缺陷信息
+2024-11-11 06:24:47,556 - INFO - CodeLinter分析结果:
+2024-11-11 06:24:47,556 - INFO - [
+  {
+    "rule": "@performance/hp-arkui-no-func-as-arg-for-reusable-component",
+    "line": 44,
+    "message": "Do not use functions as input parameters for creating reusable components",
+    "code": "ItemComponent({ value: item, result: this.expensiveOperation() })"
+  }
+]
+2024-11-11 06:24:47,556 - INFO - 分析第1/1个缺陷
+2024-11-11 06:24:56,546 - INFO - {'rule': '@performance/hp-arkui-no-func-as-arg-for-reusable-component', 'defect_block': {'code': ['@Entry', '@Component', 'struct ParentComponent {', "  private items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];", '', '  // 模拟一个耗时的计算函数', '  expensiveOperation(): number {', '    let sum = 0;', '    for (let i = 0; i < 10000; i++) {', '      sum += i;', '    }', '    return sum;', '  }', '', '  build() {', '    Column() {', '      List() {', '        LazyForEach(this.items, (item: string) => {', '          ListItem() {', '            // 避免在传入组件时调用函数', '            ItemComponent({ value: item, result: this.expensiveOperation() })', '          }', "          .width('100%')", '          .height(100)', '        }, (item: string) => item)', '      }', '      .cachedCount(2)', "      .height('100%')", "      .width('100%')", '    }', '  }', '}'], 'start_line': 16, 'end_line': 40, 'line of interest': 'ItemComponent({ value: item, result: this.expensiveOperation() })'}, 'analysis': 'Avoid using functions as input parameters when creating reusable components, as this can lead to performance issues if the function logic is complex or time-consuming. Instead, calculate values before passing them as input parameters.'}
+2024-11-11 06:24:56,546 - INFO - 开始生成修复建议
+2024-11-11 06:24:57,062 - INFO - 处理第1/1个修复建议
+2024-11-11 06:25:05,161 - INFO - 修复建议1的结果:
+2024-11-11 06:25:05,161 - INFO - ```json
+{
+  "problem_code": "@Entry\n@Component\nstruct ParentComponent {\n  private items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];\n\n  // 模拟一个耗时的计算函数\n  expensiveOperation(): number {\n    let sum = 0;\n    for (let i = 0; i < 10000; i++) {\n      sum += i;\n    }\n    return sum;\n  }\n\n  build() {\n    Column() {\n      List() {\n        LazyForEach(this.items, (item: string) => {\n          ListItem() {\n            // 避免在传入组件时调用函数\n            ItemComponent({ value: item, result: this.expensiveOperation() })\n          }\n          .width('100%')\n          .height(100)\n        }, (item: string) => item)\n      }\n      .cachedCount(2)\n      .height('100%')\n      .width('100%')\n    }\n  }\n}\n",
+  "problem_fix": "@Entry\n@Component\nstruct ParentComponent {\n  private items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];\n  @State result: number = 0;\n\n  aboutToAppear() {\n    this.result = this.expensiveOperation();\n  }\n\n  // 模拟一个耗时的计算函数\n  expensiveOperation(): number {\n    let sum = 0;\n    for (let i = 0; i < 10000; i++) {\n      sum += i;\n    }\n    return sum;\n  }\n\n  build() {\n    Column() {\n      List() {\n        LazyForEach(this.items, (item: string) => {\n          ListItem() {\n            // 将事先计算好的结果传入组件\n            ItemComponent({ value: item, result: this.result })\n          }\n          .width('100%')\n          .height(100)\n        }, (item: string) => item)\n      }\n      .cachedCount(2)\n      .height('100%')\n      .width('100%')\n    }\n  }\n}\n"
+}
+```
+2024-11-11 06:25:05,161 - INFO - 处理修复结果
+2024-11-11 06:25:05,161 - INFO - 处理第1个修复结果
+2024-11-11 06:25:05,161 - INFO - 原始代码:
+@Entry
+@Component
+struct ParentComponent {
+  private items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+
+  // 模拟一个耗时的计算函数
+  expensiveOperation(): number {
+    let sum = 0;
+    for (let i = 0; i < 10000; i++) {
+      sum += i;
+    }
+    return sum;
+  }
+
+  build() {
+    Column() {
+      List() {
+        LazyForEach(this.items, (item: string) => {
+          ListItem() {
+            // 避免在传入组件时调用函数
+            ItemComponent({ value: item, result: this.expensiveOperation() })
+          }
+          .width('100%')
+          .height(100)
+        }, (item: string) => item)
+      }
+      .cachedCount(2)
+      .height('100%')
+      .width('100%')
+    }
+  }
+}
+
+2024-11-11 06:25:05,161 - INFO - 修复后代码:
+@Entry
+@Component
+struct ParentComponent {
+  private items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+  @State result: number = 0;
+
+  aboutToAppear() {
+    this.result = this.expensiveOperation();
+  }
+
+  // 模拟一个耗时的计算函数
+  expensiveOperation(): number {
+    let sum = 0;
+    for (let i = 0; i < 10000; i++) {
+      sum += i;
+    }
+    return sum;
+  }
+
+  build() {
+    Column() {
+      List() {
+        LazyForEach(this.items, (item: string) => {
+          ListItem() {
+            // 将事先计算好的结果传入组件
+            ItemComponent({ value: item, result: this.result })
+          }
+          .width('100%')
+          .height(100)
+        }, (item: string) => item)
+      }
+      .cachedCount(2)
+      .height('100%')
+      .width('100%')
+    }
+  }
+}
+
+2024-11-11 06:25:05,161 - INFO - 生成最终修复代码
+2024-11-11 06:25:13,343 - INFO - 最终修复结果:
+2024-11-11 06:25:13,343 - INFO - 修复后的完整文件代码如下：
+
+```arkts
+@Reusable
+@Component
+struct ItemComponent {
+  @State value: string = '';
+  @State result: number = 0;
+
+  aboutToReuse(params: Record<string, Object>): void {
+    this.value = params.value as string;
+    this.result = params.result as number;
+  }
+
+  build() {
+    Column() {
+      Text('Item: ' + this.value)
+        .fontSize(24)
+      Text('Result: ' + this.result)
+        .fontSize(24)
+    }
+  }
+}
+
+@Entry
+@Component
+struct ParentComponent {
+  private items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+  @State result: number = 0;
+
+  aboutToAppear() {
+    this.result = this.expensiveOperation();
+  }
+
+  // 模拟一个耗时的计算函数
+  expensiveOperation(): number {
+    let sum = 0;
+    for (let i = 0; i < 10000; i++) {
+      sum += i;
+    }
+    return sum;
+  }
+
+  build() {
+    Column() {
+      List() {
+        LazyForEach(this.items, (item: string) => {
+          ListItem() {
+            // 将事先计算好的结果传入组件
+            ItemComponent({ value: item, result: this.result })
+          }
+          .width('100%')
+          .height(100)
+        }, (item: string) => item)
+      }
+      .cachedCount(2)
+      .height('100%')
+      .width('100%')
+    }
+  }
+}
+```

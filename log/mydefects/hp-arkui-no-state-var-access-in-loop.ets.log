@@ -1,0 +1,113 @@
+2024-11-11 06:25:13,345 - INFO - 读取文件: ../mydefects/ets/pages/defects/hp-arkui-no-state-var-access-in-loop.ets
+2024-11-11 06:25:13,346 - INFO - 读取Excel文件中的缺陷信息
+2024-11-11 06:25:13,349 - INFO - CodeLinter分析结果:
+2024-11-11 06:25:13,349 - INFO - [
+  {
+    "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+    "line": 14,
+    "message": "Avoid frequent state variable reads inside loop logic",
+    "code": "hilog.info(0x0000, 'TAG', '%{public}s', this.message);"
+  }
+]
+2024-11-11 06:25:13,349 - INFO - 分析第1/1个缺陷
+2024-11-11 06:25:22,622 - INFO - {'rule': '@performance/hp-arkui-no-state-var-access-in-loop', 'defect_block': {'code': ["import hilog from '@ohos.hilog'", '@Entry', '@Component', 'struct ExampleComponent {', "  @State message: string = '';", '', '  build() {', '    Column() {', "      Button('点击更新状态并打印日志')", '        .onClick(() => {', "          this.message = 'Hello, World!';", '', '          for (let i = 0; i < 10; i++) {', "            hilog.info(0x0000, 'TAG', '%{public}s', this.message);", '          }', '        })', "        .width('90%')", '        .backgroundColor(Color.Green)', '        .fontColor(Color.White)', '        .margin({ top: 10 })', '    }', '    .justifyContent(FlexAlign.Start)', '    .alignItems(HorizontalAlign.Center)', '    .margin({ top: 15 })', '  }', '}'], 'start_line': '1', 'end_line': '26', 'line of interest': "hilog.info(0x0000, 'TAG', '%{public}s', this.message);"}, 'analysis': 'Avoid frequent state variable reads inside loop logic'}
+2024-11-11 06:25:22,623 - INFO - 开始生成修复建议
+2024-11-11 06:25:23,150 - INFO - 处理第1/1个修复建议
+2024-11-11 06:25:30,836 - INFO - 修复建议1的结果:
+2024-11-11 06:25:30,836 - INFO - ```json
+{
+  "problem_code": "import hilog from '@ohos.hilog'\n@Entry\n@Component\nstruct ExampleComponent {\n  @State message: string = '';\n\n  build() {\n    Column() {\n      Button('点击更新状态并打印日志')\n        .onClick(() => {\n          this.message = 'Hello, World!';\n\n          for (let i = 0; i < 10; i++) {\n            hilog.info(0x0000, 'TAG', '%{public}s', this.message);\n          }\n        })\n        .width('90%')\n        .backgroundColor(Color.Green)\n        .fontColor(Color.White)\n        .margin({ top: 10 })\n    }\n    .justifyContent(FlexAlign.Start)\n    .alignItems(HorizontalAlign.Center)\n    .margin({ top: 15 })\n  }\n}\n",
+  "problem_fix": "import hilog from '@ohos.hilog'\n@Entry\n@Component\nstruct ExampleComponent {\n  @State message: string = '';\n\n  build() {\n    Column() {\n      Button('点击更新状态并打印日志')\n        .onClick(() => {\n          this.message = 'Hello, World!';\n\n          let logMessage: string = this.message;\n          for (let i = 0; i < 10; i++) {\n            hilog.info(0x0000, 'TAG', '%{public}s', logMessage);\n          }\n        })\n        .width('90%')\n        .backgroundColor(Color.Green)\n        .fontColor(Color.White)\n        .margin({ top: 10 })\n    }\n    .justifyContent(FlexAlign.Start)\n    .alignItems(HorizontalAlign.Center)\n    .margin({ top: 15 })\n  }\n}\n"
+}
+```
+2024-11-11 06:25:30,837 - INFO - 处理修复结果
+2024-11-11 06:25:30,837 - INFO - 处理第1个修复结果
+2024-11-11 06:25:30,837 - INFO - 原始代码:
+import hilog from '@ohos.hilog'
+@Entry
+@Component
+struct ExampleComponent {
+  @State message: string = '';
+
+  build() {
+    Column() {
+      Button('点击更新状态并打印日志')
+        .onClick(() => {
+          this.message = 'Hello, World!';
+
+          for (let i = 0; i < 10; i++) {
+            hilog.info(0x0000, 'TAG', '%{public}s', this.message);
+          }
+        })
+        .width('90%')
+        .backgroundColor(Color.Green)
+        .fontColor(Color.White)
+        .margin({ top: 10 })
+    }
+    .justifyContent(FlexAlign.Start)
+    .alignItems(HorizontalAlign.Center)
+    .margin({ top: 15 })
+  }
+}
+
+2024-11-11 06:25:30,837 - INFO - 修复后代码:
+import hilog from '@ohos.hilog'
+@Entry
+@Component
+struct ExampleComponent {
+  @State message: string = '';
+
+  build() {
+    Column() {
+      Button('点击更新状态并打印日志')
+        .onClick(() => {
+          this.message = 'Hello, World!';
+
+          let logMessage: string = this.message;
+          for (let i = 0; i < 10; i++) {
+            hilog.info(0x0000, 'TAG', '%{public}s', logMessage);
+          }
+        })
+        .width('90%')
+        .backgroundColor(Color.Green)
+        .fontColor(Color.White)
+        .margin({ top: 10 })
+    }
+    .justifyContent(FlexAlign.Start)
+    .alignItems(HorizontalAlign.Center)
+    .margin({ top: 15 })
+  }
+}
+
+2024-11-11 06:25:30,837 - INFO - 生成最终修复代码
+2024-11-11 06:25:35,020 - INFO - 最终修复结果:
+2024-11-11 06:25:35,021 - INFO - 修复后的完整文件代码如下:
+```arkts
+import hilog from '@ohos.hilog'
+@Entry
+@Component
+struct ExampleComponent {
+  @State message: string = '';
+
+  build() {
+    Column() {
+      Button('点击更新状态并打印日志')
+        .onClick(() => {
+          this.message = 'Hello, World!';
+
+          let logMessage: string = this.message;
+          for (let i = 0; i < 10; i++) {
+            hilog.info(0x0000, 'TAG', '%{public}s', logMessage);
+          }
+        })
+        .width('90%')
+        .backgroundColor(Color.Green)
+        .fontColor(Color.White)
+        .margin({ top: 10 })
+    }
+    .justifyContent(FlexAlign.Start)
+    .alignItems(HorizontalAlign.Center)
+    .margin({ top: 15 })
+  }
+}
+```

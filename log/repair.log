@@ -1,0 +1,1521 @@
+2024-11-11 05:52:47,428 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:52:47,443 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 05:52:47,443 - INFO - 处理第1个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 05:52:47,443 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 05:52:50,269 - INFO - 缺陷修复建议生成完成
+2024-11-11 05:52:55,296 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:52:57,511 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:53:04,694 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:53:04,696 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 05:53:04,696 - INFO - 处理第1个缺陷，规则: @performance/foreach-args-check
+2024-11-11 05:53:04,696 - INFO - 获取修复提示，规则: @performance/foreach-args-check
+2024-11-11 05:53:05,181 - INFO - 缺陷修复建议生成完成
+2024-11-11 05:53:08,329 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:53:11,206 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:53:17,465 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:53:17,468 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 05:53:17,468 - INFO - 处理第1个缺陷，规则: @performance/high-frequency-log-check
+2024-11-11 05:53:17,468 - INFO - 获取修复提示，规则: @performance/high-frequency-log-check
+2024-11-11 05:53:17,950 - INFO - 缺陷修复建议生成完成
+2024-11-11 05:53:20,281 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:53:26,919 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:53:32,129 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:53:36,619 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:53:36,622 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 05:53:36,623 - INFO - 处理第1个缺陷，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 05:53:36,623 - INFO - 获取修复提示，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 05:53:37,099 - INFO - 处理第2个缺陷，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 05:53:37,099 - INFO - 获取修复提示，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 05:53:37,361 - INFO - 缺陷修复建议生成完成
+2024-11-11 05:53:39,320 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:53:41,384 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:53:44,435 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:53:52,041 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:53:52,046 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 05:53:52,046 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 05:53:52,046 - INFO - 获取修复提示，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 05:53:52,683 - INFO - 缺陷修复建议生成完成
+2024-11-11 05:53:59,163 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:54:01,454 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:54:13,543 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:54:13,545 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 05:54:13,545 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse
+2024-11-11 05:54:13,545 - INFO - 获取修复提示，规则: @performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse
+2024-11-11 05:54:14,063 - INFO - 缺陷修复建议生成完成
+2024-11-11 05:54:21,901 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:54:40,751 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:56:17,661 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:56:29,911 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:56:29,914 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 05:56:29,914 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 05:56:29,915 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 05:56:31,205 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-combine-same-arg-animateto
+2024-11-11 05:56:31,206 - INFO - 获取修复提示，规则: @performance/hp-arkui-combine-same-arg-animateto
+2024-11-11 05:56:31,503 - INFO - 缺陷修复建议生成完成
+2024-11-11 05:56:39,995 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:56:50,353 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:56:54,701 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:57:04,063 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:57:04,066 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 05:57:04,066 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-image-async-load
+2024-11-11 05:57:04,066 - INFO - 获取修复提示，规则: @performance/hp-arkui-image-async-load
+2024-11-11 05:57:04,567 - INFO - 缺陷修复建议生成完成
+2024-11-11 05:57:08,280 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:57:11,229 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:57:42,092 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 524 "
+2024-11-11 05:57:42,094 - INFO - Retrying request to /chat/completions in 0.420759 seconds
+2024-11-11 05:57:49,278 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:57:49,281 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 05:57:49,281 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-load-on-demand
+2024-11-11 05:57:49,281 - INFO - 获取修复提示，规则: @performance/hp-arkui-load-on-demand
+2024-11-11 05:57:49,817 - INFO - 缺陷修复建议生成完成
+2024-11-11 05:58:02,590 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:58:07,181 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:58:20,076 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:58:20,079 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 05:58:20,079 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-no-func-as-arg-for-reusable-component
+2024-11-11 05:58:20,079 - INFO - 获取修复提示，规则: @performance/hp-arkui-no-func-as-arg-for-reusable-component
+2024-11-11 05:58:20,632 - INFO - 缺陷修复建议生成完成
+2024-11-11 05:58:32,116 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:58:39,673 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:58:52,139 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:58:52,142 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 05:58:52,142 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-no-state-var-access-in-loop
+2024-11-11 05:58:52,143 - INFO - 获取修复提示，规则: @performance/hp-arkui-no-state-var-access-in-loop
+2024-11-11 05:58:52,665 - INFO - 缺陷修复建议生成完成
+2024-11-11 05:59:03,548 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:59:06,961 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:59:17,455 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:59:17,459 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 05:59:17,459 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-no-stringify-in-lazyforeach-key-generator
+2024-11-11 05:59:17,459 - INFO - 获取修复提示，规则: @performance/hp-arkui-no-stringify-in-lazyforeach-key-generator
+2024-11-11 05:59:18,016 - INFO - 缺陷修复建议生成完成
+2024-11-11 05:59:37,323 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:59:47,147 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:59:53,218 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 05:59:53,221 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 05:59:53,221 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-reduce-pangesture-distance
+2024-11-11 05:59:53,222 - INFO - 获取修复提示，规则: @performance/hp-arkui-reduce-pangesture-distance
+2024-11-11 05:59:53,704 - INFO - 缺陷修复建议生成完成
+2024-11-11 05:59:56,808 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:00:04,260 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:00:13,895 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:00:23,351 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:00:31,814 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:00:31,817 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 06:00:31,817 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:00:31,818 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:00:32,312 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:00:32,312 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:00:32,586 - INFO - 处理第3个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:00:32,586 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:00:32,915 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:00:36,675 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:00:41,655 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:00:47,212 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:00:51,006 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:00:56,405 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:01:04,868 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:01:10,647 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:01:17,498 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:01:26,300 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:01:26,303 - INFO - 开始修复多个缺陷，共5个缺陷
+2024-11-11 06:01:26,304 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:01:26,304 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:01:26,807 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:01:26,807 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:01:27,100 - INFO - 处理第3个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:01:27,100 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:01:27,392 - INFO - 处理第4个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:01:27,393 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:01:27,688 - INFO - 处理第5个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:01:27,688 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:01:28,015 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:01:32,770 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:01:36,769 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:01:41,713 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:01:46,629 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:01:50,981 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:01:55,155 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:02:03,847 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:02:03,850 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:02:03,850 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-redundant-state-var
+2024-11-11 06:02:03,850 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-redundant-state-var
+2024-11-11 06:02:04,360 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:02:08,713 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:02:29,174 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:02:37,009 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:02:37,012 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:02:37,012 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 06:02:37,012 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 06:02:37,533 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:02:44,960 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:02:49,143 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:02:57,082 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:02:57,085 - ERROR - JSON解析错误: Expecting value: line 15 column 50 (char 447)
+2024-11-11 06:03:03,908 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:03:03,911 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 06:07:19,534 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:07:19,549 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:07:19,549 - INFO - 处理第1个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 06:07:19,549 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 06:07:23,487 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:07:27,210 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:07:30,164 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:07:35,407 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:07:35,410 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:07:35,410 - INFO - 处理第1个缺陷，规则: @performance/foreach-args-check
+2024-11-11 06:07:35,411 - INFO - 获取修复提示，规则: @performance/foreach-args-check
+2024-11-11 06:07:35,898 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:07:39,683 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:07:41,619 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:07:46,071 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:07:46,074 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:07:46,074 - INFO - 处理第1个缺陷，规则: @performance/high-frequency-log-check
+2024-11-11 06:07:46,074 - INFO - 获取修复提示，规则: @performance/high-frequency-log-check
+2024-11-11 06:07:46,547 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:07:48,650 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:07:50,453 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:07:53,735 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:07:59,659 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:07:59,662 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 06:07:59,662 - INFO - 处理第1个缺陷，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 06:07:59,662 - INFO - 获取修复提示，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 06:08:00,127 - INFO - 处理第2个缺陷，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 06:08:00,128 - INFO - 获取修复提示，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 06:08:00,385 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:08:02,674 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:08:04,321 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:08:06,242 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:08:10,812 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:08:10,815 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:08:10,815 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 06:08:10,815 - INFO - 获取修复提示，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 06:08:11,287 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:08:16,003 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:08:16,006 - ERROR - JSON解析错误: Unterminated string starting at: line 2 column 19 (char 20)
+2024-11-11 06:08:17,509 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:08:28,340 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:08:28,343 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:08:28,344 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse
+2024-11-11 06:08:28,344 - INFO - 获取修复提示，规则: @performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse
+2024-11-11 06:08:28,860 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:08:41,256 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:08:50,914 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:08:57,742 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:04,294 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:04,297 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 06:09:04,297 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 06:09:04,298 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 06:09:04,797 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-combine-same-arg-animateto
+2024-11-11 06:09:04,798 - INFO - 获取修复提示，规则: @performance/hp-arkui-combine-same-arg-animateto
+2024-11-11 06:09:05,114 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:09:08,223 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:13,230 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:17,575 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:21,886 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:21,889 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:09:21,889 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-image-async-load
+2024-11-11 06:09:21,889 - INFO - 获取修复提示，规则: @performance/hp-arkui-image-async-load
+2024-11-11 06:09:22,376 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:09:24,752 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:26,786 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:30,563 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:30,566 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:09:30,566 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-load-on-demand
+2024-11-11 06:09:30,566 - INFO - 获取修复提示，规则: @performance/hp-arkui-load-on-demand
+2024-11-11 06:09:31,044 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:09:37,011 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:39,541 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:44,604 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:44,607 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:09:44,607 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-no-func-as-arg-for-reusable-component
+2024-11-11 06:09:44,607 - INFO - 获取修复提示，规则: @performance/hp-arkui-no-func-as-arg-for-reusable-component
+2024-11-11 06:09:45,091 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:09:48,983 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:54,541 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:58,869 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:09:58,872 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:09:58,872 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-no-state-var-access-in-loop
+2024-11-11 06:09:58,872 - INFO - 获取修复提示，规则: @performance/hp-arkui-no-state-var-access-in-loop
+2024-11-11 06:09:59,346 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:10:02,380 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:10:05,169 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:10:15,987 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:10:15,990 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:10:15,991 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-no-stringify-in-lazyforeach-key-generator
+2024-11-11 06:10:15,991 - INFO - 获取修复提示，规则: @performance/hp-arkui-no-stringify-in-lazyforeach-key-generator
+2024-11-11 06:10:16,471 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:10:21,483 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:10:29,514 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:10:38,095 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:10:38,098 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:10:38,098 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-reduce-pangesture-distance
+2024-11-11 06:10:38,098 - INFO - 获取修复提示，规则: @performance/hp-arkui-reduce-pangesture-distance
+2024-11-11 06:10:38,566 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:10:41,161 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:10:46,285 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:10:53,257 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:11:05,527 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:11:18,265 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:11:18,268 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 06:11:18,268 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:11:18,268 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:11:18,883 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:11:18,884 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:11:19,193 - INFO - 处理第3个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:11:19,193 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:11:19,484 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:11:25,543 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:11:30,381 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:11:35,283 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:11:38,400 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:11:42,844 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:11:51,602 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:11:55,869 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:00,404 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:05,385 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:05,388 - INFO - 开始修复多个缺陷，共5个缺陷
+2024-11-11 06:12:05,389 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:12:05,389 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:12:05,886 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:12:05,886 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:12:06,163 - INFO - 处理第3个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:12:06,163 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:12:06,533 - INFO - 处理第4个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:12:06,533 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:12:06,808 - INFO - 处理第5个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:12:06,809 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:12:07,082 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:12:10,372 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:12,522 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:15,624 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:18,244 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:20,671 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:23,559 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:28,355 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:28,359 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:12:28,359 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-redundant-state-var
+2024-11-11 06:12:28,359 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-redundant-state-var
+2024-11-11 06:12:28,847 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:12:31,712 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:34,330 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:39,261 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:39,264 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:12:39,264 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 06:12:39,264 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 06:12:39,758 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:12:43,631 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:46,687 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:50,490 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:54,355 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:12:54,357 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 06:12:54,357 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-replace-nested-reusable-component-by-builder
+2024-11-11 06:12:54,357 - INFO - 获取修复提示，规则: @performance/hp-arkui-replace-nested-reusable-component-by-builder
+2024-11-11 06:12:54,821 - INFO - 处理第2个缺陷，规则: @performance/multiple-associations-state-var-check
+2024-11-11 06:12:54,822 - INFO - 获取修复提示，规则: @performance/multiple-associations-state-var-check
+2024-11-11 06:12:55,107 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:12:59,236 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:13:13,051 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:13:17,953 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:13:28,853 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:13:28,857 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:13:28,857 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-set-cache-count-for-lazyforeach-grid
+2024-11-11 06:13:28,857 - INFO - 获取修复提示，规则: @performance/hp-arkui-set-cache-count-for-lazyforeach-grid
+2024-11-11 06:13:29,354 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:13:33,582 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:13:38,690 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:13:46,244 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:13:46,248 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:13:46,248 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-suggest-cache-avplayer
+2024-11-11 06:13:46,248 - INFO - 获取修复提示，规则: @performance/hp-arkui-suggest-cache-avplayer
+2024-11-11 06:13:46,822 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:13:54,207 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:13:59,104 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:03,138 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:07,743 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:07,746 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 06:14:07,746 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-suggest-use-effectkit-blur
+2024-11-11 06:14:07,747 - INFO - 获取修复提示，规则: @performance/hp-arkui-suggest-use-effectkit-blur
+2024-11-11 06:14:08,234 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-suggest-use-effectkit-blur
+2024-11-11 06:14:08,234 - INFO - 获取修复提示，规则: @performance/hp-arkui-suggest-use-effectkit-blur
+2024-11-11 06:14:08,503 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:14:11,484 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:13,106 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:16,009 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:20,998 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:21,001 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:14:21,002 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-attributeUpdater-control-refresh-scope
+2024-11-11 06:14:21,002 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-attributeUpdater-control-refresh-scope
+2024-11-11 06:14:21,475 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:14:24,060 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:27,821 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:32,137 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:32,172 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:14:32,172 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-grid-layout-options
+2024-11-11 06:14:32,172 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-grid-layout-options
+2024-11-11 06:14:32,645 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:14:36,120 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:39,495 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:43,551 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:47,124 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:52,509 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:14:52,512 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 06:14:52,512 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 06:14:52,512 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 06:14:52,989 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 06:14:52,989 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 06:14:53,261 - INFO - 处理第3个缺陷，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 06:14:53,261 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 06:14:53,525 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:14:57,249 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:15:02,604 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:15:10,882 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:15:14,097 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:15:24,281 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:15:24,284 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:15:24,284 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-object-link-to-replace-prop
+2024-11-11 06:15:24,284 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-object-link-to-replace-prop
+2024-11-11 06:15:24,761 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:15:27,064 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:15:27,068 - ERROR - JSON解析错误: Unterminated string starting at: line 2 column 19 (char 20)
+2024-11-11 06:15:30,681 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:15:38,454 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:15:38,457 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:15:38,457 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-onAnimationStart-for-swiper-preload
+2024-11-11 06:15:38,457 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-onAnimationStart-for-swiper-preload
+2024-11-11 06:15:38,931 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:15:42,491 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:15:47,109 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:15:57,813 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:15:57,847 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:15:57,847 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-row-column-to-replace-flex
+2024-11-11 06:15:57,847 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-row-column-to-replace-flex
+2024-11-11 06:15:58,380 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:16:02,953 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:16:06,046 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:16:10,522 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:16:10,525 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:16:10,526 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-scale-to-replace-attr-animateto
+2024-11-11 06:16:10,526 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-scale-to-replace-attr-animateto
+2024-11-11 06:16:11,049 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:16:16,593 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:16:16,596 - ERROR - JSON解析错误: Unterminated string starting at: line 2 column 19 (char 20)
+2024-11-11 06:16:19,024 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:16:25,026 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:16:25,030 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:16:25,030 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-taskpool-for-web-request
+2024-11-11 06:16:25,030 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-taskpool-for-web-request
+2024-11-11 06:16:25,510 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:16:28,803 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:16:32,376 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:16:37,490 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:16:37,507 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:16:37,507 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 06:16:37,507 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 06:16:38,024 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:16:42,297 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:16:46,137 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:16:52,634 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:16:52,637 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:16:52,637 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-word-break-to-replace-zero-width-space
+2024-11-11 06:16:52,637 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-word-break-to-replace-zero-width-space
+2024-11-11 06:16:53,126 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:16:55,465 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:16:58,028 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:03,924 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:03,927 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:17:03,927 - INFO - 处理第1个缺陷，规则: @performance/hp-performance-no-closures
+2024-11-11 06:17:03,927 - INFO - 获取修复提示，规则: @performance/hp-performance-no-closures
+2024-11-11 06:17:04,406 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:17:06,671 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:09,305 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:14,656 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:14,659 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:17:14,659 - INFO - 处理第1个缺陷，规则: @performance/lottie-animation-destroy-check
+2024-11-11 06:17:14,659 - INFO - 获取修复提示，规则: @performance/lottie-animation-destroy-check
+2024-11-11 06:17:15,558 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:17:21,616 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:25,164 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:29,811 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:29,815 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:17:29,815 - INFO - 处理第1个缺陷，规则: @performance/multiple-associations-state-var-check
+2024-11-11 06:17:29,815 - INFO - 获取修复提示，规则: @performance/multiple-associations-state-var-check
+2024-11-11 06:17:30,296 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:17:34,243 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:37,834 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:41,288 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:41,292 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:17:41,292 - INFO - 处理第1个缺陷，规则: @performance/no-high-loaded-frame-rate-range
+2024-11-11 06:17:41,292 - INFO - 获取修复提示，规则: @performance/no-high-loaded-frame-rate-range
+2024-11-11 06:17:41,769 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:17:44,049 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:46,517 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:49,961 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:53,764 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:53,768 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 06:17:53,768 - INFO - 处理第1个缺陷，规则: @performance/number-init-check
+2024-11-11 06:17:53,768 - INFO - 获取修复提示，规则: @performance/number-init-check
+2024-11-11 06:17:54,290 - INFO - 处理第2个缺陷，规则: @performance/number-init-check
+2024-11-11 06:17:54,291 - INFO - 获取修复提示，规则: @performance/number-init-check
+2024-11-11 06:17:54,577 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:17:57,339 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:17:59,234 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:01,121 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:05,478 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:09,837 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:13,547 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:13,550 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 06:18:13,550 - INFO - 处理第1个缺陷，规则: @performance/sparse-array-check
+2024-11-11 06:18:13,550 - INFO - 获取修复提示，规则: @performance/sparse-array-check
+2024-11-11 06:18:14,064 - INFO - 处理第2个缺陷，规则: @performance/sparse-array-check
+2024-11-11 06:18:14,065 - INFO - 获取修复提示，规则: @performance/sparse-array-check
+2024-11-11 06:18:14,651 - INFO - 处理第3个缺陷，规则: @performance/sparse-array-check
+2024-11-11 06:18:14,652 - INFO - 获取修复提示，规则: @performance/sparse-array-check
+2024-11-11 06:18:14,935 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:18:17,698 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:19,608 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:22,339 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:23,972 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:30,178 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:30,181 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:18:30,181 - INFO - 处理第1个缺陷，规则: @performance/timezone-interface-check
+2024-11-11 06:18:30,181 - INFO - 获取修复提示，规则: @performance/timezone-interface-check
+2024-11-11 06:18:30,715 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:18:33,666 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:35,776 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:40,622 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:44,449 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:44,452 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 06:18:44,452 - INFO - 处理第1个缺陷，规则: @performance/typed-array-check
+2024-11-11 06:18:44,452 - INFO - 获取修复提示，规则: @performance/typed-array-check
+2024-11-11 06:18:44,986 - INFO - 处理第2个缺陷，规则: @performance/typed-array-check
+2024-11-11 06:18:44,986 - INFO - 获取修复提示，规则: @performance/typed-array-check
+2024-11-11 06:18:45,286 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:18:48,223 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:51,287 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:18:53,243 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:19:00,554 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:19:00,557 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:19:00,557 - INFO - 处理第1个缺陷，规则: @performance/waterflow-data-preload-check
+2024-11-11 06:19:00,557 - INFO - 获取修复提示，规则: @performance/waterflow-data-preload-check
+2024-11-11 06:19:01,126 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:19:06,357 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:19:11,791 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:21:37,492 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:21:37,506 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:21:37,506 - INFO - 处理第1个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 06:21:37,506 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 06:21:41,417 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:21:45,846 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:21:56,426 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:22:04,868 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:22:04,871 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:22:04,871 - INFO - 处理第1个缺陷，规则: @performance/foreach-args-check
+2024-11-11 06:22:04,871 - INFO - 获取修复提示，规则: @performance/foreach-args-check
+2024-11-11 06:22:05,373 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:22:11,149 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:22:14,029 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:22:22,819 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:22:22,822 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:22:22,822 - INFO - 处理第1个缺陷，规则: @performance/high-frequency-log-check
+2024-11-11 06:22:22,822 - INFO - 获取修复提示，规则: @performance/high-frequency-log-check
+2024-11-11 06:22:23,304 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:22:26,362 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:22:29,166 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:22:35,723 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:22:41,199 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:22:41,202 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 06:22:41,202 - INFO - 处理第1个缺陷，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 06:22:41,203 - INFO - 获取修复提示，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 06:22:41,666 - INFO - 处理第2个缺陷，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 06:22:41,667 - INFO - 获取修复提示，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 06:22:41,924 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:22:44,542 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:22:46,774 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:22:49,065 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:22:55,447 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:22:55,450 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:22:55,450 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 06:22:55,450 - INFO - 获取修复提示，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 06:22:55,932 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:22:58,840 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:23:00,909 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:23:09,256 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:23:09,259 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:23:09,259 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse
+2024-11-11 06:23:09,260 - INFO - 获取修复提示，规则: @performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse
+2024-11-11 06:23:09,779 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:23:15,922 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:23:27,494 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:23:35,695 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:23:43,920 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:23:43,924 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 06:23:43,924 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 06:23:43,924 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 06:23:44,450 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-combine-same-arg-animateto
+2024-11-11 06:23:44,450 - INFO - 获取修复提示，规则: @performance/hp-arkui-combine-same-arg-animateto
+2024-11-11 06:23:44,735 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:23:56,495 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:24:05,302 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:24:10,012 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:24:15,577 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:24:15,580 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:24:15,580 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-image-async-load
+2024-11-11 06:24:15,580 - INFO - 获取修复提示，规则: @performance/hp-arkui-image-async-load
+2024-11-11 06:24:16,061 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:24:20,528 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:24:22,933 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:24:33,544 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:24:33,557 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:24:33,557 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-load-on-demand
+2024-11-11 06:24:33,557 - INFO - 获取修复提示，规则: @performance/hp-arkui-load-on-demand
+2024-11-11 06:24:34,058 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:24:41,369 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:24:47,548 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:24:56,543 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:24:56,546 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:24:56,546 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-no-func-as-arg-for-reusable-component
+2024-11-11 06:24:56,546 - INFO - 获取修复提示，规则: @performance/hp-arkui-no-func-as-arg-for-reusable-component
+2024-11-11 06:24:57,061 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:25:05,157 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:25:13,340 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:25:22,619 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:25:22,623 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:25:22,623 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-no-state-var-access-in-loop
+2024-11-11 06:25:22,623 - INFO - 获取修复提示，规则: @performance/hp-arkui-no-state-var-access-in-loop
+2024-11-11 06:25:23,150 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:25:30,833 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:25:35,018 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:25:43,442 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:25:43,443 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:25:43,443 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-no-stringify-in-lazyforeach-key-generator
+2024-11-11 06:25:43,444 - INFO - 获取修复提示，规则: @performance/hp-arkui-no-stringify-in-lazyforeach-key-generator
+2024-11-11 06:25:43,943 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:25:48,151 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:25:56,913 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:26:03,684 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:26:03,687 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:26:03,687 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-reduce-pangesture-distance
+2024-11-11 06:26:03,687 - INFO - 获取修复提示，规则: @performance/hp-arkui-reduce-pangesture-distance
+2024-11-11 06:26:04,348 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:26:07,159 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:26:24,105 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:26:30,858 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:26:36,686 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:26:45,388 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:26:45,392 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 06:26:45,392 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:26:45,392 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:26:45,887 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:26:45,887 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:26:46,168 - INFO - 处理第3个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:26:46,168 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:26:46,446 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:26:50,077 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:26:53,447 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:27:01,060 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:27:04,814 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:27:11,339 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:27:18,107 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:27:24,951 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:27:24,954 - ERROR - JSON解析错误: Expecting value: line 8 column 27 (char 216)
+2024-11-11 06:27:32,737 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:27:38,752 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:27:38,756 - INFO - 开始修复多个缺陷，共5个缺陷
+2024-11-11 06:27:38,756 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:27:38,756 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:27:39,246 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:27:39,246 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:27:39,519 - INFO - 处理第3个缺陷，跳过无效数据
+2024-11-11 06:27:39,519 - INFO - 处理第4个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:27:39,520 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:27:39,791 - INFO - 处理第5个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:27:39,791 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 06:27:40,068 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:27:47,455 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:27:51,263 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:27:56,910 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:28:00,673 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:28:04,648 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:28:10,322 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:28:10,325 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:28:10,325 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-redundant-state-var
+2024-11-11 06:28:10,326 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-redundant-state-var
+2024-11-11 06:28:10,827 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:28:15,639 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:28:20,462 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:28:28,400 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:28:28,403 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:28:28,403 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 06:28:28,403 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 06:28:28,928 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:28:31,886 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:28:35,304 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:28:42,606 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:28:52,671 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:28:52,674 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 06:28:52,674 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-replace-nested-reusable-component-by-builder
+2024-11-11 06:28:52,674 - INFO - 获取修复提示，规则: @performance/hp-arkui-replace-nested-reusable-component-by-builder
+2024-11-11 06:28:53,169 - INFO - 处理第2个缺陷，规则: @performance/multiple-associations-state-var-check
+2024-11-11 06:28:53,169 - INFO - 获取修复提示，规则: @performance/multiple-associations-state-var-check
+2024-11-11 06:28:53,703 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:28:57,815 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:29:03,150 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:29:15,013 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:29:22,170 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:29:22,174 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:29:22,174 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-set-cache-count-for-lazyforeach-grid
+2024-11-11 06:29:22,174 - INFO - 获取修复提示，规则: @performance/hp-arkui-set-cache-count-for-lazyforeach-grid
+2024-11-11 06:29:22,730 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:29:27,689 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:29:33,810 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:29:41,576 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:29:41,579 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:29:41,579 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-suggest-cache-avplayer
+2024-11-11 06:29:41,580 - INFO - 获取修复提示，规则: @performance/hp-arkui-suggest-cache-avplayer
+2024-11-11 06:29:42,104 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:29:58,405 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:30:05,592 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:30:14,242 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:30:21,646 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:30:21,650 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 06:30:21,650 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-suggest-use-effectkit-blur
+2024-11-11 06:30:21,650 - INFO - 获取修复提示，规则: @performance/hp-arkui-suggest-use-effectkit-blur
+2024-11-11 06:30:22,176 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-suggest-use-effectkit-blur
+2024-11-11 06:30:22,177 - INFO - 获取修复提示，规则: @performance/hp-arkui-suggest-use-effectkit-blur
+2024-11-11 06:30:22,498 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:30:29,287 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:30:39,109 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:30:44,516 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:30:52,115 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:30:52,119 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:30:52,119 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-attributeUpdater-control-refresh-scope
+2024-11-11 06:30:52,119 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-attributeUpdater-control-refresh-scope
+2024-11-11 06:30:52,632 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:30:59,170 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:31:05,788 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:31:16,594 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:31:16,597 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:31:16,597 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-grid-layout-options
+2024-11-11 06:31:16,597 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-grid-layout-options
+2024-11-11 06:31:17,088 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:31:22,978 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:31:30,782 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:31:38,955 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:31:47,934 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:31:52,901 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:31:52,904 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 06:31:52,904 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 06:31:52,904 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 06:31:53,842 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 06:31:53,842 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 06:31:54,147 - INFO - 处理第3个缺陷，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 06:31:54,147 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 06:31:55,480 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:31:59,153 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:32:09,388 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:32:15,136 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:32:19,283 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:32:25,225 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:32:25,228 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:32:25,228 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-object-link-to-replace-prop
+2024-11-11 06:32:25,228 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-object-link-to-replace-prop
+2024-11-11 06:32:25,915 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:32:29,394 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:32:35,834 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:32:42,446 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:32:42,449 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:32:42,449 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-onAnimationStart-for-swiper-preload
+2024-11-11 06:32:42,449 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-onAnimationStart-for-swiper-preload
+2024-11-11 06:32:42,935 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:32:49,456 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:32:54,098 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:33:06,173 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:33:06,176 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:33:06,176 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-row-column-to-replace-flex
+2024-11-11 06:33:06,176 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-row-column-to-replace-flex
+2024-11-11 06:33:06,688 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:33:24,946 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:33:30,951 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:33:46,019 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:33:46,023 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:33:46,023 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-scale-to-replace-attr-animateto
+2024-11-11 06:33:46,023 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-scale-to-replace-attr-animateto
+2024-11-11 06:33:46,657 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:33:52,497 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:33:57,508 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:34:03,607 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:34:03,611 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:34:03,611 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-taskpool-for-web-request
+2024-11-11 06:34:03,611 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-taskpool-for-web-request
+2024-11-11 06:34:04,097 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:34:08,627 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:34:12,627 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:34:29,454 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:34:29,457 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:34:29,457 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 06:34:29,457 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 06:34:30,001 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:34:39,319 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:34:42,512 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:34:48,829 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:34:48,833 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:34:48,833 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-word-break-to-replace-zero-width-space
+2024-11-11 06:34:48,833 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-word-break-to-replace-zero-width-space
+2024-11-11 06:34:49,328 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:34:55,830 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:34:58,439 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:35:08,300 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:35:08,303 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:35:08,303 - INFO - 处理第1个缺陷，规则: @performance/hp-performance-no-closures
+2024-11-11 06:35:08,304 - INFO - 获取修复提示，规则: @performance/hp-performance-no-closures
+2024-11-11 06:35:08,791 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:35:13,555 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:35:18,478 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:35:34,042 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:35:34,045 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:35:34,045 - INFO - 处理第1个缺陷，规则: @performance/lottie-animation-destroy-check
+2024-11-11 06:35:34,046 - INFO - 获取修复提示，规则: @performance/lottie-animation-destroy-check
+2024-11-11 06:35:34,800 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:35:52,561 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:36:00,696 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:36:07,019 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:36:07,022 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:36:07,023 - INFO - 处理第1个缺陷，规则: @performance/multiple-associations-state-var-check
+2024-11-11 06:36:07,023 - INFO - 获取修复提示，规则: @performance/multiple-associations-state-var-check
+2024-11-11 06:36:07,719 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:36:14,806 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:36:21,376 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:36:27,599 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:36:27,602 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:36:27,602 - INFO - 处理第1个缺陷，规则: @performance/no-high-loaded-frame-rate-range
+2024-11-11 06:36:27,602 - INFO - 获取修复提示，规则: @performance/no-high-loaded-frame-rate-range
+2024-11-11 06:36:28,130 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:36:31,754 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:36:35,777 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:36:41,279 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:36:47,914 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:36:47,918 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 06:36:47,918 - INFO - 处理第1个缺陷，规则: @performance/number-init-check
+2024-11-11 06:36:47,918 - INFO - 获取修复提示，规则: @performance/number-init-check
+2024-11-11 06:36:48,393 - INFO - 处理第2个缺陷，规则: @performance/number-init-check
+2024-11-11 06:36:48,393 - INFO - 获取修复提示，规则: @performance/number-init-check
+2024-11-11 06:36:48,653 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:36:51,815 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:36:58,905 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:37:02,671 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:37:08,564 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:37:16,168 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:37:21,943 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:37:21,947 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 06:37:21,947 - INFO - 处理第1个缺陷，规则: @performance/sparse-array-check
+2024-11-11 06:37:21,947 - INFO - 获取修复提示，规则: @performance/sparse-array-check
+2024-11-11 06:37:22,452 - INFO - 处理第2个缺陷，规则: @performance/sparse-array-check
+2024-11-11 06:37:22,453 - INFO - 获取修复提示，规则: @performance/sparse-array-check
+2024-11-11 06:37:22,734 - INFO - 处理第3个缺陷，规则: @performance/sparse-array-check
+2024-11-11 06:37:22,735 - INFO - 获取修复提示，规则: @performance/sparse-array-check
+2024-11-11 06:37:23,014 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:37:26,569 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:37:29,857 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:37:33,317 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:37:35,774 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:37:42,411 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:37:42,414 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:37:42,414 - INFO - 处理第1个缺陷，规则: @performance/timezone-interface-check
+2024-11-11 06:37:42,414 - INFO - 获取修复提示，规则: @performance/timezone-interface-check
+2024-11-11 06:37:42,907 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:37:46,011 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:37:49,082 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:37:54,836 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:38:01,318 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:38:01,321 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 06:38:01,322 - INFO - 处理第1个缺陷，规则: @performance/typed-array-check
+2024-11-11 06:38:01,322 - INFO - 获取修复提示，规则: @performance/typed-array-check
+2024-11-11 06:38:01,813 - INFO - 处理第2个缺陷，规则: @performance/typed-array-check
+2024-11-11 06:38:01,813 - INFO - 获取修复提示，规则: @performance/typed-array-check
+2024-11-11 06:38:02,087 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:38:07,595 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:38:14,185 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:38:16,574 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:38:24,636 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:38:24,639 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 06:38:24,640 - INFO - 处理第1个缺陷，规则: @performance/waterflow-data-preload-check
+2024-11-11 06:38:24,640 - INFO - 获取修复提示，规则: @performance/waterflow-data-preload-check
+2024-11-11 06:38:25,168 - INFO - 缺陷修复建议生成完成
+2024-11-11 06:38:34,816 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 06:38:41,584 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:04:51,012 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:05:01,507 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:05:01,511 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 07:05:01,511 - INFO - 处理第1个缺陷，规则: @performance/hp-performance-no-closures
+2024-11-11 07:05:01,511 - INFO - 获取修复提示，规则: @performance/hp-performance-no-closures
+2024-11-11 07:05:03,295 - INFO - 处理第2个缺陷，规则: @performance/hp-performance-no-closures
+2024-11-11 07:05:03,296 - INFO - 获取修复提示，规则: @performance/hp-performance-no-closures
+2024-11-11 07:05:03,622 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:05:16,095 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:05:22,212 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:05:42,531 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:05:50,226 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:05:50,228 - ERROR - JSON解析错误: Expecting value: line 14 column 23 (char 522)
+2024-11-11 07:05:50,229 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:05:50,229 - INFO - 处理第1个缺陷，跳过无效数据
+2024-11-11 07:05:50,229 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:06:20,594 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:06:32,972 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:06:51,063 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:07:05,172 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:07:05,175 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 07:07:05,175 - INFO - 处理第1个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:07:05,175 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:07:06,545 - INFO - 处理第2个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:07:06,545 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:07:07,021 - INFO - 处理第3个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:07:07,021 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:07:07,373 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:07:21,376 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:07:34,966 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:07:52,244 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:09:33,224 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 524 "
+2024-11-11 07:09:33,226 - INFO - Retrying request to /chat/completions in 0.469968 seconds
+2024-11-11 07:11:14,300 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 524 "
+2024-11-11 07:11:14,305 - INFO - Retrying request to /chat/completions in 0.920661 seconds
+2024-11-11 07:12:55,723 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 524 "
+2024-11-11 07:12:55,727 - ERROR - API调用第1次失败: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+
+
+<title>xiaoai.plus | 524: A timeout occurred</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/main.css" />
+
+
+</head>
+<body>
+<div id="cf-wrapper">
+    <div id="cf-error-details" class="p-0">
+        <header class="mx-auto pt-10 lg:pt-6 lg:px-8 w-240 lg:w-full mb-8">
+            <h1 class="inline-block sm:block sm:mb-2 font-light text-60 lg:text-4xl text-black-dark leading-tight mr-2">
+              <span class="inline-block">A timeout occurred</span>
+              <span class="code-label">Error code 524</span>
+            </h1>
+            <div>
+               Visit <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_524&utm_campaign=xiaoai.plus" target="_blank" rel="noopener noreferrer">cloudflare.com</a> for more information.
+            </div>
+            <div class="mt-3">2024-11-11 07:12:55 UTC</div>
+        </header>
+        <div class="my-8 bg-gradient-gray">
+            <div class="w-240 lg:w-full mx-auto">
+                <div class="clearfix md:px-8">
+                  
+<div id="cf-browser-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-browser block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">You</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Browser
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_524&utm_campaign=xiaoai.plus" target="_blank" rel="noopener noreferrer">
+    <span class="cf-icon-cloud block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    </a>
+  </div>
+  <span class="md:block w-full truncate">London</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_524&utm_campaign=xiaoai.plus" target="_blank" rel="noopener noreferrer">
+    Cloudflare
+    </a>
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-error-source relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-server block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-error w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">xiaoai.plus</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Host
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-red-error">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="w-240 lg:w-full mx-auto mb-8 lg:px-8">
+            <div class="clearfix">
+                <div class="w-1/2 md:w-full float-left pr-6 md:pb-10 md:pr-0 leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What happened?</h2>
+                    <p>The origin web server timed out responding to this request.</p>
+                </div>
+                <div class="w-1/2 md:w-full float-left leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What can I do?</h2>
+                          <h3 class="text-15 font-semibold mb-2">If you're a visitor of this website:</h3>
+      <p class="mb-6">Please try again in a few minutes.</p>
+
+      <h3 class="text-15 font-semibold mb-2">If you're the owner of this website:</h3>
+      <p><span>The connection to the origin web server was made, but the origin web server timed out before responding. The likely cause is an overloaded background task, database or application, stressing the resources on your web server. To resolve, please work with your hosting provider or web development team to free up resources for your database or overloaded application.</span> <a rel="noopener noreferrer" href="https://support.cloudflare.com/hc/en-us/articles/200171926-Error-524">Additional troubleshooting information here.</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300">
+  <p class="text-13">
+    <span class="cf-footer-item sm:block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold">8e0c7798cf13cd3e</strong></span>
+    <span class="cf-footer-separator sm:hidden">&bull;</span>
+    <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
+      Your IP:
+      <button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn">Click to reveal</button>
+      <span class="hidden" id="cf-footer-ip">124.127.236.111</span>
+      <span class="cf-footer-separator sm:hidden">&bull;</span>
+    </span>
+    <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_524&utm_campaign=xiaoai.plus" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+  <script>(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();</script>
+</div><!-- /.error-footer -->
+
+
+    </div>
+</div>
+</body>
+</html>
+2024-11-11 07:14:37,728 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 524 "
+2024-11-11 07:14:37,730 - INFO - Retrying request to /chat/completions in 0.465941 seconds
+2024-11-11 07:16:15,902 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:16:24,182 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:16:24,185 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 07:16:24,185 - INFO - 处理第1个缺陷，规则: @performance/hp-performance-no-closures
+2024-11-11 07:16:24,186 - INFO - 获取修复提示，规则: @performance/hp-performance-no-closures
+2024-11-11 07:16:27,143 - INFO - 处理第2个缺陷，规则: @performance/hp-performance-no-closures
+2024-11-11 07:16:27,143 - INFO - 获取修复提示，规则: @performance/hp-performance-no-closures
+2024-11-11 07:16:27,443 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:17:08,937 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:17:15,975 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:17:38,868 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:17:46,835 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:17:46,839 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:17:46,839 - INFO - 处理第1个缺陷，规则: @performance/number-init-check
+2024-11-11 07:17:46,839 - INFO - 获取修复提示，规则: @performance/number-init-check
+2024-11-11 07:17:48,090 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:17:54,613 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:18:25,735 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:18:35,868 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:18:49,467 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:19:02,271 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:19:02,274 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 07:19:02,275 - INFO - 处理第1个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:19:02,275 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:19:03,583 - INFO - 处理第2个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:19:03,583 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:19:03,941 - INFO - 处理第3个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:19:03,942 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:19:04,304 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:19:26,069 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:19:42,026 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:20:00,395 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:21:41,253 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 524 "
+2024-11-11 07:21:41,254 - INFO - Retrying request to /chat/completions in 0.479521 seconds
+2024-11-11 07:23:22,202 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 524 "
+2024-11-11 07:23:22,205 - INFO - Retrying request to /chat/completions in 0.948262 seconds
+2024-11-11 07:26:18,681 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:26:18,694 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:26:18,694 - INFO - 处理第1个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:26:18,694 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:26:20,213 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:26:24,805 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:26:27,071 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:26:36,499 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:26:36,503 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:26:36,503 - INFO - 处理第1个缺陷，规则: @performance/foreach-args-check
+2024-11-11 07:26:36,503 - INFO - 获取修复提示，规则: @performance/foreach-args-check
+2024-11-11 07:26:37,047 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:26:41,414 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:26:46,184 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:26:53,545 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:26:53,549 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:26:53,549 - INFO - 处理第1个缺陷，规则: @performance/high-frequency-log-check
+2024-11-11 07:26:53,549 - INFO - 获取修复提示，规则: @performance/high-frequency-log-check
+2024-11-11 07:26:54,024 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:26:56,335 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:27:05,189 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:27:11,201 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:27:18,328 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:27:18,331 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 07:27:18,332 - INFO - 处理第1个缺陷，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 07:27:18,332 - INFO - 获取修复提示，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 07:27:18,824 - INFO - 处理第2个缺陷，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 07:27:18,825 - INFO - 获取修复提示，规则: @performance/hp-arkts-no-use-any-export-other
+2024-11-11 07:27:19,086 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:27:28,728 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:27:31,613 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:27:33,473 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:27:38,162 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:27:38,165 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:27:38,165 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 07:27:38,165 - INFO - 获取修复提示，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 07:27:38,671 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:27:44,542 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:27:46,728 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:27:54,479 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:27:54,482 - ERROR - JSON解析错误: Expecting value: line 16 column 54 (char 548)
+2024-11-11 07:27:54,482 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:27:54,482 - INFO - 处理第1个缺陷，跳过无效数据
+2024-11-11 07:27:54,483 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:28:01,083 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:28:01,099 - ERROR - JSON解析错误: Expecting value: line 11 column 43 (char 414)
+2024-11-11 07:28:05,597 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:28:10,955 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:28:10,958 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 07:28:28,233 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:28:39,199 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:28:39,202 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 07:28:39,202 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 07:28:39,202 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 07:28:41,858 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-combine-same-arg-animateto
+2024-11-11 07:28:41,859 - INFO - 获取修复提示，规则: @performance/hp-arkui-combine-same-arg-animateto
+2024-11-11 07:28:42,199 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:28:58,060 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:29:07,734 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:29:12,261 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:29:17,543 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:29:17,546 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:29:17,546 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-image-async-load
+2024-11-11 07:29:17,547 - INFO - 获取修复提示，规则: @performance/hp-arkui-image-async-load
+2024-11-11 07:29:18,122 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:29:22,280 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:29:26,018 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:29:32,165 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:29:32,169 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:29:32,169 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-load-on-demand
+2024-11-11 07:29:32,169 - INFO - 获取修复提示，规则: @performance/hp-arkui-load-on-demand
+2024-11-11 07:29:32,739 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:29:46,508 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:29:54,891 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:30:03,355 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:30:03,359 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:30:03,359 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-no-func-as-arg-for-reusable-component
+2024-11-11 07:30:03,359 - INFO - 获取修复提示，规则: @performance/hp-arkui-no-func-as-arg-for-reusable-component
+2024-11-11 07:30:03,923 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:30:12,520 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:30:18,164 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:30:26,072 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:30:26,076 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:30:26,076 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-no-state-var-access-in-loop
+2024-11-11 07:30:26,076 - INFO - 获取修复提示，规则: @performance/hp-arkui-no-state-var-access-in-loop
+2024-11-11 07:30:26,665 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:30:38,739 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:30:42,229 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:30:49,368 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:30:49,382 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:30:49,382 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-no-stringify-in-lazyforeach-key-generator
+2024-11-11 07:30:49,382 - INFO - 获取修复提示，规则: @performance/hp-arkui-no-stringify-in-lazyforeach-key-generator
+2024-11-11 07:30:49,926 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:30:53,775 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:31:07,319 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:31:13,455 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:31:13,458 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:31:13,458 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-reduce-pangesture-distance
+2024-11-11 07:31:13,458 - INFO - 获取修复提示，规则: @performance/hp-arkui-reduce-pangesture-distance
+2024-11-11 07:31:13,984 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:31:16,183 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:31:23,708 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:31:30,246 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:31:38,190 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:31:45,282 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:31:45,285 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 07:31:45,286 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:31:45,286 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:31:45,834 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:31:45,835 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:31:46,139 - INFO - 处理第3个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:31:46,140 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:31:46,448 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:31:52,060 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:31:56,645 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:32:02,730 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:32:07,323 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:32:15,119 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:32:21,002 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:32:29,031 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:32:37,401 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:32:43,868 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:32:43,872 - INFO - 开始修复多个缺陷，共5个缺陷
+2024-11-11 07:32:43,872 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:32:43,872 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:32:44,428 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:32:44,428 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:32:44,731 - INFO - 处理第3个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:32:44,731 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:32:45,039 - INFO - 处理第4个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:32:45,040 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:32:45,341 - INFO - 处理第5个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:32:45,341 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:32:45,643 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:32:49,458 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:32:55,616 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:02,135 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:02,445 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:13,338 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:14,781 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:14,784 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 07:33:14,784 - INFO - 处理第1个缺陷，规则: @performance/hp-performance-no-closures
+2024-11-11 07:33:14,784 - INFO - 获取修复提示，规则: @performance/hp-performance-no-closures
+2024-11-11 07:33:16,092 - INFO - 处理第2个缺陷，规则: @performance/hp-performance-no-closures
+2024-11-11 07:33:16,092 - INFO - 获取修复提示，规则: @performance/hp-performance-no-closures
+2024-11-11 07:33:16,402 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:33:18,189 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:22,884 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:27,720 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:30,024 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:37,037 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:37,040 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:33:37,041 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-redundant-state-var
+2024-11-11 07:33:37,041 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-redundant-state-var
+2024-11-11 07:33:37,731 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:33:39,621 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:42,726 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:44,499 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:44,502 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:33:44,502 - INFO - 处理第1个缺陷，规则: @performance/number-init-check
+2024-11-11 07:33:44,503 - INFO - 获取修复提示，规则: @performance/number-init-check
+2024-11-11 07:33:45,022 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:33:45,995 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:48,166 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:51,664 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:51,668 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:33:51,668 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 07:33:51,668 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 07:33:52,232 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:33:56,589 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:33:59,778 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:06,400 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:07,935 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:12,552 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:19,834 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:20,128 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:20,131 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 07:34:20,131 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-replace-nested-reusable-component-by-builder
+2024-11-11 07:34:20,132 - INFO - 获取修复提示，规则: @performance/hp-arkui-replace-nested-reusable-component-by-builder
+2024-11-11 07:34:20,987 - INFO - 处理第2个缺陷，规则: @performance/multiple-associations-state-var-check
+2024-11-11 07:34:20,988 - INFO - 获取修复提示，规则: @performance/multiple-associations-state-var-check
+2024-11-11 07:34:21,545 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:34:27,179 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:30,282 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:30,285 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 07:34:30,286 - INFO - 处理第1个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:34:30,286 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:34:30,844 - INFO - 处理第2个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:34:30,844 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:34:31,195 - INFO - 处理第3个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:34:31,195 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 07:34:31,524 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:34:33,625 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:36,796 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:40,816 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:48,619 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:49,910 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:49,914 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:34:49,914 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-set-cache-count-for-lazyforeach-grid
+2024-11-11 07:34:49,914 - INFO - 获取修复提示，规则: @performance/hp-arkui-set-cache-count-for-lazyforeach-grid
+2024-11-11 07:34:50,497 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:34:55,384 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:34:56,413 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:35:04,094 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:35:17,437 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:35:17,441 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:35:17,441 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-suggest-cache-avplayer
+2024-11-11 07:35:17,441 - INFO - 获取修复提示，规则: @performance/hp-arkui-suggest-cache-avplayer
+2024-11-11 07:35:18,293 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:35:28,126 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:35:36,139 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:35:42,092 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:35:47,019 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:35:47,022 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 07:35:47,022 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-suggest-use-effectkit-blur
+2024-11-11 07:35:47,022 - INFO - 获取修复提示，规则: @performance/hp-arkui-suggest-use-effectkit-blur
+2024-11-11 07:35:47,567 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-suggest-use-effectkit-blur
+2024-11-11 07:35:47,568 - INFO - 获取修复提示，规则: @performance/hp-arkui-suggest-use-effectkit-blur
+2024-11-11 07:35:47,864 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:35:51,077 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:35:52,652 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:35:53,577 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:35:57,677 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:35:57,862 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:02,695 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:07,504 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:07,508 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:36:07,508 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-attributeUpdater-control-refresh-scope
+2024-11-11 07:36:07,508 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-attributeUpdater-control-refresh-scope
+2024-11-11 07:36:08,065 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:36:09,077 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:09,080 - ERROR - JSON解析错误: Expecting ',' delimiter: line 17 column 18 (char 462)
+2024-11-11 07:36:12,589 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:18,847 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:21,539 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:26,819 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:26,823 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:36:26,823 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-grid-layout-options
+2024-11-11 07:36:26,823 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-grid-layout-options
+2024-11-11 07:36:27,390 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:36:27,951 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:32,701 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:32,703 - INFO - 开始修复多个缺陷，共5个缺陷
+2024-11-11 07:36:32,704 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 07:36:32,704 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 07:36:34,422 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 07:36:34,423 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 07:36:34,703 - INFO - 处理第3个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:36:34,703 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 07:36:34,987 - INFO - 处理第4个缺陷，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 07:36:34,987 - INFO - 获取修复提示，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 07:36:35,270 - INFO - 处理第5个缺陷，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 07:36:35,270 - INFO - 获取修复提示，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 07:36:35,535 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:36:36,368 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:38,782 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:43,038 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:43,372 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:52,297 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:53,583 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:56,308 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:36:58,160 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:00,503 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:05,930 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:05,933 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 07:37:05,933 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 07:37:05,933 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 07:37:06,505 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 07:37:06,505 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 07:37:06,803 - INFO - 处理第3个缺陷，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 07:37:06,803 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-local-var-to-replace-state-var
+2024-11-11 07:37:07,251 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:37:13,674 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:16,563 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:19,436 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:19,618 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:22,948 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:25,260 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:25,263 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:37:25,263 - INFO - 处理第1个缺陷，规则: @performance/number-init-check
+2024-11-11 07:37:25,264 - INFO - 获取修复提示，规则: @performance/number-init-check
+2024-11-11 07:37:25,800 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:37:27,567 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:27,570 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:37:27,571 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-object-link-to-replace-prop
+2024-11-11 07:37:27,571 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-object-link-to-replace-prop
+2024-11-11 07:37:28,105 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:37:29,644 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:30,941 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:34,178 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:40,008 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:40,011 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:37:40,011 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-onAnimationStart-for-swiper-preload
+2024-11-11 07:37:40,011 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-onAnimationStart-for-swiper-preload
+2024-11-11 07:37:40,552 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:37:43,080 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:44,616 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:37:51,355 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:38:01,448 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:38:01,451 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:38:01,451 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-row-column-to-replace-flex
+2024-11-11 07:38:01,451 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-row-column-to-replace-flex
+2024-11-11 07:38:02,023 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:38:11,872 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:38:16,551 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:38:22,299 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:38:22,302 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:38:22,302 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-scale-to-replace-attr-animateto
+2024-11-11 07:38:22,302 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-scale-to-replace-attr-animateto
+2024-11-11 07:38:22,839 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:38:27,741 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:38:34,696 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:38:43,096 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:38:43,269 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:38:43,270 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-taskpool-for-web-request
+2024-11-11 07:38:43,270 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-taskpool-for-web-request
+2024-11-11 07:38:45,922 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:38:53,486 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:38:57,143 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:39:05,616 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:39:05,619 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:39:05,619 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 07:39:05,620 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-transition-to-replace-animateto
+2024-11-11 07:39:06,463 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:39:13,917 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:39:20,841 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:39:27,974 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:39:27,977 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:39:27,978 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-use-word-break-to-replace-zero-width-space
+2024-11-11 07:39:27,978 - INFO - 获取修复提示，规则: @performance/hp-arkui-use-word-break-to-replace-zero-width-space
+2024-11-11 07:39:28,513 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:39:32,461 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:39:34,871 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:39:45,685 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:39:45,689 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:39:45,689 - INFO - 处理第1个缺陷，规则: @performance/hp-performance-no-closures
+2024-11-11 07:39:45,689 - INFO - 获取修复提示，规则: @performance/hp-performance-no-closures
+2024-11-11 07:39:46,227 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:39:52,498 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:39:55,213 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:40:02,588 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:40:02,591 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:40:02,592 - INFO - 处理第1个缺陷，规则: @performance/lottie-animation-destroy-check
+2024-11-11 07:40:02,592 - INFO - 获取修复提示，规则: @performance/lottie-animation-destroy-check
+2024-11-11 07:40:03,175 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:40:11,552 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:40:18,126 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:40:25,026 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:40:25,030 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:40:25,030 - INFO - 处理第1个缺陷，规则: @performance/multiple-associations-state-var-check
+2024-11-11 07:40:25,030 - INFO - 获取修复提示，规则: @performance/multiple-associations-state-var-check
+2024-11-11 07:40:25,579 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:40:30,000 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:40:36,650 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:40:41,540 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:40:41,543 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:40:41,543 - INFO - 处理第1个缺陷，规则: @performance/no-high-loaded-frame-rate-range
+2024-11-11 07:40:41,543 - INFO - 获取修复提示，规则: @performance/no-high-loaded-frame-rate-range
+2024-11-11 07:40:42,078 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:40:44,801 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:40:47,883 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:40:53,692 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:41:01,471 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:41:01,475 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 07:41:01,475 - INFO - 处理第1个缺陷，规则: @performance/number-init-check
+2024-11-11 07:41:01,475 - INFO - 获取修复提示，规则: @performance/number-init-check
+2024-11-11 07:41:02,016 - INFO - 处理第2个缺陷，规则: @performance/number-init-check
+2024-11-11 07:41:02,017 - INFO - 获取修复提示，规则: @performance/number-init-check
+2024-11-11 07:41:02,312 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:41:05,080 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:41:07,015 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:41:09,917 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:41:15,426 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:41:21,188 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:41:27,522 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:41:27,526 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 07:41:27,526 - INFO - 处理第1个缺陷，规则: @performance/sparse-array-check
+2024-11-11 07:41:27,526 - INFO - 获取修复提示，规则: @performance/sparse-array-check
+2024-11-11 07:41:28,081 - INFO - 处理第2个缺陷，规则: @performance/sparse-array-check
+2024-11-11 07:41:28,081 - INFO - 获取修复提示，规则: @performance/sparse-array-check
+2024-11-11 07:41:28,391 - INFO - 处理第3个缺陷，规则: @performance/sparse-array-check
+2024-11-11 07:41:28,391 - INFO - 获取修复提示，规则: @performance/sparse-array-check
+2024-11-11 07:41:28,700 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:41:39,614 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:41:42,358 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:41:50,323 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:41:53,816 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:42:00,326 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:42:00,329 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:42:00,329 - INFO - 处理第1个缺陷，规则: @performance/timezone-interface-check
+2024-11-11 07:42:00,329 - INFO - 获取修复提示，规则: @performance/timezone-interface-check
+2024-11-11 07:42:00,862 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:42:04,082 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:42:06,528 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:42:12,837 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:42:19,057 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:42:19,061 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 07:42:19,061 - INFO - 处理第1个缺陷，规则: @performance/typed-array-check
+2024-11-11 07:42:19,061 - INFO - 获取修复提示，规则: @performance/typed-array-check
+2024-11-11 07:42:19,597 - INFO - 处理第2个缺陷，规则: @performance/typed-array-check
+2024-11-11 07:42:19,597 - INFO - 获取修复提示，规则: @performance/typed-array-check
+2024-11-11 07:42:19,894 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:42:24,690 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:42:35,655 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:42:37,905 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:42:49,621 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:42:49,624 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 07:42:49,624 - INFO - 处理第1个缺陷，规则: @performance/waterflow-data-preload-check
+2024-11-11 07:42:49,625 - INFO - 获取修复提示，规则: @performance/waterflow-data-preload-check
+2024-11-11 07:42:50,184 - INFO - 缺陷修复建议生成完成
+2024-11-11 07:42:55,798 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 07:43:05,737 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:08:18,503 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:08:27,414 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:08:27,417 - INFO - 开始修复多个缺陷，共2个缺陷
+2024-11-11 08:08:27,417 - INFO - 处理第1个缺陷，规则: @performance/hp-performance-no-closures
+2024-11-11 08:08:27,417 - INFO - 获取修复提示，规则: @performance/hp-performance-no-closures
+2024-11-11 08:08:28,747 - INFO - 处理第2个缺陷，规则: @performance/hp-performance-no-closures
+2024-11-11 08:08:28,747 - INFO - 获取修复提示，规则: @performance/hp-performance-no-closures
+2024-11-11 08:08:29,044 - INFO - 缺陷修复建议生成完成
+2024-11-11 08:08:37,533 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:08:42,584 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:08:54,676 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:09:00,656 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:09:00,658 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 08:09:00,658 - INFO - 处理第1个缺陷，规则: @performance/number-init-check
+2024-11-11 08:09:00,658 - INFO - 获取修复提示，规则: @performance/number-init-check
+2024-11-11 08:09:01,174 - INFO - 缺陷修复建议生成完成
+2024-11-11 08:09:07,203 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:09:26,914 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:09:34,433 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:09:41,595 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:09:49,912 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:09:49,915 - INFO - 开始修复多个缺陷，共3个缺陷
+2024-11-11 08:09:49,915 - INFO - 处理第1个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 08:09:49,915 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 08:09:50,476 - INFO - 处理第2个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 08:09:50,476 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 08:09:51,245 - INFO - 处理第3个缺陷，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 08:09:51,246 - INFO - 获取修复提示，规则: @performance/constant-property-referencing-check-in-loops
+2024-11-11 08:09:51,581 - INFO - 缺陷修复建议生成完成
+2024-11-11 08:10:00,328 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:10:07,294 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:10:14,502 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:11:19,536 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:11:25,193 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:11:30,026 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:11:34,946 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:11:40,036 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:11:43,464 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:11:43,468 - INFO - 开始修复多个缺陷，共5个缺陷
+2024-11-11 08:11:43,468 - INFO - 处理第1个缺陷，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 08:11:43,468 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 08:11:44,670 - INFO - 处理第2个缺陷，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 08:11:44,670 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-unchanged-state-var
+2024-11-11 08:11:44,939 - INFO - 处理第3个缺陷，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 08:11:44,939 - INFO - 获取修复提示，规则: @performance/hp-arkui-remove-container-without-property
+2024-11-11 08:11:45,220 - INFO - 处理第4个缺陷，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 08:11:45,221 - INFO - 获取修复提示，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 08:11:45,498 - INFO - 处理第5个缺陷，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 08:11:45,499 - INFO - 获取修复提示，规则: @performance/hp-arkui-avoid-empty-callback
+2024-11-11 08:11:45,769 - INFO - 缺陷修复建议生成完成
+2024-11-11 08:11:48,832 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:11:50,900 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:11:54,431 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:11:56,242 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:11:58,040 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:12:19,841 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:12:25,392 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:12:25,395 - INFO - 开始修复多个缺陷，共1个缺陷
+2024-11-11 08:12:25,395 - INFO - 处理第1个缺陷，规则: @performance/number-init-check
+2024-11-11 08:12:25,396 - INFO - 获取修复提示，规则: @performance/number-init-check
+2024-11-11 08:12:25,936 - INFO - 缺陷修复建议生成完成
+2024-11-11 08:12:30,465 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-11 08:12:44,016 - INFO - HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"

@@ -1,0 +1,168 @@
+2024-11-11 07:30:42,233 - INFO - 读取文件: ../mydefects2/ets/pages/defects/hp-arkui-no-stringify-in-lazyforeach-key-generator.ets
+2024-11-11 07:30:42,234 - INFO - 读取Excel文件中的缺陷信息
+2024-11-11 07:30:42,236 - INFO - CodeLinter分析结果:
+2024-11-11 07:30:42,236 - INFO - [
+  {
+    "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+    "line": 107,
+    "message": "Do not use stringify in the key generator function of LazyForEach",
+    "code": "}, (item: Item) => JSON.stringify(item))"
+  }
+]
+2024-11-11 07:30:42,237 - INFO - 分析第1/1个缺陷
+2024-11-11 07:30:49,371 - INFO - {'rule': '@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator', 'defect_block': {'code': ['LazyForEach(this.data, (item: Item) => {', '  ListItem() {', '    ChildComponent({ desc: item.id, sum: 0, avg: 0 })', '  }', "  .width('100%')", "  .height('10%')", '  .border({ width: 1 })', '  .borderStyle(BorderStyle.Dashed)', '}, (item: Item) => JSON.stringify(item))'], 'start_line': '101', 'end_line': '108', 'line of interest': '}, (item: Item) => JSON.stringify(item))'}, 'analysis': 'In the key generator function of LazyForEach, avoid using JSON.stringify as it is a time-consuming operation. Instead, use a unique identifier such as item.id.'}
+2024-11-11 07:30:49,382 - INFO - 开始生成修复建议
+2024-11-11 07:30:49,926 - INFO - 处理第1/1个修复建议
+2024-11-11 07:30:53,778 - INFO - 修复建议1的结果:
+2024-11-11 07:30:53,778 - INFO - ```json
+{
+  "problem_code": "LazyForEach(this.data, (item: Item) => {\n  ListItem() {\n    ChildComponent({ desc: item.id, sum: 0, avg: 0 })\n  }\n  .width('100%')\n  .height('10%')\n  .border({ width: 1 })\n  .borderStyle(BorderStyle.Dashed)\n}, (item: Item) => JSON.stringify(item))\n",
+  "problem_fix": "LazyForEach(this.data, (item: Item) => {\n  ListItem() {\n    ChildComponent({ desc: item.id, sum: 0, avg: 0 })\n  }\n  .width('100%')\n  .height('10%')\n  .border({ width: 1 })\n  .borderStyle(BorderStyle.Dashed)\n}, (item: Item) => item.id.toString())\n"
+}
+```
+2024-11-11 07:30:53,778 - INFO - 处理修复结果
+2024-11-11 07:30:53,778 - INFO - 处理第1个修复结果
+2024-11-11 07:30:53,778 - INFO - 原始代码:
+LazyForEach(this.data, (item: Item) => {
+  ListItem() {
+    ChildComponent({ desc: item.id, sum: 0, avg: 0 })
+  }
+  .width('100%')
+  .height('10%')
+  .border({ width: 1 })
+  .borderStyle(BorderStyle.Dashed)
+}, (item: Item) => JSON.stringify(item))
+
+2024-11-11 07:30:53,778 - INFO - 修复后代码:
+LazyForEach(this.data, (item: Item) => {
+  ListItem() {
+    ChildComponent({ desc: item.id, sum: 0, avg: 0 })
+  }
+  .width('100%')
+  .height('10%')
+  .border({ width: 1 })
+  .borderStyle(BorderStyle.Dashed)
+}, (item: Item) => item.id.toString())
+
+2024-11-11 07:30:53,778 - INFO - 生成最终修复代码
+2024-11-11 07:31:07,322 - INFO - 最终修复结果:
+2024-11-11 07:31:07,322 - INFO - 根据提供的patch，修复后的代码如下：
+
+```arkts
+import { MyDataSource } from '../m/MyDataSource';
+
+@Reusable
+@Component
+struct ChildComponent {
+  @State desc: string = '';
+  @State sum: number = 0;
+  @State avg: number = 0;
+
+  aboutToReuse(params: Record<string, Object>): void {
+    this.desc = params.desc as string;
+    this.sum = params.sum as number;
+    this.avg = params.avg as number;
+  }
+
+  build() {
+    Column() {
+      Text('子组件' + this.desc)
+        .fontSize(30)
+        .fontWeight(30)
+      Text('结果' + this.sum)
+        .fontSize(30)
+        .fontWeight(30)
+      Text('平均值' + this.avg)
+        .fontSize(30)
+        .fontWeight(30)
+    }
+  }
+}
+
+class Item {
+  advertInfos: Model[] = []
+  productPrice: PriceInfo[] = []
+  addresses: string[] = []
+  id: string = ''
+}
+
+class Model {
+  pictureUrl: string = ""
+  name: string = ""
+  comments: string = ""
+  desc: string = ""
+  linkParam: string = ""
+  mcInfo: string = ""
+  label: string = ""
+  cgType: string = ""
+
+  constructor(pictureUrl: string, name: string, comments: string, desc: string, linkParam: string, mcInfo: string,
+    label: string, cgType: string) {
+    this.pictureUrl = pictureUrl;
+    this.name = name;
+    this.comments = comments;
+    this.desc = desc;
+    this.linkParam = linkParam;
+    this.mcInfo = mcInfo;
+    this.label = label;
+    this.cgType = cgType;
+  }
+}
+
+class PriceInfo {
+  price: number = 0;
+  level: number = 1;
+
+  constructor(price: number, level: number) {
+    this.price = price;
+    this.level = level;
+  }
+}
+
+@Entry
+@Component
+struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
+
+  aboutToAppear(): void {
+    for (let index = 0; index < 20; index++) {
+      let item = new Item()
+      for (let i = 0; i < 1000; i++) {
+        item.advertInfos.push(new Model("Product A", "Product A", "Product A", "Product A", "Product A", "Product A", "Product A", "Product A"));
+        item.productPrice.push(new PriceInfo(1.99, 123456));
+        item.addresses.push("Beijing");
+      }
+      item.id = index.toString();
+      this.data.pushData(item);
+    }
+  }
+
+  build() {
+    Column() {
+      Text('Use the time-consuming function to generate a key')
+        .fontSize(12)
+        .height('16')
+        .margin({
+          top: 5,
+          bottom: 10
+        })
+      List() {
+        LazyForEach(this.data, (item: Item) => {
+          ListItem() {
+            ChildComponent({ desc: item.id, sum: 0, avg: 0 })
+          }
+          .width('100%')
+          .height('10%')
+          .border({ width: 1 })
+          .borderStyle(BorderStyle.Dashed)
+        }, (item: Item) => item.id.toString())
+      }
+      .cachedCount(2)
+      .height('100%')
+      .width('100%')
+    }
+  }
+}
+```
+
+已根据patch对`LazyForEach`中的键生成函数进行了更改，现在使用`item.id.toString()`来进行键生成。其他代码保持不变。

@@ -1,0 +1,130 @@
+2024-11-11 07:37:51,359 - INFO - 读取文件: ../mydefects2/ets/pages/defects/hp-arkui-use-row-column-to-replace-flex.ets
+2024-11-11 07:37:51,360 - INFO - 读取Excel文件中的缺陷信息
+2024-11-11 07:37:51,363 - INFO - CodeLinter分析结果:
+2024-11-11 07:37:51,363 - INFO - [
+  {
+    "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+    "line": 5,
+    "message": "Replace Flex with Column/Row",
+    "code": "Flex({ direction: FlexDirection.Column }) {"
+  }
+]
+2024-11-11 07:37:51,363 - INFO - 分析第1/1个缺陷
+2024-11-11 07:38:01,451 - INFO - {'rule': '@performance/hp-arkui-use-row-column-to-replace-flex', 'defect_block': {'code': ['Flex({ direction: FlexDirection.Column }) {', "  Text('Replace Flex with Column/Row')", '    .fontSize(14)', '    .height(30)', '    .margin({', '      top: 10,', '      bottom: 10', '    })', '', '  Flex({ direction: FlexDirection.Column }) {', "    Image('resources/image1.jpg')", '      .width(300)', '      .height(150)', '      .backgroundColor(Color.Blue)', "    Image('resources/image2.jpg')", '      .width(300)', '      .height(150)', '      .backgroundColor(Color.Green)', "    Image('resources/image3.jpg')", '      .width(300)', '      .height(150)', '      .backgroundColor(Color.Red)', "  }.width('100%').padding(10)", '', '  Flex({ direction: FlexDirection.Row }) {', "    Text('Item 1').padding(10)", "    Text('Item 2').padding(10)", "    Button('Submit').padding(10)", "  }.width('100%').padding(10)", '}.padding(10)'], 'start_line': 3, 'end_line': 29, 'line of interest': 'Flex({ direction: FlexDirection.Column }) {'}, 'analysis': '建议使用Column/Row替代Flex。通用丢帧场景下，建议优先修改。'}
+2024-11-11 07:38:01,451 - INFO - 开始生成修复建议
+2024-11-11 07:38:02,023 - INFO - 处理第1/1个修复建议
+2024-11-11 07:38:11,875 - INFO - 修复建议1的结果:
+2024-11-11 07:38:11,875 - INFO - ```json
+{
+  "problem_code": "Flex({ direction: FlexDirection.Column }) {\n  Text('Replace Flex with Column/Row')\n    .fontSize(14)\n    .height(30)\n    .margin({\n      top: 10,\n      bottom: 10\n    })\n\n  Flex({ direction: FlexDirection.Column }) {\n    Image('resources/image1.jpg')\n      .width(300)\n      .height(150)\n      .backgroundColor(Color.Blue)\n    Image('resources/image2.jpg')\n      .width(300)\n      .height(150)\n      .backgroundColor(Color.Green)\n    Image('resources/image3.jpg')\n      .width(300)\n      .height(150)\n      .backgroundColor(Color.Red)\n  }.width('100%').padding(10)\n\n  Flex({ direction: FlexDirection.Row }) {\n    Text('Item 1').padding(10)\n    Text('Item 2').padding(10)\n    Button('Submit').padding(10)\n  }.width('100%').padding(10)\n}.padding(10)\n",
+  "problem_fix": "Column() {\n  Text('Replace Flex with Column/Row')\n    .fontSize(14)\n    .height(30)\n    .margin({\n      top: 10,\n      bottom: 10\n    })\n\n  Column() {\n    Image('resources/image1.jpg')\n      .width(300)\n      .height(150)\n      .backgroundColor(Color.Blue)\n    Image('resources/image2.jpg')\n      .width(300)\n      .height(150)\n      .backgroundColor(Color.Green)\n    Image('resources/image3.jpg')\n      .width(300)\n      .height(150)\n      .backgroundColor(Color.Red)\n  }.width('100%').padding(10)\n\n  Row() {\n    Text('Item 1').padding(10)\n    Text('Item 2').padding(10)\n    Button('Submit').padding(10)\n  }.width('100%').padding(10)\n}.padding(10)\n"
+}
+```
+2024-11-11 07:38:11,875 - INFO - 处理修复结果
+2024-11-11 07:38:11,875 - INFO - 处理第1个修复结果
+2024-11-11 07:38:11,875 - INFO - 原始代码:
+Flex({ direction: FlexDirection.Column }) {
+  Text('Replace Flex with Column/Row')
+    .fontSize(14)
+    .height(30)
+    .margin({
+      top: 10,
+      bottom: 10
+    })
+
+  Flex({ direction: FlexDirection.Column }) {
+    Image('resources/image1.jpg')
+      .width(300)
+      .height(150)
+      .backgroundColor(Color.Blue)
+    Image('resources/image2.jpg')
+      .width(300)
+      .height(150)
+      .backgroundColor(Color.Green)
+    Image('resources/image3.jpg')
+      .width(300)
+      .height(150)
+      .backgroundColor(Color.Red)
+  }.width('100%').padding(10)
+
+  Flex({ direction: FlexDirection.Row }) {
+    Text('Item 1').padding(10)
+    Text('Item 2').padding(10)
+    Button('Submit').padding(10)
+  }.width('100%').padding(10)
+}.padding(10)
+
+2024-11-11 07:38:11,876 - INFO - 修复后代码:
+Column() {
+  Text('Replace Flex with Column/Row')
+    .fontSize(14)
+    .height(30)
+    .margin({
+      top: 10,
+      bottom: 10
+    })
+
+  Column() {
+    Image('resources/image1.jpg')
+      .width(300)
+      .height(150)
+      .backgroundColor(Color.Blue)
+    Image('resources/image2.jpg')
+      .width(300)
+      .height(150)
+      .backgroundColor(Color.Green)
+    Image('resources/image3.jpg')
+      .width(300)
+      .height(150)
+      .backgroundColor(Color.Red)
+  }.width('100%').padding(10)
+
+  Row() {
+    Text('Item 1').padding(10)
+    Text('Item 2').padding(10)
+    Button('Submit').padding(10)
+  }.width('100%').padding(10)
+}.padding(10)
+
+2024-11-11 07:38:11,876 - INFO - 生成最终修复代码
+2024-11-11 07:38:16,554 - INFO - 最终修复结果:
+2024-11-11 07:38:16,554 - INFO - 修复后的完整文件代码如下：
+
+```arkts
+@Entry
+@Component
+struct MyComponent {
+  build() {
+    Column() {
+      Text('Replace Flex with Column/Row')
+        .fontSize(14)
+        .height(30)
+        .margin({
+          top: 10,
+          bottom: 10
+        })
+
+      Column() {
+        Image('resources/image1.jpg')
+          .width(300)
+          .height(150)
+          .backgroundColor(Color.Blue)
+        Image('resources/image2.jpg')
+          .width(300)
+          .height(150)
+          .backgroundColor(Color.Green)
+        Image('resources/image3.jpg')
+          .width(300)
+          .height(150)
+          .backgroundColor(Color.Red)
+      }.width('100%').padding(10)
+
+      Row() {
+        Text('Item 1').padding(10)
+        Text('Item 2').padding(10)
+        Button('Submit').padding(10)
+      }.width('100%').padding(10)
+    }.padding(10)
+  }
+}
+```

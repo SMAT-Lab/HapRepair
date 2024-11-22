@@ -1,0 +1,207 @@
+2024-11-11 06:28:35,308 - INFO - 读取文件: ../mydefects/ets/pages/defects/hp-arkui-replace-nested-reusable-component-by-builder.ets
+2024-11-11 06:28:35,308 - INFO - 读取Excel文件中的缺陷信息
+2024-11-11 06:28:35,311 - INFO - CodeLinter分析结果:
+2024-11-11 06:28:35,311 - INFO - [
+  {
+    "rule": "@performance/hp-arkui-replace-nested-reusable-component-by-builder",
+    "line": 34,
+    "message": "Prioritize @Builder over nested custom components",
+    "code": "UserDetails({ stat: this.stat })"
+  },
+  {
+    "rule": "@performance/multiple-associations-state-var-check",
+    "line": 61,
+    "message": "Suggestion: This data is associated with multiple components; you are advised to use the @Watch decorator to add update conditions to avoid unnecessary component update.",
+    "code": "@State stat: number = 0;"
+  }
+]
+2024-11-11 06:28:35,311 - INFO - 分析第1/2个缺陷
+2024-11-11 06:28:42,609 - INFO - {'rule': '@performance/hp-arkui-replace-nested-reusable-component-by-builder', 'defect_block': {'code': ['@Reusable', '@Component', 'struct UserInfo {', "  @State @Watch('aboutToReuse') stat: number = 0;", '', '  aboutToReuse(params: ESObject): void {', '    this.stat = params.stat as number;', '  }', '', '  build() {', '    Column() {', '      UserDetails({ stat: this.stat })', '    }', "    .width('100%')", '    .height(100)', '    .padding(10)', '  }', '}'], 'start_line': '17', 'end_line': '35', 'line of interest': 'UserDetails({ stat: this.stat })'}, 'analysis': 'Prioritize @Builder over nested custom components to reduce the overhead of creating and rendering nested components, thereby improving performance.'}
+2024-11-11 06:28:42,609 - INFO - 分析第2/2个缺陷
+2024-11-11 06:28:52,674 - INFO - {'rule': '@performance/multiple-associations-state-var-check', 'defect_block': {'code': ['@Component', 'struct UserDetails {', "  @State @Watch('aboutToReuse') stat: number = 0;", '', '  aboutToReuse(params: ESObject): void {', '    this.stat = params.stat as number;', '  }', '', '  build() {', '    Row() {', '      // 嵌套第三个自定义组件 UserStatsDisplay', '      UserStatsDisplay({ stat: this.stat })', '    }', '    .padding(5)', '  }', '}'], 'start_line': '29', 'end_line': '44', 'line of interest': '@State stat: number = 0;'}, 'analysis': 'This data is associated with multiple components; you are advised to use the @Watch decorator to add update conditions to avoid unnecessary component update.'}
+2024-11-11 06:28:52,674 - INFO - 开始生成修复建议
+2024-11-11 06:28:53,704 - INFO - 处理第1/2个修复建议
+2024-11-11 06:28:57,818 - INFO - 修复建议1的结果:
+2024-11-11 06:28:57,818 - INFO - ```json
+{
+  "problem_code": "@Reusable\n@Component\nstruct UserInfo {\n  @State @Watch('aboutToReuse') stat: number = 0;\n\n  aboutToReuse(params: ESObject): void {\n    this.stat = params.stat as number;\n  }\n\n  build() {\n    Column() {\n      UserDetails({ stat: this.stat })\n    }\n    .width('100%')\n    .height(100)\n    .padding(10)\n  }\n}\n",
+  "problem_fix": "@Reusable\n@Component\nstruct UserInfo {\n  @State @Watch('aboutToReuse') stat: number = 0;\n\n  aboutToReuse(params: ESObject): void {\n    this.stat = params.stat as number;\n  }\n\n  build() {\n    Column() {\n      Row() {\n        UserStatsDisplay({ stat: this.stat })\n      }\n      .padding(5)\n    }\n    .width('100%')\n    .height(100)\n    .padding(10)\n  }\n}\n"
+}
+```
+2024-11-11 06:28:57,818 - INFO - 处理第2/2个修复建议
+2024-11-11 06:29:03,153 - INFO - 修复建议2的结果:
+2024-11-11 06:29:03,153 - INFO - ```json
+{
+  "problem_code": "@Component\nstruct UserDetails {\n  @State @Watch('aboutToReuse') stat: number = 0;\n\n  aboutToReuse(params: ESObject): void {\n    this.stat = params.stat as number;\n  }\n\n  build() {\n    Row() {\n      // 嵌套第三个自定义组件 UserStatsDisplay\n      UserStatsDisplay({ stat: this.stat })\n    }\n    .padding(5)\n  }\n}\n",
+  "problem_fix": "@Component\nstruct UserDetails {\n  @Link @Watch('aboutToReuse') stat: number = 0;\n  @State localStat: number = 0;\n\n  aboutToReuse(params: ESObject): void {\n    this.localStat = params.stat as number;\n  }\n\n  build() {\n    Row() {\n      // 嵌套第三个自定义组件 UserStatsDisplay\n      UserStatsDisplay({ stat: this.localStat })\n    }\n    .padding(5)\n  }\n}\n"
+}
+```
+2024-11-11 06:29:03,153 - INFO - 处理修复结果
+2024-11-11 06:29:03,153 - INFO - 处理第1个修复结果
+2024-11-11 06:29:03,154 - INFO - 原始代码:
+@Reusable
+@Component
+struct UserInfo {
+  @State @Watch('aboutToReuse') stat: number = 0;
+
+  aboutToReuse(params: ESObject): void {
+    this.stat = params.stat as number;
+  }
+
+  build() {
+    Column() {
+      UserDetails({ stat: this.stat })
+    }
+    .width('100%')
+    .height(100)
+    .padding(10)
+  }
+}
+
+2024-11-11 06:29:03,154 - INFO - 修复后代码:
+@Reusable
+@Component
+struct UserInfo {
+  @State @Watch('aboutToReuse') stat: number = 0;
+
+  aboutToReuse(params: ESObject): void {
+    this.stat = params.stat as number;
+  }
+
+  build() {
+    Column() {
+      Row() {
+        UserStatsDisplay({ stat: this.stat })
+      }
+      .padding(5)
+    }
+    .width('100%')
+    .height(100)
+    .padding(10)
+  }
+}
+
+2024-11-11 06:29:03,154 - INFO - 处理第2个修复结果
+2024-11-11 06:29:03,154 - INFO - 原始代码:
+@Component
+struct UserDetails {
+  @State @Watch('aboutToReuse') stat: number = 0;
+
+  aboutToReuse(params: ESObject): void {
+    this.stat = params.stat as number;
+  }
+
+  build() {
+    Row() {
+      // 嵌套第三个自定义组件 UserStatsDisplay
+      UserStatsDisplay({ stat: this.stat })
+    }
+    .padding(5)
+  }
+}
+
+2024-11-11 06:29:03,154 - INFO - 修复后代码:
+@Component
+struct UserDetails {
+  @Link @Watch('aboutToReuse') stat: number = 0;
+  @State localStat: number = 0;
+
+  aboutToReuse(params: ESObject): void {
+    this.localStat = params.stat as number;
+  }
+
+  build() {
+    Row() {
+      // 嵌套第三个自定义组件 UserStatsDisplay
+      UserStatsDisplay({ stat: this.localStat })
+    }
+    .padding(5)
+  }
+}
+
+2024-11-11 06:29:03,154 - INFO - 生成最终修复代码
+2024-11-11 06:29:15,015 - INFO - 最终修复结果:
+2024-11-11 06:29:15,016 - INFO - 修复后的完整文件代码如下：
+
+```arkts
+@Entry
+@Component
+struct DashboardComponent {
+  @State userStats: number[] = Array.from(Array(10), (_, i) => i + 1);
+
+  build() {
+    Column() {
+      List() {
+        LazyForEach(this.userStats, (stat: number) => {
+          ListItem() {
+            // 使用自定义的 UserInfo 组件嵌套渲染
+            UserInfo({ stat: stat })
+          }
+        }, (stat: number) => stat.toString())
+      }
+      .cachedCount(2)
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
+
+@Reusable
+@Component
+struct UserInfo {
+  @State @Watch('aboutToReuse') stat: number = 0;
+
+  aboutToReuse(params: ESObject): void {
+    this.stat = params.stat as number;
+  }
+
+  build() {
+    Column() {
+      Row() {
+        UserStatsDisplay({ stat: this.stat })
+      }
+      .padding(5)
+    }
+    .width('100%')
+    .height(100)
+    .padding(10)
+  }
+}
+
+@Component
+struct UserDetails {
+  @Link @Watch('aboutToReuse') stat: number = 0;
+  @State localStat: number = 0;
+
+  aboutToReuse(params: ESObject): void {
+    this.localStat = params.stat as number;
+  }
+
+  build() {
+    Row() {
+      // 嵌套第三个自定义组件 UserStatsDisplay
+      UserStatsDisplay({ stat: this.localStat })
+    }
+    .padding(5)
+  }
+}
+
+@Component
+struct UserStatsDisplay {
+  @State stat: number = 0;
+
+  aboutToReuse(params: ESObject): void {
+    this.stat = params.stat as number;
+  }
+
+  build() {
+    Column() {
+      Text('用户统计: ' + this.stat)
+        .fontSize(20)
+        .fontWeight(20)
+    }
+    .width('100%')
+    .height(50)
+  }
+}
+```

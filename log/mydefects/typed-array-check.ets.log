@@ -1,0 +1,90 @@
+2024-11-11 06:37:49,086 - INFO - 读取文件: ../mydefects/ets/pages/defects/typed-array-check.ets
+2024-11-11 06:37:49,178 - INFO - 读取Excel文件中的缺陷信息
+2024-11-11 06:37:49,181 - INFO - CodeLinter分析结果:
+2024-11-11 06:37:49,181 - INFO - [
+  {
+    "rule": "@performance/typed-array-check",
+    "line": 1,
+    "message": "Array used only for numeric calculation detected. TypedArray is recommended.",
+    "code": "const typedArray1: number[] = new Array(1, 2, 3);"
+  },
+  {
+    "rule": "@performance/typed-array-check",
+    "line": 2,
+    "message": "Array used only for numeric calculation detected. TypedArray is recommended.",
+    "code": "const typedArray2: number[] = new Array(4, 5, 6);"
+  }
+]
+2024-11-11 06:37:49,181 - INFO - 分析第1/2个缺陷
+2024-11-11 06:37:54,839 - INFO - {'rule': '@performance/typed-array-check', 'defect_block': {'code': ['const typedArray1: number[] = new Array(1, 2, 3);', 'const typedArray2: number[] = new Array(4, 5, 6);', 'let res: number[] = new Array(3);', 'for (let i = 0; i < 3; i++) {', '  res[i] = typedArray1[i] + typedArray2[i];', '}', 'console.log(res);'], 'start_line': '1', 'end_line': '7', 'line of interest': 'const typedArray1: number[] = new Array(1, 2, 3);'}, 'analysis': 'Array used only for numeric calculation detected. TypedArray is recommended.'}
+2024-11-11 06:37:54,840 - INFO - 分析第2/2个缺陷
+2024-11-11 06:38:01,321 - INFO - {'rule': '@performance/typed-array-check', 'defect_block': {'code': ['const typedArray1: number[] = new Array(1, 2, 3);', 'const typedArray2: number[] = new Array(4, 5, 6);', 'let res: number[] = new Array(3);', 'for (let i = 0; i < 3; i++) {', '  res[i] = typedArray1[i] + typedArray2[i];', '}'], 'start_line': '1', 'end_line': '6', 'line of interest': 'const typedArray2: number[] = new Array(4, 5, 6);'}, 'analysis': 'Array used only for numeric calculation detected. TypedArray is recommended. Replace the number[] declaration with TypedArray for performance benefits.'}
+2024-11-11 06:38:01,321 - INFO - 开始生成修复建议
+2024-11-11 06:38:02,087 - INFO - 处理第1/2个修复建议
+2024-11-11 06:38:07,598 - INFO - 修复建议1的结果:
+2024-11-11 06:38:07,598 - INFO - ```json
+{
+  "problem_code": "const typedArray1: number[] = new Array(1, 2, 3);\nconst typedArray2: number[] = new Array(4, 5, 6);\nlet res: number[] = new Array(3);\nfor (let i = 0; i < 3; i++) {\n  res[i] = typedArray1[i] + typedArray2[i];\n}\nconsole.log(res);\n",
+  "problem_fix": "const typedArray1 = new Int8Array([1, 2, 3]);\nconst typedArray2 = new Int8Array([4, 5, 6]);\nlet res = new Int8Array(3);\nfor (let i = 0; i < 3; i++) {\n  res[i] = typedArray1[i] + typedArray2[i];\n}\nconsole.log(res);\n"
+}
+```
+2024-11-11 06:38:07,598 - INFO - 处理第2/2个修复建议
+2024-11-11 06:38:14,188 - INFO - 修复建议2的结果:
+2024-11-11 06:38:14,188 - INFO - ```json
+{
+  "problem_code": "const typedArray1: number[] = new Array(1, 2, 3);\nconst typedArray2: number[] = new Array(4, 5, 6);\nlet res: number[] = new Array(3);\nfor (let i = 0; i < 3; i++) {\n  res[i] = typedArray1[i] + typedArray2[i];\n}\n",
+  "problem_fix": "const typedArray1 = new Int8Array([1, 2, 3]);\nconst typedArray2 = new Int8Array([4, 5, 6]);\nlet res = new Int8Array(3);\nfor (let i = 0; i < 3; i++) {\n  res[i] = typedArray1[i] + typedArray2[i];\n}\n\nconsole.log(res);\n"
+}
+```
+2024-11-11 06:38:14,188 - INFO - 处理修复结果
+2024-11-11 06:38:14,188 - INFO - 处理第1个修复结果
+2024-11-11 06:38:14,188 - INFO - 原始代码:
+const typedArray1: number[] = new Array(1, 2, 3);
+const typedArray2: number[] = new Array(4, 5, 6);
+let res: number[] = new Array(3);
+for (let i = 0; i < 3; i++) {
+  res[i] = typedArray1[i] + typedArray2[i];
+}
+console.log(res);
+
+2024-11-11 06:38:14,188 - INFO - 修复后代码:
+const typedArray1 = new Int8Array([1, 2, 3]);
+const typedArray2 = new Int8Array([4, 5, 6]);
+let res = new Int8Array(3);
+for (let i = 0; i < 3; i++) {
+  res[i] = typedArray1[i] + typedArray2[i];
+}
+console.log(res);
+
+2024-11-11 06:38:14,189 - INFO - 处理第2个修复结果
+2024-11-11 06:38:14,189 - INFO - 原始代码:
+const typedArray1: number[] = new Array(1, 2, 3);
+const typedArray2: number[] = new Array(4, 5, 6);
+let res: number[] = new Array(3);
+for (let i = 0; i < 3; i++) {
+  res[i] = typedArray1[i] + typedArray2[i];
+}
+
+2024-11-11 06:38:14,189 - INFO - 修复后代码:
+const typedArray1 = new Int8Array([1, 2, 3]);
+const typedArray2 = new Int8Array([4, 5, 6]);
+let res = new Int8Array(3);
+for (let i = 0; i < 3; i++) {
+  res[i] = typedArray1[i] + typedArray2[i];
+}
+
+console.log(res);
+
+2024-11-11 06:38:14,189 - INFO - 生成最终修复代码
+2024-11-11 06:38:16,577 - INFO - 最终修复结果:
+2024-11-11 06:38:16,577 - INFO - 修复后的完整文件代码如下：
+```arkts
+const typedArray1 = new Int8Array([1, 2, 3]);
+const typedArray2 = new Int8Array([4, 5, 6]);
+let res = new Int8Array(3);
+for (let i = 0; i < 3; i++) {
+  res[i] = typedArray1[i] + typedArray2[i];
+}
+
+console.log(res);
+```

@@ -96,13 +96,7 @@ class CodeContextExtractor:
         # 从错误行提取变量名
         error_line_content = lines[line_num]
         # 匹配@State等装饰器后的变量名
-        # 先匹配赋值的变量
-        assign_vars = re.findall(r'@\w+\s+(\w+)|let\s+(\w+)\s*=', error_line_content)
-        # 如果没有赋值的变量,再匹配使用的变量
-        if not assign_vars:
-            variable_names = re.findall(r'this\.(\w+)', error_line_content)
-        else:
-            variable_names = assign_vars
+        variable_names = re.findall(r'@\w+\s+(\w+)|this\.(\w+)|let\s+(\w+)\s*=', error_line_content)
         variable_names = [name for name in variable_names if name != '']
 
         # 从匹配组中获取非空值
@@ -151,7 +145,6 @@ class CodeContextExtractor:
         start_idx = line_number
         outer_block = None
         while start_idx >= 0:
-            # print(len(lines))
             if re.search(block_pattern, lines[start_idx]):
                 block_end = self._find_block_end(lines, start_idx)
                 # 确认目标行在block范围内
@@ -269,3 +262,168 @@ def extract_code_from_response(response):
     """从回复中提取代码块内容"""
     code_blocks = re.findall(r'```(?:\w+)?\n(.*?)```', response, re.DOTALL)
     return '\n'.join(code_blocks) if code_blocks else response
+
+def get_surrounding_context(arkts_code: str, error_line: int):
+    """
+    获取代码的上下文内容
+    Args:
+        arkts_code: 原始ArkTS代码
+        error_line: 报错行号
+    Returns:
+        合并后的上下文代码字符串
+    """
+    # 初始化上下文提取器
+    extractor = CodeContextExtractor()
+
+    # 提取代码上下文
+    context = extractor.extract_arkts_context(arkts_code.split("\n"), error_line)
+
+    # 合并所有代码片段并按行号排序
+    code_snippets = []
+    code_snippets.extend([(line_num, line_num, code) for line_num, code in context["definition"]])
+    code_snippets.extend([(line_num, line_num, code) for line_num, code in context["usage"]])
+    # 修复blocks内容的添加,将完整的block内容添加到code_snippets
+    code_snippets.extend([(start, end, block) for start, end, block in context["blocks"]])
+    
+    code_snippets.sort(key=lambda x: x[0])
+
+    surrounding_context = [snippet for _, _, snippet in code_snippets]
+    return context, "\n".join(surrounding_context)
+
+def repair_arkts_code(arkts_code: str, error_log: str, error_line: int):
+    """
+    修复ArkTS代码
+    Args:
+        arkts_code: 原始ArkTS代码
+        error_log: 错误日志
+        error_line: 报错行号
+    Returns:
+        修复后的代码
+    """
+    try:
+        # 初始化代码修复器
+        code_repair = CodeRepair()
+        
+        # 获取surrounding_context
+        context, surrounding_context = get_surrounding_context(arkts_code, error_line)
+        
+        # 修复代码
+        repaired_code = code_repair.modify_arkts_code(
+            arkts_code,
+            context,
+            surrounding_context,
+            error_log
+        )
+        
+        return repaired_code
+
+    except Exception as e:
+        print(f"发生错误: {str(e)}")
+        sys.exit(1)
+
+def main():
+    # 示例 ArkTS 代码
+    arkts_code = """// 避免在aboutToReuse中对自动更新值的状态变量进行更新。
+// 通用丢帧场景下，建议优先修改。
+
+@Reusable
+@Component
+struct UserProfileComponent {
+  @State name: string = '';
+  @State age: number = 0;
+  @Link email: string;
+
+  aboutToReuse(params: Record<string, Object>): void {
+    // 不建议在此处更新自动更新的状态变量
+    this.name = params.name as string;
+    this.age = params.age as number;
+    this.email = params.email as string;
+  }
+
+  build() {
+    Column() {
+      Text('姓名: ' + this.name)
+        .fontSize(24)
+      Text('年龄: ' + this.age)
+        .fontSize(24)
+      Text('邮箱: ' + this.email)
+        .fontSize(24)
+    }
+  }
+}
+
+interface GeneratedTypeLiteralInterface_1 {
+  name: string;
+  age: number;
+  email: string;
+}
+
+class UserData implements IDataSource {
+  public users: GeneratedTypeLiteralInterface_1[] = [];
+
+  setData(users: GeneratedTypeLiteralInterface_1[]) {
+    this.users = users
+  }
+
+  totalCount(): number {
+    throw new Error('Method not implemented.');
+  }
+
+  getData(index: number): GeneratedTypeLiteralInterface_1[]  {
+    throw new Error('Method not implemented.');
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+    throw new Error('Method not implemented.');
+  }
+
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+    throw new Error('Method not implemented.');
+  }
+
+}
+
+@Entry
+@Component
+struct UserListComponent {
+  private users: UserData = new UserData()
+
+  aboutToAppear(): void {
+    // 模拟用户数据
+    this.users.setData([
+      { name: '张三', age: 30, email: 'zhangsan@example.com' },
+      { name: '李四', age: 25, email: 'lisi@example.com' },
+    ])
+  }
+
+  build() {
+    Column() {
+      List() {
+        LazyForEach(this.users, (user: GeneratedTypeLiteralInterface_1) => {
+          ListItem() {
+            UserProfileComponent({ name: user.name, age: user.age, email: user.email });
+          }
+          .width('100%')
+          .height(100)
+        }, (user: GeneratedTypeLiteralInterface_1) => user.email)
+      }
+      .cachedCount(2)
+      .width('100%')
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+
+    """
+    
+    error_log = "Avoid updating state variables in aboutToReuse with automatically updated values"
+    error_line = 15  # 假设错误发生在第15行
+    
+    repaired_code = repair_arkts_code(arkts_code, error_log, error_line)
+    print("\n修复后的代码:")
+    print(repaired_code)
+
+if __name__ == "__main__":
+    main()

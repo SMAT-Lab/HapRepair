@@ -208,18 +208,5 @@
     "errorLocation": "ForEach(this.data, (item: string, index: number) => {",
     "fixLocation": "ForEach(this.data, (item: string, index: number) => {\n  ListItem() {\n    Text(item);\n  }\n})",
     "needsMoreContext": false
-  },
-  {
-    "rule": "@performance/multiple-associations-state-var-check",
-    "errorLocation": "",
-    "fixLocation": "",
-    "needsMoreContext": true
-  },
-  {
-    "rule": "@hw-ets-eslint/init-list-component",
-    "errorLocation": "",
-    "fixLocation": "",
-    "needsMoreContext": true
   }
 ]
-

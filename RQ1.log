@@ -1,0 +1,701 @@
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: constant-property-referencing-check-in-loops.ets
+[
+    {
+        "rule": "@performance/constant-property-referencing-check-in-loops",
+        "description": "\u5728\u5faa\u73af\u5982\u9700\u9891\u7e41\u8bbf\u95ee\u67d0\u4e2a\u5e38\u91cf\uff0c\u4e14\u8be5\u5c5e\u6027\u5f15\u7528\u5e38\u91cf\u5728\u5faa\u73af\u4e2d\u4e0d\u4f1a\u6539\u53d8\uff0c\u5efa\u8bae\u63d0\u53d6\u5230\u5faa\u73af\u5916\u90e8\uff0c\u51cf\u5c11\u5c5e\u6027\u8bbf\u95ee\u7684\u6b21\u6570\u3002  \u6839\u636eArkTS\u9ad8\u6027\u80fd\u7f16\u7a0b\u5b9e\u8df5\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 6,
+        "defect_snippet": "total += (Settings.config[index] * i);",
+        "reason": "The code accesses the static property Settings.config within a loop, which causes the potential performance issue of multiple property accesses. It should be assigned to a local variable before the loop."
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: constant-property-referencing-check-in-loops2.ets
+[
+    {
+        "rule": "@performance/constant-property-referencing-check-in-loops",
+        "description": "\u5728\u5faa\u73af\u5982\u9700\u9891\u7e41\u8bbf\u95ee\u67d0\u4e2a\u5e38\u91cf\uff0c\u4e14\u8be5\u5c5e\u6027\u5f15\u7528\u5e38\u91cf\u5728\u5faa\u73af\u4e2d\u4e0d\u4f1a\u6539\u53d8\uff0c\u5efa\u8bae\u63d0\u53d6\u5230\u5faa\u73af\u5916\u90e8\uff0c\u51cf\u5c11\u5c5e\u6027\u8bbf\u95ee\u7684\u6b21\u6570\u3002 \u6839\u636eArkTS\u9ad8\u6027\u80fd\u7f16\u7a0b\u5b9e\u8df5\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 13,
+        "defect_snippet": "totalSum += (Time.info[inner - Time.start] % 2 === 0) ? outer * inner : 0;"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: foreach-args-check.ets
+[
+    {
+        "rule": "@performance/foreach-args-check",
+        "description": "\u5efa\u8bae\u5728ForEach\u53c2\u6570\u4e2d\u8bbe\u7f6ekeyGenerator\u3002  \u6ed1\u52a8\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 9,
+        "defect_snippet": "ForEach(this.items, (item: number, index: number) => {\n          ListItem() {\n            Text(item.toString());\n          }\n        })",
+        "reason": "The ForEach function is missing the third parameter for keyGenerator, which is essential for optimal performance."
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: foreach-args-check2.ets
+[
+    {
+        "rule": "@performance/hp-arkui-use-word-break-to-replace-zero-width-space",
+        "description": "\u5efa\u8bae\u4f7f\u7528word-break\u66ff\u6362\u96f6\u5bbd\u7a7a\u683c(\\u200b)\u3002 \u6839\u636eArkUI\u7f16\u7a0b\u89c4\u8303\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 29,
+        "defect_snippet": "Text(name)\n        .width(64)\n        .height(30)\n        .lineHeight(15)\n        .fontSize(12)\n        .textAlign(TextAlign.Center)\n        .margin({ top: 8 })\n        .padding({ bottom: 15 })"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: foreach-args-check3.ets
+[
+    {
+        "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+        "description": "\u5efa\u8bae\u4f7f\u7528\u4e34\u65f6\u53d8\u91cf\u66ff\u6362\u72b6\u6001\u53d8\u91cf\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 36,
+        "defect_snippet": "this.currentBreakpoint"
+    },
+    {
+        "rule": "@performance/hp-arkui-use-word-break-to-replace-zero-width-space",
+        "description": "\u5efa\u8bae\u4f7f\u7528word-break\u66ff\u6362\u96f6\u5bbd\u7a7a\u683c\u3002 \u6839\u636eArkUI\u7f16\u7a0b\u89c4\u8303\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 36,
+        "defect_snippet": "new BreakPointType({ sm: true, md: false, lg: false }).getValue(this.currentBreakpoint)"
+    },
+    {
+        "rule": "@performance/hp-arkui-use-word-break-to-replace-zero-width-space",
+        "description": "\u5efa\u8bae\u4f7f\u7528word-break\u66ff\u6362\u96f6\u5bbd\u7a7a\u683c\u3002 \u6839\u636eArkUI\u7f16\u7a0b\u89c4\u8303\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 39,
+        "defect_snippet": "new BreakPointType({ sm: 1, md: 2, lg: 3 }).getValue(this.currentBreakpoint)"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: high-frequency-log-check.ets
+[
+    {
+        "rule": "@performance/high-frequency-log-check",
+        "description": "Description: \u4e0d\u5efa\u8bae\u5728\u9ad8\u9891\u51fd\u6570\u4e2d\u4f7f\u7528Hilog\u3002  \u9ad8\u9891\u51fd\u6570\u5305\u62ec\uff1aonTouch\u3001onItemDragMove\u3001onDragMove\u3001onMouse\u3001onVisibleAreaChange\u3001onAreaChange\u3001onScroll\u3001onActionUpdate\u3002  \u9ad8\u8017\u65f6\u51fd\u6570\u5904\u7406\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 10,
+        "defect_snippet": "hilog.info(1002, 'DragTest', 'onItemDragMove')"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: high-frequency-log-check2.ets
+[
+    {
+        "rule": "@performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse",
+        "description": "\u907f\u514d\u5728aboutToReuse\u4e2d\u5bf9\u81ea\u52a8\u66f4\u65b0\u503c\u7684\u72b6\u6001\u53d8\u91cf\u8fdb\u884c\u66f4\u65b0\u3002  \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 92,
+        "defect_snippet": "this.showError = false;"
+    },
+    {
+        "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+        "description": "\u907f\u514d\u5728for\u3001while\u7b49\u5faa\u73af\u903b\u8f91\u4e2d\u9891\u7e41\u8bfb\u53d6\u72b6\u6001\u53d8\u91cf\u3002  \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 118,
+        "defect_snippet": "this.eventPipeline?.onMove(vp2px(event.offsetX), vp2px(event.offsetY));"
+    },
+    {
+        "rule": "@performance/hp-arkui-use-reusable-component",
+        "description": "\u5efa\u8bae\u590d\u6742\u7ec4\u4ef6\u7684\u5b9a\u4e49\uff0c\u5c3d\u91cf\u4f7f\u7528\u7ec4\u4ef6\u590d\u7528\u3002  \u6ed1\u52a8\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 231,
+        "defect_snippet": "VideoIcon()"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: high-frequency-log-check3.ets
+[
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+        "description": "\u5efa\u8bae\u5c3d\u91cf\u51cf\u5c11\u89c6\u56fe\u5d4c\u5957\u5c42\u6b21\u3002\u8be5\u89c4\u5219\u66fe\u7528\u540d\uff1a@performance/hp-arkui-reduce-view-nest-level \u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 92,
+        "defect_snippet": "Grid() {\n          GridItem() {\n            Text(`space\uff1a${this.space}`)\n              .fontSize(15)\n              .backgroundColor(0xFAEEE0)\n              .height(40)\n              .fontWeight(FontWeight.Bolder)\n              .width('100%')\n              .margin({ left: 5 })\n          }.columnStart(0).columnEnd(3).forceRebuild(true)\n\n          GridItem() {\n            Slider({ value: this.space, step: 5, min: -10, max: 100 })\n              .blockColor(Color.Orange)\n              .width(\"100%\")\n              .onChange((e) => {\n                this.space = Math.round(e)\n              })\n          }.columnStart(0).columnEnd(3).forceRebuild(true)\n\n          GridItem() {\n            Text('\u6392\u5217\u65b9\u5411\uff1a')\n              .fontSize(15)\n              .backgroundColor(0xFAEEE0)\n              .height(40)\n              .fontWeight(FontWeight.Bolder)\n              .width('100%')\n              .margin({ left: 5 })\n          }.columnStart(0).columnEnd(3).forceRebuild(true)\n\n          GridItem() {\n            Button(\"Vertical\")\n              .fontSize(15)\n              .height(40)\n              .width('100%')\n              .onClick(() => {\n                this.listDirection = Axis.Vertical\n              })\n          }\n\n          GridItem() {\n            Button(\"Horizontal\")\n              .fontSize(15)\n              .height(40)\n              .width('100%')\n              .onClick(() => {\n                this.listDirection = Axis.Horizontal\n              })\n          }\n",
+        "reason": "There are redundant nested containers that can be simplified for better performance."
+    },
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+        "description": "\u5efa\u8bae\u5c3d\u91cf\u51cf\u5c11\u89c6\u56fe\u5d4c\u5957\u5c42\u6b21\u3002\u8be5\u89c4\u5219\u66fe\u7528\u540d\uff1a@performance/hp-arkui-reduce-view-nest-level \u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 132,
+        "defect_snippet": "GridItem() {\n            Text(`strokeWidth\uff1a${this.strokeWidth}`)\n              .fontSize(15)\n              .backgroundColor(0xFAEEE0)\n              .height(40)\n              .fontWeight(FontWeight.Bolder)\n              .width('100%')\n              .margin({ left: 5 })\n          }.columnStart(0).columnEnd(3).forceRebuild(true)\n\n          GridItem() {\n            Slider({ value: this.strokeWidth, step: 5, min: -10, max: 100 })\n              .width(\"100%\")\n              .blockColor(Color.Orange)\n              .onChange((e) => {\n                this.strokeWidth = Math.round(e)\n              })\n          }.columnStart(0).columnEnd(3).forceRebuild(true)\n\n          GridItem() {\n            Text(`startMargin\uff1a${this.startMargin}`)\n              .fontSize(15)\n              .backgroundColor(0xFAEEE0)\n              .height(40)\n              .fontWeight(FontWeight.Bolder)\n              .width('100%')\n              .margin({ left: 5 })\n          }.columnStart(0).columnEnd(3).forceRebuild(true)\n\n          GridItem() {\n            Slider({ value: this.startMargin, step: 5, min: -10, max: 100 })\n              .width(\"100%\")\n              .blockColor(Color.Orange)\n              .onChange((e) => {\n                this.startMargin = Math.round(e)\n              })\n          }.columnStart(0).columnEnd(3).forceRebuild(true)\n",
+        "reason": "There are redundant nested containers that can be simplified for better performance."
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-avoid-empty-callback.ets
+[
+    {
+        "rule": "@performance/hp-arkui-avoid-empty-callback",
+        "description": "\u907f\u514d\u8bbe\u7f6e\u7a7a\u7684\u7cfb\u7edf\u56de\u8c03\u76d1\u542c\u3002 \u6839\u636eArkUI\u7f16\u7a0b\u89c4\u8303\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 6,
+        "defect_snippet": "onChange(() => {\n\n})",
+        "explanation": "The code has an empty callback for the onChange event of the Slider, which violates the guideline to avoid empty system callback listeners."
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-avoid-empty-callback2.ets
+[
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+        "description": "\u5efa\u8bae\u5c3d\u91cf\u51cf\u5c11\u89c6\u56fe\u5d4c\u5957\u5c42\u6b21\u3002\u8be5\u89c4\u5219\u66fe\u7528\u540d\uff1a@performance/hp-arkui-reduce-view-nest-level \u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 8,
+        "defect_snippet": "Flex() {\n        Canvas(this.context)\n          .width('100%')\n          .height('100%')\n          .backgroundColor('#ffff00')\n      }"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-avoid-empty-callback3.ets
+[
+    {
+        "rule": "@performance/hp-arkui-avoid-empty-callback",
+        "description": "\u907f\u514d\u8bbe\u7f6e\u7a7a\u7684\u7cfb\u7edf\u56de\u8c03\u76d1\u542c\u3002 \u6839\u636eArkUI\u7f16\u7a0b\u89c4\u8303\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 14,
+        "defect_snippet": ".onMouse((e: MouseEvent) => {\n\n})",
+        "reason": "The onMouse callback is empty, which is considered a performance defect as it creates unnecessary function calls without performing any action."
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-avoid-update-auto-state-var-in-aboutToReuse.ets
+[
+    {
+        "rule": "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload",
+        "description": "\u5efa\u8baeSwiper\u9884\u52a0\u8f7d\u673a\u5236\u642d\u914d OnAnimationStart \u63a5\u53e3\u56de\u8c03\u4f7f\u7528\u3002 \u6ed1\u52a8\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 1,
+        "defect_snippet": "@Entry\n@Component\nstruct UserProfileComponent {"
+    },
+    {
+        "rule": "@performance/hp-arkui-suggest-cache-avplayer",
+        "description": "\u5efa\u8bae\u7f13\u5b58AVPlayer\u5b9e\u4f8b\u6e1b\u5c11\u8d77\u64ad\u65f6\u5ef6\u3002 \u97f3\u89c6\u9891\u8d77\u64ad\u901f\u5ea6\u6162\u7684\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 1,
+        "defect_snippet": "@Entry\n@Component\nstruct UserProfileComponent {"
+    },
+    {
+        "rule": "@performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse",
+        "description": "\u907f\u514d\u5728aboutToReuse\u4e2d\u5bf9\u81ea\u52a8\u66f4\u65b0\u503c\u7684\u72b6\u6001\u53d8\u91cf\u8fdb\u884c\u66f4\u65b0\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 38,
+        "defect_snippet": "this.email = params.email as string;"
+    },
+    {
+        "rule": "@performance/hp-arkui-no-use-any-export-current",
+        "description": "\u907f\u514d\u4f7f\u7528export * \u5bfc\u51fa\u5f53\u524dmodule\u4e2d\u5b9a\u4e49\u7684\u7c7b\u578b\u548c\u6570\u636e\u3002 \u51b7\u542f\u52a8\u5b8c\u6210\u65f6\u5ef6\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 44,
+        "defect_snippet": "export * from './hp-arkts-no-use-any-export-current';"
+    },
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+        "description": "\u907f\u514d\u5197\u4f59\u7684\u5d4c\u5957\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 52,
+        "defect_snippet": "Column() {\n      List() {"
+    },
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-state-var",
+        "description": "\u5efa\u8bae\u79fb\u9664\u4e0d\u5173\u8054UI\u7ec4\u4ef6\u7684\u72b6\u6001\u53d8\u91cf\u8bbe\u7f6e\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 59,
+        "defect_snippet": "UserProfileComponent({ name: user.name, age: user.age, email: user.email });"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-combine-same-arg-animateto.ets
+[
+    {
+        "rule": "@performance/hp-arkui-combine-same-arg-animateto",
+        "description": "\u5efa\u8bae\u52a8\u753b\u53c2\u6570\u76f8\u540c\u65f6\u4f7f\u7528\u540c\u4e00\u4e2aanimateTo\u3002  \u52a8\u6548\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 15,
+        "defect_snippet": "animateTo({ curve: Curve.EaseInOut, duration: 500 }, () => {\n      this.boxSize = (this.boxSize === 100 ? 200 : 100);\n    });"
+    },
+    {
+        "rule": "@performance/hp-arkui-combine-same-arg-animateto",
+        "description": "\u5efa\u8bae\u52a8\u753b\u53c2\u6570\u76f8\u540c\u65f6\u4f7f\u7528\u540c\u4e00\u4e2aanimateTo\u3002  \u52a8\u6548\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 21,
+        "defect_snippet": "animateTo({ curve: Curve.EaseInOut, duration: 500 }, () => {\n      this.boxOpacity = (this.boxOpacity === 1 ? 0.5 : 1);\n    });"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-combine-same-arg-animateto2.ets
+[
+    {
+        "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+        "description": "\u5efa\u8bae\u79fb\u9664\u672a\u6539\u53d8\u7684\u72b6\u6001\u53d8\u91cf\u8bbe\u7f6e\u3002  \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 24,
+        "defect_snippet": "resetColors() {\n    animateTo({ curve: Curve.Linear, duration: 300 }, () => {\n      this.red = 255;\n      this.green = 255;\n      this.blue = 255;\n    });\n  }",
+        "reason": "The `resetColors` function uses animateTo to reset colors, but the state variables are being reset in the callback, which may be unnecessary if the button is not activated."
+    },
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+        "description": "\u5efa\u8bae\u5c3d\u91cf\u51cf\u5c11\u89c6\u56fe\u5d4c\u5957\u5c42\u6b21\u3002\u8be5\u89c4\u5219\u66fe\u7528\u540d\uff1a@performance/hp-arkui-reduce-view-nest-level \u3002  \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 45,
+        "defect_snippet": "Column() {\n      Row()\n        .backgroundColor(Color.rgb(this.red, this.green, this.blue))\n        .height(200)\n        .width(200)\n      Button('Toggle Red')\n        .onClick(() => {\n          this.resetColors()\n          this.updateRedColor()\n        })\n      Button('Toggle Green')\n        .onClick(() => {\n          this.resetColors()\n          this.updateGreenColor()\n        })\n      Button('Toggle Blue')\n        .onClick(() => {\n          this.resetColors()\n          this.updateBlueColor()\n        })\n      Button('Reset Colors')\n        .onClick(() => this.resetColors())\n    }\n    .width('100%')\n    .height('100%')",
+        "reason": "There are redundant nesting of Row inside Column which may lead to unnecessary complexity and performance issues."
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-load-on-demand-2.ets
+[
+    {
+        "rule": "@performance/foreach-args-check",
+        "description": "\u5efa\u8bae\u5728ForEach\u53c2\u6570\u4e2d\u8bbe\u7f6ekeyGenerator\u3002  \u6ed1\u52a8\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 9,
+        "defect_snippet": "ForEach(this.items, (item: string) => {\n        ListItem() {\n          Text(item)\n        }\n      }, (item: string) => item)"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-load-on-demand.ets
+[
+    {
+        "rule": "@performance/foreach-args-check",
+        "description": "\u5efa\u8bae\u5728ForEach\u53c2\u6570\u4e2d\u8bbe\u7f6ekeyGenerator\u3002  \u6ed1\u52a8\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 10,
+        "defect_snippet": "ForEach(this.items, (item: string) => { ListItem() { Text(item) } }, (item: string) => item)"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-no-state-var-access-in-loop.ets
+[
+    {
+        "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+        "description": "\u907f\u514d\u5728for\u3001while\u7b49\u5faa\u73af\u903b\u8f91\u4e2d\u9891\u7e41\u8bfb\u53d6\u72b6\u6001\u53d8\u91cf\u3002  \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 10,
+        "defect_snippet": "hilog.info(0x0000, 'TAG', '%{public}s', this.message);"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-no-state-var-access-in-loop2.ets
+[
+    {
+        "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+        "description": "\u907f\u514d\u5728for\u3001while\u7b49\u5faa\u73af\u903b\u8f91\u4e2d\u9891\u7e41\u8bfb\u53d6\u72b6\u6001\u53d8\u91cf\u3002  \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 9,
+        "defect_snippet": "this.ballsNumber.length = this.balloonNumber"
+    },
+    {
+        "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+        "description": "\u5efa\u8bae\u5728Grid\u4e0b\u4f7f\u7528LazyForEach\u65f6\u8bbe\u7f6e\u5408\u7406\u7684cacheCount\u3002  \u6ed1\u52a8\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 12,
+        "defect_snippet": "ForEach(this.ballsNumber, (item, index) => {"
+    },
+    {
+        "rule": "@performance/hp-arkui-use-reusable-component",
+        "description": "\u5efa\u8bae\u590d\u6742\u7ec4\u4ef6\u7684\u5b9a\u4e49\uff0c\u5c3d\u91cf\u4f7f\u7528\u7ec4\u4ef6\u590d\u7528\u3002  \u6ed1\u52a8\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 19,
+        "defect_snippet": " Ball()"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-no-stringify-in-lazyforeach-key-generator.ets
+[
+    {
+        "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+        "description": "\u5728\u4f7f\u7528LazyForEach\u8fdb\u884c\u7ec4\u4ef6\u590d\u7528\u7684key\u751f\u6210\u5668\u51fd\u6570\u91cc\uff0c\u4e0d\u8981\u4f7f\u7528stringify\u3002  \u6ed1\u52a8\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 54,
+        "defect_snippet": "}, (item: Item) => JSON.stringify(item))"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-no-stringify-in-lazyforeach-key-generator2.ets
+[
+    {
+        "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+        "description": "\u5728\u4f7f\u7528LazyForEach\u8fdb\u884c\u7ec4\u4ef6\u590d\u7528\u7684key\u751f\u6210\u5668\u51fd\u6570\u91cc\uff0c\u4e0d\u8981\u4f7f\u7528stringify\u3002  \u6ed1\u52a8\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 54,
+        "defect_snippet": "}, (item: ProductItem) => JSON.stringify(item))"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-remove-container-without-property.ets
+[
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+        "description": "\u5efa\u8bae\u5c3d\u91cf\u51cf\u5c11\u89c6\u56fe\u5d4c\u5957\u5c42\u6b21\u3002\u8be5\u89c4\u5219\u66fe\u7528\u540d\uff1a@performance/hp-arkui-reduce-view-nest-level \u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 9,
+        "defect_snippet": "Flex() {\n              Flex() {\n                Flex() {\n                  Text(item.toString())\n                    .fontSize(16)\n                    .backgroundColor(0xF9CF93)\n                    .width('100%')\n                    .height(80)\n                    .textAlign(TextAlign.Center)\n                    .border({width:1})\n                }\n              }\n            }"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-remove-container-without-property2.ets
+[
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+        "description": "\u5efa\u8bae\u5c3d\u91cf\u51cf\u5c11\u89c6\u56fe\u5d4c\u5957\u5c42\u6b21\u3002\u8be5\u89c4\u5219\u66fe\u7528\u540d\uff1a@performance/hp-arkui-reduce-view-nest-level \u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 13,
+        "defect_snippet": "Flex() {\n          Flex() {\n            Text(user.name)\n              .fontSize(16)\n              .textAlign(TextAlign.Center)\n              .padding({ top: 5, bottom: 5 })\n          }\n        }",
+        "reason": "Redundant Flex nesting without any property defined is unnecessary and can impact performance."
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-remove-redundant-nest-container.ets
+[
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+        "description": "\u5efa\u8bae\u5c3d\u91cf\u51cf\u5c11\u89c6\u56fe\u5d4c\u5957\u5c42\u6b21\u3002\u8be5\u89c4\u5219\u66fe\u7528\u540d\uff1a@performance/hp-arkui-reduce-view-nest-level \u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 9,
+        "defect_snippet": "Stack() {\n    Stack() {\n        Stack() {\n            Flex() {\n                Column() {"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-remove-redundant-nest-container2.ets
+[
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+        "description": "\u5efa\u8bae\u5c3d\u91cf\u51cf\u5c11\u89c6\u56fe\u5d4c\u5957\u5c42\u6b21\u3002\u8be5\u89c4\u5219\u66fe\u7528\u540d\uff1a@performance/hp-arkui-reduce-view-nest-level \u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 8,
+        "defect_snippet": "Column() {\n          Column() {\n            Column() {\n              Button() {\n                Text(item)\n                  .fontSize(16)\n                  .backgroundColor(Color.Green)\n                  .padding(10)\n                  .onClick(() => {\n                    console.log(`${item} clicked`);\n                  })\n              }\n              .height(50)\n            }\n            .width(\"100%\")\n          }\n          .padding(5)\n        }"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-remove-redundant-state-var.ets
+[
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-state-var",
+        "description": "\u5efa\u8bae\u79fb\u9664\u4e0d\u5173\u8054UI\u7ec4\u4ef6\u7684\u72b6\u6001\u53d8\u91cf\u8bbe\u7f6e\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 5,
+        "defect_snippet": "@State currentStatus: string = \"initial\";"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-remove-redundant-state-var2.ets
+[
+    {
+        "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+        "description": "\u5efa\u8bae\u79fb\u9664\u672a\u6539\u53d8\u7684\u72b6\u6001\u53d8\u91cf\u8bbe\u7f6e\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 14,
+        "defect_snippet": "this.count = 0;  // \u72b6\u6001\u53d8\u91cf\u88ab\u66f4\u65b0"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-remove-unchanged-state-var-2.ets
+[
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-state-var",
+        "description": "\u5efa\u8bae\u79fb\u9664\u4e0d\u5173\u8054UI\u7ec4\u4ef6\u7684\u72b6\u6001\u53d8\u91cf\u8bbe\u7f6e\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 5,
+        "defect_snippet": "@State color: Color = Color.Blue;"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-remove-unchanged-state-var-3.ets
+[
+    {
+        "rule": "@performance/hp-arkui-avoid-empty-callback",
+        "description": "\u907f\u514d\u8bbe\u7f6e\u7a7a\u7684\u7cfb\u7edf\u56de\u8c03\u76d1\u542c\u3002 \u6839\u636eArkUI\u7f16\u7a0b\u89c4\u8303\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 15,
+        "defect_snippet": "        .onClick(() => {\n          console.log(\"Button clicked\");\n        })",
+        "reason": "The onClick callback of the Button does not contain any functional logic apart from logging a message and can be considered an empty callback, which goes against the best practices."
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-remove-unchanged-state-var.ets
+[
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-state-var",
+        "description": "\u5efa\u8bae\u79fb\u9664\u4e0d\u5173\u8054UI\u7ec4\u4ef6\u7684\u72b6\u6001\u53d8\u91cf\u8bbe\u7f6e\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 10,
+        "defect_snippet": "  @State button_msg: string = \"Change Text and Color\""
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-set-cache-count-for-lazyforeach-grid-2.ets
+[
+    {
+        "rule": "@performance/hp-arkui-use-reusable-component",
+        "description": "\u5efa\u8bae\u590d\u6742\u7ec4\u4ef6\u7684\u5b9a\u4e49\uff0c\u5c3d\u91cf\u4f7f\u7528\u7ec4\u4ef6\u590d\u7528\u3002 \u6ed1\u52a8\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 35,
+        "defect_snippet": "ChatMessage({ messageContent: message })",
+        "reason": "In the message list, the ChatMessage component is created for each message without utilizing the `reuseId` method, which may lead to performance issues during rendering."
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-set-cache-count-for-lazyforeach-grid.ets
+[
+    {
+        "rule": "@performance/hp-arkui-use-reusable-component",
+        "description": "\u5efa\u8bae\u590d\u6742\u7ec4\u4ef6\u7684\u5b9a\u4e49\uff0c\u5c3d\u91cf\u4f7f\u7528\u7ec4\u4ef6\u590d\u7528\u3002 \u6ed1\u52a8\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 25,
+        "defect_snippet": "ProductItem({ productId: item })",
+        "reason": "\u6ca1\u6709\u4f7f\u7528\u590d\u7528\u7ec4\u4ef6\u7684\u6807\u8bc6\uff0c\u672a\u80fd\u5b9e\u73b0\u7ec4\u4ef6\u7684\u590d\u7528\uff0c\u53ef\u80fd\u5bfc\u81f4\u6027\u80fd\u95ee\u9898\u3002"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-use-local-var-to-replace-state-var-2.ets
+[
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-state-var",
+        "description": "\u5efa\u8bae\u79fb\u9664\u4e0d\u5173\u8054UI\u7ec4\u4ef6\u7684\u72b6\u6001\u53d8\u91cf\u8bbe\u7f6e\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 13,
+        "defect_snippet": "this.totalPrice += this.items[0].price * this.items[0].quantity;"
+    },
+    {
+        "rule": "@performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse",
+        "description": "\u907f\u514d\u5728aboutToReuse\u4e2d\u5bf9\u81ea\u52a8\u66f4\u65b0\u503c\u7684\u72b6\u6001\u53d8\u91cf\u8fdb\u884c\u66f4\u65b0\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539.",
+        "line": 28,
+        "defect_snippet": "this.calculateTotalPrice();"
+    },
+    {
+        "rule": "@performance/hp-arkui-no-func-as-arg-for-reusable-component",
+        "description": "\u907f\u514d\u4f7f\u7528\u51fd\u6570\u4f5c\u4e3a\u590d\u7528\u7684\u81ea\u5b9a\u4e49\u7ec4\u4ef6\u521b\u5efa\u65f6\u7684\u5165\u53c2\u3002 \u6ed1\u52a8\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 39,
+        "defect_snippet": "Text(item.name + \" - \" + item.price + \" x \" + item.quantity)"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-use-local-var-to-replace-state-var.ets
+[
+    {
+        "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+        "description": "\u907f\u514d\u5728for\u3001while\u7b49\u5faa\u73af\u903b\u8f91\u4e2d\u9891\u7e41\u8bfb\u53d6\u72b6\u6001\u53d8\u91cf\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 7,
+        "defect_snippet": "for (let i = 0; i < 5; i++) {\n      this.counter += 1;\n      this.counter += 2;\n      this.counter += 3;\n    }",
+        "explanation": "The code increments the state variable 'counter' multiple times within a loop, which can lead to performance issues due to frequent accesses to the state variable."
+    },
+    {
+        "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+        "description": "\u5efa\u8bae\u79fb\u9664\u672a\u6539\u53d8\u7684\u72b6\u6001\u53d8\u91cf\u8bbe\u7f6e\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 21,
+        "defect_snippet": "Text('Counter: ' + this.counter)  // \u663e\u793a\u8ba1\u6570\u5668\u503c",
+        "explanation": "Although the state variable 'counter' is displayed, the text rendering doesn't directly cause performance issues, but modifying the counter multiple times without optimization suggests performance inefficiencies."
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-use-row-column-to-replace-flex-2.ets
+[
+    {
+        "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+        "description": "\u5efa\u8bae\u4f7f\u7528Column/Row\u66ff\u4ee3Flex\u3002  \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 5,
+        "defect_snippet": "Flex({ direction: FlexDirection.Column }) {"
+    },
+    {
+        "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+        "description": "\u5efa\u8bae\u4f7f\u7528Column/Row\u66ff\u4ee3Flex\u3002  \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 12,
+        "defect_snippet": "Flex({ direction: FlexDirection.Column }) {"
+    },
+    {
+        "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+        "description": "\u5efa\u8bae\u4f7f\u7528Column/Row\u66ff\u4ee3Flex\u3002  \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 24,
+        "defect_snippet": "Flex({ direction: FlexDirection.Row }) {"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-use-row-column-to-replace-flex.ets
+[
+    {
+        "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+        "description": "\u5efa\u8bae\u4f7f\u7528Column/Row\u66ff\u4ee3Flex\u3002  \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 10,
+        "defect_snippet": "Flex({ direction: FlexDirection.Column }) {\n        Image('resources/image1.jpg')\n          .width(300)\n          .height(150)\n          .backgroundColor(Color.Blue)\n        Image('resources/image2.jpg')\n          .width(300)\n          .height(150)\n          .backgroundColor(Color.Green)\n        Image('resources/image3.jpg')\n          .width(300)\n          .height(150)\n          .backgroundColor(Color.Red)\n      }.width('100%').padding(10)"
+    },
+    {
+        "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+        "description": "\u5efa\u8bae\u4f7f\u7528Column/Row\u66ff\u4ee3Flex\u3002  \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539.",
+        "line": 19,
+        "defect_snippet": "Flex({ direction: FlexDirection.Row }) {\n        Text('Item 1').padding(10)\n        Text('Item 2').padding(10)\n        Button('Submit').padding(10)\n      }.width('100%').padding(10)"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-arkui-use-transition-to-replace-animateto.ets
+[
+    {
+        "rule": "@performance/hp-performance-no-closures",
+        "description": "\u5efa\u8bae\u51fd\u6570\u5185\u90e8\u53d8\u91cf\u5c3d\u91cf\u4f7f\u7528\u53c2\u6570\u4f20\u9012\u3002 \u6839\u636eArkTS\u7f16\u7a0b\u89c4\u8303\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 13,
+        "defect_snippet": "this.visible = true;"
+    },
+    {
+        "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+        "description": "\u5efa\u8bae\u79fb\u9664\u672a\u6539\u53d8\u7684\u72b6\u6001\u53d8\u91cf\u8bbe\u7f6e\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 18,
+        "defect_snippet": "this.visible = true;"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-performance-no-closures-2.ets
+[]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: hp-performance-no-closures.ets
+[]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: lottie-animation-destroy-check-2.ets
+[
+    {
+        "rule": "@performance/lottie-animation-destroy-check",
+        "description": "\u8be5\u89c4\u5219\u68c0\u6d4b\u4f7f\u7528lottie\u52a0\u8f7d\u7684\u52a8\u753b\u662f\u5426\u90fd\u6b63\u786e\u9500\u6bc1\u3002 \u5f53\u4f7f\u7528lottie\u52a0\u8f7d\u52a8\u753b\u65f6\uff0c\u4e00\u822c\u9700\u8981\u5148\u901a\u8fc7lottie.loadAnimation\u5c06\u52a8\u753b\u52a0\u8f7d\u5230\u5185\u5b58\uff0c\u52a8\u753b\u6267\u884c\u5b8c\u6bd5\u540e\u9700\u8981\u5728\u5408\u9002\u7684\u65f6\u673a\uff08\u4f8b\u5982\uff1aonDisAppear\uff0conPageHide\uff0caboutToDisappear\uff09\u901a\u8fc7\u8c03\u7528animationItem\u7684destroy\u65b9\u6cd5\u5c06\u5355\u4e2a\u52a8\u753b\u9500\u6bc1\u6216\u8005\u8c03\u7528lottie.destroy()\u65b9\u6cd5\u5c06\u5f53\u524d\u9875\u9762\u6240\u6709\u52a8\u753b\u9500\u6bc1\uff0c\u5982\u679c\u52a8\u753b\u672a\u88ab\u9500\u6bc1\u5c31\u4f1a\u9020\u6210\u8d44\u6e90\u6d6a\u8d39\uff0c\u5f71\u54cd\u5e94\u7528\u6027\u80fd\u4f53\u9a8c\u3002  \u5185\u5b58\u4f18\u5316\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 15,
+        "defect_snippet": "this.animationItem?.destroy();"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: lottie-animation-destroy-check.ets
+[
+    {
+        "rule": "@performance/lottie-animation-destroy-check",
+        "description": "\u8be5\u89c4\u5219\u68c0\u6d4b\u4f7f\u7528lottie\u52a0\u8f7d\u7684\u52a8\u753b\u662f\u5426\u90fd\u6b63\u786e\u9500\u6bc1\u3002 \u5f53\u4f7f\u7528lottie\u52a0\u8f7d\u52a8\u753b\u65f6\uff0c\u4e00\u822c\u9700\u8981\u5148\u901a\u8fc7lottie.loadAnimation\u5c06\u52a8\u753b\u52a0\u8f7d\u5230\u5185\u5b58\uff0c\u52a8\u753b\u6267\u884c\u5b8c\u6bd5\u540e\u9700\u8981\u5728\u5408\u9002\u7684\u65f6\u673a\uff08\u4f8b\u5982\uff1aonDisAppear\uff0conPageHide\uff0caboutToDisappear\uff09\u901a\u8fc7\u8c03\u7528animationItem\u7684destroy\u65b9\u6cd5\u5c06\u5355\u4e2a\u52a8\u753b\u9500\u6bc1\u6216\u8005\u8c03\u7528lottie.destroy()\u65b9\u6cd5\u5c06\u5f53\u524d\u9875\u9762\u6240\u6709\u52a8\u753b\u9500\u6bc1\uff0c\u5982\u679c\u52a8\u753b\u672a\u88ab\u9500\u6bc1\u5c31\u4f1a\u9020\u6210\u8d44\u6e90\u6d6a\u8d39\uff0c\u5f71\u54cd\u5e94\u7528\u6027\u80fd\u4f53\u9a8c\u3002  \u5185\u5b58\u4f18\u5316\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 17,
+        "defect_snippet": "this.animationItem?.destroy();"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: multiple-associations-state-var-check-2.ets
+[
+    {
+        "rule": "@performance/hp-arkts-no-use-any-export-current",
+        "description": "\u907f\u514d\u4f7f\u7528export * \u5bfc\u51fa\u5f53\u524dmodule\u4e2d\u5b9a\u4e49\u7684\u7c7b\u578b\u548c\u6570\u636e\u3002 \u51b7\u542f\u52a8\u5b8c\u6210\u65f6\u5ef6\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 1,
+        "defect_snippet": "import { Product } from '../HomeRepairWithoutDiff/hp-arkts-no-use-any-export-current';",
+        "reason": "The code imports from a module that uses `export *`, which can lead to performance issues during cold startup."
+    },
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+        "description": "\u907f\u514d\u5197\u4f59\u7684\u5d4c\u5957\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 36,
+        "defect_snippet": "Row() { \n",
+        "reason": "There are unnecessary nested containers (like Row) which can lead to increased view hierarchy and impact performance."
+    },
+    {
+        "rule": "@performance/hp-arkui-remove-redundant-state-var",
+        "description": "\u5efa\u8bae\u79fb\u9664\u4e0d\u5173\u8054UI\u7ec4\u4ef6\u7684\u72b6\u6001\u53d8\u91cf\u8bbe\u7f6e\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 47,
+        "defect_snippet": "this.cartData.totalAmount = 0;",
+        "reason": "The totalAmount state variable is being set to 0 without being linked to any UI elements. This assignment is unnecessary as it does not cause a UI update."
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: multiple-associations-state-var-check.ets
+[
+    {
+        "rule": "@performance/multiple-associations-state-var-check",
+        "description": "\u591a\u4e2a\u7ec4\u4ef6\u5173\u8054\u540c\u4e00\u6570\u636e\u65f6\uff0c\u5efa\u8bae\u5728\u7ec4\u4ef6\u4e2d\u4f7f\u7528@Watch\u88c5\u9970\u5668\u6dfb\u52a0\u66f4\u65b0\u6761\u4ef6\uff0c\u907f\u514d\u4e0d\u5fc5\u8981\u7684\u7ec4\u4ef6\u66f4\u65b0\u3002",
+        "line": 33,
+        "defect_snippet": "ListItemComponent({ item: item, index: index, sharedStyle: this.sharedData });",
+        "reason": "\u591a\u4e2aListItemComponent\u5b9e\u4f8b\u5171\u4eab\u540c\u4e00sharedStyle\u6570\u636e\uff0c\u5e76\u672a\u4f7f\u7528@Watch\u88c5\u9970\u5668\u8fdb\u884c\u6761\u4ef6\u66f4\u65b0\uff0c\u53ef\u80fd\u5bfc\u81f4\u4e0d\u5fc5\u8981\u7684\u7ec4\u4ef6\u66f4\u65b0\u3002"
+    },
+    {
+        "rule": "@performance/hp-arkui-use-object-link-to-replace-prop",
+        "description": "\u5efa\u8bae\u4f7f\u7528@ObjectLink\u4ee3\u66ff@Prop\u51cf\u5c11\u4e0d\u5fc5\u8981\u7684\u6df1\u62f7\u8d1d\u3002 \u901a\u7528\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 47,
+        "defect_snippet": "@Prop item: string;",
+        "reason": "\u4f7f\u7528@Prop\u88c5\u9970\u5668\u4f1a\u5bfc\u81f4item\u8fdb\u884c\u6df1\u62f7\u8d1d\uff0c\u5e94\u4f7f\u7528@ObjectLink\u4ee5\u51cf\u5c11\u6027\u80fd\u5f00\u9500\u3002"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: no-high-loaded-frame-rate-range-2.ets
+[
+    {
+        "rule": "@performance/no-high-loaded-frame-rate-range",
+        "description": "\u4e0d\u5141\u8bb8\u9501\u5b9a\u6700\u9ad8\u5e27\u7387\u8fd0\u884c\u3002",
+        "line": 13,
+        "defect_snippet": "sync.setExpectedFrameRateRange({\n            expected: 120,\n            min: 120,\n            max: 120,\n          });",
+        "reason": "This code sets the expected, min, and max frame rates all to 120, which locks the frame rate to a high value and violates the performance rule."
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: no-high-loaded-frame-rate-range.ets
+[
+    {
+        "rule": "@performance/no-high-loaded-frame-rate-range",
+        "description": "\u4e0d\u5141\u8bb8\u9501\u5b9a\u6700\u9ad8\u5e27\u7387\u8fd0\u884c\u3002",
+        "line": 11,
+        "defect_snippet": "sync.setExpectedFrameRateRange({\n  expected: 120,\n  min: 120,\n  max: 120,\n});"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: number-init-check.ets
+[
+    {
+        "rule": "@performance/number-init-check",
+        "description": "\u8be5\u89c4\u5219\u5c06\u68c0\u67e5number\u662f\u5426\u6b63\u786e\u4f7f\u7528\u3002  \u6839\u636eArkTS\u9ad8\u6027\u80fd\u7f16\u7a0b\u5b9e\u8df5\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 2,
+        "defect_snippet": "intVal = 10.5;",
+        "reason": "intVal is declared as int. Avoid changing it to float."
+    },
+    {
+        "rule": "@performance/number-init-check",
+        "description": "\u8be5\u89c4\u5219\u5c06\u68c0\u67e5number\u662f\u5426\u6b63\u786e\u4f7f\u7528\u3002  \u6839\u636eArkTS\u9ad8\u6027\u80fd\u7f16\u7a0b\u5b9e\u8df5\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 4,
+        "defect_snippet": "floatVal = 3;",
+        "reason": "floatVal is declared as float. Avoid changing it to int."
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: sparse-array-check.ets
+[
+    {
+        "rule": "@performance/sparse-array-check",
+        "description": "\u5efa\u8bae\u907f\u514d\u4f7f\u7528\u7a00\u758f\u6570\u7ec4\u3002  \u6839\u636eArkTS\u9ad8\u6027\u80fd\u7f16\u7a0b\u5b9e\u8df5\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 1,
+        "defect_snippet": "let count = 100000;\nlet data: number[] = new Array(count);\ndata = new Array();\ndata[5000] = 42;  // \u7a00\u758f\u6570\u7ec4\uff0c\u53ea\u6709\u4e00\u4e2a\u5143\u7d20\u8d4b\u503c"
+    },
+    {
+        "rule": "@performance/sparse-array-check",
+        "description": "\u5efa\u8bae\u907f\u514d\u4f7f\u7528\u7a00\u758f\u6570\u7ec4\u3002  \u6839\u636eArkTS\u9ad8\u6027\u80fd\u7f16\u7a0b\u5b9e\u8df5\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 2,
+        "defect_snippet": "data[75000] = 84; // \u7a00\u758f\u6570\u7ec4"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: typed-array-check.ets
+[
+    {
+        "rule": "@performance/typed-array-check",
+        "description": "\u6570\u503c\u6570\u7ec4\u63a8\u8350\u4f7f\u7528TypedArray\u3002 \u6839\u636eArkTS\u9ad8\u6027\u80fd\u7f16\u7a0b\u5b9e\u8df5\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 1,
+        "defect_snippet": "const typedArray1: number[] = new Array(1, 2, 3);\nconst typedArray2: number[] = new Array(4, 5, 6);",
+        "reason": "\u4f7f\u7528\u4e86\u666e\u901a\u7684number[]\u7c7b\u578b\u6570\u7ec4\uff0c\u5efa\u8bae\u4f7f\u7528TypedArray\u4ee5\u63d0\u5347\u6027\u80fd\u3002"
+    },
+    {
+        "rule": "@performance/typed-array-check",
+        "description": "\u6570\u503c\u6570\u7ec4\u63a8\u8350\u4f7f\u7528TypedArray\u3002 \u6839\u636eArkTS\u9ad8\u6027\u80fd\u7f16\u7a0b\u5b9e\u8df5\uff0c\u5efa\u8bae\u4fee\u6539\u3002",
+        "line": 3,
+        "defect_snippet": "let res: number[] = new Array(3);",
+        "reason": "\u4f7f\u7528\u4e86\u666e\u901a\u7684number[]\u7c7b\u578b\u6570\u7ec4\uff0c\u5efa\u8bae\u4f7f\u7528TypedArray\u4ee5\u63d0\u5347\u6027\u80fd\u3002"
+    }
+]
+HTTP Request: POST https://xiaoai.plus/v1/chat/completions "HTTP/1.1 200 OK"
+
+File: waterflow-data-preload-check.ets
+[
+    {
+        "rule": "@performance/waterflow-data-preload-check",
+        "description": "\u5efa\u8bae\u5bf9waterflow\u5b50\u7ec4\u4ef6\u8fdb\u884c\u6570\u636e\u9884\u52a0\u8f7d\u3002\u6ed1\u52a8\u4e22\u5e27\u573a\u666f\u4e0b\uff0c\u5efa\u8bae\u4f18\u5148\u4fee\u6539\u3002",
+        "line": 54,
+        "defect_snippet": "// \u6ca1\u6709\u63d0\u524d\u9884\u52a0\u8f7d\u65b0\u6570\u636e\uff0c\u6ed1\u52a8\u5230\u7ed3\u5c3e\u65f6\u624d\u52a0\u8f7d\nsetTimeout(() => {\n  for (let i = 0; i < 50; i++) {\n    this.dataSource.AddLastItem();\n  }\n}, 1000);",
+        "reason": "The code does not preload new data for the water flow component in advance, which may lead to frame drops during scrolling."
+    }
+]

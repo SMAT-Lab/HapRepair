@@ -1,0 +1,61 @@
+2024-11-11 07:26:46,188 - INFO - 读取文件: ../mydefects2/ets/pages/defects/high-frequency-log-check.ets
+2024-11-11 07:26:46,188 - INFO - 读取Excel文件中的缺陷信息
+2024-11-11 07:26:46,191 - INFO - CodeLinter分析结果:
+2024-11-11 07:26:46,191 - INFO - [
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "line": 16,
+    "message": "Avoid printing logs in frequent functions. The call chain here is as follows: entry\\src\\main\\ets\\pages\\defects\\high-frequency-log-check.ets:16:hilog.info",
+    "code": "hilog.info(1002, 'DragTest', 'onItemDragMove')"
+  }
+]
+2024-11-11 07:26:46,191 - INFO - 分析第1/1个缺陷
+2024-11-11 07:26:53,548 - INFO - {'rule': '@performance/high-frequency-log-check', 'defect_block': {'code': ['.onItemDragMove(() => {', "  hilog.info(1002, 'DragTest', 'onItemDragMove')", '})'], 'start_line': '15', 'end_line': '17', 'line of interest': "hilog.info(1002, 'DragTest', 'onItemDragMove')"}, 'analysis': 'Avoid printing logs in frequent functions. The call chain here is as follows: entry\\src\\main\\ets\\pages\\defects\\high-frequency-log-check.ets:16:hilog.info'}
+2024-11-11 07:26:53,548 - INFO - 开始生成修复建议
+2024-11-11 07:26:54,024 - INFO - 处理第1/1个修复建议
+2024-11-11 07:26:56,338 - INFO - 修复建议1的结果:
+2024-11-11 07:26:56,338 - INFO - ```json
+{
+  "problem_code": ".onItemDragMove(() => {\n  hilog.info(1002, 'DragTest', 'onItemDragMove')\n})\n",
+  "problem_fix": ".onItemDragMove(() => {\n  const TAG = 'onItemDragMove';\n})\n"
+}
+```
+2024-11-11 07:26:56,338 - INFO - 处理修复结果
+2024-11-11 07:26:56,338 - INFO - 处理第1个修复结果
+2024-11-11 07:26:56,338 - INFO - 原始代码:
+.onItemDragMove(() => {
+  hilog.info(1002, 'DragTest', 'onItemDragMove')
+})
+
+2024-11-11 07:26:56,338 - INFO - 修复后代码:
+.onItemDragMove(() => {
+  const TAG = 'onItemDragMove';
+})
+
+2024-11-11 07:26:56,339 - INFO - 生成最终修复代码
+2024-11-11 07:27:05,210 - INFO - 最终修复结果:
+2024-11-11 07:27:05,211 - INFO - ```arkts
+import hilog from '@ohos.hilog';
+
+@Entry
+@Component
+struct DragTest {
+  build() {
+    Column() {
+      List() {
+        ListItem() {
+          Text('Item 1');
+        }
+        ListItem() {
+          Text('Item 2');
+        }
+        .onItemDragMove(() => {
+          const TAG = 'onItemDragMove';
+        })
+      }
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
+```

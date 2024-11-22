@@ -1,0 +1,223 @@
+2024-11-11 07:33:59,780 - INFO - 读取文件: ../mydefects2/ets/pages/defects/hp-arkui-replace-nested-reusable-component-by-builder.ets
+2024-11-11 07:33:59,780 - INFO - 读取Excel文件中的缺陷信息
+2024-11-11 07:33:59,782 - INFO - CodeLinter分析结果:
+2024-11-11 07:33:59,782 - INFO - [
+  {
+    "rule": "@performance/hp-arkui-replace-nested-reusable-component-by-builder",
+    "line": 34,
+    "message": "Prioritize @Builder over nested custom components",
+    "code": "UserDetails({ stat: this.stat })"
+  },
+  {
+    "rule": "@performance/multiple-associations-state-var-check",
+    "line": 61,
+    "message": "Suggestion: This data is associated with multiple components; you are advised to use the @Watch decorator to add update conditions to avoid unnecessary component update.",
+    "code": "@State stat: number = 0;"
+  }
+]
+2024-11-11 07:33:59,782 - INFO - 分析第1/2个缺陷
+2024-11-11 07:34:07,938 - INFO - {'rule': '@performance/hp-arkui-replace-nested-reusable-component-by-builder', 'defect_block': {'code': ['@Reusable', '@Component', 'struct UserInfo {', "  @State @Watch('aboutToReuse') stat: number = 0;", '  aboutToReuse(params: ESObject): void {', '    this.stat = params.stat as number;', '  }', '  build() {', '    Column() {', '      UserDetails({ stat: this.stat })', '    }', "    .width('100%')", '    .height(100)', '    .padding(10)', '  }', '}'], 'start_line': '18', 'end_line': '29', 'line of interest': 'UserDetails({ stat: this.stat })'}, 'analysis': "The code uses nested custom components. It suggests replacing nested components like 'UserDetails' with a '@Builder' decorated function to optimize performance by reducing the rendering complexity of the component tree."}
+2024-11-11 07:34:07,938 - INFO - 分析第2/2个缺陷
+2024-11-11 07:34:20,131 - INFO - {'rule': '@performance/multiple-associations-state-var-check', 'defect_block': {'code': ['@Component', 'struct UserStatsDisplay {', '  @State stat: number = 0;', '', '  aboutToReuse(params: ESObject): void {', '    this.stat = params.stat as number;', '  }', '', '  build() {', '    Column() {', "      Text('用户统计: ' + this.stat)", '        .fontSize(20)', '        .fontWeight(20)', '    }', "    .width('100%')", '    .height(50)', '  }', '}'], 'start_line': '56', 'end_line': '72', 'line of interest': '@State stat: number = 0;'}, 'analysis': 'In UserStatsDisplay component, the state variable `stat` is associated with multiple components. The @Watch decorator should be used to add update conditions to avoid unnecessary component updates. This helps in efficiently managing component re-renders when the state variable `stat` changes.'}
+2024-11-11 07:34:20,131 - INFO - 开始生成修复建议
+2024-11-11 07:34:21,546 - INFO - 处理第1/2个修复建议
+2024-11-11 07:34:27,182 - INFO - 修复建议1的结果:
+2024-11-11 07:34:27,182 - INFO - ```json
+{
+  "problem_code": "@Reusable\n@Component\nstruct UserInfo {\n  @State @Watch('aboutToReuse') stat: number = 0;\n  aboutToReuse(params: ESObject): void {\n    this.stat = params.stat as number;\n  }\n  build() {\n    Column() {\n      UserDetails({ stat: this.stat })\n    }\n    .width('100%')\n    .height(100)\n    .padding(10)\n  }\n}\n",
+  "problem_fix": "@Reusable\n@Component\nstruct UserInfo {\n  @State @Watch('aboutToReuse') stat: number = 0;\n  aboutToReuse(params: ESObject): void {\n    this.stat = params.stat as number;\n  }\n  build() {\n    Column() {\n      renderUserDetails(this.stat)\n    }\n    .width('100%')\n    .height(100)\n    .padding(10)\n  }\n}\n\n@Builder\nfunction renderUserDetails(stat: number) {\n  Row() {\n    UserStatsDisplay({ stat: stat })\n  }\n  .padding(5)\n}\n"
+}
+```
+2024-11-11 07:34:27,183 - INFO - 处理第2/2个修复建议
+2024-11-11 07:34:33,628 - INFO - 修复建议2的结果:
+2024-11-11 07:34:33,628 - INFO - ```json
+{
+  "problem_code": "\n@Component\nstruct UserStatsDisplay {\n  @State stat: number = 0;\n\n  aboutToReuse(params: ESObject): void {\n    this.stat = params.stat as number;\n  }\n\n  build() {\n    Column() {\n      Text('用户统计: ' + this.stat)\n        .fontSize(20)\n        .fontWeight(20)\n    }\n    .width('100%')\n    .height(50)\n  }\n}\n",
+  "problem_fix": "\n@Component\nstruct UserStatsDisplay {\n  @State @Watch('onStatChange') stat: number = 0;\n\n  aboutToReuse(params: ESObject): void {\n    this.stat = params.stat as number;\n  }\n  \n  onStatChange() {\n    // Additional logic handling if needed when stat changes\n  }\n\n  build() {\n    Column() {\n      Text('用户统计: ' + this.stat)\n        .fontSize(20)\n        .fontWeight(20)\n    }\n    .width('100%')\n    .height(50)\n  }\n}\n"
+}
+```
+2024-11-11 07:34:33,628 - INFO - 处理修复结果
+2024-11-11 07:34:33,628 - INFO - 处理第1个修复结果
+2024-11-11 07:34:33,628 - INFO - 原始代码:
+@Reusable
+@Component
+struct UserInfo {
+  @State @Watch('aboutToReuse') stat: number = 0;
+  aboutToReuse(params: ESObject): void {
+    this.stat = params.stat as number;
+  }
+  build() {
+    Column() {
+      UserDetails({ stat: this.stat })
+    }
+    .width('100%')
+    .height(100)
+    .padding(10)
+  }
+}
+
+2024-11-11 07:34:33,628 - INFO - 修复后代码:
+@Reusable
+@Component
+struct UserInfo {
+  @State @Watch('aboutToReuse') stat: number = 0;
+  aboutToReuse(params: ESObject): void {
+    this.stat = params.stat as number;
+  }
+  build() {
+    Column() {
+      renderUserDetails(this.stat)
+    }
+    .width('100%')
+    .height(100)
+    .padding(10)
+  }
+}
+
+@Builder
+function renderUserDetails(stat: number) {
+  Row() {
+    UserStatsDisplay({ stat: stat })
+  }
+  .padding(5)
+}
+
+2024-11-11 07:34:33,629 - INFO - 处理第2个修复结果
+2024-11-11 07:34:33,629 - INFO - 原始代码:
+
+@Component
+struct UserStatsDisplay {
+  @State stat: number = 0;
+
+  aboutToReuse(params: ESObject): void {
+    this.stat = params.stat as number;
+  }
+
+  build() {
+    Column() {
+      Text('用户统计: ' + this.stat)
+        .fontSize(20)
+        .fontWeight(20)
+    }
+    .width('100%')
+    .height(50)
+  }
+}
+
+2024-11-11 07:34:33,629 - INFO - 修复后代码:
+
+@Component
+struct UserStatsDisplay {
+  @State @Watch('onStatChange') stat: number = 0;
+
+  aboutToReuse(params: ESObject): void {
+    this.stat = params.stat as number;
+  }
+  
+  onStatChange() {
+    // Additional logic handling if needed when stat changes
+  }
+
+  build() {
+    Column() {
+      Text('用户统计: ' + this.stat)
+        .fontSize(20)
+        .fontWeight(20)
+    }
+    .width('100%')
+    .height(50)
+  }
+}
+
+2024-11-11 07:34:33,629 - INFO - 生成最终修复代码
+2024-11-11 07:34:40,819 - INFO - 最终修复结果:
+2024-11-11 07:34:40,819 - INFO - ```arkts
+@Entry
+@Component
+struct DashboardComponent {
+  @State userStats: number[] = Array.from(Array(10), (_, i) => i + 1);
+
+  build() {
+    Column() {
+      List() {
+        LazyForEach(this.userStats, (stat: number) => {
+          ListItem() {
+            // 使用自定义的 UserInfo 组件嵌套渲染
+            UserInfo({ stat: stat })
+          }
+        }, (stat: number) => stat.toString())
+      }
+      .cachedCount(2)
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
+
+@Reusable
+@Component
+struct UserInfo {
+  @State @Watch('aboutToReuse') stat: number = 0;
+
+  aboutToReuse(params: ESObject): void {
+    this.stat = params.stat as number;
+  }
+
+  build() {
+    Column() {
+      renderUserDetails(this.stat)
+    }
+    .width('100%')
+    .height(100)
+    .padding(10)
+  }
+}
+
+@Builder
+function renderUserDetails(stat: number) {
+  Row() {
+    UserStatsDisplay({ stat: stat })
+  }
+  .padding(5)
+}
+
+@Component
+struct UserDetails {
+  @State @Watch('aboutToReuse') stat: number = 0;
+
+  aboutToReuse(params: ESObject): void {
+    this.stat = params.stat as number;
+  }
+
+  build() {
+    Row() {
+      // 嵌套第三个自定义组件 UserStatsDisplay
+      UserStatsDisplay({ stat: this.stat })
+    }
+    .padding(5)
+  }
+}
+
+@Component
+struct UserStatsDisplay {
+  @State @Watch('onStatChange') stat: number = 0;
+
+  aboutToReuse(params: ESObject): void {
+    this.stat = params.stat as number;
+  }
+  
+  onStatChange() {
+    // Additional logic handling if needed when stat changes
+  }
+
+  build() {
+    Column() {
+      Text('用户统计: ' + this.stat)
+        .fontSize(20)
+        .fontWeight(20)
+    }
+    .width('100%')
+    .height(50)
+  }
+}
+```

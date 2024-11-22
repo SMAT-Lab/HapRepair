@@ -1,0 +1,69 @@
+2024-11-11 06:36:35,781 - INFO - 读取文件: ../mydefects/ets/pages/defects/number-init-check.ets
+2024-11-11 06:36:35,782 - INFO - 读取Excel文件中的缺陷信息
+2024-11-11 06:36:35,785 - INFO - CodeLinter分析结果:
+2024-11-11 06:36:35,785 - INFO - [
+  {
+    "rule": "@performance/number-init-check",
+    "line": 2,
+    "message": "Number variable of both int and float types detected. The value assigned to a variable should be of the type declared for the variable.",
+    "code": "intVal = 10.5;"
+  },
+  {
+    "rule": "@performance/number-init-check",
+    "line": 4,
+    "message": "Number variable of both int and float types detected. The value assigned to a variable should be of the type declared for the variable.",
+    "code": "floatVal = 3;"
+  }
+]
+2024-11-11 06:36:35,785 - INFO - 分析第1/2个缺陷
+2024-11-11 06:36:41,282 - INFO - {'rule': '@performance/number-init-check', 'defect_block': {'code': ['let intVal: number = 10;', 'intVal = 10.5;'], 'start_line': 1, 'end_line': 2, 'line of interest': 'intVal = 10.5;'}, 'analysis': 'Number variable of both int and float types detected. The value assigned to a variable should be of the type declared for the variable.'}
+2024-11-11 06:36:41,282 - INFO - 分析第2/2个缺陷
+2024-11-11 06:36:47,917 - INFO - {'rule': '@performance/number-init-check', 'defect_block': {'code': ['let floatVal: number = 3.5;', 'floatVal = 3;'], 'start_line': 3, 'end_line': 4, 'line of interest': 'floatVal = 3;'}, 'analysis': 'Number variable of both int and float types detected. The value assigned to a variable should be of the type declared for the variable.'}
+2024-11-11 06:36:47,918 - INFO - 开始生成修复建议
+2024-11-11 06:36:48,653 - INFO - 处理第1/2个修复建议
+2024-11-11 06:36:51,818 - INFO - 修复建议1的结果:
+2024-11-11 06:36:51,818 - INFO - ```json
+{
+  "problem_code": "let intVal: number = 10;\nintVal = 10.5;\n",
+  "problem_fix": "let intVal: number = 10;\nintVal = 11;\nlet floatVal: number = 3.5;\nfloatVal = 3.5;\n"
+}
+```
+2024-11-11 06:36:51,818 - INFO - 处理第2/2个修复建议
+2024-11-11 06:36:58,908 - INFO - 修复建议2的结果:
+2024-11-11 06:36:58,908 - INFO - ```json
+{
+  "problem_code": "let floatVal: number = 3.5;\nfloatVal = 3;\n",
+  "problem_fix": "let floatVal: number = 3.5;\nfloatVal = 3.1;\n"
+}
+```
+2024-11-11 06:36:58,908 - INFO - 处理修复结果
+2024-11-11 06:36:58,908 - INFO - 处理第1个修复结果
+2024-11-11 06:36:58,909 - INFO - 原始代码:
+let intVal: number = 10;
+intVal = 10.5;
+
+2024-11-11 06:36:58,909 - INFO - 修复后代码:
+let intVal: number = 10;
+intVal = 11;
+let floatVal: number = 3.5;
+floatVal = 3.5;
+
+2024-11-11 06:36:58,909 - INFO - 处理第2个修复结果
+2024-11-11 06:36:58,909 - INFO - 原始代码:
+let floatVal: number = 3.5;
+floatVal = 3;
+
+2024-11-11 06:36:58,909 - INFO - 修复后代码:
+let floatVal: number = 3.5;
+floatVal = 3.1;
+
+2024-11-11 06:36:58,909 - INFO - 生成最终修复代码
+2024-11-11 06:37:02,673 - INFO - 最终修复结果:
+2024-11-11 06:37:02,674 - INFO - 修复后的完整代码如下：
+
+```arkts
+let intVal: number = 10;
+intVal = 11;
+let floatVal: number = 3.5;
+floatVal = 3.1;
+```

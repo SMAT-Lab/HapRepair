@@ -1,0 +1,72 @@
+2024-11-11 06:36:21,382 - INFO - 读取文件: ../mydefects/ets/pages/defects/no-high-loaded-frame-rate-range.ets
+2024-11-11 06:36:21,382 - INFO - 读取Excel文件中的缺陷信息
+2024-11-11 06:36:21,385 - INFO - CodeLinter分析结果:
+2024-11-11 06:36:21,386 - INFO - [
+  {
+    "rule": "@performance/no-high-loaded-frame-rate-range",
+    "line": 15,
+    "message": "The values of expected, min, and max should not be all 120.",
+    "code": "sync.setExpectedFrameRateRange({"
+  }
+]
+2024-11-11 06:36:21,386 - INFO - 分析第1/1个缺陷
+2024-11-11 06:36:27,602 - INFO - {'rule': '@performance/no-high-loaded-frame-rate-range', 'defect_block': {'code': ['let sync = displaySync.create();', 'sync.setExpectedFrameRateRange({', '  expected: 120,', '  min: 120,', '  max: 120', '});'], 'start_line': 14, 'end_line': 18, 'line of interest': 'sync.setExpectedFrameRateRange({'}, 'analysis': 'The values of expected, min, and max should not be all 120, as it locks the device to the highest frame rate, which is not recommended.'}
+2024-11-11 06:36:27,602 - INFO - 开始生成修复建议
+2024-11-11 06:36:28,131 - INFO - 处理第1/1个修复建议
+2024-11-11 06:36:31,756 - INFO - 修复建议1的结果:
+2024-11-11 06:36:31,757 - INFO - ```json
+{
+  "problem_code": "let sync = displaySync.create();\nsync.setExpectedFrameRateRange({\n  expected: 120,\n  min: 120,\n  max: 120\n});\n",
+  "problem_fix": "let sync = displaySync.create();\nsync.setExpectedFrameRateRange({\n  expected: 60,\n  min: 30,\n  max: 60\n});\n"
+}
+```
+2024-11-11 06:36:31,757 - INFO - 处理修复结果
+2024-11-11 06:36:31,757 - INFO - 处理第1个修复结果
+2024-11-11 06:36:31,757 - INFO - 原始代码:
+let sync = displaySync.create();
+sync.setExpectedFrameRateRange({
+  expected: 120,
+  min: 120,
+  max: 120
+});
+
+2024-11-11 06:36:31,757 - INFO - 修复后代码:
+let sync = displaySync.create();
+sync.setExpectedFrameRateRange({
+  expected: 60,
+  min: 30,
+  max: 60
+});
+
+2024-11-11 06:36:31,757 - INFO - 生成最终修复代码
+2024-11-11 06:36:35,780 - INFO - 最终修复结果:
+2024-11-11 06:36:35,780 - INFO - ```arkts
+import { displaySync } from '@kit.ArkGraphics2D';
+
+@Entry
+@Component
+struct MyComponent {
+  build() {
+    Column() {
+      Text("Frame Rate Control Example")
+        .fontSize(20)
+        .padding(10)
+
+      Button("Set High Frame Rate")
+        .onClick(() => {
+          let sync = displaySync.create();
+          sync.setExpectedFrameRateRange({
+            expected: 60,
+            min: 30,
+            max: 60,
+          });
+          console.info('Frame rate locked to 120 FPS');
+        })
+        .padding(10)
+        .backgroundColor(Color.Blue)
+        .fontColor(Color.White)
+    }
+    .padding(20)
+  }
+}
+```
