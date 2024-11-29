@@ -48,7 +48,7 @@ def get_embedding(text, model, tokenizer):
 
 if __name__ == "__main__":
     model, tokenizer, index = load_model_and_index()
-    defects = read_defects_from_file('../data/demo.xlsx')
+    defects = read_defects_from_file('./data/addition.xlsx')
     
     for defect in defects:
         ## 随机生成id， defect作为metadata， defect["problem_code"]进行embedding

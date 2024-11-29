@@ -1,4 +1,5 @@
 import logging
+import queue
 import sys
 import requests
 import json
@@ -23,6 +24,8 @@ import glob
 import concurrent.futures
 
 from llm import get_openai_answer,get_ollama_answer
+
+from get_prompt import generate_fix_prompt, combine_repair_results, get_rag_prompt, get_context_extraction_prompt, get_defect_extraction_prompt, judge_need_context_prompt
 
 from get_surrounding_context import get_single_file_surrounding_context, load_rules
 from code_repair import get_repair_prompt
@@ -51,7 +54,7 @@ def get_embedding(text, model, tokenizer):
     return embeddings
 
 
-def generate(query, system_prompt='You are a helpful AI assistant', base_url='https://xiaoai.plus/v1', model='gpt-4o-mini', retries=3):
+def generate(query, system_prompt='You are a helpful AI assistant', base_url='https://xiaoai.plus/v1', model='gpt-4o-2024-08-06', retries=3):
     def call_ollama(query):
         data = {
             "model": model,
@@ -138,115 +141,6 @@ def read_code():
     logging.getLogger().info("代码文件读取完成")
     return codes
 
-def parse_ets_file(file_path):
-    logging.getLogger().info(f"解析文件: {file_path}")
-    description = []
-    code_example = ""
-    in_comment = True
-
-    with open(file_path, 'r', encoding='utf-8') as file:
-        for line in file:
-            stripped_line = line.strip()
-            if in_comment and stripped_line.startswith('//'):
-                description.append(stripped_line[2:].strip())
-            else:
-                in_comment = False
-                code_example += stripped_line + " "
-
-    return {
-        'description': ' '.join(description),
-        'defect_code_example': code_example.strip()
-    }
-
-def get_positive_example(file_path):
-    logging.getLogger().info(f"获取正例数据: {file_path}")
-    code_example = ""
-    in_comment = False
-    with open(file_path, 'r', encoding='utf-8') as file:
-        for line in file:
-            stripped_line = line.strip()
-            code_example += stripped_line + " "
-    return code_example.strip()
-
-def build_rules_dict(negative_dir, positive_dir):
-    logging.getLogger().info("开始构建规则字典...")
-    rules = {}
-    for filename in os.listdir(negative_dir):
-        if filename.endswith('.ets'):
-            logging.getLogger().info(f"处理规则文件: {filename}")
-            rule_name = os.path.splitext(filename)[0]
-            rule_key = f"@performance/{rule_name}"
-            negative_file_path = os.path.join(negative_dir, filename)
-            rule_data = parse_ets_file(negative_file_path)
-
-            positive_file_path = os.path.join(positive_dir, filename)
-            if os.path.exists(positive_file_path):
-                positive_example = get_positive_example(positive_file_path)
-                rule_data['positive_code_example'] = positive_example
-            else:
-                logging.getLogger().warning(f"未找到对应的正例文件: {filename}")
-                rule_data['positive_code_example'] = None
-
-            rules[rule_key] = rule_data
-    logging.getLogger().info("规则字典构建完成")
-    return rules
-
-def get_rag_prompt(repair_example, model, tokenizer, index, number=5):
-    logging.getLogger().info(f"获取修复提示，规则: {repair_example['rule']}")
-    query_text = repair_example["problem_code"]
-    query_vector = get_embedding(query_text, model, tokenizer)
-    
-    results = index.query(
-        namespace="arkts",
-        vector=query_vector.tolist(),
-        top_k=number,
-        include_metadata=True,
-        filter={"rule": repair_example["rule"]}
-    )
-    matches = results.matches
-    if len(matches) == 0:
-        return ""
-    
-    fix_prompt = "I will show you similar errors below. Please help me fix my code based on these error fixes.\n"
-    for j, match in enumerate(matches):
-        metadata = match['metadata']
-        fix_prompt += (f"Demo {j+1}: \nRule Type: \n{metadata['rule']}\n\nDescription: \n{metadata['description']}\n\n"
-                   f"Problem Code: \n```arkts\n{metadata['problem_code']}\n```\n\nFix Explanation: \n{metadata['problem_explain']}\n\n"
-                   f"Fixed Code: \n\n```arkts\n{metadata['problem_fix']}\n```\n\n"
-                   f"Following is the action to take to fix the buggy code into fixed code:\n\n{metadata['diff']}\n\n"
-                )
-    
-    return fix_prompt
-
-def repair_multiple_defects(defects, model, tokenizer, index):
-    logging.getLogger().info(f"开始修复多个缺陷，共{len(defects)}个缺陷")
-    repair_suggestions = []
-    
-    for i, defect in enumerate(defects):
-        logging.getLogger().info(f"处理第{i+1}个缺陷，规则: {defect['rule']}")
-        problem_code = ""
-        for code_line in defect["defect_block"]['code']:
-            problem_code += code_line + "\n"
-            
-        repair_example = {
-            "rule": defect["rule"],
-            "description": defect["analysis"],
-            "problem_code": problem_code,
-            "line_of_interest": defect["defect_block"]['line of interest']
-        }
-        
-        fix_prompt = get_rag_prompt(repair_example, model, tokenizer, index)
-        repair_suggestions.append({
-            "defect": defect,
-            "fix_prompt": fix_prompt,
-            "problem_code": problem_code,
-            "line_of_interest": defect["defect_block"]['line of interest'],
-            "analysis": defect["analysis"]
-        })
-        
-    logging.getLogger().info("缺陷修复建议生成完成")
-    return repair_suggestions
-
 def handle_result(res):
     start = res.find('```json')
     if start == -1:
@@ -269,284 +163,9 @@ def handle_result(res):
         logging.getLogger().error(f"JSON解析错误: {e}")
         return None
 
-def process_single_file(file_path, project_dir, df, system_prompt, model, tokenizer, index):
-    # 为每个文件创建单独的日志处理器
-    print(file_path)
-    ## file_path: ../pages/box2d/ets/TimeOfImpact.ets, project_name: box2d
-    project_name = project_dir.split('/')[-1]
-    file_name = os.path.basename(file_path)
-    log_dir = f"../log/{project_name}"  # 修改日志目录结构
-    os.makedirs(log_dir, exist_ok=True)
-    
-    file_handler = logging.FileHandler(f"{log_dir}/{file_name}.log")
-    file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    
-    logger = logging.getLogger(file_name)
-    logger.setLevel(logging.INFO)
-    # 移除所有已存在的处理器
-    for handler in logger.handlers[:]:
-        logger.removeHandler(handler)
-    logger.addHandler(file_handler)
-    logger.propagate = False  # 阻止日志向上传播到根日志记录器
-    
-    logger.info(f"读取文件: {file_path}")
-    with open(file_path, 'r') as f:
-        code = f.read()
-
-    logger.info("读取Excel文件中的缺陷信息")
-    
-    results = []
-    code_lines = code.split('\n')
-
-    # 根据文件路径筛选相关的缺陷记录
-    file_df = df[df['Source File'].str.endswith(os.path.basename(file_path))]
-
-    for _, row in file_df.iterrows():
-        line_num = int(row['Line'])
-        result = {
-            "rule": row['RuleName'],
-            "line": line_num,
-            "message": row['Detail'],
-            "code": code_lines[line_num - 1].strip() if line_num <= len(code_lines) else ""
-        }
-        results.append(result)
-
-    results.sort(key=lambda x: x['line'])
-
-    unique_results = []
-    seen = set()
-
-    for result in results:
-        key = (result['rule'], result['line'])
-        if key not in seen:
-            unique_results.append(result)
-            seen.add(key)
-
-    codelinter_res = json.dumps(unique_results, indent=2)
-    logger.info("CodeLinter分析结果:")
-    logger.info(codelinter_res)
-
-    codelinter_results = json.loads(codelinter_res)
-
-    vul_type_data = []
-    defects = []
-
-    for i, defect in enumerate(codelinter_results):
-        logger.info(f"分析第{i+1}/{len(codelinter_results)}个缺陷")
-        prompt = f"""Following is my arkts code which you should check defects: 
-    {code}
-
-    Following is the CodeLinter analysis result:
-    {json.dumps(defect, indent=2)}
-    """ + """
-    Now, please output the defect contained the defect code block in JSON format:
-    ```json
-    {
-      "rule": "@performance/rule-name",
-      "defect_block": {
-        "code": ["Code block containing the defect"],
-        "start_line": "first_line_number",
-        "end_line": "last_line_number",
-        "line of interest": "The code where the defect is reported by CodeLinter. Code instead of line number!!"
-      },
-      "analysis": "The description of the defect"
-    }
-    ```
-                   """
-        res = generate(prompt, system_prompt=system_prompt)
-        vul_type_data = handle_vul_type_res(res) 
-        retry_count = 0
-        max_retries = 3
-        while isinstance(vul_type_data, str) and retry_count < max_retries:
-            # 如果返回的是字符串，则返回的json格式不正确，需要重新生成
-            logger.warning(f"JSON格式不正确，第{retry_count + 1}次重试")
-            res = generate(prompt, system_prompt=system_prompt)
-            vul_type_data = handle_vul_type_res(res)
-            retry_count += 1
-            
-        if isinstance(vul_type_data, list):
-            vul_type_data = vul_type_data[0]
-            
-        if not isinstance(vul_type_data, str):
-            defects.append(vul_type_data)
-
-    logger.info("开始生成修复建议")
-    repair_prompts = repair_multiple_defects(defects, model, tokenizer, index)
-    repair_results = []
-    for i, result in enumerate(repair_prompts):
-        logger.info(f"处理第{i+1}/{len(repair_prompts)}个修复建议")
-        fix_prompt = result['fix_prompt'] + f"\n待修复代码为：\n```arkts\n{code}\n```\n出现错误的代码行：\n```arkts\n{result['line_of_interest']}\n```\n其中的problem_code(错误的代码上下文)为：\n```arkts\n{result['problem_code']}\n```\n修复建议是：\n{result['analysis']}\n请根据上面所给出的缺陷修复建议,对上述待修复代码开始修复(不需要考虑其它问题，仅考虑建议中提出的), 修复的时候需要给出有问题的代码段以及修复的代码段：" + """
-    请以如下json格式输出：
-    ```json
-    {
-      "problem_code": "需要和传入的problem_code(包含错误的代码上下文)保持一致",
-      "problem_fix": "修复后的代码段(包含修复的代码以及上下文),请保留换行和缩进"
-    }
-    ```
-    """
-        res = generate(fix_prompt, system_prompt="你是arkts代码修复专家。你将获得用户给出的错误代码以及问题类型，出现错误的代码所在的行以及上下文，以及对应问题类型的修复案例。请参考修复案例，根据用户给出的错误代码以及问题类型，帮助用户修复代码。")
-        logger.info(f"修复建议{i+1}的结果:")
-        logger.info(res)
-        repair_results.append(res)
-
-    logger.info("处理修复结果")
-    for i, result in enumerate(repair_results):
-        logger.info(f"处理第{i+1}个修复结果")
-        data_json = handle_result(result)
-        if data_json:
-            logger.info(f"原始代码:\n{data_json['problem_code']}")
-            logger.info(f"修复后代码:\n{data_json['problem_fix']}")
-
-    logger.info("生成最终修复代码")
-    res = generate(f"代码如下:\n```arkts\n{code}\n```\n, 修复的patch如下: \n{json.dumps(repair_results, indent=4)}\n请根据上面的patch来对代码进行修复，仅修复patch的部分，其它部分请务必保持不变，给出修复后的完整文件！", system_prompt="你是arkts代码修复专家，我将给出你代码中存在的缺陷，以及解决这些缺陷需要进行的patch，请你帮我执行这些patch，得到修复后的完整文件代码，必须是完整文件！")
-    logger.info("最终修复结果:")
-    logger.info(res)
-    
-    # 移除文件特定的处理器
-    logger.removeHandler(file_handler)
-    file_handler.close()
-
-def get_context_extraction_prompt():
-    negative_directory = './pages/negative'
-    positive_directory = './pages/positive'
-    rules = build_rules_dict(negative_directory, positive_directory)
-
-    system_prompt = """
-    I am an expert at analyzing CodeLinter results and extracting minimal code blocks containing defects. When you provide me with ArkTS code and CodeLinter analysis results, I will:
-
-    1. Learn the defect patterns from the rules
-    2. Take the CodeLinter results as ground truth defect locations
-    3. For each defect reported by CodeLinter:
-       - Find the minimal code block containing the defect and its required context
-       - Include any related code that is necessary to understand the defect
-       - Ensure the extracted block captures the full scope of the issue
-      
-
-    Input format:
-    1. Complete ArkTS source code
-    2. CodeLinter results in JSON:
-    [
-      {
-        "rule": "@performance/rule-name",
-        "line": line_number, 
-        "message": "Issue description",
-        "code": "Code snippet"
-      },
-      {
-        "rule": "@performance/rule-name",
-        "line": line_number, 
-        "message": "Issue description",
-        "code": "Code snippet"
-      }
-    ]
-
-    Important notes:
-    - I will treat each CodeLinter result as definitive evidence of a defect
-    - The defect_block will be the complete code unit containing the issue, for example, the define and use of a variable. 
-    - You should find all the code related to the defect and return the defect_block. For example, for a constant-property-referencing-check-in-loops defect, you need to extract the constant variable assignment outside of the outermost loop
-    - Line numbers will be preserved for accurate block replacement
-    - Output will be valid JSON only, sorted by line number
-    - Each block must be independently understandable and fixable
-
-    I must output valid JSON only, sorted by line number. Make sure the output is correct JSON format which can be parsed by json.loads() and follow the format: 
-    ```json
-    [
-      {
-        "rule": "@performance/rule-name",
-        "defect_block": {
-          "code": ["Code block containing the defect"],
-          "start_line": "first_line_number",
-          "end_line": "last_line_number",
-          "line of interest": "The code where the defect is reported by CodeLinter. Code instead of line number!!"
-        },
-        "analysis": "The description of the defect"
-      },
-      ...
-    ]
-    ```
-
-    Following are the defect patterns I will look for:
-    """
-
-    for rule, details in rules.items():
-        system_prompt += "Rule: {}\nDescription: {}\nDefect Example:\n{}\nFixed Example:\n{}\n\n".format(
-            rule,
-            details['description'],
-            details['defect_code_example'],
-            details['positive_code_example']
-        )
-
-    return system_prompt
-
-def get_defect_extraction_prompt():
-    negative_directory = './pages/negative'
-    positive_directory = './pages/positive'
-    rules = build_rules_dict(negative_directory, positive_directory)
-
-    system_prompt = f"""
-I am a code analyzer specialized in detecting performance defects in ArkTS code. I will carefully analyze the code line by line from top to bottom to identify any performance issues based on the rules you provided.
-
-When you give me an ArkTS file, I will:
-1. Read through the code sequentially from the first line to the last line
-2. For each line, check if it violates any of the performance rules
-3. If a defect is found, I will record:
-   - The specific rule that was violated
-   - The rule's description
-   - The line number where the defect occurs
-   - The problematic code snippet
-   - Why this code violates the rule based on the rule's description
-
-Please provide the code you want me to analyze. I will return the results in the following JSON format:
-
-[
-  {{
-    "rule": "@performance/hp-arkui-use-reusable-component",
-    "description": "避免在for、while等循环逻辑中频繁读取状态变量。通用丢帧场景下，建议优先修改。", 
-    "line": 5,
-    "defect_snippet": "<problematic_code>"
-  }}
-]
-
-Notes:
-- Results will be ordered by line number (ascending)!!!!
-- Code snippets will use \\n for newlines
-- I will detect ALL defects in the code, not just the first one found
-- If no defects are found, I will return an empty array []
-- I will only output valid JSON without any additional text
-
-Here are the rules and their descriptions:
-"""
-
-    for rule, details in rules.items():
-        system_prompt += "Rule: {}\nDescription: {}\nPositive Example Without Defect:\n{}\nNegative Example With Defect:\n{}\n\n".format(
-            rule,
-            details['description'],
-            details['positive_code_example'],
-            details['defect_code_example']
-        )
-
-    return system_prompt
-
-def judge_need_context_prompt():
-    
-    negative_directory = './pages/negative'
-    positive_directory = './pages/positive'
-    rules = build_rules_dict(negative_directory, positive_directory)
-    system_prompt = """
-    Your task is to judge whether the repair process should consider the context or not(can just repair the defect in one line, or should repair in multiplt lines). 
-    Following are the defects:
-    """
-    for rule, details in rules.items():
-        system_prompt += "Rule: {}\nDescription: {}\nPositive Example Without Defect:\n{}\nNegative Example With Defect:\n{}\n\n".format(
-            rule,
-            details['description'],
-            details['positive_code_example'],
-            details['defect_code_example']
-        )
-
-    system_prompt += "You should output an array containing the defect's name which should get the context to fix the defect in multiple lines"
-
-    return system_prompt
+def extract_code_from_markdown_block(markdown_block):
+    code_block = re.search(r'```(?:arkts|javascript|js|ts|typescript)\n(.*)\n```', markdown_block, re.DOTALL).group(1)
+    return code_block
 
 ## few-shot learning to fault localization
 def RQ1():
@@ -573,124 +192,114 @@ def RQ1():
         logger.info(f"\nFile: {file}")
         logger.info(json.dumps(vul_type_data, indent=4))
 
+def process_file_RQ2(file, proj_dir, proj_repair_dir, logger, rules_dict, model, tokenizer, index):
+    """处理单个文件的逻辑，独立为函数以便多线程调用"""
+    try:
+
+        file_logs = []  # 用于暂存当前文件的所有日志
+
+        with open(file, 'r', encoding='utf-8') as f:
+            code = f.read()
+
+        file_logs.append(f"开始处理文件: {file}")
+        
+        merged_blocks = get_single_file_surrounding_context(proj_dir, file, rules_dict)
+
+        if len(merged_blocks) == 0:
+            file_logs.append(f"文件 {file} 没有缺陷!")
+            os.makedirs(os.path.join(proj_repair_dir, os.path.dirname(os.path.relpath(file, proj_dir))), exist_ok=True)
+            with open(os.path.join(proj_repair_dir, os.path.relpath(file, proj_dir)), 'w', encoding='utf-8') as f:
+                f.write(code)
+            return file_logs
+        
+        repair_results = []
+        for block in merged_blocks:
+            defects = block['defects']
+            contexts = block["surrounding_context"]
+            sum_context = ""
+            for i, text in enumerate(contexts):
+                sum_context += f"Context {i+1}:\n{text}\n"
+
+            rag_prompt = ""
+            file_logs.append(defects)
+            unique_defects = []
+            seen_rules = set()
+            for defect in defects:
+                if defect['rule'] not in seen_rules:
+                    unique_defects.append(defect)
+                    seen_rules.add(defect['rule'])
+
+            defect_description = "The code snippet containing the defect is as follows:\n"
+            error_location = "The location of the defect is as follows:\n"
+
+            for defect in unique_defects:
+                defect_rule = defect['rule']
+                repair_example = dict()
+                repair_example['rule'] = defect_rule
+                repair_example['problem_code'] = sum_context
+                rag_prompt += get_rag_prompt(repair_example, model, tokenizer, index, number=5)
+            
+            for i, defect in enumerate(defects):
+                defect_description += f"Defect {i+1}:\n" + defect['message'] + '\n'
+                error_location += f"Defect {i+1}:\n" + defect['code'] + '\n'
+
+            file_logs.append(f"RAG提示: {rag_prompt}")
+
+            fix_prompt = generate_fix_prompt(rag_prompt, code, sum_context, defect_description, error_location)
+            file_logs.append(f"修复提示: {fix_prompt}")
+            file_logs.append('-' * 100)
+
+            res = get_openai_answer(fix_prompt, model_name='gpt-4o-mini')
+            file_logs.append(f"当前修复块修复后的代码: {res}")
+            repair_results.append((sum_context, res))
+        
+        final_fix_prompt = combine_repair_results(repair_results, code)
+        final_res = get_openai_answer(final_fix_prompt, model_name='gpt-4o-mini')
+        final_code = extract_code_from_markdown_block(final_res)
+        os.makedirs(os.path.join(proj_repair_dir, os.path.dirname(os.path.relpath(file, proj_dir))), exist_ok=True)
+        with open(os.path.join(proj_repair_dir, os.path.relpath(file, proj_dir)), 'w', encoding='utf-8') as f:
+            f.write(final_code)
+
+        file_logs.append(f"文件 {file} 修复完成! 修复结果:\n{final_res}")
+        file_logs.append("-" * 100)
+        return file_logs
+
+    except Exception as e:
+        return [f"文件 {file} 处理出错: {e}"]
+    
 ## 从提取缺陷代码上下文
-def RQ2(file_path):
-    rules_dict = load_rules()
-    merged_blocks = get_single_file_surrounding_context(file_path, rules_dict)
-    return merged_blocks
-
-def main(project_dir=None, filename=None, base_dir=None):
+def RQ2():
     model, tokenizer, index = load_model_and_index()
+    project_name = "wifi_testapp"
+    round_num = 5
+    proj_dir = f"./{project_name + ('_round' + str(round_num) if round_num > 0 else '')}/ets"
+    proj_repair_dir = f"./{project_name + '_round' + str(round_num+1)}/ets"
+    logging.basicConfig(level=logging.INFO, format='%(message)s', handlers=[logging.FileHandler(f'RQ2_{project_name}.log', mode='w')])
+    logger = logging.getLogger()
+    
+    if not os.path.exists(proj_dir):
+        logger.error(f"目录 {proj_dir} 不存在!")
+        return
+        
+    files = glob.glob(os.path.join(proj_dir, '**', '*.ets'), recursive=True)
+    files.extend(glob.glob(os.path.join(proj_dir, '**', '*.ts'), recursive=True))
+    
+    if len(files) == 0:
+        logger.error(f"在 {proj_dir} 目录下没有找到任何 .ets 或 .ts 文件!")
+        return
+    
+    rules_dict = load_rules()
 
-    system_prompt = get_context_extraction_prompt()
-    # 配置根日志记录器
-    os.makedirs("../log", exist_ok=True)  # 创建log目录
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        handlers=[logging.FileHandler('../log/repair.log')]  # 修改日志文件路径
-    )
-
-    # 处理项目目录模式
-    if project_dir:
-        # 查找result*.xlsx文件
-        result_files = glob.glob(os.path.join(project_dir, 'ets', 'result*.xlsx'))
-        if not result_files:
-            logging.getLogger().error(f"在{project_dir}/ets/目录下未找到result*.xlsx文件")
-            return
-        
-        df = pd.read_excel(result_files[0], header=1)
-        
-        # 获取所有需要处理的文件
-        files_to_process = df['Source File'].unique()
-        
-        for file_path in files_to_process:
-            # 将Windows路径转换为项目相对路径
-            path_parts = file_path.split('\\')
-            ets_index = -1
-            for i, part in enumerate(path_parts):
-                if part == 'ets':
-                    ets_index = i
-                    break
-            
-            if ets_index != -1:
-                relative_path = '/'.join(path_parts[ets_index:])
-            else:
-                logging.getLogger().error(f"未在路径中找到ets目录: {file_path}")
-                continue
-                
-            project_file_path = os.path.join(project_dir, relative_path)
-            
-            if not os.path.exists(project_file_path):
-                logging.getLogger().error(f"文件不存在: {project_file_path}")
-                continue
-                
-            process_single_file(project_file_path, project_dir, df, system_prompt, model, tokenizer, index)
-            
-    # 处理单文件模式
-    elif filename and base_dir:
-        file_path = os.path.join(base_dir, filename)
-        if not os.path.exists(file_path):
-            logging.getLogger().error(f"文件不存在: {file_path}")
-            return
-            
-        df = pd.read_excel('../codelinter/result.xlsx', header=1)
-        process_single_file(file_path, df, system_prompt, model, tokenizer, index)
+    # 使用多线程处理文件
+    with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
+        futures = {executor.submit(process_file_RQ2, file, proj_dir, proj_repair_dir, logger, rules_dict, model, tokenizer, index): file for file in files}
+        for future in concurrent.futures.as_completed(futures):
+            result = future.result()
+            for log in result:
+                logger.info(log)
 
 if __name__ == "__main__":
-    model, tokenizer, index = load_model_and_index()
-    detect_dir = './mydefects/ets/pages/defects'
-    filename = 'hp-arkui-use-local-var-to-replace-state-var.ets'
-    file_path = os.path.join(detect_dir, filename)
-    with open(file_path, 'r', encoding='utf-8') as f:
-        code = f.read()
-    blocks = RQ2(file_path)
-    #print(json.dumps(blocks, indent=2))
-    for block in blocks:
-        defects = block['defects']
-        context = block["surrounding_context"]
-        rag_prompt = ""
-        ## 先对defects的rule进行去重
-        unique_rules = set()
-        unique_defects = []
-        for defect in defects:
-            if defect['rule'] not in unique_rules:
-                unique_rules.add(defect['rule'])
-                unique_defects.append(defect)
-
-        defects = unique_defects
-
-        for defect in defects:
-            defect_rule = defect['rule']
-            defect_description = defect['message']
-            repair_example = dict()
-            repair_example['rule'] = defect_rule
-            repair_example['problem_code'] = context
-            rag_prompt += get_rag_prompt(repair_example, model, tokenizer, index, number=5)
-            # print(fix_prompt)
-
-        prompt = """
-You are an AI debugging assistant. Your task is to fix the provided code based on the error log.
-{rag_content}
-### Input:
-Entire code:
-{entire_code}
-Surrounding code of the defect:
-{code_snippet}
-Error log:
-{error_log}
-### Task:
-Please analyze the code and error log, then provide the fixed code directly.
-Keep the original indentation of each code snippet.
-### Output format:
-Return the fixed code snippets with original indentation preserved.
-"""
-        fix_prompt = prompt.format(rag_content=rag_prompt, entire_code=code, code_snippet=context, error_log=defect_description)
-
-        print(fix_prompt)
-        res = get_ollama_answer(fix_prompt , model_name='arktsLLM')
-        print(res)
-    
+    RQ2()
     # import argparse
     # parser = argparse.ArgumentParser()
     # parser.add_argument("--filename", help="文件名")

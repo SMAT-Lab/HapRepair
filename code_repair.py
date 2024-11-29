@@ -96,7 +96,13 @@ class CodeContextExtractor:
         # 从错误行提取变量名
         error_line_content = lines[line_num]
         # 匹配@State等装饰器后的变量名
-        variable_names = re.findall(r'@\w+\s+(\w+)|this\.(\w+)|let\s+(\w+)\s*=', error_line_content)
+        # 先匹配赋值的变量
+        assign_vars = re.findall(r'@\w+\s+(\w+)|let\s+(\w+)\s*=', error_line_content)
+        # 如果没有赋值的变量,再匹配使用的变量
+        if not assign_vars:
+            variable_names = re.findall(r'this\.(\w+)', error_line_content)
+        else:
+            variable_names = assign_vars
         variable_names = [name for name in variable_names if name != '']
 
         # 从匹配组中获取非空值

@@ -19,24 +19,42 @@ def load_rules():
             
     return {rule['rule']: rule for rule in rules_data}
 
-def get_defects_from_file(file_path):
+def get_defects_from_file(proj_dir, file_path):
     """从文件中获取缺陷信息"""
     with open(file_path, 'r', encoding='utf-8') as f:
         code = f.read()
     code_lines = [''] + code.split('\n')
     
-    result_files = glob.glob(os.path.join('./mydefects/ets', 'result*.xlsx'))
+    result_files = glob.glob(os.path.join(proj_dir,'result*.xlsx'))
     file_df = pd.read_excel(result_files[0], header=1)
     file_df = file_df[file_df['Source File'].str.endswith(os.path.basename(file_path))]
     
     defects = []
     for _, row in file_df.iterrows():
         line_num = int(row['Line'])
+        rule_name = row['RuleName']
+        message = row['Detail']
+
+        # 提取完整的条件块
+        extracted_code = []
+        current_line = line_num
+
+        while current_line < len(code_lines):
+            line_content = code_lines[current_line].strip()
+            extracted_code.append(line_content)
+            if line_content.endswith("{") or line_content.endswith(";") or line_content.endswith(')') or line_content.endswith('"') or line_content.endswith("'") or line_content.startswith('@') or line_content.startswith('private'):  # 遇到条件结束符号 `{` 停止
+                break
+            current_line += 1
+
+        # 拼接多行条件
+        code_snippet = "\n".join(extracted_code)
+
+        # 创建缺陷信息
         defect = {
-            "rule": row['RuleName'],
+            "rule": rule_name,
             "line": line_num,
-            "message": row['Detail'],
-            "code": code_lines[line_num].strip() if line_num < len(code_lines) else ""
+            "message": message,
+            "code": code_snippet
         }
         defects.append(defect)
         
@@ -95,16 +113,43 @@ def process_code_blocks(defect, code_lines, rules_dict):
                 code_blocks.append((use_start, use_start, content))
             
         code_blocks.sort(key=lambda x: x[0])
+        block_ranges.sort(key=lambda x: x[0])
         surrounding_context = '\n'.join(content for _, _, content in code_blocks)
         
     return block_ranges, surrounding_context
 
-def get_single_file_surrounding_context(file_path, rules_dict):
+class UnionFind:
+    def __init__(self, size):
+        self.parent = list(range(size))
+        
+    def find(self, x):
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+        
+    def union(self, x, y):
+        px = self.find(x)
+        py = self.find(y)
+        if px != py:
+            self.parent[py] = px
+
+def ranges_overlap(ranges1, ranges2):
+    for start1, end1 in ranges1:
+        for start2, end2 in ranges2:
+            # Include adjacent ranges as overlapping
+            if not (end2 + 1 < start1 or start2 - 1 > end1):
+                return True
+    return False
+
+def get_single_file_surrounding_context(proj_dir, file_path, rules_dict):
     """处理单个文件的缺陷检测"""
+    code_lines, defects = get_defects_from_file(proj_dir, file_path)
+    if len(defects) == 0:
+        return []
+    
     print('-'*100)
     print(os.path.basename(file_path))
     
-    code_lines, defects = get_defects_from_file(file_path)
     all_blocks = []
     
     for defect in defects:
@@ -117,66 +162,72 @@ def get_single_file_surrounding_context(file_path, rules_dict):
                 "surrounding_context": surrounding_context
             })
 
+    # print(json.dumps(all_blocks, indent=2))
     # 合并重叠的blocks
+    uf = UnionFind(len(all_blocks))
+    
+    # Step 1: Union overlapping blocks
+    for i in range(len(all_blocks)):
+        for j in range(i + 1, len(all_blocks)):
+            if ranges_overlap(all_blocks[i]['block_ranges'], all_blocks[j]['block_ranges']):
+                uf.union(i, j)
+    
+    # Step 2: Group blocks by their root parent
+    groups = {}
+    for i in range(len(all_blocks)):
+        parent = uf.find(i)
+        if parent not in groups:
+            groups[parent] = []
+        groups[parent].append(all_blocks[i])
+    
+    # Step 3: Merge blocks in each group
     merged_blocks = []
-    i = 0
-    while i < len(all_blocks):
-        current_block = all_blocks[i]
-        current_defects = [current_block["defect"]]
-        max_ranges = current_block["block_ranges"]
-        max_context = current_block["surrounding_context"]
-        
-        j = i + 1
-        while j < len(all_blocks):
-            next_block = all_blocks[j]
-            
-            # 检查是否有重叠
-            has_overlap = False
-            for curr_start, curr_end in current_block["block_ranges"]:
-                for next_start, next_end in next_block["block_ranges"]:
-                    if (next_start <= curr_end and next_end >= curr_start):
-                        has_overlap = True
-                        break
-                if has_overlap:
-                    break
-            
-            if has_overlap:
-                # 合并ranges,取最大范围
-                all_ranges = list(current_block["block_ranges"]) + list(next_block["block_ranges"])
-                max_ranges = []
-                sorted_ranges = sorted(all_ranges, key=lambda x: x[0])
-                current_start, current_end = sorted_ranges[0]
-                
-                for start, end in sorted_ranges[1:]:
-                    if start <= current_end:
-                        current_end = max(current_end, end)
-                    else:
-                        max_ranges.append((current_start, current_end))
-                        current_start, current_end = start, end
-                max_ranges.append((current_start, current_end))
-                
-                current_defects.append(next_block["defect"])
-                max_context = next_block["surrounding_context"] if len(next_block["surrounding_context"]) > len(max_context) else max_context
-                all_blocks.pop(j)
+    for group_blocks in groups.values():
+        merged_defects = []
+        all_ranges = []
+        max_context = ""
+        for block in group_blocks:
+            merged_defects.append(block['defect'])
+            all_ranges.extend(block['block_ranges'])
+            # Choose the longest context (or concatenate if preferred)
+            if len(block['surrounding_context']) > len(max_context):
+                max_context = block['surrounding_context']
+        # Remove duplicate ranges
+        all_ranges = [list(x) for x in set(tuple(x) for x in all_ranges)]
+        # Merge overlapping ranges
+        sorted_ranges = sorted(all_ranges, key=lambda x: x[0])
+        merged_ranges = []
+        start, end = sorted_ranges[0]
+        for curr_start, curr_end in sorted_ranges[1:]:
+            if curr_start <= end + 1:
+                end = max(end, curr_end)
             else:
-                j += 1
-                
+                merged_ranges.append([start, end])
+                start, end = curr_start, curr_end
+        merged_ranges.append([start, end])
+
+        surrounding_context = []
+        for rng in merged_ranges:
+            rng_start, rng_end = rng
+            # 调整索引（代码行从第1行开始）
+            code_snippet = '\n'.join(code_lines[rng_start:rng_end+1]).rstrip()
+            surrounding_context.append(code_snippet)
+    
         merged_blocks.append({
-            "defects": current_defects,
-            "block_ranges": max_ranges,
-            "surrounding_context": max_context
+            'defects': merged_defects,
+            'block_ranges': merged_ranges,
+            'surrounding_context': surrounding_context
         })
-        i += 1
-        
     return merged_blocks
 
 def main():
     rules_dict = load_rules()
+    proj_dir = './mydefects/ets'
     detect_dir = './mydefects/ets/pages/defects'
     
     for file in sorted(os.listdir(detect_dir)):
         file_path = os.path.join(detect_dir, file)
-        merged_blocks = get_single_file_surrounding_context(file_path, rules_dict)
+        merged_blocks = get_single_file_surrounding_context(proj_dir, file_path, rules_dict)
         print(json.dumps(merged_blocks, indent=2))
         # for block in merged_blocks:
         #     print(json.dumps(block['defects'], indent=2))
