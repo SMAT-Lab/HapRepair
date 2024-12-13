@@ -27,7 +27,8 @@ def read_defects_from_file(file_path):
         problem_code_example = row['问题代码样例']
         problem_explanation = row['问题解释']
         repair_code_example = row['修复代码样例']
-        diff = row['差异']
+        diff = row['差异'] if not pd.isna(row['差异']) else None
+        difflib = row['difflib'] if not pd.isna(row['difflib']) else None
 
         defects.append({
             'rule': rule,
@@ -35,7 +36,8 @@ def read_defects_from_file(file_path):
             'problem_code': problem_code_example,
             'problem_explain': problem_explanation,
             'problem_fix': repair_code_example,
-            'diff': diff
+            'gpt_diff': diff,
+            'difflib': difflib
         })
     return defects
 
@@ -48,11 +50,16 @@ def get_embedding(text, model, tokenizer):
 
 if __name__ == "__main__":
     model, tokenizer, index = load_model_and_index()
-    defects = read_defects_from_file('./data/addition.xlsx')
+    defects = read_defects_from_file('./data/vul_pairs.xlsx')
     
     for defect in defects:
         ## 随机生成id， defect作为metadata， defect["problem_code"]进行embedding
         id = str(uuid.uuid4())
-        metadata = defect
+        # 过滤掉metadata中的None值,避免Pinecone API错误
+        metadata = {k: v for k, v in defect.items() if v is not None}
         values = get_embedding(defect["problem_code"], model, tokenizer)
-        index.upsert(vectors=[{"id": id, "values": values, "metadata": metadata}], namespace= "arkts")
+        try:
+            index.upsert(vectors=[{"id": id, "values": values, "metadata": metadata}], namespace= "arkts")
+        except Exception as e:
+            print(f"error: {e}")
+            continue

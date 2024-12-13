@@ -1,157 +1,483 @@
 import os
+import time
 
 
 def generate_fix_prompt(rag_prompt, code, sum_context, defect_description, error_location):
-    prompt = """
-You are an AI debugging assistant. Your task is to fix the provided code based on the error log.
-I will show you similar errors below. Please help me fix my code based on these error fixes.\n
-{rag_content}
-### Input:
-Surrounding code of the defect:
-{code_snippet}
-Error log:
-{error_log}
-Error location:
-{error_location}
-### Task:
-Please analyze the code and error log, then provide the fixed code directly.
-You must take all the defects into account and fix them all.
-Keep the original indentation of each code snippet.
-
-### Requirements:
-1. Extract all constant values and property references OUTSIDE ALL LOOPS to improve performance:
-   - No constant values or properties should appear inside any loop, including nested loops.
-   - Store all constants in variables BEFORE the outermost loop.
-   - This rule applies to every level of nested loops.
-
-2. Variable declarations must follow these rules:
-   - Inside the `struct` or `class`:
-     - Use `@State`, `private`, or direct declarations, such as:
-       - `@State variable = value`
-       - `private variable = value`
-       - `variable = value`
-     Example (Correct): `@State message = 'button'`
-     Example (Wrong): `let message = 'button'`
-   - Inside the `build()` method (which is nested in the `struct` or `class`):
-     - Use `let variable = value` for temporary or local variables.
-     Example (Correct): `let message = 'button'`
-     Example (Wrong): `@State message = 'button'`
-
-3. Do NOT declare variables inside UI elements within `build()`:
-   - Variables needed by UI elements should either:
-     - Be declared at the top of `build()` as `let`.
-     - Or be declared in the `struct` or `class`.
-   - Do NOT declare variables inside function with the deecoration `@Builder`
-
-For example:
-{declare_example}
-     
-4. Focus solely on fixing defects in the provided code. Avoid altering unrelated code or the overall structure.
-
-MOST IMPORTANT: You MUST extract ANY constant property references and calculations OUTSIDE OF ALL LOOPS to improve performance. This means:
-1. No constant values or properties should be referenced inside ANY loop (including nested loops)
-2. All constant values must be stored in variables BEFORE the outermost loop
-3. This applies to ALL levels of nested loops - constants cannot appear in ANY loop level
-4. Even if a constant appears in the innermost loop of a 3+ level nested loop structure, it must be extracted outside the outermost loop
-5. Just fix the defects in the surrounding code of the defect, don't change the code structure, don't change the irrelevant code.
-
-For example:   
-{example}
-
-### Output format:
-Return the explanation of how you fixed the code and then the fixed code snippets of the surrounding code of the defect.
-"""
-
-    declare_example = """
-Following are the correct and wrong ways to declare variables:
-Wrong:
+    # Simplified redundant container example
+    redundant_container_example = """
+Before:
 ```arkts
-@Component
-export struct AutoContentTable {
-  private autoItemsX!: TestAuto[];
-  private testItem!: TestData
-  @State autoItems: TestAuto[] = [];
-  // Wrong! Use `private` instead of `let` outside of UI element
-  let localName: string = 'DaYuBlue';
-  @Prop changeIndex: number;
-
-  build() {
-    // Wrong! Use `let` instead of `private` inside UI element
-    private autoItems: TestAuto[] = [];
-  }
+Row() {
+    Column() {  // ❌ Redundant container
+        Text('Hello')
+    }
 }
 ```
-Correct:
-```arkts
-@Component
-export struct AutoContentTable {
-  private autoItemsX!: TestAuto[];
-  private testItem!: TestData
-  @State autoItems: TestAuto[] = [];
-  // Correct! Use `private` or nothing instead of `let` outside of UI element
-  private localName: string = 'DaYuBlue';
-  localName2: string = 'DaYuBlue';
-  @Prop changeIndex: number;
 
-  build() {
-    // Correct! Use `let` or nothing instead of `private` inside UI element
-    let localName: string = 'DaYuBlue';
-    let localName2: string = 'DaYuBlue';
-  }
+After:
+```arkts
+Row() {
+    Text('Hello')  // ✅ Simplified structure
 }
 ```
 """
+    
+    # Performance optimization example - made more focused
     fix_example = """
+Before optimization:
 ```arkts
-let a: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let num: number = 2;
 for(let i = 0; i < 100; i++) {
-    for(let j = 0; j < 100; j++) {
-        for(let k = 0; k < 100; k++) {
-            if (a[num] % 2) == 0 {
-                // do something
-            }
-        }
+    if (items[2].value * 1.5 > 10) {  // ❌ Constant computation inside loop
+        doSomething()
     }
 }
 ```
 
-You MUST extract the constant value a[num]outside of the loop to improve performance.
+After optimization:
 ```arkts
-let a: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let num: number = 2;
-let temp: number = a[num];
+const threshold = items[2].value * 1.5  // ✅ Computed once before loop
 for(let i = 0; i < 100; i++) {
-    for(let j = 0; j < 100; j++) {
-        for(let k = 0; k < 100; k++) {
-            if (temp % 2) == 0 {
-                // do something
-            }
-        }
+    if (threshold > 10) {
+        doSomething()
     }
 }
 ```
 """
-    fix_prompt = prompt.format(rag_content=rag_prompt, entire_code=code, code_snippet=sum_context, error_log=defect_description, error_location=error_location, example=fix_example, declare_example=declare_example)
-    return fix_prompt
+
+    # Difflib example - made more clear with annotations
+    difflib_example = """
+Original code:
+```arkts
+Column() {
+    Column() {
+        Text("Hello").fontSize(20)
+    }
+}
+```
+
+Difflib format:
+```diff
+Column() {
+-   Column() {
+        Text("Hello").fontSize(20)
+-   }
+}
+```
+
+The difflib shows:
+• Lines with '-' will be removed
+• Lines without markers stay unchanged
+• Lines with '+' (if any) show new additions
+"""
+
+    variable_declaration_example = """
+Variable Declaration Rules in struct:
+```arkts
+@Entry
+@Component
+struct MyComponent {
+    // Valid declarations in struct scope:
+    @State count: number = 0          // ✓ Decorator declarations
+    @ObjectLink data: object = {}     // ✓ Decorator declarations
+    private settings = new Settings() // ✓ private declarations
+    options = { value: 0 }           // ✓ plain declarations
+    
+    // Invalid declarations in struct scope:
+    let value = 0      // ❌ Cannot use let/const in struct scope
+    const data = []    // ❌ Cannot use let/const in struct scope
+
+    // Valid in regular functions:
+    aboutToAppear() {
+        let count = 0              // ✓ let/const allowed in functions
+        const max = 100           // ✓ let/const allowed in functions
+        for (let i = 0; i < 10; i++) {  // ✓ let allowed in loops
+            this.data.push(i)
+        }
+    }
+
+    // Invalid in UI components:
+    build() {
+        Row() {
+            let value = 0  // ❌ Cannot declare variables in UI components
+            Column() {
+                const size = 100  // ❌ Cannot declare variables in UI components
+            }
+        }
+        .onClick(() => {
+            let count = 0  // ✓ let/const allowed in event handlers
+            const max = 100  // ✓ let/const allowed in event handlers
+        })
+    }
+}
+```
+
+```arkts
+@Entry
+@Component
+struct MyComponent {
+  build() {
+    let irregularData: number[] = [];  // ❌ Cannot declare variables in UI components
+    let layoutOptions: GridLayoutOptions = {  // ❌ Cannot declare variables in UI components
+      regularSize: [1, 1],
+      irregularIndexes: this.irregularData,
+    };
+    Grid(this.scroller, layoutOptions) {
+      LazyForEach(this.groupDataSource, (item: LazyItem<UserFileDataItem>): void => {
+        GridItem() {
+          ImageGridItem()
+        }
+        .aspectRatio(1)
+        .columnStart(item.get().index % this.gridRowCount)
+        .columnEnd(item.get().index % this.gridRowCount)
+      }, (item: LazyItem<AlbumDataItem>): string => item.getHashCode())
+    }
+  }
+}
+```
+
+```arkts
+@Entry
+@Component
+struct MyComponent {
+
+  irregularData: number[] = [];  // ✓ declare variables 
+  layoutOptions: GridLayoutOptions = {  //  declare variables
+    regularSize: [1, 1],
+    irregularIndexes: this.irregularData,
+  };
+
+  build() {
+    Grid(this.scroller, this.layoutOptions) { // use variables
+      LazyForEach(this.groupDataSource, (item: LazyItem<UserFileDataItem>): void => {
+        GridItem() {
+          ImageGridItem()
+        }
+        .aspectRatio(1)
+        .columnStart(item.get().index % this.gridRowCount)
+        .columnEnd(item.get().index % this.gridRowCount)
+      }, (item: LazyItem<AlbumDataItem>): string => item.getHashCode())
+    }
+  }
+}
+```
+
+"""
+
+    discontinuous_code_example = """
+Original segments:
+```arkts
+
+  @State totalPrice: number = 0;
+...
+  addItem(price: number) {
+    this.totalPrice += price;
+    this.totalPrice += this.calculateTax(price);
+    this.totalPrice += this.calculateShipping(price);
+  }
+...
+    Column() {
+      Text('总价：' + this.totalPrice)
+        .fontSize(18)
+      Button('添加商品')
+        .onClick(() => this.addItem(100))
+    }
+```
+
+Repaired segments:
+```arkts
+  @State totalPrice: number = 0;
+...
+  addItem(price: number) {
+    let total = this.totalPrice;
+    total += price;
+    total += this.calculateTax(price);
+    total += this.calculateShipping(price);
+    this.totalPrice = total;
+  }
+...
+    Column() {
+      Text('总价：' + this.totalPrice)
+        .fontSize(18)
+      Button('添加商品')
+        .onClick(() => this.addItem(100))
+    }
+```
+
+Difflib format:
+```diff
+  @State totalPrice: number = 0;
+...
+  addItem(price: number) {
+-     this.totalPrice += price;
+-     this.totalPrice += this.calculateTax(price);
+-     this.totalPrice += this.calculateShipping(price);
++     let total = this.totalPrice;
++     total += price;
++     total += this.calculateTax(price);
++     total += this.calculateShipping(price);
++     this.totalPrice = total;
+  }
+...
+    Column() {
+      Text('总价：' + this.totalPrice)
+        .fontSize(18)
+      Button('添加商品')
+        .onClick(() => this.addItem(100))
+    }
+```
+"""
+
+    complete_diff = """
+Original code:
+```arkts
+List({ space: 12, initialIndex: 0 }) {
+  ForEach(FIRST_NAV_LIST, (item, index) => {
+    ListItem() {
+      ItemTemplate({ item: item })
+    }
+    .width('93.3%')
+    .borderRadius(24)
+    .padding({ left: '3.6%', right: '5.4%', top: 12, bottom: 12 })
+    .backgroundColor('#ffffff')
+  })
+}
+```
+
+Repair Result
+```arkts
+List({ space: 12, initialIndex: 0 }) {
+  ForEach(FIRST_NAV_LIST, (item, index) => {
+    ListItem() {
+      ItemTemplate({ item: item })
+    }
+    .width('93.3%')
+    .borderRadius(24)
+    .padding({ left: '3.6%', right: '5.4%', top: 12, bottom: 12 })
+    .backgroundColor('#ffffff')
+  }, item: Item => item.title)
+}
+```
+
+difflib format:
+```diff
+  ForEach(FIRST_NAV_LIST, (item, index) => {
+    ListItem() {
+      ItemTemplate({ item: item })
+    }
+    .width('93.3%')
+    .borderRadius(24)
+    .padding({ left: '3.6%', right: '5.4%', top: 12, bottom: 12 })
+    .backgroundColor('#ffffff')
+-  })
++  }, item => item.title)
+```
+"""
+
+    # Main prompt - restructured for clarity
+    prompt = f"""
+Role: You are an ArkTS code fix assistant. Your task is to STRICTLY follow the fix patterns shown in the provided examples.
+
+Key Rules:
+
+1. Variable Declarations:
+{variable_declaration_example}
+
+2. Redundant Container Removal:
+{redundant_container_example}
+
+3. Performance Optimization:
+{fix_example}
+
+4. Code Change Format:
+{difflib_example}
+
+5. Handling Discontinuous Code:
+{discontinuous_code_example}
+
+6. Set key generator for ForEach:
+{complete_diff}
+
+Reference Examples:
+{rag_prompt}
+
+IMPORTANT: You MUST:
+1. Only apply fixes that match the patterns in the above examples
+2. Do not introduce any fixes based on general programming knowledge
+3. If a fix pattern is not found in the examples, do not attempt to fix that part
+
+Input Analysis:
+• Error Details: {defect_description}
+• Error Location: {error_location}
+
+Code Segments for Review:
+The following shows discontinuous code segments related to the error. 
+Lines marked with "..." indicate code that exists but is not shown:
+```arkts
+{sum_context}
+```
+
+Task:
+1. Compare the error with the reference examples
+2. If and ONLY if you find a matching fix pattern:
+   • Apply that EXACT fix pattern
+   • Do not modify the pattern or create variations
+3. For any issues that don't match the examples:
+   • Leave the code unchanged
+   • Do not attempt creative fixes
+
+Fix Process:
+1. Identify which reference example matches your error
+2. Follow that example's fix pattern EXACTLY
+3. Only fix the visible code segments
+4. Preserve "..." markers
+
+Output Format:
+You MUST return a complete difflib format that:
+1. Shows ALL lines from the input segments, including unchanged lines
+2. Preserves all "..." markers exactly as they appear in the input
+3. Uses proper markers:
+   • "-" prefix for lines to be removed
+   • "+" prefix for lines to be added
+   • No prefix for unchanged lines
+4. Maintains the exact structure and flow of the input segments
+
+Example Format:
+Original segments with discontinuous markers:
+{discontinuous_code_example}
+
+Complete source code (for reference only):
+```arkts
+{code}
+```
+
+Note how:
+• All original lines are present
+• "..." markers are preserved
+• Unchanged lines have no prefix
+• Only modified lines have "+" or "-" prefixes
+• The complete structure is maintained
+
+CRITICAL: 
+1. Your output MUST maintain the complete structure of the input segments
+2. All lines from input must appear in output (with or without +/- prefix)
+3. All "..." markers must be preserved
+4. Only apply fixes that EXACTLY match the reference examples
+5. Do not invent new fix patterns or apply general programming knowledge
+6. The unchanged line should be kept unchanged !!! Don't add or remove any unchanged line
+"""
+    return prompt
 
 def combine_repair_results(repair_results, code):
-    final_fix_prompt = "Following are the surrounding code of the defect and the fixed code:\n"
-    for context, res in repair_results:
-        final_fix_prompt += f"Surrounding code of the defect:\n```arkts\n{context}\n```\nFixed code:\n```arkts\n{res}\n```\n"
-        
+    final_fix_prompt = """
+Task: EXACT Text Replacement Based on Difflib Markers ONLY
+
+IMPORTANT - THIS IS A PURE TEXT OPERATION:
+• You are a text replacement tool
+• You ONLY process lines with "+" or "-" markers
+• You MUST keep ALL other text EXACTLY as is
+• No code understanding required or wanted
+
+Here's the ONLY change pattern you should follow:
+
+STARTING CODE:
+```arkts
+  ForEach(FIRST_NAV_LIST, (item, index) => {
+    ListItem() {
+      ItemTemplate({ item: item })
+    }
+    .width('93.3%')
+    .borderRadius(24)
+    .padding({ left: '3.6%', right: '5.4%', top: 12, bottom: 12 })
+    .backgroundColor('#ffffff')
+  })
+```
+
+
+```diff
+  ForEach(FIRST_NAV_LIST, (item, index) => {
+    ListItem() {
+      ItemTemplate({ item: item })
+    }
+    .width('93.3%')
+    .borderRadius(24)
+    .padding({ left: '3.6%', right: '5.4%', top: 12, bottom: 12 })
+    .backgroundColor('#ffffff')
+-  })
++  }, item => item.title)
+```
+
+RESULT:
+```arkts
+  ForEach(FIRST_NAV_LIST, (item, index) => {
+    ListItem() {
+      ItemTemplate({ item: item })
+    }
+    .width('93.3%')
+    .borderRadius(24)
+    .padding({ left: '3.6%', right: '5.4%', top: 12, bottom: 12 })
+    .backgroundColor('#ffffff')
+  }, item => item.title)
+```
+
+
+EXACT Rules to Follow:
+1. Lines with NO markers: MUST remain EXACTLY as they are
+2. Lines with "-": MUST be REMOVED
+3. Lines with "+": MUST be ADDED (without the "+")
+4. SPACING and INDENTATION: MUST remain EXACTLY as in original
+5. ALL OTHER CODE: MUST remain COMPLETELY UNCHANGED
+
+CHANGES TO APPLY:
+"""
     
+    for context, res in repair_results:
+        final_fix_prompt += f"""
+SEGMENT TO MODIFY:
+```arkts
+{context}
+```
+
+DIFFLIB CHANGES(Given by gpt-o1 which may have the thinking of the change):
+{res}
+
+"""
+        
     final_fix_prompt += f"""
-Please combine all the fixed code snippets to get the final fixed code of the entire file. 
-Don't change the code structure, just fix the defects and don't change the irrelevant code.
-The entire file is as follows:\n```arkts\n{code}\n```\nReturn the final fixed code directly.
+Complete Source Code:
+```arkts
+{code}
+```
 
-Requirements:
-1. Keep the original indentation of each code snippet.
-2. Keep the original code structure.
-3. Ensure that the final fixed code is syntactically correct and can be compiled.(Parentheses, brackets, etc. should be matched correctly)
-    """
+YOUR EXACT STEPS:
+1. Locate each ORIGINAL SEGMENT in the source code
+2. For THAT SEGMENT ONLY:
+   - REMOVE lines marked with "-"
+   - ADD lines marked with "+" (without the "+")
+   - Keep ALL other lines EXACTLY as they are
+3. Do not touch ANY OTHER PART of the code
+4. Preserve ALL spacing and indentation EXACTLY
 
+This is a pure text replacement task:
+• Treat it like a search-and-replace operation
+• Only modify the exact text matches
+• Preserve all spacing and indentation
+• Make no other changes
+
+
+⚠️ CRITICAL WARNINGS:
+• You are a MECHANICAL text processor
+• ONLY modify lines with "+" or "-" markers
+• ALL OTHER LINES MUST REMAIN EXACTLY THE SAME
+• NO code understanding or improvements allowed
+• NO formatting changes allowed
+• NO indentation changes allowed
+• NO whitespace changes allowed
+• EVERYTHING not marked with + or - MUST be identical
+
+Return ONLY the complete source code with these exact replacements.
+No explanations, no comments, just the processed code.
+"""
+    
     return final_fix_prompt
 
 def get_embedding(text, model, tokenizer):
@@ -161,16 +487,29 @@ def get_embedding(text, model, tokenizer):
     embeddings = outputs.last_hidden_state.mean(dim=1).squeeze().detach().numpy()
     return embeddings
 
-def get_rag_prompt(repair_example, model, tokenizer, index, number=5):
+def get_rag_prompt(repair_example, model, tokenizer, index, rag_type, number=5):
+    if number == 0:
+        return ""
+
     query_text = repair_example["problem_code"]
     query_vector = get_embedding(query_text, model, tokenizer)
-    results = index.query(
-        namespace="arkts",
-        vector=query_vector.tolist(),
-        top_k=number,
-        include_metadata=True,
-        filter={"rule": repair_example["rule"]}
-    )
+    max_retries = 3
+    retry_count = 0
+    while retry_count < max_retries:
+        try:
+            results = index.query(
+                namespace="arkts",
+                vector=query_vector.tolist(),
+                top_k=number,
+                include_metadata=True,
+                filter={"rule": repair_example["rule"]}
+            )
+            break
+        except Exception as e:
+            retry_count += 1
+            if retry_count == max_retries:
+                raise e
+            time.sleep(1)  # 等待1秒后重试
     matches = results.matches
     if len(matches) == 0:
         return ""
@@ -181,8 +520,14 @@ def get_rag_prompt(repair_example, model, tokenizer, index, number=5):
         fix_prompt += (f"Demo {j+1}: \nRule Type: \n{metadata['rule']}\n\nDescription: \n{metadata['description']}\n\n"
                    f"Problem Code: \n```arkts\n{metadata['problem_code']}\n```\n\nFix Explanation: \n{metadata['problem_explain']}\n\n"
                    f"Fixed Code: \n\n```arkts\n{metadata['problem_fix']}\n```\n\n"
-                   f"Following is the action to take to fix the buggy code into fixed code:\n\n{metadata['diff']}\n\n"
+                   # f""" Following is the difflib results of repairing buggy code into fixed code:\n\n{metadata['difflib']}\n\n"""
+                   # f"Following is the action to take to fix the buggy code into fixed code:\n\n{metadata['gpt_lib']}\n\n"
                 )
+        
+        if rag_type == "gpt_diff":
+            fix_prompt += f""" Following is the action to take to fix the buggy code into fixed code:\n\n{metadata['gpt_diff']}\n\n"""
+        elif rag_type == "difflib":
+            fix_prompt += f""" Following is the difflib results of repairing buggy code into fixed code:\n\n{metadata['difflib']}\n\n"""
     
     return fix_prompt
 
@@ -308,7 +653,45 @@ Here are the rules and their descriptions:
 
     return system_prompt
 
+def get_functionality_check_prompt(original_code, repaired_code):    
+  prompt = f"""
+You are a high-level code reviewer focusing on overall program functionality.
 
+Your task is to determine if two versions of code (original and repaired) maintain the same core functionality and purpose, ignoring implementation details such as:
+- Specific function implementations
+- Variable names and types
+- Code structure and organization
+- Control flow specifics
+- Function call patterns
+- Performance optimizations
+
+Instead, focus on:
+- The main purpose and objectives of the code
+- Input/output behavior from an end-user perspective
+- Core business logic and requirements
+- External behavior and interfaces
+- Overall program workflow
+
+For example:
+- If both versions implement a user authentication system, verify they both achieve the core goal of authenticating users, regardless of how they implement it
+- If both versions process data files, verify they produce equivalent results, even if they use different data structures or algorithms
+- If both versions expose an API, verify the API provides the same capabilities, even if internal implementations differ
+
+Original code:
+{original_code}
+
+Repaired code:
+{repaired_code}
+
+Please analyze if the repaired code maintains the same core functionality as the original code, ignoring implementation details.
+
+Return your analysis in the following format:
+{{
+    "result": "success" | "failure",
+    "reason": "A detailed explanation focusing on whether the core functionality and purpose remain the same, not on implementation details"
+}}
+"""
+  return prompt
 
 def judge_need_context_prompt():
     

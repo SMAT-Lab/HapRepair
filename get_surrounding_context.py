@@ -27,7 +27,12 @@ def get_defects_from_file(proj_dir, file_path):
     
     result_files = glob.glob(os.path.join(proj_dir,'result*.xlsx'))
     file_df = pd.read_excel(result_files[0], header=1)
-    file_df = file_df[file_df['Source File'].str.endswith(os.path.basename(file_path))]
+    # 获取相对路径的最后几层目录结构
+    rel_path = os.path.relpath(file_path, proj_dir)
+    
+    # 过滤出'Source File'含有rel_path的记录
+    mask = file_df['Source File'].apply(lambda x: rel_path.replace('/', '\\') in x.replace('/', '\\'))
+    file_df = file_df[mask]
     
     defects = []
     for _, row in file_df.iterrows():
@@ -141,11 +146,100 @@ def ranges_overlap(ranges1, ranges2):
                 return True
     return False
 
+def remove_redundant_nest_container(line, code_lines):
+    # 移除冗余的container
+    
+    # 找到匹配的右大括号
+    stack = []
+    start_line = line
+    end_line = line
+    
+    # 从当前行开始往下寻找
+    for i in range(line, len(code_lines)):
+        current = code_lines[i]
+        
+        # 统计左右大括号
+        left_count = current.count('{')
+        right_count = current.count('}')
+        
+        # 更新栈
+        for _ in range(left_count):
+            stack.append('{')
+        for _ in range(right_count):
+            if stack:
+                stack.pop()
+                
+        # 如果栈为空,说明找到匹配的右大括号
+        if not stack:
+            end_line = i
+            break
+            
+    # 清空首尾行
+    code_lines[start_line] = ''
+    code_lines[end_line] = code_lines[end_line].replace('}', '', 1)  # 只替换第一个 '}'
+    
+    # 处理中间行,去除两格缩进
+    for i in range(start_line + 1, end_line):
+        if code_lines[i].startswith('  '):
+            code_lines[i] = code_lines[i][2:]
+
+    return code_lines
+
+def remove_container_without_property(line, code_lines):
+    # 移除没有属性的container
+    stack = []
+    start_line = line
+    end_line = line
+    
+    # 从当前行开始往下寻找
+    for i in range(line, len(code_lines)):
+        current = code_lines[i]
+        
+        # 统计左右大括号
+        left_count = current.count('{')
+        right_count = current.count('}')
+        
+        # 更新栈
+        for _ in range(left_count):
+            stack.append('{')
+        for _ in range(right_count):
+            if stack:
+                stack.pop()
+                
+        # 如果栈为空,说明找到匹配的右大括号
+        if not stack:
+            end_line = i
+            break
+            
+    # 清空首尾行
+    code_lines[start_line] = ''
+    code_lines[end_line] = code_lines[end_line].replace('}', '', 1)  # 只替换第一个 '}'
+    
+    # 处理中间行,去除两格缩进
+    for i in range(start_line + 1, end_line):
+        if code_lines[i].startswith('  '):
+            code_lines[i] = code_lines[i][2:]
+
+    return code_lines
+
+def use_row_column_to_replace_flex(line, code_lines):
+    # 获取原始行的缩进
+    indent = len(code_lines[line]) - len(code_lines[line].lstrip())
+    indent_str = ' ' * indent
+    
+    if 'Column' in code_lines[line]:
+        code_lines[line] = indent_str + "Column() {"
+    elif 'Row' in code_lines[line]:
+        code_lines[line] = indent_str + "Row() {"
+    return code_lines
+
 def get_single_file_surrounding_context(proj_dir, file_path, rules_dict):
     """处理单个文件的缺陷检测"""
+
     code_lines, defects = get_defects_from_file(proj_dir, file_path)
+
     if len(defects) == 0:
-        return []
+        return [], code_lines
     
     print('-'*100)
     print(os.path.basename(file_path))
@@ -153,6 +247,17 @@ def get_single_file_surrounding_context(proj_dir, file_path, rules_dict):
     all_blocks = []
     
     for defect in defects:
+        if defect['rule'] == '@performance/hp-arkui-remove-redundant-nest-container':
+            # 直接进行处理
+            code_lines = remove_redundant_nest_container(defect['line'], code_lines)
+        elif defect['rule'] == '@performance/hp-arkui-remove-container-without-property':
+            code_lines = remove_container_without_property(defect['line'], code_lines)
+
+        elif defect['rule'] == '@performance/hp-arkui-use-row-column-to-replace-flex':
+            code_lines = use_row_column_to_replace_flex(defect['line'], code_lines)
+    for defect in defects:
+        if defect['rule'] == '@performance/hp-arkui-remove-redundant-nest-container' or defect['rule'] == '@performance/hp-arkui-use-row-column-to-replace-flex' or defect['rule'] == '@performance/hp-arkui-remove-container-without-property':
+            continue
         if defect['rule'] in rules_dict:
             block_ranges, surrounding_context = process_code_blocks(defect, code_lines, rules_dict)
             # 转换为JSON格式
@@ -218,7 +323,8 @@ def get_single_file_surrounding_context(proj_dir, file_path, rules_dict):
             'block_ranges': merged_ranges,
             'surrounding_context': surrounding_context
         })
-    return merged_blocks
+
+    return merged_blocks, code_lines
 
 def main():
     rules_dict = load_rules()

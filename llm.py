@@ -20,7 +20,8 @@ def get_openai_answer(ques, model_name="gpt-4o-mini", system_prompt=None, max_re
         try:
             response = client.chat.completions.create(
                 model=model_name,
-                messages=messages
+                messages=messages,
+                temperature=0
             )
             return response.choices[0].message.content
         except Exception as e:

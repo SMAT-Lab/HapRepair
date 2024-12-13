@@ -151,6 +151,7 @@ class CodeContextExtractor:
         start_idx = line_number
         outer_block = None
         while start_idx >= 0:
+            # print(len(lines))
             if re.search(block_pattern, lines[start_idx]):
                 block_end = self._find_block_end(lines, start_idx)
                 # 确认目标行在block范围内
