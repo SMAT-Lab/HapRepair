@@ -273,6 +273,15 @@ difflib format:
 ```
 """
 
+    list_example = """```arkts
+List() {
+  ......
+}
+.width(10)
+.height(10)
+```
+"""
+
     # Main prompt - restructured for clarity
     prompt = f"""
 Role: You are an ArkTS code fix assistant. Your task is to STRICTLY follow the fix patterns shown in the provided examples.
@@ -296,6 +305,17 @@ Key Rules:
 
 6. Set key generator for ForEach:
 {complete_diff}
+
+7. WaterFlow Data Preload:
+For @performance/waterflow-data-preload-check defects, preload logic MUST be added to FlowItem() components only:
+```arkts
+FlowItem()
+.onAppear(() => ...
+```
+
+8. init-list-component:
+For @hw-eslint/init-list-component defects, the width and height MUST be initialized after the List() component:
+{list_example}
 
 Reference Examples:
 {rag_prompt}
@@ -658,7 +678,7 @@ def get_functionality_check_prompt(original_code, repaired_code):
 You are a high-level code reviewer focusing on overall program functionality.
 
 Your task is to determine if two versions of code (original and repaired) maintain the same core functionality and purpose, ignoring implementation details such as:
-- Specific function implementations
+- Specific function implementations  
 - Variable names and types
 - Code structure and organization
 - Control flow specifics
@@ -667,15 +687,22 @@ Your task is to determine if two versions of code (original and repaired) mainta
 
 Instead, focus on:
 - The main purpose and objectives of the code
-- Input/output behavior from an end-user perspective
+- Input/output behavior from an end-user perspective 
 - Core business logic and requirements
 - External behavior and interfaces
 - Overall program workflow
+- Control flow graph equivalence
 
 For example:
 - If both versions implement a user authentication system, verify they both achieve the core goal of authenticating users, regardless of how they implement it
 - If both versions process data files, verify they produce equivalent results, even if they use different data structures or algorithms
 - If both versions expose an API, verify the API provides the same capabilities, even if internal implementations differ
+
+Note that the repaired code mainly focuses on performance optimizations, so you should:
+- Verify the core functionality remains unchanged
+- Ignore implementation differences and optimizations
+- Check if the control flow graph remains equivalent
+- Ensure the same features are still available
 
 Original code:
 {original_code}
@@ -687,7 +714,7 @@ Please analyze if the repaired code maintains the same core functionality as the
 
 Return your analysis in the following format:
 {{
-    "result": "success" | "failure",
+    "result": "success" | "failure", 
     "reason": "A detailed explanation focusing on whether the core functionality and purpose remain the same, not on implementation details"
 }}
 """
@@ -737,6 +764,117 @@ def build_rules_dict(negative_dir, positive_dir, logger=None):
     logger.getLogger().info("规则字典构建完成")
     return rules
 
+def deepseek_prompt(repair_results):
+    final_fix_prompt = """
+Task: EXACT Text Replacement Based on Difflib Markers ONLY
+
+IMPORTANT - THIS IS A PURE TEXT OPERATION:
+• You are a text replacement tool
+• You ONLY process lines with "+" or "-" markers
+• You MUST keep ALL other text EXACTLY as is
+• No code understanding required or wanted
+
+Here's the ONLY change pattern you should follow:
+
+STARTING CODE:
+```arkts
+  ForEach(FIRST_NAV_LIST, (item, index) => {
+    ListItem() {
+      ItemTemplate({ item: item })
+    }
+    .width('93.3%')
+    .borderRadius(24)
+    .padding({ left: '3.6%', right: '5.4%', top: 12, bottom: 12 })
+    .backgroundColor('#ffffff')
+  })
+```
+
+```diff
+  ForEach(FIRST_NAV_LIST, (item, index) => {
+    ListItem() {
+      ItemTemplate({ item: item })
+    }
+    .width('93.3%')
+    .borderRadius(24)
+    .padding({ left: '3.6%', right: '5.4%', top: 12, bottom: 12 })
+    .backgroundColor('#ffffff')
+-  })
++  }, item => item.title)
+```
+
+RESULT:
+```arkts
+  ForEach(FIRST_NAV_LIST, (item, index) => {
+    ListItem() {
+      ItemTemplate({ item: item })
+    }
+    .width('93.3%')
+    .borderRadius(24)
+    .padding({ left: '3.6%', right: '5.4%', top: 12, bottom: 12 })
+    .backgroundColor('#ffffff')
+  }, item => item.title)
+```
+
+EXACT Rules to Follow:
+
+1. Lines with NO markers: MUST remain EXACTLY as they are
+2. Lines with "-": MUST be REMOVED
+3. Lines with "+": MUST be ADDED (without the "+")
+4. SPACING and INDENTATION: MUST remain EXACTLY as in original
+
+5. ALL OTHER CODE: MUST remain COMPLETELY UNCHANGED
+
+CHANGES TO APPLY:
+"""
+
+    for context, res in repair_results:
+        final_fix_prompt += f"""
+SEGMENT TO MODIFY:
+```arkts
+{context}
+```
+
+DIFFLIB CHANGES:
+{res}
+"""
+    final_fix_prompt += """
+Complete Source Code:
+```arkts
+{code}
+```
+"""
+
+    final_fix_prompt += """
+YOUR EXACT STEPS:
+
+1. Locate each ORIGINAL SEGMENT in the source code
+2. For THAT SEGMENT ONLY:
+   - REMOVE lines marked with "-"
+   - ADD lines marked with "+" (without the "+")
+   - Keep ALL other lines EXACTLY as they are
+3. Do not touch ANY OTHER PART of the code
+4. Preserve ALL spacing and indentation EXACTLY
+
+This is a pure text replacement task:
+• Treat it like a search-and-replace operation
+• Only modify the exact text matches
+• Preserve all spacing and indentation
+• Make no other changes
+
+⚠️ CRITICAL WARNINGS:
+• You are a MECHANICAL text processor
+• ONLY modify lines with "+" or "-" markers
+• ALL OTHER LINES MUST REMAIN EXACTLY THE SAME
+• NO code understanding or improvements allowed
+• NO formatting changes allowed
+• NO indentation changes allowed
+• NO whitespace changes allowed
+• EVERYTHING not marked with + or - MUST be identical
+
+Return ONLY the complete source code with these exact replacements.
+No explanations, no comments, just the processed code.
+"""
+    return final_fix_prompt
 
 
 def parse_ets_file(file_path, logger=None):

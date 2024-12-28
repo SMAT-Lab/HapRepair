@@ -187,20 +187,18 @@ def process_file_RQ2(file, proj_dir, proj_repair_dir, logger, rules_dict, model,
 
     if res_json["result"] == "success":
         file_logs.append(f"功能性检查通过! ")
-        fixed_code = fixed_code
+        # fixed_code = fixed_code
     else:
-        file_logs.append(f"功能性检查失败!")
+        file_logs.append(f"文件 {file} 功能性检查失败!")
+        print(f"文件 {file} 修复后功能性检查失败!")
+        # fixed_code = fixed_code
         fixed_code = code
-    
-    # fixed_code, issues = check_variable_declarations(final_code)
-    # fixed_code = remove_difflib_line(fixed_code)
-    # fixed_code, issues = fix_brackets(fixed_code)
 
     os.makedirs(os.path.join(proj_repair_dir, os.path.dirname(os.path.relpath(file, proj_dir))), exist_ok=True)
     with open(os.path.join(proj_repair_dir, os.path.relpath(file, proj_dir)), 'w', encoding='utf-8') as f:
         f.write(fixed_code)
 
-    file_logs.append(f"文件 {file} 修复完成! 修复结果:\n{fixed_code}")
+    file_logs.append(f"文件 {file} 修复完成!")
     file_logs.append("-" * 100)
     return file_logs
 
@@ -211,25 +209,25 @@ def process_file_RQ2(file, proj_dir, proj_repair_dir, logger, rules_dict, model,
 ## 从提取缺陷代码上下文
 def RQ2():
     model, tokenizer, index = load_model_and_index()
-    rag_types = ["difflib"] # ["difflib"] # ["gpt_diff"] # ["no_diff"]   
-    project_name = "Gallery" # "A21_C" "ComponentCollection" # "AdaptiveCapability" #"Gallery"# "demo" # "Photos" # "StageModelAbilityDevelop" "HealthyDietIX"
+    rag_types = ["gpt_diff", "no_diff"] # ["difflib"] # ["gpt_diff"] # ["no_diff"]   
+    project_name = "Photos" # "wifi_testapp" # "A21_C" "ComponentCollection" # "AdaptiveCapability" #"Gallery"# "demo" # "Photos" # "StageModelAbilityDevelop" "HealthyDietIX"
     top_n = 1
     surrounding_context = True
-    round_num = 0 
-    proj_dir = f"./projects/{project_name + ('_round' + str(round_num) if round_num > 0 else '')}/ets"
+    round_num = 0
+    proj_dir = f"./projects/{project_name}/{'round_' + str(round_num) + '/difflib' if round_num > 0 else ''}/ets"
     # proj_repair_dir = f"./projects/{project_name + '_round' + str(round_num+1)}/ets"
     for rag_type in rag_types:
         if surrounding_context == False:
-            proj_repair_dir = f"./projects_surrounding_context/{project_name}_repair/{rag_type}/ets"
+            proj_repair_dir = f"./projects_full_context/{project_name}_repair/{rag_type}/ets"
         else:
-            proj_repair_dir = f"./projects_{top_n}/{project_name}_repair/{rag_type}/ets"
+            proj_repair_dir = f"./projects_{top_n}/{project_name}_repair/round_{round_num+1}/{rag_type}/ets"
         os.makedirs(f'./logs/{project_name}', exist_ok=True)
         
         # 创建状态记录文件夹
         if surrounding_context == False:
-            status_dir = f'./status/projects_surrounding_context/{project_name}/{rag_type}'
+            status_dir = f'./status/projects_full_context/{project_name}/{rag_type}'
         else:
-            status_dir = f'./status/projects_{top_n}/{project_name}/{rag_type}'
+            status_dir = f'./status/projects_{top_n}/{project_name}/round_{round_num+1}/{rag_type}'
         os.makedirs(status_dir, exist_ok=True)
         
         logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s', handlers=[logging.FileHandler(f'./logs/{project_name}/RQ2_{project_name}_round_{round_num}_top_{top_n}_{rag_type}_surrounding_context_{surrounding_context}.log', mode='w')])
@@ -258,7 +256,7 @@ def RQ2():
                 unprocessed_files.append(file)
 
         # 使用多线程处理未处理的文件
-        with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
             futures = {executor.submit(process_file_RQ2, file, proj_dir, proj_repair_dir, logger, rules_dict, model, tokenizer, index, rag_type, top_n, surrounding_context): file for file in unprocessed_files}
             for future in concurrent.futures.as_completed(futures):
                 file = futures[future]

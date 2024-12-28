@@ -3,7 +3,7 @@ import re
 import logging
 
 from get_prompt import get_functionality_check_prompt
-from llm import get_openai_answer
+from llm import get_answer, get_deepseek_answer, get_ollama_answer, get_openai_answer
 
 def sort_json_lines(data):
     if isinstance(data, list):
@@ -57,8 +57,18 @@ def handle_result(res):
         return None
 
 def extract_code_from_markdown_block(markdown_block):
-    code_block = re.search(r'```(?:arkts|javascript|js|ts|typescript)\n(.*)\n```', markdown_block, re.DOTALL).group(1)
-    return code_block
+    try:
+        # 先尝试查找代码块
+        match = re.search(r'```(?:arkts|javascript|js|ts|typescript)\n(.*)\n```', markdown_block, re.DOTALL)
+        if match is not None:
+            return match.group(1)
+        
+        # 如果没找到代码块,说明可能直接返回了代码,直接返回原文本
+        logging.getLogger().info("未找到代码块,返回原始文本")
+        return markdown_block
+    except Exception as e:
+        logging.getLogger().error(f"提取代码块时出错: {str(e)}")
+        return markdown_block
     
 def remove_difflib_line(code):
     lines = code.split('\n')
@@ -473,7 +483,9 @@ class ArkTSDeclarationFixer:
     
 def check_functionality(original_code, repaired_code):
     prompt = get_functionality_check_prompt(original_code, repaired_code)
-    res = get_openai_answer(prompt, model_name='gpt-4o-2024-08-06')
+    res = get_answer(prompt, model_name='gpt-4o-2024-08-06')
+    #res = get_ollama_answer(prompt, model_name='qwen2.5-coder:32b')r
+    #res = get_deepseek_answer(prompt)
     # 移除可能存在的```json前缀
     res = res.replace('```json', '').replace('```', '').strip()
     res_json = json.loads(res)

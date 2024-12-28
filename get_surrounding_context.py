@@ -226,11 +226,57 @@ def use_row_column_to_replace_flex(line, code_lines):
     # 获取原始行的缩进
     indent = len(code_lines[line]) - len(code_lines[line].lstrip())
     indent_str = ' ' * indent
+
+    # 检查Flex是否跨行
+    stack = []
+    start_line = line
+    end_line = line
     
-    if 'Column' in code_lines[line]:
+    # 从当前行开始往下寻找
+    for i in range(line, len(code_lines)):
+        current = code_lines[i]
+        
+        # 统计左右大括号
+        left_count = current.count('(')
+        right_count = current.count(')')
+        
+        # 更新栈
+        for _ in range(left_count):
+            stack.append('(')
+        for _ in range(right_count):
+            if stack:
+                stack.pop()
+                
+        # 如果栈为空,说明找到匹配的右大括号
+        if not stack:
+            end_line = i
+            break
+            
+    # 检查所有相关行中是否包含direction: FlexDirection.Column
+    has_column = False
+    has_row = False
+    for i in range(start_line, end_line + 1):
+        current_1 = code_lines[i]
+        if 'Column' in code_lines[i]:
+            has_column = True
+            break
+        elif 'Row' in code_lines[i]:
+            has_row = True
+            break
+            
+    # 如果Flex跨行,需要清空这些行
+    if end_line > start_line:
+        for i in range(start_line, end_line + 1):
+            code_lines[i] = ''
+    
+    # 根据检查结果设置替换内容
+    if has_column:
         code_lines[line] = indent_str + "Column() {"
-    elif 'Row' in code_lines[line]:
+    elif has_row:
         code_lines[line] = indent_str + "Row() {"
+    else:
+        code_lines[line] = indent_str + "Row() {"  # 默认使用Row
+
     return code_lines
 
 def get_single_file_surrounding_context(proj_dir, file_path, rules_dict):

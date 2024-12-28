@@ -214,6 +214,12 @@
     "errorLocation": "",
     "fixLocation": "",
     "needsMoreContext": true
+  },
+  {
+    "rule": "@hw-ets-eslint/init-list-component",
+    "errorLocation": "",
+    "fixLocation": "",
+    "needsMoreContext": true
   }
 ]
 
