@@ -5,7 +5,7 @@ import time
 import logging
 
 def get_openai_answer(ques, model_name="gpt-4o-mini", system_prompt=None, max_retries=5, retry_delay=1):
-    _ = load_dotenv(find_dotenv())  # read local .env file
+    _ = load_dotenv(find_dotenv())
     api_key = os.environ['OPENAI_API_KEY']
     api_base = os.environ['OPENAI_API_BASE']
 
@@ -26,9 +26,9 @@ def get_openai_answer(ques, model_name="gpt-4o-mini", system_prompt=None, max_re
             return response.choices[0].message.content
         except Exception as e:
             if attempt == max_retries - 1:
-                logging.error(f"最大重试次数已达到")
+                logging.error(f"Maximum retries reached")
                 raise
-            logging.warning(f"第{attempt + 1}次调用失败: {retry_delay}秒后重试...")
+            logging.warning(f"Call {attempt + 1} failed: retrying in {retry_delay} seconds...")
             time.sleep(retry_delay)
 
 def get_deepseek_answer(ques, model_name="deepseek-chat", system_prompt=None, max_retries=3, retry_delay=1):
@@ -55,9 +55,9 @@ def get_deepseek_answer(ques, model_name="deepseek-chat", system_prompt=None, ma
             return response.choices[0].message.content
         except Exception as e:
             if attempt == max_retries - 1:
-                logging.error(f"最大重试次数已达到,最终错误: {str(e)}")
+                logging.error(f"Maximum retries reached, final error: {str(e)}")
                 raise   
-            logging.warning(f"第{attempt + 1}次调用失败: {str(e)}, {retry_delay}秒后重试...")
+            logging.warning(f"Call {attempt + 1} failed: {str(e)}, retrying in {retry_delay} seconds...")
             time.sleep(retry_delay)
 
     return None
@@ -83,9 +83,9 @@ def get_ollama_answer(ques, model_name, system_prompt=None, max_retries=3, retry
             return response.choices[0].message.content
         except Exception as e:
             if attempt == max_retries - 1:
-                logging.error(f"最大重试次数已达到,最终错误: {str(e)}")
+                logging.error(f"Maximum retries reached, final error: {str(e)}")
                 raise
-            logging.warning(f"第{attempt + 1}次调用失败: {str(e)}, {retry_delay}秒后重试...")
+            logging.warning(f"Call {attempt + 1} failed: {str(e)}, retrying in {retry_delay} seconds...")
             time.sleep(retry_delay)
 
 def get_gptgod_answer(ques, model_name, system_prompt=None, max_retries=3, retry_delay=1):
@@ -114,9 +114,9 @@ def get_gptgod_answer(ques, model_name, system_prompt=None, max_retries=3, retry
             return full_content
         except Exception as e:
             if attempt == max_retries - 1:
-                logging.error(f"最大重试次数已达到,最终错误: {str(e)}")
+                logging.error(f"Maximum retries reached, final error: {str(e)}")
                 raise
-            logging.warning(f"第{attempt + 1}次调用失败: {str(e)}, {retry_delay}秒后重试...")
+            logging.warning(f"Call {attempt + 1} failed: {str(e)}, retrying in {retry_delay} seconds...")
             time.sleep(retry_delay)
             retry_delay = retry_delay * 2
 
@@ -145,9 +145,9 @@ def get_qwen_answer(ques, model_name, system_prompt=None, max_retries=10, retry_
             return full_content
         except Exception as e:
             if attempt == max_retries - 1:
-                logging.error(f"最大重试次数已达到,最终错误: {str(e)}")
+                logging.error(f"Maximum retries reached, final error: {str(e)}")
                 raise
-            logging.warning(f"第{attempt + 1}次调用失败: {str(e)}, {retry_delay}秒后重试...")
+            logging.warning(f"Call {attempt + 1} failed: {str(e)}, retrying in {retry_delay} seconds...")
             time.sleep(retry_delay)
             retry_delay = retry_delay * 2
 
@@ -177,9 +177,9 @@ def get_llama_api_answer(ques, model_name, system_prompt=None, max_retries=10, r
             return full_content
         except Exception as e:
             if attempt == max_retries - 1:
-                logging.error(f"最大重试次数已达到,最终错误: {str(e)}")
+                logging.error(f"Maximum retries reached, final error: {str(e)}")
                 raise
-            logging.warning(f"第{attempt + 1}次调用失败: {str(e)}, {retry_delay}秒后重试...")
+            logging.warning(f"Call {attempt + 1} failed: {str(e)}, retrying in {retry_delay} seconds...")
             time.sleep(retry_delay)
             retry_delay = retry_delay * 2
 

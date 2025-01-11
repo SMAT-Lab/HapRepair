@@ -1,47 +1,96 @@
-# LLMCodeRepair
+# ArkTS Code Defect Repair System
 
-使用ArkTs语料微调大模型，并通过RAG进行propmt learning来进行代码缺陷修复
+This is an automated ArkTS code defect repair system based on large language models. The system uses Retrieval-Augmented Generation (RAG) technology combined with multiple large language models to detect and fix performance defects in ArkTS code.
 
-## 环境配置
-```bash
-conda create --name arktsLLM python=3.9 -y
-conda activate arktsLLM
+Here's the framework of the system:
+
+![framework](./fig/HomeRepair_00.png)
+## Key Features
+
+- Code defect detection
+- RAG-based code repair suggestion generation
+- Multi-round code repair
+- Code functionality verification
+- Multi-model support (GPT, Deepseek, Qwen, etc.)
+
+## System Architecture
+
+The system consists of the following main modules:
+
+- Defect Detection Module (`RQ1.py`)
+- Code Repair Module (`RQ2.py`, `fix_projects.py`)
+- Vector Retrieval Module (`save_defects_to_database.py`)
+- Prompt Generation Module (`get_prompt.py`)
+- Output Processing Module (`output_handler.py`)
+- Context Extraction Module (`get_surrounding_context.py`)
+
+## Supported Models
+
+- OpenAI GPT Series
+- Deepseek Chat
+- Qwen
+- Ollama
+- LLaMA
+- GPTGod
+
+## Usage
+
+1. Configure environment variables:
+```
+OPENAI_API_KEY=<your_key>
+OPENAI_API_BASE=<api_base>
+DEEPSEEK_API_KEY=<your_key>
+DEEPSEEK_API_BASE=<api_base>
+PINECONE_API_KEY=<your_key>
 ```
 
-## 数据处理
-请使用src/process_raw.ipynb脚本进行数据处理
-
-## 模型训练
-### 训练模型
-```bash
-cd src/train
-python -m torch.distributed.launch --nproc_per_node=2 train.py
+2. Install dependencies:
+```
+pip install -r requirements.txt
 ```
 
-### 模型量化
-先通过merge_lora.ipynb脚本将模型合并，然后将tokenizer复制一份到merge后的模型文件夹中！！！
-按照官网教程装好llama.cpp，然后执行以下命令(请使用另外的环境)
-```bash
-cd llama.cpp
-python convert_hf_to_gguf.py ../OHAPP/merged/model/ --outtype f16 --outfile ../OHAPP/gguf/model.gguf
-
-./llama-quantize ../OHAPP/gguf/model.gguf ../OHAPP/gguf/model_quant_8.gguf q8_0
+3. Run defect detection:
+```
+python RQ1.py
 ```
 
-下载安装好ollama，然后执行以下命令
-```bash
-cd OHAPP/gguf
-ollama create arktsLLM -f ./Modelfile
+4. Run code repair:
+```
+python RQ2.py
 ```
 
-其中，Modelfile内容如下:
-```bash
-FROM ./model_quant_8.gguf
-```
+Besides, you can use CodeLinter in [Huawei DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/archive/) to detect code defects.
 
-## 代码修复RAG
-### 向量数据库构建
-请参考src/pinecone.ipynb脚本构建向量数据库以及查询
+And use [ArkAnalyzer](https://gitee.com/openharmony-sig/arkanalyzer) to obtain the CFG of the code to check the functionality of the code.
 
-### 代码修复
-请参考src/ollama.ipynb脚本进行代码修复
+## Data Visualization
+
+The project includes a data visualization module (`draw.ipynb`) that can generate:
+- Defect detection accuracy analysis charts
+- Multi-round repair effectiveness comparison charts
+
+## Key Features
+
+- Uses RAG to improve repair quality
+- Supports multiple large language models
+- Multi-round iterative repair mechanism
+- Code functionality verification ensures repair quality
+- Context-aware code repair
+
+## Results:
+
+![results](./fig/results.png)
+## Important Notes
+
+- Requires configuration of relevant API keys
+- Recommended Python version: 3.10+
+- Requires sufficient GPU memory for running large language models
+- Recommended to backup code before repair
+
+## Contributing
+
+Issues and Pull Requests are welcome to help improve the project.
+
+## License
+
+[License Type]

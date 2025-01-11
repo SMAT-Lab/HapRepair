@@ -5,14 +5,12 @@ import time
 def generate_fix_prompt(rag_prompt, code, sum_context, defect_description, error_location):
     # Simplified redundant container example
     redundant_container_example = """
-Before:
-```arkts
+Before:```arkts
 Row() {
     Column() {  // ❌ Redundant container
         Text('Hello')
     }
-}
-```
+}```
 
 After:
 ```arkts
@@ -529,7 +527,7 @@ def get_rag_prompt(repair_example, model, tokenizer, index, rag_type, number=5):
             retry_count += 1
             if retry_count == max_retries:
                 raise e
-            time.sleep(1)  # 等待1秒后重试
+            time.sleep(1)
     matches = results.matches
     if len(matches) == 0:
         return ""
@@ -742,13 +740,13 @@ def judge_need_context_prompt():
     return system_prompt
 
 def build_rules_dict(negative_dir, positive_dir, logger=None):
-    logger.getLogger().info("开始构建规则字典...")
+    logger.getLogger().info("Building rules dictionary...")
     rules = {}
     for filename in os.listdir(negative_dir):
         if filename.endswith('.ets'):
-            logger.getLogger().info(f"处理规则文件: {filename}")
+            logger.getLogger().info(f"Processing rule file: {filename}")
             rule_name = os.path.splitext(filename)[0]
-            rule_key = f"@performance/{rule_name}"
+            rule_key = f"@rules/{rule_name}"
             negative_file_path = os.path.join(negative_dir, filename)
             rule_data = parse_ets_file(negative_file_path)
 
@@ -757,11 +755,11 @@ def build_rules_dict(negative_dir, positive_dir, logger=None):
                 positive_example = get_positive_example(positive_file_path)
                 rule_data['positive_code_example'] = positive_example
             else:
-                logger.getLogger().warning(f"未找到对应的正例文件: {filename}")
+                logger.getLogger().warning(f"Positive example file not found: {filename}")
                 rule_data['positive_code_example'] = None
 
             rules[rule_key] = rule_data
-    logger.getLogger().info("规则字典构建完成")
+    logger.getLogger().info("Rules dictionary built")
     return rules
 
 def deepseek_prompt(repair_results):
@@ -878,7 +876,7 @@ No explanations, no comments, just the processed code.
 
 
 def parse_ets_file(file_path, logger=None):
-    logger.info(f"解析文件: {file_path}")
+    logger.info(f"Processing file: {file_path}")
     description = []
     code_example = ""
     in_comment = True
@@ -898,7 +896,7 @@ def parse_ets_file(file_path, logger=None):
     }
 
 def get_positive_example(file_path, logger=None):
-    logger.getLogger().info(f"获取正例数据: {file_path}")
+    logger.getLogger().info(f"Getting positive example data: {file_path}")
     code_example = ""
     in_comment = False
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -906,3 +904,4 @@ def get_positive_example(file_path, logger=None):
             stripped_line = line.strip()
             code_example += stripped_line + " "
     return code_example.strip()
+
