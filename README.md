@@ -4,7 +4,7 @@ This is an automated ArkTS code defect repair system based on large language mod
 
 Here's the framework of the system:
 
-![framework](./fig/HomeRepair_00.png)
+![framework](./fig/framework.png)
 ## Key Features
 
 - Code defect detection
@@ -61,7 +61,7 @@ python RQ1.py
 
 4. Run code repair:
 ```
-python RQ2.py
+python fix.py
 ```
 
 Besides, you can use CodeLinter in [Huawei DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/archive/) to detect code defects.
