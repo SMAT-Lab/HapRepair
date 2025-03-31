@@ -1,0 +1,1 @@
+let vector = new Int16Array([3, 6, 9]);

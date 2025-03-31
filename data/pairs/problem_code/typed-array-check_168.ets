@@ -1,0 +1,1 @@
+const pixelValues: number[] = [255, 128, 64, 32, 16];

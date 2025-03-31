@@ -1,0 +1,225 @@
+[
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "errorLocation": "const TAG = 'onScroll';",
+    "needsMoreContext": false,
+    "fixLocation": ".onScroll(() => {\n    const TAG = 'onScroll';\n})"
+  },
+  {
+    "rule": "@performance/hp-arkui-avoid-empty-callback",
+    "errorLocation": ".onClick(() => {",
+    "needsMoreContext": false,
+    "fixLocation": ".onClick(() => {\n   // 无业务逻辑\n })"
+  },
+  {
+    "rule": "@performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse",
+    "errorLocation": "this.avg = params.avg as number;",
+    "needsMoreContext": true,
+    "fixLocation": "@Link avg: number;\naboutToReuse(params: Record<string, Object>): void {\n    this.desc = params.desc as string;\n    this.sum = params.sum as number;\n    this.avg = params.avg as number;\n}"
+  },
+  {
+    "rule": "@performance/hp-arkui-combine-same-arg-animateto",
+    "errorLocation": "this.func1();",
+    "needsMoreContext": true,
+    "fixLocation": "func1() {\n  animateTo({ curve: Curve.Sharp, duration: 1000 }, () => {\n    this.textWidth = (this.textWidth === 100 ? 200 : 100);\n  });\n}\n\nfunc2() {\n  animateTo({ curve: Curve.Sharp, duration: 1000 }, () => {\n    this.color = (this.color === Color.Yellow ? Color.Red : Color.Yellow);\n  });\n}\n\n.onClick(() => {\n  this.func1();\n  this.func2();\n})"
+  },
+  {
+    "rule": "@performance/hp-arkui-image-async-load",
+    "errorLocation": "Image($r('app.media.4k'))",
+    "needsMoreContext": false,
+    "fixLocation": "Image($r('app.media.4k'))\n    .border({ width: 1 })\n    .borderStyle(BorderStyle.Dashed)\n    .height(100)\n    .width(100)\n    .syncLoad(true)"
+  },
+  {
+    "rule": "@performance/hp-arkui-load-on-demand",
+    "errorLocation": "ForEach(this.arr, (item: number) => {",
+    "needsMoreContext": true,
+    "fixLocation": "@State arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]\nForEach(this.arr, (item: number) => {\n  ListItem() {\n    Text(`item value: ${item}`)\n  }\n}, (item: number) => item.toString())"
+  },
+  {
+    "rule": "@performance/hp-arkui-no-func-as-arg-for-reusable-component",
+    "errorLocation": "ChildComponent({ desc: item, sum: this.count() })",
+    "needsMoreContext": false,
+    "fixLocation": "ChildComponent({ desc: item, sum: this.count() })"
+  },
+  {
+    "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+    "errorLocation": "hilog.info(0x0000, 'TAG', '%{public}s', this.message);",
+    "needsMoreContext": true,
+    "fixLocation": "@State message: string = '';\nfor (let i = 0; i < 10; i++) {\n  hilog.info(0x0000, 'TAG', '%{public}s', this.message);\n}"
+  },
+  {
+    "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+    "errorLocation": "}, (item: Item) => JSON.stringify(item))",
+    "needsMoreContext": true,
+    "fixLocation": "class Item {\n  advertInfos: Model[] = []\n  productPrice: PriceInfo[] = []\n  addresses: string[] = []\n  id: string = ''\n}\nLazyForEach(this.data, (item: Item) => {\n  ListItem() {\n    ChildComponent({ desc: item.id, sum: 0, avg: 0 })\n  }\n  .width('100%')\n  .height('10%')\n  .border({width:1})\n  .borderStyle(BorderStyle.Dashed)\n}, (item: Item) => JSON.stringify(item))"
+  },
+  {
+    "rule": "@performance/hp-arkui-reduce-pangesture-distance",
+    "errorLocation": "this.panOption.setDistance(100)",
+    "needsMoreContext": false,
+    "fixLocation": "this.panOption.setDistance(100)"
+  },
+  {
+    "rule": "@performance/hp-arkui-remove-container-without-property",
+    "errorLocation": "Flex() {",
+    "needsMoreContext": false,
+    "fixLocation": "Flex() {\n  Flex() {\n    Flex() {\n      Text(item.toString())\n        .fontSize(16)\n        .backgroundColor(0xF9CF93)\n        .width('100%')\n        .height(80)\n        .textAlign(TextAlign.Center)\n        .border({width:1})\n    }\n  }\n}"
+  },
+  {
+    "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+    "errorLocation": "Stack() { ",
+    "needsMoreContext": false,
+    "fixLocation": "Stack() {  \n  Stack() {  \n    Stack() {  \n      Text(item.toString())  \n    }.size({ width: \"100%\"})  \n  }.backgroundColor(Color.Yellow)  \n}.backgroundColor(Color.Pink)"
+  },
+  {
+    "rule": "@performance/hp-arkui-remove-redundant-state-var",
+    "errorLocation": "@State message: string = \"\";",
+    "needsMoreContext": true,
+    "fixLocation": "@State message: string = \"\";\nappendMsg(newMsg: String) : string {\n    this.message += newMsg;\n    return this.message;\n}\nStack() {\n    Text(this.message)\n}"
+  },
+  {
+    "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+    "errorLocation": "@State button_msg: string = \"i am button\";",
+    "needsMoreContext": true,
+    "fixLocation": "@State button_msg: string = \"i am button\";\nButton(this.button_msg)"
+  },
+  {
+    "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+    "errorLocation": "Grid() {",
+    "needsMoreContext": false,
+    "fixLocation": "Grid() {\n  LazyForEach(this.data, (item: number) => {\n    GridItem() {\n      // 使用可复用自定义组件\n      // 业务逻辑\n    }\n  }, (item: string) => item)\n}"
+  },
+  {
+    "rule": "@performance/hp-arkui-suggest-reuseid-for-if-else-reusable-component",
+    "errorLocation": "Button({ type: ButtonType.Normal })",
+    "fixLocation": "ListItem() {\n  // ListItem里有if-else并且直接在分支里使用了自定义复用组件\n  Button({ type: ButtonType.Normal }) {\n    Row() {\n      if (item['isPublicChat']) {\n        // 源码文件，请以工程实际为准\n        PublicChatItem({ chatInfo: item as PublicChatItem })\n      } else {\n        // 源码文件，请以工程实际为准\n        ChatItem({ chatInfo: item as ChatItem })\n      }\n    }.padding({ left: 16, right: 16 })\n  }\n}",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/hp-arkui-suggest-use-effectkit-blur",
+    "errorLocation": "Text('Image blur').fontSize(15).fontColor(0xCCCCCC).width('90%')",
+    "fixLocation": "Text('Image blur').fontSize(15).fontColor(0xCCCCCC).width('90%')",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/hp-arkui-use-grid-layout-options",
+    "errorLocation": "Grid(this.scroller) {",
+    "fixLocation": "Grid(this.scroller) {",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+    "errorLocation": "this.message += newMsg;",
+    "fixLocation": "@State message: string = '';\nappendMsg(newMsg: String) {\n  this.message += newMsg;\n  this.message += \";\";\n  this.message += \"<br/>\";\n}",
+    "needsMoreContext": true
+  },
+  {
+    "rule": "@performance/hp-arkui-use-object-link-to-replace-prop",
+    "errorLocation": "@Prop testNum: ClassA;",
+    "fixLocation": "@Prop testNum: ClassA;\nColumn() {\n  Text(`Parent testNum ${this.testNum[0].c}`)\n    .onClick(() => {\n      this.testNum[0].c += 1;\n    })\n  // PropChild没有改变@Prop testNum: ClassA的值，所以这时最优的选择是使用@ObjectLink\n  PropChild({ testNum: this.testNum[0] })\n}",
+    "needsMoreContext": true
+  },
+  {
+    "rule": "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload",
+    "errorLocation": "Swiper(this.swiperController) {",
+    "fixLocation": "Swiper(this.swiperController) {\n  LazyForEach(this.data, (item: MyObject, index?: number) => {\n    // 源码文件，请以工程实际为准\n    PhotoItem({ myIndex: index, dataSource: this.data })\n  }, (item: MyObject) => item.id)\n}\n.cachedCount(this.cacheCount)\n.indicator(true)\n.loop(false)\n.width('100%')\n.height('100%')",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/hp-arkui-use-reusable-component",
+    "errorLocation": "Column() {",
+    "fixLocation": "Column() {\n        Text(item.introduce)\n          .fontSize(14)\n          .padding({ left: 5, right: 5 })\n          .margin({ top: 5 })\n        Row() {\n          Text('￥')\n            .fontSize(10)\n            .fontColor(Color.Red)\n            .baselineOffset(-4)\n          Text(item.price)\n            .fontSize(16)\n            .fontColor(Color.Red)\n          Text(item.numb)\n            .fontSize(10)\n            .fontColor(Color.Gray)\n            .baselineOffset(-4)\n            .margin({ left: 5 })\n        }\n        .width('100%')\n        .justifyContent(FlexAlign.SpaceBetween)\n        .padding({ left: 5, right: 5 })\n        .margin({ top: 15 })\n    }\n    .borderRadius(10)\n    .backgroundColor(Color.White)\n    .clip(true)\n    .width('100%')\n    .height(290)",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+    "errorLocation": "Flex({ direction: FlexDirection.Column }) {",
+    "fixLocation": "Flex({ direction: FlexDirection.Column }) {\n  Text('Replace Flex with Column/Row')\n    .fontSize(12)\n    .height('16')\n    .margin({\n      top: 5,\n      bottom: 10\n    })\n  Flex().width(300).height(200).backgroundColor(Color.Pink)\n  Flex().width(300).height(200).backgroundColor(Color.Yellow)\n  Flex().width(300).height(200).backgroundColor(Color.Grey)\n  Flex().width(300).height(200).backgroundColor(Color.Pink)\n  Flex().width(300).height(200).backgroundColor(Color.Yellow)\n  Flex().width(300).height(200).backgroundColor(Color.Grey)\n}.height(200)",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/hp-arkui-use-scale-to-replace-attr-animateto",
+    "errorLocation": "animateTo({ duration: 1000 }, () => {",
+    "fixLocation": "@State textWidth: number = 10;\n@State textHeight: number = 10;\nText()\n  .backgroundColor(Color.Blue)\n  .fontColor(Color.White)\n  .fontSize(20)\n  .width(this.textWidth)\n  .height(this.textHeight)\nButton('布局属性')\n  .backgroundColor(Color.Blue)\n  .fontColor(Color.White)\n  .fontSize(20)\n  .margin({ top: 30 })\n  .borderRadius(30)\n  .padding(10)\n  .onClick(() => {\n    animateTo({ duration: 1000 }, () => {\n      this.textWidth = 100;\n      this.textHeight = 100;\n    })\n  })",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/hp-arkui-use-transition-to-replace-animateto",
+    "errorLocation": ".opacity(this.mOpacity)",
+    "fixLocation": "需要找更多的上下文\nText('value')\n    .opacity(this.mOpacity)\nText('toggle state')\n    .onClick(() => {\n      this.show = true;\n      animateTo({\n        duration: 1000, onFinish: () => {\n          if (this.mOpacity === 0) {\n            this.show = false;\n          }\n        }\n      }, () => {\n        this.mOpacity = this.mOpacity === 1 ? 0 : 1;\n      })\n    })",
+    "needsMoreContext": true
+  },
+  {
+    "rule": "@performance/hp-arkui-use-word-break-to-replace-zero-width-space",
+    "errorLocation": "Text(this.diskName.split('').join('\\u200B'))",
+    "fixLocation": "Text(this.diskName.split('').join('\\u200B'))\n    .textAlign(TextAlign.Start)",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/hp-performance-no-closures",
+    "errorLocation": "return arr[0] + arr[1];",
+    "fixLocation": "let arr = [0, 1, 2];\nfunction foo() {\n  // arr 尽量通过参数传递\n  return arr[0] + arr[1];\n}\nfoo();",
+    "needsMoreContext": true
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "errorLocation": "this.animateItem = lottie.loadAnimation({",
+    "fixLocation": ".onReady(() => {\n  //告警\n  this.animateItem = lottie.loadAnimation({\n    container: this.politeChickyController,\n    renderer: 'canvas',\n    loop: true,\n    autoplay: true,\n    name: this.politeChicky,\n    path: this.politeChickyPath,\n    initialSegment: [FRAME_START, FRAME_END]\n  })\n})",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/no-high-loaded-frame-rate-range",
+    "errorLocation": "sync.setExpectedFrameRateRange({",
+    "fixLocation": "sync.setExpectedFrameRateRange({\n  expected: 120,\n  min: 120,\n  max: 120,\n});",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/number-init-check",
+    "errorLocation": "intNum = 1.1;",
+    "fixLocation": "let intNum = 1;\n// intNum is declared as int. Avoid changing it to float.\nintNum = 1.1;",
+    "needsMoreContext": true
+  },
+  {
+    "rule": "@performance/sparse-array-check",
+    "errorLocation": "let result: number[] = new Array(10);",
+    "fixLocation": "let result: number[] = new Array(10).fill(0);",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/typed-array-check",
+    "errorLocation": "const typedArray1: number[] = new Array(1, 2, 3);",
+    "fixLocation": "const typedArray1: number[] = new Array(1, 2, 3);",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "errorLocation": "WaterFlow() {",
+    "fixLocation": "WaterFlow() {\n  LazyForEach(this.dataSource, (item: number) => {\n    FlowItem() {\n      ReusableFlowItem({ item: item })\n    }\n    .width('100%')\n    .height(this.itemHeightArray[item % 100])\n    .backgroundColor(this.colors[item % 5])\n  }, (item: string) => item)\n}",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/constant-property-referencing-check-in-loops",
+    "errorLocation": "total += ((Time.info[num - Time.start] & index) !== 0) ? 1 : 0;",
+    "fixLocation": "class Time {\n  static start: number = 0;\n  static info: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];\n}\nfor (let index: number = 0x8000; index > 0x8; index >>= 1) {\n  // warning\n  total += ((Time.info[num - Time.start] & index) !== 0) ? 1 : 0;\n}",
+    "needsMoreContext": true
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "errorLocation": "ForEach(this.data, (item: string, index: number) => {",
+    "fixLocation": "ForEach(this.data, (item: string, index: number) => {\n  ListItem() {\n    Text(item);\n  }\n})",
+    "needsMoreContext": false
+  },
+  {
+    "rule": "@performance/multiple-associations-state-var-check",
+    "errorLocation": "",
+    "fixLocation": "",
+    "needsMoreContext": true
+  },
+  {
+    "rule": "@hw-ets-eslint/init-list-component",
+    "errorLocation": "",
+    "fixLocation": "",
+    "needsMoreContext": true
+  }
+]
+

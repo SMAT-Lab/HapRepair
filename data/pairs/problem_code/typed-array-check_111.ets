@@ -1,0 +1,1 @@
+const temperatures: number[] = Array.from({length: 6}, (_, i) => i * 5 + 10);

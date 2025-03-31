@@ -1,0 +1,1 @@
+let items: string[] = ['item'];

@@ -1,0 +1,1 @@
+const formattedTime = new Date().toLocaleTimeString('fr-FR');

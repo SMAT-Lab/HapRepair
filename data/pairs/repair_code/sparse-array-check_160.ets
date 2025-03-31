@@ -1,0 +1,1 @@
+let points: number[] = [7];

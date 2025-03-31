@@ -1,0 +1,1 @@
+let colors: string[] = ['blue'];

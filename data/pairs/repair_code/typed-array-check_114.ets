@@ -1,0 +1,1 @@
+let weights = new Float64Array(4); weights.fill(2.5);
