@@ -1,0 +1,15 @@
+{
+    "targetProjectName": "applications_photos",
+    "targetProjectDirectory": "D:\\Codes\\resources\\applications\\applications_photos",
+
+    "logPath": "out/ArkAnalyzer.log",
+    "logLevel": "DEBUG",
+
+    "sdks": [
+        {
+            "name": "etsSdk",
+            "path": "",
+            "moduleName": ""
+        }
+    ]
+}

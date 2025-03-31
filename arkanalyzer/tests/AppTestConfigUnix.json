@@ -1,0 +1,15 @@
+{
+    "targetProjectName": "AppSampleD",
+    "targetProjectDirectory": "/Users/yourName/Documents/Code/SE4OpenHarmony/Apps/OHApps/AppSampleD",
+
+    "logPath": "/Users/yourName/Documents/log/ArkAnalyzer.log",
+    "logLevel": "INFO",
+    
+    "sdks": [
+        {
+            "name": "etsSdk",
+            "path": "/Users/yourName/Documents/OpenHarmony/Sdk/11/ets",
+            "moduleName": ""
+        }
+    ]
+}
