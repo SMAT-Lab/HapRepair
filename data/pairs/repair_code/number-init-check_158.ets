@@ -1,0 +1,1 @@
+let fullMarks: number = 10, grade: number = 5; fullMarks = 9; grade = 8;

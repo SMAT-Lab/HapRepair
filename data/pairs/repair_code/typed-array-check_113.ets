@@ -1,0 +1,1 @@
+const brightnessLevels = new Uint8ClampedArray([100, 200, 150, 50]);

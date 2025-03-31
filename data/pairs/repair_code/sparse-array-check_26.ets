@@ -1,0 +1,1 @@
+let array: string[] = ['end'];

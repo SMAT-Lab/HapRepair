@@ -1,0 +1,1 @@
+let vector: number[] = [3, 6, 9];

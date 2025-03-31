@@ -1,0 +1,1 @@
+let weights: number[] = Array(4).fill(2.5);

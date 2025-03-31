@@ -1,0 +1,118 @@
+规则,描述,问题代码样例,问题解释,修复代码样例
+@performance/high-frequency-log-check,"不建议在高频函数中使用Hilog。
+
+高频函数包括：onTouch、onItemDragMove、onDragMove、onMouse、onVisibleAreaChange、onAreaChange、onScroll、onActionUpdate。","import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Text('PanGesture Offset:\nX: ' + 50 + '\n' + 'Y: ' + 100)
+        .fontSize(28)
+        .height(200)
+        .width(300)
+        .padding(20)
+        .border({ width: 3 })
+        .translate({ x: 50, y: 100, z: 0 })
+        .gesture(
+          PanGesture()
+            .onActionUpdate((event: GestureEvent|undefined) => {
+              hilog.info(1001, 'Index', 'onActionUpdate')
+            })
+        )
+    }
+  }
+}",,"import hilog from '@ohos.hilog';
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Text('PanGesture Offset:\nX: ' + 50 + '\n' + 'Y: ' + 100)
+        .fontSize(28)
+        .height(200)
+        .width(300)
+        .padding(20)
+        .border({ width: 3 })
+        .translate({ x: 50, y: 100, z: 0 })
+        .gesture(
+          PanGesture()
+            .onActionUpdate((event: GestureEvent|undefined) => {
+              const TAG = 'onActionUpdate';
+            })
+        )
+    }
+  }
+}"
+@performance/no-high-loaded-frame-rate-range,不允许锁定最高帧率运行。,"let testsync: displaySync.DisplaySync = displaySync.create();
+testsync.setExpectedFrameRateRange({
+  expected: 120,
+  min: 120,
+  max: 120,
+});",,"let testsync: displaySync.DisplaySync = displaySync.create();
+testsync.setExpectedFrameRateRange({
+  expected: 60,
+  min: 45,
+  max: 60,
+});"
+"@performance/number-init-check
+",该规则将检查number是否正确使用。,"let intNum = 3;
+let floatNum = 2.5;
+let intNum2 = 4;
+let floatNum2 = 188.3;
+floatNum = 4; 
+intNum = 1.8; 
+intNum2 = 17.02;
+floatNum2 = 9964;",,"let intNum = 3;
+let floatNum = 2.5;
+let intNum2 = 4;
+let floatNum2 = 188.3;
+floatNum = 4.2; 
+intNum = 2; 
+intNum2 = 17;
+floatNum2 = 9964.0;"
+@performance/sparse-array-check,建议避免使用稀疏数组。,"let test_array: string[] = new Array(9009);
+array[4708] = 'mid';",,let test_array: string[] = ['mid'];
+@performance/typed-array-check,数值数组推荐使用TypedArray。,"let largeArray: number[] = [];
+for (let i = 0; i < 1000000; i++) {
+    largeArray[i] = Math.random();
+}",,"let largeArray = new Float32Array(1000000);
+for (let i = 0; i < largeArray.length; i++) {
+    largeArray[i] = Math.random();
+}"
+@performance/waterflow-data-preload-check,建议对waterflow子组件进行数据预加载。,"WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .width('100%')
+    .height(this.itemHeightArray[item % 80])
+    .backgroundColor(this.colors[item % 4])
+  }, (item: string) => item)
+}
+.onReachEnd(() => {
+  console.info(""End reached"")
+  setTimeout(() => {
+    for (let i = 0; i < 20; i++) {
+      this.dataSource.addItems()
+    }
+  }, 1000)
+})
+",,"WaterFlow() {
+  LazyForEach(this.dataSource, (item: number) => {
+    FlowItem() {
+      ReusableFlowItem({ item: item })
+    }
+    .onAppear(() => {
+      if (item + 15 == this.dataSource.totalCount()) {
+        for (let i = 0; i < 20; i++) {
+          this.dataSource.addItems()
+        }
+      }
+    })
+    .width('100%')
+    .height(this.itemHeightArray[item % 80])
+    .backgroundColor(this.colors[item % 4])
+  }, (item: string) => item)
+}
+"

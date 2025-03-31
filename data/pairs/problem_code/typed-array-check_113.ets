@@ -1,0 +1,1 @@
+const brightnessLevels: number[] = [100, 200, 150, 50];

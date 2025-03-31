@@ -1,0 +1,1 @@
+let getAnonIdResult: Uint8Array = ifaa.getAnonymousIdSync(arg);

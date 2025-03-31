@@ -1,0 +1,1 @@
+ ChildComponent({ desc: item, sum: this.count() })
