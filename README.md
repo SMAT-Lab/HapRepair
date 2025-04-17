@@ -1,10 +1,13 @@
 # ArkTS Code Defect Repair System
 
+This repository is the official repository of "HapRepair: Learn to Repair OpenHarmony Apps". 
+
 This is an automated ArkTS code defect repair system based on large language models. The system uses Retrieval-Augmented Generation (RAG) technology combined with multiple large language models to detect and fix performance defects in ArkTS code.
 
 Here's the framework of the system:
 
 ![framework](./fig/framework.png)
+
 ## Key Features
 
 - Code defect detection
@@ -98,4 +101,4 @@ Issues and Pull Requests are welcome to help improve the project.
 
 ## License
 
-[License Type]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
