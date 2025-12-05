@@ -1,0 +1,26 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/Text/textAreaInputTest",
+    "MainAbility/pages/Hyperlink/preventDefault",
+    "MainAbility/pages/Search/searchButton",
+    "MainAbility/pages/Text/minMaxFontSize",
+    "MainAbility/pages/Text/marqueeOptions1",
+    "MainAbility/pages/Text/marqueeOptions2",
+    "MainAbility/pages/TextInput/TextInputStopBackPress",
+    "MainAbility/pages/TextArea/TextAreaStopBackPress",
+    "MainAbility/pages/Search/SearchStopBackPress",
+	"MainAbility/pages/TextArea/addOrDelText",
+    "MainAbility/pages/TextChangeTest/TextOnChangeOptionsTest",
+    "MainAbility/pages/TextChangeTest/TextOnWillChangeOptionsTest",
+    "MainAbility/pages/SelectionMenuTest/bindSelectionMenuTest",
+    "MainAbility/pages/FontScaleTest/searchFontScaleTest",
+    "MainAbility/pages/FontScaleTest/textAreaFontScaleTest",
+    "MainAbility/pages/FontScaleTest/textInputFontScaleTest",
+    "MainAbility/pages/HalfLeadingTest/searchHalfLeadingTest",
+    "MainAbility/pages/HalfLeadingTest/textAreaHalfLeadingTest",
+    "MainAbility/pages/HalfLeadingTest/textInputHalfLeadingTest",
+    "MainAbility/pages/EllipsisModeTest/textAreaEllipsisModeTest",
+    "MainAbility/pages/EllipsisModeTest/textInputEllipsisModeTest"
+  ]
+}

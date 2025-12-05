@@ -1,0 +1,146 @@
+[
+  {
+    "id": 523,
+    "name": "PullLinking",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/applications_app_samples/code/DocsSample/Ability/PullLinking",
+    "total_defects": 36,
+    "perf_defects": 4,
+    "security_defects": 32,
+    "selection_reason": "top_security"
+  },
+  {
+    "id": 280,
+    "name": "ECStoreSamples",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/applications_app_samples/code/DocsSample/ArkData/KvStore/ECStoreSamples",
+    "total_defects": 2,
+    "perf_defects": 0,
+    "security_defects": 2,
+    "selection_reason": "top_security"
+  },
+  {
+    "id": 1925,
+    "name": "cameraAnimSample",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/multimedia_camera_framework/frameworks/js/camera_napi/cameraAnimSample",
+    "total_defects": 11,
+    "perf_defects": 10,
+    "security_defects": 1,
+    "selection_reason": "top_security"
+  },
+  {
+    "id": 504,
+    "name": "PickerStrengthenTest",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/arkui_ace_engine/examples/Picker/PickerStrengthenTest",
+    "total_defects": 1,
+    "perf_defects": 0,
+    "security_defects": 1,
+    "selection_reason": "top_security"
+  },
+  {
+    "id": 362,
+    "name": "JS_dialog_box_static",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/xts_acts/web/page_interaction/JS_dialog_box_static",
+    "total_defects": 100,
+    "perf_defects": 100,
+    "security_defects": 0,
+    "selection_reason": "top_total"
+  },
+  {
+    "id": 1202,
+    "name": "ace_ets_module_router1",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/xts_acts/arkui/ace_ets_module_ui/ace_ets_module_RouteManagement/ace_ets_module_router1",
+    "total_defects": 99,
+    "perf_defects": 99,
+    "security_defects": 0,
+    "selection_reason": "top_total"
+  },
+  {
+    "id": 1142,
+    "name": "ace_ets_module_navigation1",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/xts_acts/arkui/ace_ets_module_ui/ace_ets_module_navigation/ace_ets_module_navigation1",
+    "total_defects": 89,
+    "perf_defects": 89,
+    "security_defects": 0,
+    "selection_reason": "top_total"
+  },
+  {
+    "id": 997,
+    "name": "ace_ets_module_commonAttrsLayout_api11",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/xts_acts/arkui/ace_ets_module_ui/ace_ets_module_commonAttrsLayout/ace_ets_module_commonAttrsLayout_api11",
+    "total_defects": 85,
+    "perf_defects": 85,
+    "security_defects": 0,
+    "selection_reason": "top_total"
+  },
+  {
+    "id": 926,
+    "name": "ace_ets_module_RouteManagement_api12",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/xts_acts/arkui/ace_ets_module_ui/ace_ets_module_RouteManagement/ace_ets_module_RouteManagement_api12",
+    "total_defects": 84,
+    "perf_defects": 84,
+    "security_defects": 0,
+    "selection_reason": "top_total"
+  },
+  {
+    "id": 1739,
+    "name": "applications_permission_manager",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/applications_permission_manager",
+    "total_defects": 80,
+    "perf_defects": 80,
+    "security_defects": 0,
+    "selection_reason": "top_total"
+  },
+  {
+    "id": 1080,
+    "name": "ace_ets_module_imageText_api16",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/xts_acts/arkui/ace_ets_module_ui/ace_ets_module_imageText/ace_ets_module_imageText_api16",
+    "total_defects": 76,
+    "perf_defects": 76,
+    "security_defects": 0,
+    "selection_reason": "top_total"
+  },
+  {
+    "id": 777,
+    "name": "ace_ets_component_common_attrss_flex001",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/xts_acts/arkui/ace_ets_component_common_attrss/ace_ets_component_common_attrss_flex001",
+    "total_defects": 72,
+    "perf_defects": 72,
+    "security_defects": 0,
+    "selection_reason": "top_total"
+  },
+  {
+    "id": 1785,
+    "name": "audio_suite",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/multimedia_audio_framework/test/demo/audio_suite",
+    "total_defects": 92,
+    "perf_defects": 73,
+    "security_defects": 19,
+    "selection_reason": "top_security"
+  },
+  {
+    "id": 1740,
+    "name": "applications_photos",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/applications_photos",
+    "total_defects": 96,
+    "perf_defects": 96,
+    "security_defects": 0,
+    "selection_reason": "top_total"
+  },
+  {
+    "id": 1746,
+    "name": "applications_systemui",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/applications_systemui",
+    "total_defects": 74,
+    "perf_defects": 74,
+    "security_defects": 0,
+    "selection_reason": "top_total"
+  },
+  {
+    "id": 783,
+    "name": "ace_ets_component_common_attrss_flex_nowear",
+    "root_path": "/home/LLMCodeRepair/repo_new/OpenHarmony/xts_acts/arkui/ace_ets_component_common_attrss/ace_ets_component_common_attrss_flex_nowear",
+    "total_defects": 72,
+    "perf_defects": 72,
+    "security_defects": 0,
+    "selection_reason": "top_total"
+  }
+]

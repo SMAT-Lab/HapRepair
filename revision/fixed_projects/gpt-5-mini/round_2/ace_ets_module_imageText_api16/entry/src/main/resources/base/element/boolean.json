@@ -1,0 +1,12 @@
+{
+  "boolean": [
+    {
+      "name": "maxFontScale",
+      "value": true
+    },
+    {
+      "name": "minFontScale",
+      "value": false
+    }
+  ]
+}

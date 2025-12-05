@@ -1,0 +1,56 @@
+{
+  "float":[
+    {
+      "name":"font_hello",
+      "value":"28.0fp"
+    },
+    {
+      "name":"font_world",
+      "value":"20.0fp"
+    },
+    {
+      "name": "BarGridAlign_Test",
+      "value": "15px"
+    },
+    {
+      "name": "BarHeight_Test",
+      "value": "55.00vp"
+    },
+    {
+      "name": "SubTabBarStylePadding_Test",
+      "value": "10.00vp"
+    },
+    {
+      "name": "BottomTabBarStylePadding_Test",
+      "value": "8.00vp"
+    },
+    {
+      "name": "BarMode_Test",
+      "value": "8.00px"
+    },
+    {
+      "name": "BottomTabBarStyleLabelStyle_minFontSize_Test",
+      "value": "4.00fp"
+    },
+    {
+      "name": "BottomTabBarStyleLabelStyle_maxFontSize_Test",
+      "value": "5.00fp"
+    },
+    {
+      "name": "BottomTabBarStyleLabelStyle_Font_Size_Test",
+      "value": "18.00fp"
+    },
+    {
+      "name": "float_1",
+      "value": "10vp"
+    },
+    {
+      "name": "prevMargin",
+      "value": "30"
+    },
+    {
+      "name": "nextMargin",
+      "value": "30"
+    }
+  ]
+}

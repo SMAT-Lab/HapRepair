@@ -1,0 +1,21 @@
+
+{
+  "routerMap": [
+    {
+      "name": "pageOne",
+      "pageSourceFile": "src/main/ets/MainAbility/pages/NavigationTest/PageOne.ets",
+      "buildFunction": "PageOneBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    },
+    {
+      "name": "pageTwo",
+      "pageSourceFile": "src/main/ets/MainAbility/pages/NavigationTest/PageTwo.ets",
+      "buildFunction": "PageTwoBuilder",
+           "data": {
+        "description": "this is pageTwo"
+      }
+    }
+  ]
+}

@@ -3,7 +3,7 @@ import re
 import logging
 
 from get_prompt import get_functionality_check_prompt
-from llm import get_answer, get_deepseek_answer, get_ollama_answer, get_openai_answer
+from llm import get_answer
 
 def sort_json_lines(data):
     if isinstance(data, list):
@@ -436,9 +436,14 @@ class ArkTSDeclarationFixer:
             suggested_fix=fixed_line
         )
     
-def check_functionality(original_code, repaired_code):
+def check_functionality(original_code, repaired_code, model_name: str = "gpt-5-mini"):
+    """
+    Check whether the repaired code preserves original functionality.
+    
+    model_name controls which LLM backend to use (passed to get_answer).
+    """
     prompt = get_functionality_check_prompt(original_code, repaired_code)
-    res = get_answer(prompt, model_name='MODEL_NAME')
+    res = get_answer(prompt, model_name=model_name)
     res = res.replace('```json', '').replace('```', '').strip()
     res_json = json.loads(res)
     return res_json

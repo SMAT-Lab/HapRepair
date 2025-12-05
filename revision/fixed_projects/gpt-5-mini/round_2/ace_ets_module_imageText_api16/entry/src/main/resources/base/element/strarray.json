@@ -1,0 +1,20 @@
+{
+  "strarray": [
+    {
+      "name": "maxFontScale",
+      "value": [
+        {
+          "value": "small"
+        }
+      ]
+    },
+    {
+      "name": "minFontScale",
+      "value": [
+        {
+          "value": "small"
+        }
+      ]
+    }
+  ]
+}

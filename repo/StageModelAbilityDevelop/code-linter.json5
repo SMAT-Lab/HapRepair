@@ -1,0 +1,17 @@
+{
+  "files":   //用于表示配置适用的文件范围的 glob 模式数组。在没有指定的情况下，应用默认配置
+  [
+    "**/*.ets",   //字符串类型
+    "**/*.js",
+    "**/*.ts"
+  ],
+  "ignore":  //一个表示配置对象不应适用的文件的 glob 模式数组。如果没有指定，配置对象将适用于所有由 files 匹配的文件
+  [
+    "build/**/*",    //字符串类型
+    "node_modules/**/*"
+  ],
+  "ruleSet":       //设置检查待应用的规则集, 当前仅支持IDE内置规则集all、recommended
+  [
+    "plugin:@performance/recommended"
+  ]
+}

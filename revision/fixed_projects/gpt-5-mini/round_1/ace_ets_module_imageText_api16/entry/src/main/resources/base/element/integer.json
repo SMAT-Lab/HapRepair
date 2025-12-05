@@ -1,0 +1,11 @@
+{
+  "integer": [
+    {
+      "name": "maxFontScale",
+      "value": 2
+    },{
+      "name": "minFontScale",
+      "value": 1
+    }
+  ]
+}

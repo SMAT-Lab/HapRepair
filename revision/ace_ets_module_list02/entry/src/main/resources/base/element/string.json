@@ -1,0 +1,145 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "entry_MainAbility",
+      "value": "entry_MainAbility"
+    },
+    {
+      "name": "description_mainability",
+      "value": "ETS_Empty Ability"
+    },
+    {
+      "name": "TestAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "TestAbility_label",
+      "value": "label"
+    },
+    {
+      "name":"string_hello",
+      "value":"Hello"
+    },
+    {
+      "name":"string_world",
+      "value":"World"
+    },
+    {
+      "name":"message_arrive",
+      "value":"We will arrive at %s."
+    },
+    {
+        "name": "phone_entry_dsc",
+        "value": "i am an entry for phone"
+    },
+    {
+        "name": "phone_entry_main",
+        "value": "the phone entry ability"
+    },
+    {
+        "name": "entry_label",
+        "value": "ActsContextTest"
+    },
+    {
+        "name": "form_description",
+        "value": "my form"
+    },
+    {
+        "name": "serviceability_description",
+        "value": "my whether"
+    },
+    {
+        "name": "description_application",
+        "value": "demo for test"
+    },
+    {
+        "name": "app_name",
+        "value": "Demo"
+    },
+    {
+      "name": "swiper_margin",
+      "value": "12"
+    },
+    {
+      "name": "Divider_Stroke_Width",
+      "value": "10px"
+    },
+    {
+      "name": "Divider_Start_Margin",
+      "value": "5px"
+    },
+    {
+      "name": "Divider_End_Margin",
+      "value": "5px"
+    },
+    {
+      "name": "Indicator_Height",
+      "value": "10vp"
+    },
+    {
+      "name": "Indicator_Width",
+      "value": "30vp"
+    },
+    {
+      "name": "Indicator_Radius",
+      "value": "5vp"
+    },
+    {
+      "name": "Indicator_Sub_Radius",
+      "value": "20vp"
+    },
+    {
+      "name": "Indicator_Space",
+      "value": "10vp"
+    },
+    {
+      "name": "BottomTabBarStyleLabelStyle_family_Test",
+      "value": "HarmonyOS Sans"
+    },
+    {
+      "name": "popupSelectedColor",
+      "value": "#00C5CD"
+    },
+    {
+      "name": "popupUnselectedColor",
+      "value": "#4EEE94"
+    },
+    {
+      "name": "popupItemBackground",
+      "value": "#FFEC8B"
+    },
+    {
+      "name": "fontSize",
+      "value": "25px"
+    },
+    {
+      "name": "popupSpace",
+      "value": "10"
+    },
+    {
+      "name": "module_test_desc",
+      "value": "test ability description"
+    },
+    {
+      "name": "nextMargin",
+      "value": "20"
+    },
+    {
+      "name": "prevMargin",
+      "value": "20"
+    },
+    {
+      "name": "nextMarginString",
+      "value": "20px"
+    },
+    {
+      "name": "prevMarginString",
+      "value": "20px"
+    }
+    
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "intarray": [
+    {
+      "name": "maxFontScale",
+      "value": [
+        100,
+        200
+      ]
+    },
+    {
+      "name": "minFontScale",
+      "value": [
+        100,
+        200
+      ]
+    }
+  ]
+}

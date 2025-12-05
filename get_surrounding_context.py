@@ -3,6 +3,8 @@ import json
 import os
 import pandas as pd
 import warnings
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from code_repair import CodeContextExtractor
 
 warnings.filterwarnings("ignore", category=UserWarning, module="openpyxl")

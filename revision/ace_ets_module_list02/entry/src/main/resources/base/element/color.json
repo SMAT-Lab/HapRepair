@@ -1,0 +1,52 @@
+{
+  "color": [
+    {
+      "name": "color_hello",
+      "value": "#ffff0000"
+    },
+    {
+      "name": "color_world",
+      "value": "#ff0000ff"
+    },
+    {
+      "name": "Divider_Color",
+      "value": "#FF121212"
+    },
+    {
+      "name": "Indicator_Color",
+      "value": "#FFFF0000"
+    },
+    {
+      "name": "popupSelectedColor",
+      "value": "#00C5CD"
+    },
+    {
+      "name": "popupUnselectedColor",
+      "value": "#FFEC8B"
+    },
+    {
+      "name": "popupItemBackground",
+      "value": "#4EEE94"
+    },
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "selected_font_color_test",
+      "value": "#FFFF0000"
+    },
+    {
+      "name": "font_color_test",
+      "value": "#FFFF0000"
+    },
+    {
+      "name": "swiper_BackgroundColor_test",
+      "value": "#FFFF0000"
+    },
+    {
+      "name": "checkbox_Color",
+      "value": "#FFFD0000"
+    }
+  ]
+}

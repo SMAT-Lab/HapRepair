@@ -1,0 +1,26 @@
+{
+    "description": "Configuration for aceEtsComponentCommonAttrs Tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "10800000",
+        "bundle-name": "com.acts.arkui.component.common.attrs.004.test",
+        "module-name": "entry_test",
+        "shell-timeout": "10800000",
+        "testcase-timeout": 300000
+    },
+    "kits": [{
+        "test-file-name": [
+                "ActsAceEtsComponentCommonflex004Test.hap",
+                "ActsAceEtsComponentCommonflex004TestMain.hap"
+            ],
+        "type": "AppInstallKit",
+        "cleanup-apps": true
+    }, {
+        "type": "ShellKit",
+        "run-command": [
+            "power-shell wakeup",
+            "power-shell setmode 602"
+        ]
+
+    }]
+}

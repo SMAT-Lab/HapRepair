@@ -1,0 +1,12 @@
+{
+  "files": [
+    "**/*.ets",
+    "**/*.ts"
+  ],
+  "ruleSet": [
+    "plugin:@performance/all",
+    "plugin:@security/all"
+  ],
+  "rules": {
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "MainAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "AudioDemo"
+    },
+    {
+      "name": "music_editor",
+      "value": "音乐编辑"
+    },
+    {
+      "name": "music_editor_desc",
+      "value": "导入音频 轻松编辑"
+    },
+    {
+      "name": "import",
+      "value": "导入"
+    },
+    {
+      "name": "delete",
+      "value": "删除"
+    },
+    {
+      "name": "addSong",
+      "value": "添加音频"
+    },
+    {
+      "name": "auto_test",
+      "value": "自动化测试"
+    },
+    {
+      "name": "auto_test_desc",
+      "value": "一键执行预定义\n音频编辑场景"
+    },
+    {
+      "name": "mixing_console_playing",
+      "value": "混音台（实时播放）"
+    },
+    {
+      "name": "mixing_console_cascade",
+      "value": "混音台（级联）"
+    },
+    {
+      "name": "mixing_console_desc",
+      "value": "混音布局 轻松编辑"
+    },
+    {
+      "name": "save_audio_format",
+      "value": "保存导出音频格式"
+    }
+  ]
+}

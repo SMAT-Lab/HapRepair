@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prompt</title>
+    <style>
+        #pageHeight{
+          height:1300px
+        }
+        body {
+            background-color: #6654db;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+<div id="container" onclick="promptTest()">prompt</div>
+<div id="result"></div>
+<div id="pageHeight"></div>
+<script>
+    function promptTest(){
+        var result = prompt('prompt test','test for value')
+        document.getElementById("result").innerHTML=result;
+        return result;
+    }
+</script>
+</body>
+</html>

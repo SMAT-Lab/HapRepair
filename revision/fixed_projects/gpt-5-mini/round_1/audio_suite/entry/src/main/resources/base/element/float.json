@@ -1,0 +1,92 @@
+{
+  "float": [
+    {
+      "name": "width_50",
+      "value": "50vp"
+    },
+    {
+      "name": "height_50",
+      "value": "50vp"
+    },
+    {
+      "name": "height_100",
+      "value": "100vp"
+    },
+    {
+      "name": "font_size_10",
+      "value": "10vp"
+    },
+    {
+      "name": "font_size_20",
+      "value": "20vp"
+    },
+    {
+      "name": "font_size_24",
+      "value": "24vp"
+    },
+    {
+      "name": "font_size_30",
+      "value": "30vp"
+    },
+    {
+      "name": "margin_0",
+      "value": "0vp"
+    },
+    {
+      "name": "margin_5",
+      "value": "5vp"
+    },
+    {
+      "name": "margin_10",
+      "value": "10vp"
+    },
+    {
+      "name": "margin_35",
+      "value": "35vp"
+    },
+    {
+      "name": "padding_0",
+      "value": "0vp"
+    },
+    {
+      "name": "padding_10",
+      "value": "10vp"
+    },
+    {
+      "name": "padding_5",
+      "value": "5vp"
+    },
+    {
+      "name": "padding_20",
+      "value": "20vp"
+    },
+    {
+      "name": "padding_30",
+      "value": "30vp"
+    },
+    {
+      "name": "border_16",
+      "value": "16vp"
+    },
+    {
+      "name": "page_text_font_size",
+      "value": "50fp"
+    },
+    {
+      "name": "small_size",
+      "value": "12fp"
+    },
+    {
+      "name": "common_image",
+      "value": "24vp"
+    },
+    {
+      "name": "common_font",
+      "value": "16fp"
+    },
+    {
+      "name": "common_height",
+      "value": "24vp"
+    }
+  ]
+}

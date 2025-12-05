@@ -1,0 +1,83 @@
+[
+  {
+   "Name":"AndroidUtilCode",
+   "License":"Apache License 2.0",
+   "License File":"LICENSE",
+   "Version Number":"1.31.1",
+   "Owner":"xiafeng@huawei.com",
+   "Upstream URL":"https://github.com/Blankj/AndroidUtilCode",
+   "Description": "AndroidUtilCode  is a powerful & easy to use library for Android. This library encapsulates the functions that commonly used in Android development which have complete demo and unit test. By using it's encapsulated APIs, you can greatly improve the development efficiency. The program mainly consists of two modules which is utilcode, which is commonly used in development, and subutil which is rarely used in development, but the utils can be beneficial to simplify the main module. "
+  },
+  {
+   "Name":"validator.js",
+   "License":"MIT license",
+   "License File":"LICENSE-MIT-License-validatorJs",
+   "Version Number":"13.9.0",
+   "Owner":"xiafeng@huawei.com",
+   "Upstream URL":"https://github.com/validatorjs/validator.js",
+   "Description": "A library of string validators and sanitizers."
+  },
+    {
+     "Name":"gcoord",
+     "License":"MIT license",
+     "License File":"LICENSE-MIT-License-gcoord",
+     "Version Number":"1.0.5",
+     "Owner":"xiafeng@huawei.com",
+     "Upstream URL":"https://github.com/hujiulong/gcoord",
+     "Description": "gcoord(geographic coordinates)是一个处理地理坐标系的JS库，用来修正百度地图、高德地图及其它互联网地图坐标系不统一的问题。"
+    },
+    {
+     "Name":"node-cache",
+     "License":"BSD 2-Clause 'Simplified' License",
+     "License File":"LICENSE-BSD-2-Clause-Simplified-License-nodeCache",
+     "Version Number":"0.2.0",
+     "Owner":"xiafeng@huawei.com",
+     "Upstream URL":"https://github.com/ptarjan/node-cache",
+     "Description": "A simple in-memory cache for node.js"
+    },
+    {
+     "Name":"ImageKnife",
+     "License":" Apache License 2.0",
+     "License File":"LICENSE",
+     "Version Number":"0.2.0",
+     "Owner":"xiafeng@huawei.com",
+     "Upstream URL":"https://gitee.com/openharmony-tpc/ImageKnife",
+     "Description": "专门为OpenHarmony打造的一款图像加载缓存库，致力于更高效、更轻便、更简单。"
+    },
+    {
+     "Name":"time-apmp",
+     "License":"无",
+     "License File":"无",
+     "Version Number":"2.0.0",
+     "Owner":"xiafeng@huawei.com",
+     "Upstream URL":"https://github.com/ipostol/time-ampm",
+     "Description": "提供了12小时制的时间与24小时制的时间字符串映射转换功能。"
+    },
+    {
+     "Name":"leap-year",
+     "License":"MIT License",
+     "License File":"LICENSE-MIT-License-leapYear",
+     "Version Number":"4.0.0",
+     "Owner":"xiafeng@huawei.com",
+     "Upstream URL":"https://github.com/sindresorhus/leap-year",
+     "Description": "Check if a year is a leap year"
+    },
+    {
+     "Name":"imagetype",
+     "License":"无",
+     "License File":"无",
+     "Version Number":"1.0.0",
+     "Owner":"xiafeng@huawei.com",
+     "Upstream URL":"https://github.com/fatelei/imagetype",
+     "Description": "Get correct image type"
+    },
+    {
+     "Name":"randomcolor",
+     "License":"CC0 1.0 Universal",
+     "License File":"LICENSE-CC0-1.0-Universal-randomcolor",
+     "Version Number":"0.6.2",
+     "Owner":"xiafeng@huawei.com",
+     "Upstream URL":"https://github.com/davidmerfield/randomColor",
+     "Description": "A tiny script for generating attractive colors"
+    }
+]

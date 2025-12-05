@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2022 Huawei Device Co., Ltd.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<configuration>
+    <oatconfig>
+        <filefilterlist>
+            <filefilter
+                desc="Filters for compatibility，license header policies"
+                name="copyrightPolicyFilter">
+                <filteritem
+                    desc="hvigor配置文件，DevEco Studio自动生成，不手动修改"
+                    name="hvigorfile.*"
+                    type="filename"/>
+                <filteritem
+                    desc="hvigor配置文件，DevEco Studio自动生成，不手动修改"
+                    name="*.json5"
+                    type="filename"/>
+                <filteritem
+                    desc="版权文件，不添加版权头"
+                    name="LICENSE"
+                    type="filename"/>
+                <filteritem
+                    desc="版权文件，不添加版权头"
+                    name="LICENSE-BSD-2-Clause-Simplified-License-nodeCache"
+                    type="filename"/>
+                <filteritem
+                    desc="版权文件，不添加版权头"
+                    name="LICENSE-CC0-1.0-Universal-randomcolor"
+                    type="filename"/>
+                <filteritem
+                    desc="版权文件，不添加版权头"
+                    name="LICENSE-MIT-License-gcoord"
+                    type="filename"/>
+                <filteritem
+                    desc="版权文件，不添加版权头"
+                    name="LICENSE-MIT-License-leapYear"
+                    type="filename"/>
+                <filteritem
+                    desc="版权文件，不添加版权头"
+                    name="LICENSE-MIT-License-validatorJs"
+                    type="filename"/>
+                <filteritem
+                    desc="NOTICE文件，不添加版权头"
+                    name="NOTICE"
+                    type="filename"/>
+                <filteritem
+                    desc="hvigorw配置文件，DevEco Studio自动生成，不手动修改"
+                    name="hvigorw"
+                    type="filename"/>
+                <filteritem
+                    desc="hvigorw配置文件，DevEco Studio自动生成，不手动修改"
+                    name="hvigorw.bat"
+                    type="filename"/>
+                <filteritem
+                    desc="hvigorw配置文件，DevEco Studio自动生成，不手动修改"
+                    name="hvigor-wrapper.js"
+                    type="filename"/>
+            </filefilter>
+            <filefilter
+                desc="Filters for compatibility，license header policies"
+                name="defaultPolicyFilter">
+                <filteritem
+                    desc="hvigor配置文件，DevEco Studio自动生成，不手动修改"
+                    name="hvigorfile.*"
+                    type="filename"/>
+                <filteritem
+                    desc="hvigor等配置文件，DevEco Studio自动生成，且不支持注释"
+                    name="*.json5"
+                    type="filename"/>
+                <filteritem
+                    desc="版权文件，不添加版权头"
+                    name="LICENSE"
+                    type="filename"/>
+                <filteritem
+                    desc="版权文件，不添加版权头"
+                    name="LICENSE-BSD-2-Clause-Simplified-License-nodeCache"
+                    type="filename"/>
+                <filteritem
+                    desc="版权文件，不添加版权头"
+                    name="LICENSE-CC0-1.0-Universal-randomcolor"
+                    type="filename"/>
+                <filteritem
+                    desc="版权文件，不添加版权头"
+                    name="LICENSE-MIT-License-gcoord"
+                    type="filename"/>
+                <filteritem
+                    desc="版权文件，不添加版权头"
+                    name="LICENSE-MIT-License-leapYear"
+                    type="filename"/>
+                <filteritem
+                    desc="版权文件，不添加版权头"
+                    name="LICENSE-MIT-License-validatorJs"
+                    type="filename"/>
+                <filteritem
+                    desc="NOTICE文件，不添加版权头"
+                    name="NOTICE"
+                    type="filename"/>
+                <filteritem
+                    desc="hvigorw配置文件，DevEco Studio自动生成，不手动修改"
+                    name="hvigorw"
+                    type="filename"/>
+                <filteritem
+                    desc="hvigorw配置文件，DevEco Studio自动生成，不手动修改"
+                    name="hvigorw.bat"
+                    type="filename"/>
+                <filteritem
+                    desc="hvigorw配置文件，DevEco Studio自动生成，不手动修改"
+                    name="hvigor-wrapper.js"
+                    type="filename"/>
+            </filefilter>
+            <filefilter
+                desc="Filters for binary file policies"
+                name="binaryFileTypePolicyFilter">
+                <filteritem
+                    desc="dpg图片格式文件,用于展示示例"
+                    name="*.dpg"
+                    type="filename"/>
+                <filteritem
+                    desc="png图片格式文件,用于展示示例"
+                    name="*.png"
+                    type="filename"/>
+                <filteritem
+                    desc="bmp图片格式文件,用于展示示例"
+                    name="*.bmp"
+                    type="filename"/>
+                <filteritem
+                    desc="webp图片格式文件,用于展示示例"
+                    name="*.webp"
+                    type="filename"/>
+                <filteritem
+                    desc="svg图片格式文件,用于展示示例"
+                    name="*.svg"
+                    type="filename"/>
+                <filteritem
+                    desc="gif图片格式文件,用于展示示例"
+                    name="*.gif"
+                    type="filename"/>
+                <filteritem
+                    desc="jpg图片格式文件,用于展示示例"
+                    name="*.jpg"
+                    type="filename"/>
+                <filteritem
+                    desc="jpeg图片格式文件,用于展示示例"
+                    name="*.jpeg"
+                    type="filename"/>
+                <filteritem
+                    desc="hvigor配置文件"
+                    name="*.json5"
+                    type="filename"/>
+            </filefilter>
+        </filefilterlist>
+    </oatconfig>
+</configuration>

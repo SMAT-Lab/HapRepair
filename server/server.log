@@ -1,0 +1,29 @@
+/home/miniconda3/envs/VulRAG/lib/python3.10/site-packages/pydantic/_internal/_fields.py:132: UserWarning: Field "model_name" in CodeRepairRequest has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+  warnings.warn(
+INFO:     Started server process [3180734]
+INFO:     Waiting for application startup.
+INFO:main:Initializing services...
+INFO:services.repair_service:Initializing repair service...
+INFO:root:Loading model and index...
+INFO:pinecone_plugin_interface.logging:Discovering subpackages in _NamespacePath(['/home/miniconda3/envs/VulRAG/lib/python3.10/site-packages/pinecone_plugins'])
+INFO:pinecone_plugin_interface.logging:Looking for plugins in pinecone_plugins.inference
+INFO:pinecone_plugin_interface.logging:Installing plugin inference into Pinecone
+INFO:root:Model and index loaded
+INFO:services.repair_service:Model and index loaded successfully
+INFO:services.repair_service:Repair service initialized successfully
+INFO:main:Repair service initialized successfully
+INFO:services.rag_service:Initializing RAG service...
+INFO:services.rag_service:Loading embedding model: dunzhang/stella_en_1.5B_v5
+INFO:services.rag_service:Embedding model loaded successfully
+WARNING:services.rag_service:PINECONE_API_KEY not set, vector search disabled
+INFO:services.rag_service:RAG service initialized successfully
+INFO:main:RAG service initialized successfully
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 8000): address already in use
+INFO:     Waiting for application shutdown.
+INFO:services.repair_service:Cleaning up repair service resources
+INFO:services.rag_service:Cleaning up RAG service resources
+INFO:main:Application shutdown complete
+INFO:     Application shutdown complete.

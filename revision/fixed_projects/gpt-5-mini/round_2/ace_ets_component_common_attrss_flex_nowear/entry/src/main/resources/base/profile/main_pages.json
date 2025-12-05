@@ -1,0 +1,9 @@
+{
+  "src": [
+    "MainAbility/pages/index/Index",
+    "MainAbility/pages/flex/FlexBasisPage",
+    "MainAbility/pages/flex/AlignSelfPage",
+    "MainAbility/pages/flex/AlignSelfStretchPage",
+    "MainAbility/pages/flex/AlignSelfStretchNoSizePage"
+  ]
+}

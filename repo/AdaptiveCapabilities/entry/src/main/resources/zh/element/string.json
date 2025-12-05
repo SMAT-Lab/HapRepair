@@ -1,0 +1,440 @@
+{
+  "string": [
+    {
+      "name": "entry_desc",
+      "value": "description"
+    },
+    {
+      "name": "MainAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "eTSAdaptiveCapabilities"
+    },
+    {
+      "name": "my_string",
+      "value": "手机"
+    },
+    {
+      "name": "home_title",
+      "value": "页面开发一多能力"
+    },
+    {
+      "name": "resource_qualifier",
+      "value": "资源文件使用"
+    },
+    {
+      "name": "atomic_capability",
+      "value": "自适应布局"
+    },
+    {
+      "name": "responsive_layout",
+      "value": "响应式布局"
+    },
+    {
+      "name": "flex_capability_first",
+      "value": "拉伸能力1"
+    },
+    {
+      "name": "flex_capability_second",
+      "value": "拉伸能力2"
+    },
+    {
+      "name": "scaling_capability",
+      "value": "缩放能力"
+    },
+    {
+      "name": "hidden_capability",
+      "value": "隐藏能力"
+    },
+    {
+      "name": "wrap_capability",
+      "value": "折行能力"
+    },
+    {
+      "name": "equally_capability",
+      "value": "均分能力"
+    },
+    {
+      "name": "percentage_capability",
+      "value": "占比能力"
+    },
+    {
+      "name": "extension_capability_first",
+      "value": "延伸能力1"
+    },
+    {
+      "name": "extension_capability_second",
+      "value": "延伸能力2"
+    },
+    {
+      "name": "healthy_use_phone",
+      "value": "健康使用手机"
+    },
+    {
+      "name": "media_query",
+      "value": "媒体查询"
+    },
+    {
+      "name": "grid_layout",
+      "value": "栅格布局"
+    },
+    {
+      "name": "grid_layout1",
+      "value": "栅格断点1"
+    },
+    {
+      "name": "grid_layout2",
+      "value": "栅格断点2"
+    },
+    {
+      "name": "grid_layout3",
+      "value": "栅格columns和gutter"
+    },
+    {
+      "name": "grid_layout4",
+      "value": "栅格margin"
+    },
+    {
+      "name": "grid_layout5",
+      "value": "栅格span"
+    },
+    {
+      "name": "grid_layout6",
+      "value": "栅格offset"
+    },
+    {
+      "name": "grid_layout7",
+      "value": "栅格order"
+    },
+    {
+      "name": "grid_layout8",
+      "value": "栅格span/offset/order继承性"
+    },
+    {
+      "name": "grid_layout9",
+      "value": "栅格嵌套"
+    },
+    {
+      "name": "grid_layout10",
+      "value": "栅格对齐"
+    },
+    {
+      "name": "typical_scenario",
+      "value": "典型布局场景"
+    },
+    {
+      "name": "diversion_layout",
+      "value": "挪移布局"
+    },
+    {
+      "name": "repeat_layout",
+      "value": "重复布局"
+    },
+    {
+      "name": "indentation_layout",
+      "value": "缩进布局"
+    },
+    {
+      "name": "header",
+      "value": "顶部布局"
+    },
+    {
+      "name": "banner",
+      "value": "广告栏"
+    },
+    {
+      "name": "operationEntries",
+      "value": "操作入口"
+    },
+    {
+      "name": "tabs",
+      "value": "页签布局"
+    },
+    {
+      "name": "bigImage",
+      "value": "大图浏览"
+    },
+    {
+      "name": "multiLaneList",
+      "value": "多列列表"
+    },
+    {
+      "name": "grid",
+      "value": "网格视图"
+    },
+    {
+      "name": "aside",
+      "value": "侧边栏"
+    },
+    {
+      "name": "multiScene",
+      "value": "一多典型场景"
+    },
+    {
+      "name": "user_improvement",
+      "value": "用户体验改进计划"
+    },
+    {
+      "name": "user_improvement_tips",
+      "value": "用户体验改进计划通过系统、应用分析、故障诊断、提升华为的产品和服务质量。"
+    },
+    {
+      "name": "show_app_name",
+      "value": "应用名称"
+    },
+    {
+      "name": "left",
+      "value": "左"
+    },
+    {
+      "name": "center",
+      "value": "中"
+    },
+    {
+      "name": "right",
+      "value": "右"
+    },
+    {
+      "name": "portrait",
+      "value": "竖屏"
+    },
+    {
+      "name": "landscape",
+      "value": "横屏"
+    },
+    {
+      "name": "recommended",
+      "value": "推荐"
+    },
+    {
+      "name": "operation1",
+      "value": "私人FM"
+    },
+    {
+      "name": "operation2",
+      "value": "歌手"
+    },
+    {
+      "name": "operation3",
+      "value": "歌单"
+    },
+    {
+      "name": "operation4",
+      "value": "排行榜"
+    },
+    {
+      "name": "operation5",
+      "value": "热门"
+    },
+    {
+      "name": "operation6",
+      "value": "运动音乐"
+    },
+    {
+      "name": "operation7",
+      "value": "音乐FM"
+    },
+    {
+      "name": "operation8",
+      "value": "福利"
+    },
+    {
+      "name": "playlist_collection",
+      "value": "歌单集合"
+    },
+    {
+      "name": "tabBar1",
+      "value": "首页"
+    },
+    {
+      "name": "tabBar2",
+      "value": "排行榜"
+    },
+    {
+      "name": "tabBar3",
+      "value": "我的"
+    },
+    {
+      "name": "breakpoint",
+      "value": "断点"
+    },
+    {
+      "name": "Radio_GridRow_All_LCR",
+      "value": "All GridColl 左中右"
+    },
+    {
+      "name": "Radio_GridRow_All_TMB",
+      "value": "All GridColl 上中下"
+    },
+    {
+      "name": "Radio_GridRow_Sg_LCR",
+      "value": "Second Grid 左中右"
+    },
+    {
+      "name": "Radio_GridRow_Sg_TMB",
+      "value": "Second Grid 上中下"
+    },
+    {
+      "name": "multiScene_tabs_home",
+      "value": "首页"
+    },
+    {
+      "name": "multiScene_tabs_app",
+      "value": "应用"
+    },
+    {
+      "name": "multiScene_tabs_play",
+      "value": "播放"
+    },
+    {
+      "name": "multiScene_tabs_me",
+      "value": "我的"
+    },
+    {
+      "name": "multiScene_header_title",
+      "value": "早上好呀~"
+    },
+    {
+      "name": "multiScene_header_subtitle",
+      "value": "永远别放弃一个你每天都在想念的人!"
+    },
+    {
+      "name": "multiScene_my_content",
+      "value": "我的内容"
+    },
+    {
+      "name": "multiScene_application",
+      "value": "应用"
+    },
+    {
+      "name": "multiScene_title1",
+      "value": "人工智能技术在医疗领域的应用"
+    },
+    {
+      "name": "multiScene_title1_disc",
+      "value": "探讨人工智能技术如何改善医疗服务，提高诊断准确率和治疗效果。"
+    },
+    {
+      "name": "multiScene_title2",
+      "value": "区块链技术对金融行业的影响"
+    },
+    {
+      "name": "multiScene_title2_disc",
+      "value": "分析区块链技术如何改变传统金融行业的商业模式，提高交易效率和安全性。"
+    },
+    {
+      "name": "multiScene_title3",
+      "value": "机器学习算法在自动驾驶中的应用"
+    },
+    {
+      "name": "multiScene_title3_disc",
+      "value": "介绍机器学习算法如何实现自动驾驶功能，探讨其在未来交通领域的发展前景。"
+    },
+    {
+      "name": "multiScene_title4",
+      "value": "虚拟现实技术在游戏产业的应用"
+    },
+    {
+      "name": "multiScene_title4_disc",
+      "value": "探讨虚拟现实技术如何改变游戏产业的玩法和用户体验，分析其在未来娱乐领域的发展趋势。"
+    },
+    {
+      "name": "multiScene_title5",
+      "value": "5G技术对通信行业的影响"
+    },
+    {
+      "name": "multiScene_title5_disc",
+      "value": "分析5G技术如何改变通信行业的商业模式和用户需求，探讨其在未来数字化社会中的应用前景。"
+    },
+    {
+      "name": "multiScene_title6",
+      "value": "物联网技术在智慧城市中的应用"
+    },
+    {
+      "name": "multiScene_title6_disc",
+      "value": "介绍物联网技术如何实现智慧城市的建设和管理，分析其在未来城市发展中的重要性和作用。"
+    },
+    {
+      "name": "multiScene_title7",
+      "value": "生物技术在农业领域的应用"
+    },
+    {
+      "name": "multiScene_title7_disc",
+      "value": "探讨生物技术如何改善农业生产和保护生态环境，分析其在未来粮食安全和可持续发展中的作用。"
+    },
+    {
+      "name": "multiScene_title8",
+      "value": "量子计算机技术的发展与挑战"
+    },
+    {
+      "name": "multiScene_title8_disc",
+      "value": "介绍量子计算机技术的基本原理和应用前景，探讨其目前面临的技术难题和发展趋势。"
+    },
+    {
+      "name": "multiScene_title9",
+      "value": "大数据技术在企业管理中的应用"
+    },
+    {
+      "name": "multiScene_title9_disc",
+      "value": "分析大数据技术如何协助企业管理，提高经营效率和决策水平，探讨其在未来商业竞争中的优势和挑战。"
+    },
+    {
+      "name": "multiScene_title10",
+      "value": "人工智能技术对教育行业的影响"
+    },
+    {
+      "name": "multiScene_title10_disc",
+      "value": "探讨人工智能技术如何改变教育教学的方式和内容，分析其在未来教育发展中的作用和挑战。"
+    },
+    {
+      "name": "interaction_norm_capability",
+      "value": "交互归一能力"
+    },
+    {
+      "name": "interaction_norm_capability_tips",
+      "value": "请使用键盘操作"
+    },
+    {
+      "name": "up",
+      "value": "上"
+    },
+    {
+      "name": "down",
+      "value": "下"
+    },
+    {
+      "name": "select",
+      "value": "选择"
+    },
+    {
+      "name": "escape",
+      "value": "逃逸"
+    },
+    {
+      "name": "back",
+      "value": "返回"
+    },
+    {
+      "name": "menu",
+      "value": "菜单"
+    },
+    {
+      "name": "page_up",
+      "value": "上一页"
+    },
+    {
+      "name": "page_down",
+      "value": "下一页"
+    },
+    {
+      "name": "zoom_out",
+      "value": "缩小"
+    },
+    {
+      "name": "zoom_in",
+      "value": "放大"
+    }
+  ]
+}

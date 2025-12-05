@@ -1,0 +1,38 @@
+{
+  "pattern": [
+    {
+      "name": "maxFontScale",
+      "value": [
+        {
+          "name": "width",
+          "value": "100vp"
+        },
+        {
+          "name": "height",
+          "value": "100vp"
+        },
+        {
+          "name": "size",
+          "value": "25px"
+        }
+      ]
+    },
+    {
+      "name": "minFontScale",
+      "value": [
+        {
+          "name": "width",
+          "value": "100vp"
+        },
+        {
+          "name": "height",
+          "value": "100vp"
+        },
+        {
+          "name": "size",
+          "value": "25px"
+        }
+      ]
+    }
+  ]
+}

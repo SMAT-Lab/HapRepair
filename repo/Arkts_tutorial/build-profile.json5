@@ -1,0 +1,41 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "material": {
+          "certpath": "signature/cameraSample.cer",
+          "storePassword": "0000001B6BFEF8647ECCBD8200952A380AA653082D391EEE29577BB008DCB5103AAB7CC7E6149751D01178",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B68964307F873BD6A6C23EE0D6A497454EFAF821B0EB05B6920150C5648EEC1283AE1E9E33494A5",
+          "profile": "signature/cameraSample.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "signature/cameraSample.p12"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "4.0.0(10)",
+        "targetSdkVersion": "4.0.0(10)",
+        "runtimeOS": "HarmonyOS"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

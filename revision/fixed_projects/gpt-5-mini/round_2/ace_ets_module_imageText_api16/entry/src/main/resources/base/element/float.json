@@ -1,0 +1,12 @@
+{
+  "float": [
+    {
+      "name": "maxFontScale",
+      "value": "3.5"
+    },
+    {
+      "name": "minFontScale",
+      "value": "0.6"
+    }
+  ]
+}

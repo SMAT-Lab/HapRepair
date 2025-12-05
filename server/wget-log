@@ -1,0 +1,6 @@
+--2025-07-23 07:24:20--  https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_package_901_9/43/v3/o_Y4Yse1Q92FsF7m4sATVQ/commandline-tools-linux-x64-5.1.1.823.zip?HW-CC-KV=V1
+Resolving contentcenter-vali-drcn.dbankcdn.cn (contentcenter-vali-drcn.dbankcdn.cn)... 36.110.209.32, 36.110.209.30, 240e:904:800:2700::20, ...
+Connecting to contentcenter-vali-drcn.dbankcdn.cn (contentcenter-vali-drcn.dbankcdn.cn)|36.110.209.32|:443... connected.
+HTTP request sent, awaiting response... 403 Forbidden
+2025-07-23 07:24:20 ERROR 403: Forbidden.
+

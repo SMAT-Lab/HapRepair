@@ -1,0 +1,38 @@
+=== Summary ===
+total_files: 18
+total_gt_rules: 30
+total_gt_defects: 38
+exact_match_files: 5
+parse_fail_files: 0
+tp_rules: 22
+fp_rules: 6
+fn_rules: 8
+precision_rules: 0.7857142857142857
+recall_rules: 0.7333333333333333
+f1_rules: 0.7586206896551724
+tp_defects: 25
+fp_defects: 18
+fn_defects: 13
+precision_defects: 0.5813953488372093
+recall_defects: 0.6578947368421053
+f1_defects: 0.6172839506172839
+
+=== Per-file (rules only) ===
+entry/src/main/ets/MainAbility/pages/List/ListScrollEdgeCallback.ets: gt=['@performance/hp-arkui-load-on-demand', '@performance/hp-arkui-remove-redundant-state-var'], pred=['@performance/hp-arkui-load-on-demand', '@performance/hp-arkui-remove-redundant-state-var'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/List/ListScroll.ets: gt=['@performance/hp-arkui-remove-redundant-state-var', '@performance/hp-arkui-remove-unchanged-state-var'], pred=['@performance/hp-arkui-remove-redundant-state-var'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/List/ListFlingCallback.ets: gt=['@performance/hp-arkui-load-on-demand', '@performance/hp-arkui-remove-redundant-state-var'], pred=['@performance/hp-arkui-remove-redundant-state-var'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/List/listIdle.ets: gt=['@performance/hp-arkui-remove-redundant-state-var', '@performance/hp-arkui-remove-unchanged-state-var'], pred=['@performance/hp-arkui-remove-redundant-state-var'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/ListItem/ListItem.ets: gt=['@performance/hp-arkui-remove-redundant-nest-container', '@performance/hp-arkui-remove-redundant-state-var', '@performance/hp-arkui-remove-unchanged-state-var'], pred=['@performance/hp-arkui-remove-redundant-state-var'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/List/listSwipeActionApi12.ets: gt=['@performance/hp-arkui-remove-redundant-state-var', '@performance/hp-arkui-remove-unchanged-state-var'], pred=['@performance/hp-arkui-load-on-demand', '@performance/hp-arkui-remove-redundant-state-var'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/List/List07.ets: gt=['@performance/hp-arkui-load-on-demand', '@performance/hp-arkui-remove-unchanged-state-var'], pred=['@performance/hp-arkui-load-on-demand', '@performance/hp-arkui-remove-unchanged-state-var', '@performance/hp-arkui-use-reusable-component'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/List/List1.ets: gt=['@performance/hp-arkui-remove-container-without-property'], pred=['@performance/hp-arkui-load-on-demand', '@performance/hp-arkui-remove-container-without-property', '@performance/hp-arkui-remove-unchanged-state-var'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/ListItemGroup/list_ux.ets: gt=['@performance/hp-arkui-remove-redundant-state-var', '@performance/hp-arkui-remove-unchanged-state-var'], pred=['@performance/hp-arkui-remove-redundant-state-var'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/childrenMainSize/get.ets: gt=['@performance/hp-arkui-remove-unchanged-state-var'], pred=['@performance/hp-arkui-remove-unchanged-state-var'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/index/index.ets: gt=['@performance/hp-arkui-avoid-empty-callback'], pred=['@performance/hp-arkui-avoid-empty-callback'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/List/ListLevel1.ets: gt=['@performance/hp-arkui-remove-container-without-property', '@performance/hp-arkui-remove-unchanged-state-var'], pred=['@performance/hp-arkui-remove-container-without-property', '@performance/hp-arkui-remove-unchanged-state-var'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/contentOffset/offsetAlignEnd.ets: gt=['@performance/hp-arkui-remove-container-without-property'], pred=['@performance/hp-arkui-remove-container-without-property'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/List/listVisibleContent.ets: gt=['@performance/hp-arkui-set-cache-count-for-lazyforeach-grid', '@performance/hp-arkui-use-reusable-component'], pred=['@performance/hp-arkui-use-reusable-component'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/ListItemGroup/singleHozDiff.ets: gt=['@performance/hp-arkui-remove-redundant-state-var', '@performance/hp-arkui-remove-unchanged-state-var'], pred=['@performance/hp-arkui-remove-redundant-state-var', '@performance/hp-arkui-remove-unchanged-state-var'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/contentOffset/toIndexStartOffset.ets: gt=['@performance/hp-arkui-remove-container-without-property'], pred=['@performance/hp-arkui-remove-container-without-property', '@performance/hp-arkui-remove-redundant-nest-container'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/childrenMainSize/set.ets: gt=['@performance/hp-arkui-remove-unchanged-state-var'], pred=['@performance/hp-arkui-remove-unchanged-state-var'], parse_ok=True
+entry/src/main/ets/MainAbility/pages/contentOffset/offsetAlignStart.ets: gt=['@performance/hp-arkui-remove-container-without-property'], pred=['@performance/hp-arkui-load-on-demand', '@performance/hp-arkui-remove-container-without-property'], parse_ok=True

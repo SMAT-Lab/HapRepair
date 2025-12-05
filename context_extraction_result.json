@@ -1,0 +1,652 @@
+{
+  "success": true,
+  "context_groups": [
+    {
+      "defects": [
+        {
+          "rule": "performance/hp-arkui-remove-redundant-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove state variables that are not associated with a UI component",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+          "line": 7,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-unchanged-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove unchanged state variables",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+          "line": 7,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-redundant-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove state variables that are not associated with a UI component",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+          "line": 8,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-unchanged-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove unchanged state variables",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+          "line": 8,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-unchanged-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove unchanged state variables",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+          "line": 10,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-redundant-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove state variables that are not associated with a UI component",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+          "line": 11,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-unchanged-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove unchanged state variables",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+          "line": 12,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-container-without-property",
+          "type": "performance",
+          "severity": "low",
+          "description": "Reduce redundant nested container",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+          "line": 15,
+          "column": 5,
+          "original_severity": "suggestion"
+        }
+      ],
+      "context_code": "@Entry\n@Component\nexport struct Home {\n  @State select: number = 1;\n  @State currentIndex: number = 0;\n\n  @State pm25: string = '0';\n  @State Pm25: Number = 0;\n  @State airQuality: string = '--';\n\n  build() {\n    Column() {\n        Column() {\n          Text('主卧')\n            .fontColor(Color.White)\n            .fontSize(40)",
+      "context_range": {
+        "start_line": 4,
+        "end_line": 19,
+        "center_line": 9,
+        "defect_lines": [
+          7,
+          7,
+          8,
+          8,
+          10,
+          11,
+          12,
+          15
+        ]
+      },
+      "related_symbols": {
+        "variables": [
+          "@State select: number",
+          "@State airQuality: string",
+          "@State pm25: string",
+          "@State currentIndex: number",
+          "@State Pm25: Number"
+        ],
+        "functions": [],
+        "classes": [
+          "@Component"
+        ]
+      },
+      "file_context": {
+        "total_lines": 214,
+        "imports": [
+          "import Brightness from '@system.brightness';"
+        ],
+        "exports": [
+          "export struct Home {"
+        ],
+        "has_main_component": true
+      },
+      "file_path": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+      "defect_count": 8,
+      "similar_patterns": []
+    },
+    {
+      "defects": [
+        {
+          "rule": "performance/hp-arkui-remove-redundant-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove state variables that are not associated with a UI component",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Index.ets",
+          "line": 9,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-unchanged-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove unchanged state variables",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Index.ets",
+          "line": 9,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-redundant-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove state variables that are not associated with a UI component",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Index.ets",
+          "line": 10,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-unchanged-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove unchanged state variables",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Index.ets",
+          "line": 10,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-unchanged-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove unchanged state variables",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Index.ets",
+          "line": 11,
+          "column": 3,
+          "original_severity": "suggestion"
+        }
+      ],
+      "context_code": "@Entry\n@Component\nstruct Index {\n  @State message: string = '智能家居'\n  @State account: string = \"\"\n  @State password: string = \"\"\n  private userName: String=''\n  private password0: String=''\n  @State loadingWidth: number = 0\n",
+      "context_range": {
+        "start_line": 6,
+        "end_line": 15,
+        "center_line": 9,
+        "defect_lines": [
+          9,
+          9,
+          10,
+          10,
+          11
+        ]
+      },
+      "related_symbols": {
+        "variables": [
+          "@State password: string",
+          "@State loadingWidth: number",
+          "@State message: string",
+          "private password0: String",
+          "@State account: string",
+          "private userName: String"
+        ],
+        "functions": [
+          "String=''"
+        ],
+        "classes": [
+          "@Component"
+        ]
+      },
+      "file_context": {
+        "total_lines": 140,
+        "imports": [
+          "import router from '@ohos.router';",
+          "import promptAction from '@ohos.promptAction'",
+          "import HttpUtl from '../pages/http';",
+          "import Function from '../pages/configue';"
+        ],
+        "exports": [],
+        "has_main_component": true
+      },
+      "file_path": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Index.ets",
+      "defect_count": 5,
+      "similar_patterns": []
+    },
+    {
+      "defects": [
+        {
+          "rule": "performance/hp-arkui-remove-redundant-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove state variables that are not associated with a UI component",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/MainMode.ets",
+          "line": 8,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-unchanged-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove unchanged state variables",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/MainMode.ets",
+          "line": 8,
+          "column": 3,
+          "original_severity": "suggestion"
+        }
+      ],
+      "context_code": "@Entry\n@Component\nstruct LoginOK {\n  @State message:string = '登录成功'\n // @State select:number=1;\n  @State currentIndex: number = 0;\n  private tabsController: TabsController = new TabsController();\n  //private fruits: string[]=['5s','10s','30s','50s'];",
+      "context_range": {
+        "start_line": 5,
+        "end_line": 12,
+        "center_line": 8,
+        "defect_lines": [
+          8,
+          8
+        ]
+      },
+      "related_symbols": {
+        "variables": [
+          "@State message:string",
+          "Image(this.currentIndex",
+          "@State currentIndex: number",
+          "private tabsController: TabsController"
+        ],
+        "functions": [
+          "TabsController"
+        ],
+        "classes": [
+          "@Component"
+        ]
+      },
+      "file_context": {
+        "total_lines": 51,
+        "imports": [
+          "import router from '@ohos.router';",
+          "import promptAction from '@ohos.promptAction';",
+          "import {Home} from '../View/Home'",
+          "import {Setting} from '../View/Setting'"
+        ],
+        "exports": [],
+        "has_main_component": true
+      },
+      "file_path": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/MainMode.ets",
+      "defect_count": 2,
+      "similar_patterns": []
+    },
+    {
+      "defects": [
+        {
+          "rule": "performance/hp-arkui-remove-redundant-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove state variables that are not associated with a UI component",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Page.ets",
+          "line": 4,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-unchanged-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove unchanged state variables",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Page.ets",
+          "line": 4,
+          "column": 3,
+          "original_severity": "suggestion"
+        }
+      ],
+      "context_code": "@Entry\n@Component\nstruct Page {\n  @State message: string = 'Hello World'\n\n  /**\n   * In low-code mode, do not add anything to the build function, as it will be\n   * overwritten by the content generated by the .visual file in the build phase.",
+      "context_range": {
+        "start_line": 1,
+        "end_line": 8,
+        "center_line": 4,
+        "defect_lines": [
+          4,
+          4
+        ]
+      },
+      "related_symbols": {
+        "variables": [
+          "@State message: string"
+        ],
+        "functions": [],
+        "classes": [
+          "@Component"
+        ]
+      },
+      "file_context": {
+        "total_lines": 13,
+        "imports": [],
+        "exports": [],
+        "has_main_component": true
+      },
+      "file_path": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Page.ets",
+      "defect_count": 2,
+      "similar_patterns": []
+    },
+    {
+      "defects": [
+        {
+          "rule": "performance/hp-arkui-remove-redundant-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove state variables that are not associated with a UI component",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Setting.ets",
+          "line": 28,
+          "column": 3,
+          "original_severity": "suggestion"
+        },
+        {
+          "rule": "performance/hp-arkui-remove-unchanged-state-var",
+          "type": "performance",
+          "severity": "low",
+          "description": "Remove unchanged state variables",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Setting.ets",
+          "line": 28,
+          "column": 3,
+          "original_severity": "suggestion"
+        }
+      ],
+      "context_code": "    .padding(10)\n\n  }\n  @State message: string = 'Hello World'\n  build() {\n    Row() {\n      Column() {\n        Column(){",
+      "context_range": {
+        "start_line": 25,
+        "end_line": 32,
+        "center_line": 28,
+        "defect_lines": [
+          28,
+          28
+        ]
+      },
+      "related_symbols": {
+        "variables": [
+          "@State message: string"
+        ],
+        "functions": [],
+        "classes": []
+      },
+      "file_context": {
+        "total_lines": 96,
+        "imports": [
+          "import promptAction from '@ohos.promptAction'",
+          "import router from '@ohos.router'",
+          "import ItemData from '../MyClass/ItemData'",
+          "import mainViewModel from '../MyClass/MainViewModel'"
+        ],
+        "exports": [
+          "export struct Setting {"
+        ],
+        "has_main_component": false
+      },
+      "file_path": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Setting.ets",
+      "defect_count": 2,
+      "similar_patterns": []
+    },
+    {
+      "defects": [
+        {
+          "rule": "performance/init-list-component",
+          "type": "performance",
+          "severity": "medium",
+          "description": "You are advised to initialize the width and height attributes of the List component.",
+          "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Setting.ets",
+          "line": 57,
+          "column": 11,
+          "original_severity": "warn"
+        }
+      ],
+      "context_code": "          .margin(15)\n          .backgroundColor('#fff')\n          .width(\"92%\")\n          List(){\n            ForEach(mainViewModel.getSettingListData(),\n              (item: ItemData) => {\n                ListItem() {\n                  this.settingCell(item)",
+      "context_range": {
+        "start_line": 54,
+        "end_line": 61,
+        "center_line": 57,
+        "defect_lines": [
+          57
+        ]
+      },
+      "related_symbols": {
+        "variables": [
+          "(item: ItemData)",
+          "}, item"
+        ],
+        "functions": [],
+        "classes": []
+      },
+      "file_context": {
+        "total_lines": 96,
+        "imports": [
+          "import promptAction from '@ohos.promptAction'",
+          "import router from '@ohos.router'",
+          "import ItemData from '../MyClass/ItemData'",
+          "import mainViewModel from '../MyClass/MainViewModel'"
+        ],
+        "exports": [
+          "export struct Setting {"
+        ],
+        "has_main_component": false
+      },
+      "file_path": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Setting.ets",
+      "defect_count": 1,
+      "similar_patterns": []
+    }
+  ],
+  "total_context_groups": 6,
+  "project_defects": [
+    {
+      "rule": "performance/hp-arkui-remove-redundant-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove state variables that are not associated with a UI component",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+      "line": 7,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-unchanged-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove unchanged state variables",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+      "line": 7,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-redundant-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove state variables that are not associated with a UI component",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+      "line": 8,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-unchanged-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove unchanged state variables",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+      "line": 8,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-unchanged-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove unchanged state variables",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+      "line": 10,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-redundant-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove state variables that are not associated with a UI component",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+      "line": 11,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-unchanged-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove unchanged state variables",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+      "line": 12,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-container-without-property",
+      "type": "performance",
+      "severity": "low",
+      "description": "Reduce redundant nested container",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Home.ets",
+      "line": 15,
+      "column": 5,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-redundant-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove state variables that are not associated with a UI component",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Index.ets",
+      "line": 9,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-unchanged-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove unchanged state variables",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Index.ets",
+      "line": 9,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-redundant-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove state variables that are not associated with a UI component",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Index.ets",
+      "line": 10,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-unchanged-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove unchanged state variables",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Index.ets",
+      "line": 10,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-unchanged-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove unchanged state variables",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Index.ets",
+      "line": 11,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-redundant-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove state variables that are not associated with a UI component",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/MainMode.ets",
+      "line": 8,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-unchanged-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove unchanged state variables",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/MainMode.ets",
+      "line": 8,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-redundant-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove state variables that are not associated with a UI component",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Page.ets",
+      "line": 4,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-unchanged-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove unchanged state variables",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/pages/Page.ets",
+      "line": 4,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-redundant-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove state variables that are not associated with a UI component",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Setting.ets",
+      "line": 28,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/hp-arkui-remove-unchanged-state-var",
+      "type": "performance",
+      "severity": "low",
+      "description": "Remove unchanged state variables",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Setting.ets",
+      "line": 28,
+      "column": 3,
+      "original_severity": "suggestion"
+    },
+    {
+      "rule": "performance/init-list-component",
+      "type": "performance",
+      "severity": "medium",
+      "description": "You are advised to initialize the width and height attributes of the List component.",
+      "file": "/home/LLMCodeRepair/A21_C__open-harmony/entry/src/main/ets/View/Setting.ets",
+      "line": 57,
+      "column": 11,
+      "original_severity": "warn"
+    }
+  ],
+  "total_project_defects": 20,
+  "similar_patterns": [],
+  "message": "Merged 6 context groups for 20 defects"
+}

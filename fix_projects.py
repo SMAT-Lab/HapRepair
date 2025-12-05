@@ -24,7 +24,7 @@ import time
 import glob
 import concurrent.futures
 
-from llm import get_answer, get_deepseek_answer, get_openai_answer,get_ollama_answer
+from llm import get_answer, get_openai_answer
 
 from get_prompt import generate_fix_prompt, combine_repair_results, get_rag_prompt, get_context_extraction_prompt, get_functionality_check_prompt,get_defect_extraction_prompt, judge_need_context_prompt
 from output_handler import ArkTSDeclarationFixer, handle_vul_type_res, remove_difflib_line, fix_brackets, extract_code_from_markdown_block, check_functionality
@@ -139,17 +139,15 @@ def process_file(file, proj_dir, proj_repair_dir, logger, rules_dict, model, tok
         if result:
             fixed_code = result.fixed_code
 
-        res_json = check_functionality(code, fixed_code)
-        if res_json["result"] == "success":
-            file_logs.append(f"Functionality check passed!")
-            break
-        else:
-            attempt += 1
-            if attempt == max_attempts:
-                file_logs.append(f"File {file} failed functionality check after {max_attempts} attempts!")
-                fixed_code = code
-            else:
-                file_logs.append(f"File {file} failed functionality check on attempt {attempt}, retrying...")
+        # NOTE: Functionality check is disabled as per user request.
+        # Previously we called `check_functionality` here and would revert the
+        # file back to the original code if the LLM-based functionality check
+        # reported a failure after several attempts. This caused many fixes to
+        # be rolled back even when they reduced defects.
+        #
+        # Now we always accept the repaired code produced in this loop.
+        file_logs.append("Functionality check skipped; accepting repaired code.")
+        break
 
     os.makedirs(os.path.join(proj_repair_dir, os.path.dirname(os.path.relpath(file, proj_dir))), exist_ok=True)
     with open(os.path.join(proj_repair_dir, os.path.relpath(file, proj_dir)), 'w', encoding='utf-8') as f:
