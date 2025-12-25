@@ -10,17 +10,69 @@ of every run is saved to an individual log file for later review.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import subprocess
 import sys
 import os
+import time
+import errno
 from pathlib import Path
-from typing import Iterable, List, Tuple
+from typing import IO, Iterable, List, Tuple
 import re
 
 
 HVIGOR_FILES = ("hvigorfile.ts", "hvigorfile.js")
 SEVERITIES = ("error", "warn", "suggestion")
 RULE_PATTERN = re.compile(r"^\s*\d+:\d+\s+(\w+)\s+.*@(performance|security)/\S+")
+
+
+def _env_flag(name: str, default: bool) -> bool:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    raw = raw.strip().lower()
+    return raw not in ("0", "false", "no", "off", "")
+
+
+@contextlib.contextmanager
+def _codelinter_global_lock() -> Iterable[None]:
+    """
+    Serialize CodeLinter executions across processes to avoid CPU overload.
+
+    Enabled by default. Disable with `CODELINTER_DISABLE_LOCK=1`.
+    Override lock path with `CODELINTER_LOCK_FILE=/path/to/lock`.
+    """
+    if _env_flag("CODELINTER_DISABLE_LOCK", default=False):
+        yield
+        return
+
+    lock_path = Path(os.environ.get("CODELINTER_LOCK_FILE", "/tmp/LLMCodeRepair_codelinter.lock"))
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # flock works across processes; keep the fd open for the duration of the run.
+    try:
+        import fcntl  # Linux/Unix only
+    except Exception:
+        # If flock isn't available, best-effort: run without cross-process locking.
+        yield
+        return
+
+    fh: IO[str] = lock_path.open("a+", encoding="utf-8")
+    try:
+        try:
+            fcntl.flock(fh.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            print(
+                f"[wait] Another CodeLinter run is in progress; waiting for global lock: {lock_path}",
+                file=sys.stderr,
+            )
+            fcntl.flock(fh.fileno(), fcntl.LOCK_EX)
+        yield
+    finally:
+        try:
+            fcntl.flock(fh.fileno(), fcntl.LOCK_UN)
+        finally:
+            fh.close()
 
 
 def parse_args() -> argparse.Namespace:
@@ -98,20 +150,43 @@ def run_codelinter(target: Path, log_dir: Path, config: Path | None) -> int:
     if config:
         cmd += ["--config", str(config)]
     cmd.append(str(target))
-    print(f"[run ] {' '.join(cmd)}")
-    with subprocess.Popen(
-        cmd,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True,
-    ) as proc:
-        stdout, stderr = proc.communicate()
-        log_path.write_text(stdout + ("\n" if stdout and not stdout.endswith("\n") else "") + stderr)
-        if proc.returncode == 0:
-            print(f"[ ok ] {target} (see {log_path})")
-        else:
-            print(f"[fail] {target} (exit={proc.returncode}, see {log_path})", file=sys.stderr)
-        return proc.returncode or 0
+
+    def write_log_with_retries(content: str) -> None:
+        # Some environments intermittently throw EIO while writing large logs.
+        # Retry a few times to avoid losing the after_round log.
+        retries = int(os.environ.get("CODELINTER_LOG_WRITE_RETRIES", "5"))
+        delay = float(os.environ.get("CODELINTER_LOG_WRITE_RETRY_DELAY", "0.2"))
+        last_exc: Exception | None = None
+        for attempt in range(retries):
+            try:
+                log_path.write_text(content, encoding="utf-8", errors="ignore")
+                return
+            except OSError as exc:
+                last_exc = exc
+                if getattr(exc, "errno", None) not in (errno.EIO,):
+                    raise
+                if attempt == retries - 1:
+                    break
+                time.sleep(delay * (attempt + 1))
+        if last_exc:
+            raise last_exc
+
+    with _codelinter_global_lock():
+        print(f"[run ] {' '.join(cmd)}")
+        with subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+        ) as proc:
+            stdout, stderr = proc.communicate()
+            content = stdout + ("\n" if stdout and not stdout.endswith("\n") else "") + stderr
+            write_log_with_retries(content)
+            if proc.returncode == 0:
+                print(f"[ ok ] {target} (see {log_path})")
+            else:
+                print(f"[fail] {target} (exit={proc.returncode}, see {log_path})", file=sys.stderr)
+            return proc.returncode or 0
 
 
 def main() -> int:

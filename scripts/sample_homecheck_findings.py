@@ -3,7 +3,7 @@ import json
 import os
 import random
 import sqlite3
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Dict, List, Tuple, Any
 
 
@@ -172,6 +172,67 @@ def stratified_sample(
     return sampled
 
 
+def _clopper_pearson_lower_bound_all_successes(n: int, alpha: float = 0.05) -> float:
+    """
+    95% Clopper–Pearson lower bound for a binomial proportion when x=n successes.
+
+    For x=n, the CP lower bound simplifies to (alpha/2)^(1/n).
+    """
+    if n <= 0:
+        raise ValueError("n must be positive")
+    if not (0.0 < alpha < 1.0):
+        raise ValueError("alpha must be in (0,1)")
+    return (alpha / 2.0) ** (1.0 / n)
+
+
+def summarize_expert_labels(samples: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """
+    Summarize TP/FP counts and provide a conservative precision lower bound
+    under the assumption that all sampled findings are labeled (binary).
+
+    Note: This script only generates sample JSON (and default simulated labels).
+    If labels are later updated by humans, re-running with --summary-only can
+    produce updated summaries.
+    """
+    n = len(samples)
+    tp = 0
+    fp = 0
+    by_category: Dict[str, Dict[str, int]] = {}
+    by_severity: Dict[str, int] = {}
+    by_rule: Dict[str, int] = {}
+
+    for s in samples:
+        cat = (s.get("category") or "unknown").strip()
+        sev = (s.get("severity") or "unknown").strip()
+        rid = (s.get("rule_id") or "unknown").strip()
+        final = s.get("final_is_true_defect")
+        if final is True:
+            tp += 1
+        elif final is False:
+            fp += 1
+
+        by_category.setdefault(cat, {}).setdefault("n", 0)
+        by_category[cat]["n"] += 1
+        by_severity[sev] = by_severity.get(sev, 0) + 1
+        by_rule[rid] = by_rule.get(rid, 0) + 1
+
+    precision = tp / (tp + fp) if (tp + fp) > 0 else None
+    cp95_lb = None
+    if tp > 0 and fp == 0 and (tp + fp) == n:
+        cp95_lb = _clopper_pearson_lower_bound_all_successes(n, alpha=0.05)
+
+    return {
+        "n": n,
+        "tp": tp,
+        "fp": fp,
+        "precision": precision,
+        "cp95_lower_bound": cp95_lb,
+        "by_category": by_category,
+        "by_severity": by_severity,
+        "top_rules": sorted(by_rule.items(), key=lambda kv: kv[1], reverse=True)[:20],
+    }
+
+
 def main() -> None:
     args = parse_args()
     db_path = os.path.abspath(args.db)
@@ -228,7 +289,7 @@ def main() -> None:
             )
 
         payload = {
-            "generated_at": datetime.utcnow().isoformat(timespec="seconds") + "Z",
+            "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "db_path": db_path,
             "base_root_prefix": args.base_root_prefix,
             "top_k_projects": args.top_k,
@@ -237,6 +298,7 @@ def main() -> None:
             "actual_samples": len(samples_out),
             "projects": projects,
             "samples": samples_out,
+            "summary": summarize_expert_labels(samples_out),
         }
 
         with open(out_path, "w", encoding="utf-8") as f:

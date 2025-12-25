@@ -213,9 +213,9 @@ function getMD5OfFile(filePath: string): string {
   md.updateSync({ data: new Uint8Array(buf) });
   let mdResult = md.digestSync();
   Logger.info(TAG, '[Sync]:Md result:' + mdResult.data);
-  let sha256Str = buffer.from(mdResult.data.buffer).toString('hex');
-  Logger.info(TAG, '[Sync]:Md string result:' + sha256Str);
-  return sha256Str;
+  let md5Str = buffer.from(mdResult.data.buffer).toString('hex');
+  Logger.info(TAG, '[Sync]:Md string result:' + md5Str);
+  return md5Str;
 }
 
 function checkMd5IsEqual(outputFileMd5: string[], expectedFileMd5: string[]): boolean {
@@ -441,9 +441,9 @@ async function multiInitEffect(inputId: string | undefined, nodeType: NodeType, 
   return ret;
 }
 
-async function noticeEffectTask(msg: string, pipelineIdToPipelineInfoMapParam: Map<string, PipelineInfo>) {
+async function noticeEffectTask(msg: string, pipelineMap: Map<string, PipelineInfo>) {
   Logger.info(TAG, `noticeEffectTask start pipelineId: ${JSON.stringify(msg)}`);
-  const pipelineInfo = pipelineIdToPipelineInfoMapParam.get(msg);
+  const pipelineInfo = pipelineMap.get(msg);
   if (pipelineInfo === undefined) {
     return;
   }
@@ -619,12 +619,12 @@ export struct AutoTest {
 
       Column() {
         if (this.displayPipelineInfoList.length > 0) {
-          List() {
+          List().width('100%').height('100%') {
             ForEach(this.displayPipelineInfoList, (displayPipelineInfo: DisplayPipelineInfo) => {
               ListItem() {
                 this.PipelineGraphArea(displayPipelineInfo)
               }
-            }, (displayPipelineInfo: DisplayPipelineInfo) => displayPipelineInfo.toString())
+            }, (item, index) => item)
           }
         }
       }.height('75%').width('100%').padding(2)
@@ -680,13 +680,14 @@ export struct AutoTest {
   EffectGraphArea(inputNodeList: string[], effectChainMap: Map<string, string[]>) {
     Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.SpaceAround }) {
       if (this.displayPipelineInfoList.length > 0) {
-        Row() {
-          Text("Effect Area")
-        }
+
+        Text("Effect Area")
+        
       }
       Column() {
         ForEach(inputNodeList, (inputNodeId: string) => {
-            List() {
+          Row() {
+            List().width('100%').height('100%') {
               ListItem() {
                 this.NodeButton(this.makeNodeMapNotBlank(inputNodeId))
               }
@@ -695,7 +696,7 @@ export struct AutoTest {
                 ListItem() {
                   this.NodeButton(this.makeNodeMapNotBlank(effectNodeId))
                 }
-              }, (effectNodeId: string) => effectNodeId)
+              }, (item, index) => item)
             }
             .width('100%')
             .listDirection(Axis.Horizontal)
@@ -703,7 +704,8 @@ export struct AutoTest {
             .focusWrapMode(FocusWrapMode.WRAP_WITH_ARROW)
             .scrollBar(BarState.Off)
             .margin({ bottom: inputNodeList.length > 1 ? 10 : 0 })
-        }, (inputNodeId: string) => inputNodeId)
+          }
+        }, (item, index) => item)
       }
       .border({ width: '1vp', color: Color.Blue, radius: '10vp' })
       .backgroundColor(Color.Gray)
@@ -715,16 +717,18 @@ export struct AutoTest {
   MixerGraphArea(mixerNodeChain: string[]) {
     Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.SpaceAround }) {
       if (this.displayPipelineInfoList.length > 0) {
-          Text("Output Area")
+
+        Text("Output Area")
+        
       }
 
       Row() {
-        List() {
+        List().width('100%').height('100%') {
           ForEach(mixerNodeChain, (nodeId: string) => {
             ListItem() {
               this.NodeButton(this.makeNodeMapNotBlank(nodeId));
             }
-          }, (nodeId: string) => nodeId)
+          }, (item, index) => item)
         }
         .width('100%')
         .listDirection(Axis.Horizontal)
@@ -842,11 +846,9 @@ export struct AutoTest {
   //     return 1;
   //   } else if (jsonFileInfo.sceneInfos.length >= 1) {
   //     let scenePromises = jsonFileInfo.sceneInfos.map(async (sceneInfoId: string) => {
-  //       const sceneInfo = sceneInfoIdToSceneInfoMap.get(sceneInfoId);
   //       if (sceneInfo == undefined) {
   //         return;
   //       }
-  //       const pipelineId = util.generateRandomUUID(true);
   //       const pipelineInfo: PipelineInfo = {
   //         pipelineId: pipelineId,
   //         inputIdList: [],
@@ -855,7 +857,6 @@ export struct AutoTest {
   //         multiRenderFrameFlag: false,
   //         sceneInfoId: ''
   //       }
-  //       const start = new Date().getTime();
   //       const singleReport: ExecuteReport = {
   //         sceneInfoId: jsonFileInfo.sceneInfos[0],
   //         sceneName: sceneInfo.sceneName,
@@ -867,25 +868,12 @@ export struct AutoTest {
   //         result: false,
   //         exeReportPath: '',
   //       }
-  //       pipelineIdToSingleReportMap.set(pipelineId, singleReport);
-  //       pipelineIdToPipelineInfoMap.set(pipelineId, pipelineInfo);
-  //       sceneInfo.pipelineId = pipelineId;
   //
-  //       let ret = await this.initMultiPipelineTask(sceneInfo.sceneInfoId, pipelineId);
-  //       Logger.info(TAG, `initMultiPipelineTask done pipelineId：${pipelineId}`);
-  //       let outputInfo = sceneInfo.outputFile;
-  //       const multiRenderFrameFlag = pipelineInfo.multiRenderFrameFlag;
   //       const buffer: object =
-  //         await taskpool.execute(multiPipelineSaveFileBuffer, pipelineId, outputInfo, multiRenderFrameFlag);
-  //       await this.saveSingleFile(pipelineId, buffer as ArrayBuffer[], ".wav", outputInfo, multiRenderFrameFlag)
-  //       this.generateSingleReportInfo(pipelineId);
   //     })
   //     await Promise.all(scenePromises).then(async () => {
-  //       Logger.info(TAG, `scenePromises done `);
   //       if (reportFlag) {
-  //         await this.saveSingleCaseExecuteReport(fileSummary);
   //       }
-  //       this.destroyPipeline();
   //     })
   //   }
   //   return 0;
@@ -953,7 +941,7 @@ export struct AutoTest {
       return;
     }
     let pipelineTask: taskpool.Task = new taskpool.Task(multiInitPipeline, sceneInfo.sceneInfoId, pipelineId);
-    pipelineTask.onReceiveData(noticePipelineTask);
+    pipelineTask.onReceiveData((msg) => noticePipelineTask(msg, preparedPipelineList, pipelineIdToPipelineInfoMap));
     await taskpool.execute(pipelineTask);
     for (const ele of sceneInfo.inputFiles){
       let pipelineId: string = sceneInfo.pipelineId;
@@ -1225,11 +1213,10 @@ export struct AutoTest {
     })
     try {
       const now = new Date();
-      const timeStamp = now.getTime();
       let newFileName1 = `${outputInfo.nameTemplate}${multiRenderFrameFlag ? "_Voice" :
-        ""}_${getDateStringWithTimeStamp(timeStamp, 1)}.wav`;
+        ""}_${getDateStringWithTimeStamp(now.getTime(), 1)}.wav`;
       let newFileName2 = `${outputInfo.nameTemplate}${multiRenderFrameFlag ? "_Accompaniment" :
-        ""}_${getDateStringWithTimeStamp(timeStamp, 1)}.wav`;
+        ""}_${getDateStringWithTimeStamp(now.getTime(), 1)}.wav`;
       const outputFilePath = multiRenderFrameFlag ? [`${outputPath}/${newFileName1}`, `${outputPath}/${newFileName2}`] :
         [`${outputPath}/${newFileName1}`];
       outputFilePath.forEach((path: string, index: number) => {
@@ -1322,7 +1309,8 @@ export struct AutoTest {
 
   generateSingleReportInfo(pipelineId: string) {
     const now = new Date();
-    const csvFileSavePath = `execute_report_${getDateStringWithTimeStamp(now.getTime(), 1)}.csv`;
+    const endTime = now.getTime();
+    const csvFileSavePath = `execute_report_${getDateStringWithTimeStamp(endTime, 1)}.csv`;
     const singleReport = pipelineIdToSingleReportMap.get(pipelineId);
     if (singleReport == undefined) {
       return;

@@ -1,0 +1,327 @@
+{
+  "run_id": "gpt-5.1_n150_seed20251220_20251220_090013",
+  "model_dir": "gpt-5.1",
+  "max_round": 5,
+  "n_sample": 150,
+  "seed": 20251220,
+  "candidate_count": 9554,
+  "sample_count": 150,
+  "high_rules_top_k": 20,
+  "primary_targets": {
+    "performance|early": 128,
+    "security|early": 8,
+    "performance|late": 9,
+    "security|late": 5
+  },
+  "notes": "A resolved finding is defined as present in round_r log but absent in round_r_after_roundr log, keyed by (rel_path,line,column,category,rule_id). This is a static proxy for repair success.",
+  "skipped": [
+    {
+      "project": "PullLinking",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/PullLinking.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/PullLinking.log"
+    },
+    {
+      "project": "PullLinking",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/PullLinking.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/PullLinking.log"
+    },
+    {
+      "project": "PullLinking",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/PullLinking.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/PullLinking.log"
+    },
+    {
+      "project": "PullLinking",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/PullLinking.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/PullLinking.log"
+    },
+    {
+      "project": "JS_dialog_box_static",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/JS_dialog_box_static.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/JS_dialog_box_static.log"
+    },
+    {
+      "project": "JS_dialog_box_static",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/JS_dialog_box_static.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/JS_dialog_box_static.log"
+    },
+    {
+      "project": "JS_dialog_box_static",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/JS_dialog_box_static.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/JS_dialog_box_static.log"
+    },
+    {
+      "project": "JS_dialog_box_static",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/JS_dialog_box_static.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/JS_dialog_box_static.log"
+    },
+    {
+      "project": "ace_ets_module_router1",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_router1.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_router1.log"
+    },
+    {
+      "project": "ace_ets_module_router1",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_router1.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_router1.log"
+    },
+    {
+      "project": "ace_ets_module_navigation1",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/ace_ets_module_navigation1.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/ace_ets_module_navigation1.log"
+    },
+    {
+      "project": "ace_ets_module_navigation1",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_module_navigation1.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_module_navigation1.log"
+    },
+    {
+      "project": "ace_ets_module_navigation1",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_navigation1.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_navigation1.log"
+    },
+    {
+      "project": "ace_ets_module_navigation1",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_navigation1.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_navigation1.log"
+    },
+    {
+      "project": "ace_ets_module_RouteManagement_api12",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_RouteManagement_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_RouteManagement_api12.log"
+    },
+    {
+      "project": "ace_ets_module_RouteManagement_api12",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_RouteManagement_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_RouteManagement_api12.log"
+    },
+    {
+      "project": "ace_ets_module_imageText_api16",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/ace_ets_module_imageText_api16.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/ace_ets_module_imageText_api16.log"
+    },
+    {
+      "project": "ace_ets_module_imageText_api16",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_module_imageText_api16.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_module_imageText_api16.log"
+    },
+    {
+      "project": "ace_ets_module_imageText_api16",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_imageText_api16.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_imageText_api16.log"
+    },
+    {
+      "project": "ace_ets_module_imageText_api16",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_imageText_api16.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_imageText_api16.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex001",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/ace_ets_component_common_attrss_flex001.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/ace_ets_component_common_attrss_flex001.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex001",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_component_common_attrss_flex001.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_component_common_attrss_flex001.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex001",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_component_common_attrss_flex001.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_component_common_attrss_flex001.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex001",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_component_common_attrss_flex001.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_component_common_attrss_flex001.log"
+    },
+    {
+      "project": "audio_suite",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/audio_suite.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/audio_suite.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex_nowear",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/ace_ets_component_common_attrss_flex_nowear.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/ace_ets_component_common_attrss_flex_nowear.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex_nowear",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_component_common_attrss_flex_nowear.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_component_common_attrss_flex_nowear.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex_nowear",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_component_common_attrss_flex_nowear.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_component_common_attrss_flex_nowear.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex_nowear",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_component_common_attrss_flex_nowear.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_component_common_attrss_flex_nowear.log"
+    },
+    {
+      "project": "acts_validator",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/acts_validator.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/acts_validator.log"
+    },
+    {
+      "project": "ace_ets_module_navigation_api12",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/ace_ets_module_navigation_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/ace_ets_module_navigation_api12.log"
+    },
+    {
+      "project": "ace_ets_module_navigation_api12",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_module_navigation_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_module_navigation_api12.log"
+    },
+    {
+      "project": "ace_ets_module_navigation_api12",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_navigation_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_navigation_api12.log"
+    },
+    {
+      "project": "ace_ets_module_navigation_api12",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_navigation_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_navigation_api12.log"
+    },
+    {
+      "project": "ace_ets_module_scroll_nowear_api12",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/ace_ets_module_scroll_nowear_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/ace_ets_module_scroll_nowear_api12.log"
+    },
+    {
+      "project": "ace_ets_module_scroll_nowear_api12",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_module_scroll_nowear_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_module_scroll_nowear_api12.log"
+    },
+    {
+      "project": "ace_ets_module_scroll_nowear_api12",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_scroll_nowear_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_scroll_nowear_api12.log"
+    },
+    {
+      "project": "ace_ets_module_scroll_nowear_api12",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_scroll_nowear_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_scroll_nowear_api12.log"
+    },
+    {
+      "project": "ace_ets_module_imageText_api12",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_module_imageText_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_module_imageText_api12.log"
+    },
+    {
+      "project": "ace_ets_module_imageText_api12",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_imageText_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_imageText_api12.log"
+    },
+    {
+      "project": "ace_ets_module_imageText_api12",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_imageText_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_imageText_api12.log"
+    },
+    {
+      "project": "CanvasTest",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/CanvasTest.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/CanvasTest.log"
+    },
+    {
+      "project": "CanvasTest",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/CanvasTest.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/CanvasTest.log"
+    },
+    {
+      "project": "CanvasTest",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/CanvasTest.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/CanvasTest.log"
+    }
+  ]
+}

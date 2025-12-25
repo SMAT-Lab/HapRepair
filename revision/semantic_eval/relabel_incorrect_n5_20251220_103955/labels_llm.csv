@@ -1,0 +1,6 @@
+sample_id,label,annotator,notes,project,round_fixed,category,rule_id,rel_path,line
+cc1125c3e17a,Incorrect,llm:gpt-5.1+deepseek-chat,"risk->Incorrect: gpt-5.1=incorrect(Incorrect), deepseek-chat=incorrect(Incorrect)",ace_ets_module_imageText_api12,1,,,entry/src/main/ets/MainAbility/pages/Text/MeasureSize/TextCommonTextComputing0370.ets,
+0f8283e2e9d4,Correct,llm:gpt-5.1+deepseek-chat,"risk->Correct: gpt-5.1=correct, deepseek-chat=correct",ace_ets_module_swiper_api11,1,,,entry/src/main/ets/MainAbility/pages/Swiper/swiper.ets,
+17266b7d80e6,Correct,llm:gpt-5.1+deepseek-chat,"conflict->LikelyCorrect: gpt-5.1=Correct(0.83), deepseek-chat=Incorrect(0.9)",acts_validator,1,,,entry/src/main/ets/pages/ArkUI/transform3D.ets,
+8969b8d14302,Correct,llm:gpt-5.1+deepseek-chat,"mixed->LikelyCorrect: gpt-5.1=correct(0.7), deepseek-chat=unclear(0.8)",acts_validator,1,,,entry/src/main/ets/pages/common/CameraPhotoContainer.ets,
+bb3d7040d269,Incorrect,llm:gpt-5.1+deepseek-chat,"risk->Incorrect: gpt-5.1=incorrect(Incorrect), deepseek-chat=incorrect(Incorrect)",ohos_dfu_library,1,,,DfuLibrary/src/main/ets/dfu/internal/Manifest.ts,

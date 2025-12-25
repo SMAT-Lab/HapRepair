@@ -12,11 +12,11 @@
   - 原始项目来源：  
     - `/home/LLMCodeRepair/repo_new/OpenHarmony/xts_acts/arkui/ace_ets_module_ui/ace_ets_module_scroll/ace_ets_module_list02`
 
-- 对该模块运行 CodeLinter 得到缺陷报告：
-  - 日志文件（仅说明来源，不在 revision 中使用）：  
+- 可选参考：对该模块运行 CodeLinter 得到缺陷报告（用于交叉核对规则含义与触发位置）：
+  - 日志文件（仅说明来源，不在 revision 中作为 GT 直接使用）：  
     - `/home/LLMCodeRepair/logs/codelinter_openharmony/ace_ets_module_list02.log`
 
-- 在 `revision/` 中根据 CodeLinter 日志构建了 JSON 格式的 ground truth：
+- 在 `revision/` 中我们根据规则描述与源码检查**人工构造**了 JSON 格式的 ground truth：
   - `revision/ace_ets_module_list02_gt.json`
   - 结构（按相对路径组织，行号精确到单个缺陷）：
     ```json
@@ -153,4 +153,3 @@
 - 从 `logs/codelinter_openharmony*` 中再挑选 1～2 个类似规模的项目；
 - 使用完全相同的 pipeline（GT JSON + Codex detection + eval_codex_results.py）复现检测效果；
 - 将多项目的结果整理在论文附录或 Threats to Validity 中，以增强说服力。
-

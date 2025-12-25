@@ -873,7 +873,7 @@ export struct AudioEdit {
                                 Logger.info(TAG, `index + 1 is ${index + 1}`);
                                 this.equailizerMode = index + 1;
                             })
-                    }, item => item)
+                    }, (item, index) => item)
                 }
 
                 Flex({ direction: FlexDirection.Row, justifyContent: FlexAlign.SpaceBetween, alignItems:ItemAlign.Center }) {
@@ -890,7 +890,7 @@ export struct AudioEdit {
                                 Logger.info(TAG, `index + 1 is ${index + 6}`);
                                 this.equailizerMode = index + 6;
                             })
-                    }, (item: string, index: number) => item)
+                    }, (item, index) => item)
                 }
                 .margin({ top: '20vp', bottom: '70vp'})
             }
@@ -918,7 +918,7 @@ export struct AudioEdit {
                                 this.balanceModeScroller.scrollToIndex(this.equailizerMode, true);
                             })
                     }.width('5%').height('200vp')
-                }, (item: number, index: number) => item)
+                }, (item, index) => item)
             }
             .height('200vp')
         }
@@ -1215,7 +1215,7 @@ export struct AudioEdit {
 
     @Builder
     SoundWave() {
-        List({ initialIndex: 0 }) {
+        List({ initialIndex: 0 }).width('100%').height('100%') {
             if (this.songWaveList.size != 0) {
                 ForEach(Array.from(this.songWaveList.keys()), (key: string) =>{
                     if (this.pitchSong === key && this.effectBtnState) {
@@ -1267,7 +1267,7 @@ export struct AudioEdit {
             .justifyContent(FlexAlign.SpaceBetween)
 
             Row() {
-                List() {
+                List().width('100%').height('100%') {
                     ForEach(this.songWaveList.get(nodeId)?.nodes ?? [], (item: Node) => {
                         ListItem() {
                             Text(item.type)

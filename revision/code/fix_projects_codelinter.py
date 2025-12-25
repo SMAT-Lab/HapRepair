@@ -20,6 +20,7 @@ import argparse
 import concurrent.futures
 import logging
 import os
+import contextlib
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 import re
@@ -38,6 +39,7 @@ from get_prompt import (  # type: ignore
     get_rag_prompt,
 )
 from llm import get_answer  # type: ignore
+from code_repair import CodeContextExtractor  # type: ignore
 from output_handler import (  # type: ignore
     ArkTSDeclarationFixer,
     check_functionality,
@@ -56,6 +58,14 @@ HVIGOR_FILES = ("hvigorfile.ts", "hvigorfile.js")
 VALID_CATEGORIES = {"performance", "security"}
 SEVERITY_NORMALIZATION = {"warning": "warn"}
 DEFAULT_CODELINTER_LOG_DIR = Path("/home/LLMCodeRepair/logs/codelinter_openharmony")
+
+
+def _rag_api_base() -> Optional[str]:
+    base = os.getenv("RAG_API_BASE") or os.getenv("RAG_SERVICE_URL")
+    if not base:
+        return None
+    base = base.rstrip("/")
+    return base
 
 # Optional RAG deps (transformers + pinecone)
 try:  # pragma: no cover - optional dependency
@@ -88,6 +98,38 @@ def load_model_and_index():
     model_name = "dunzhang/stella_en_1.5B_v5"
     tokenizer = AutoTokenizer.from_pretrained(model_name, cache_dir="/home/models")
     model = AutoModel.from_pretrained(model_name, cache_dir="/home/models")
+    try:  # pragma: no cover - optional dependency
+        import torch  # type: ignore
+
+        model.eval()
+        device_raw = os.environ.get("RAG_DEVICE", "cpu").strip().lower()
+        dtype_raw = os.environ.get("RAG_DTYPE", "").strip().lower()
+
+        if device_raw in ("gpu",):
+            device_raw = "cuda"
+        if device_raw in ("", "cpu"):
+            device = torch.device("cpu")
+        else:
+            try:
+                device = torch.device(device_raw)
+            except Exception:
+                device = torch.device("cpu")
+
+        if device.type == "cuda" and not torch.cuda.is_available():
+            device = torch.device("cpu")
+
+        if device.type == "cuda":
+            if dtype_raw in ("bf16", "bfloat16"):
+                model = model.to(dtype=torch.bfloat16)
+            elif dtype_raw in ("fp16", "float16", "half"):
+                model = model.to(dtype=torch.float16)
+
+        model = model.to(device)
+
+        # Prevent runaway CPU thread oversubscription when many projects run in parallel.
+        torch.set_num_threads(int(os.environ.get("TORCH_NUM_THREADS", "1")))
+    except Exception:
+        pass
 
     pc = Pinecone(api_key="40075f49-8396-4571-924a-4b6d342cc81d")
     index_name = "arkts-1536"
@@ -134,6 +176,54 @@ def run_codelinter_for_project(
     if rc != 0:
         raise RuntimeError(f"CodeLinter failed for {project_root} (exit={rc})")
     return log_dir / f"{project_root.name}.log"
+
+
+def _env_flag(name: str, default: bool) -> bool:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    raw = raw.strip().lower()
+    return raw not in ("0", "false", "no", "off", "")
+
+
+@contextlib.contextmanager
+def _workspace_copy_lock() -> Iterable[None]:
+    """
+    Serialize workspace copy operations across processes to avoid huge memory spikes
+    from many concurrent `copytree` runs (dirty page cache + metadata walk).
+
+    Enabled by default. Disable with `HAPREPAIR_DISABLE_COPY_LOCK=1`.
+    Override lock path with `HAPREPAIR_COPY_LOCK_FILE=/path/to/lock`.
+    """
+    if _env_flag("HAPREPAIR_DISABLE_COPY_LOCK", default=False):
+        yield
+        return
+
+    lock_path = Path(os.environ.get("HAPREPAIR_COPY_LOCK_FILE", "/tmp/LLMCodeRepair_haprepair_copy.lock"))
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+
+    try:
+        import fcntl  # Linux/Unix only
+    except Exception:
+        yield
+        return
+
+    fh = lock_path.open("a+", encoding="utf-8")
+    try:
+        try:
+            fcntl.flock(fh.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            print(
+                f"[wait] Another project copy is in progress; waiting for global copy lock: {lock_path}",
+                file=sys.stderr,
+            )
+            fcntl.flock(fh.fileno(), fcntl.LOCK_EX)
+        yield
+    finally:
+        try:
+            fcntl.flock(fh.fileno(), fcntl.LOCK_UN)
+        finally:
+            fh.close()
 
 
 FILE_HEADER_REGEX = re.compile(r"^(\/.+)\(\d+\)$")
@@ -262,6 +352,252 @@ def parse_parsing_errors(log_path: Path) -> List[Dict[str, Any]]:
             )
 
     return errors
+
+
+def _count_braces(line: str) -> int:
+    # Best-effort brace delta; good enough for our simple auto-fix heuristics.
+    return line.count("{") - line.count("}")
+
+
+def _auto_fix_use_id_in_get_resource_sync_api(
+    code_lines: List[str],
+    file_findings: List[Dict[str, Any]],
+) -> Tuple[List[str], List[Dict[str, Any]]]:
+    """
+    Auto-fix @performance/hp-arkui-use-id-in-get-resource-sync-api.
+
+    Common pattern:
+      resourceManager.getStringSync($r('app.string.xxx'))
+    becomes:
+      resourceManager.getStringSync($r('app.string.xxx').id)
+
+    This keeps line count stable.
+    """
+    if not file_findings:
+        return code_lines, file_findings
+
+    max_idx = len(code_lines) - 1
+    new_findings: List[Dict[str, Any]] = []
+
+    pattern = re.compile(r"(getStringSync)\(\s*(\$r\([^)]*\))\s*\)")
+    for f in file_findings:
+        if (
+            f.get("category") == "performance"
+            and f.get("rule_id") == "hp-arkui-use-id-in-get-resource-sync-api"
+        ):
+            try:
+                line_no = int(f.get("line") or 0)
+            except (TypeError, ValueError):
+                line_no = 0
+            if 1 <= line_no <= max_idx:
+                line = code_lines[line_no]
+                # Skip if already uses .id
+                if ".id" in line:
+                    continue
+                new_line = pattern.sub(r"\1(\2.id)", line)
+                if new_line != line:
+                    code_lines[line_no] = new_line
+                    continue
+
+        new_findings.append(f)
+
+    return code_lines, new_findings
+
+
+def _auto_fix_use_local_var_to_replace_state_var(
+    code_lines: List[str],
+    file_findings: List[Dict[str, Any]],
+) -> Tuple[List[str], List[Dict[str, Any]]]:
+    """
+    Auto-fix @performance/hp-arkui-use-local-var-to-replace-state-var.
+
+    Heuristic:
+    - Only targets `private` methods (skips `build()`).
+    - For each @State field referenced repeatedly as `this.<state>` inside a method:
+      - Prefix the first top-level statement with `let _local_<state> = this.<state>; `
+      - Replace remaining `this.<state>` occurrences with `_local_<state>`
+      - If the state is modified (e.g., `+=`, `=`), insert `this.<state> = _local_<state>`
+        immediately before the method closing brace.
+    """
+    if not file_findings:
+        return code_lines, file_findings
+
+    # Only run if we have findings for this rule.
+    if not any(
+        f.get("category") == "performance"
+        and f.get("rule_id") == "hp-arkui-use-local-var-to-replace-state-var"
+        for f in file_findings
+    ):
+        return code_lines, file_findings
+
+    max_idx = len(code_lines) - 1
+
+    # Extract @State field names from struct scope.
+    state_vars: List[str] = []
+    state_re = re.compile(r"^\s*@State\s+([A-Za-z_$][\w$]*)\b")
+    for ln in range(1, max_idx + 1):
+        m = state_re.match(code_lines[ln])
+        if m:
+            state_vars.append(m.group(1))
+    state_set = set(state_vars)
+    if not state_set:
+        return code_lines, file_findings
+
+    # If the findings mention a subset of state vars, only target those.
+    flagged_vars: set[str] = set()
+    this_var_re = re.compile(r"\bthis\.([A-Za-z_$][\w$]*)\b")
+    for f in file_findings:
+        if (
+            f.get("category") == "performance"
+            and f.get("rule_id") == "hp-arkui-use-local-var-to-replace-state-var"
+        ):
+            try:
+                line_no = int(f.get("line") or 0)
+            except (TypeError, ValueError):
+                line_no = 0
+            if 1 <= line_no <= max_idx:
+                for mm in this_var_re.finditer(code_lines[line_no]):
+                    name = mm.group(1)
+                    if name in state_set:
+                        flagged_vars.add(name)
+    if not flagged_vars:
+        flagged_vars = set(state_vars)
+
+    sig_re = re.compile(r"^\s*private\s+([A-Za-z_$][\w$]*)\s*\(")
+
+    # Collect method ranges first (based on the original line indices), then
+    # apply transformations bottom-up to keep indices stable.
+    methods: List[Tuple[int, int, str]] = []
+    i = 1
+    while i <= max_idx:
+        line = code_lines[i]
+        m = sig_re.match(line)
+        if not m:
+            i += 1
+            continue
+        method_name = m.group(1)
+        if method_name == "build":
+            i += 1
+            continue
+
+        depth = _count_braces(line)
+        if depth <= 0:
+            i += 1
+            continue
+        start = i
+        i += 1
+        while i <= max_idx and depth > 0:
+            depth += _count_braces(code_lines[i])
+            i += 1
+        end = i - 1
+        if end > start:
+            methods.append((start, end, method_name))
+
+    insertion_points: List[int] = []
+
+    for start, end, _method_name in reversed(methods):
+        if end <= start + 1:
+            continue
+
+        # Identify the first top-level statement (depth==1) to prefix with init.
+        depth_scan = 1
+        first_stmt: Optional[int] = None
+        for ln in range(start + 1, end):
+            raw = code_lines[ln]
+            stripped = raw.strip()
+            if depth_scan == 1 and stripped and not stripped.startswith("}"):
+                first_stmt = ln
+                break
+            depth_scan += _count_braces(raw)
+        if first_stmt is None:
+            continue
+
+        body_lines = code_lines[start + 1 : end]
+        body_text = "\n".join(body_lines)
+
+        for var in sorted(flagged_vars):
+            local = f"_local_{var}"
+            needle = f"this.{var}"
+            if local in body_text:
+                continue
+            if needle not in body_text:
+                continue
+            if body_text.count(needle) < 2:
+                continue
+
+            # Detect whether the state var is modified in this method.
+            modifies = False
+            assign_re = re.compile(rf"\bthis\.{re.escape(var)}\b\s*(\+\+|--|[+\-*/%]?=)")
+            for ln in range(start + 1, end):
+                if assign_re.search(code_lines[ln]):
+                    modifies = True
+                    break
+
+            # Prefix the first statement with local init (same line).
+            stmt_line = code_lines[first_stmt]
+            indent = re.match(r"^\s*", stmt_line).group(0)  # type: ignore[union-attr]
+            stmt_rest = stmt_line[len(indent) :]
+            init_prefix = f"let {local} = {needle}; "
+            if init_prefix.strip() not in stmt_line:
+                code_lines[first_stmt] = f"{indent}{init_prefix}{stmt_rest}"
+
+            # Replace uses in method body, but keep the init's `this.<var>` intact.
+            placeholder = f"__KEEP_THIS_{var.upper()}__"
+            init_line = code_lines[first_stmt]
+            init_line = init_line.replace(needle, placeholder, 1)
+            init_line = init_line.replace(needle, local)
+            init_line = init_line.replace(placeholder, needle)
+            code_lines[first_stmt] = init_line
+
+            for ln in range(start + 1, end):
+                if ln == first_stmt:
+                    continue
+                code_lines[ln] = code_lines[ln].replace(needle, local)
+
+            # Write back before the method closing brace if needed.
+            if modifies:
+                # Insert immediately before the method's closing brace line.
+                insert_at = end
+                code_lines.insert(insert_at, f"{indent}{needle} = {local}")
+                insertion_points.append(end)
+                max_idx += 1
+                end += 1
+                # Keep body_text in sync for subsequent vars in same method.
+                body_text = "\n".join(code_lines[start + 1 : end])
+
+    # Drop findings handled by this auto-fix.
+    adjusted_findings: List[Dict[str, Any]] = [
+        f
+        for f in file_findings
+        if not (
+            f.get("category") == "performance"
+            and f.get("rule_id") == "hp-arkui-use-local-var-to-replace-state-var"
+        )
+    ]
+
+    if insertion_points:
+        insertion_points.sort()
+
+        def shift_line(old_line: int) -> int:
+            # Each insertion happens before its recorded original end line,
+            # so any line >= insertion_point shifts by +1.
+            import bisect
+
+            return old_line + bisect.bisect_left(insertion_points, old_line)
+
+        remapped: List[Dict[str, Any]] = []
+        for f in adjusted_findings:
+            try:
+                line_no = int(f.get("line") or 0)
+            except (TypeError, ValueError):
+                line_no = 0
+            if line_no > 0:
+                f = dict(f)
+                f["line"] = shift_line(line_no)
+            remapped.append(f)
+        adjusted_findings = remapped
+
+    return code_lines, adjusted_findings
 
 
 def _insert_foreach_key_generator(
@@ -477,6 +813,132 @@ def _auto_fix_init_list_component(
     return code_lines, new_findings
 
 
+def _insert_cached_count_for_grid_or_lazyforeach(
+    code_lines: List[str],
+    line_no: int,
+    cached_count: int = 4,
+) -> bool:
+    """
+    Auto-fix helper for @performance/hp-arkui-set-cache-count-for-lazyforeach-grid.
+
+    Strategy:
+    - In a small window around the reported line, look for a Grid(...) or
+      LazyForEach(...) call that starts a component.
+    - Track parentheses from the '(' after the call keyword across subsequent
+      lines until the top-level call is closed.
+    - Insert `.cachedCount(<cached_count>)` immediately after this closing ')'
+      so that, for example:
+
+        Grid(this.scroller) {
+          ...
+        }
+
+      becomes:
+
+        Grid(this.scroller).cachedCount(4) {
+          ...
+        }
+
+    We keep the transformation conservative and skip if we cannot reliably
+    find and close the call, or if `.cachedCount(` already appears in the
+    call expression line.
+    """
+    max_idx = len(code_lines) - 1
+    if max_idx <= 0:
+        return False
+
+    start = max(1, line_no - 1)
+    end = min(max_idx, line_no + 2)
+    patterns = ["Grid(", "LazyForEach("]
+
+    for ln in range(start, end + 1):
+        line = code_lines[ln]
+        for pattern in patterns:
+            col = line.find(pattern)
+            if col == -1:
+                continue
+
+            # If this line already contains a cachedCount call, skip.
+            if ".cachedCount(" in line:
+                return False
+
+            open_pos = line.find("(", col)
+            if open_pos == -1:
+                continue
+
+            depth = 1
+            cur_line = ln
+            cur_col = open_pos + 1
+
+            # Walk forward across lines to find the matching ')'.
+            while True:
+                if cur_col >= len(code_lines[cur_line]):
+                    cur_line += 1
+                    if cur_line > max_idx:
+                        break
+                    cur_col = 0
+                    continue
+
+                ch = code_lines[cur_line][cur_col]
+                if ch == "(":
+                    depth += 1
+                elif ch == ")":
+                    depth -= 1
+                    if depth == 0:
+                        target_line = code_lines[cur_line]
+                        # Avoid inserting twice if cachedCount is already present.
+                        if ".cachedCount(" in target_line:
+                            return False
+                        insert_text = f".cachedCount({cached_count})"
+                        code_lines[cur_line] = (
+                            target_line[: cur_col + 1]
+                            + insert_text
+                            + target_line[cur_col + 1 :]
+                        )
+                        return True
+                cur_col += 1
+
+    return False
+
+
+def _auto_fix_set_cache_count_for_lazyforeach_grid(
+    code_lines: List[str],
+    file_findings: List[Dict[str, Any]],
+) -> Tuple[List[str], List[Dict[str, Any]]]:
+    """
+    Auto-fix @performance/hp-arkui-set-cache-count-for-lazyforeach-grid by
+    inserting `.cachedCount(4)` on Grid/LazyForEach component calls used
+    with LazyForEach in grids.
+
+    For each finding:
+      - Try to insert `.cachedCount(4)` after the Grid(...) or LazyForEach(...)
+        call near the reported line.
+      - If successful, drop the finding so it is not sent to the LLM.
+    """
+    if not file_findings:
+        return code_lines, file_findings
+
+    max_idx = len(code_lines) - 1
+    new_findings: List[Dict[str, Any]] = []
+
+    for f in file_findings:
+        if (
+            f.get("category") == "performance"
+            and f.get("rule_id") == "hp-arkui-set-cache-count-for-lazyforeach-grid"
+        ):
+            try:
+                line_no = int(f.get("line") or 0)
+            except (TypeError, ValueError):
+                line_no = 0
+            if 1 <= line_no <= max_idx:
+                if _insert_cached_count_for_grid_or_lazyforeach(code_lines, line_no):
+                    continue
+
+        new_findings.append(f)
+
+    return code_lines, new_findings
+
+
 def build_merged_blocks_for_file(
     file_path: Path,
     file_findings: List[Dict[str, Any]],
@@ -628,6 +1090,48 @@ def build_merged_blocks_for_file(
     )
     max_idx = len(code_lines) - 1
 
+    # ------------------------------------------------------------------
+    # Auto-fix @performance/hp-arkui-set-cache-count-for-lazyforeach-grid:
+    # Insert `.cachedCount(4)` on Grid/LazyForEach component calls used
+    # with LazyForEach in grids, and drop the corresponding findings.
+    # ------------------------------------------------------------------
+    code_lines, file_findings = _auto_fix_set_cache_count_for_lazyforeach_grid(
+        code_lines, file_findings
+    )
+    max_idx = len(code_lines) - 1
+
+    # ------------------------------------------------------------------
+    # Optional auto-fix @performance/hp-arkui-use-local-var-to-replace-state-var:
+    # This transformation can be behavior-sensitive (state sync + reactivity),
+    # so it is DISABLED by default. Enable with:
+    #   HAPREPAIR_ENABLE_AUTOFIX_STATEVAR_LOCAL_CACHE=1
+    # ------------------------------------------------------------------
+    if os.environ.get("HAPREPAIR_ENABLE_AUTOFIX_STATEVAR_LOCAL_CACHE", "").strip() in ("1", "true", "yes", "on"):
+        code_lines, file_findings = _auto_fix_use_local_var_to_replace_state_var(
+            code_lines, file_findings
+        )
+        max_idx = len(code_lines) - 1
+
+    # ------------------------------------------------------------------
+    # Auto-fix @performance/hp-arkui-use-id-in-get-resource-sync-api:
+    # Add `.id` when using $r(...) with getStringSync.
+    # ------------------------------------------------------------------
+    code_lines, file_findings = _auto_fix_use_id_in_get_resource_sync_api(
+        code_lines, file_findings
+    )
+    max_idx = len(code_lines) - 1
+    # Some performance rules need larger, structure-aware context (component/block scope)
+    context_rules = {
+        "avoid-overusing-custom-component-check",
+        "dark-color-mode-check",
+        "foreach-index-check",
+        "hp-arkui-use-local-var-to-replace-state-var",
+        "hp-arkui-use-onAnimationStart-for-swiper-preload",
+        "hp-arkui-use-reusable-component",
+        "waterflow-data-preload-check",
+    }
+    context_extractor: Optional[CodeContextExtractor] = None
+
     raw_blocks: List[Dict[str, Any]] = []
     for f in file_findings:
         line_no = int(f.get("line") or 0)
@@ -635,6 +1139,15 @@ def build_merged_blocks_for_file(
             continue
         start = max(1, line_no - 5)
         end = min(max_idx, line_no + 5)
+        rule_id = f.get("rule_id", "")
+        if (
+            f.get("category") == "performance"
+            and rule_id in context_rules
+        ):
+            # Provide the entire file as context for these hard-to-fix rules.
+            # These often need cross-section awareness (component structure,
+            # preload wiring, dark mode resources, etc.).
+            start, end = 1, max_idx
         defect = {
             "rule": f"@{f['category']}/{f['rule_id']}",
             "line": line_no,
@@ -776,9 +1289,11 @@ def process_file_with_codelinter_blocks(
         for block in merged_blocks:
             defects = block["defects"]
             contexts = block["surrounding_context"]
-            sum_context = ""
-            for text in contexts:
-                sum_context += f"...\n{text}\n"
+            # Provide the real code context directly, without artificial "..."
+            # separators. The previous ellipsis markers could confuse the LLM
+            # when mapping diffs back to the full file, leading to misplaced
+            # edits and broken syntax in multi-block fixes.
+            sum_context = "\n\n".join(contexts)
 
             if not surrounding_context:
                 sum_context = code
@@ -798,7 +1313,11 @@ def process_file_with_codelinter_blocks(
             error_location = "The location of the defect is as follows:\n"
 
             valid_defects: List[Dict[str, Any]] = []
-            if model is not None and tokenizer is not None and index is not None:
+            use_rag = top_n > 0 and (
+                _rag_api_base()
+                or (model is not None and tokenizer is not None and index is not None)
+            )
+            if use_rag:
                 # Full RAG path: retrieve repair demos per unique rule
                 for defect in unique_defects:
                     defect_rule = defect["rule"]
@@ -835,6 +1354,10 @@ def process_file_with_codelinter_blocks(
                         )
             else:
                 # No RAG available: keep all unique_defects, rag_prompt stays empty
+                valid_defects = unique_defects
+            if use_rag and not valid_defects:
+                # If retrieval returns no matches, fall back to non-RAG defects
+                # so we still include defect descriptions in the prompt.
                 valid_defects = unique_defects
 
             for i, defect in enumerate(defects):
@@ -1020,6 +1543,18 @@ def _is_project_root(path: Path) -> bool:
     return False
 
 
+def _sanitize_model_dir(name: str) -> str:
+    return name.replace("/", "_").replace(":", "_").replace(" ", "_")
+
+
+def _make_model_dir(model_name: str, run_tag: Optional[str]) -> str:
+    base = _sanitize_model_dir(model_name)
+    if not run_tag:
+        return base
+    tag = _sanitize_model_dir(run_tag)
+    return f"{base}__{tag}"
+
+
 def parse_args() -> argparse.Namespace:
     ap = argparse.ArgumentParser(
         description=(
@@ -1067,16 +1602,41 @@ def parse_args() -> argparse.Namespace:
         help="Repair model name used by get_answer (default: %(default)s).",
     )
     ap.add_argument(
+        "--run-tag",
+        type=str,
+        default=None,
+        help=(
+            "Optional run tag appended to output/log directories "
+            "(keeps model-name for LLM calls).",
+        ),
+    )
+    ap.add_argument(
         "--rag-type",
         type=str,
         default="difflib",
-        help="RAG retriever type passed to get_rag_prompt (default: %(default)s).",
+        help=(
+            "RAG retriever type passed to get_rag_prompt "
+            "(gpt_diff/difflib/no_diff; default: %(default)s)."
+        ),
     )
     ap.add_argument(
         "--top-n",
         type=int,
         default=1,
         help="Number of RAG examples per rule (default: %(default)s).",
+    )
+    ap.add_argument(
+        "--surrounding-context",
+        dest="surrounding_context",
+        action="store_true",
+        default=True,
+        help="Use surrounding context blocks (default: true).",
+    )
+    ap.add_argument(
+        "--full-context",
+        dest="surrounding_context",
+        action="store_false",
+        help="Use full file as context (disable surrounding blocks).",
     )
     ap.add_argument(
         "--max-attempts",
@@ -1087,8 +1647,11 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument(
         "--max-workers",
         type=int,
-        default=16,
-        help="Maximum parallel worker threads (default: %(default)s).",
+        default=4,
+        help=(
+            "Maximum parallel worker threads within a project "
+            "(default: %(default)s)."
+        ),
     )
     ap.add_argument(
         "--round",
@@ -1105,10 +1668,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     project_root = args.project_root.resolve()
-    # Sanitize model name for filesystem use
-    model_dir = (
-        args.model_name.replace("/", "_").replace(":", "_").replace(" ", "_")
-    )
+    model_dir = _make_model_dir(args.model_name, args.run_tag)
 
     # Workspace root lives under repo_new so that CodeLinter sees a valid project path.
     workspace_base = REPO_ROOT / "repo_new" / "_haprepair_fixed" / model_dir / f"round_{args.round}"
@@ -1142,9 +1702,10 @@ def main() -> None:
 
     # Prepare workspace: copy the entire project into repo_new/_haprepair_fixed/...
     workspace_root.parent.mkdir(parents=True, exist_ok=True)
-    if workspace_root.exists():
-        shutil.rmtree(workspace_root)
-    shutil.copytree(project_root, workspace_root)
+    with _workspace_copy_lock():
+        if workspace_root.exists():
+            shutil.rmtree(workspace_root)
+        shutil.copytree(project_root, workspace_root)
 
     # Configure logging: stdout + per-project log file under logs/fix_projects_codelinter
     logging.basicConfig(
@@ -1173,6 +1734,18 @@ def main() -> None:
 
     logger.info(f"Parsing CodeLinter log: {log_path}")
     findings = parse_codelinter_log(log_path)
+    parsing_initial = parse_parsing_errors(log_path)
+    perf_initial = sum(1 for f in findings if f.get("category") == "performance")
+    sec_initial = sum(1 for f in findings if f.get("category") == "security")
+    logger.info(
+        "[summary] Before round %s: total_defects=%d, "
+        "perf_defects=%d, security_defects=%d, parsing_errors=%d",
+        args.round,
+        len(findings),
+        perf_initial,
+        sec_initial,
+        len(parsing_initial),
+    )
     if not findings:
         logger.info("No performance/security findings detected; copying project as-is.")
         # Copy workspace to snapshot output_root
@@ -1187,9 +1760,17 @@ def main() -> None:
         fp = Path(f["file_path"]).resolve()
         by_file.setdefault(fp, []).append(f)
 
-    # Load RAG model + index
-    logger.info("Loading RAG model and index...")
-    model, tokenizer, index = load_model_and_index()
+    # Load RAG model + index only when needed (skip if using remote RAG API)
+    rag_api_base = _rag_api_base()
+    if args.top_n > 0 and not rag_api_base:
+        logger.info("Loading RAG model and index...")
+        model, tokenizer, index = load_model_and_index()
+    else:
+        if rag_api_base:
+            logger.info(f"Using RAG API at {rag_api_base}; skipping local model/index load.")
+        else:
+            logger.info("RAG disabled (top_n <= 0); skipping RAG model/index load.")
+        model = tokenizer = index = None
 
     # Collect all ArkTS/TS files under workspace_root (for copying unmodified ones)
     all_files: List[Path] = [
@@ -1221,7 +1802,7 @@ def main() -> None:
                 index,
                 rag_type=args.rag_type,
                 top_n=args.top_n,
-                surrounding_context=True,
+                surrounding_context=args.surrounding_context,
                 repair_model_name=args.model_name,
                 max_attempts=args.max_attempts,
             ): file_path
@@ -1272,8 +1853,19 @@ def main() -> None:
         logger.error(f"Parsing-error repair failed (non-fatal): {exc}")
 
     # Post-fix CodeLinter run to summarize remaining defects for this round.
+    summary_log_dir = log_dir.parent / f"{log_dir.name}_after_round{args.round}"
+    findings_final: Optional[List[Dict[str, Any]]] = None
+    parsing_final: Optional[List[Dict[str, Any]]] = None
+    perf_final: Optional[int] = None
+    sec_final: Optional[int] = None
+    postfix_failed = False
+    # Optional baseline re-check on the *input* snapshot. This guards against:
+    # - nondeterminism / environment drift during long runs,
+    # - cases where the initial log under-reports findings (e.g., partial analysis),
+    # so that rollback decisions compare against a stable "input snapshot" reference.
+    baseline_findings: Optional[List[Dict[str, Any]]] = None
+    baseline_parsing: Optional[List[Dict[str, Any]]] = None
     try:
-        summary_log_dir = log_dir.parent / f"{log_dir.name}_after_round{args.round}"
         logger.info(
             f"Running post-fix CodeLinter on {workspace_root}, "
             f"logs -> {summary_log_dir}"
@@ -1291,18 +1883,97 @@ def main() -> None:
             1 for f in findings_final if f.get("category") == "security"
         )
         logger.info(
-            "[summary] After round %s: total_defects=%d, "
-            "perf_defects=%d, security_defects=%d, parsing_errors=%d",
+            "[summary] Round %s: before total_defects=%d (perf=%d, security=%d, parsing_errors=%d) "
+            "-> after total_defects=%d (perf=%d, security=%d, parsing_errors=%d)",
             args.round,
+            len(findings),
+            perf_initial,
+            sec_initial,
+            len(parsing_initial),
             len(findings_final),
             perf_final,
             sec_final,
             len(parsing_final),
         )
     except Exception as exc:
-        logger.error(f"Post-fix CodeLinter summary failed (non-fatal): {exc}")
+        postfix_failed = True
+        logger.error(f"Post-fix CodeLinter summary failed (will rollback): {exc}")
 
-    # Final snapshot: copy workspace_root (with parsing fixes) to revision tree
+    def _should_rollback() -> bool:
+        if postfix_failed:
+            return True
+        if findings_final is None or parsing_final is None:
+            return True
+        after_defects = len(findings_final)
+        after_parsing = len(parsing_final)
+        # Prefer comparing against the baseline defects of the input snapshot
+        # if available; otherwise fall back to the initial "before" counts.
+        before_defects = (
+            len(baseline_findings) if baseline_findings is not None else len(findings)
+        )
+        before_parsing = (
+            len(baseline_parsing) if baseline_parsing is not None else len(parsing_initial)
+        )
+        if after_defects > before_defects:
+            return True
+        if after_defects == before_defects and after_parsing > before_parsing:
+            return True
+        return False
+
+    # If the post-fix results look worse than the initial counts, re-run CodeLinter
+    # on the input snapshot (project_root) to get a stable baseline for rollback.
+    if (
+        not postfix_failed
+        and findings_final is not None
+        and parsing_final is not None
+        and (
+            len(findings_final) > len(findings)
+            or (len(findings_final) == len(findings) and len(parsing_final) > len(parsing_initial))
+        )
+    ):
+        baseline_log_dir = log_dir.parent / f"{log_dir.name}_baseline_input_round{args.round}"
+        try:
+            logger.info(
+                f"[baseline] Re-running CodeLinter on input snapshot {project_root}, "
+                f"logs -> {baseline_log_dir}"
+            )
+            baseline_log_path = run_codelinter_for_project(
+                project_root, baseline_log_dir, config
+            )
+            baseline_findings = parse_codelinter_log(baseline_log_path)
+            baseline_parsing = parse_parsing_errors(baseline_log_path)
+            logger.info(
+                "[baseline] Input snapshot defects=%d (parsing_errors=%d)",
+                len(baseline_findings),
+                len(baseline_parsing),
+            )
+        except Exception as exc:
+            logger.warning(f"[baseline] Failed to compute input baseline; falling back to initial counts: {exc}")
+
+    # Final snapshot: if the round makes things worse, keep the input snapshot.
+    if _should_rollback():
+        logger.warning(
+            "[rollback] Round %s made results worse (or post-fix failed); keeping input snapshot %s",
+            args.round,
+            project_root,
+        )
+        # Overwrite the after_round log with the retained snapshot's results so
+        # downstream summaries reflect what we actually keep.
+        try:
+            logger.info(
+                f"[rollback] Running CodeLinter on retained input {project_root}, "
+                f"logs -> {summary_log_dir}"
+            )
+            _ = run_codelinter_for_project(project_root, summary_log_dir, config)
+        except Exception as exc:
+            logger.error(f"[rollback] Failed to regenerate after_round log: {exc}")
+
+        if out_root.exists():
+            shutil.rmtree(out_root)
+        shutil.copytree(project_root, out_root)
+        logger.info(f"Repair completed with rollback. Output project written to: {out_root}")
+        return
+
     if out_root.exists():
         shutil.rmtree(out_root)
     shutil.copytree(workspace_root, out_root)

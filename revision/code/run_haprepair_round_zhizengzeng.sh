@@ -16,6 +16,13 @@ ROUND="${1:-1}"
 MODEL="${2:-gpt-5-mini}"
 MAX_PROJECT_WORKERS="${3:-1}"
 
+# Some providers expose Qwen models with '-' ids (e.g. qwen3-30b-a3b), but
+# users sometimes pass 'qwen3=30b-a3b'. Normalize to avoid silent 200+error
+# responses (model_not_found).
+if [[ "${MODEL}" == *"="* ]]; then
+  MODEL="${MODEL//=/-}"
+fi
+
 # 激活 VulRAG 环境
 if [ -f "/home/miniconda3/etc/profile.d/conda.sh" ]; then
   # shellcheck disable=SC1091

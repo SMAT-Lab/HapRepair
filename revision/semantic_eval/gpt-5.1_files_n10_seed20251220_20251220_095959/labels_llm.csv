@@ -1,0 +1,11 @@
+sample_id,label,annotator,notes,project,round_fixed,category,rule_id,rel_path,line
+d89b8e5a18a3,Correct,llm:gpt-5.1+deepseek-chat,"conflict->LikelyCorrect: gpt-5.1=Correct(0.86), deepseek-chat=Incorrect(0.9)",flutter_embedding,1,,,flutter/src/main/ets/plugin/editing/TextInputPlugin.ets,
+754a779f3589,Correct,llm:gpt-5.1+deepseek-chat,"risk->Correct: gpt-5.1=correct, deepseek-chat=correct",wifi_testapp,1,,,entry/src/main/ets/pages/subStabilityTest/wifiConnectStabilityTest.ets,
+c5954507c022,Correct,llm:gpt-5.1+deepseek-chat,"risk->Correct: gpt-5.1=correct, deepseek-chat=correct",Info,1,,,entry/src/main/ets/pages/progress/ProgressForegroundColor.ets,
+36a6a9d49c5e,Correct,llm:gpt-5.1+deepseek-chat,"risk->Correct: gpt-5.1=correct, deepseek-chat=correct",Info,1,,,entry/src/main/ets/pages/texttimer/TextTimerExample004.ets,
+621621e82801,Correct,llm:gpt-5.1+deepseek-chat,"risk->Correct: gpt-5.1=correct, deepseek-chat=correct",flutter_embedding,1,,,flutter/src/main/ets/embedding/ohos/FlutterEntry.ets,
+1d0e2210ea65,Correct,llm:gpt-5.1+deepseek-chat,"risk->Correct: gpt-5.1=correct, deepseek-chat=correct",flutter_embedding,1,,,flutter/src/main/ets/plugin/common/BasicMessageChannel.ets,
+10317abfb42e,Incorrect,llm:gpt-5.1+deepseek-chat,"risk->Incorrect: gpt-5.1=incorrect(Incorrect), deepseek-chat=incorrect(Incorrect)",ace_ets_module_swiper,4,,,entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin67.ets,
+f262ae59768c,Correct,llm:gpt-5.1+deepseek-chat,"risk->Correct: gpt-5.1=correct, deepseek-chat=correct",bluetoothtest,4,,,entry/src/main/ets/pages/subAutoTestManager/subSppAutoTestManager/sppServerAutoTestManager.ets,
+2662a2a03475,Correct,llm:gpt-5.1+deepseek-chat,"risk->Correct: gpt-5.1=correct, deepseek-chat=correct",flutter_embedding,3,,,flutter/src/main/ets/embedding/engine/FlutterEngine.ets,
+2af0d1145566,Correct,llm:gpt-5.1+deepseek-chat,"risk->Correct: gpt-5.1=correct, deepseek-chat=correct",flutter_embedding,3,,,flutter/src/main/ets/embedding/engine/FlutterEngineConnectionRegistry.ets,

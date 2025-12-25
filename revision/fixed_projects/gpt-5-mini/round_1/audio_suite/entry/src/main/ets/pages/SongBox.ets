@@ -32,7 +32,7 @@ export struct SongBox {
   build() {
     NavDestination() {
       Column() {
-        List({ initialIndex: 0 }) {
+        List({ initialIndex: 0 }).width('100%').height('100%') {
           if (this.playList.size != 0) {
             ForEach(Array.from(this.playList?.values()), (info: SongInfo) => {
               if (info.uri !== 'format' && info.uri !== 'resultPcmBuffer') {

@@ -1,0 +1,14 @@
+{
+  "files": [
+    "**/*.ets",
+    "**/*.ts"
+  ],
+  "ruleSet": [
+    "plugin:@performance/all",
+    "plugin:@security/all",
+    "plugin:@ArkTS-eslint/all"
+  ],
+  "rules": {
+  }
+}
+

@@ -82,9 +82,11 @@ export struct SetFormatDialog {
 
                     }.margin({ bottom: $r('app.float.margin_10') })
 
-                    Text('采样率（混音输入最高采样率）')
-                        .fontWeight(FontWeight.Bold)
-                    // .fontColor($r('app.color.index_title_text_color))
+
+                      Text('采样率（混音输入最高采样率）')
+                          .fontWeight(FontWeight.Bold)
+                      // .fontColor($r('app.color.index_title_text_color))
+                    
 
                     Flex({
                         direction: FlexDirection.Row,
@@ -105,8 +107,8 @@ export struct SetFormatDialog {
                                     }
                                 })
                             }.width('100')
-                        }, (item: number) => `${item}`)
-                    
+                        }, (item, index) => item)
+
                     }.margin({ bottom: $r('app.float.margin_10') })
 
                     Column() {
@@ -170,7 +172,7 @@ export struct SetFormatDialog {
                                     }
                                 })
                             }
-                        }, (item: number) => item)
+                        }, (item, index) => item)
                     }.margin({ bottom: $r('app.float.margin_10') })
 
                     Column() {

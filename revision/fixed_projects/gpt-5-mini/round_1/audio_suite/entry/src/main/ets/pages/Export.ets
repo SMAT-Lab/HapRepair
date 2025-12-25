@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd. 2025-2025. All rights reserved.
  */
@@ -11,7 +12,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { SongInfo } from '../utils/importSongs/InterfaceInfo';
 import { MainTitleTextModifier, saveFileBuffer } from '../utils/ExportFile';
 import { taskpool } from '@kit.ArkTS';
-import { SymbolGlyphModifier } from '@kit.ArkUI';
+import { SymbolGlyphModifier, TextModifier } from '@kit.ArkUI';
 import { getDateStringWithTimeStamp } from '../utils/Util';
 
 const TAG: string = 'AudioEditTestApp_Export';
@@ -36,7 +37,7 @@ export struct Export {
   scroller: Scroller = new Scroller();
   // 主标题样式修改器
   @State mainTitleModifier: MainTitleTextModifier = new MainTitleTextModifier();
-  private symbolModifier: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.chevron_backward')).fontColor([$r('app.color.index_title_text_color')]);
+  private symbolModifier: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.chevron_backward')).fontColor([$r('app.color.index_title_text_color')])
   @StorageLink('playList') playList: Map<string, SongInfo> = new Map();
   @StorageLink('songWaveList') songWaveList: Map<string, SongInfo> = new Map();
   private newAudioFileName: string = '';
@@ -62,11 +63,11 @@ export struct Export {
       Scroll(this.scroller) {
         Column() {
           Column() {
-            Column() {
-              Text('音频格式')
-                .fontWeight(FontWeight.Bold)
-                .fontColor($r('app.color.index_title_text_color'))
-            }
+
+            Text('音频格式')
+              .fontWeight(FontWeight.Bold)
+              .fontColor($r('app.color.index_title_text_color'))
+            
 
             Column() {
               Row() {
@@ -92,11 +93,11 @@ export struct Export {
               
             }.margin({ bottom: $r('app.float.margin_35') })
 
-            Column() {
-              Text('采样率')
-                .fontWeight(FontWeight.Bold)
-                .fontColor($r('app.color.index_title_text_color'))
-            }
+
+            Text('采样率')
+              .fontWeight(FontWeight.Bold)
+              .fontColor($r('app.color.index_title_text_color'))
+            
 
             Flex({
               direction: FlexDirection.Row,
@@ -117,7 +118,7 @@ export struct Export {
                     }
                   })
                 }.width('100')
-              })
+              }, (item, index) => item)
 
             }.margin({ bottom: $r('app.float.margin_35') })
 
@@ -182,7 +183,7 @@ export struct Export {
                     }
                   })
                 }
-              })
+              }, (item, index) => item)
             }.margin({ bottom: $r('app.float.margin_10') })
 
             Column() {

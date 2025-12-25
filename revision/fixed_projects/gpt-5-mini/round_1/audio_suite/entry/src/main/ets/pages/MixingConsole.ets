@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd. 2025-2025. All rights reserved.
  */
@@ -46,7 +47,7 @@ export struct MixingConsole {
     // 是否录制
     @State g_isRecord: boolean = false;
     // 导出中
-    @State isExported: boolean = false;
+    isExported: boolean = false;
     @State mixerList: Array<Node> = [];
     @State mixerNode: Node = {
         id: util.generateRandomUUID(true),
@@ -63,7 +64,7 @@ export struct MixingConsole {
     @State isPlayRealTime: boolean = false;
     // 导出样式
     @State newAudioFileName: string = '';
-    @State audioFormate: string = '.wav';
+    audioFormate: string = '.wav';
     @State sampleRate: number = -1;
     @State channels: number = -1;
     @State bitsPerSample: number = -1;
@@ -71,12 +72,7 @@ export struct MixingConsole {
     @State isLeft: boolean = true;
     @State selectedNode: string = '';
     @State nodeType: NodeType = NodeType.INPUT;
-    @State finished: boolean = false;
-
-    // Dialog controllers will be initialized in aboutToAppear to avoid referencing `this` during field initialization
-    dialogControllerSet: CustomDialogController | null = null;
-    checkNodeDialogController: CustomDialogController | null = null;
-    addOutputDialogController: CustomDialogController | null = null;
+    finished: boolean = false;
 
     aboutToAppear(): void {
         Logger.info(TAG, 'aboutToAppear');
@@ -88,61 +84,7 @@ export struct MixingConsole {
         this.isPlayRealTime = false;
         // 初始化空列表（保留5个空位）
         this.inputList = Array(this.MAX_TRACKS).fill(null);
-
-        // Initialize dialog controllers here so they can reference `this`
-        this.dialogControllerSet = new CustomDialogController({
-            builder: SetFormatDialog({
-                newAudioFileName: this.newAudioFileName,
-                sampleRate: this.sampleRate,
-                channels: this.channels,
-                bitsPerSample: this.bitsPerSample,
-                nodeList: this.nodeList,
-                cancel: () => {
-
-                },
-                confirm: () => {
-
-                }
-            }),
-            maskColor: $r('app.color.mixing_console_mask_color'),
-        });
-
-        this.checkNodeDialogController = new CustomDialogController({
-            builder: CheckNodeDialog({
-                isLeft: this.isLeft,
-                selectedNode: this.selectedNode,
-                mixerList: this.mixerList,
-                inputList: this.inputList,
-                nodeList: this.nodeList,
-                nodeType: this.nodeType,
-                isPlayRealTime: this.isPlayRealTime,
-                param: this.param,
-                cancel: () => {
-
-                },
-                confirm: () => {
-
-                }
-            }),
-        });
-
-        this.addOutputDialogController = new CustomDialogController({
-            builder: AlertDialog({
-                primaryTitle: '添加OUTPUT节点',
-                primaryButton: {
-                    value: '取消'
-                },
-                secondaryButton: {
-                    value: '确认',
-                    role: ButtonRole.ERROR,
-                    action: () => {
-                        const outputId = util.generateRandomUUID(true);
-                        this.outputNode.id = outputId;
-                    }
-                }
-            }),
-        });
-
+        
         audioNapi.registerFinishedCallback((result: boolean) => {
             this.finished = result;
             Logger.info(TAG, `registerFinishedCallback finished: ${JSON.stringify(this.finished)}`);
@@ -204,6 +146,62 @@ export struct MixingConsole {
             windowClass.setPreferredOrientation(window.Orientation.AUTO_ROTATION);
         });
     }
+
+    // 设置弹窗
+    dialogControllerSet: CustomDialogController | null = new CustomDialogController({
+        builder: SetFormatDialog({
+            newAudioFileName: this.newAudioFileName,
+            sampleRate: this.sampleRate,
+            channels: this.channels,
+            bitsPerSample: this.bitsPerSample,
+            nodeList: this.nodeList,
+            cancel: () => {
+
+            },
+            confirm: () => {
+
+            }
+        }),
+        maskColor: $r('app.color.mixing_console_mask_color'),
+    });
+
+    // 查看效果节点信息弹窗
+    checkNodeDialogController: CustomDialogController | null = new CustomDialogController({
+        builder: CheckNodeDialog({
+            isLeft: this.isLeft,
+            selectedNode: this.selectedNode,
+            mixerList: this.mixerList,
+            inputList: this.inputList,
+            nodeList: this.nodeList,
+            nodeType: this.nodeType,
+            isPlayRealTime: this.isPlayRealTime,
+            param: this.param,
+            cancel: () => {
+
+            },
+            confirm: () => {
+
+            }
+        }),
+    });
+
+    // 添加output节点弹窗
+    addOutputDialogController: CustomDialogController = new CustomDialogController({
+        builder: AlertDialog({
+            primaryTitle: '添加OUTPUT节点',
+            primaryButton: {
+                value: '取消'
+            },
+            secondaryButton: {
+                value: '确认',
+                role: ButtonRole.ERROR,
+                action: () => {
+                    const outputId = util.generateRandomUUID(true);
+                    this.outputNode.id = outputId;
+                }
+            }
+        }),
+    });
 
     build() {
         NavDestination() {
@@ -299,7 +297,7 @@ export struct MixingConsole {
                                         Column() {
                                             this.EffectNode(true, node.type, node.id, info)
                                         }.margin({top: $r('app.float.margin_5')})
-                                    })
+                                    }, (item, index) => item)
                                 } else {
                                     Column() {
                                         this.Node(true, info);
@@ -328,11 +326,14 @@ export struct MixingConsole {
                                                     }
                                                     Logger.info(TAG, `fd: ${this.fd}`);
                                                     fs.closeSync(this.fd);
+                                                    let sampleRate = this.sampleRate;
+                                                    let channels = this.channels;
+                                                    let bitsPerSample = this.bitsPerSample;
                                                     setTimeout(() => {
                                                         if (tmpInfo) {
-                                                            tmpInfo.sampleRate = this.sampleRate;
-                                                            tmpInfo.channels = this.channels;
-                                                            tmpInfo.bitsPerSample = this.bitsPerSample;
+                                                            tmpInfo.sampleRate = sampleRate;
+                                                            tmpInfo.channels = channels;
+                                                            tmpInfo.bitsPerSample = bitsPerSample;
                                                         }
                                                     }, 100);
                                                     this.nodeList.set(inputId, tmpInfo);
@@ -356,7 +357,7 @@ export struct MixingConsole {
                         }
                         .height('20%')
                         .width('100%')
-                    })
+                    }, (item, index) => item)
                 }
                 .height('100%')
                 .layoutWeight(1)
@@ -377,7 +378,7 @@ export struct MixingConsole {
                             Column() {
                                 this.EffectNode(false, node.type, node.id);
                             }
-                        })
+                        }, (item, index) => item)
                         if (this.nodeList.size > 0) {
                             Column() {
                                 this.EffectNode(false, NodeType.OUTPUT, this.outputNode.id);
@@ -389,7 +390,7 @@ export struct MixingConsole {
                                 this.Node(false);
                             }.onClick(() => {
                                 if (this.nodeList.size > 0) {
-                                    this.addOutputDialogController?.open();
+                                    this.addOutputDialogController.open();
                                 } else {
                                     this.getUIContext().showAlertDialog({
                                         title: '提示',
@@ -501,18 +502,18 @@ export struct MixingConsole {
     @Builder
     Node(isLeft: boolean, info?:SongInfo | null, type?:NodeType) {
         if ( info && info.songName && type === NodeType.INPUT){
-            Column(){
-                Text(info.songName)
-                    .height('60%')
-                    .width("15%")
-                    .margin({right: $r('app.float.margin_5')})
-                    .textAlign(TextAlign.Center)
-                    .backgroundColor(ColorMap.get(type))
-                    .fontSize($r('app.float.font_size_10'))
-                    .maxLines(1)
-                    .textOverflow({ overflow: TextOverflow.Ellipsis })
-                    .borderRadius(5)
-            }
+
+              Text(info.songName)
+                  .height('60%')
+                  .width("15%")
+                  .margin({right: $r('app.float.margin_5')})
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(ColorMap.get(type))
+                  .fontSize($r('app.float.font_size_10'))
+                  .maxLines(1)
+                  .textOverflow({ overflow: TextOverflow.Ellipsis })
+                  .borderRadius(5)
+            
         } else if (type) {
             Text(type)
                 .height(isLeft ? '60%' : '20%')

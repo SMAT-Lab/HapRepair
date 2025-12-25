@@ -46,10 +46,16 @@ def load_model_and_index():
     return model, tokenizer, index
 
 def get_embedding(text, model, tokenizer):
-    inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
-    outputs = model(**inputs)
-    embeddings = outputs.last_hidden_state.mean(dim=1).squeeze().detach().numpy()
-    return embeddings
+    import torch
+
+    model.eval()
+    with torch.inference_mode():
+        device = next(model.parameters()).device
+        inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
+        inputs = {k: v.to(device) for k, v in inputs.items()}
+        outputs = model(**inputs)
+        embeddings = outputs.last_hidden_state.mean(dim=1).squeeze().cpu().numpy()
+        return embeddings
 
 def process_file(file, proj_dir, proj_repair_dir, logger, rules_dict, model, tokenizer, index, rag_type='difflib', top_n=1, surrounding_context=True, repair_model_name='gpt-4o-2024-08-06'):
     file_logs = []

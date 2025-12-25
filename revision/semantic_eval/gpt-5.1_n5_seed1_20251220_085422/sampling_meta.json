@@ -1,0 +1,16 @@
+{
+  "run_id": "gpt-5.1_n5_seed1_20251220_085422",
+  "model_dir": "gpt-5.1",
+  "max_round": 1,
+  "n_sample": 5,
+  "seed": 1,
+  "candidate_count": 8530,
+  "sample_count": 5,
+  "high_rules_top_k": 20,
+  "primary_targets": {
+    "performance|early": 2,
+    "security|early": 3
+  },
+  "notes": "A resolved finding is defined as present in round_r log but absent in round_r_after_roundr log, keyed by (rel_path,line,column,category,rule_id). This is a static proxy for repair success.",
+  "skipped": []
+}

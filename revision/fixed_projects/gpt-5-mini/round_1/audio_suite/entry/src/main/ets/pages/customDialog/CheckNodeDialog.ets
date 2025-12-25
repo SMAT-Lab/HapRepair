@@ -371,7 +371,8 @@ struct AudioSeparationComponent {
     @Link selectedAudioSeparation: AudioSeparationType;
     onCancel?: () => void;
     onAgree?: () => void;
-    @State separatingShow: boolean = false;
+    // separatingShow 未发生变化，改为普通变量
+    separatingShow: boolean = false;
     @State aissProgress: number = 0;
 
     build() {
@@ -473,7 +474,7 @@ struct EffectNodeDialog {
     //美化数据，默认是普通
     @State selectedVoiceBeautifier: VoiceBeautifierType = VoiceBeautifierType.VOICE_BEAUTIFIER_TYPE_NORMAL;
     //降噪数据，默认是无
-    @State selectedNoiseReduction: number = -1;
+    selectedNoiseReduction: number = -1;
     //音源分离，默认为人声
     @State selectedAudioSeparation: AudioSeparationType = AudioSeparationType.AUDIO_NODE_HUMAN_SOUND_OUTPORT_TYPE;
     controllerTwo?: CustomDialogController;
@@ -790,14 +791,14 @@ struct NodeDetailDialog {
                 .fontWeight(FontWeight.Bold)
                 .margin({ top: $r('app.float.margin_10'), bottom: $r('app.float.margin_10') })
             Row() {
-                Column() {
-                    Text(`节点类型：`)
-                        .fontWeight(FontWeight.Bold)
-                }
 
-                Column() {
-                    Text(`${this.nodeType}`)
-                }
+                  Text(`节点类型：`)
+                      .fontWeight(FontWeight.Bold)
+                
+
+
+                      Text(`${this.nodeType}`)
+                
             }
 
             if (this.nodeType === NodeType.EQ) {
@@ -806,10 +807,10 @@ struct NodeDetailDialog {
                         .fontWeight(FontWeight.Bold)
                     if (this.balanceBandGains.length > 0) {
                         ForEach(this.balanceBandGains, (item: number, index) => {
-                            Column() {
-                                Text(`${item}`)
-                                    .margin(5)
-                            }
+
+                              Text(`${item}`)
+                                  .margin(5)
+                            
                         })
                     } else {
                         Text('-')
@@ -818,75 +819,75 @@ struct NodeDetailDialog {
             }
             if (this.nodeType === NodeType.FIELD) {
                 Row() {
-                    Column() {
-                        Text(`声场参数：`)
-                            .fontWeight(FontWeight.Bold)
-                    }
 
-                    Column() {
-                        Text(`${this.soundFiledType}`)
-                    }
+                      Text(`声场参数：`)
+                          .fontWeight(FontWeight.Bold)
+                    
+
+
+                      Text(`${this.soundFiledType}`)
+                    
                 }
             }
             if (this.nodeType === NodeType.ENV) {
                 Row() {
-                    Column() {
-                        Text(`环境参数：`)
-                            .fontWeight(FontWeight.Bold)
-                    }
 
-                    Column() {
-                        Text(`${this.environmentType}`)
-                    }
+                      Text(`环境参数：`)
+                          .fontWeight(FontWeight.Bold)
+                    
+
+
+                      Text(`${this.environmentType}`)
+                    
                 }
             }
             if (this.nodeType === NodeType.VB) {
                 Row() {
-                    Column() {
-                        Text(`美化参数：`)
-                            .fontWeight(FontWeight.Bold)
-                    }
 
-                    Column() {
-                        Text(`${this.voiceBeautifierType}`)
-                    }
+                      Text(`美化参数：`)
+                          .fontWeight(FontWeight.Bold)
+                    
+
+
+                      Text(`${this.voiceBeautifierType}`)
+                    
                 }
             }
             if (this.nodeType === NodeType.SEPARATION) {
                 Row() {
-                    Column() {
-                        Text(`音源分离类型：`)
-                            .fontWeight(FontWeight.Bold)
-                    }
 
-                    Column() {
-                        Text(`${this.audioSeparation}`)
-                    }
+                      Text(`音源分离类型：`)
+                          .fontWeight(FontWeight.Bold)
+                    
+
+
+                      Text(`${this.audioSeparation}`)
+                    
                 }
             }
             if (this.nodeType === NodeType.INPUT) {
                 Column() {
                     Text('音频参数：')
                         .fontWeight(FontWeight.Bold)
-                    Row() {
-                        Text(`歌曲名称: ${this.songName}`)
-                    }
 
-                    Row() {
-                        Text(`表演者: ${this.singerName ?? '-'}`)
-                    }
+                      Text(`歌曲名称: ${this.songName}`)
+                    
 
-                    Row() {
-                        Text(`声道: ${this.channels}`)
-                    }
 
-                    Row() {
-                        Text(`采样率: ${this.sampleRate}`)
-                    }
+                      Text(`表演者: ${this.singerName ?? '-'}`)
+                    
 
-                    Row() {
-                        Text(`位深: ${this.bitsPerSample}`)
-                    }
+
+                      Text(`声道: ${this.channels}`)
+                    
+
+
+                      Text(`采样率: ${this.sampleRate}`)
+                    
+
+
+                      Text(`位深: ${this.bitsPerSample}`)
+                    
                 }.padding({ top: $r('app.float.padding_20') })
             }
             Button('确定')
@@ -919,7 +920,7 @@ struct SetNodeDialog {
     //美化数据，默认是普通
     @State selectedVoiceBeautifier: VoiceBeautifierType = VoiceBeautifierType.VOICE_BEAUTIFIER_TYPE_NORMAL;
     //音源分离
-    @State selectedAudioSeparation: AudioSeparationType = AudioSeparationType.AUDIO_NODE_HUMAN_SOUND_OUTPORT_TYPE;
+    selectedAudioSeparation: AudioSeparationType = AudioSeparationType.AUDIO_NODE_HUMAN_SOUND_OUTPORT_TYPE;
     setNodeController?: CustomDialogController;
 
     aboutToAppear(): void {
@@ -972,163 +973,163 @@ struct SetNodeDialog {
     }
 
     build() {
-        Column() {
-            Row() {
-                if (this.nodeType === NodeType.EQ) {
-                    EquailizerComponent({
-                        balanceBandGains: this.balanceBandGains,
-                        onCancel: () => {
-                            this.setNodeController?.close();
-                        },
-                        onAgree: () => {
-                            //修改效果节点---数据处理
-                            const node = this.isLeft ?
-                                this.nodeList.get(this.currentInputId)?.nodes?.find(node => node.id ===
-                                this.selectedNode) :
-                                this.mixerList.find(node => node.id === this.selectedNode)
-                            if (node) {
-                                let result =
-                                    audioNapi.setEqualizerFrequencyBandGains(this.balanceBandGains, this.selectedNode,
-                                        this.currentInputId);
-                                if (result !== 0) {
-                                    Logger.error(TAG, `setEqualizerFrequencyBandGains result: ${result}`);
-                                    this.getUIContext().showAlertDialog({
-                                        message: '修改均衡节点失败',
-                                        autoCancel: true
-                                    });
-                                    return;
-                                }
-                                node.balanceBandGains = this.balanceBandGains;
-                            } else {
-                                this.getUIContext().showAlertDialog({
-                                    message: 'not find node in nodeList or mixerList',
-                                    autoCancel: true
-                                });
-                                return;
-                            }
 
-                            this.setNodeController?.close();
-                        }
-                    })
-                } else if (this.nodeType === NodeType.FIELD) {
-                    FieldComponent({
-                        selectedSoundFiled: this.selectedSoundFiled,
-                        onCancel: () => {
-                            this.setNodeController?.close();
-                        },
-                        onAgree: () => {
-                            //修改效果节点---数据处理
-                            const node = this.isLeft ?
-                                this.nodeList.get(this.currentInputId)?.nodes?.find(node => node.id ===
-                                this.selectedNode) :
-                                this.mixerList.find(node => node.id === this.selectedNode)
-                            if (node) {
-                                let result = audioNapi.resetFieldEffect(this.currentInputId, this.selectedSoundFiled,
-                                    this.selectedNode);
-                                if (result !== 0) {
-                                    this.getUIContext().showAlertDialog({
-                                        message: '设置声场节点失败',
-                                        autoCancel: true
-                                    });
-                                    return;
-                                }
-                                node.soundFiledType = this.selectedSoundFiled;
-                            } else {
-                                this.getUIContext().showAlertDialog({
-                                    message: 'not find node in nodeList or mixerList',
-                                    autoCancel: true
-                                });
-                                return;
-                            }
+          Row() {
+              if (this.nodeType === NodeType.EQ) {
+                  EquailizerComponent({
+                      balanceBandGains: this.balanceBandGains,
+                      onCancel: () => {
+                          this.setNodeController?.close();
+                      },
+                      onAgree: () => {
+                          //修改效果节点---数据处理
+                          const node = this.isLeft ?
+                              this.nodeList.get(this.currentInputId)?.nodes?.find(node => node.id ===
+                              this.selectedNode) :
+                              this.mixerList.find(node => node.id === this.selectedNode)
+                          if (node) {
+                              let result =
+                                  audioNapi.setEqualizerFrequencyBandGains(this.balanceBandGains, this.selectedNode,
+                                      this.currentInputId);
+                              if (result !== 0) {
+                                  Logger.error(TAG, `setEqualizerFrequencyBandGains result: ${result}`);
+                                  this.getUIContext().showAlertDialog({
+                                      message: '修改均衡节点失败',
+                                      autoCancel: true
+                                  });
+                                  return;
+                              }
+                              node.balanceBandGains = this.balanceBandGains;
+                          } else {
+                              this.getUIContext().showAlertDialog({
+                                  message: 'not find node in nodeList or mixerList',
+                                  autoCancel: true
+                              });
+                              return;
+                          }
 
-                            this.setNodeController?.close();
-                        }
-                    })
-                } else if (this.nodeType === NodeType.ENV) {
-                    EnvironmentComponent({
-                        selectedEnvironment: this.selectedEnvironment,
-                        onCancel: () => {
-                            this.setNodeController?.close();
-                        },
-                        onAgree: () => {
-                            //修改效果节点---数据处理
-                            const node = this.isLeft ?
-                                this.nodeList.get(this.currentInputId)?.nodes?.find(node => node.id ===
-                                this.selectedNode) :
-                                this.mixerList.find(node => node.id === this.selectedNode)
-                            if (node) {
-                                let result = audioNapi.resetEnvEffect(this.currentInputId, this.selectedNode,
-                                    this.selectedEnvironment);
-                                if (result !== 0) {
-                                    this.getUIContext().showAlertDialog({
-                                        message: '设置环境节点失败',
-                                        autoCancel: true
-                                    });
-                                    return;
-                                }
-                                node.environmentType = this.selectedEnvironment;
-                            } else {
-                                this.getUIContext().showAlertDialog({
-                                    message: 'not find node in nodeList or mixerList',
-                                    autoCancel: true
-                                });
-                                return;
-                            }
+                          this.setNodeController?.close();
+                      }
+                  })
+              } else if (this.nodeType === NodeType.FIELD) {
+                  FieldComponent({
+                      selectedSoundFiled: this.selectedSoundFiled,
+                      onCancel: () => {
+                          this.setNodeController?.close();
+                      },
+                      onAgree: () => {
+                          //修改效果节点---数据处理
+                          const node = this.isLeft ?
+                              this.nodeList.get(this.currentInputId)?.nodes?.find(node => node.id ===
+                              this.selectedNode) :
+                              this.mixerList.find(node => node.id === this.selectedNode)
+                          if (node) {
+                              let result = audioNapi.resetFieldEffect(this.currentInputId, this.selectedSoundFiled,
+                                  this.selectedNode);
+                              if (result !== 0) {
+                                  this.getUIContext().showAlertDialog({
+                                      message: '设置声场节点失败',
+                                      autoCancel: true
+                                  });
+                                  return;
+                              }
+                              node.soundFiledType = this.selectedSoundFiled;
+                          } else {
+                              this.getUIContext().showAlertDialog({
+                                  message: 'not find node in nodeList or mixerList',
+                                  autoCancel: true
+                              });
+                              return;
+                          }
 
-                            this.setNodeController?.close();
-                        }
-                    })
-                } else if (this.nodeType === NodeType.VB) {
-                    VoiceBeautifierComponent({
-                        selectedVoiceBeautifier: this.selectedVoiceBeautifier,
-                        onCancel: () => {
-                            this.setNodeController?.close();
-                        },
-                        onAgree: () => {
-                            // 调用napi的底层效果节点
-                            const node = this.isLeft ?
-                                this.nodeList.get(this.currentInputId)?.nodes?.find(node => node.id ===
-                                this.selectedNode) :
-                                this.mixerList.find(node => node.id === this.selectedNode)
-                            if (node) {
-                                let result =
-                                    audioNapi.resetVBEffect(this.currentInputId, this.selectedVoiceBeautifier,
-                                        this.selectedNode);
-                                if (result !== 0) {
-                                    this.getUIContext().showAlertDialog({
-                                        message: '添加美化节点失败',
-                                        autoCancel: true
-                                    });
-                                    return;
-                                }
-                            }
+                          this.setNodeController?.close();
+                      }
+                  })
+              } else if (this.nodeType === NodeType.ENV) {
+                  EnvironmentComponent({
+                      selectedEnvironment: this.selectedEnvironment,
+                      onCancel: () => {
+                          this.setNodeController?.close();
+                      },
+                      onAgree: () => {
+                          //修改效果节点---数据处理
+                          const node = this.isLeft ?
+                              this.nodeList.get(this.currentInputId)?.nodes?.find(node => node.id ===
+                              this.selectedNode) :
+                              this.mixerList.find(node => node.id === this.selectedNode)
+                          if (node) {
+                              let result = audioNapi.resetEnvEffect(this.currentInputId, this.selectedNode,
+                                  this.selectedEnvironment);
+                              if (result !== 0) {
+                                  this.getUIContext().showAlertDialog({
+                                      message: '设置环境节点失败',
+                                      autoCancel: true
+                                  });
+                                  return;
+                              }
+                              node.environmentType = this.selectedEnvironment;
+                          } else {
+                              this.getUIContext().showAlertDialog({
+                                  message: 'not find node in nodeList or mixerList',
+                                  autoCancel: true
+                              });
+                              return;
+                          }
 
-                            //修改效果节点---数据处理
-                            if (this.isLeft) {
-                                let inputNode = this.nodeList.get(this.selectedNode);
-                                //左侧的效果节点修改
-                                if (!inputNode) {
-                                    let leftEffectNode: Node | undefined =
-                                        this.nodeList.get(this.currentInputId)?.nodes?.find(node => node.id ===
-                                        this.selectedNode)
-                                    Logger.error(TAG, `node env: ${leftEffectNode?.environmentType}`)
-                                    if (leftEffectNode) {
-                                        leftEffectNode.voiceBeautifierType = this.selectedVoiceBeautifier;
-                                    }
-                                }
-                            } else {
-                                const node = this.mixerList.find(node => node.id === this.selectedNode);
-                                if (node?.voiceBeautifierType !== undefined) {
-                                    node.voiceBeautifierType = this.selectedVoiceBeautifier;
-                                }
-                            }
+                          this.setNodeController?.close();
+                      }
+                  })
+              } else if (this.nodeType === NodeType.VB) {
+                  VoiceBeautifierComponent({
+                      selectedVoiceBeautifier: this.selectedVoiceBeautifier,
+                      onCancel: () => {
+                          this.setNodeController?.close();
+                      },
+                      onAgree: () => {
+                          // 调用napi的底层效果节点
+                          const node = this.isLeft ?
+                              this.nodeList.get(this.currentInputId)?.nodes?.find(node => node.id ===
+                              this.selectedNode) :
+                              this.mixerList.find(node => node.id === this.selectedNode)
+                          if (node) {
+                              let result =
+                                  audioNapi.resetVBEffect(this.currentInputId, this.selectedVoiceBeautifier,
+                                      this.selectedNode);
+                              if (result !== 0) {
+                                  this.getUIContext().showAlertDialog({
+                                      message: '添加美化节点失败',
+                                      autoCancel: true
+                                  });
+                                  return;
+                              }
+                          }
 
-                            this.setNodeController?.close();
-                        }
-                    })
-                }
-            }
-        }
+                          //修改效果节点---数据处理
+                          if (this.isLeft) {
+                              let inputNode = this.nodeList.get(this.selectedNode);
+                              //左侧的效果节点修改
+                              if (!inputNode) {
+                                  let leftEffectNode: Node | undefined =
+                                      this.nodeList.get(this.currentInputId)?.nodes?.find(node => node.id ===
+                                      this.selectedNode)
+                                  Logger.error(TAG, `node env: ${leftEffectNode?.environmentType}`)
+                                  if (leftEffectNode) {
+                                      leftEffectNode.voiceBeautifierType = this.selectedVoiceBeautifier;
+                                  }
+                              }
+                          } else {
+                              const node = this.mixerList.find(node => node.id === this.selectedNode);
+                              if (node?.voiceBeautifierType !== undefined) {
+                                  node.voiceBeautifierType = this.selectedVoiceBeautifier;
+                              }
+                          }
+
+                          this.setNodeController?.close();
+                      }
+                  })
+              }
+          }
+        
     }
 }
 
@@ -1222,12 +1223,13 @@ export struct CheckNodeDialog {
             const key = entry[0];
             const songInfo = entry[1];
 
-            const foundNode = songInfo.nodes?.find((node) => node.id === this.selectedNode);
+            let selectedNode: string = this.selectedNode;
+            const foundNode = songInfo.nodes?.find((node) => node.id === selectedNode);
             if (foundNode) {
                 return key;
-            } else if (this.inputList.find((node) => node?.nodeId === this.selectedNode)) {
-                Logger.error(TAG, `this selected is input node : ${this.selectedNode}, inputId is ${this.selectedNode}`)
-                return this.selectedNode;
+            } else if (this.inputList.find((node) => node?.nodeId === selectedNode)) {
+                Logger.error(TAG, `this selected is input node : ${selectedNode}, inputId is ${selectedNode}`)
+                return selectedNode;
             }
         }
         return '';

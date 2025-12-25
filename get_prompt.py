@@ -1,5 +1,8 @@
 import os
 import time
+from typing import Any, Dict, List, Optional
+
+import requests
 
 
 def generate_fix_prompt(rag_prompt, code, sum_context, defect_description, error_location):
@@ -499,15 +502,164 @@ No explanations, no comments, just the processed code.
     return final_fix_prompt
 
 def get_embedding(text, model, tokenizer):
-    inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
-    outputs = model(**inputs)
-    # 使用最后一个隐藏层的平均池化作为句子嵌入
-    embeddings = outputs.last_hidden_state.mean(dim=1).squeeze().detach().numpy()
-    return embeddings
+    # Embedding should not build an autograd graph; otherwise memory will blow up
+    # under concurrency (e.g., many projects/threads calling RAG in parallel).
+    import torch
+    import contextlib
+    import os
+    import time
+    from pathlib import Path
+
+    model.eval()
+
+    @contextlib.contextmanager
+    def _embedding_slot() -> object:
+        """
+        Global cross-process limiter for embedding calls.
+
+        Control with:
+          - RAG_EMBEDDING_MAX_CONCURRENCY (default: 4; <=0 disables)
+          - RAG_EMBEDDING_LOCK_DIR (default: /tmp/LLMCodeRepair_rag_embedding_slots)
+        """
+        try:
+            max_conc = int(os.environ.get("RAG_EMBEDDING_MAX_CONCURRENCY", "4"))
+        except Exception:
+            max_conc = 4
+        if max_conc <= 0:
+            yield
+            return
+
+        lock_dir = Path(os.environ.get("RAG_EMBEDDING_LOCK_DIR", "/tmp/LLMCodeRepair_rag_embedding_slots"))
+        lock_dir.mkdir(parents=True, exist_ok=True)
+
+        try:
+            import fcntl  # Linux/Unix only
+        except Exception:
+            yield
+            return
+
+        while True:
+            for i in range(max_conc):
+                slot_path = lock_dir / f"slot_{i}.lock"
+                fh = slot_path.open("a+", encoding="utf-8")
+                try:
+                    fcntl.flock(fh.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                    try:
+                        yield
+                    finally:
+                        try:
+                            fcntl.flock(fh.fileno(), fcntl.LOCK_UN)
+                        finally:
+                            fh.close()
+                    return
+                except BlockingIOError:
+                    fh.close()
+                    continue
+            time.sleep(0.05)
+
+    with _embedding_slot(), torch.inference_mode():
+        device = next(model.parameters()).device
+        inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
+        inputs = {k: v.to(device) for k, v in inputs.items()}
+        outputs = model(**inputs)
+        # 使用最后一个隐藏层的平均池化作为句子嵌入
+        embeddings = outputs.last_hidden_state.mean(dim=1).squeeze().cpu().numpy()
+        return embeddings
+
+def _rag_api_base() -> Optional[str]:
+    base = os.getenv("RAG_API_BASE") or os.getenv("RAG_SERVICE_URL")
+    if not base:
+        return None
+    base = base.rstrip("/")
+    if base.endswith("/api/v1"):
+        return base
+    return f"{base}/api/v1"
+
+
+def _build_rag_prompt_from_matches(
+    matches: List[Dict[str, Any]],
+    rag_type: str,
+) -> str:
+    fix_prompt = ""
+    for j, match in enumerate(matches):
+        metadata = match.get("metadata") or {}
+        rule = metadata.get("rule") or match.get("rule", "")
+        description = metadata.get("description") or match.get("description", "")
+        problem_code = metadata.get("problem_code") or metadata.get("original_code") or match.get("original_code", "")
+        problem_explain = metadata.get("problem_explain") or ""
+        problem_fix = metadata.get("problem_fix") or metadata.get("fixed_code") or match.get("fixed_code", "")
+        gpt_diff = metadata.get("gpt_diff") or ""
+        difflib = metadata.get("difflib") or ""
+
+        fix_prompt += (
+            f"Demo {j+1}: \nRule Type: \n{rule}\n\nDescription: \n{description}\n\n"
+            f"Problem Code: \n```arkts\n{problem_code}\n```\n\nFix Explanation: \n{problem_explain}\n\n"
+            f"Fixed Code: \n\n```arkts\n{problem_fix}\n```\n\n"
+        )
+
+        if rag_type == "gpt_diff":
+            fix_prompt += (
+                " Following is the action to take to fix the buggy code into fixed code:\n\n"
+                f"{gpt_diff}\n\n"
+            )
+        elif rag_type == "difflib":
+            fix_prompt += (
+                " Following is the difflib results of repairing buggy code into fixed code:\n\n"
+                f"{difflib}\n\n"
+            )
+
+    return fix_prompt
+
+
+def _get_rag_prompt_via_api(
+    repair_example: Dict[str, Any],
+    rag_type: str,
+    number: int,
+) -> Optional[str]:
+    base = _rag_api_base()
+    if not base:
+        return None
+    url = f"{base}/rag/search"
+    payload = {
+        "code": repair_example["problem_code"],
+        "query": None,
+        "top_k": number,
+        "include_metadata": True,
+        "rule": repair_example.get("rule"),
+    }
+    timeout = float(os.getenv("RAG_API_TIMEOUT", "30"))
+    resp = requests.post(url, json=payload, timeout=timeout)
+    resp.raise_for_status()
+    data = resp.json()
+    # Surface API-side failures instead of silently degrading to empty matches.
+    # This makes ablation/debugging reliable: if the RAG service is running but
+    # not connected to the vector DB (or embedding fails), we want a visible
+    # error line in the repair logs (caught by the caller) rather than a silent
+    # "no examples" behavior.
+    if data.get("success") is False:
+        raise RuntimeError(f"RAG API search failed: {data.get('message', '')}".strip())
+    matches = data.get("matches", [])
+    if not matches:
+        return ""
+    return _build_rag_prompt_from_matches(matches, rag_type)
+
 
 def get_rag_prompt(repair_example, model, tokenizer, index, rag_type, number=5):
     if number == 0:
         return ""
+
+    if _rag_api_base():
+        try:
+            remote_prompt = _get_rag_prompt_via_api(repair_example, rag_type, number)
+            if remote_prompt is not None:
+                return remote_prompt
+        except Exception as exc:
+            # If the API call fails, fall back to local retrieval if possible.
+            # If local retrieval is not available, propagate the error so the
+            # caller can log a visible [RAG-ERROR] line (avoids silent "no RAG"
+            # behavior in ablations/debugging).
+            if model is None or tokenizer is None or index is None:
+                raise exc
 
     query_text = repair_example["problem_code"]
     query_vector = get_embedding(query_text, model, tokenizer)
@@ -904,4 +1056,3 @@ def get_positive_example(file_path, logger=None):
             stripped_line = line.strip()
             code_example += stripped_line + " "
     return code_example.strip()
-

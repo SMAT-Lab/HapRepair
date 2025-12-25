@@ -1,0 +1,1029 @@
+                       HapRepair: Learn to Repair OpenHarmony Apps
+                       Zhihao Lin∗                                                Mingyi Zhou∗                                              Wei Ma
+                Beihang University                                            Beihang University                            Singapore Management University
+                       China                                                        China                                              Singapore
+              mathieulin@buaa.edu.cn                                       zhoumingyi@buaa.edu.cn                                 weima93@gmail.com
+
+                        Chi Chen                                                    Yun Yang†                                            Jun Wang†
+                 Fudan University                                              Yunnan University                                     Beihang University
+                      China                                                         China                                                  China
+            15110240004@fudan.edu.cn                                          yangyun@ynu.edu.cn                                   junwang.lu@gmail.com
+
+                                                  Chunming Hu                                                       Li Li†
+                                                 Beihang University                                        Beihang University
+                                                       China                                        Yunnan Key Laboratory of Software
+                                                 hucm@buaa.edu.cn                                          Engineering, China
+                                                                                                           lilicoding@ieee.org
+
+Abstract                                                                                            LLMs for defect repair based on the defect information. Our ap-
+Software defect detection and repair are essential software engi-                                   proach demonstrates a robust solution for defect repair on new
+neering tasks that mitigate potential risks in the early development                                programming languages that have limited code corpus.
+stages. Large Language Models (LLMs) have demonstrated signifi-                                     ACM Reference Format:
+cant capabilities in software defect detection and repair. However,                                 Zhihao Lin, Mingyi Zhou, Wei Ma, Chi Chen, Yun Yang, Jun Wang, Chun-
+it is hard for LLMs to handle the new programming languages                                         ming Hu, and Li Li. 2025. HapRepair: Learn to Repair OpenHarmony Apps.
+such as ArkTS (which is predominantly used in the OpenHarmony                                       In 33rd ACM International Conference on the Foundations of Software Engi-
+platform) due to training data shortage. Additionally, LLM-based                                    neering (FSE Companion ’25), June 23–28, 2025, Trondheim, Norway. ACM,
+                                                                                                    New York, NY, USA, 12 pages. https://doi.org/10.1145/3696630.3728556
+multi-defect repair suffers from the limitation of the context win-
+dow of LLMs. These issues significantly affect the performance
+                                                                                                    1    Introduction
+of LLM-based defect repair in new programming languages. To
+address the above challenges, we propose HapRepair, a defect re-                                    Software defects can result in a series of severe consequences such
+pair framework that integrates static analysis tools with retrieval-                                as system crashes, functional failures, and security vulnerabili-
+augmented generation (RAG) to improve the effectiveness of the                                      ties [3, 43], which significantly impact the user experience. Addi-
+defect repair. Specifically, we integrate CodeLinter into our iter-                                 tionally, the accumulation of defects increases both the complexity
+ative defect repair framework for defect detection, which is the                                    and cost of maintaining the software [7]. Therefore, it is essential
+basis of defect repair, and utilize RAG together with ArkAnalyzer                                   to detect and repair the defects in the early stage [45] to ensure the
+to improve the quality of our repair solutions. To overcome the                                     quality and long-term sustainability of the software.
+context window limitation of LLMs, we propose the Surrounding                                          Existing approaches for defect detection and repair can be di-
+Context Extractor and the Context Combination Tool. Experiment                                      vided into two categories: traditional approaches using static anal-
+results show that HapRepair effectively repairs defects in Open-                                    ysis and learning-based approaches. Traditional approaches, which
+Harmony Apps, demonstrating high reliability and efficiency in                                      often rely on static analysis, examine source code without execut-
+addressing code issues, achieving a defect repair rate of about 99%                                 ing it. Tools like SonarQube [49] and ESLint [16] are typical tradi-
+on the test set, compared to only about 37% when directly using                                     tional approaches, which have been widely used to detect defects
+                                                                                                    such as memory leaks, unused variables, and inconsistent code
+∗ Equal Contribution
+                                                                                                    styles. These tools show high performance when detecting defects
+† The corresponding author                                                                          with predefined rules. However, their performance in defect repair
+                                                                                                    is limited, as these tools primarily provide examples and recom-
+                                                                                                    mendations or highlight issues without offering automated solu-
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed               tions. This limitation hinders their effectiveness in repairing tasks
+for profit or commercial advantage and that copies bear this notice and the full cita-              automatically, especially in dynamic and fast-evolving ecosystems
+tion on the first page. Copyrights for components of this work owned by others than                 like OpenHarmony.
+the author(s) must be honored. Abstracting with credit is permitted. To copy other-
+wise, or republish, to post on servers or to redistribute to lists, requires prior specific            Learning-based approaches usually train models on large amount
+permission and/or a fee. Request permissions from permissions@acm.org.                              of data [11, 50, 52]. Recent advances in deep learning, particularly
+FSE Companion ’25, June 23–28, 2025, Trondheim, Norway                                              transformer-based models like CodeBERT [19], have demonstrated
+© 2025 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+ACM ISBN 979-8-4007-1276-0/2025/06                                                                  significant capability in learning patterns from existing datasets
+https://doi.org/10.1145/3696630.3728556                                                             and achieving high performance on evaluation benchmarks (e.g.,
+
+
+
+
+                                                                                              319
+FSE Companion ’25, June 23–28, 2025, Trondheim, Norway               Zhihao Lin, Mingyi Zhou, Wei Ma, Chi Chen, Yun Yang, Jun Wang, Chunming Hu, and Li Li
+
+
+Defects4J [26], CWE-bench) to suggest defect repairs. With the ad-             2.1    OpenHarmony and ArkTS
+vent of LLMs, many researchers have been drawn to their power-                 OpenHarmony is an operating system governed by the Ope-
+ful capabilities in understanding both the syntax and semantics of             nAtom Foundation. It aims to create a unified and intelligent plat-
+code [35–37]. It’s obvious that the performance of learning-based              form for connecting all devices. OpenHarmony has evolved into a
+approaches relies on the availability of high-quality and diverse              community-driven operating system supported by multiple orga-
+training data [2]. However, the lack of publicly available data is a           nizations and developers worldwide. Its modular architecture fa-
+significant issue for ArkTS, which will directly affect the perfor-            cilitates seamless interconnection and cooperation across a wide
+mance of LLMs for effective defect detection and repair due to a               range of smart devices, including smartphones, smart homes, au-
+lack of training samples. In addition, LLMs often suffer from the              tomotive systems, and wearables. OpenHarmony has shown sig-
+maximum length of the context window, which is a limitation for                nificant potential, especially in the rapidly expanding Internet of
+multi-defect repair in a large code file.                                      Everything (IoE) and smart device markets. It has been deployed
+   To address these challenges, we introduce HapRepair, a novel                in millions of devices across various domains. It also has attracted
+approach designed to detect and repair code defects in OpenHar-                many developers delving into the OpenHarmony ecosystem. Cur-
+mony apps. Firstly, to overcome the challenge of the lack of train-            rent researches on OpenHarmony explore enhancing its technical
+ing data, we make full use of the advantage of static analysis. We             capabilities and application scenarios, with a focus on distributed
+leverage and integrate a static analysis tool CodeLinter for defect            computing, security, and real-time processing. As highlighted by
+detection, which not only effectively detects defects, but also inter-         Li et al. [30], OpenHarmony presents a unique opportunity for
+acts with LLMs to evaluate the defect repair quality. In addition, we          advancing software engineering practices tailored for IoE and dis-
+utilize RAG to retrieve specific knowledge with in-context learn-              tributed systems.
+ing to alleviate the problem of the lack of training data. Secondly,               ArkTS, the official programming language of developing Open-
+to overcome the challenge of the limitation of the context window              Harmony Apps, extends TypeScript with features tailored for de-
+for multi-defect repair, we propose two analysis tools: Surrounding            veloping applications in multi-platform environments. It not only
+context extractor and Context combination tool. Surrounding context            retains the strengths of TypeScript, but also adds some new fea-
+extractor focuses on extracting relevant context snippets from the             tures to optimize performance and usability for mobile applica-
+source code, removing redundant or unnecessary parts, and retain-              tions. One of such newly added features is the ArkUI framework,
+ing the key information for the repair task. Context combination               which is a declarative framework that simplifies UI development
+tool further combines the overlapping context. Experiment results              by directly binding the interface to reactive data. This feature
+show that HapRepair achieves a defect repair rate of about 99%                 makes it easier for developers to develop the OpenHarmony Apps.
+on the test set, compared to only about 37% when directly using                However, the fundamental difference between ArkTS and TS, such
+LLMs for defect repair based on the defect information. By integrat-           as ArkTS-specific syntax, semantics, and unique features, makes
+ing static analysis tools with LLMs and RAG, HapRepair combines                the existing defect detection and repair tools for TS unable to be
+the precise defect detection capabilities of static analysis with the          applied to ArkTS. Therefore, we need to build a new tool for defect
+generative repair strengths of LLMs. Furthermore, the static anal-             detection and repair for ArkTS.
+ysis feedback not only aids in identifying defects but also provides
+structured insights that improve repair quality. In summary, this              2.2    Defect Detection and Repair
+approach offers a more robust defect solution for low-resource new
+                                                                               2.2.1 Defect Detection. Defect detection is a crucial process in
+programming languages like ArkTS, ultimately improving their
+                                                                               software engineering that detects potential issues directly from
+code quality.
+                                                                               source code before execution. Traditional approaches often rely on
+   The main contributions of this study are shown as follows:
+                                                                               static analysis tools [5, 8], such as SonarQube and ESLint, which
+• We present HapRepair, the first framework combining static                   have been widely adopted for detecting coding errors, memory
+  analysis tool, RAG and LLMs, specifically designed to repair de-             leaks, and security risks. These tools remind developers to proac-
+  fects in low-resource programming languages like ArkTS.                      tively address potential issues and prevent future problems.
+• To mitigate the issue of LLMs dealing with multi-defection in                   Recent advancements in deep learning-based approaches (in-
+  a single code file, we design the Surrounding context extractor              cluding LLMs) have shown the potential for defect detection [21,
+  and Context combination tool to overcome the limitation of the               35–37]. By training on large datasets of labeled code snippets, these
+  context window.                                                              models can predict defect types and provide actionable insights.
+• We manually curate a specialized dataset of 271 defect-repair                However, the performance of these approaches heavily depends on
+  pairs across 37 performance-related rules tailored to ArkTS, pro-            the availability of high-quality and diverse training data [2]. In sce-
+  viding a foundational resource for future research and develop-              narios involving new programming languages, such as ArkTS in
+  ment in ArkTS defect detection and repair.                                   OpenHarmony Apps, the lack of datasets significantly limits their
+• We have open-sourced our tool by making it available on our                  ability to detect defects.
+  repository: https://github.com/SMAT-Lab/HapRepair.
+                                                                               2.2.2 Defect repair. Defect repair is to provide repair sugges-
+                                                                               tions for defective code or automatically repair defective code.
+2    Background                                                                Traditional approaches for defect repair are often rule-based and
+In this section, we will introduce the basic background of this pa-            template-based approaches that provide common repair sugges-
+per.                                                                           tions [27, 34, 38]. However, these approaches struggle to repair
+
+
+
+
+                                                                         320
+HapRepair: Learn to Repair OpenHarmony Apps                                                           FSE Companion ’25, June 23–28, 2025, Trondheim, Norway
+
+
+defects that do not belong to predefined rules and templates. In
+addition, these approaches have difficulty in repairing complex
+and context-dependent defects [42]. LLM-based approaches for de-
+fect repair have gained considerable attention in recent years [18].
+These approaches leverage LLMs to understand the syntax and se-
+mantics of code and then to automatically repair defects. For ex-
+ample, CodeX and GPT-3 developed by OpenAI, which have been
+trained on large amounts of code corpora, possess the capability of
+defect repair. However, these approaches also heavily depend on
+the availability of high-quality and diverse training data [55]. In ad-
+dition, these approaches often suffer from the maximum length of
+the context window [47], which is a limitation for multi-defect re-
+pair. Furthermore, the generated repairs by these approaches may                  Figure 1: In-context Learning Defect Detection for ArkTS
+introduce other defects [25]. Thus, we propose an iterative defect               aim to look for traditional approaches designed for ArkTS. How-
+repair framework to mitigate limitations in current approaches.                  ever, CodeLinter is an off-the-shelf tool designed for defect detec-
+                                                                                 tion for ArkTS and is not suitable for defect repair for ArkTS. Thus,
+2.3    ArkAnalyzer                                                               we compare CodeLinter with LLMs in the scenario of defect detec-
+ArkAnalyzer [9] is a static analysis framework. It has a set of com-             tion to choose a better one. For defect repair, there are no exist-
+mon features (e.g., call graph construction) that are recurrently re-            ing tools specifically designed for ArkTS, so we can directly utilize
+quired when implementing in-depth static analyzers such as pri-                  LLMs.
+vacy leak detectors and compatibility issue detectors, providing
+high efficiency and effectiveness in analyzing the code of ArkTS.                3.1    Setting
+Thus, ArkAnalyzer is a natural and good choice for us to integrate               3.1.1 Model. We use a powerful LLM, the GPT-4o, to conduct
+into HapRepair for functionality verification.                                   the preliminary experiment. The decision to use GPT-4o for defect
+                                                                                 detection is based on the following considerations:
+2.4    CodeLinter
+                                                                                 • GPT-4o performs better than other LLMs in many tasks, which
+CodeLinter is a static analysis tool specifically designed for ArkTS.
+                                                                                   indicates its strong abilities.
+It designs an extensible rule set that is capable of detecting defects
+                                                                                 • GPT-4o is trained with TypeScript datasets, which makes it pos-
+across multiple dimensions, including security, performance, and
+                                                                                   sible to perform defect detection with in-context learning.
+coding style. CodeLinter analyzes source code and provides devel-
+                                                                                 • In-context learning requires a sufficient context to make more
+opers with detailed defect information, such as the violated rules,
+                                                                                   accurate predictions, and GPT-4o has the capacity to handle long
+their descriptions, and the corresponding line numbers. Addition-
+                                                                                   context.
+ally, it supports developers in defining custom rules, enhancing its
+                                                                                 • It is difficult to prepare enough training data of defect detection
+flexibility and scalability. It is suitable for us to integrate CodeLin-
+                                                                                   for ArkTS to fine tune a model.
+ter into HapRepair for defect detection.
+                                                                                 3.1.2 Dataset. We manually create 47 example pairs of ArkTS,
+2.5    Retrieval-Augmented Generation                                            each containing a defect and its corresponding defect-free version,
+Retrieval-Augmented Generation (RAG) is a hybrid approach that                   and the location of the defect. These pairs are then used for in-
+combines the strengths of retrieval systems and large language                   context learning. For testing, we prepare 20 files with single defects
+models. Unlike traditional LLM approaches, which rely solely on                  and 5 files with multiple defects, which totally contain 39 defects.
+the internal knowledge of the model itself, RAG leverages retrieval
+techniques to incorporate external knowledge to improve genera-                  3.2    Comparison
+tion. The retrieved knowledge from RAG is used in the prompt of
+                                                                                 3.2.1 Steps. Initially, we explore the use of in-context learning
+LLMs; thus, it is very flexible. In the scenarios of defect detection
+                                                                                 with LLM for defect detection in ArkTS. For each defect type, we
+and repair, RAG is an important way to retrieve external defect
+                                                                                 manually craft positive and negative examples according to the de-
+knowledge, such as similar defects, fixes, and best practices, to im-
+                                                                                 fects’ rules and then provide these along with defect types and
+prove the generation of LLMs.
+                                                                                 descriptions as prompts to LLMs. The result is then assessed by
+                                                                                 human experts to determine whether a specific defect is present
+3     Preliminary Study                                                          in the target. We also use CodeLinter for the same defect detection
+As mentioned before, the approaches for defect detection and re-                 task. We use both files containing a single defect and files contain-
+pair can be divided into two categories, which are traditional ap-               ing multiple defects to thoroughly test the capability of the model
+proaches and learning-based approaches. Thus, we need to conduct                 in detecting ArkTS-specific defects.
+a preliminary experiment to evaluate the performance of these two
+categories for defect detection and repair, which will help us to                3.2.2 Results. As shown in Figure 1, LLM demonstrates the abil-
+choose a suitable approach for defect detection and repair respec-               ity to effectively detect defects in single-defect files, which achieves
+tively. We focus on the defect detection and repair for ArkTS, so we             a detection rate of 14 out of 20. However, for multi-defect files,
+
+
+
+
+                                                                           321
+FSE Companion ’25, June 23–28, 2025, Trondheim, Norway                Zhihao Lin, Mingyi Zhou, Wei Ma, Chi Chen, Yun Yang, Jun Wang, Chunming Hu, and Li Li
+
+
+LLMs can only detect 8 out of 19 defects and also generate numer-                  By integrating static analysis tools, LLMs, and RAG, HapRe-
+ous false positives and missed detections. In contrast, CodeLinter              pair achieves a balance between precision and flexibility. Its it-
+shows superior performance, successfully identifying 19 out of 20               erative and context-aware design enables it to handle both sim-
+defects in single-defect files and 18 out of 19 defects in multi-defect         ple and complex defects on low-resource programming languages
+files, with no false positives and minimal missed detections in both            like ArkTS, and ensure high-quality repairs tailored to the needs
+scenarios. As a result, it is better to use CodeLinter for defect de-           of OpenHarmony applications.
+tection for ArkTS.
+                                                                                4.2    Defect Detection
+      Answer for this study: LLM only detect 8 out of 19 de-
+                                                                                As shown in Section 3, directly using LLMs as a defect detection
+      fects for multi-defect files. It shows that we need to inte-
+                                                                                tool is not the best choice, particularly in scenarios like ArkTS
+      grate the static analysis tool CodeLinter into our method,
+                                                                                where publicly available data are limited. To address this challenge,
+      which performs better than LLM in all scenarios.
+                                                                                it is better for us to leverage CodeLinter as the defect detection tool
+                                                                                in our framework.
+3.3 Motivation of Our Approach                                                       CodeLinter is specifically designed to identify defects in source
+                                                                                code based on predefined rules and patterns, ensuring compre-
+From the result of our preliminary study, we can see that the tra-
+                                                                                hensive coverage of typical issues in ArkTS applications. Since
+ditional approach has its own advantages, specifically in the sce-
+                                                                                CodeLinter is an off-the-shelf tool, we can directly integrate it
+nario of defect detection for ArkTS. Thus, we are motivated that it
+                                                                                into HapRepair for defect detection. Given a code, CodeLinter can
+is necessary to propose an overall framework to leverage the ad-
+                                                                                provide precise defect detection information such as the type, de-
+vantages of different approaches to overcome the limitations men-
+                                                                                scription, and localization information of a defect, which serves
+tioned before. Specifically, we are motivated to propose a defect
+                                                                                as the foundation for defect repair. Compared to the LLM-based
+repair framework that combines static analysis tools, RAG and
+                                                                                defect detection approaches, we can reliably detect defects and
+LLMs to repair defects in low-resource programming languages
+                                                                                minimize noise and inaccuracies by using the static analysis tool
+like ArkTS. We leverage and propose static analysis tools to ana-
+                                                                                CodeLinter. This guarantees that defect repair processes are built
+lyze and extract information for RAG and LLMs. RAG and LLMs
+                                                                                on accurate insights.
+are responsible for generating more precise defect repairs.
+                                                                                    In addition, CodeLinter can also be used to evaluate whether
+                                                                                there is any defect in the repaired code. Since the repaired code gen-
+4     Approach                                                                  erated by the LLM is not always absolutely correct, which means
+In this section, we will detail our approach HapRepair.                         that it may introduce other defects or the original defect is not re-
+                                                                                paired. Thus we need to make an inspection. CodeLinter is the natu-
+4.1    Overview                                                                 ral choice. If the repaired code has any defect detected by CodeLin-
+                                                                                ter, HapRepair will start an iteration for defect repair until there is
+To address the challenges of defect detection and repair for ArkTS
+                                                                                no defect in the repaired code or reaching the maximum number
+in OpenHarmony applications, we propose HapRepair, an auto-
+                                                                                of iterations.
+mated iterative defect repair framework that combines static anal-
+                                                                                    By integrating CodeLinter into the HapRepair framework, we
+ysis tools and RAG with LLMs. This integrated approach leverages
+                                                                                not only address the limitation of LLM-based defect detection but
+the strengths of static analysis for precise defect detection and pre-
+                                                                                also create a seamless workflow for iterative defect detection.
+cise context extraction while utilizing LLMs and RAG for generat-
+ing intelligent and targeted repair patches. The overall workflow
+of HapRepair is illustrated in Figure 2.                                        4.3    Defect Context Extraction
+    HapRepair has four main phases, which are Defect Detection                  To effectively repair defects, it is crucial to accurately analyze and
+phase, Defect Context Extraction phase, Knowledge-Augmented                     extract the context of the defect, which will be used as the context
+Repair phase, and Functionality Verification phase. These phases                in the retrieval query and prompt for LLMs to improve the gener-
+form an iterative process. Defect Detection phase is responsible for            ation.
+utilizing CodeLinter to detect defects in the original input code and              The defect localization information provided by CodeLinter re-
+checking whether there is any defect in the repaired code. Defect               flects the line number where the defect occurs. However, it is not
+Context Extraction phase aims to analyze, extract, and combine re-              enough to just use the line that a defect occurs as context for re-
+lated surrounding context of a defect using defect information pro-             pairing a defect. We need to precisely analyze and extract the sur-
+vided by Defect Detection phase. Knowledge-Augmented Repair                     rounding context of the defect for repair. For example, the rule ‘no-
+phase is an important phase to retrieve related external knowledge              state-var-access-in-loop‘ used in CodeLinter requires avoiding fre-
+related to defect repair using defect context from Defect Context               quent access to state variables within loops, such as ‘for‘ or ‘while‘
+Extraction through a knowledge database and a vector database,                  structures. When this defect is detected, it is necessary to locate
+which will improve the final generation of LLM. Once the repair                 the surrounding loop structure from the defect line.
+code is generated, Functionality Verification phase is responsible                 We propose two specialized tools, which are the Surrounding
+for verifying whether the repaired code has the same meaning with               Context Extractor and the Context Combination Tool to analyze, ex-
+the original code. Finally, to evaluate the quality of the repaired             tract, and combine context. The Surrounding Context Extractor is
+code, Defect Detection phase will execute again.                                responsible for analyzing and extracting the surrounding context
+
+
+
+
+                                                                          322
+HapRepair: Learn to Repair OpenHarmony Apps                                                             FSE Companion ’25, June 23–28, 2025, Trondheim, Norway
+
+
+
+                                 Defect Detection                                   Defect Context Extraction
+                                                                                    Surrounding                 Context
+                                       CodeLinter
+                                                                                  Context Extractor          Combination Tool
+
+
+
+
+                                                                                                      Embedding Model
+                                      LLM Evaluate
+                                      Functionality                                   Context
+
+                                                                                                Retrieval           Store
+
+                                      ArkAnalyzer                                     Similar
+                                                                 LLM
+                                         CFG                                           Pairs
+                                                                                                          Vector            Defect
+                                                                                                         Database           Pairs
+
+                          Functionality Verification                   Knowledge-Augmented Repair
+
+Figure 2: Overview of the HapRepair. HapRepair has four main steps, including defect detection, defect context extraction,
+knowledge-augmented repair, and functionality verification.
+
+
+of defect code, which helps identify the broader code context and               ensure precise and reliable extraction of context, which overcomes
+dependencies. The Context Combination Tool then merges defects                  the limitations of the context window observed in LLMs.
+that share overlapping contexts, allowing for better repair sugges-
+tions for multi-defect files. Initially, we try to utilize LLMs to ex-
+tract and combine surrounding context. However, the result is not
+what we expect, which contains irrelevant context and hallucina-                 Algorithm 1: Defect Context Extraction Algorithm
+tion.                                                                             Input: Project Directory proj_dir, Defect Directory
+   Thus, we propose the static analysis approach to extract and                            defect_dir, Rules File rules.json
+combine context. The algorithm is shown in Algorithm 1, which                     Output: Merged defect contexts for all files
+contains the following steps:                                                     // Step 1: Rule and Defect Code Initialization
+                                                                                  rules_dict ← LoadRulesFromJson(rules.json);
+(1) Rule and Defect Code Initialization: Rules are loaded from                    Initialize empty merged_results;
+    a predefined file to determine whether the defect needs more                  foreach file in defect_dir do
+    context or not. If additional context is needed, the correspond-                  // Step 2: Defect Extraction
+    ing defect code is extracted for analysis; otherwise, the defect
+                                                                                      code_lines, defects ← GetDefectsFromFile(file);
+    line itself is directly used for retrieval and repair. Information
+                                                                                      if defects is empty then
+    on whether a rule requires additional context is open-sourced
+                                                                                           continue
+    in our code.
+                                                                                      Initialize empty blocks;
+(2) Defect Extraction: Each file is scanned by CodeLinter to iden-
+                                                                                      foreach defect in defects do
+    tify defect lines, along with the associated defect type and de-
+                                                                                           // Step 3: Context Extraction
+    scription.
+                                                                                           context ← ExtractContext(code_lines,
+(3) Context Extraction: Extract surrounding code blocks for the
+                                                                                            defect.line, rules_dict);
+    defect’s line based on structural patterns and definitions or us-
+    ages of key variables (e.g., @State). The nested blocks (e.g., in-                     Append context to blocks;
+    ner scopes) will be filtered out to retain the blocks that are most               // Step 4 : Context Combination
+    relevant to the defect’s context.                                                 merged_blocks ←
+(4) Context Combination: Overlapping or adjacent blocks are                            MergeOverlappingBlocks(blocks);
+    detected and combined using a grouping mechanism (e.g., Uni-                      Extend merged_results with merged_blocks;
+    onFind), ensuring comprehensive coverage of the context of                    return merged_results;
+    the defect.
+
+  Surrounding Context Extractor contains the first three steps and
+Context Combination Tool contains the final step. These two tools
+
+
+
+
+                                                                          323
+FSE Companion ’25, June 23–28, 2025, Trondheim, Norway                Zhihao Lin, Mingyi Zhou, Wei Ma, Chi Chen, Yun Yang, Jun Wang, Chunming Hu, and Li Li
+
+
+4.4    Knowledge-Augmented Repair                                                  Firstly, we leverage ArkAnalyzer to construct the CFG of both
+First of all, we need to construct a knowledge database that con-               the original and repaired code. The CFG provides a structural rep-
+tains defect pairs for RAG. In real-world scenarios, various de-                resentation of the execution flow of code, capturing the relation-
+fect types are encountered. For instance, in OpenHarmony applica-               ships between different functional blocks. Secondly, LLM is used
+tions, defects are broadly classified into six main categories: Gen-            to compare the CFG of the original and repaired code to ensure
+eral Rules (@typescript-eslint), Security Rules (@security), Perfor-            the functionality correctness. By comparing the CFG of the origi-
+mance Rules (@performance), Preview Rules (@previewer), Cross-                  nal and repaired code, we can detect whether any functional blocks
+Device Deployment Rules (@cross-device-app-dev), and ArkTS                      from the original code have been omitted in the repaired code. Ad-
+Code Style Rules (@hw-stylistic). Considering the user interaction              ditionally, this comparison ensures that the modified functional
+in OpenHarmony applications, we primarily focus on performance                  blocks in the repaired code preserve the same execution logic and
+rules, which impact response related to a smooth user experience.               intended behavior as the original. Any repaired code that fails to
+   We manually craft 271 defect pairs that cover 38 types of per-               pass the functionality verification will be rejected by HapRepair.
+formance rules. Each performance rule is equipped with 3 to 10                  Through this process, we verify that the repair not only resolves
+defect pairs. Each defect pair contains a defective code and a cor-             the detected defect but also maintains the overall functionality and
+responding repair. The defective code is designed according to the              correctness of the code.
+description of each rule, and the corresponding repair is applied
+manually. Additionally, we provide an explanation of the reason                 4.6    Implementation
+for each defective code. Furthermore, we utilize the ‘difflib‘ library          The implementation of HapRepair integrates static analysis tools,
+to analyze the changes between defective code and repaired code.                an embedding model, a vector database, and LLMs in a workflow to
+   In order to support the retrieval process, each defective code in            detect and repair defects in OpenHarmony Apps. For generating ef-
+the knowledge database is embedded as vectors, which form a vec-                fective code fixes, HapRepair leverages RAG that combines the ca-
+tor database. When a surrounding context is given from the Defect               pabilities of a vector database and a powerful large language model.
+Context Extraction phase, it is also embedded as a vector and used              We utilize the Pinecone vector database to store and retrieve defect
+as a query to retrieve the most similar and related defective codes             pairs, where defective code vectors are indexed alongside meta-
+under the same defect type of the query from the vector database.               data such as defect rules, descriptions, defective code, repair code,
+Once the defective codes are retrieved, the corresponding repairs               and repair suggestions. This structured storage enables efficient re-
+and other related knowledge can also be retrieved. We do not use                trieval of relevant examples based on the defect type and context,
+the entire file containing the defect as a query because it contains            providing critical repair guidance.
+noise (irrelevant) information, which leads to worse retrieval re-                 We adopt GPT-4o as the LLM in HapRepair. We use the Ope-
+sults.                                                                          nAI API to interface with GPT-4o. The embedding model we use is
+   Once the related knowledge has been retrieved, the prompt can                stella_en_1.5B_v5 [17].
+be construed. The prompt consists of the defect type, the descrip-                 To facilitate interaction with static analysis tools, we set up a
+tion of the defect type, the surrounding context of the defect, a rep-          backend to execute commands for CodeLinter and ArkAnalyzer.
+resentative similar defective code and its corresponding repaired               HapRepair sends code files to the backend, where CodeLinter gen-
+code together with the explanation, and of the repaired code. The               erates an xlsx file containing detailed defect reports, and ArkAna-
+defect type, the description of the defect type, and the surround-              lyzer returns a CFG file representing the structure of both original
+ing context of the defect are basic information. We assume that the             code and repaired code. HapRepair processes these files to refine
+similar defect repair example will act as a reference for LLM, so               the repair and validation workflow.
+we add a representative similar defective code and its correspond-
+ing repaired code together with the explanation in the prompt. We               5     Evaluation
+also assume that the changes of the repaired code reflect the fine-             In this section, we will evaluate the performance of our proposed
+grained operations, which will be a good guidance for the LLM.                  HapRepair.
+Thus, we add the changes of the repaired code in the prompt. Then,
+we input the prompt to the LLM and get the generated patch.                     5.1    Experiment Setup
+                                                                                5.1.1 Research Question. The research questions evaluated in our
+4.5    Functionality Verification                                               study are shown below:
+Ensuring the functionality equivalence between repaired code and                • RQ1: How effective is HapRepair in repairing OpenHar-
+original code is a critical phase in the automated defect repair pro-              mony apps developed by ArkTS in real-world scenarios?
+cess. However, it is difficult and expensive to dynamically prepare             • RQ2: How do the different factors of HapRepair contribute
+and run test cases for verification. Therefore, we use static function-            to its effectiveness?
+ality verification to check whether the repaired code has the same              • RQ3: What is the performance of HapRepair using differ-
+meaning with the original code. The functionality verification is                  ent LLMs?
+achieved through a combination of static analysis and LLM-based                    In RQ1, we evaluate the overall performance of HapRepair in
+evaluation. This dual-layer approach ensures that the repaired code             real-world OpenHarmony apps developed by ArkTS. Then, in RQ2,
+not only resolves the detected defects but also preserves the overall           we conduct an ablation study to analyze the influence of different
+functionality of the code.                                                      factors (such as top-n retrieved results) to explore the best setting.
+
+
+
+
+                                                                          324
+HapRepair: Learn to Repair OpenHarmony Apps                                                                       FSE Companion ’25, June 23–28, 2025, Trondheim, Norway
+
+
+Finally, we discuss the influence of the LLM chosen on repairing              Table 1: Number of Remaining Defects and Repair Rate of
+the defect of new programming languages.                                      Projects Across Iterations
+
+5.1.2 Dataset. To collect data of the knowledge-database that                 Project                          Original     Iteration 1      Iteration 2      Iteration 3        Iteration 4         Iteration 5
+can be used for RAG, we obtain the current defect types supported             A21_C                                   20        1 (95%)          1 (95%)             0 (100%)         0 (100%)          0 (100%)
+                                                                              AdaptiveCapability                      30        7 (77%)          5 (83%)              5 (83%)          5 (83%)           4 (87%)
+by CodeLinter from the official Huawei Developer website [13]. In             ComponentCollection                    223       18 (92%)         14 (94%)             14 (94%)         13 (94%)           7 (97%)
+this work, we focus on performance rules (@performance) because               GSYVideo
+                                                                              Gallery
+                                                                                                                      15
+                                                                                                                     301
+                                                                                                                                1 (93%)
+                                                                                                                               29 (90%)
+                                                                                                                                                0 (100%)
+                                                                                                                                                24 (92%)
+                                                                                                                                                                     0 (100%)
+                                                                                                                                                                     10 (97%)
+                                                                                                                                                                                      0 (100%)
+                                                                                                                                                                                       2 (99%)
+                                                                                                                                                                                                        0 (100%)
+                                                                                                                                                                                                        0 (100%)
+performance primarily impacts the smooth of user experience and               HealthyDietIX                           28       16 (43%)          9 (68%)              3 (89%)          4 (86%)          0 (100%)
+                                                                              Photos                                  58       14 (76%)          7 (88%)              6 (90%)          6 (90%)           8 (86%)
+performance defect is an important type when a defect occurs.                 StageModelAbilityDevelop                66        3 (95%)          2 (97%)              2 (97%)          2 (97%)           2 (97%)
+                                                                              amqplib                                 10       0 (100%)         0 (100%)             0 (100%)         0 (100%)          0 (100%)
+Based on performance rules, we manually construct a knowledge                 Arkts_tutorial                          20        1 (95%)          1 (95%)              1 (95%)          1 (95%)           1 (95%)
+database, which consists of 271 defective codes, along with their             utilCode
+                                                                              wifi_testapp
+                                                                                                                      15
+                                                                                                                    1116
+                                                                                                                               0 (100%)
+                                                                                                                              126 (89%)
+                                                                                                                                                0 (100%)
+                                                                                                                                               113 (90%)
+                                                                                                                                                                     0 (100%)
+                                                                                                                                                                     45 (96%)
+                                                                                                                                                                                      0 (100%)
+                                                                                                                                                                                      27 (98%)
+                                                                                                                                                                                                        0 (100%)
+                                                                                                                                                                                                         7 (99%)
+corresponding repairs, explanations for the applied repairs, and              node-pop3                               58        6 (90%)          4 (93%)              2 (97%)          1 (98%)          0 (100%)
+
+changes in the repairs. This dataset will then be leveraged as ex-            Total                                1952       222 (89%)        180 (91%)             88 (96%)         61 (97%)          29 (99%)
+
+amples to support in-context learning, which are used to augment
+the prompts prepared for LLMs.                                                Table 2: Number of Remaining Defects and Repair Rate of
+   To construct the test dataset, we select data from three official          Different Types of Defects Across Iterations
+open-sourced OpenHarmony organization repositories: OpenHar-
+mony [20], OpenHarmony-SIG [23] and OpenHarmony-TPC [48].                      Type                                        Original   Iteration 1     Iteration 2      Iteration 3    Iteration 4     Iteration 5
+
+We check each project and select the project that contains at least            remove-unchanged-state-var
+                                                                               remove-redundant-state-var
+                                                                                                                                672
+                                                                                                                                605
+                                                                                                                                          44 (93%)
+                                                                                                                                          23 (96%)
+                                                                                                                                                         32 (95%)
+                                                                                                                                                         19 (97%)
+                                                                                                                                                                          12 (98%)
+                                                                                                                                                                           8 (99%)
+                                                                                                                                                                                          7 (99%)
+                                                                                                                                                                                          4 (99%)
+                                                                                                                                                                                                         1 (100%)
+                                                                                                                                                                                                         0 (100%)
+10 defects of performance type. A certain number (such as 10) of               foreach-args-check
+                                                                               no-state-var-access-in-loop
+                                                                                                                                134
+                                                                                                                                104
+                                                                                                                                          21 (84%)
+                                                                                                                                          23 (78%)
+                                                                                                                                                          9 (93%)
+                                                                                                                                                         35 (66%)
+                                                                                                                                                                           3 (98%)
+                                                                                                                                                                           3 (97%)
+                                                                                                                                                                                          3 (98%)
+                                                                                                                                                                                          3 (97%)
+                                                                                                                                                                                                          2 (99%)
+                                                                                                                                                                                                         0 (100%)
+defects in a project can avoid the occasionalism of the repair and             remove-container-without-property
+                                                                               remove-redundant-nest-container
+                                                                                                                                 96
+                                                                                                                                 70
+                                                                                                                                          0 (100%)
+                                                                                                                                          0 (100%)
+                                                                                                                                                         0 (100%)
+                                                                                                                                                         0 (100%)
+                                                                                                                                                                          0 (100%)
+                                                                                                                                                                          0 (100%)
+                                                                                                                                                                                          1 (99%)
+                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                                         0 (100%)
+increase the diversity of the repair.                                          use-row-column-to-replace-flex
+                                                                               use-local-var-to-replace-state-var
+                                                                                                                                 70
+                                                                                                                                 62
+                                                                                                                                           7 (90%)
+                                                                                                                                          0 (100%)
+                                                                                                                                                          7 (90%)
+                                                                                                                                                         10 (84%)
+                                                                                                                                                                           7 (90%)
+                                                                                                                                                                           7 (89%)
+                                                                                                                                                                                          7 (90%)
+                                                                                                                                                                                          7 (89%)
+                                                                                                                                                                                                          6 (91%)
+                                                                                                                                                                                                         0 (100%)
+                                                                               init-list-component                               40       28 (30%)       26 (35%)          9 (78%)        5 (88%)         5 (88%)
+5.1.3 Model. In our experiment setup, we utilize GPT-4o for both               multiple-associations-state-var-check
+                                                                               high-frequency-log-check
+                                                                                                                                 37
+                                                                                                                                 14
+                                                                                                                                          14 (62%)
+                                                                                                                                           3 (79%)
+                                                                                                                                                          4 (89%)
+                                                                                                                                                          3 (79%)
+                                                                                                                                                                           4 (89%)
+                                                                                                                                                                           3 (79%)
+                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                          3 (79%)
+                                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                                          3 (79%)
+RQ1 and RQ2. For RQ3, we focus on comparing different mod-                     avoid-empty-callback
+                                                                               set-cache-count-for-lazyforeach-grid
+                                                                                                                                 10
+                                                                                                                                  8
+                                                                                                                                          0 (100%)
+                                                                                                                                          0 (100%)
+                                                                                                                                                         0 (100%)
+                                                                                                                                                         0 (100%)
+                                                                                                                                                                          0 (100%)
+                                                                                                                                                                          0 (100%)
+                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                                         0 (100%)
+els, including Llama-3.2-70b and Qwen2-72b-instruct, to evaluate               use-reusable-component
+                                                                               no-closures
+                                                                                                                                  7
+                                                                                                                                  6
+                                                                                                                                           5 (29%)
+                                                                                                                                           2 (67%)
+                                                                                                                                                          3 (57%)
+                                                                                                                                                          2 (67%)
+                                                                                                                                                                           4 (43%)
+                                                                                                                                                                           2 (67%)
+                                                                                                                                                                                          2 (71%)
+                                                                                                                                                                                          2 (67%)
+                                                                                                                                                                                                          2 (71%)
+                                                                                                                                                                                                          2 (67%)
+whether the choice of LLMs would impact the performance of                     use-grid-layout-options
+                                                                               use-transition-to-replace-animateto
+                                                                                                                                  3
+                                                                                                                                  3
+                                                                                                                                             3 (0%)
+                                                                                                                                             3 (0%)
+                                                                                                                                                            3 (0%)
+                                                                                                                                                            3 (0%)
+                                                                                                                                                                             3 (0%)
+                                                                                                                                                                             3 (0%)
+                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                                         0 (100%)
+HapRepair.                                                                     use-id-in-get-resource-sync-api
+                                                                               no-stringify-in-lazyforeach-key-generator
+                                                                                                                                  2
+                                                                                                                                  2
+                                                                                                                                             2 (0%)
+                                                                                                                                           1 (50%)
+                                                                                                                                                            2 (0%)
+                                                                                                                                                         0 (100%)
+                                                                                                                                                                             2 (0%)
+                                                                                                                                                                          0 (100%)
+                                                                                                                                                                                            2 (0%)
+                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                                            2 (0%)
+                                                                                                                                                                                                         0 (100%)
+                                                                               suggest-use-effectkit-blur                         2          2 (0%)         2 (0%)        0 (100%)       0 (100%)        0 (100%)
+5.1.4 Embedding model. We use the stella_en_1.5B_v5 model,                     use-scale-to-replace-attr-animateto
+                                                                               use-onAnimationStart-for-swiper-preload
+                                                                                                                                  2
+                                                                                                                                  1
+                                                                                                                                             2 (0%)
+                                                                                                                                             1 (0%)
+                                                                                                                                                            2 (0%)
+                                                                                                                                                            1 (0%)
+                                                                                                                                                                          0 (100%)
+                                                                                                                                                                             1 (0%)
+                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                            1 (0%)
+                                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                                            1 (0%)
+which is driven by a balance between performance and model                     combine-same-arg-animateto
+                                                                               waterflow-data-preload-check
+                                                                                                                                  1
+                                                                                                                                  1
+                                                                                                                                          0 (100%)
+                                                                                                                                             1 (0%)
+                                                                                                                                                         0 (100%)
+                                                                                                                                                            1 (0%)
+                                                                                                                                                                          0 (100%)
+                                                                                                                                                                             1 (0%)
+                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                            1 (0%)
+                                                                                                                                                                                                         0 (100%)
+                                                                                                                                                                                                            1 (0%)
+size [41], to convert the defective code into an 8192-dimensional              Sum                                            1952     222 (89%)       180 (91%)          88 (96%)       61 (97%)        29 (99%)
+
+vector to construct the vector database. With 1.5 billion parame-
+                                                                              most similar detective code and repaired code pair from the vector
+ters, the model provides a good trade-off between computational
+                                                                              database to construct a prompt. As a result, the prompt contains
+efficiency and embedding accuracy, making it suitable for large-
+                                                                              the defect type, the description of the defect type, the surrounding
+scale language tasks without requiring excessive computational
+                                                                              context of the defect, a representative similar defective code and its
+resources. Embedding provides a semantic understanding of code
+                                                                              corresponding repaired code, the explanation for the repaired code,
+and enables efficient retrieval for defect detection and repair.
+                                                                              and changes of the repaired code. An example of prompt is shown
+5.1.5 Metric. To evaluate the performance of HapRepair, we adopt              in Figure 3. Given the prompt, the LLM will generate a patch. The
+two key metrics:                                                              generated patch is applied to the original code, and its functional-
+• Number of Remaining Defects: We count the number of de-                     ity is verified for equivalence with the original code using its CFG.
+   fects detected by CodeLinter after the repair process is completed         Subsequently, we re-evaluate the repaired code with CodeLinter for
+   as the number of remaining defects.                                        the next repair iteration. We use HapRepair to conduct a 5-iteration
+• Repair Rate: It measures the proportion of defects that have                repair process. We evaluate the number of remaining defects and
+   been successfully repaired. The repair rate is calculated as the           repair rate of each project using HapRepair at each iteration. Fur-
+   number of fixed defects divided by the total number of defects             thermore, we also evaluate the number of remaining defects and
+   identified, typically expressed as a percentage.                           repair rate of different types of performance defects using HapRe-
+                                                                              pair at each iteration. The results are shown in Table 1 and Table 2
+5.1.6 Experimental Environment. HapRepair is evaluated on a                   respectively.
+workstation with Intel(R) Xeon(R) Platinum 8352V 3.50GHz CPU                     Table 1 shows that the number of remaining defects reduces for
+(144 cores), 256GB RAM, 4 NVIDIA A100 PCIe 80GB GPUs, and                     each project and achieves a high overall repair rate, which is about
+Ubuntu 24.04.1 LTS operating system.                                          99%. For example, the project wifi_testapp starts with the largest
+                                                                              number of defects (1116) and is reduced to only 7 after five itera-
+5.2    RQ1: Repairing Performance                                             tions. The repair rate for the project is about 99%. For another exam-
+In order to evaluate the performance of HapRepair, we use it to re-           ple, the project A21_C completely eliminates its initial defects after
+pair the defects that are detected by CodeLinter in the projects we           the third iteration. The repair rate for the project is 100%. From the
+get in the test dataset. As introduced before, HapRepair extracts             results, we can see that HapRepair is generally effective for differ-
+and combines the surrounding context of defects, retrieves the                ent projects.
+
+
+
+
+                                                                        325
+FSE Companion ’25, June 23–28, 2025, Trondheim, Norway              Zhihao Lin, Mingyi Zhou, Wei Ma, Chi Chen, Yun Yang, Jun Wang, Chunming Hu, and Li Li
+
+
+
+       Prompt Template for Fixing Defects                                           Answer for RQ1: HapRepair is capable of achieving over-
+                                                                                    all high performance on automated defect repair in real-
+       You are a code defect repair expert in ArkTS. I will                         world scenarios.
+       give you an example of the same type of defect of the
+       code and the defect code surrounding context, please                   5.3 RQ2: Ablation Study
+       help me repair.                                                        In this RQ, we analyze the factors that can affect the performance
+       Defect Type:                                                           of HapRepair. There are several factors that will affect the perfor-
+       hp-arkui-set-cache-count-for-lazyforeach-grid                          mance of HapRepair, including the number of similar defect repair
+       Description:                                                           examples retrieved for in-context learning during RAG, the con-
+       It is recommended to set a reasonable                                  text used as the retrieval query and prompt, and the changes of
+       cacheCount when using LazyForEach under                                repaired code. For each factor, we conduct an ablation study to
+       the Grid.                                                              evaluate the influence. Take the cost and time of using the LLM
+                                                                              into consideration, we randomly select several projects from the
+      Demo 1:                                                                 test dataset and set the iteration of HapRepair to 1.
+      Problem Code:
+      LazyForEach(this.data, (item:number) => {                               Table 3: Number of Remaining Defects and Repair Rate of
+      GridItem() } .margin(10).height(500))                                   Different Number of Similar Defect Repair Examples
+      Fix Explanation:
+      Should set a reasonable cacheCount when
+                                                                               Project                    Original   Without RAG        Top-1      Top-3       Top-5
+      using LazyForEach                                                        Photos                           58        33 (43%)    14 (76%)    23 (60%)    24 (59%)
+      Repaired Code:                                                           HealthyDietIX                    28        12 (43%)    16 (57%)    18 (64%)    18 (64%)
+      LazyForEach(this.data,                                                   Arkts_tutorial                   20        11 (45%)     1 (95%)     5 (75%)     1 (95%)
+                                                                               Component Collection            223       179 (20%)    18 (92%)    24 (89%)    21 (79%)
+      (item:number) => { GridItem() }                                          StageModelAbilityDevelop         66        17 (74%)    17 (74%)    17 (74%)    17 (74%)
+      .margin(10).height(500)).cacheCount(2)                                   A21_C                            20        15 (25%)     1 (95%)     3 (85%)     6 (70%)
+                                                                               AdaptiveCapability               30        20 (33%)     7 (77%)    11 (63%)    10 (67%)
+                                                                               Gallery                         301       184 (39%)    29 (90%)    30 (90%)    41 (86%)
+       Following is the difflib results of repairing buggy code                Total                          746        471 (37%)   103 (86%)   131 (82%)   138 (81%)
+       into fixed code:
+       [Changes]
+                                                                                  We design four settings, which are without RAG (zero example),
+                                                                              top-1 example, top-3 examples and top-5 examples, to evaluate the
+       Here’s the surrounding context to be fixed:
+                                                                              influence of the number of similar defect repair examples retrieved
+       [Surrounding Context]
+                                                                              for in-context learning during RAG. The result is shown in Table 3.
+                                                                              We can see that HapRepair achieves a significantly lower number
+       Your output should follow the following json format:
+                                                                              of remaining defects and a higher repair rate with similar defect
+       [                                                                      repair examples than without similar defect repair examples. This
+           {                                                                  indicates that the LLM can utilize the repair experience provided
+                "type": "modify | add |delete",                               by similar defect repair retrieved through RAG, which gains signif-
+                "line": [line number],                                        icant improvement. Regarding the number of retrieved examples,
+                "code": "[line code]"                                         we observe that the difference among using Top-1 example, Top-3
+           }                                                                  examples, and Top-5 examples is not substantial. Using the Top-1
+       ]                                                                      example performs best in most projects. This indicates that addi-
+                                                                              tional repair examples do not necessarily improve repair perfor-
+                                                                              mance and may introduce noise. However, it is worth noting that
+       Figure 3: Example of Fixing an ArkTS’s Defects                         HealthyDietIX without RAG performs better. This anomaly occurs
+   Table 2 shows the result of different types of performance de-             because the LLM tends to mistakenly insert the ‘key-generator‘ in
+fects. There are totally 24 different types of performance defects of         the wrong position when handling the ‘foreach-args-check‘ defect,
+the projects in the test dataset, which indicates that the types are          which results in cascading errors that prevent other defects in the
+various. HapRepair successfully reduces the number of remaining               file from being repaired. Consider the cost and time of using the
+defects and achieves high repair rates for 21 types of performance            LLM, Top-1 example seems to be the best choice.
+defects. The results show that HapRepair is generally effective for               Besides, the context used for retrieval is an important factor that
+different types of performance defects.                                       will affect the retrieval results. Also, the context used in the prompt
+   From Table 1 and Table 2, we can also see that as the iteration            will directly affect the generation of the LLM. Thus, we design two
+progresses, the number of remaining defects gradually decreases               types of context. One is the surrounding context used in HapRe-
+and the repair rate increases. After five iterations, most of the de-         pair and the other one is the entire code of the defect. The result
+fects have been successfully repaired. This result shows that the             is shown in Table 4. We can see that using the surrounding con-
+iterative strategy of HapRepair makes sense.                                  text generally achieves better performance than that of using the
+                                                                              entire code as context. We make an analysis and find that directly
+
+
+
+
+                                                                        326
+HapRepair: Learn to Repair OpenHarmony Apps                                                                     FSE Companion ’25, June 23–28, 2025, Trondheim, Norway
+
+
+Table 4: Number of Remaining Defects and Repair Rate of                           compare the performance of various LLMs in HapRepair, we con-
+Different Context Types for Retrieval and Prompt                                  duct evaluations using different LLMs including GPT-4o, Llama-
+                                                                                  3.2-70b-instruct, and Qwen-2.5-72b-instruct.
+ Project                    Original   Surrounding Context   Entire Code
+ Photos                           58              14 (76%)       18 (69%)         Table 6: Number of Remaining Defects and Repair Rate of
+ HealthyDietIX                    28              16 (43%)        9 (68%)         HapRepair using Llama-3.2-70b-instruct
+ Arkts_tutorial                   20               1 (95%)       10 (50%)
+ Component Collection            223              18 (92%)       45 (80%)
+                                                                                   Project                    Original   Iteration 1   Iteration 2   Iteration 3   Iteration 4   Iteration 5
+ StageModelAbilityDevelop         66              17 (74%)       17 (74%)
+                                                                                   A21_C                            20       3 (85%)      0 (100%)      0 (100%)      0 (100%)      0 (100%)
+ A21_C                            20               1 (95%)        4 (80%)          AdaptiveCapability               30       1 (97%)      0 (100%)      0 (100%)      0 (100%)      0 (100%)
+ AdaptiveCapability               30               7 (77%)        8 (73%)          ComponentCollection             223      41 (82%)      13 (94%)       7 (97%)       5 (98%)       2 (99%)
+ Gallery                         301              29 (90%)       71 (76%)          GSYVideo                         15       5 (67%)       5 (67%)       5 (67%)       5 (67%)      0 (100%)
+                                                                                   Gallery                         289      37 (87%)       5 (98%)       2 (99%)      0 (100%)      0 (100%)
+ Total                           746             103 (86%)      182 (76%)          HealthyDietIX                    27       4 (85%)       5 (81%)       4 (85%)       1 (96%)      0 (100%)
+                                                                                   Photos                           58      22 (62%)      16 (72%)      13 (78%)       8 (86%)       3 (95%)
+                                                                                   StageModelAbilityDevelop         72      14 (81%)      14 (81%)      11 (85%)      0 (100%)      0 (100%)
+                                                                                   amqplib                          10      0 (100%)      0 (100%)      0 (100%)      0 (100%)      0 (100%)
+                                                                                   demo                             20      0 (100%)      0 (100%)      0 (100%)      0 (100%)      0 (100%)
+Table 5: Number of Remaining Defects and Repair Rate with-                         node-pop3                        57      39 (31%)      0 (100%)      0 (100%)      0 (100%)      0 (100%)
+                                                                                   utilCode                         15       4 (73%)       4 (73%)      0 (100%)      0 (100%)      0 (100%)
+/without Changes of Repaired Code                                                  wifi_testapp                   1116     396 (64%)     274 (75%)     144 (87%)      84 (92%)      33 (97%)
+                                                                                   Total                         1952     566 (71%)     336 (83%)     186 (90%)     103 (94%)       38 (98%)
+
+ Project                    Original   Without Changes     With Changes
+ Photos                           58            16 (72%)        14 (76%)              The results are presented in Table 1, Table 6, and Table 7. It
+ HealthyDietIX                    28            13 (54%)        16 (43%)          is evident that GPT-4o, Llama-3.2-70b-instruct, and Qwen-2.5-72b-
+ Arkts_tutorial                   20             1 (95%)         1 (95%)          instruct demonstrate remarkable performance after the 5-iteration
+ Component Collection            223            44 (81%)        18 (92%)
+ StageModelAbilityDevelop         66            17 (74%)        17 (74%)
+                                                                                  repair process. Although these LLMs are not pretrained on ArkTS
+ A21_C                            20            10 (50%)         1 (95%)          data, their in-context learning capabilities enable them to effec-
+ AdaptiveCapability               30            12 (60%)         7 (77%)          tively repair performance defects in OpenHarmony Apps by lever-
+ Gallery                         301            57 (81%)        29 (90%)          aging defect repair examples provided through the RAG frame-
+ Total                           746           170 (77%)       103 (86%)          work. We can see that it is easy to migrate HapRepair to different
+using the entire code as a query for retrieval may get less relevant              LLMs and achieve remarkable performance.
+retrieval results. In addition, the entire code in the prompt may
+                                                                                  Table 7: Number of Remaining Defects and Repair Rate of
+cause the LLM to lose focus on the defect-related segment, as the
+                                                                                  HapRepair using Qwen-2.5-72b-instruct
+attention mechanism can be distracted by irrelevant portions of
+the code. By contrast, extracting and using surrounding context
+                                                                                   Project                    Original   Iteration 1   Iteration 2   Iteration 3   Iteration 4   Iteration 5
+allows the LLM to focus specifically on defect-related information                 A21_C                            20       2 (90%)      0 (100%)      0 (100%)      0 (100%)      0 (100%)
+and address the limitation of the context window, resulting in bet-                AdaptiveCapability               30       1 (97%)      0 (100%)      0 (100%)      0 (100%)      0 (100%)
+                                                                                   ComponentCollection             223      16 (93%)      10 (96%)      0 (100%)       6 (97%)       6 (97%)
+ter generation.                                                                    GSYVideo                         15       7 (53%)       5 (67%)       5 (67%)       5 (67%)       5 (67%)
+                                                                                   Gallery                         289      29 (90%)      14 (95%)      0 (100%)      13 (95%)       1 (99%)
+   As we assume that the changes of the repaired code reflect the                  HealthyDietIX                    27       3 (89%)       1 (96%)       1 (96%)      0 (100%)      0 (100%)
+fine-grained operations, which will be good guidance for the LLM,                  Photos
+                                                                                   StageModelAbilityDevelop
+                                                                                                                    58
+                                                                                                                    72
+                                                                                                                            15 (74%)
+                                                                                                                             6 (92%)
+                                                                                                                                          10 (83%)
+                                                                                                                                           1 (99%)
+                                                                                                                                                         8 (86%)
+                                                                                                                                                         1 (99%)
+                                                                                                                                                                       7 (88%)
+                                                                                                                                                                      0 (100%)
+                                                                                                                                                                                     7 (88%)
+                                                                                                                                                                                    0 (100%)
+we design an ablation study to evaluate the effectiveness of the                   amqplib                          10      0 (100%)      0 (100%)      0 (100%)      0 (100%)      0 (100%)
+                                                                                   demo                             20      0 (100%)      0 (100%)      0 (100%)      0 (100%)      0 (100%)
+changes of the repaired code. The result is shown in Table 5. The                  node-pop3                        57      21 (63%)      13 (77%)      0 (100%)      0 (100%)      0 (100%)
+                                                                                   utilCode                         15       5 (67%)      0 (100%)      0 (100%)      0 (100%)      0 (100%)
+result shows that adding changes in the prompt can further reduce                  wifi_testapp                   1116     299 (73%)     185 (83%)     163 (85%)     142 (87%)       8 (99%)
+the number of remaining defects and increase the repair rate. This                 Sum                           1952     404 (79%)     239 (88%)     178 (90%)     173 (89%)       27 (99%)
+
+indicates that changes indeed guide the LLM to analyze the repair
+process to improve the performance.
+                                                                                           Answer for RQ3: For defect detection and repair of
+                                                                                           the ArkTS program, GPT-4o, Llama-3.2-70b-instruct, and
+     Answer for RQ2: The ablation study reveals that both                                  Qwen-2.5-72b-instruct achieve remarkable performances.
+     surrounding context, RAG examples, and repair changes,
+     contribute to HapRepair’s performance. Specifically, us-
+     ing precise surrounding context, retrieving the top-1 simi-                  6 Threats to Validity
+     lar defect example, and incorporating repair changes yield                      Threats to internal validity. First, the defect pairs are con-
+     the highest repair rates, optimizing both accuracy and ef-                   structed manually, so the quality of the defect pairs in the knowl-
+     ficiency.                                                                    edge database may affect the performance. However, we construct
+                                                                                  these defect pairs according to the performance rules strictly, and
+                                                                                  the experiment results indicate the effectiveness of these defect
+5.4 RQ3: Performance of different LLMs in                                         repairs. Second, since there are various LLMs, the LLM used in
+    HapRepair                                                                     HapRepair may not be the best choice. However, we conducted an
+The LLM used in our framework is one of the most important com-                   experiment to evaluate the performance of three LLMs, and the re-
+ponents. Therefore, we need to analyze how to choose the LLMs                     sults show that GPT-4o that we used performs best. In addition, if
+for repairing the new programming languages such as ArkTS. To                     there is a better LLM, it is easy to use it in HapRepair.
+
+
+
+
+                                                                            327
+FSE Companion ’25, June 23–28, 2025, Trondheim, Norway               Zhihao Lin, Mingyi Zhou, Wei Ma, Chi Chen, Yun Yang, Jun Wang, Chunming Hu, and Li Li
+
+
+   Threats to external validity. First, HapRepair focuses on the               Devign uses GNN [53] to understand code semantics to detect de-
+types of performance defects, so it is unclear whether HapRe-                  fects. It can represent code as a graph to identify the complex de-
+pair can work well for other types of defects. However, as LLMs                fects that static analysis tools miss. VulDeePecker [32] is another
+have shown a strong ability in repairing defects through context-              example of a learning-based defect detection approach. VulDeeP-
+learning, HapRepair can easily adapt to other types of defects af-             ecker relies on binary classification for detecting vulnerable parts
+ter constructing the defects pairs dataset. Second, HapRepair is de-           of code by examining the syntactic and semantic structure, with
+signed for ArkTS, so it is unclear whether HapRepair can work well             which it identifies snippets of bug-prone code. It is able to per-
+for other programming languages. However, we think that HapRe-                 form well on common programming languages but fails when
+pair can be easily adapted to other types of defects and other pro-            applied to new languages without extensive retraining. Both De-
+gramming languages.                                                            vign and VulDeePecker illustrate their strengths in detecting de-
+                                                                               fects. CodeX [10] is a general-purpose LLM that has demonstrated
+                                                                               strong capabilities in the code domain. Its pretraining on exten-
+7 Related Work                                                                 sive code datasets enables it to provide intelligent code sugges-
+7.1 Traditional Approaches for Defect                                          tions and repairs for widely used programming languages such as
+                                                                               Python, JavaScript, and Java. AutoCodeRover [57] is an agent that
+    Detection and Repair
+                                                                               integrates LLMs with a context retrieval mechanism and debug-
+Static analysis tools play an important role in software defect de-            ging techniques such as spectrum-based fault localization. It can
+tection by analyzing code without being executed. IccTA [29] is                iteratively extract the relevant surrounding context based on AST
+a tool that focuses on detecting inter-component communication                 representations to autonomously solve real-world GitHub issues.
+vulnerabilities in Android applications. It uses static taint analysis         Vul-RAG[15] is another approach using RAG to enhance the per-
+to track data flows between components to help developers iden-                formance of LLMs in detecting and repairing defects. It retrieves
+tify security flaws such as data leakage. FlowDroid [4] is another             the relevant external knowledge from a vector database to gener-
+static analysis tool focusing on precise taint tracking in Android             ate more precise and informed repair suggestions.
+application. It provides lifecycle-aware analysis, improving the ac-
+curacy of vulnerability detection in complex application flows. In
+contrast, dynamic analysis focuses on examining program behav-                 8   Conclusion
+ior during execution[6, 14, 51]. Tools such as Valgrind [44] are               In conclusion, we address the challenges of defect detection and re-
+widely used for detecting runtime errors, memory leaks, and per-               pair in the low-resource programming languages, particularly for
+formance bottlenecks. By leveraging runtime data, dynamic anal-                ArkTS. By integrating LLMs with static analysis tools and RAG,
+ysis ensures comprehensive coverage of execution paths. Besides,               we propose an innovative approach HapRepair to automatically de-
+Holmes [12] utilizes statistical debugging techniques to identify              tect and repair defects. HapRepair leverages and integrates a static
+error-prone execution paths efficiently. Besides, traditional pro-             analysis tool CodeLinter for defect detection and utilizes RAG to
+gram repair approaches rely on manual intervention and rule-                   retrieve specific knowledge with in-context learning for defect re-
+based mechanisms to generate patches [28, 40]. Tools like Aut-                 pair to address the challenge of the lack of data. HapRepair designs
+oFix [24] and Angelix [39] utilize program synthesis and fault lo-             two analysis tools to extract and combine context to overcome the
+calization techniques to generate repair patches. These tools re-              challenge of the limitation of the context window. Experiment re-
+duce the manual effort involved in fixing defects by automating the            sults show that HapRepair can achieve a low number of remaining
+patch generation process, which is especially valuable for address-            defects and a high repair rate. In the future, we will further eval-
+ing complex defects. Another widely used approach involves rule-               uate the generalizability of HapRepair across other programming
+based methods, which rely on predefined patterns or templates to               languages. Additionally, we plan to explore more complex defect
+detect and repair defects. For instance, Abstract Syntax Tree based            scenarios, such as cross-file defects, which require an understand-
+matching and regular expressions are commonly used to identify                 ing of broader code contexts and dependencies. These efforts aim
+syntactic and semantic issues in source code [33]. These methods               to extend the applicability of HapRepair and address challenges in
+are implemented in tools that enforce compliance with specific cod-            repairing sophisticated defects in emerging and evolving program-
+ing guidelines.                                                                ming environments.
+
+
+7.2    Learning-Based Approaches for Defect                                    Acknowledgments
+       Detection and Repair                                                    This work is partially supported by the National Key Research
+The advent of LLMs has reshaped software engineering, especially               and Development Program of China (No. 2024YFB4506300) and
+for the code domain such as code generation and code summa-                    the Open Foundation of Yunnan Key Laboratory of Software En-
+rization [1, 31]. Benefiting from the strong capability of under-              gineering under Grant No.2023SE102. Besides, this research was
+standing both the syntax and semantics of code, LLMs can also                  primarily conducted after Mingyi Zhou joined Beihang University.
+finish some tasks like defect detection and repair [22, 46, 54, 56].           However, part of his involvement in this work began during his
+Recent learning-based approaches have created a significant im-                time at Monash University. We acknowledge his previous affilia-
+pact on defect detection, which autonomously learns the patterns               tion and appreciate the support received throughout the research
+of defective codes in a large scale of code datasets. For example,             process.
+
+
+
+
+                                                                         328
+HapRepair: Learn to Repair OpenHarmony Apps                                                                                 FSE Companion ’25, June 23–28, 2025, Trondheim, Norway
+
+
+References                                                                                        [25] Nan Jiang, Kevin Liu, Thibaud Lutellier, and Lin Tan. 2023. Impact of code
+ [1] Wasi Uddin Ahmad, Saikat Chakraborty, Baishakhi Ray, and Kai-Wei Chang.                           language models on automated program repair. In 2023 IEEE/ACM 45th Inter-
+     2020. A transformer-based approach for source code summarization. arXiv                           national Conference on Software Engineering (ICSE). IEEE, 1430–1442.
+     preprint arXiv:2005.00653 (2020).                                                            [26] René Just, Darioush Jalali, and Michael D Ernst. 2014. Defects4J: A database of ex-
+ [2] Wasi Uddin Ahmad, Saikat Chakraborty, Baishakhi Ray, and Kai-Wei Chang.                           isting faults to enable controlled testing studies for Java programs. In Proceedings
+     2021. Unified pre-training for program understanding and generation. arXiv                        of the 2014 international symposium on software testing and analysis. 437–440.
+     preprint arXiv:2103.06333 (2021).                                                            [27] Dongsun Kim, Jaechang Nam, Jaewoo Song, and Sunghun Kim. 2013. Automatic
+ [3] Sultan Alneyadi, Elankayer Sithirasenan, and Vallipuram Muthukkumarasamy.                         patch generation learned from human-written patches. In 2013 35th international
+     2016. A survey on data leakage prevention systems. Journal of Network and                         conference on software engineering (ICSE). IEEE, 802–811.
+     Computer Applications 62 (2016), 137–152.                                                    [28] Claire Le Goues, Michael Dewey-Vogt, Stephanie Forrest, and Westley Weimer.
+ [4] Steven Arzt, Siegfried Rasthofer, Christian Fritz, Eric Bodden, Alexandre Bar-                    2012. A systematic study of automated program repair: Fixing 55 out of 105 bugs
+     tel, Jacques Klein, Yves Le Traon, Damien Octeau, and Patrick McDaniel. 2014.                     for $8 each. In 2012 34th international conference on software engineering (ICSE).
+     Flowdroid: Precise context, flow, field, object-sensitive and lifecycle-aware taint               IEEE, 3–13.
+     analysis for android apps. ACM sigplan notices 49, 6 (2014), 259–269.                        [29] Li Li, Alexandre Bartel, Tegawendé F Bissyandé, Jacques Klein, Yves Le Traon,
+ [5] Nathaniel Ayewah, William Pugh, David Hovemeyer, J David Morgenthaler, and                        Steven Arzt, Siegfried Rasthofer, Eric Bodden, Damien Octeau, and Patrick Mc-
+     John Penix. 2008. Using static analysis to find bugs. IEEE software 25, 5 (2008),                 Daniel. 2015. Iccta: Detecting inter-component privacy leaks in android apps.
+     22–29.                                                                                            In 2015 IEEE/ACM 37th IEEE International Conference on Software Engineering,
+ [6] Thoms Ball. 1999. The concept of dynamic analysis. ACM SIGSOFT Software                           Vol. 1. IEEE, 280–291.
+     Engineering Notes 24, 6 (1999), 216–234.                                                     [30] Li Li, Xiang Gao, Hailong Sun, Chunming Hu, Xiaoyu Sun, Haoyu Wang,
+ [7] Keith H Bennett and Václav T Rajlich. 2000. Software maintenance and evolution:                   Haipeng Cai, Ting Su, Xiapu Luo, Tegawendé F Bissyandé, et al. 2023. Soft-
+     a roadmap. In Proceedings of the Conference on the Future of Software Engineering.                ware engineering for openharmony: A research roadmap. arXiv preprint
+     73–87.                                                                                            arXiv:2311.01311 (2023).
+ [8] Al Bessey, Ken Block, Ben Chelf, Andy Chou, Bryan Fulton, Seth Hallem, Charles               [31] Yujia Li, David Choi, Junyoung Chung, Nate Kushman, Julian Schrittwieser,
+     Henri-Gros, Asya Kamsky, Scott McPeak, and Dawson Engler. 2010. A few bil-                        Rémi Leblond, Tom Eccles, James Keeling, Felix Gimeno, Agustin Dal Lago, et al.
+     lion lines of code later: using static analysis to find bugs in the real world. Com-              2022. Competition-level code generation with alphacode. Science 378, 6624
+     mun. ACM 53, 2 (2010), 66–75.                                                                     (2022), 1092–1097.
+ [9] Haonan Chen, Daihang Chen, Yizhuo Yang, Lingyun Xu, Liang Gao, Mingyi                        [32] Zhen Li, Deqing Zou, Shouhuai Xu, Xinyu Ou, Hai Jin, Sujuan Wang, Zhijun
+     Zhou, Chunming Hu, and Li Li. 2025. ArkAnalyzer: The Static Analysis Frame-                       Deng, and Yuyi Zhong. 2018. Vuldeepecker: A deep learning-based system for
+     work for OpenHarmony. arXiv:2501.05798 [cs.SE] https://arxiv.org/abs/2501.                        vulnerability detection. arXiv preprint arXiv:1801.01681 (2018).
+     05798                                                                                        [33] Changsong Liu, Yangyang Zhao, Yibiao Yang, Hongmin Lu, Yuming Zhou, and
+[10] Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde                                  Baowen Xu. 2015. An ast-based approach to classifying defects. In 2015 IEEE
+     De Oliveira Pinto, Jared Kaplan, Harri Edwards, Yuri Burda, Nicholas Joseph,                      International Conference on Software Quality, Reliability and Security-Companion.
+     Greg Brockman, et al. 2021. Evaluating large language models trained on code.                     IEEE, 14–21.
+     arXiv preprint arXiv:2107.03374 (2021).                                                      [34] Fan Long and Martin Rinard. 2016. Automatic patch generation by learning cor-
+[11] Zimin Chen, Steve Kommrusch, Michele Tufano, Louis-Noël Pouchet, Denys                            rect code. In Proceedings of the 43rd Annual ACM SIGPLAN-SIGACT symposium
+     Poshyvanyk, and Martin Monperrus. 2019. Sequencer: Sequence-to-sequence                           on principles of programming languages. 298–312.
+     learning for end-to-end program repair. IEEE Transactions on Software Engineer-              [35] Wei Ma, Shangqing Liu, Wenhan Wang, Qiang Hu, Ye Liu, Cen Zhang, Liming
+     ing 47, 9 (2019), 1943–1959.                                                                      Nie, and Yang Liu. 2023. The scope of ChatGPT in software engineering: A thor-
+[12] Trishul M Chilimbi, Ben Liblit, Krishna Mehra, Aditya V Nori, and Kapil Vaswani.                  ough investigation. arXiv preprint arXiv:2305.12138 (2023).
+     2009. Holmes: Effective statistical debugging via efficient path profiling. In 2009          [36] Taslim Mahbub, Dana Dghaym, Aadhith Shankarnarayanan, Taufiq Syed,
+     IEEE 31st International Conference on Software Engineering. IEEE, 34–44.                          Salsabeel Shapsough, and Imran Zualkernan. 2024. Can GPT-4 aid in detect-
+[13] Huawei Developer. 2024.                CodeLinter Rule Set for HarmonyOS.                         ing ambiguities, inconsistencies, and incompleteness in requirements analysis?
+     https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-                             A comprehensive case study. IEEE Access (2024).
+     codelinter-rule-V5. Accessed on: 2024-04-10.                                                 [37] Dung Nguyen Manh, Thang Phan Chau, Nam Le Hai, Thong T. Doan, Nam V.
+[14] Ulrich Doraszelski and Ariel Pakes. 2007. A framework for applied dynamic                         Nguyen, Quang Pham, and Nghi D. Q. Bui. 2024. CodeMMLU: A Multi-
+     analysis in IO. Handbook of industrial organization 3 (2007), 1887–1966.                          Task Benchmark for Assessing Code Understanding Capabilities of CodeLLMs.
+[15] Xueying Du, Geng Zheng, Kaixin Wang, Jiayi Feng, Wentai Deng, Mingwei Liu,                        arXiv:2410.01999 [cs.SE] https://arxiv.org/abs/2410.01999
+     Bihuan Chen, Xin Peng, Tao Ma, and Yiling Lou. 2024. Vul-RAG: Enhancing                      [38] Matias Martinez, Thomas Durieux, Romain Sommerard, Jifeng Xuan, and Martin
+     LLM-based Vulnerability Detection via Knowledge-level RAG. arXiv preprint                         Monperrus. 2017. Automatic repair of real bugs in java: A large-scale experiment
+     arXiv:2406.11147 (2024).                                                                          on the defects4j dataset. Empirical Software Engineering 22 (2017), 1936–1964.
+[16] ESLint. [n. d.]. ESLint. https://eslint.org/.                                                [39] Sergey Mechtaev, Jooyong Yi, and Abhik Roychoudhury. 2016. Angelix: Scalable
+[17] Hugging Face. 2024. stella_en_1.5B_v5: A Large Language Model for English                         multiline program patch synthesis via symbolic analysis. In Proceedings of the
+     Text Generation. https://huggingface.co/transformers. Accessed: 2024-12-25.                       38th international conference on software engineering. 691–701.
+[18] Zhiyu Fan, Xiang Gao, Martin Mirchev, Abhik Roychoudhury, and Shin Hwei                      [40] Martin Monperrus. 2018. Automatic software repair: A bibliography. ACM Com-
+     Tan. 2023. Automated repair of programs from large language models. In 2023                       puting Surveys (CSUR) 51, 1 (2018), 1–24.
+     IEEE/ACM 45th International Conference on Software Engineering (ICSE). IEEE,                 [41] MTEB 2024. Overall MTEB English leaderboard. https://huggingface.co/spaces/
+     1469–1481.                                                                                        mteb/leaderboard. Accessed on: 2024-04-10.
+[19] Zhangyin Feng, Daya Guo, Duyu Tang, Nan Duan, Xiaocheng Feng, Ming Gong,                     [42] María Isabel Murillo and Marcelo Jenkins. 2021. Technical Debt Measurement
+     Linjun Shou, Bing Qin, Ting Liu, Daxin Jiang, et al. 2020. Codebert: A pre-trained                during Software Development using Sonarqube: Literature Review and a Case
+     model for programming and natural languages. arXiv preprint arXiv:2002.08155                      Study. In 2021 IEEE V Jornadas Costarricenses de Investigacion en Computación e
+     (2020).                                                                                           Informática (JoCICI). IEEE, 1–6.
+[20] OpenAtom Foundation. 2024. OpenHarmony: A Comprehensive Open Source                          [43] John D Musa. 2004. Software reliability engineering: more reliable software faster
+     Project for All-Scenario, Fully-Connected, and Intelligent Era. https://gitee.com/                and cheaper. AuthorHouse.
+     openharmony. Accessed on: 2024-04-10.                                                        [44] Nicholas Nethercote and Julian Seward. 2007. Valgrind: a framework for heavy-
+[21] Görkem Giray, Kwabena Ebo Bennin, Ömer Köksal, Önder Babur, and Bedir                             weight dynamic binary instrumentation. ACM Sigplan notices 42, 6 (2007), 89–
+     Tekinerdogan. 2023. On the use of deep learning in software defect prediction.                    100.
+     Journal of Systems and Software 195 (2023), 111537.                                          [45] C Lakshmi Prabha and N Shivakumar. 2020. Software defect prediction using
+[22] Rahul Gupta, Soham Pal, Aditya Kanade, and Shirish Shevade. 2017. Deepfix:                        machine learning techniques. In 2020 4th International Conference on Trends in
+     Fixing common c language errors by deep learning. In Proceedings of the aaai                      Electronics and Informatics (ICOEI)(48184). IEEE, 728–733.
+     conference on artificial intelligence, Vol. 31.                                              [46] Michael Pradel and Koushik Sen. 2018. Deepbugs: A learning approach to name-
+[23] Open HarmonySIG. 2024. Openharmony sig organization and pr command sup-                           based bug detection. Proceedings of the ACM on Programming Languages 2, OOP-
+     port list. https://gitee.com/openharmony-sig. Accessed on: 2024-06-07.                            SLA (2018), 1–25.
+[24] Shi-Yu Huang, Kuang-Chien Chen, and Kwang-Ting Cheng. 1999. AutoFix: A                       [47] Julian Aron Prenner and Romain Robbes. 2024. Out of context: How important
+     hybrid tool for automatic logic rectification. IEEE transactions on computer-aided                is local context in neural program repair?. In Proceedings of the IEEE/ACM 46th
+     design of integrated circuits and systems 18, 9 (1999), 1376–1384.                                International Conference on Software Engineering. 1–13.
+                                                                                                  [48] OpenHarmony Third Party Components SIG. 2024. Openharmony-tpc: Third
+                                                                                                       party components repository for openharmony applications. https://gitee.com/
+                                                                                                       openharmony-tpc. Accessed on: 2024-04-10.
+
+
+
+
+                                                                                            329
+FSE Companion ’25, June 23–28, 2025, Trondheim, Norway                            Zhihao Lin, Mingyi Zhou, Wei Ma, Chi Chen, Yun Yang, Jun Wang, Chunming Hu, and Li Li
+
+
+[49] SonarQube. [n. d.]. SonarQube. https://www.sonarqube.org/.                             [54] Chunqiu Steven Xia, Yuxiang Wei, and Lingming Zhang. 2023. Automated pro-
+[50] Michele Tufano, Cody Watson, Gabriele Bavota, Massimiliano Di Penta, Martin                 gram repair in the era of large pre-trained language models. In 2023 IEEE/ACM
+     White, and Denys Poshyvanyk. 2019. An empirical study on learning bug-fixing                45th International Conference on Software Engineering (ICSE). IEEE, 1482–1494.
+     patches in the wild via neural machine translation. ACM Transactions on Soft-          [55] Aidan ZH Yang, Sophia Kolak, Vincent J Hellendoorn, Ruben Martins, and
+     ware Engineering and Methodology (TOSEM) 28, 4 (2019), 1–29.                                Claire Le Goues. 2024. Revisiting unnaturalness for automated program repair
+[51] Dimitrios Vamvatsikos and C Allin Cornell. 2002. Incremental dynamic analysis.              in the era of large language models. arXiv preprint arXiv:2404.15236 (2024).
+     Earthquake engineering & structural dynamics 31, 3 (2002), 491–514.                    [56] Bing Yu, Hua Qi, Qing Guo, Felix Juefei-Xu, Xiaofei Xie, Lei Ma, and Jianjun
+[52] Marko Vasic, Aditya Kanade, Petros Maniatis, David Bieber, and Rishabh Singh.               Zhao. 2021. Deeprepair: Style-guided repairing for deep neural networks in the
+     2019. Neural program repair by jointly learning to localize and repair. arXiv               real-world operational environment. IEEE Transactions on Reliability 71, 4 (2021),
+     preprint arXiv:1904.01720 (2019).                                                           1401–1416.
+[53] Zonghan Wu, Shirui Pan, Fengwen Chen, Guodong Long, Chengqi Zhang, and                 [57] Yuntong Zhang, Haifeng Ruan, Zhiyu Fan, and Abhik Roychoudhury. 2024.
+     S Yu Philip. 2020. A comprehensive survey on graph neural networks. IEEE                    Autocoderover: Autonomous program improvement. In Proceedings of the 33rd
+     transactions on neural networks and learning systems 32, 1 (2020), 4–24.                    ACM SIGSOFT International Symposium on Software Testing and Analysis. 1592–
+                                                                                                 1604.
+
+
+
+
+                                                                                      330
+

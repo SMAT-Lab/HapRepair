@@ -30,7 +30,7 @@ delete_round_dirs() {
 
   if [ ! -d "$base_dir" ]; then
     return 0
-  }
+  fi
 
   for d in "${base_dir}"/round_*; do
     [ -d "$d" ] || continue
@@ -73,4 +73,3 @@ delete_round_dirs "$HAP_BASE" "workspace snapshot" "no"
 delete_round_dirs "$REV_BASE" "revision snapshot" "no"
 
 echo "Done."
-

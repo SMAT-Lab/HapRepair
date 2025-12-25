@@ -1,0 +1,994 @@
+{
+  "run_id": "gpt-5.1_files_n10_seed20251220_20251220_095959",
+  "unit": "file",
+  "model_dir": "gpt-5.1",
+  "max_round": 5,
+  "n_sample": 10,
+  "seed": 20251220,
+  "candidate_files_eligible": 1652,
+  "sample_files": 10,
+  "max_lines": 600,
+  "max_chars": 60000,
+  "primary_targets": {
+    "performance_only|early": 2,
+    "security_only|early": 2,
+    "performance_only|late": 2,
+    "both|early": 2,
+    "security_only|late": 2
+  },
+  "skip_counts": {
+    "missing_log": 44,
+    "file_too_large": 66
+  },
+  "skipped_sample": [
+    {
+      "project": "PullLinking",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/PullLinking.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/PullLinking.log"
+    },
+    {
+      "project": "PullLinking",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/PullLinking.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/PullLinking.log"
+    },
+    {
+      "project": "PullLinking",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/PullLinking.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/PullLinking.log"
+    },
+    {
+      "project": "PullLinking",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/PullLinking.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/PullLinking.log"
+    },
+    {
+      "project": "JS_dialog_box_static",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/JS_dialog_box_static.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/JS_dialog_box_static.log"
+    },
+    {
+      "project": "JS_dialog_box_static",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/JS_dialog_box_static.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/JS_dialog_box_static.log"
+    },
+    {
+      "project": "JS_dialog_box_static",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/JS_dialog_box_static.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/JS_dialog_box_static.log"
+    },
+    {
+      "project": "JS_dialog_box_static",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/JS_dialog_box_static.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/JS_dialog_box_static.log"
+    },
+    {
+      "project": "ace_ets_module_router1",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_router1.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_router1.log"
+    },
+    {
+      "project": "ace_ets_module_router1",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_router1.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_router1.log"
+    },
+    {
+      "project": "ace_ets_module_navigation1",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/ace_ets_module_navigation1.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/ace_ets_module_navigation1.log"
+    },
+    {
+      "project": "ace_ets_module_navigation1",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_module_navigation1.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_module_navigation1.log"
+    },
+    {
+      "project": "ace_ets_module_navigation1",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_navigation1.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_navigation1.log"
+    },
+    {
+      "project": "ace_ets_module_navigation1",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_navigation1.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_navigation1.log"
+    },
+    {
+      "project": "ace_ets_module_RouteManagement_api12",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_RouteManagement_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_RouteManagement_api12.log"
+    },
+    {
+      "project": "ace_ets_module_RouteManagement_api12",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_RouteManagement_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_RouteManagement_api12.log"
+    },
+    {
+      "project": "applications_permission_manager",
+      "round": 1,
+      "rel_path": "permissionmanager/src/main/ets/pages/application-tertiary.ets",
+      "reason": "file_too_large",
+      "before_lines": 633,
+      "after_lines": 635,
+      "before_chars": 28439,
+      "after_chars": 28117
+    },
+    {
+      "project": "applications_permission_manager",
+      "round": 1,
+      "rel_path": "permissionmanager/src/main/ets/pages/authority-management.ets",
+      "reason": "file_too_large",
+      "before_lines": 679,
+      "after_lines": 679,
+      "before_chars": 28810,
+      "after_chars": 27689
+    },
+    {
+      "project": "applications_permission_manager",
+      "round": 1,
+      "rel_path": "permissionmanager/src/main/ets/pages/authority-tertiary-groups.ets",
+      "reason": "file_too_large",
+      "before_lines": 679,
+      "after_lines": 681,
+      "before_chars": 28931,
+      "after_chars": 28521
+    },
+    {
+      "project": "applications_permission_manager",
+      "round": 1,
+      "rel_path": "permissionmanager/src/main/ets/pages/permission-access-record.ets",
+      "reason": "file_too_large",
+      "before_lines": 692,
+      "after_lines": 687,
+      "before_chars": 30805,
+      "after_chars": 30182
+    },
+    {
+      "project": "applications_permission_manager",
+      "round": 1,
+      "rel_path": "permissionmanager/src/main/ets/PermissionSheet/PermissionStateSheetDialog.ets",
+      "reason": "file_too_large",
+      "before_lines": 940,
+      "after_lines": 948,
+      "before_chars": 38845,
+      "after_chars": 38904
+    },
+    {
+      "project": "applications_permission_manager",
+      "round": 2,
+      "rel_path": "permissionmanager/src/main/ets/PermissionSheet/PermissionStateSheetDialog.ets",
+      "reason": "file_too_large",
+      "before_lines": 948,
+      "after_lines": 953,
+      "before_chars": 38904,
+      "after_chars": 39061
+    },
+    {
+      "project": "applications_permission_manager",
+      "round": 4,
+      "rel_path": "permissionmanager/src/main/ets/pages/authority-tertiary-groups.ets",
+      "reason": "file_too_large",
+      "before_lines": 681,
+      "after_lines": 678,
+      "before_chars": 28521,
+      "after_chars": 28424
+    },
+    {
+      "project": "ace_ets_module_imageText_api16",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/ace_ets_module_imageText_api16.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/ace_ets_module_imageText_api16.log"
+    },
+    {
+      "project": "ace_ets_module_imageText_api16",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_module_imageText_api16.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_module_imageText_api16.log"
+    },
+    {
+      "project": "ace_ets_module_imageText_api16",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_imageText_api16.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_imageText_api16.log"
+    },
+    {
+      "project": "ace_ets_module_imageText_api16",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_imageText_api16.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_imageText_api16.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex001",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/ace_ets_component_common_attrss_flex001.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/ace_ets_component_common_attrss_flex001.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex001",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_component_common_attrss_flex001.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_component_common_attrss_flex001.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex001",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_component_common_attrss_flex001.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_component_common_attrss_flex001.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex001",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_component_common_attrss_flex001.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_component_common_attrss_flex001.log"
+    },
+    {
+      "project": "audio_suite",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/AudioEdit.ets",
+      "reason": "file_too_large",
+      "before_lines": 1358,
+      "after_lines": 1359,
+      "before_chars": 56201,
+      "after_chars": 56329
+    },
+    {
+      "project": "audio_suite",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/AutoTest.ets",
+      "reason": "file_too_large",
+      "before_lines": 1516,
+      "after_lines": 1500,
+      "before_chars": 58563,
+      "after_chars": 57613
+    },
+    {
+      "project": "audio_suite",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/customDialog/CheckNodeDialog.ets",
+      "reason": "file_too_large",
+      "before_lines": 1432,
+      "after_lines": 1424,
+      "before_chars": 60080,
+      "after_chars": 58961
+    },
+    {
+      "project": "audio_suite",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/MixingConsole.ets",
+      "reason": "file_too_large",
+      "before_lines": 666,
+      "after_lines": 670,
+      "before_chars": 29907,
+      "after_chars": 30191
+    },
+    {
+      "project": "audio_suite",
+      "round": 4,
+      "rel_path": "entry/src/main/ets/pages/AutoTest.ets",
+      "reason": "file_too_large",
+      "before_lines": 1502,
+      "after_lines": 1503,
+      "before_chars": 57614,
+      "after_chars": 57613
+    },
+    {
+      "project": "audio_suite",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/audio_suite.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/audio_suite.log"
+    },
+    {
+      "project": "applications_photos",
+      "round": 1,
+      "rel_path": "product/phone/src/main/ets/view/PhotoGridView.ets",
+      "reason": "file_too_large",
+      "before_lines": 1110,
+      "after_lines": 1111,
+      "before_chars": 43995,
+      "after_chars": 44007
+    },
+    {
+      "project": "applications_photos",
+      "round": 1,
+      "rel_path": "common/src/main/ets/default/view/PhotoItem.ets",
+      "reason": "file_too_large",
+      "before_lines": 770,
+      "after_lines": 769,
+      "before_chars": 31890,
+      "after_chars": 31705
+    },
+    {
+      "project": "applications_photos",
+      "round": 1,
+      "rel_path": "feature/thirdselect/src/main/ets/default/view/ThirdSelectPhotoBrowserBase.ets",
+      "reason": "file_too_large",
+      "before_lines": 995,
+      "after_lines": 995,
+      "before_chars": 38641,
+      "after_chars": 38600
+    },
+    {
+      "project": "applications_photos",
+      "round": 1,
+      "rel_path": "feature/thirdselect/src/main/ets/default/view/ThirdSelectPhotoGridBase.ets",
+      "reason": "file_too_large",
+      "before_lines": 790,
+      "after_lines": 791,
+      "before_chars": 33121,
+      "after_chars": 33110
+    },
+    {
+      "project": "applications_photos",
+      "round": 1,
+      "rel_path": "feature/timeline/src/main/ets/view/TimelinePage.ets",
+      "reason": "file_too_large",
+      "before_lines": 864,
+      "after_lines": 866,
+      "before_chars": 33599,
+      "after_chars": 33590
+    },
+    {
+      "project": "applications_photos",
+      "round": 2,
+      "rel_path": "feature/timeline/src/main/ets/view/TimelinePage.ets",
+      "reason": "file_too_large",
+      "before_lines": 866,
+      "after_lines": 939,
+      "before_chars": 33590,
+      "after_chars": 35147
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex_nowear",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/ace_ets_component_common_attrss_flex_nowear.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/ace_ets_component_common_attrss_flex_nowear.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex_nowear",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_component_common_attrss_flex_nowear.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_component_common_attrss_flex_nowear.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex_nowear",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_component_common_attrss_flex_nowear.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_component_common_attrss_flex_nowear.log"
+    },
+    {
+      "project": "ace_ets_component_common_attrss_flex_nowear",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_component_common_attrss_flex_nowear.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_component_common_attrss_flex_nowear.log"
+    },
+    {
+      "project": "acts_validator",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/index.ets",
+      "reason": "file_too_large",
+      "before_lines": 1262,
+      "after_lines": 1263,
+      "before_chars": 50105,
+      "after_chars": 50079
+    },
+    {
+      "project": "acts_validator",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/acts_validator.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/acts_validator.log"
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/05-RichEditorSample/02-DecorationTest.ets",
+      "reason": "file_too_large",
+      "before_lines": 991,
+      "after_lines": 978,
+      "before_chars": 37384,
+      "after_chars": 36885
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/02-TextSample/02-textNumberTransition.ets",
+      "reason": "file_too_large",
+      "before_lines": 668,
+      "after_lines": 666,
+      "before_chars": 25661,
+      "after_chars": 25327
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/02-TextSample/03-enablePreviewMenu.ets",
+      "reason": "file_too_large",
+      "before_lines": 1284,
+      "after_lines": 1285,
+      "before_chars": 41139,
+      "after_chars": 41125
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/02-TextSample/09-dataDetector.ets",
+      "reason": "file_too_large",
+      "before_lines": 1350,
+      "after_lines": 1350,
+      "before_chars": 43302,
+      "after_chars": 43258
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/02-TextSample/10-MenuPasteboard.ets",
+      "reason": "file_too_large",
+      "before_lines": 1231,
+      "after_lines": 1232,
+      "before_chars": 41879,
+      "after_chars": 41836
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/05-RichEditorSample/15-VerticalAlignTest.ets",
+      "reason": "file_too_large",
+      "before_lines": 1215,
+      "after_lines": 1202,
+      "before_chars": 46693,
+      "after_chars": 46184
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/04-UseText/02-TextInput/26-TextInputWindow.ets",
+      "reason": "file_too_large",
+      "before_lines": 1125,
+      "after_lines": 1127,
+      "before_chars": 37767,
+      "after_chars": 37351
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/6-1/ModifierTest.ets",
+      "reason": "file_too_large",
+      "before_lines": 1705,
+      "after_lines": 1711,
+      "before_chars": 52650,
+      "after_chars": 52813
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/5-3dev/RichEditor.ets",
+      "reason": "file_too_large",
+      "before_lines": 670,
+      "after_lines": 670,
+      "before_chars": 26580,
+      "after_chars": 26544
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/5-3dev/RichEditor1.ets",
+      "reason": "file_too_large",
+      "before_lines": 670,
+      "after_lines": 671,
+      "before_chars": 26581,
+      "after_chars": 26591
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/21-dev-2/Search.ets",
+      "reason": "file_too_large",
+      "before_lines": 780,
+      "after_lines": 780,
+      "before_chars": 23498,
+      "after_chars": 23449
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/21-dev-2/Text.ets",
+      "reason": "file_too_large",
+      "before_lines": 755,
+      "after_lines": 749,
+      "before_chars": 22225,
+      "after_chars": 21667
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/01-StyledString/12-setStyledString/Text1.ets",
+      "reason": "file_too_large",
+      "before_lines": 1069,
+      "after_lines": 1084,
+      "before_chars": 37266,
+      "after_chars": 37739
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/21-dev-3/TextArea.ets",
+      "reason": "file_too_large",
+      "before_lines": 799,
+      "after_lines": 798,
+      "before_chars": 23967,
+      "after_chars": 23729
+    },
+    {
+      "project": "TextComponentTest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/21-dev-3/TextInput.ets",
+      "reason": "file_too_large",
+      "before_lines": 797,
+      "after_lines": 797,
+      "before_chars": 24104,
+      "after_chars": 23899
+    },
+    {
+      "project": "wifi_testapp",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets",
+      "reason": "file_too_large",
+      "before_lines": 804,
+      "after_lines": 831,
+      "before_chars": 24119,
+      "after_chars": 25076
+    },
+    {
+      "project": "wifi_testapp",
+      "round": 2,
+      "rel_path": "entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets",
+      "reason": "file_too_large",
+      "before_lines": 831,
+      "after_lines": 836,
+      "before_chars": 25076,
+      "after_chars": 25160
+    },
+    {
+      "project": "wifi_testapp",
+      "round": 3,
+      "rel_path": "entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets",
+      "reason": "file_too_large",
+      "before_lines": 836,
+      "after_lines": 829,
+      "before_chars": 25160,
+      "after_chars": 24945
+    },
+    {
+      "project": "bluetoothtest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/subManualApiTest/subBrTest/deviceFound.ets",
+      "reason": "file_too_large",
+      "before_lines": 790,
+      "after_lines": 788,
+      "before_chars": 23299,
+      "after_chars": 23142
+    },
+    {
+      "project": "bluetoothtest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/subManualApiTestManager/subBrTestManager/deviceFound.ets",
+      "reason": "file_too_large",
+      "before_lines": 780,
+      "after_lines": 781,
+      "before_chars": 22722,
+      "after_chars": 22654
+    },
+    {
+      "project": "bluetoothtest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/subManualApiTest/subGattTest/gattServer.ets",
+      "reason": "file_too_large",
+      "before_lines": 853,
+      "after_lines": 855,
+      "before_chars": 34882,
+      "after_chars": 34894
+    },
+    {
+      "project": "bluetoothtest",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/subManualApiTestManager/subGattTestManager/gattServerManager.ets",
+      "reason": "file_too_large",
+      "before_lines": 853,
+      "after_lines": 854,
+      "before_chars": 34991,
+      "after_chars": 35002
+    },
+    {
+      "project": "Info",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/badge/BadgeTestCase004.ets",
+      "reason": "file_too_large",
+      "before_lines": 675,
+      "after_lines": 674,
+      "before_chars": 17519,
+      "after_chars": 17489
+    },
+    {
+      "project": "Info",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/gaugeStatic/GaugeParallelization.ets",
+      "reason": "file_too_large",
+      "before_lines": 631,
+      "after_lines": 544,
+      "before_chars": 31480,
+      "after_chars": 27899
+    },
+    {
+      "project": "ace_ets_module_swiper",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets",
+      "reason": "file_too_large",
+      "before_lines": 698,
+      "after_lines": 698,
+      "before_chars": 23309,
+      "after_chars": 23621
+    },
+    {
+      "project": "ace_ets_module_swiper",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets",
+      "reason": "file_too_large",
+      "before_lines": 1446,
+      "after_lines": 1447,
+      "before_chars": 47450,
+      "after_chars": 48183
+    },
+    {
+      "project": "Image",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/ImageParallelization/ImageCallBack.ets",
+      "reason": "file_too_large",
+      "before_lines": 797,
+      "after_lines": 662,
+      "before_chars": 29404,
+      "after_chars": 24016
+    },
+    {
+      "project": "Image",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/ImageParallelization/ImageIndex.ets",
+      "reason": "file_too_large",
+      "before_lines": 1798,
+      "after_lines": 1022,
+      "before_chars": 74291,
+      "after_chars": 41675
+    },
+    {
+      "project": "Image",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/ImageParallelization/ImageIndex2.ets",
+      "reason": "file_too_large",
+      "before_lines": 1719,
+      "after_lines": 1153,
+      "before_chars": 75576,
+      "after_chars": 49972
+    },
+    {
+      "project": "Image",
+      "round": 2,
+      "rel_path": "entry/src/main/ets/pages/ImageParallelization/ImageCallBack.ets",
+      "reason": "file_too_large",
+      "before_lines": 662,
+      "after_lines": 593,
+      "before_chars": 24016,
+      "after_chars": 21391
+    },
+    {
+      "project": "ace_ets_module_navigation_api12",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/ace_ets_module_navigation_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/ace_ets_module_navigation_api12.log"
+    },
+    {
+      "project": "ace_ets_module_navigation_api12",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_module_navigation_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_module_navigation_api12.log"
+    },
+    {
+      "project": "ace_ets_module_navigation_api12",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_navigation_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_navigation_api12.log"
+    },
+    {
+      "project": "ace_ets_module_navigation_api12",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_navigation_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_navigation_api12.log"
+    },
+    {
+      "project": "ace_ets_module_scroll_nowear_api12",
+      "round": 2,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2/ace_ets_module_scroll_nowear_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_2_after_round2/ace_ets_module_scroll_nowear_api12.log"
+    },
+    {
+      "project": "ace_ets_module_scroll_nowear_api12",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_module_scroll_nowear_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_module_scroll_nowear_api12.log"
+    },
+    {
+      "project": "ace_ets_module_scroll_nowear_api12",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_scroll_nowear_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_scroll_nowear_api12.log"
+    },
+    {
+      "project": "ace_ets_module_scroll_nowear_api12",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_scroll_nowear_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_scroll_nowear_api12.log"
+    },
+    {
+      "project": "ace_ets_module_swiper_api11",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets",
+      "reason": "file_too_large",
+      "before_lines": 698,
+      "after_lines": 748,
+      "before_chars": 23309,
+      "after_chars": 25854
+    },
+    {
+      "project": "ace_ets_module_swiper_api11",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets",
+      "reason": "file_too_large",
+      "before_lines": 1446,
+      "after_lines": 1446,
+      "before_chars": 47438,
+      "after_chars": 48170
+    },
+    {
+      "project": "ace_ets_module_imageText_api12",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/ace_ets_module_imageText_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/ace_ets_module_imageText_api12.log"
+    },
+    {
+      "project": "ace_ets_module_imageText_api12",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/ace_ets_module_imageText_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/ace_ets_module_imageText_api12.log"
+    },
+    {
+      "project": "ace_ets_module_imageText_api12",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/ace_ets_module_imageText_api12.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/ace_ets_module_imageText_api12.log"
+    },
+    {
+      "project": "asn1_ber",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/Index.ets",
+      "reason": "file_too_large",
+      "before_lines": 796,
+      "after_lines": 839,
+      "before_chars": 42027,
+      "after_chars": 43051
+    },
+    {
+      "project": "ohos_dfu_library",
+      "round": 1,
+      "rel_path": "DfuLibrary/src/main/ets/dfu/DfuBaseService.ts",
+      "reason": "file_too_large",
+      "before_lines": 1201,
+      "after_lines": 1197,
+      "before_chars": 56480,
+      "after_chars": 56220
+    },
+    {
+      "project": "ohos_dfu_library",
+      "round": 1,
+      "rel_path": "DfuLibrary/src/main/ets/dfu/DfuServiceInitiator.ts",
+      "reason": "file_too_large",
+      "before_lines": 901,
+      "after_lines": 902,
+      "before_chars": 38938,
+      "after_chars": 38940
+    },
+    {
+      "project": "ohos_dfu_library",
+      "round": 1,
+      "rel_path": "DfuLibrary/src/main/ets/dfu/SecureDfuImpl.ts",
+      "reason": "file_too_large",
+      "before_lines": 804,
+      "after_lines": 796,
+      "before_chars": 38990,
+      "after_chars": 38613
+    },
+    {
+      "project": "ohos_dfu_library",
+      "round": 2,
+      "rel_path": "DfuLibrary/src/main/ets/dfu/DfuBaseService.ts",
+      "reason": "file_too_large",
+      "before_lines": 1197,
+      "after_lines": 1142,
+      "before_chars": 56220,
+      "after_chars": 53743
+    },
+    {
+      "project": "ohos_dfu_library",
+      "round": 2,
+      "rel_path": "DfuLibrary/src/main/ets/dfu/SecureDfuImpl.ts",
+      "reason": "file_too_large",
+      "before_lines": 796,
+      "after_lines": 796,
+      "before_chars": 38613,
+      "after_chars": 38618
+    },
+    {
+      "project": "ohos_mail_base",
+      "round": 1,
+      "rel_path": "test/src/main/ets/app/app.ets",
+      "reason": "file_too_large",
+      "before_lines": 613,
+      "after_lines": 592,
+      "before_chars": 18868,
+      "after_chars": 17722
+    },
+    {
+      "project": "ohos_mail_base",
+      "round": 1,
+      "rel_path": "lib/src/main/ets/store/imap_store.ts",
+      "reason": "file_too_large",
+      "before_lines": 1112,
+      "after_lines": 1111,
+      "before_chars": 36655,
+      "after_chars": 36428
+    },
+    {
+      "project": "ohos_mail_base",
+      "round": 1,
+      "rel_path": "lib/src/main/ets/utils/mime.ts",
+      "reason": "file_too_large",
+      "before_lines": 668,
+      "after_lines": 667,
+      "before_chars": 18996,
+      "after_chars": 18948
+    },
+    {
+      "project": "flutter_embedding",
+      "round": 1,
+      "rel_path": "flutter/src/main/ets/embedding/engine/FlutterNapi.ets",
+      "reason": "file_too_large",
+      "before_lines": 768,
+      "after_lines": 769,
+      "before_chars": 26760,
+      "after_chars": 26761
+    },
+    {
+      "project": "flutter_embedding",
+      "round": 1,
+      "rel_path": "flutter/src/main/ets/view/FlutterView.ets",
+      "reason": "file_too_large",
+      "before_lines": 767,
+      "after_lines": 752,
+      "before_chars": 29677,
+      "after_chars": 28900
+    },
+    {
+      "project": "flutter_embedding",
+      "round": 1,
+      "rel_path": "flutter/src/main/ets/embedding/ohos/KeyboardMap.ets",
+      "reason": "file_too_large",
+      "before_lines": 604,
+      "after_lines": 602,
+      "before_chars": 28150,
+      "after_chars": 27977
+    },
+    {
+      "project": "flutter_embedding",
+      "round": 2,
+      "rel_path": "flutter/src/main/ets/embedding/engine/FlutterNapi.ets",
+      "reason": "file_too_large",
+      "before_lines": 769,
+      "after_lines": 770,
+      "before_chars": 26761,
+      "after_chars": 26772
+    },
+    {
+      "project": "flutter_embedding",
+      "round": 2,
+      "rel_path": "flutter/src/main/ets/view/FlutterView.ets",
+      "reason": "file_too_large",
+      "before_lines": 752,
+      "after_lines": 752,
+      "before_chars": 28900,
+      "after_chars": 28836
+    },
+    {
+      "project": "shopping",
+      "round": 1,
+      "rel_path": "entry/src/main/ets/pages/detailPage/detail.ets",
+      "reason": "file_too_large",
+      "before_lines": 653,
+      "after_lines": 652,
+      "before_chars": 23393,
+      "after_chars": 22361
+    },
+    {
+      "project": "CanvasTest",
+      "round": 3,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3/CanvasTest.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_3_after_round3/CanvasTest.log"
+    },
+    {
+      "project": "CanvasTest",
+      "round": 4,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4/CanvasTest.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_4_after_round4/CanvasTest.log"
+    },
+    {
+      "project": "CanvasTest",
+      "round": 5,
+      "reason": "missing_log",
+      "before_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5/CanvasTest.log",
+      "after_log": "/home/LLMCodeRepair/logs/codelinter_openharmony/gpt-5.1/round_5_after_round5/CanvasTest.log"
+    }
+  ],
+  "notes": "Eligible population excludes files exceeding max_lines/max_chars so that full before/after text can be shown to judges."
+}

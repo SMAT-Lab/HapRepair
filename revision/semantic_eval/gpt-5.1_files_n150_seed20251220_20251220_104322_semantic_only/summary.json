@@ -1,0 +1,23 @@
+{
+  "n_labeled": 150,
+  "label_counts": {
+    "Correct": 141,
+    "Incorrect": 5,
+    "Suspicious": 4
+  },
+  "sample_correct": 141,
+  "sample_correct_rate": 0.94,
+  "sample_correct_wilson_95": [
+    0.8899090795570952,
+    0.9681163179946721
+  ],
+  "weighted_correct_rate": 0.9365206903804191,
+  "weighted_bootstrap_95": [
+    0.8960395470200068,
+    0.9724244649946105
+  ],
+  "population_total_candidates": 1652,
+  "population_covered_weight": 0.9903147699757869,
+  "bootstrap": 2000,
+  "seed": 20251220
+}

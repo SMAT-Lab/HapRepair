@@ -1,0 +1,23 @@
+{
+  "n_labeled": 10,
+  "label_counts": {
+    "Correct": 3,
+    "Suspicious": 5,
+    "Incorrect": 2
+  },
+  "sample_correct": 3,
+  "sample_correct_rate": 0.3,
+  "sample_correct_wilson_95": [
+    0.10778928748621183,
+    0.6032267800204347
+  ],
+  "weighted_correct_rate": 0.4087779690189329,
+  "weighted_bootstrap_95": [
+    0.04647160068846816,
+    0.7710843373493976
+  ],
+  "population_total_candidates": 2024,
+  "population_covered_weight": 0.28705533596837945,
+  "bootstrap": 2000,
+  "seed": 20251220
+}

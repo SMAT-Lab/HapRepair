@@ -51,16 +51,18 @@ class RAGService:
             logger.info("Initializing RAG service...")
             
             # 初始化嵌入模型
-            if HAS_TRANSFORMERS:
+            if HAS_TRANSFORMERS and self.model is None:
                 await self._load_embedding_model()
             else:
-                logger.warning("Transformers not available, embedding functionality disabled")
+                if not HAS_TRANSFORMERS:
+                    logger.warning("Transformers not available, embedding functionality disabled")
             
             # 初始化Pinecone
-            if HAS_PINECONE:
+            if HAS_PINECONE and self.index is None:
                 await self._connect_pinecone()
             else:
-                logger.warning("Pinecone not available, vector search functionality disabled")
+                if not HAS_PINECONE:
+                    logger.warning("Pinecone not available, vector search functionality disabled")
             
             logger.info("RAG service initialized successfully")
             
@@ -71,6 +73,8 @@ class RAGService:
     async def _load_embedding_model(self):
         """加载嵌入模型"""
         try:
+            if self.model is not None and self.tokenizer is not None:
+                return
             cache_dir = os.getenv("MODEL_CACHE_DIR", "/home/models")
             
             logger.info(f"Loading embedding model: {self.model_name}")
@@ -85,6 +89,33 @@ class RAGService:
             
             # 设置为评估模式
             self.model.eval()
+
+            if torch is None:
+                raise RuntimeError("Torch is required for embedding model usage")
+
+            device_raw = os.getenv("RAG_DEVICE", "").strip().lower()
+            if not device_raw:
+                device_raw = "cuda" if torch.cuda.is_available() else "cpu"
+            if device_raw in ("gpu",):
+                device_raw = "cuda"
+
+            try:
+                device = torch.device(device_raw)
+            except Exception:
+                device = torch.device("cpu")
+
+            if device.type == "cuda" and not torch.cuda.is_available():
+                device = torch.device("cpu")
+
+            dtype_raw = os.getenv("RAG_DTYPE", "").strip().lower()
+            if device.type == "cuda":
+                if dtype_raw in ("bf16", "bfloat16"):
+                    self.model = self.model.to(dtype=torch.bfloat16)
+                elif dtype_raw in ("fp16", "float16", "half"):
+                    self.model = self.model.to(dtype=torch.float16)
+
+            self.model = self.model.to(device)
+            logger.info(f"Embedding model device: {device}, dtype={dtype_raw or 'fp32'}")
             
             logger.info("Embedding model loaded successfully")
             
@@ -95,6 +126,8 @@ class RAGService:
     async def _connect_pinecone(self):
         """连接Pinecone"""
         try:
+            if self.index is not None:
+                return
             api_key = os.getenv("PINECONE_API_KEY")
             if not api_key:
                 logger.warning("PINECONE_API_KEY not set, vector search disabled")
@@ -123,23 +156,32 @@ class RAGService:
                     "message": "Embedding model not available"
                 }
             
+            if torch is None:
+                return {
+                    "success": False,
+                    "embedding_created": False,
+                    "message": "Torch not available"
+                }
+
             # 分词和编码
             inputs = self.tokenizer(
-                text, 
-                return_tensors="pt", 
-                truncation=True, 
+                text,
+                return_tensors="pt",
+                truncation=True,
                 padding=True,
-                max_length=512
+                max_length=512,
             )
+            device = next(self.model.parameters()).device
+            inputs = {k: v.to(device) for k, v in inputs.items()}
             
             # 生成嵌入
-            with torch.no_grad():
+            with torch.inference_mode():
                 outputs = self.model(**inputs)
                 # 使用平均池化
                 embeddings = outputs.last_hidden_state.mean(dim=1).squeeze()
                 
             # 转换为numpy数组
-            embedding_vector = embeddings.detach().numpy()
+            embedding_vector = embeddings.detach().cpu().numpy()
             
             return {
                 "success": True,

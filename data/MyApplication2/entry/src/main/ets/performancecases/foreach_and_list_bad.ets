@@ -11,7 +11,7 @@ struct ForeachAndListBad {
           ListItem() {
             Text(item)
           }
-        })
+        }, (item) => item)
       }
 
       // Case 2: List with initialIndex + ForEach missing keyGenerator.
@@ -20,7 +20,7 @@ struct ForeachAndListBad {
           ListItem() {
             Text(item)
           }
-        })
+        }, (item) => item)
       }
     }
   }
