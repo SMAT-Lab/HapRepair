@@ -75,12 +75,12 @@ And use [ArkAnalyzer](https://gitee.com/openharmony-sig/arkanalyzer) to obtain t
 
 We evaluate HapRepair on a curated benchmark of real-world OpenHarmony apps:
 
-- **Benchmark**: 8,664 performance/security defects across 100+ OpenHarmony projects, reported by Huawei CodeLinter and tracked in `revision/target_projects_haprepair.json`.
+- **Benchmark**: 8,664 performance/security defects across 35 OpenHarmony projects, detected by HomeCheck (the ArkAnalyzer-based static checker also ported from Huawei CodeLinter rules) and tracked in `revision/target_projects_haprepair.json`.
 - **Rule taxonomy**: 37 performance rules triggered across the benchmark; 15 (40.5%) are context-dependent and 22 (59.5%) are local/template-sufficient (see `summary/gpt-5.1_rq2_rule_type_context_ratio.md`).
-- **Pipeline**: (1) CodeLinter scans each project, (2) `get_surrounding_context.py` extracts the surrounding context for every finding, (3) `save_defects_to_database.py` indexes curated fix exemplars into a Pinecone vector store, (4) `get_prompt.py` retrieves the top-k nearest exemplars via RAG and assembles a repair prompt, and (5) `fix.py` / `fix_projects.py` drive an iterative multi-round repair loop with `output_handler.py` validating each patch.
+- **Pipeline**: (1) HomeCheck scans each project and emits performance/security findings, (2) `get_surrounding_context.py` extracts the surrounding context for every finding, (3) `save_defects_to_database.py` indexes curated fix exemplars into a Pinecone vector store, (4) `get_prompt.py` retrieves the top-k nearest exemplars via RAG and assembles a repair prompt, and (5) `fix.py` / `fix_projects.py` drive an iterative multi-round repair loop with `output_handler.py` validating each patch.
 - **Models evaluated**: gpt-5.1 (main), gpt-5-mini, deepseek-chat, qwen3-coder-plus, qwen3-30b-a3b.
 - **Ablation axes**: RAG top-k ∈ {0, 1, 3, 5}, diff strategy ∈ {difflib, gpt-diff, no-diff}, context scope ∈ {surrounding, full-file}.
-- **Protocol**: Up to 6 repair rounds per project; a defect is counted as fixed only when CodeLinter no longer reports it on the rewritten code.
+- **Protocol**: Up to 6 repair rounds per project; a defect is counted as fixed only when HomeCheck no longer reports it on the rewritten code.
 
 Reproduce the main table with:
 ```
@@ -89,31 +89,25 @@ python3 revision/code/delta_check_summarize.py --allow-missing-final-logs
 
 ## Results
 
-![framework](./fig/project_defects_bar.png)
+**Main result across LLMs.** All five models converge within five repair iterations. GPT-5.1 / GPT-5-mini / DeepSeek-Chat / Qwen3-Coder-Plus drop from 8,664 initial defects to 236 / 166 / 247 / 353 respectively (**97–98% resolution**); Qwen3-30B-A3B plateaus higher at 1,348 (**84%**), underscoring that model capacity still matters for hard, context-heavy rules.
 
-**Main result (gpt-5.1, 5 rounds).** HapRepair eliminates **8,428 / 8,664 (97.3%)** of the reported defects. After applying a conservative *delta-check* that filters any "resolved" finding plausibly attributable to large-scale code deletion, the net fix rate is still **96.11% (8,327/8,664)** — confirming that the gains come from genuine repairs rather than code removal (see `summary/gpt-5.1_delta_check.md`).
+![Remaining defects across repair rounds](./fig/llm_rounds.png)
 
-**Rule category coverage.**
+**Category-level resolution (gpt-5.1).** Performance rules drop from 8,150 → 234 (97%) and security rules from 514 → 2 (100%) after five iterations.
 
-![rule category pie](./fig/rule_category_pie.png)
-![rule top10 bar](./fig/rule_top10_bar.png)
+![Category resolution across iterations](./fig/table2_category_resolution.png)
 
-**Ablation study (round-1 remaining defects, lower is better).**
+**Per-project progression (sampled).** HapRepair wipes out all 36 defects in PullLinking on round 1, takes flutter_embedding from 123 → 1, and drives the overall 35-project benchmark from 8,664 → 236 (97%).
 
-| Setting                       | Remaining defects |
-| ----------------------------- | ----------------- |
-| RAG top-1 (default)           | 505               |
-| RAG top-3                     | **444**           |
-| RAG top-5                     | 1,118             |
-| No RAG                        | 5,052             |
-| Diff = gpt-diff               | 476               |
-| Diff = none                   | 1,932             |
-| Context = full file           | 2,870             |
-| Context = surrounding (default) | **505**         |
+![Per-project iterations](./fig/table1_project_iterations.png)
 
-Key takeaways: RAG is the dominant factor (no-RAG inflates remaining defects by **10×**); top-3 retrieval slightly beats top-1, while top-5 introduces noise; surrounding-context significantly outperforms full-file context; and supplying a structural diff matters. Full breakdown: `summary/ablation/ablation_summary_gpt-5.1_round1.md`.
+**Delta-check against "fix-by-deletion".** A conservative audit filtering every resolved finding plausibly attributable to large-scale code deletion still leaves a net fix rate of **96.11% (8,327/8,664)** — confirming the gains come from real repairs, not code removal (`summary/gpt-5.1_delta_check.md`).
 
-![results](./fig/results.png)
+**Ablation study (gpt-5.1, round 1).** RAG is the dominant factor; Top-3 retrieval is the sweet spot; surrounding context beats full-file; and providing a structural diff is essential.
+
+![Ablation study](./fig/table5_ablation.png)
+
+Full breakdown: `summary/ablation/ablation_summary_gpt-5.1_round1.md`. The auto-generated per-project bars and top-10 rule charts (`scripts/plot_readme_figures.py`) provide an additional view of the same data.
 ## Important Notes
 
 - Requires configuration of relevant API keys
