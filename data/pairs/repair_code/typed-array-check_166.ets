@@ -1,1 +1,0 @@
-const squareArray = new Uint8Array([1, 4, 9, 16, 25]);

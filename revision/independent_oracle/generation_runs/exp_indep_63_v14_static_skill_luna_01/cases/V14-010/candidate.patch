@@ -1,9 +1,0 @@
---- a/entry/src/main/ets/cases/sparse_array_case.ets
-+++ b/entry/src/main/ets/cases/sparse_array_case.ets
-@@ -1,5 +1,5 @@
- function storeLateReading(value: number): number[] {
--  const readings: number[] = new Array(4096);
-+  const readings: number[] = Array.from({ length: 4096 }, () => undefined as number);
-   readings[4095] = value;
-   return readings;
- }

@@ -1,1 +1,0 @@
-let width = 10; width = 6;

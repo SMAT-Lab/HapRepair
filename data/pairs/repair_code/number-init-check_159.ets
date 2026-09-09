@@ -1,1 +1,0 @@
-let halfValue: number = 0.5, bonus: number = 1.5; halfValue = 0.8; bonus = 1.7;

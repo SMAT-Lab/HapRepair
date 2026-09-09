@@ -1,1 +1,0 @@
-let chars: string[] = ['z'];

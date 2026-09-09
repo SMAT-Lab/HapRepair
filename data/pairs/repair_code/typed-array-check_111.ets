@@ -1,1 +1,0 @@
-const temperatures = new Float32Array(6); for (let i = 0; i < 6; i++) { temperatures[i] = i * 5 + 10; }

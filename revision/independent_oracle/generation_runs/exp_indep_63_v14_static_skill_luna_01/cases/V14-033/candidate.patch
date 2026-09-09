@@ -1,9 +1,0 @@
---- a/entry/src/main/ets/cases/number_init_case.ets
-+++ b/entry/src/main/ets/cases/number_init_case.ets
-@@ -1,5 +1,5 @@
- function revisedThreshold(enabled: boolean): number {
--  let threshold = 4;
-+  let threshold = 4.0;
-   if (enabled) {
-     threshold = 4.75;
-   }

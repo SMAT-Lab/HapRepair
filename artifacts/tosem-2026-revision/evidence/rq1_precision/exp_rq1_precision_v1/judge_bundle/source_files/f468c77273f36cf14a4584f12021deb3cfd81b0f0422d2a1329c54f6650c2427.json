@@ -1,6 +1,0 @@
-{
-  "content": "/*\n* Copyright (c) 2023 Hunan OpenValley Digital Industry Development Co., Ltd. All rights reserved.\n* Use of this source code is governed by a BSD-style license that can be\n* found in the LICENSE_KHZG file.\n*/\nimport { lang } from '@kit.ArkTS';\nimport { BinaryReply } from './BinaryMessenger';\n\ntype ISendable = lang.ISendable;\n\nexport default interface SendableBinaryMessageHandler extends ISendable {\n  onMessage(message: ArrayBuffer, reply: BinaryReply, ...args: Object[]): void;\n}\n",
-  "content_sha256": "f468c77273f36cf14a4584f12021deb3cfd81b0f0422d2a1329c54f6650c2427",
-  "relative_path": "flutter/src/main/ets/plugin/common/SendableBinaryMessageHandler.ets",
-  "schema_version": 1
-}

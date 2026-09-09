@@ -1,1 +1,0 @@
-let multipliers = new Float64Array(10); for (let i = 0; i < 10; i++) { multipliers[i] = i * 1.5; }

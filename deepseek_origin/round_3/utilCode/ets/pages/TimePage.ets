@@ -1,3 +1,0 @@
-```arkts
-...
-    Scroll(this.scroller) {

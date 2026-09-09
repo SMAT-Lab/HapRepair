@@ -1,6 +1,0 @@
-{
-  "content": "/**\n * Copyright (c) 2024 Huawei Device Co., Ltd.\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\nimport router from '@ohos.router'\n\n@Entry\n@Component\nstruct getStateByIndex1 {\n  @State str1:string = '1'\n  @State str2:string = '2'\n  @State str3:string = '3'\n  @State str4:string = '4'\n\n\n  build() {\n    Column({space:5}) {\n\n      Text(this.str1).id('getStateByIndex1_text1')\n      Button('getStateByIndex(33)')\n        .id('getStateByIndex1_btn1')\n        .onClick(()=>{\n          this.str1 = String(router.getStateByIndex(33))\n        })\n\n    }.width('100%').height('100%')\n\n\n  }\n}",
-  "content_sha256": "e63b0ed946dd4b85840e4f35c4b35f7e74d70b87235ee7bff16f8d176556015a",
-  "relative_path": "entry/src/main/ets/MainAbility/pages/router/getStateByIndex/getStateByIndex1.ets",
-  "schema_version": 1
-}

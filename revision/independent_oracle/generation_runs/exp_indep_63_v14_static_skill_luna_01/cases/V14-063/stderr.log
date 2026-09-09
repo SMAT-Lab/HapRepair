@@ -1,2 +1,0 @@
-2026-08-07T10:31:06.080595Z ERROR codex_core::tools::router: error=exec_command failed for `/usr/bin/bash -lc "sed -n '1,260p' SKILL.md"`: CreateProcess { message: "Rejected(\"Failed to create unified exec process: No such file or directory (os error 2)\")" }
-2026-08-07T10:31:06.080598Z ERROR codex_core::tools::router: error=exec_command failed for `/usr/bin/bash -lc "sed -n '1,280p' references/operations.md"`: CreateProcess { message: "Rejected(\"Failed to create unified exec process: No such file or directory (os error 2)\")" }

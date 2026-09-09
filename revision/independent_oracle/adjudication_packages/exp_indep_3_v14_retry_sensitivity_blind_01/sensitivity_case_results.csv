@@ -1,4 +1,0 @@
-order,blind_id,category,rule,author_1_label,author_2_label,agreement,adjudicated_label,final_label,strict_correct
-1,RSJ-001,security,@security/no-unsafe-rsa-encrypt,Correct,Correct,True,,Correct,True
-2,RSJ-002,performance,@performance/hp-arkui-combine-same-arg-animateto,Correct,Correct,True,,Correct,True
-3,RSJ-003,performance,@performance/avoid-overusing-custom-component-check,Correct,Correct,True,,Correct,True

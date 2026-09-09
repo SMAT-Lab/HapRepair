@@ -1,7 +1,0 @@
---- a/entry/src/main/ets/cases/unsafe_rsa_encrypt_case.ets
-+++ b/entry/src/main/ets/cases/unsafe_rsa_encrypt_case.ets
-@@ -1,3 +1,3 @@
- import cryptoFramework from '@ohos.security.cryptoFramework';
- 
--const exportCipher = cryptoFramework.createCipher('RSA1024|PKCS1');
-+const exportCipher = cryptoFramework.createCipher('RSA2048|PKCS1_OAEP|SHA256|MGF1_SHA256');

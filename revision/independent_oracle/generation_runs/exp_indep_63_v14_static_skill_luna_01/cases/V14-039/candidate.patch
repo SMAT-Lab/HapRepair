@@ -1,7 +1,0 @@
---- a/entry/src/main/ets/cases/unsafe_aes_case.ets
-+++ b/entry/src/main/ets/cases/unsafe_aes_case.ets
-@@ -1,3 +1,3 @@
- import cryptoFramework from '@ohos.security.cryptoFramework';
- 
--const attachmentCipher = cryptoFramework.createCipher('AES256|ECB|NoPadding');
-+const attachmentCipher = cryptoFramework.createCipher('AES256|GCM|PKCS7');

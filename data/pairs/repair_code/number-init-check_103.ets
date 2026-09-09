@@ -1,1 +1,0 @@
-let height: number = 180, weight: number = 70; height = 176; weight = 69;

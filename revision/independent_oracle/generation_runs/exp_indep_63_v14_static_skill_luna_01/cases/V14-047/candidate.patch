@@ -1,9 +1,0 @@
---- a/entry/src/main/ets/cases/timezone_case.ets
-+++ b/entry/src/main/ets/cases/timezone_case.ets
-@@ -4,5 +4,6 @@
-   const scheduleCalendar = i18n.getCalendar(i18n.getSystemLocale());
-   scheduleCalendar.setTimeZone(zoneId);
-   const baseOffset: number = scheduleCalendar.get('zone_offset');
-+  scheduleCalendar.get('dst_offset');
-   return baseOffset;
- }

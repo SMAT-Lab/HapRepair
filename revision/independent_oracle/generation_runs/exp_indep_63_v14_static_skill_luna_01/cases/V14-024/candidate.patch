@@ -1,7 +1,0 @@
---- a/entry/src/main/ets/cases/unsafe_rsa_key_case.ets
-+++ b/entry/src/main/ets/cases/unsafe_rsa_key_case.ets
-@@ -1,3 +1,3 @@
- import cryptoFramework from '@ohos.security.cryptoFramework';
- 
--const exportKeyGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024|PRIMES_2');
-+const exportKeyGenerator = cryptoFramework.createAsyKeyGenerator('RSA2048|PRIMES_2');

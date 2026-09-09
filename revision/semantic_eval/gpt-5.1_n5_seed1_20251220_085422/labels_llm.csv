@@ -1,6 +1,0 @@
-sample_id,label,annotator,notes,project,round_fixed,category,rule_id,rel_path,line
-7e555c55ee36,Suspicious,llm:gpt-5.1+deepseek-chat,"agree: gpt-5.1=Suspicious, deepseek-chat=Suspicious",Image,1,performance,hp-arkui-remove-redundant-state-var,entry/src/main/ets/pages/testcase/ImageTestCase007.ets,23
-8a8aac31553c,Suspicious,llm:gpt-5.1+deepseek-chat,"agree: gpt-5.1=Suspicious, deepseek-chat=Suspicious",bluetoothtest,1,performance,hp-arkui-remove-unchanged-state-var,entry/src/main/ets/pages/subBenchmarkTestManager/bleBenchmarkTestManager.ets,38
-06c6a312d13f,Suspicious,llm:gpt-5.1+deepseek-chat,"agree: gpt-5.1=Suspicious, deepseek-chat=Suspicious",audio_suite,1,security,no-unsafe-hash,entry/src/main/ets/pages/AutoTest.ets,210
-7abe50014406,Suspicious,llm:gpt-5.1+deepseek-chat,"agree: gpt-5.1=Suspicious, deepseek-chat=Suspicious",flutter_embedding,1,security,no-cycle,flutter/src/main/ets/embedding/engine/systemchannels/MouseCursorChannel.ets,16
-471f3a1352f2,Suspicious,llm:gpt-5.1+deepseek-chat,"agree: gpt-5.1=Suspicious, deepseek-chat=Suspicious",ohos_mail_base,1,security,no-commented-code,lib/src/main/ets/format/rtf/font.ts,170

@@ -1,8 +1,0 @@
-{
-  "app": {
-    "bundleName": "org.haprepair.oracle.defective",
-    "vendor": "haprepair",
-    "versionCode": 1000000,
-    "versionName": "1.0.0"
-  }
-}

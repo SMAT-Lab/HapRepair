@@ -1,6 +1,0 @@
-{
-  "content": "/*\n* Copyright (c) 2023 Hunan OpenValley Digital Industry Development Co., Ltd. All rights reserved.\n* Use of this source code is governed by a BSD-style license that can be\n* found in the LICENSE_KHZG file.\n*\n* Based on FlutterEngineProvider.java originally written by\n* Copyright (C) 2013 The Flutter Authors.\n*\n*/\n\nimport FlutterEngine from '../engine/FlutterEngine';\nimport common from '@ohos.app.ability.common';\n\nexport default interface FlutterEngineProvider {\n  provideFlutterEngine(context: common.Context): FlutterEngine | null;\n}",
-  "content_sha256": "709b98e72a998bd8c604d9d68b5947ea73fc9232a4f73501bfe4316e18e3c85b",
-  "relative_path": "flutter/src/main/ets/embedding/ohos/FlutterEngineProvider.ets",
-  "schema_version": 1
-}

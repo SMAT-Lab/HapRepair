@@ -1,1 +1,0 @@
-let scores: number[] = [50];

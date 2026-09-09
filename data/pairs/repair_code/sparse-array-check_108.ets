@@ -1,1 +1,0 @@
-let temps: number[] = [22.5];

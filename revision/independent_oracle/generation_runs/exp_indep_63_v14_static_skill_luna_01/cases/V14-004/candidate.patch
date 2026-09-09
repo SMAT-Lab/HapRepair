@@ -1,7 +1,0 @@
---- a/entry/src/main/ets/cases/unsafe_mac_case.ets
-+++ b/entry/src/main/ets/cases/unsafe_mac_case.ets
-@@ -1,3 +1,3 @@
- import cryptoFramework from '@ohos.security.cryptoFramework';
- 
--const requestAuthenticator = cryptoFramework.createMac('SHA1');
-+const requestAuthenticator = cryptoFramework.createMac('SHA256');

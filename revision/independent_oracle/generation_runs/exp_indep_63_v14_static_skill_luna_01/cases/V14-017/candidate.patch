@@ -1,8 +1,0 @@
---- a/entry/src/main/ets/cases/export_current_case.ets
-+++ b/entry/src/main/ets/cases/export_current_case.ets
-@@ -2,4 +2,4 @@
-   token: string = '';
- }
- 
--export * from './export_current_case';
-+export { SessionRecord };

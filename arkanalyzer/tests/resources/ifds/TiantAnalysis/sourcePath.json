@@ -1,8 +1,0 @@
-[
-    {
-        "file": "@etsSdk/api/@ohos.taskpool: ",
-        "namespace": "taskpool",
-        "class": "%dflt",
-        "method": "execute"
-    }
-]

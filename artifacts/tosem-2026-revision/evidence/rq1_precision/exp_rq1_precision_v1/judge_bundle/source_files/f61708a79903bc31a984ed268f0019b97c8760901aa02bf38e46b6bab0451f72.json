@@ -1,6 +1,0 @@
-{
-  "content": "\n{\n  \"module\": {\n    \"name\": \"flutter\",\n    \"type\": \"har\",\n    \"deviceTypes\": [\n      \"default\"\n    ]\n  }\n}\n",
-  "content_sha256": "f61708a79903bc31a984ed268f0019b97c8760901aa02bf38e46b6bab0451f72",
-  "relative_path": "flutter/src/main/module.json5",
-  "schema_version": 1
-}

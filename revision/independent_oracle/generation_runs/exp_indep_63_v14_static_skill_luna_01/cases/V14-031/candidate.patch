@@ -1,7 +1,0 @@
---- a/entry/src/main/ets/cases/unsafe_ecdsa_case.ets
-+++ b/entry/src/main/ets/cases/unsafe_ecdsa_case.ets
-@@ -1,3 +1,3 @@
- import cryptoFramework from '@ohos.security.cryptoFramework';
- 
--const receiptSigner = cryptoFramework.createSign('ECC256|SHA1');
-+const receiptSigner = cryptoFramework.createSign('ECC256|SHA256');

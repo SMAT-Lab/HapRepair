@@ -1,7 +1,0 @@
---- a/entry/src/main/ets/cases/unsafe_rsa_sign_case.ets
-+++ b/entry/src/main/ets/cases/unsafe_rsa_sign_case.ets
-@@ -1,3 +1,3 @@
- import cryptoFramework from '@ohos.security.cryptoFramework';
- 
--const exportSigner = cryptoFramework.createSign('RSA1024|PSS|SHA1|MGF1_SHA1');
-+const exportSigner = cryptoFramework.createSign('RSA3072|PSS|SHA256|MGF1_SHA256');

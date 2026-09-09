@@ -1,1 +1,0 @@
-let items: string[] = ['item'];

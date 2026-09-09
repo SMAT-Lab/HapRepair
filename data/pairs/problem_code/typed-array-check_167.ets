@@ -1,1 +1,0 @@
-let multipliers: number[] = Array(10).fill(1).map((_, index) => index * 1.5);

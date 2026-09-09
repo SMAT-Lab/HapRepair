@@ -1,1 +1,0 @@
-let yearCount = 5; let average = 7.9; average = 5; yearCount = 5.5;

@@ -1,1 +1,0 @@
-  this.context.resourceManager.getColorSync($r('app.color.test'));

@@ -1,1 +1,0 @@
-let data: boolean[] = [true];

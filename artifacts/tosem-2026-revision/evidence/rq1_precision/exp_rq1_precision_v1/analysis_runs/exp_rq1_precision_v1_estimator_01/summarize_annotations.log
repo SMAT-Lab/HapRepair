@@ -1,6 +1,0 @@
-Error in usercustomize; set PYTHONVERBOSE for traceback:
-FileNotFoundError: [Errno 2] No such file or directory: '/tmp/ari_test/uc_loaded.txt'
-{
-  "status": "complete",
-  "results": "/home/zhihao/hdd/haprepair/paper/rebuttal/rq1_precision/exp_rq1_precision_v1/results.json"
-}

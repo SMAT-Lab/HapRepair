@@ -1,1 +1,0 @@
-const dataPoints = new Int16Array(5); for (let i = 0; i < 5; i++) { dataPoints[i] = i * 10; }

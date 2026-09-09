@@ -1,6 +1,0 @@
-{
-  "content": "{\n  \"module\": {\n    \"name\": \"YFree\",\n    \"type\": \"har\",\n    \"deviceTypes\": [\n      \"default\",\n      \"tablet\"\n    ],\n    \"requestPermissions\": [\n      {\n        \"name\": \"ohos.permission.INTERNET\"\n      },\n      {\n        \"name\": \"ohos.permission.APP_TRACKING_CONSENT\",\n        \"reason\": \"$string:Y_APP_TRACKING_CONSENT\",\n        \"usedScene\": {\n          \"when\": \"always\"\n        }\n      }\n    ]\n  }\n}\n",
-  "content_sha256": "d1a5197fa83a55ea5796db8bbfbf40f6f66161c8d24fb4a242e9e0c93a6e9bc7",
-  "relative_path": "YFree/src/main/module.json5",
-  "schema_version": 1
-}

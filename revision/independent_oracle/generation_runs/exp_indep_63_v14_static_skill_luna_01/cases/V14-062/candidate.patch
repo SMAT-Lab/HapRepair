@@ -1,9 +1,0 @@
---- a/entry/src/main/ets/cases/init_list_component_case.ets
-+++ b/entry/src/main/ets/cases/init_list_component_case.ets
-@@ -11,5 +11,6 @@
-       }, (message: string) => message)
-     }
-     .width('92%')
-+    .height('100%')
-   }
- }

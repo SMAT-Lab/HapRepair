@@ -1,1 +1,0 @@
-const pixelValues = new Uint8ClampedArray([255, 128, 64, 32, 16]);
