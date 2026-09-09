@@ -1,0 +1,264 @@
+[
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/source_recovery/kmptpc_oh_render_gitcode/test/CanvasTest/entry/src/main/ets/pages/CanvasPage.ets",
+    "messages": [
+      {
+        "line": 21,
+        "column": 5,
+        "rangeStartLine": 21,
+        "rangeStartColumn": 5,
+        "endLine": 29,
+        "endColumn": 14,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 22,
+        "column": 5,
+        "rangeStartLine": 21,
+        "rangeStartColumn": 5,
+        "endLine": 29,
+        "endColumn": 14,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 23,
+        "column": 5,
+        "rangeStartLine": 21,
+        "rangeStartColumn": 5,
+        "endLine": 29,
+        "endColumn": 14,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 24,
+        "column": 5,
+        "rangeStartLine": 21,
+        "rangeStartColumn": 5,
+        "endLine": 29,
+        "endColumn": 14,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 25,
+        "column": 5,
+        "rangeStartLine": 21,
+        "rangeStartColumn": 5,
+        "endLine": 29,
+        "endColumn": 14,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 26,
+        "column": 5,
+        "rangeStartLine": 21,
+        "rangeStartColumn": 5,
+        "endLine": 29,
+        "endColumn": 14,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 27,
+        "column": 5,
+        "rangeStartLine": 21,
+        "rangeStartColumn": 5,
+        "endLine": 29,
+        "endColumn": 14,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 28,
+        "column": 5,
+        "rangeStartLine": 21,
+        "rangeStartColumn": 5,
+        "endLine": 29,
+        "endColumn": 14,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 29,
+        "column": 5,
+        "rangeStartLine": 21,
+        "rangeStartColumn": 5,
+        "endLine": 29,
+        "endColumn": 14,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 269,
+        "column": 7,
+        "rangeStartLine": 269,
+        "rangeStartColumn": 7,
+        "endLine": 270,
+        "endColumn": 33,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 270,
+        "column": 7,
+        "rangeStartLine": 269,
+        "rangeStartColumn": 7,
+        "endLine": 270,
+        "endColumn": 33,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 282,
+        "column": 5,
+        "rangeStartLine": 282,
+        "rangeStartColumn": 5,
+        "endLine": 283,
+        "endColumn": 37,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 283,
+        "column": 5,
+        "rangeStartLine": 282,
+        "rangeStartColumn": 5,
+        "endLine": 283,
+        "endColumn": 37,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/source_recovery/kmptpc_oh_render_gitcode/test/CanvasTest/entry/src/main/ets/pages/Index.ets",
+    "messages": [
+      {
+        "line": 158,
+        "column": 7,
+        "rangeStartLine": 158,
+        "rangeStartColumn": 7,
+        "endLine": 158,
+        "endColumn": 26,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 160,
+        "column": 7,
+        "rangeStartLine": 160,
+        "rangeStartColumn": 7,
+        "endLine": 160,
+        "endColumn": 28,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 184,
+        "column": 9,
+        "rangeStartLine": 184,
+        "rangeStartColumn": 9,
+        "endLine": 186,
+        "endColumn": 52,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 185,
+        "column": 9,
+        "rangeStartLine": 184,
+        "rangeStartColumn": 9,
+        "endLine": 186,
+        "endColumn": 52,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 186,
+        "column": 9,
+        "rangeStartLine": 184,
+        "rangeStartColumn": 9,
+        "endLine": 186,
+        "endColumn": 52,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 193,
+        "column": 9,
+        "rangeStartLine": 193,
+        "rangeStartColumn": 9,
+        "endLine": 195,
+        "endColumn": 52,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 194,
+        "column": 9,
+        "rangeStartLine": 193,
+        "rangeStartColumn": 9,
+        "endLine": 195,
+        "endColumn": 52,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 195,
+        "column": 9,
+        "rangeStartLine": 193,
+        "rangeStartColumn": 9,
+        "endLine": 195,
+        "endColumn": 52,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  }
+]

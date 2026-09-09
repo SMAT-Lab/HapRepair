@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_performance_hp_arkui_remove_unchanged_state_var",
+  "blind_id": "V14-044",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbcc-da0c-74b1-beb8-2f6e4d3e69f4",
+  "usage": {
+    "input_tokens": 156221,
+    "cached_input_tokens": 127232,
+    "output_tokens": 2677,
+    "total_tokens": 158898
+  },
+  "wall_seconds": 66.16967073099659,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 49,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc 'git status --short'",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -g 'HAPREPAIR_TASK.json' -g '*.ets' -g '*.ts' -g '*.json' -g '*.txt' -g '*.md'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills -maxdepth 4 -type f -name SKILL.md -print'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' entry/src/main/ets/cases/unchanged_state_var_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /workspace -maxdepth 5 -type f -print'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'rg -n \"remove-unchanged-state-var|unchanged state|state var\" /codex-home/skills/haprepair-openharmony-repair'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills/haprepair-openharmony-repair -maxdepth 4 -type f -print'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"wc -l /codex-home/skills/haprepair-openharmony-repair/SKILL.md && sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md && sed -n '261,520p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,280p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md && sed -n '1,340p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/state-reactivity.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'rg -n \"StaticActionLabel|actionLabel|@State|Button\" /workspace'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--hp-arkui-remove-unchanged-state-var.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json && sed -n '1,100p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/index.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/unchanged_state_var_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n \\\"@State|actionLabel|struct StaticActionLabel|build\\\\(\\\\)|Button\\\" entry/src/main/ets/cases/unchanged_state_var_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 5 -type f -printf '%P\\\\n' | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum HAPREPAIR_TASK.json entry/src/main/ets/cases/unchanged_state_var_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "2c2cb3ac1251089fc5e2e64c36a543b97238705936035eae5ae78989d1bc0f47",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/unchanged_state_var_case.ets",
+      "sha256": "ca87e40253a89f021557aa10d165dfc45c5ff5ba01d89f3565d7578882f5cb23",
+      "size_bytes": 129,
+      "content": "@Entry\n@Component\nstruct StaticActionLabel {\n  actionLabel: string = 'Continue';\n\n  build() {\n    Button(this.actionLabel)\n  }\n}\n"
+    }
+  ],
+  "trace_sha256": "17cabd3345a30674444facd168d7b29891db7f0dbe7245d60d8a60ee1ce0d20e",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:38:49.003175+00:00",
+  "rejection_reasons": []
+}

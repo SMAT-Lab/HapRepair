@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-167",
+  "category": "performance",
+  "finding": {
+    "column": 21,
+    "end_column": 21,
+    "end_line": 444,
+    "line": 444,
+    "message": "Avoid repeated creation of Date objects in loops or frequently called methods.",
+    "relative_path": "entry/src/main/ets/pages/testcase/ImageTestcase015.ets",
+    "rule": "@performance/reuse-date-instances-check",
+    "severity": "warn"
+  },
+  "rule": "@performance/reuse-date-instances-check",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/computation-api.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--reuse-date-instances-check.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "8016d0497cfce546f6ed90be63495d35d93e3eee82a46801f421a038f455b929",
+    "path": "source_files/8016d0497cfce546f6ed90be63495d35d93e3eee82a46801f421a038f455b929.json",
+    "sha256": "4421cb2a6d02c1b93007afc2637faf6c136cb6b56fbe566a15472d309dc2f118"
+  }
+}

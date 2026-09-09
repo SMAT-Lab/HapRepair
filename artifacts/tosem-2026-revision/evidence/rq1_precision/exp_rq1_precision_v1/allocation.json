@@ -1,0 +1,508 @@
+{
+  "performance": {
+    "method": "rule strata; min(3, N_h), then Hamilton allocation proportional to residual capacity",
+    "population": 9401,
+    "rule_count": 38,
+    "sample": 170,
+    "seed": "EXP-RQ1-PRECISION-performance-20260807-v1"
+  },
+  "security": {
+    "method": "fixed rule targets; within each rule use project strata, min(2, N_hr), then Hamilton allocation proportional to residual capacity",
+    "population": 483,
+    "rule_targets": {
+      "@security/no-commented-code": 30,
+      "@security/no-cycle": 30,
+      "@security/no-unsafe-hash": 1
+    },
+    "sample": 61,
+    "seed": "EXP-RQ1-PRECISION-security-20260807-v1"
+  },
+  "strata": [
+    {
+      "analysis_weight": 46.75,
+      "category": "performance",
+      "inclusion_probability": 0.0213903743315508,
+      "population": 187,
+      "project": null,
+      "rule": "@performance/avoid-overusing-custom-component-check",
+      "sample": 4
+    },
+    {
+      "analysis_weight": 1.0,
+      "category": "performance",
+      "inclusion_probability": 1.0,
+      "population": 2,
+      "project": null,
+      "rule": "@performance/constant-property-referencing-check-in-loops",
+      "sample": 2
+    },
+    {
+      "analysis_weight": 4.0,
+      "category": "performance",
+      "inclusion_probability": 0.25,
+      "population": 12,
+      "project": null,
+      "rule": "@performance/dark-color-mode-check",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 61.833333333333336,
+      "category": "performance",
+      "inclusion_probability": 0.016172506738544475,
+      "population": 371,
+      "project": null,
+      "rule": "@performance/foreach-args-check",
+      "sample": 6
+    },
+    {
+      "analysis_weight": 5.333333333333333,
+      "category": "performance",
+      "inclusion_probability": 0.1875,
+      "population": 16,
+      "project": null,
+      "rule": "@performance/foreach-index-check",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 1.3333333333333333,
+      "category": "performance",
+      "inclusion_probability": 0.75,
+      "population": 4,
+      "project": null,
+      "rule": "@performance/high-frequency-log-check",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 15.666666666666666,
+      "category": "performance",
+      "inclusion_probability": 0.06382978723404255,
+      "population": 47,
+      "project": null,
+      "rule": "@performance/hp-arkts-no-use-any-export-other",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 38.4,
+      "category": "performance",
+      "inclusion_probability": 0.026041666666666668,
+      "population": 192,
+      "project": null,
+      "rule": "@performance/hp-arkui-avoid-empty-callback",
+      "sample": 5
+    },
+    {
+      "analysis_weight": 1.0,
+      "category": "performance",
+      "inclusion_probability": 1.0,
+      "population": 1,
+      "project": null,
+      "rule": "@performance/hp-arkui-combine-same-arg-animateto",
+      "sample": 1
+    },
+    {
+      "analysis_weight": 2.0,
+      "category": "performance",
+      "inclusion_probability": 0.5,
+      "population": 6,
+      "project": null,
+      "rule": "@performance/hp-arkui-image-async-load",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 1.0,
+      "category": "performance",
+      "inclusion_probability": 1.0,
+      "population": 1,
+      "project": null,
+      "rule": "@performance/hp-arkui-load-on-demand",
+      "sample": 1
+    },
+    {
+      "analysis_weight": 71.0,
+      "category": "performance",
+      "inclusion_probability": 0.014084507042253521,
+      "population": 426,
+      "project": null,
+      "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+      "sample": 6
+    },
+    {
+      "analysis_weight": 2.0,
+      "category": "performance",
+      "inclusion_probability": 0.5,
+      "population": 6,
+      "project": null,
+      "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 82.75,
+      "category": "performance",
+      "inclusion_probability": 0.012084592145015106,
+      "population": 662,
+      "project": null,
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "sample": 8
+    },
+    {
+      "analysis_weight": 5.0,
+      "category": "performance",
+      "inclusion_probability": 0.2,
+      "population": 15,
+      "project": null,
+      "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 117.29166666666667,
+      "category": "performance",
+      "inclusion_probability": 0.00852575488454707,
+      "population": 2815,
+      "project": null,
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sample": 24
+    },
+    {
+      "analysis_weight": 120.92,
+      "category": "performance",
+      "inclusion_probability": 0.008269930532583526,
+      "population": 3023,
+      "project": null,
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sample": 25
+    },
+    {
+      "analysis_weight": 54.8,
+      "category": "performance",
+      "inclusion_probability": 0.01824817518248175,
+      "population": 274,
+      "project": null,
+      "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+      "sample": 5
+    },
+    {
+      "analysis_weight": 9.333333333333334,
+      "category": "performance",
+      "inclusion_probability": 0.10714285714285714,
+      "population": 28,
+      "project": null,
+      "rule": "@performance/hp-arkui-suggest-use-effectkit-blur",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 1.0,
+      "category": "performance",
+      "inclusion_probability": 1.0,
+      "population": 1,
+      "project": null,
+      "rule": "@performance/hp-arkui-use-grid-layout-options",
+      "sample": 1
+    },
+    {
+      "analysis_weight": 2.3333333333333335,
+      "category": "performance",
+      "inclusion_probability": 0.42857142857142855,
+      "population": 7,
+      "project": null,
+      "rule": "@performance/hp-arkui-use-id-in-get-resource-sync-api",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 75.16666666666667,
+      "category": "performance",
+      "inclusion_probability": 0.013303769401330377,
+      "population": 451,
+      "project": null,
+      "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+      "sample": 6
+    },
+    {
+      "analysis_weight": 49.0,
+      "category": "performance",
+      "inclusion_probability": 0.02040816326530612,
+      "population": 245,
+      "project": null,
+      "rule": "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload",
+      "sample": 5
+    },
+    {
+      "analysis_weight": 61.666666666666664,
+      "category": "performance",
+      "inclusion_probability": 0.016216216216216217,
+      "population": 370,
+      "project": null,
+      "rule": "@performance/hp-arkui-use-reusable-component",
+      "sample": 6
+    },
+    {
+      "analysis_weight": 13.333333333333334,
+      "category": "performance",
+      "inclusion_probability": 0.075,
+      "population": 40,
+      "project": null,
+      "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 1.0,
+      "category": "performance",
+      "inclusion_probability": 1.0,
+      "population": 2,
+      "project": null,
+      "rule": "@performance/hp-arkui-use-taskpool-for-web-request",
+      "sample": 2
+    },
+    {
+      "analysis_weight": 1.6666666666666667,
+      "category": "performance",
+      "inclusion_probability": 0.6,
+      "population": 5,
+      "project": null,
+      "rule": "@performance/hp-arkui-use-transition-to-replace-animateto",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 1.0,
+      "category": "performance",
+      "inclusion_probability": 1.0,
+      "population": 1,
+      "project": null,
+      "rule": "@performance/hp-arkui-use-word-break-to-replace-zero-width-space",
+      "sample": 1
+    },
+    {
+      "analysis_weight": 19.0,
+      "category": "performance",
+      "inclusion_probability": 0.05263157894736842,
+      "population": 76,
+      "project": null,
+      "rule": "@performance/hp-performance-no-closures",
+      "sample": 4
+    },
+    {
+      "analysis_weight": 5.666666666666667,
+      "category": "performance",
+      "inclusion_probability": 0.17647058823529413,
+      "population": 17,
+      "project": null,
+      "rule": "@performance/hp-performance-no-dynamic-cls-func",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 9.0,
+      "category": "performance",
+      "inclusion_probability": 0.1111111111111111,
+      "population": 27,
+      "project": null,
+      "rule": "@performance/init-list-component",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 1.0,
+      "category": "performance",
+      "inclusion_probability": 1.0,
+      "population": 3,
+      "project": null,
+      "rule": "@performance/js-code-cache-by-precompile-check",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 2.6666666666666665,
+      "category": "performance",
+      "inclusion_probability": 0.375,
+      "population": 8,
+      "project": null,
+      "rule": "@performance/monitor-invisible-area-in-image-animation",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 7.666666666666667,
+      "category": "performance",
+      "inclusion_probability": 0.13043478260869565,
+      "population": 23,
+      "project": null,
+      "rule": "@performance/multiple-associations-state-var-check",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 9.333333333333334,
+      "category": "performance",
+      "inclusion_probability": 0.10714285714285714,
+      "population": 28,
+      "project": null,
+      "rule": "@performance/reuse-date-instances-check",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 1.6666666666666667,
+      "category": "performance",
+      "inclusion_probability": 0.6,
+      "population": 5,
+      "project": null,
+      "rule": "@performance/tabs-on-change-check",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 1.0,
+      "category": "performance",
+      "inclusion_probability": 1.0,
+      "population": 1,
+      "project": null,
+      "rule": "@performance/typed-array-check",
+      "sample": 1
+    },
+    {
+      "analysis_weight": 1.0,
+      "category": "performance",
+      "inclusion_probability": 1.0,
+      "population": 3,
+      "project": null,
+      "rule": "@performance/waterflow-data-preload-check",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 7.5,
+      "category": "security",
+      "inclusion_probability": 0.13333333333333333,
+      "population": 15,
+      "project": "CanvasTest",
+      "rule": "@security/no-commented-code",
+      "sample": 2
+    },
+    {
+      "analysis_weight": 12.0,
+      "category": "security",
+      "inclusion_probability": 0.08333333333333333,
+      "population": 36,
+      "project": "HealthyPotAssistant",
+      "rule": "@security/no-commented-code",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 4.0,
+      "category": "security",
+      "inclusion_probability": 0.25,
+      "population": 8,
+      "project": "Image",
+      "rule": "@security/no-commented-code",
+      "sample": 2
+    },
+    {
+      "analysis_weight": 8.0,
+      "category": "security",
+      "inclusion_probability": 0.125,
+      "population": 16,
+      "project": "YFree_HarmonyOS",
+      "rule": "@security/no-commented-code",
+      "sample": 2
+    },
+    {
+      "analysis_weight": 11.666666666666666,
+      "category": "security",
+      "inclusion_probability": 0.08571428571428572,
+      "population": 35,
+      "project": "audio_suite",
+      "rule": "@security/no-commented-code",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 1.0,
+      "category": "security",
+      "inclusion_probability": 1.0,
+      "population": 1,
+      "project": "cameraAnimSample",
+      "rule": "@security/no-commented-code",
+      "sample": 1
+    },
+    {
+      "analysis_weight": 10.333333333333334,
+      "category": "security",
+      "inclusion_probability": 0.0967741935483871,
+      "population": 31,
+      "project": "flutter_embedding",
+      "rule": "@security/no-commented-code",
+      "sample": 3
+    },
+    {
+      "analysis_weight": 1.0,
+      "category": "security",
+      "inclusion_probability": 1.0,
+      "population": 1,
+      "project": "ohos_cordova",
+      "rule": "@security/no-commented-code",
+      "sample": 1
+    },
+    {
+      "analysis_weight": 22.166666666666668,
+      "category": "security",
+      "inclusion_probability": 0.045112781954887216,
+      "population": 133,
+      "project": "ohos_dfu_library",
+      "rule": "@security/no-commented-code",
+      "sample": 6
+    },
+    {
+      "analysis_weight": 20.8,
+      "category": "security",
+      "inclusion_probability": 0.04807692307692308,
+      "population": 104,
+      "project": "ohos_mail_base",
+      "rule": "@security/no-commented-code",
+      "sample": 5
+    },
+    {
+      "analysis_weight": 9.0,
+      "category": "security",
+      "inclusion_probability": 0.1111111111111111,
+      "population": 18,
+      "project": "shopping",
+      "rule": "@security/no-commented-code",
+      "sample": 2
+    },
+    {
+      "analysis_weight": 3.125,
+      "category": "security",
+      "inclusion_probability": 0.32,
+      "population": 50,
+      "project": "flutter_embedding",
+      "rule": "@security/no-cycle",
+      "sample": 16
+    },
+    {
+      "analysis_weight": 2.4,
+      "category": "security",
+      "inclusion_probability": 0.4166666666666667,
+      "population": 12,
+      "project": "ohos_cordova",
+      "rule": "@security/no-cycle",
+      "sample": 5
+    },
+    {
+      "analysis_weight": 2.7142857142857144,
+      "category": "security",
+      "inclusion_probability": 0.3684210526315789,
+      "population": 19,
+      "project": "ohos_dfu_library",
+      "rule": "@security/no-cycle",
+      "sample": 7
+    },
+    {
+      "analysis_weight": 1.5,
+      "category": "security",
+      "inclusion_probability": 0.6666666666666666,
+      "population": 3,
+      "project": "ohos_mail_base",
+      "rule": "@security/no-cycle",
+      "sample": 2
+    },
+    {
+      "analysis_weight": 1.0,
+      "category": "security",
+      "inclusion_probability": 1.0,
+      "population": 1,
+      "project": "audio_suite",
+      "rule": "@security/no-unsafe-hash",
+      "sample": 1
+    }
+  ]
+}

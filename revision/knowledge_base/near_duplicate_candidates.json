@@ -1,0 +1,2756 @@
+[
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_b741d4d97fe67207",
+    "right_pair_id": "pair_b990a36426ea21c2",
+    "problem_code_similarity": 0.991379,
+    "repair_code_similarity": 0.978578,
+    "mean_similarity": 0.984978,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_d37ed05385640b80",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.970976,
+    "repair_code_similarity": 0.990525,
+    "mean_similarity": 0.980751,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_e54e67f9754ee91f",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.971209,
+    "repair_code_similarity": 0.987993,
+    "mean_similarity": 0.979601,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-kdf",
+    "left_pair_id": "pair_7aa27b111f23a97c",
+    "right_pair_id": "pair_85114a5184b7d77e",
+    "problem_code_similarity": 0.978723,
+    "repair_code_similarity": 0.978903,
+    "mean_similarity": 0.978813,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.968601,
+    "repair_code_similarity": 0.984589,
+    "mean_similarity": 0.976595,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-mac",
+    "left_pair_id": "pair_13e4ab30dc4ec1b4",
+    "right_pair_id": "pair_a31a24fca57ccb42",
+    "problem_code_similarity": 0.979592,
+    "repair_code_similarity": 0.972376,
+    "mean_similarity": 0.975984,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_03aa3b5d7d2b5954",
+    "right_pair_id": "pair_af824cbd03c1e67d",
+    "problem_code_similarity": 0.975174,
+    "repair_code_similarity": 0.972678,
+    "mean_similarity": 0.973926,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.962963,
+    "repair_code_similarity": 0.984563,
+    "mean_similarity": 0.973763,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_af824cbd03c1e67d",
+    "right_pair_id": "pair_fc41d97cdb612dc2",
+    "problem_code_similarity": 0.982072,
+    "repair_code_similarity": 0.963163,
+    "mean_similarity": 0.972617,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_03aa3b5d7d2b5954",
+    "right_pair_id": "pair_fc41d97cdb612dc2",
+    "problem_code_similarity": 0.969458,
+    "repair_code_similarity": 0.975387,
+    "mean_similarity": 0.972423,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6ab881af8c430acf",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.964067,
+    "repair_code_similarity": 0.979346,
+    "mean_similarity": 0.971706,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-hash",
+    "left_pair_id": "pair_27f86475898a2109",
+    "right_pair_id": "pair_747d3adf1725a917",
+    "problem_code_similarity": 0.965889,
+    "repair_code_similarity": 0.97153,
+    "mean_similarity": 0.968709,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-kdf",
+    "left_pair_id": "pair_7aa27b111f23a97c",
+    "right_pair_id": "pair_d69093766d611ce4",
+    "problem_code_similarity": 0.974684,
+    "repair_code_similarity": 0.962343,
+    "mean_similarity": 0.968513,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-kdf",
+    "left_pair_id": "pair_85114a5184b7d77e",
+    "right_pair_id": "pair_d69093766d611ce4",
+    "problem_code_similarity": 0.974576,
+    "repair_code_similarity": 0.962185,
+    "mean_similarity": 0.968381,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6ab881af8c430acf",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.954704,
+    "repair_code_similarity": 0.976784,
+    "mean_similarity": 0.965744,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_644cdfe7450e091b",
+    "problem_code_similarity": 0.958647,
+    "repair_code_similarity": 0.971039,
+    "mean_similarity": 0.964843,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/hp-arkui-load-on-demand",
+    "left_pair_id": "pair_77e99e0e13a59184",
+    "right_pair_id": "pair_bc502d6768f5b76f",
+    "problem_code_similarity": 0.962804,
+    "repair_code_similarity": 0.964384,
+    "mean_similarity": 0.963594,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-huks",
+    "left_pair_id": "pair_9ef3d67c8a65f908",
+    "right_pair_id": "pair_cf0bdba09170fc6a",
+    "problem_code_similarity": 0.962522,
+    "repair_code_similarity": 0.962338,
+    "mean_similarity": 0.96243,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.953555,
+    "repair_code_similarity": 0.97099,
+    "mean_similarity": 0.962272,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/hp-arkui-load-on-demand",
+    "left_pair_id": "pair_1d9af0e3caf27d94",
+    "right_pair_id": "pair_ee4f89f58521a5ae",
+    "problem_code_similarity": 0.96134,
+    "repair_code_similarity": 0.963145,
+    "mean_similarity": 0.962243,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_d37ed05385640b80",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.936406,
+    "repair_code_similarity": 0.987973,
+    "mean_similarity": 0.962189,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.953466,
+    "repair_code_similarity": 0.969336,
+    "mean_similarity": 0.961401,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_d37ed05385640b80",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.934683,
+    "repair_code_similarity": 0.987952,
+    "mean_similarity": 0.961317,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.932004,
+    "repair_code_similarity": 0.988841,
+    "mean_similarity": 0.960422,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.930657,
+    "repair_code_similarity": 0.987973,
+    "mean_similarity": 0.959315,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_e278eb87d77b69a0",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.928702,
+    "repair_code_similarity": 0.987102,
+    "mean_similarity": 0.957902,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-3des",
+    "left_pair_id": "pair_5fcfa6a067e2f3cf",
+    "right_pair_id": "pair_b56c1b88d50b7482",
+    "problem_code_similarity": 0.958047,
+    "repair_code_similarity": 0.957684,
+    "mean_similarity": 0.957866,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-sm4",
+    "left_pair_id": "pair_24ad63cd4a82045e",
+    "right_pair_id": "pair_51c33d1b82af121d",
+    "problem_code_similarity": 0.957717,
+    "repair_code_similarity": 0.95723,
+    "mean_similarity": 0.957473,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_e278eb87d77b69a0",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.92674,
+    "repair_code_similarity": 0.985408,
+    "mean_similarity": 0.956074,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-sm2-cipher",
+    "left_pair_id": "pair_d5a1cc5889af1041",
+    "right_pair_id": "pair_e3e6f4fd99fa80f0",
+    "problem_code_similarity": 0.952591,
+    "repair_code_similarity": 0.957806,
+    "mean_similarity": 0.955198,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_02604667a474d8d0",
+    "right_pair_id": "pair_a784ce33d47cf402",
+    "problem_code_similarity": 0.939954,
+    "repair_code_similarity": 0.969629,
+    "mean_similarity": 0.954791,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_76b909da0905a724",
+    "right_pair_id": "pair_a784ce33d47cf402",
+    "problem_code_similarity": 0.938728,
+    "repair_code_similarity": 0.969697,
+    "mean_similarity": 0.954213,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_02604667a474d8d0",
+    "right_pair_id": "pair_76b909da0905a724",
+    "problem_code_similarity": 0.93901,
+    "repair_code_similarity": 0.96861,
+    "mean_similarity": 0.95381,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_58af23d924871877",
+    "right_pair_id": "pair_9eff4e6ac1cc5eba",
+    "problem_code_similarity": 0.953488,
+    "repair_code_similarity": 0.953488,
+    "mean_similarity": 0.953488,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6ab881af8c430acf",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.921676,
+    "repair_code_similarity": 0.982818,
+    "mean_similarity": 0.952247,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-kdf",
+    "left_pair_id": "pair_85114a5184b7d77e",
+    "right_pair_id": "pair_daea36914c3025c7",
+    "problem_code_similarity": 0.955789,
+    "repair_code_similarity": 0.947808,
+    "mean_similarity": 0.951799,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-kdf",
+    "left_pair_id": "pair_d69093766d611ce4",
+    "right_pair_id": "pair_daea36914c3025c7",
+    "problem_code_similarity": 0.956159,
+    "repair_code_similarity": 0.944099,
+    "mean_similarity": 0.950129,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-rsa-encrypt",
+    "left_pair_id": "pair_056953234e9e7da7",
+    "right_pair_id": "pair_ab041d98c776c058",
+    "problem_code_similarity": 0.953846,
+    "repair_code_similarity": 0.945674,
+    "mean_similarity": 0.94976,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_20a0304e58b5d063",
+    "right_pair_id": "pair_434fbee1baa3f22b",
+    "problem_code_similarity": 0.937738,
+    "repair_code_similarity": 0.96,
+    "mean_similarity": 0.948869,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-rsa-key",
+    "left_pair_id": "pair_12924968aefa5b87",
+    "right_pair_id": "pair_fe9019a24a838934",
+    "problem_code_similarity": 0.947103,
+    "repair_code_similarity": 0.949398,
+    "mean_similarity": 0.94825,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-kdf",
+    "left_pair_id": "pair_7aa27b111f23a97c",
+    "right_pair_id": "pair_daea36914c3025c7",
+    "problem_code_similarity": 0.951782,
+    "repair_code_similarity": 0.943867,
+    "mean_similarity": 0.947824,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_20a0304e58b5d063",
+    "right_pair_id": "pair_a784ce33d47cf402",
+    "problem_code_similarity": 0.914425,
+    "repair_code_similarity": 0.98092,
+    "mean_similarity": 0.947673,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-ecdsa",
+    "left_pair_id": "pair_553c49eabc552fc5",
+    "right_pair_id": "pair_f653f74c909b48a6",
+    "problem_code_similarity": 0.950562,
+    "repair_code_similarity": 0.944086,
+    "mean_similarity": 0.947324,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_6ab881af8c430acf",
+    "problem_code_similarity": 0.914182,
+    "repair_code_similarity": 0.977702,
+    "mean_similarity": 0.945942,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.916211,
+    "repair_code_similarity": 0.974359,
+    "mean_similarity": 0.945285,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-sm2-key",
+    "left_pair_id": "pair_26cfbbbbfa1a4721",
+    "right_pair_id": "pair_d23447a3ba75a2ea",
+    "problem_code_similarity": 0.942743,
+    "repair_code_similarity": 0.947631,
+    "mean_similarity": 0.945187,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6ab881af8c430acf",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.916058,
+    "repair_code_similarity": 0.974271,
+    "mean_similarity": 0.945165,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.915837,
+    "repair_code_similarity": 0.973527,
+    "mean_similarity": 0.944682,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dh",
+    "left_pair_id": "pair_3b2b5878c420f35e",
+    "right_pair_id": "pair_68fef7548a846b61",
+    "problem_code_similarity": 0.943466,
+    "repair_code_similarity": 0.945291,
+    "mean_similarity": 0.944379,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-rsa-sign",
+    "left_pair_id": "pair_42edf3d2a0e5ea27",
+    "right_pair_id": "pair_ad741c215ed82112",
+    "problem_code_similarity": 0.945129,
+    "repair_code_similarity": 0.943396,
+    "mean_similarity": 0.944263,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_323fac8dda8b80c9",
+    "right_pair_id": "pair_dee8b38e16d2f258",
+    "problem_code_similarity": 1.0,
+    "repair_code_similarity": 0.886297,
+    "mean_similarity": 0.943149,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6f34b61313fe4ca1",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.977072,
+    "repair_code_similarity": 0.906593,
+    "mean_similarity": 0.941833,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dsa",
+    "left_pair_id": "pair_02ed95e8428f9f50",
+    "right_pair_id": "pair_d16570223a409b42",
+    "problem_code_similarity": 0.943694,
+    "repair_code_similarity": 0.939655,
+    "mean_similarity": 0.941674,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dh-key",
+    "left_pair_id": "pair_816401950e508ca8",
+    "right_pair_id": "pair_f56d057cc35b64e5",
+    "problem_code_similarity": 0.938462,
+    "repair_code_similarity": 0.943627,
+    "mean_similarity": 0.941044,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_6ab881af8c430acf",
+    "problem_code_similarity": 0.91073,
+    "repair_code_similarity": 0.97099,
+    "mean_similarity": 0.94086,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-ecdh",
+    "left_pair_id": "pair_36a57042b6046084",
+    "right_pair_id": "pair_c38c0445994132b2",
+    "problem_code_similarity": 0.940431,
+    "repair_code_similarity": 0.939614,
+    "mean_similarity": 0.940022,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_20a0304e58b5d063",
+    "right_pair_id": "pair_76b909da0905a724",
+    "problem_code_similarity": 0.903776,
+    "repair_code_similarity": 0.975391,
+    "mean_similarity": 0.939584,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dsa-key",
+    "left_pair_id": "pair_7be772e056f43f53",
+    "right_pair_id": "pair_b4f4e7d02f748ff6",
+    "problem_code_similarity": 0.931579,
+    "repair_code_similarity": 0.944724,
+    "mean_similarity": 0.938151,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_b741d4d97fe67207",
+    "right_pair_id": "pair_ed5d64d3f4b394cf",
+    "problem_code_similarity": 0.937409,
+    "repair_code_similarity": 0.938038,
+    "mean_similarity": 0.937723,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6d4a17a0e9732dff",
+    "right_pair_id": "pair_9def5d7d32d9845d",
+    "problem_code_similarity": 0.946602,
+    "repair_code_similarity": 0.92599,
+    "mean_similarity": 0.936296,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_b990a36426ea21c2",
+    "right_pair_id": "pair_ed5d64d3f4b394cf",
+    "problem_code_similarity": 0.937591,
+    "repair_code_similarity": 0.933678,
+    "mean_similarity": 0.935634,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_464d9a7bb4986d54",
+    "right_pair_id": "pair_ffb5205e70660434",
+    "problem_code_similarity": 0.915556,
+    "repair_code_similarity": 0.954955,
+    "mean_similarity": 0.935255,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6f34b61313fe4ca1",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.960561,
+    "repair_code_similarity": 0.903934,
+    "mean_similarity": 0.932248,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-aes",
+    "left_pair_id": "pair_7f0372073cf9812b",
+    "right_pair_id": "pair_fd6e65668fe73d70",
+    "problem_code_similarity": 0.928854,
+    "repair_code_similarity": 0.935484,
+    "mean_similarity": 0.932169,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_02604667a474d8d0",
+    "right_pair_id": "pair_20a0304e58b5d063",
+    "problem_code_similarity": 0.89781,
+    "repair_code_similarity": 0.966368,
+    "mean_similarity": 0.932089,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_434fbee1baa3f22b",
+    "right_pair_id": "pair_a784ce33d47cf402",
+    "problem_code_similarity": 0.897714,
+    "repair_code_similarity": 0.96544,
+    "mean_similarity": 0.931577,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_434fbee1baa3f22b",
+    "right_pair_id": "pair_76b909da0905a724",
+    "problem_code_similarity": 0.896882,
+    "repair_code_similarity": 0.964444,
+    "mean_similarity": 0.930663,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6ab881af8c430acf",
+    "right_pair_id": "pair_6f34b61313fe4ca1",
+    "problem_code_similarity": 0.957205,
+    "repair_code_similarity": 0.899452,
+    "mean_similarity": 0.928328,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_02604667a474d8d0",
+    "right_pair_id": "pair_434fbee1baa3f22b",
+    "problem_code_similarity": 0.891018,
+    "repair_code_similarity": 0.962138,
+    "mean_similarity": 0.926578,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_14623e4916a0130d",
+    "right_pair_id": "pair_e1fe3c2672becf6b",
+    "problem_code_similarity": 0.841759,
+    "repair_code_similarity": 1.0,
+    "mean_similarity": 0.920879,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_0e5a48e69b552ae9",
+    "right_pair_id": "pair_3fbbdf46efac42c3",
+    "problem_code_similarity": 0.926829,
+    "repair_code_similarity": 0.914286,
+    "mean_similarity": 0.920557,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6f34b61313fe4ca1",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.932966,
+    "repair_code_similarity": 0.905109,
+    "mean_similarity": 0.919038,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_356a49d5284e7e17",
+    "right_pair_id": "pair_6d4a17a0e9732dff",
+    "problem_code_similarity": 0.929543,
+    "repair_code_similarity": 0.903678,
+    "mean_similarity": 0.91661,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-sm4",
+    "left_pair_id": "pair_094bacc3973da2e5",
+    "right_pair_id": "pair_f26a9b9c441ec623",
+    "problem_code_similarity": 0.915888,
+    "repair_code_similarity": 0.915888,
+    "mean_similarity": 0.915888,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_356a49d5284e7e17",
+    "right_pair_id": "pair_9def5d7d32d9845d",
+    "problem_code_similarity": 0.923636,
+    "repair_code_similarity": 0.907826,
+    "mean_similarity": 0.915731,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_1241c9586d97e8b5",
+    "right_pair_id": "pair_aa0b509b59eab8e0",
+    "problem_code_similarity": 0.901361,
+    "repair_code_similarity": 0.9259,
+    "mean_similarity": 0.91363,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6f34b61313fe4ca1",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.923923,
+    "repair_code_similarity": 0.90128,
+    "mean_similarity": 0.912601,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_2f46744c5e4fea29",
+    "right_pair_id": "pair_ce3efc059772f8d6",
+    "problem_code_similarity": 0.911111,
+    "repair_code_similarity": 0.911111,
+    "mean_similarity": 0.911111,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_6f34b61313fe4ca1",
+    "problem_code_similarity": 0.918182,
+    "repair_code_similarity": 0.903285,
+    "mean_similarity": 0.910733,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/multiple-associations-state-var-check",
+    "left_pair_id": "pair_3893876d767556b1",
+    "right_pair_id": "pair_62579ce8f1083132",
+    "problem_code_similarity": 0.921997,
+    "repair_code_similarity": 0.896401,
+    "mean_similarity": 0.909199,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_29b5c6870a6b6e3e",
+    "right_pair_id": "pair_d4ea73c2e0933076",
+    "problem_code_similarity": 0.918406,
+    "repair_code_similarity": 0.897719,
+    "mean_similarity": 0.908062,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-sm2-cipher",
+    "left_pair_id": "pair_b5db8675801c7e5c",
+    "right_pair_id": "pair_c326fd6d88a1c73d",
+    "problem_code_similarity": 0.911153,
+    "repair_code_similarity": 0.904315,
+    "mean_similarity": 0.907734,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dh-key",
+    "left_pair_id": "pair_349d7c1cee0358d0",
+    "right_pair_id": "pair_816401950e508ca8",
+    "problem_code_similarity": 0.919127,
+    "repair_code_similarity": 0.895859,
+    "mean_similarity": 0.907493,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-rsa-sign",
+    "left_pair_id": "pair_1e0f3f4d805297b5",
+    "right_pair_id": "pair_dd8dae83df27bda4",
+    "problem_code_similarity": 0.906015,
+    "repair_code_similarity": 0.901257,
+    "mean_similarity": 0.903636,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_6f34b61313fe4ca1",
+    "problem_code_similarity": 0.912886,
+    "repair_code_similarity": 0.892922,
+    "mean_similarity": 0.902904,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-hash",
+    "left_pair_id": "pair_27f86475898a2109",
+    "right_pair_id": "pair_c29034843a554a07",
+    "problem_code_similarity": 0.898711,
+    "repair_code_similarity": 0.899452,
+    "mean_similarity": 0.899081,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_7fc6b9aa8f67ce7c",
+    "right_pair_id": "pair_9eff4e6ac1cc5eba",
+    "problem_code_similarity": 0.897436,
+    "repair_code_similarity": 0.897436,
+    "mean_similarity": 0.897436,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_0067180d95b841f2",
+    "right_pair_id": "pair_8f502d5a51bf6f79",
+    "problem_code_similarity": 0.939891,
+    "repair_code_similarity": 0.853918,
+    "mean_similarity": 0.896904,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_0067180d95b841f2",
+    "right_pair_id": "pair_d4ea73c2e0933076",
+    "problem_code_similarity": 0.932203,
+    "repair_code_similarity": 0.856936,
+    "mean_similarity": 0.89457,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_32c0fc76d795012a",
+    "right_pair_id": "pair_56a42e1f00edae31",
+    "problem_code_similarity": 0.891182,
+    "repair_code_similarity": 0.897351,
+    "mean_similarity": 0.894266,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6d4a17a0e9732dff",
+    "right_pair_id": "pair_b741d4d97fe67207",
+    "problem_code_similarity": 0.85486,
+    "repair_code_similarity": 0.925065,
+    "mean_similarity": 0.889962,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6d4a17a0e9732dff",
+    "right_pair_id": "pair_b990a36426ea21c2",
+    "problem_code_similarity": 0.855246,
+    "repair_code_similarity": 0.924138,
+    "mean_similarity": 0.889692,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_b990a36426ea21c2",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.794016,
+    "repair_code_similarity": 0.983719,
+    "mean_similarity": 0.888868,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_9def5d7d32d9845d",
+    "right_pair_id": "pair_b990a36426ea21c2",
+    "problem_code_similarity": 0.853056,
+    "repair_code_similarity": 0.924658,
+    "mean_similarity": 0.888857,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_b741d4d97fe67207",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.795848,
+    "repair_code_similarity": 0.981164,
+    "mean_similarity": 0.888506,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dh-key",
+    "left_pair_id": "pair_349d7c1cee0358d0",
+    "right_pair_id": "pair_f56d057cc35b64e5",
+    "problem_code_similarity": 0.901155,
+    "repair_code_similarity": 0.875784,
+    "mean_similarity": 0.88847,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/sparse-array-check",
+    "left_pair_id": "pair_bb80dbe713c6ec85",
+    "right_pair_id": "pair_d6debf058f893b97",
+    "problem_code_similarity": 0.891304,
+    "repair_code_similarity": 0.885246,
+    "mean_similarity": 0.888275,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_b990a36426ea21c2",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.792193,
+    "repair_code_similarity": 0.983691,
+    "mean_similarity": 0.887942,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_9def5d7d32d9845d",
+    "right_pair_id": "pair_b741d4d97fe67207",
+    "problem_code_similarity": 0.85528,
+    "repair_code_similarity": 0.920445,
+    "mean_similarity": 0.887863,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_b741d4d97fe67207",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.794016,
+    "repair_code_similarity": 0.981132,
+    "mean_similarity": 0.887574,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_b990a36426ea21c2",
+    "problem_code_similarity": 0.784091,
+    "repair_code_similarity": 0.987147,
+    "mean_similarity": 0.885619,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+    "left_pair_id": "pair_36fbc6627ac4d575",
+    "right_pair_id": "pair_7a59713f11ebaeb2",
+    "problem_code_similarity": 0.882682,
+    "repair_code_similarity": 0.884942,
+    "mean_similarity": 0.883812,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-huks",
+    "left_pair_id": "pair_46ecb705cbc6fe3c",
+    "right_pair_id": "pair_9ef3d67c8a65f908",
+    "problem_code_similarity": 0.86029,
+    "repair_code_similarity": 0.9073,
+    "mean_similarity": 0.883795,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-huks",
+    "left_pair_id": "pair_46ecb705cbc6fe3c",
+    "right_pair_id": "pair_cf0bdba09170fc6a",
+    "problem_code_similarity": 0.854503,
+    "repair_code_similarity": 0.912767,
+    "mean_similarity": 0.883635,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-hash",
+    "left_pair_id": "pair_747d3adf1725a917",
+    "right_pair_id": "pair_c29034843a554a07",
+    "problem_code_similarity": 0.878676,
+    "repair_code_similarity": 0.885246,
+    "mean_similarity": 0.881961,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6d4a17a0e9732dff",
+    "right_pair_id": "pair_ed5d64d3f4b394cf",
+    "problem_code_similarity": 0.844086,
+    "repair_code_similarity": 0.917749,
+    "mean_similarity": 0.880917,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_b741d4d97fe67207",
+    "problem_code_similarity": 0.783599,
+    "repair_code_similarity": 0.976027,
+    "mean_similarity": 0.879813,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_b990a36426ea21c2",
+    "problem_code_similarity": 0.78458,
+    "repair_code_similarity": 0.973572,
+    "mean_similarity": 0.879076,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_b741d4d97fe67207",
+    "problem_code_similarity": 0.781818,
+    "repair_code_similarity": 0.972743,
+    "mean_similarity": 0.87728,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/hp-arkui-use-grid-layout-options",
+    "left_pair_id": "pair_a81fc0899aa0273f",
+    "right_pair_id": "pair_b3e0ed789dde95bd",
+    "problem_code_similarity": 0.841667,
+    "repair_code_similarity": 0.912566,
+    "mean_similarity": 0.877116,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_0067180d95b841f2",
+    "right_pair_id": "pair_29b5c6870a6b6e3e",
+    "problem_code_similarity": 0.904315,
+    "repair_code_similarity": 0.848879,
+    "mean_similarity": 0.876597,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-sm2-key",
+    "left_pair_id": "pair_26cfbbbbfa1a4721",
+    "right_pair_id": "pair_d26e9ad8d5da7da6",
+    "problem_code_similarity": 0.883784,
+    "repair_code_similarity": 0.866667,
+    "mean_similarity": 0.875225,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_356a49d5284e7e17",
+    "right_pair_id": "pair_ed5d64d3f4b394cf",
+    "problem_code_similarity": 0.832215,
+    "repair_code_similarity": 0.915136,
+    "mean_similarity": 0.873675,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_356a49d5284e7e17",
+    "right_pair_id": "pair_b741d4d97fe67207",
+    "problem_code_similarity": 0.837766,
+    "repair_code_similarity": 0.908616,
+    "mean_similarity": 0.873191,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_356a49d5284e7e17",
+    "right_pair_id": "pair_b990a36426ea21c2",
+    "problem_code_similarity": 0.835544,
+    "repair_code_similarity": 0.909408,
+    "mean_similarity": 0.872476,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_b990a36426ea21c2",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.754923,
+    "repair_code_similarity": 0.988822,
+    "mean_similarity": 0.871873,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-hash",
+    "left_pair_id": "pair_4b1dbe72b570e7f9",
+    "right_pair_id": "pair_747d3adf1725a917",
+    "problem_code_similarity": 0.870229,
+    "repair_code_similarity": 0.871698,
+    "mean_similarity": 0.870964,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_92ad2cb16a03c866",
+    "right_pair_id": "pair_d4ea73c2e0933076",
+    "problem_code_similarity": 0.851886,
+    "repair_code_similarity": 0.888222,
+    "mean_similarity": 0.870054,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_0e5a48e69b552ae9",
+    "right_pair_id": "pair_2e795458d99fed5d",
+    "problem_code_similarity": 0.874286,
+    "repair_code_similarity": 0.861538,
+    "mean_similarity": 0.867912,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_b990a36426ea21c2",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.749186,
+    "repair_code_similarity": 0.986254,
+    "mean_similarity": 0.86772,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_2c3295e95609ca22",
+    "right_pair_id": "pair_dcb78cb20212adfa",
+    "problem_code_similarity": 0.87027,
+    "repair_code_similarity": 0.864469,
+    "mean_similarity": 0.86737,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_b741d4d97fe67207",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.754386,
+    "repair_code_similarity": 0.975945,
+    "mean_similarity": 0.865165,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_56a42e1f00edae31",
+    "right_pair_id": "pair_aa0b509b59eab8e0",
+    "problem_code_similarity": 0.869963,
+    "repair_code_similarity": 0.859363,
+    "mean_similarity": 0.864663,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-hash",
+    "left_pair_id": "pair_27f86475898a2109",
+    "right_pair_id": "pair_4b1dbe72b570e7f9",
+    "problem_code_similarity": 0.860421,
+    "repair_code_similarity": 0.867424,
+    "mean_similarity": 0.863922,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_02604667a474d8d0",
+    "right_pair_id": "pair_6ab881af8c430acf",
+    "problem_code_similarity": 0.860534,
+    "repair_code_similarity": 0.866602,
+    "mean_similarity": 0.863568,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_a784ce33d47cf402",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.859422,
+    "repair_code_similarity": 0.866341,
+    "mean_similarity": 0.862882,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_b741d4d97fe67207",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.74864,
+    "repair_code_similarity": 0.976824,
+    "mean_similarity": 0.862732,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_434fbee1baa3f22b",
+    "problem_code_similarity": 0.855305,
+    "repair_code_similarity": 0.868648,
+    "mean_similarity": 0.861977,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-mac",
+    "left_pair_id": "pair_0f21e4dfe355db5e",
+    "right_pair_id": "pair_a31a24fca57ccb42",
+    "problem_code_similarity": 0.861224,
+    "repair_code_similarity": 0.862348,
+    "mean_similarity": 0.861786,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-mac",
+    "left_pair_id": "pair_9f3c9b75af9d0997",
+    "right_pair_id": "pair_a31a24fca57ccb42",
+    "problem_code_similarity": 0.864762,
+    "repair_code_similarity": 0.858223,
+    "mean_similarity": 0.861492,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-sm2-key",
+    "left_pair_id": "pair_d23447a3ba75a2ea",
+    "right_pair_id": "pair_d26e9ad8d5da7da6",
+    "problem_code_similarity": 0.86166,
+    "repair_code_similarity": 0.861111,
+    "mean_similarity": 0.861386,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_8f502d5a51bf6f79",
+    "right_pair_id": "pair_d4ea73c2e0933076",
+    "problem_code_similarity": 0.911602,
+    "repair_code_similarity": 0.809717,
+    "mean_similarity": 0.860659,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_32c0fc76d795012a",
+    "right_pair_id": "pair_aa0b509b59eab8e0",
+    "problem_code_similarity": 0.873646,
+    "repair_code_similarity": 0.846096,
+    "mean_similarity": 0.859871,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6ab881af8c430acf",
+    "right_pair_id": "pair_b741d4d97fe67207",
+    "problem_code_similarity": 0.743229,
+    "repair_code_similarity": 0.975986,
+    "mean_similarity": 0.859607,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6ab881af8c430acf",
+    "right_pair_id": "pair_b990a36426ea21c2",
+    "problem_code_similarity": 0.743784,
+    "repair_code_similarity": 0.975107,
+    "mean_similarity": 0.859446,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_20a0304e58b5d063",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.851158,
+    "repair_code_similarity": 0.867119,
+    "mean_similarity": 0.859138,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_9def5d7d32d9845d",
+    "right_pair_id": "pair_ed5d64d3f4b394cf",
+    "problem_code_similarity": 0.818421,
+    "repair_code_similarity": 0.895959,
+    "mean_similarity": 0.85719,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-mac",
+    "left_pair_id": "pair_13e4ab30dc4ec1b4",
+    "right_pair_id": "pair_9f3c9b75af9d0997",
+    "problem_code_similarity": 0.855513,
+    "repair_code_similarity": 0.856604,
+    "mean_similarity": 0.856059,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-mac",
+    "left_pair_id": "pair_0f21e4dfe355db5e",
+    "right_pair_id": "pair_13e4ab30dc4ec1b4",
+    "problem_code_similarity": 0.85947,
+    "repair_code_similarity": 0.852525,
+    "mean_similarity": 0.855998,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dsa-key",
+    "left_pair_id": "pair_0d28d2786a2c55a9",
+    "right_pair_id": "pair_45edf305bee0db23",
+    "problem_code_similarity": 0.851334,
+    "repair_code_similarity": 0.858958,
+    "mean_similarity": 0.855146,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_26140586ffd3ab4f",
+    "right_pair_id": "pair_7ad0e65207b5b503",
+    "problem_code_similarity": 0.869281,
+    "repair_code_similarity": 0.840659,
+    "mean_similarity": 0.85497,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dh",
+    "left_pair_id": "pair_68fef7548a846b61",
+    "right_pair_id": "pair_86f595d159e5bfa3",
+    "problem_code_similarity": 0.865009,
+    "repair_code_similarity": 0.844406,
+    "mean_similarity": 0.854707,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_10e3357271cac952",
+    "right_pair_id": "pair_7fc6b9aa8f67ce7c",
+    "problem_code_similarity": 0.857143,
+    "repair_code_similarity": 0.851613,
+    "mean_similarity": 0.854378,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dsa-key",
+    "left_pair_id": "pair_45edf305bee0db23",
+    "right_pair_id": "pair_b4f4e7d02f748ff6",
+    "problem_code_similarity": 0.86423,
+    "repair_code_similarity": 0.844388,
+    "mean_similarity": 0.854309,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dh",
+    "left_pair_id": "pair_3b2b5878c420f35e",
+    "right_pair_id": "pair_86f595d159e5bfa3",
+    "problem_code_similarity": 0.865299,
+    "repair_code_similarity": 0.842845,
+    "mean_similarity": 0.854072,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6f34b61313fe4ca1",
+    "right_pair_id": "pair_a784ce33d47cf402",
+    "problem_code_similarity": 0.814,
+    "repair_code_similarity": 0.891213,
+    "mean_similarity": 0.852607,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_9def5d7d32d9845d",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.768577,
+    "repair_code_similarity": 0.935733,
+    "mean_similarity": 0.852155,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_56a42e1f00edae31",
+    "right_pair_id": "pair_92ad2cb16a03c866",
+    "problem_code_similarity": 0.846366,
+    "repair_code_similarity": 0.855761,
+    "mean_similarity": 0.851064,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_29b5c6870a6b6e3e",
+    "right_pair_id": "pair_92ad2cb16a03c866",
+    "problem_code_similarity": 0.832264,
+    "repair_code_similarity": 0.869369,
+    "mean_similarity": 0.850817,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_02604667a474d8d0",
+    "right_pair_id": "pair_6f34b61313fe4ca1",
+    "problem_code_similarity": 0.810757,
+    "repair_code_similarity": 0.888192,
+    "mean_similarity": 0.849475,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_9def5d7d32d9845d",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.768085,
+    "repair_code_similarity": 0.927288,
+    "mean_similarity": 0.847687,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6d4a17a0e9732dff",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.766739,
+    "repair_code_similarity": 0.928387,
+    "mean_similarity": 0.847563,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_2f46744c5e4fea29",
+    "right_pair_id": "pair_7fc6b9aa8f67ce7c",
+    "problem_code_similarity": 0.846154,
+    "repair_code_similarity": 0.846154,
+    "mean_similarity": 0.846154,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_58af23d924871877",
+    "right_pair_id": "pair_7fc6b9aa8f67ce7c",
+    "problem_code_similarity": 0.846154,
+    "repair_code_similarity": 0.846154,
+    "mean_similarity": 0.846154,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_1241c9586d97e8b5",
+    "right_pair_id": "pair_56a42e1f00edae31",
+    "problem_code_similarity": 0.843034,
+    "repair_code_similarity": 0.848392,
+    "mean_similarity": 0.845713,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_29b5c6870a6b6e3e",
+    "right_pair_id": "pair_8f502d5a51bf6f79",
+    "problem_code_similarity": 0.891743,
+    "repair_code_similarity": 0.798109,
+    "mean_similarity": 0.844926,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_6d4a17a0e9732dff",
+    "problem_code_similarity": 0.755603,
+    "repair_code_similarity": 0.934019,
+    "mean_similarity": 0.844811,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6d4a17a0e9732dff",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.766234,
+    "repair_code_similarity": 0.923342,
+    "mean_similarity": 0.844788,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_32c0fc76d795012a",
+    "right_pair_id": "pair_92ad2cb16a03c866",
+    "problem_code_similarity": 0.839529,
+    "repair_code_similarity": 0.849961,
+    "mean_similarity": 0.844745,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+    "left_pair_id": "pair_29100124683ad15f",
+    "right_pair_id": "pair_55f812df6ed03204",
+    "problem_code_similarity": 0.850299,
+    "repair_code_similarity": 0.838323,
+    "mean_similarity": 0.844311,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_28da93f02c0ba065",
+    "right_pair_id": "pair_b5c253295c178a66",
+    "problem_code_similarity": 0.86014,
+    "repair_code_similarity": 0.828221,
+    "mean_similarity": 0.84418,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-aes",
+    "left_pair_id": "pair_7f0372073cf9812b",
+    "right_pair_id": "pair_897ea65909fa6852",
+    "problem_code_similarity": 0.849966,
+    "repair_code_similarity": 0.838057,
+    "mean_similarity": 0.844011,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6f34b61313fe4ca1",
+    "right_pair_id": "pair_76b909da0905a724",
+    "problem_code_similarity": 0.809571,
+    "repair_code_similarity": 0.877998,
+    "mean_similarity": 0.843785,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_1241c9586d97e8b5",
+    "right_pair_id": "pair_32c0fc76d795012a",
+    "problem_code_similarity": 0.841739,
+    "repair_code_similarity": 0.843049,
+    "mean_similarity": 0.842394,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dsa-key",
+    "left_pair_id": "pair_45edf305bee0db23",
+    "right_pair_id": "pair_7be772e056f43f53",
+    "problem_code_similarity": 0.846753,
+    "repair_code_similarity": 0.835025,
+    "mean_similarity": 0.840889,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_a784ce33d47cf402",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.825301,
+    "repair_code_similarity": 0.855469,
+    "mean_similarity": 0.840385,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_9def5d7d32d9845d",
+    "problem_code_similarity": 0.754995,
+    "repair_code_similarity": 0.925577,
+    "mean_similarity": 0.840286,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_6d4a17a0e9732dff",
+    "problem_code_similarity": 0.757219,
+    "repair_code_similarity": 0.923342,
+    "mean_similarity": 0.840281,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-rsa-encrypt",
+    "left_pair_id": "pair_056953234e9e7da7",
+    "right_pair_id": "pair_4682ae1e77a10cff",
+    "problem_code_similarity": 0.848291,
+    "repair_code_similarity": 0.830339,
+    "mean_similarity": 0.839315,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_eccc927d089a0a92",
+    "right_pair_id": "pair_ed5d64d3f4b394cf",
+    "problem_code_similarity": 0.746512,
+    "repair_code_similarity": 0.931153,
+    "mean_similarity": 0.838832,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_0067180d95b841f2",
+    "right_pair_id": "pair_32c0fc76d795012a",
+    "problem_code_similarity": 0.842301,
+    "repair_code_similarity": 0.835347,
+    "mean_similarity": 0.838824,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_e54e67f9754ee91f",
+    "right_pair_id": "pair_ed5d64d3f4b394cf",
+    "problem_code_similarity": 0.74478,
+    "repair_code_similarity": 0.932759,
+    "mean_similarity": 0.838769,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_20a0304e58b5d063",
+    "right_pair_id": "pair_6f34b61313fe4ca1",
+    "problem_code_similarity": 0.782427,
+    "repair_code_similarity": 0.894682,
+    "mean_similarity": 0.838554,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/hp-arkui-load-on-demand",
+    "left_pair_id": "pair_4ba4d2a65f820ef2",
+    "right_pair_id": "pair_dc38ddc456fd7525",
+    "problem_code_similarity": 0.802303,
+    "repair_code_similarity": 0.87393,
+    "mean_similarity": 0.838117,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-aes",
+    "left_pair_id": "pair_897ea65909fa6852",
+    "right_pair_id": "pair_fd6e65668fe73d70",
+    "problem_code_similarity": 0.840302,
+    "repair_code_similarity": 0.835598,
+    "mean_similarity": 0.83795,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_ed5d64d3f4b394cf",
+    "problem_code_similarity": 0.737084,
+    "repair_code_similarity": 0.936317,
+    "mean_similarity": 0.8367,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_56a42e1f00edae31",
+    "right_pair_id": "pair_6daeac7609c01f93",
+    "problem_code_similarity": 0.85214,
+    "repair_code_similarity": 0.821015,
+    "mean_similarity": 0.836578,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-rsa-encrypt",
+    "left_pair_id": "pair_4682ae1e77a10cff",
+    "right_pair_id": "pair_ab041d98c776c058",
+    "problem_code_similarity": 0.843348,
+    "repair_code_similarity": 0.829659,
+    "mean_similarity": 0.836503,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_ed5d64d3f4b394cf",
+    "problem_code_similarity": 0.737686,
+    "repair_code_similarity": 0.934932,
+    "mean_similarity": 0.836309,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_b52690ff6f4328a6",
+    "right_pair_id": "pair_b5c253295c178a66",
+    "problem_code_similarity": 0.855219,
+    "repair_code_similarity": 0.817391,
+    "mean_similarity": 0.836305,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_20a0304e58b5d063",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.818482,
+    "repair_code_similarity": 0.853256,
+    "mean_similarity": 0.835869,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dsa-key",
+    "left_pair_id": "pair_0d28d2786a2c55a9",
+    "right_pair_id": "pair_7be772e056f43f53",
+    "problem_code_similarity": 0.84507,
+    "repair_code_similarity": 0.826033,
+    "mean_similarity": 0.835551,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6f34b61313fe4ca1",
+    "right_pair_id": "pair_b990a36426ea21c2",
+    "problem_code_similarity": 0.75817,
+    "repair_code_similarity": 0.911416,
+    "mean_similarity": 0.834793,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_a784ce33d47cf402",
+    "problem_code_similarity": 0.814969,
+    "repair_code_similarity": 0.854086,
+    "mean_similarity": 0.834527,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_20a0304e58b5d063",
+    "right_pair_id": "pair_644cdfe7450e091b",
+    "problem_code_similarity": 0.819172,
+    "repair_code_similarity": 0.849661,
+    "mean_similarity": 0.834416,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_26140586ffd3ab4f",
+    "right_pair_id": "pair_28da93f02c0ba065",
+    "problem_code_similarity": 0.858108,
+    "repair_code_similarity": 0.809384,
+    "mean_similarity": 0.833746,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_9def5d7d32d9845d",
+    "problem_code_similarity": 0.75341,
+    "repair_code_similarity": 0.914043,
+    "mean_similarity": 0.833726,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dsa",
+    "left_pair_id": "pair_05dbdcefb70beb58",
+    "right_pair_id": "pair_92ce5b07bad45fb0",
+    "problem_code_similarity": 0.834286,
+    "repair_code_similarity": 0.832765,
+    "mean_similarity": 0.833525,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dh-key",
+    "left_pair_id": "pair_a2087ab5ec34b14a",
+    "right_pair_id": "pair_f56d057cc35b64e5",
+    "problem_code_similarity": 0.843061,
+    "repair_code_similarity": 0.823828,
+    "mean_similarity": 0.833444,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_25fa1e256ea35bd0",
+    "right_pair_id": "pair_dcb78cb20212adfa",
+    "problem_code_similarity": 0.826873,
+    "repair_code_similarity": 0.839161,
+    "mean_similarity": 0.833017,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_0067180d95b841f2",
+    "right_pair_id": "pair_92ad2cb16a03c866",
+    "problem_code_similarity": 0.838944,
+    "repair_code_similarity": 0.826824,
+    "mean_similarity": 0.832884,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_2e795458d99fed5d",
+    "right_pair_id": "pair_dee8b38e16d2f258",
+    "problem_code_similarity": 0.839237,
+    "repair_code_similarity": 0.826087,
+    "mean_similarity": 0.832662,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dh-key",
+    "left_pair_id": "pair_349d7c1cee0358d0",
+    "right_pair_id": "pair_a2087ab5ec34b14a",
+    "problem_code_similarity": 0.833766,
+    "repair_code_similarity": 0.831169,
+    "mean_similarity": 0.832468,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6d4a17a0e9732dff",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.732714,
+    "repair_code_similarity": 0.929991,
+    "mean_similarity": 0.831353,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_a784ce33d47cf402",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.810073,
+    "repair_code_similarity": 0.851852,
+    "mean_similarity": 0.830963,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dh-key",
+    "left_pair_id": "pair_816401950e508ca8",
+    "right_pair_id": "pair_a2087ab5ec34b14a",
+    "problem_code_similarity": 0.845655,
+    "repair_code_similarity": 0.816223,
+    "mean_similarity": 0.830939,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_02604667a474d8d0",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.818,
+    "repair_code_similarity": 0.842927,
+    "mean_similarity": 0.830463,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_356a49d5284e7e17",
+    "right_pair_id": "pair_644cdfe7450e091b",
+    "problem_code_similarity": 0.74359,
+    "repair_code_similarity": 0.917319,
+    "mean_similarity": 0.830455,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_69c2aab504e63c90",
+    "right_pair_id": "pair_7fab2efcd9e0bfa0",
+    "problem_code_similarity": 0.795252,
+    "repair_code_similarity": 0.865385,
+    "mean_similarity": 0.830318,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_a784ce33d47cf402",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.809674,
+    "repair_code_similarity": 0.850195,
+    "mean_similarity": 0.829934,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_b5c253295c178a66",
+    "right_pair_id": "pair_f08bfdbcea08b0b3",
+    "problem_code_similarity": 0.85034,
+    "repair_code_similarity": 0.809384,
+    "mean_similarity": 0.829862,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_9def5d7d32d9845d",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.730964,
+    "repair_code_similarity": 0.928755,
+    "mean_similarity": 0.82986,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_356a49d5284e7e17",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.75027,
+    "repair_code_similarity": 0.908616,
+    "mean_similarity": 0.829443,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-ecdsa",
+    "left_pair_id": "pair_553c49eabc552fc5",
+    "right_pair_id": "pair_a04aed13cdfad08e",
+    "problem_code_similarity": 0.844847,
+    "repair_code_similarity": 0.81326,
+    "mean_similarity": 0.829053,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_356a49d5284e7e17",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.750809,
+    "repair_code_similarity": 0.906713,
+    "mean_similarity": 0.828761,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_6daeac7609c01f93",
+    "right_pair_id": "pair_aa0b509b59eab8e0",
+    "problem_code_similarity": 0.848598,
+    "repair_code_similarity": 0.808752,
+    "mean_similarity": 0.828675,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_25fa1e256ea35bd0",
+    "right_pair_id": "pair_2c3295e95609ca22",
+    "problem_code_similarity": 0.826873,
+    "repair_code_similarity": 0.83045,
+    "mean_similarity": 0.828662,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_9def5d7d32d9845d",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.725806,
+    "repair_code_similarity": 0.929674,
+    "mean_similarity": 0.82774,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-dsa-key",
+    "left_pair_id": "pair_0d28d2786a2c55a9",
+    "right_pair_id": "pair_b4f4e7d02f748ff6",
+    "problem_code_similarity": 0.828829,
+    "repair_code_similarity": 0.825157,
+    "mean_similarity": 0.826993,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_8f502d5a51bf6f79",
+    "right_pair_id": "pair_92ad2cb16a03c866",
+    "problem_code_similarity": 0.853072,
+    "repair_code_similarity": 0.8,
+    "mean_similarity": 0.826536,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_92ad2cb16a03c866",
+    "right_pair_id": "pair_aa0b509b59eab8e0",
+    "problem_code_similarity": 0.83791,
+    "repair_code_similarity": 0.815089,
+    "mean_similarity": 0.826499,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-huks",
+    "left_pair_id": "pair_46ecb705cbc6fe3c",
+    "right_pair_id": "pair_87b4cca79b7b581f",
+    "problem_code_similarity": 0.707449,
+    "repair_code_similarity": 0.945003,
+    "mean_similarity": 0.826226,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-ecdsa",
+    "left_pair_id": "pair_a04aed13cdfad08e",
+    "right_pair_id": "pair_f653f74c909b48a6",
+    "problem_code_similarity": 0.839506,
+    "repair_code_similarity": 0.812705,
+    "mean_similarity": 0.826106,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_76b909da0905a724",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.812813,
+    "repair_code_similarity": 0.839338,
+    "mean_similarity": 0.826075,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_29b5c6870a6b6e3e",
+    "right_pair_id": "pair_56a42e1f00edae31",
+    "problem_code_similarity": 0.802657,
+    "repair_code_similarity": 0.84925,
+    "mean_similarity": 0.825953,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/hp-arkui-avoid-empty-callback",
+    "left_pair_id": "pair_29dccaf14820243a",
+    "right_pair_id": "pair_b7f813690675770d",
+    "problem_code_similarity": 0.862903,
+    "repair_code_similarity": 0.788321,
+    "mean_similarity": 0.825612,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6d4a17a0e9732dff",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.72541,
+    "repair_code_similarity": 0.925734,
+    "mean_similarity": 0.825572,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_323fac8dda8b80c9",
+    "right_pair_id": "pair_b4758c6cd58c6057",
+    "problem_code_similarity": 0.806122,
+    "repair_code_similarity": 0.84492,
+    "mean_similarity": 0.825521,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_76b909da0905a724",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.805031,
+    "repair_code_similarity": 0.845781,
+    "mean_similarity": 0.825406,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_28da93f02c0ba065",
+    "right_pair_id": "pair_9c2a3520fbbdab5f",
+    "problem_code_similarity": 0.833333,
+    "repair_code_similarity": 0.816568,
+    "mean_similarity": 0.824951,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_02604667a474d8d0",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.802508,
+    "repair_code_similarity": 0.847128,
+    "mean_similarity": 0.824818,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_02604667a474d8d0",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.808342,
+    "repair_code_similarity": 0.840156,
+    "mean_similarity": 0.824249,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6ab881af8c430acf",
+    "right_pair_id": "pair_a784ce33d47cf402",
+    "problem_code_similarity": 0.808342,
+    "repair_code_similarity": 0.840156,
+    "mean_similarity": 0.824249,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6ab881af8c430acf",
+    "right_pair_id": "pair_9def5d7d32d9845d",
+    "problem_code_similarity": 0.722892,
+    "repair_code_similarity": 0.92545,
+    "mean_similarity": 0.824171,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_76b909da0905a724",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.807157,
+    "repair_code_similarity": 0.840467,
+    "mean_similarity": 0.823812,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_32c0fc76d795012a",
+    "right_pair_id": "pair_d4ea73c2e0933076",
+    "problem_code_similarity": 0.803002,
+    "repair_code_similarity": 0.844615,
+    "mean_similarity": 0.823809,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6ab881af8c430acf",
+    "right_pair_id": "pair_76b909da0905a724",
+    "problem_code_similarity": 0.807921,
+    "repair_code_similarity": 0.83965,
+    "mean_similarity": 0.823785,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_28da93f02c0ba065",
+    "right_pair_id": "pair_7ad0e65207b5b503",
+    "problem_code_similarity": 0.854305,
+    "repair_code_similarity": 0.793201,
+    "mean_similarity": 0.823753,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-ecdh",
+    "left_pair_id": "pair_36a57042b6046084",
+    "right_pair_id": "pair_42047e32ab2bd488",
+    "problem_code_similarity": 0.833967,
+    "repair_code_similarity": 0.812887,
+    "mean_similarity": 0.823427,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6ab881af8c430acf",
+    "right_pair_id": "pair_6d4a17a0e9732dff",
+    "problem_code_similarity": 0.722449,
+    "repair_code_similarity": 0.92321,
+    "mean_similarity": 0.822829,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_464d9a7bb4986d54",
+    "right_pair_id": "pair_878934088d966172",
+    "problem_code_similarity": 0.824601,
+    "repair_code_similarity": 0.820809,
+    "mean_similarity": 0.822705,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_26140586ffd3ab4f",
+    "right_pair_id": "pair_b5c253295c178a66",
+    "problem_code_similarity": 0.855172,
+    "repair_code_similarity": 0.789318,
+    "mean_similarity": 0.822245,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_32c0fc76d795012a",
+    "right_pair_id": "pair_6daeac7609c01f93",
+    "problem_code_similarity": 0.840996,
+    "repair_code_similarity": 0.803463,
+    "mean_similarity": 0.82223,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_2f46744c5e4fea29",
+    "right_pair_id": "pair_a4c8ad85a5c145df",
+    "problem_code_similarity": 0.822222,
+    "repair_code_similarity": 0.822222,
+    "mean_similarity": 0.822222,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_58af23d924871877",
+    "right_pair_id": "pair_ce3efc059772f8d6",
+    "problem_code_similarity": 0.822222,
+    "repair_code_similarity": 0.822222,
+    "mean_similarity": 0.822222,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_9eff4e6ac1cc5eba",
+    "right_pair_id": "pair_ce3efc059772f8d6",
+    "problem_code_similarity": 0.822222,
+    "repair_code_similarity": 0.822222,
+    "mean_similarity": 0.822222,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_d37ed05385640b80",
+    "right_pair_id": "pair_ed5d64d3f4b394cf",
+    "problem_code_similarity": 0.709392,
+    "repair_code_similarity": 0.93437,
+    "mean_similarity": 0.821881,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_2c3295e95609ca22",
+    "right_pair_id": "pair_2e795458d99fed5d",
+    "problem_code_similarity": 0.819209,
+    "repair_code_similarity": 0.824427,
+    "mean_similarity": 0.821818,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6f34b61313fe4ca1",
+    "right_pair_id": "pair_b741d4d97fe67207",
+    "problem_code_similarity": 0.751092,
+    "repair_code_similarity": 0.892336,
+    "mean_similarity": 0.821714,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_32c0fc76d795012a",
+    "right_pair_id": "pair_f108dd690d4e32a8",
+    "problem_code_similarity": 0.827759,
+    "repair_code_similarity": 0.815305,
+    "mean_similarity": 0.821532,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_434fbee1baa3f22b",
+    "right_pair_id": "pair_644cdfe7450e091b",
+    "problem_code_similarity": 0.807734,
+    "repair_code_similarity": 0.835101,
+    "mean_similarity": 0.821417,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_76b909da0905a724",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.797071,
+    "repair_code_similarity": 0.845481,
+    "mean_similarity": 0.821276,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_434fbee1baa3f22b",
+    "right_pair_id": "pair_6f34b61313fe4ca1",
+    "problem_code_similarity": 0.76161,
+    "repair_code_similarity": 0.880829,
+    "mean_similarity": 0.821219,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_56a42e1f00edae31",
+    "right_pair_id": "pair_d4ea73c2e0933076",
+    "problem_code_similarity": 0.8,
+    "repair_code_similarity": 0.842271,
+    "mean_similarity": 0.821136,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_76b909da0905a724",
+    "problem_code_similarity": 0.802073,
+    "repair_code_similarity": 0.839961,
+    "mean_similarity": 0.821017,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_356a49d5284e7e17",
+    "right_pair_id": "pair_3ed1607f3d014671",
+    "problem_code_similarity": 0.739872,
+    "repair_code_similarity": 0.900433,
+    "mean_similarity": 0.820152,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_26140586ffd3ab4f",
+    "right_pair_id": "pair_9c2a3520fbbdab5f",
+    "problem_code_similarity": 0.848684,
+    "repair_code_similarity": 0.790831,
+    "mean_similarity": 0.819758,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_e278eb87d77b69a0",
+    "right_pair_id": "pair_ed5d64d3f4b394cf",
+    "problem_code_similarity": 0.703947,
+    "repair_code_similarity": 0.935289,
+    "mean_similarity": 0.819618,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_2e795458d99fed5d",
+    "right_pair_id": "pair_3fbbdf46efac42c3",
+    "problem_code_similarity": 0.840336,
+    "repair_code_similarity": 0.798507,
+    "mean_similarity": 0.819422,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_20a0304e58b5d063",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.785714,
+    "repair_code_similarity": 0.85297,
+    "mean_similarity": 0.819342,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_02604667a474d8d0",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.797906,
+    "repair_code_similarity": 0.837707,
+    "mean_similarity": 0.817806,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_434fbee1baa3f22b",
+    "right_pair_id": "pair_e54e67f9754ee91f",
+    "problem_code_similarity": 0.800434,
+    "repair_code_similarity": 0.834783,
+    "mean_similarity": 0.817608,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_d37ed05385640b80",
+    "right_pair_id": "pair_f895bb257cdf4979",
+    "problem_code_similarity": 0.815906,
+    "repair_code_similarity": 0.819103,
+    "mean_similarity": 0.817504,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_a784ce33d47cf402",
+    "problem_code_similarity": 0.79668,
+    "repair_code_similarity": 0.837524,
+    "mean_similarity": 0.817102,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse",
+    "left_pair_id": "pair_2b23139ab39ae23a",
+    "right_pair_id": "pair_cbd017714f96ea4e",
+    "problem_code_similarity": 0.811909,
+    "repair_code_similarity": 0.822062,
+    "mean_similarity": 0.816986,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_3ed1607f3d014671",
+    "right_pair_id": "pair_76b909da0905a724",
+    "problem_code_similarity": 0.796277,
+    "repair_code_similarity": 0.83703,
+    "mean_similarity": 0.816654,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_20a0304e58b5d063",
+    "right_pair_id": "pair_3ed1607f3d014671",
+    "problem_code_similarity": 0.8,
+    "repair_code_similarity": 0.833173,
+    "mean_similarity": 0.816586,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_434fbee1baa3f22b",
+    "right_pair_id": "pair_eccc927d089a0a92",
+    "problem_code_similarity": 0.8,
+    "repair_code_similarity": 0.833173,
+    "mean_similarity": 0.816586,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_26140586ffd3ab4f",
+    "right_pair_id": "pair_69c2aab504e63c90",
+    "problem_code_similarity": 0.874172,
+    "repair_code_similarity": 0.758442,
+    "mean_similarity": 0.816307,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-ecdh",
+    "left_pair_id": "pair_42047e32ab2bd488",
+    "right_pair_id": "pair_c38c0445994132b2",
+    "problem_code_similarity": 0.827848,
+    "repair_code_similarity": 0.803946,
+    "mean_similarity": 0.815897,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6ab881af8c430acf",
+    "right_pair_id": "pair_ed5d64d3f4b394cf",
+    "problem_code_similarity": 0.69869,
+    "repair_code_similarity": 0.932759,
+    "mean_similarity": 0.815724,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_10e3357271cac952",
+    "right_pair_id": "pair_58af23d924871877",
+    "problem_code_similarity": 0.823529,
+    "repair_code_similarity": 0.807018,
+    "mean_similarity": 0.815273,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_10e3357271cac952",
+    "right_pair_id": "pair_9eff4e6ac1cc5eba",
+    "problem_code_similarity": 0.823529,
+    "repair_code_similarity": 0.807018,
+    "mean_similarity": 0.815273,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_02604667a474d8d0",
+    "right_pair_id": "pair_644cdfe7450e091b",
+    "problem_code_similarity": 0.79089,
+    "repair_code_similarity": 0.83965,
+    "mean_similarity": 0.81527,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_02604667a474d8d0",
+    "right_pair_id": "pair_3ed1607f3d014671",
+    "problem_code_similarity": 0.793388,
+    "repair_code_similarity": 0.834783,
+    "mean_similarity": 0.814086,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_20a0304e58b5d063",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.777894,
+    "repair_code_similarity": 0.850195,
+    "mean_similarity": 0.814044,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_2f46744c5e4fea29",
+    "right_pair_id": "pair_58af23d924871877",
+    "problem_code_similarity": 0.813953,
+    "repair_code_similarity": 0.813953,
+    "mean_similarity": 0.813953,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_2f46744c5e4fea29",
+    "right_pair_id": "pair_9eff4e6ac1cc5eba",
+    "problem_code_similarity": 0.813953,
+    "repair_code_similarity": 0.813953,
+    "mean_similarity": 0.813953,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-huks",
+    "left_pair_id": "pair_87b4cca79b7b581f",
+    "right_pair_id": "pair_9ef3d67c8a65f908",
+    "problem_code_similarity": 0.715587,
+    "repair_code_similarity": 0.912018,
+    "mean_similarity": 0.813803,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/sparse-array-check",
+    "left_pair_id": "pair_6bb7927824ea0c30",
+    "right_pair_id": "pair_ee0777143087beeb",
+    "problem_code_similarity": 0.8,
+    "repair_code_similarity": 0.827586,
+    "mean_similarity": 0.813793,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_356a49d5284e7e17",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.715464,
+    "repair_code_similarity": 0.91179,
+    "mean_similarity": 0.813627,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_2e795458d99fed5d",
+    "right_pair_id": "pair_464d9a7bb4986d54",
+    "problem_code_similarity": 0.824147,
+    "repair_code_similarity": 0.802768,
+    "mean_similarity": 0.813458,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-ecdh",
+    "left_pair_id": "pair_101c6b8f8e4c195e",
+    "right_pair_id": "pair_c38c0445994132b2",
+    "problem_code_similarity": 0.823377,
+    "repair_code_similarity": 0.803526,
+    "mean_similarity": 0.813452,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+    "left_pair_id": "pair_7a59713f11ebaeb2",
+    "right_pair_id": "pair_e544f4127c593dec",
+    "problem_code_similarity": 0.811146,
+    "repair_code_similarity": 0.815592,
+    "mean_similarity": 0.813369,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_2e795458d99fed5d",
+    "right_pair_id": "pair_dcb78cb20212adfa",
+    "problem_code_similarity": 0.80791,
+    "repair_code_similarity": 0.818533,
+    "mean_similarity": 0.813221,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_29b5c6870a6b6e3e",
+    "right_pair_id": "pair_32c0fc76d795012a",
+    "problem_code_similarity": 0.788785,
+    "repair_code_similarity": 0.837567,
+    "mean_similarity": 0.813176,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_9c2a3520fbbdab5f",
+    "right_pair_id": "pair_b52690ff6f4328a6",
+    "problem_code_similarity": 0.836013,
+    "repair_code_similarity": 0.789916,
+    "mean_similarity": 0.812964,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_e278eb87d77b69a0",
+    "right_pair_id": "pair_f895bb257cdf4979",
+    "problem_code_similarity": 0.808791,
+    "repair_code_similarity": 0.817064,
+    "mean_similarity": 0.812928,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-ecdh",
+    "left_pair_id": "pair_101c6b8f8e4c195e",
+    "right_pair_id": "pair_36a57042b6046084",
+    "problem_code_similarity": 0.824447,
+    "repair_code_similarity": 0.8,
+    "mean_similarity": 0.812224,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_356a49d5284e7e17",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.712385,
+    "repair_code_similarity": 0.910995,
+    "mean_similarity": 0.81169,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-unsafe-ecdh",
+    "left_pair_id": "pair_101c6b8f8e4c195e",
+    "right_pair_id": "pair_42047e32ab2bd488",
+    "problem_code_similarity": 0.812987,
+    "repair_code_similarity": 0.809832,
+    "mean_similarity": 0.811409,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_56a42e1f00edae31",
+    "right_pair_id": "pair_f108dd690d4e32a8",
+    "problem_code_similarity": 0.811864,
+    "repair_code_similarity": 0.810852,
+    "mean_similarity": 0.811358,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_28da93f02c0ba065",
+    "right_pair_id": "pair_b52690ff6f4328a6",
+    "problem_code_similarity": 0.831683,
+    "repair_code_similarity": 0.790831,
+    "mean_similarity": 0.811257,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_28da93f02c0ba065",
+    "right_pair_id": "pair_f08bfdbcea08b0b3",
+    "problem_code_similarity": 0.833333,
+    "repair_code_similarity": 0.788406,
+    "mean_similarity": 0.81087,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_6ab881af8c430acf",
+    "right_pair_id": "pair_f895bb257cdf4979",
+    "problem_code_similarity": 0.804967,
+    "repair_code_similarity": 0.813584,
+    "mean_similarity": 0.809275,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_32c0fc76d795012a",
+    "right_pair_id": "pair_8f502d5a51bf6f79",
+    "problem_code_similarity": 0.827586,
+    "repair_code_similarity": 0.790436,
+    "mean_similarity": 0.809011,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_356a49d5284e7e17",
+    "right_pair_id": "pair_6ab881af8c430acf",
+    "problem_code_similarity": 0.70948,
+    "repair_code_similarity": 0.908457,
+    "mean_similarity": 0.808968,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_9351823a6eaba080",
+    "right_pair_id": "pair_a4c8ad85a5c145df",
+    "problem_code_similarity": 0.8125,
+    "repair_code_similarity": 0.802083,
+    "mean_similarity": 0.807292,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_9351823a6eaba080",
+    "right_pair_id": "pair_ce3efc059772f8d6",
+    "problem_code_similarity": 0.8125,
+    "repair_code_similarity": 0.802083,
+    "mean_similarity": 0.807292,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_26140586ffd3ab4f",
+    "right_pair_id": "pair_b52690ff6f4328a6",
+    "problem_code_similarity": 0.833876,
+    "repair_code_similarity": 0.777778,
+    "mean_similarity": 0.805827,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_878934088d966172",
+    "right_pair_id": "pair_d46a40c932bf009f",
+    "problem_code_similarity": 0.835073,
+    "repair_code_similarity": 0.77512,
+    "mean_similarity": 0.805096,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/hp-arkui-combine-same-arg-animateto",
+    "left_pair_id": "pair_18920b26d2d2a63a",
+    "right_pair_id": "pair_21c9bb743e141d61",
+    "problem_code_similarity": 0.811044,
+    "repair_code_similarity": 0.799117,
+    "mean_similarity": 0.805081,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_20a0304e58b5d063",
+    "right_pair_id": "pair_6ab881af8c430acf",
+    "problem_code_similarity": 0.768432,
+    "repair_code_similarity": 0.841594,
+    "mean_similarity": 0.805013,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_7fc6b9aa8f67ce7c",
+    "right_pair_id": "pair_a4c8ad85a5c145df",
+    "problem_code_similarity": 0.804878,
+    "repair_code_similarity": 0.804878,
+    "mean_similarity": 0.804878,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_7fc6b9aa8f67ce7c",
+    "right_pair_id": "pair_ce3efc059772f8d6",
+    "problem_code_similarity": 0.804878,
+    "repair_code_similarity": 0.804878,
+    "mean_similarity": 0.804878,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_58af23d924871877",
+    "right_pair_id": "pair_9351823a6eaba080",
+    "problem_code_similarity": 0.804348,
+    "repair_code_similarity": 0.804348,
+    "mean_similarity": 0.804348,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_58af23d924871877",
+    "right_pair_id": "pair_c608b45c8ebbad0b",
+    "problem_code_similarity": 0.804348,
+    "repair_code_similarity": 0.804348,
+    "mean_similarity": 0.804348,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_9351823a6eaba080",
+    "right_pair_id": "pair_9eff4e6ac1cc5eba",
+    "problem_code_similarity": 0.804348,
+    "repair_code_similarity": 0.804348,
+    "mean_similarity": 0.804348,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/lottie-animation-destroy-check",
+    "left_pair_id": "pair_1241c9586d97e8b5",
+    "right_pair_id": "pair_92ad2cb16a03c866",
+    "problem_code_similarity": 0.806149,
+    "repair_code_similarity": 0.802334,
+    "mean_similarity": 0.804241,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@security/no-cycle",
+    "left_pair_id": "pair_007b408a3792e734",
+    "right_pair_id": "pair_9351823a6eaba080",
+    "problem_code_similarity": 0.803922,
+    "repair_code_similarity": 0.803922,
+    "mean_similarity": 0.803922,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_0e5a48e69b552ae9",
+    "right_pair_id": "pair_2c3295e95609ca22",
+    "problem_code_similarity": 0.803279,
+    "repair_code_similarity": 0.80292,
+    "mean_similarity": 0.803099,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_434fbee1baa3f22b",
+    "right_pair_id": "pair_d37ed05385640b80",
+    "problem_code_similarity": 0.764767,
+    "repair_code_similarity": 0.838335,
+    "mean_similarity": 0.801551,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_434fbee1baa3f22b",
+    "right_pair_id": "pair_e278eb87d77b69a0",
+    "problem_code_similarity": 0.765432,
+    "repair_code_similarity": 0.837524,
+    "mean_similarity": 0.801478,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/high-frequency-log-check",
+    "left_pair_id": "pair_0e5a48e69b552ae9",
+    "right_pair_id": "pair_dcb78cb20212adfa",
+    "problem_code_similarity": 0.797814,
+    "repair_code_similarity": 0.804428,
+    "mean_similarity": 0.801121,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/foreach-args-check",
+    "left_pair_id": "pair_9c2a3520fbbdab5f",
+    "right_pair_id": "pair_b5c253295c178a66",
+    "problem_code_similarity": 0.823129,
+    "repair_code_similarity": 0.778443,
+    "mean_similarity": 0.800786,
+    "decision": "manual_review_required"
+  },
+  {
+    "rule": "@performance/waterflow-data-preload-check",
+    "left_pair_id": "pair_644cdfe7450e091b",
+    "right_pair_id": "pair_f895bb257cdf4979",
+    "problem_code_similarity": 0.780967,
+    "repair_code_similarity": 0.819625,
+    "mean_similarity": 0.800296,
+    "decision": "manual_review_required"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-039",
+  "category": "security",
+  "finding": {
+    "column": 39,
+    "end_column": 39,
+    "end_line": 469,
+    "line": 469,
+    "message": "Delete the related code completely when it is invalid.",
+    "relative_path": "flutter/src/main/ets/embedding/ohos/KeyboardMap.ets",
+    "rule": "@security/no-commented-code",
+    "severity": "warn"
+  },
+  "rule": "@security/no-commented-code",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-commented-code.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "b64ca859e2fc7f00ea90356c489c9d1c24632ee0e7e27256eac531685a6afff1",
+    "path": "source_files/b64ca859e2fc7f00ea90356c489c9d1c24632ee0e7e27256eac531685a6afff1.json",
+    "sha256": "077f3e9232073e2a4018e3f0d762625a862ae6c333d768fa2a97b8025187f553"
+  }
+}

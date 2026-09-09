@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-089",
+  "category": "security",
+  "finding": {
+    "column": 11,
+    "end_column": 11,
+    "end_line": 225,
+    "line": 225,
+    "message": "Delete the related code completely when it is invalid.",
+    "relative_path": "lib/src/main/ets/utils/data_reader.ts",
+    "rule": "@security/no-commented-code",
+    "severity": "warn"
+  },
+  "rule": "@security/no-commented-code",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-commented-code.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "263b9cfdf6a090a9201e507467f0c7d08ed2bda23dc837d3f1beeff8c00cb506",
+    "path": "source_files/263b9cfdf6a090a9201e507467f0c7d08ed2bda23dc837d3f1beeff8c00cb506.json",
+    "sha256": "1dfee1360e25dd2a0f9c64699bf2627e989bb6e3c4783788f231d56e02cf1012"
+  }
+}

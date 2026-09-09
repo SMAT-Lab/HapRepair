@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "package_id": "exp_indep_final_static_blind_01",
+  "source_run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "model": "gpt-5.6-luna",
+  "status": "complete",
+  "claim_scope": "Controlled semantic-correctness evaluation of the final-v14 Skill-based repair component; not end-to-end repository correctness and not a causal estimate of static-reference benefit.",
+  "denominators": {
+    "overall_cases": 63,
+    "human_adjudication_candidates": 60,
+    "automatic_generation_failures": 3,
+    "inter_rater_agreement_cases": 60
+  },
+  "annotation_validation": {
+    "package_verification_passed": true,
+    "author_1_complete": true,
+    "author_2_complete": true,
+    "required_adjudications_complete": true,
+    "case_hashes_verified": true,
+    "count_partition_verified": true
+  },
+  "author_label_counts": {
+    "author_1": {
+      "Correct": 60,
+      "Suspicious": 0,
+      "Incorrect": 0
+    },
+    "author_2": {
+      "Correct": 60,
+      "Suspicious": 0,
+      "Incorrect": 0
+    }
+  },
+  "inter_rater_agreement": {
+    "denominator": 60,
+    "agreement_count": 60,
+    "disagreement_count": 0,
+    "raw_agreement": 1.0,
+    "raw_agreement_percentage": 100.0,
+    "cohen_kappa": {
+      "value": null,
+      "status": "not_estimable_no_marginal_variation",
+      "observed_agreement": 1.0,
+      "expected_agreement": 1.0,
+      "explanation": "Both annotators used a single identical category for every human candidate, so the kappa denominator is zero."
+    }
+  },
+  "adjudication": {
+    "required_case_count": 0,
+    "completed_case_count": 0,
+    "disagreement_blind_ids": [],
+    "no_third_author_decisions_required": true
+  },
+  "final_results": {
+    "total": 63,
+    "correct": 60,
+    "not_correct": 3,
+    "strict_correctness_rate": 0.9523809523809523,
+    "strict_correctness_percentage": 95.23809523809524,
+    "final_label_counts": {
+      "Correct": 60,
+      "Suspicious": 0,
+      "Incorrect": 0,
+      "GenerationFailure": 3
+    },
+    "by_frozen_category": {
+      "performance": {
+        "total": 42,
+        "correct": 40,
+        "not_correct": 2,
+        "strict_correctness_rate": 0.9523809523809523,
+        "strict_correctness_percentage": 95.23809523809524,
+        "final_label_counts": {
+          "Correct": 40,
+          "Suspicious": 0,
+          "Incorrect": 0,
+          "GenerationFailure": 2
+        }
+      },
+      "arkts_eslint": {
+        "total": 1,
+        "correct": 1,
+        "not_correct": 0,
+        "strict_correctness_rate": 1.0,
+        "strict_correctness_percentage": 100.0,
+        "final_label_counts": {
+          "Correct": 1,
+          "Suspicious": 0,
+          "Incorrect": 0,
+          "GenerationFailure": 0
+        }
+      },
+      "security": {
+        "total": 20,
+        "correct": 19,
+        "not_correct": 1,
+        "strict_correctness_rate": 0.95,
+        "strict_correctness_percentage": 95.0,
+        "final_label_counts": {
+          "Correct": 19,
+          "Suspicious": 0,
+          "Incorrect": 0,
+          "GenerationFailure": 1
+        }
+      }
+    }
+  },
+  "source_sha256": {
+    "package_manifest": "4c030e91e1582136d4810c2a95a0330a81bde12dd586c9b6579f087cf0e5794c",
+    "coordinator_manifest": "d1bcced53f357a70f7c61d638cd8ae3308513136059c8df6831a4059a0c836cb",
+    "package_verification": "86f44365f1eb66e812e9ccc734a346daff7ee49d541f1e917751392f8354066d",
+    "automatic_generation_failures": "f6b8b461159d97b3a9358164ecec834f2b114403c6d6a656eead6b6992b21072",
+    "source_to_judge_blind_map": "c0989a50b1554768817082794bc406ba9b94a341b4c9cafd67d55a3528c4f0bc",
+    "labels_author_1": "d8f08ddadac7a9e97b54cbe8d65a47af99a4f01c711ddbd226dfdb28e4eb8182",
+    "labels_author_2": "d8f08ddadac7a9e97b54cbe8d65a47af99a4f01c711ddbd226dfdb28e4eb8182",
+    "third_author_adjudication": "9b6058349f954bd5e851a5bc3929738bdda0331c077aafe1f67cacb04c6ac04b"
+  }
+}

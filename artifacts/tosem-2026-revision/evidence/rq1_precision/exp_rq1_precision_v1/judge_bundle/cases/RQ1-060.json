@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-060",
+  "category": "security",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 5,
+    "line": 5,
+    "message": "Dependency cycle detected: library/src/main/ets/cordova/NativeToJsMessageQueue.ets -> library/src/main/ets/cordova/CordovaWebViewEngine.ets -> library/src/main/ets/cordova/NativeToJsMessageQueue.ets",
+    "relative_path": "library/src/main/ets/cordova/NativeToJsMessageQueue.ets",
+    "rule": "@security/no-cycle",
+    "severity": "warn"
+  },
+  "rule": "@security/no-cycle",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-cycle.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "fd4c8ac5833481c3cda745a420b11934a058195045b1863aa5bb8a0c05e1b5d2",
+    "path": "source_files/fd4c8ac5833481c3cda745a420b11934a058195045b1863aa5bb8a0c05e1b5d2.json",
+    "sha256": "470a1c71576450d5986d4d3bd6d1903b520ac523d03eec23b53e9c063fe76d21"
+  }
+}

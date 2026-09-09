@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-034",
+  "target_rule": "@performance/multiple-associations-state-var-check",
+  "codelinter_rule": "@performance/multiple-associations-state-var-check",
+  "rule_description": "多个组件关联同一数据时，建议在组件中使用@Watch装饰器添加更新条件，避免不必要的组件更新。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/multiple_state_association_case.ets",
+      "line": 9,
+      "column": 9,
+      "severity": "suggestion",
+      "message": "This data is associated with multiple components, you are advised to use the @Watch decorator to add update conditions to avoid unnecessary component update.",
+      "rule": "@performance/multiple-associations-state-var-check"
+    },
+    {
+      "file": "entry/src/main/ets/cases/multiple_state_association_case.ets",
+      "line": 15,
+      "column": 9,
+      "severity": "suggestion",
+      "message": "This data is associated with multiple components, you are advised to use the @Watch decorator to add update conditions to avoid unnecessary component update.",
+      "rule": "@performance/multiple-associations-state-var-check"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/multiple_state_association_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

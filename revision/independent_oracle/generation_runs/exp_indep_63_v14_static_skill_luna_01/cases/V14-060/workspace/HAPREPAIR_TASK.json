@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-060",
+  "target_rule": "@security/no-unsafe-rsa-sign",
+  "codelinter_rule": "@security/no-unsafe-rsa-sign",
+  "rule_description": "RSA 签名需使用 PSS + SHA256/384 等安全散列。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_rsa_sign_case.ets",
+      "line": 3,
+      "column": 49,
+      "severity": "error",
+      "message": "Use unsafe RSA sign algorithm.",
+      "rule": "@security/no-unsafe-rsa-sign"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/unsafe_rsa_sign_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

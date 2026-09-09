@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-143",
+  "category": "performance",
+  "finding": {
+    "column": 38,
+    "end_column": 38,
+    "end_line": 434,
+    "line": 434,
+    "message": "Prefer onAnimationStart over onChange to avoid delayed effects.",
+    "relative_path": "entry/src/main/ets/pages/testcase/ImageTestcase_SourceLoading.ets",
+    "rule": "@performance/tabs-on-change-check",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/tabs-on-change-check",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/layout-animation-media.md"
+    ],
+    "static_reference_available": false,
+    "static_reference_path": null
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "5943075820021e0a6f5df757647eeed0e80cce2baaae875603ba0d122eeb10ce",
+    "path": "source_files/5943075820021e0a6f5df757647eeed0e80cce2baaae875603ba0d122eeb10ce.json",
+    "sha256": "9dd16c78c9595a502fd7f374ab868ae27c04a035f0390d9c8988f63692831ddd"
+  }
+}

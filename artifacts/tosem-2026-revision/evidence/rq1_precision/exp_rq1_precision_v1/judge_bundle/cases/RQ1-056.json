@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-056",
+  "category": "security",
+  "finding": {
+    "column": 5,
+    "end_column": 5,
+    "end_line": 269,
+    "line": 269,
+    "message": "Delete the related code completely when it is invalid.",
+    "relative_path": "entry/src/main/ets/pages/audioWave/TimeLine.ets",
+    "rule": "@security/no-commented-code",
+    "severity": "warn"
+  },
+  "rule": "@security/no-commented-code",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-commented-code.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "9df3c6fb6dc2da2d5749c8639a8078abb69cba10595487be00aeb86f30b14f37",
+    "path": "source_files/9df3c6fb6dc2da2d5749c8639a8078abb69cba10595487be00aeb86f30b14f37.json",
+    "sha256": "c6e48642f62295edf58a50c2202b8ecc5eab63180003a541e62927bc4002210d"
+  }
+}

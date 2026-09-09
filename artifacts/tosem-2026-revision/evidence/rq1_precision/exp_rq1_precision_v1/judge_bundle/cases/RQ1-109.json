@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-109",
+  "category": "security",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 11,
+    "line": 11,
+    "message": "Dependency cycle detected: flutter/src/main/ets/plugin/mouse/MouseCursorPlugin.ets -> flutter/src/main/ets/embedding/engine/systemchannels/MouseCursorChannel.ets -> flutter/src/main/ets/embedding/engine/dart/DartExecutor.ets -> flutter/src/main/ets/FlutterInjector.ets -> flutter/src/main/ets/embedding/engine/FlutterNapi.ets -> flutter/src/main/ets/embedding/engine/FlutterEngine.ets -> flutter/src/main/ets/embedding/engine/FlutterEngineConnectionRegistry.ets -> flutter/src/main/ets/embedding/engine/FlutterEngineGroup.ets -> flutter/src/main/ets/plugin/platform/PlatformViewsController.ets -> flutter/src/main/ets/view/FlutterView.ets -> flutter/src/main/ets/plugin/mouse/MouseCursorPlugin.ets",
+    "relative_path": "flutter/src/main/ets/plugin/mouse/MouseCursorPlugin.ets",
+    "rule": "@security/no-cycle",
+    "severity": "warn"
+  },
+  "rule": "@security/no-cycle",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-cycle.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "0091be59d3191d94278fa972bf8c7aa781c6e8783f473a1f3e3c1eccd83a2c21",
+    "path": "source_files/0091be59d3191d94278fa972bf8c7aa781c6e8783f473a1f3e3c1eccd83a2c21.json",
+    "sha256": "00c0a2e53ddb1367b187f67282e75c029c9efff37234d3c4288098615727d2f9"
+  }
+}

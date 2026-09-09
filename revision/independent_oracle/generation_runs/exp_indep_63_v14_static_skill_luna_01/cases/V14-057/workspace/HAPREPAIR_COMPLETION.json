@@ -1,0 +1,43 @@
+{
+  "selected_rules": [
+    "@security/no-unsafe-3des"
+  ],
+  "consulted_specs": {
+    "@security/no-unsafe-3des": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md",
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md"
+    ]
+  },
+  "consulted_guides": {
+    "@security/no-unsafe-3des": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-3des.md"
+    ]
+  },
+  "entity_repairs": [
+    {
+      "rule": "@security/no-unsafe-3des",
+      "relative_path": "entry/src/main/ets/cases/unsafe_3des_case.ets",
+      "locations": [
+        {
+          "line": 4,
+          "column": 39
+        }
+      ],
+      "entities": [
+        "The exported createLegacyReportCipher cipher-construction function"
+      ],
+      "invariants": [
+        "Preserve the exported function signature and returned Cipher contract",
+        "Preserve algorithm identity and caller-controlled initialization behavior",
+        "Do not use the prohibited ECB mode"
+      ],
+      "evidence": [
+        "The supplied source contains only this cipher construction and no decryptor, consumer, persisted ciphertext, peer contract, or migration path",
+        "The repository search found no other references to the function, cipher, or 3DES configuration"
+      ],
+      "transformation": "Kept the export, function name, return type, and createCipher call unchanged while replacing only the ECB mode identifier with CBC",
+      "status": "repaired"
+    }
+  ],
+  "unresolved_external": []
+}

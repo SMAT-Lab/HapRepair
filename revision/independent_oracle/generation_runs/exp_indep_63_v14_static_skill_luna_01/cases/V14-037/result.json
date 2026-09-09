@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_performance_js_code_cache_by_precompile_check",
+  "blind_id": "V14-037",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbe3-39fd-7f91-8aac-4732b713d1e4",
+  "usage": {
+    "input_tokens": 221815,
+    "cached_input_tokens": 145408,
+    "output_tokens": 8782,
+    "total_tokens": 230597
+  },
+  "wall_seconds": 211.59535733699886,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 57,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,280p' /codex-home/skills/.system/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 3 -type f -name HAPREPAIR_TASK.json -print -exec sed -n '1,240p' {} \\\\;\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- workspace files ---'; rg --files -g 'HAPREPAIR_TASK.json' -g '*.ets' -g '*.ts' -g '*.json' -g '*.d.ts' -g '*.yaml' -g '*.yml' | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git status --short; git log -1 --oneline --all 2>/dev/null || true'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /codex-home -maxdepth 5 -type f \\\\( -name SKILL.md -o -name operations.md \\\\) 2>&1 | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'ls -la /codex-home /codex-home/skills /codex-home/skills/.system 2>&1'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' entry/src/main/ets/cases/web_precompile_case.ets; printf '\\\\n--- all source references ---\\\\n'; rg -n \\\"Web|onControllerAttached|precompile|web_precompile|JavaScript|loadUrl|controller\\\" entry\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '321,700p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills/haprepair-openharmony-repair -maxdepth 4 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'rg -n -C 8 \"js-code-cache-by-precompile-check|precompile|WebviewController|onControllerAttached\" /codex-home/skills/haprepair-openharmony-repair/references/rule-specs /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--js-code-cache-by-precompile-check.md'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json; printf '\\\\n--- rule index matches ---\\\\n'; rg -n -C 4 \\\"js-code-cache-by-precompile-check\\\" /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/index.md /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/index.md /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/manifest.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md; printf '\\\\n--- computation/api ---\\\\n'; sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/computation-api.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 4 -type f -print | sort; printf '\\\\n--- dirs ---\\\\n'; find /workspace -maxdepth 4 -type d -print | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,180p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--js-code-cache-by-precompile-check.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/index.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n \\\"precompileJavaScript|CacheOptions|onControllerAttached|resourceManager|getRawFileContentSync\\\" /workspace /codex-home/skills/haprepair-openharmony-repair --glob '\"'!references/repair-guides/performance--js-code-cache-by-precompile-check.md'\"' --glob '\"'!scripts/*'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace/entry -type f -maxdepth 10 -print -exec wc -l {} \\\\;\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n \\\"@Entry|@Component|struct DocumentationWebPage|WebviewController|build\\\\(|Web\\\\(|onControllerAttached|precompileJavaScript|docs\\\\.html|docs\\\\.js\\\" entry/src/main/ets/cases/web_precompile_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace -type f -not -path '/workspace/HAPREPAIR_TASK.json' -print | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/web_precompile_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "76941a3edece041e67005e4baa6572bac87815f0d0eeb1c672ed37d0042f1428",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/web_precompile_case.ets",
+      "sha256": "f5f9d6cbf480bcf363f71f70d299feabfda2e44b477058d0a50e3311fe29df4e",
+      "size_bytes": 580,
+      "content": "import webview from '@ohos.web.webview';\n\n@Entry\n@Component\nstruct DocumentationWebPage {\n  private controller: webview.WebviewController = new webview.WebviewController();\n\n  build() {\n    Web({ src: 'https://example.org/docs.html', controller: this.controller })\n      .onControllerAttached(async () => {\n        try {\n          await this.controller.precompileJavaScript(\n            'https://example.org/docs.js',\n            new ArrayBuffer(0)\n          );\n        } catch (error) {\n          console.error(`Failed to precompile docs.js: ${error}`);\n        }\n      })\n  }\n}\n"
+    }
+  ],
+  "trace_sha256": "49921be9fc8c440aa44abb7bbaf167856714cdc51e5cec50c4ccbafbd812f440",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T11:05:39.811834+00:00",
+  "rejection_reasons": []
+}

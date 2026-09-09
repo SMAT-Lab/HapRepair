@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_performance_hp_arkui_no_func_as_arg_for_reusable_component",
+  "blind_id": "V14-056",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbc1-e287-7cc3-bbef-f277e5bdf412",
+  "usage": {
+    "input_tokens": 260215,
+    "cached_input_tokens": 217856,
+    "output_tokens": 6380,
+    "total_tokens": 266595
+  },
+  "wall_seconds": 148.5113252529991,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 55,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- workspace files ---'; rg --files -g 'HAPREPAIR_TASK.json' -g '*.ets' -g '*.ts' -g '*.json' -g '*.d.ts' -g '*.md' -g '*.yaml' -g '*.yml' -g '*.js' -g '*.css' -g '*.hml' | sed -n '1,240p'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /workspace -maxdepth 3 -type f -name HAPREPAIR_TASK.json -print'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' /workspace/HAPREPAIR_TASK.json; printf '\\\\n--- source ---\\\\n'; sed -n '1,260p' /workspace/entry/src/main/ets/cases/reusable_func_arg_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /codex-home /workspace -path '*/haprepair-openharmony-repair/SKILL.md' -o -path '*/haprepair-openharmony-repair/references/operations.md' 2>/dev/null\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find / -path '*/haprepair-openharmony-repair/SKILL.md' -print 2>/dev/null | head -20\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l /codex-home/skills/haprepair-openharmony-repair/SKILL.md /codex-home/skills/haprepair-openharmony-repair/references/operations.md; find /codex-home/skills/haprepair-openharmony-repair -maxdepth 3 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '241,520p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -C 4 'hp-arkui-no-func-as-arg-for-reusable-component|func-as-arg|reusable' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/index.md /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/manifest.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--hp-arkui-no-func-as-arg-for-reusable-component.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- all workspace files ---'; rg --files -uu /workspace | sort; printf '%s\\\\n' '--- references to ComputedValueRow/computeTotal ---'; rg -n -uu 'ComputedValueRow|ComputedValueList|computeTotal|reusable_func_arg_case' /workspace\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,280p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md; printf '\\\\n--- computation/api ---\\\\n'; sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/computation-api.md; printf '\\\\n--- collections/reuse ---\\\\n'; sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/collections-reuse.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 4 -type f -not -path '*/.git/*' -print | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git status --short; git diff -- entry/src/main/ets/cases/reusable_func_arg_case.ets; nl -ba entry/src/main/ets/cases/reusable_func_arg_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/state-reactivity.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"nl -ba /workspace/entry/src/main/ets/cases/reusable_func_arg_case.ets; printf '\\\\n--- relevant references ---\\\\n'; rg -n 'ComputedValueRow|computeTotal|const total|@Reusable|@Entry|build\\\\(' /workspace/entry/src/main/ets/cases/reusable_func_arg_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- prohibited-operation references in executed workspace commands are absent from source ---'; rg -n 'this\\\\.computeTotal\\\\(\\\\)|ComputedValueRow\\\\(\\\\{ value: total \\\\}\\\\)' /workspace/entry/src/main/ets/cases/reusable_func_arg_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 3 -type f -printf '%P\\\\n' | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"jq empty /workspace/completion.json && jq -r '.entity_repairs | length, .[0].status, .[0].locations[0].line' /workspace/completion.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "7f63e4daa2487b3808c28808ba6b9cfb0336fb8ba5f59203b7093ce9b4345823",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/reusable_func_arg_case.ets",
+      "sha256": "17ba6a9223c4fb3e5ff4890a0ee5ec5606b73863217cb3fd4fc5018bfcd2dcfd",
+      "size_bytes": 572,
+      "content": "@Reusable\n@Component\nstruct ComputedValueRow {\n  @State value: number = 0;\n\n  build() {\n    Text(`${this.value}`)\n  }\n}\n\n@Entry\n@Component\nstruct ComputedValueList {\n  private values: number[] = [2, 4, 6];\n\n  computeTotal(): number {\n    return this.values.reduce((sum: number, value: number) => sum + value, 0);\n  }\n\n  build() {\n    const total: number = this.computeTotal();\n    List() {\n      ForEach(this.values, (value: number) => {\n        ListItem() {\n          ComputedValueRow({ value: total })\n        }\n      }, (value: number) => value.toString())\n    }\n  }\n}\n"
+    }
+  ],
+  "trace_sha256": "6a15ccd1e7b0a2e5d276057e5210f3e67ca3bb8aeb48abbaeaefeb1574efa496",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:28:12.111126+00:00",
+  "rejection_reasons": []
+}

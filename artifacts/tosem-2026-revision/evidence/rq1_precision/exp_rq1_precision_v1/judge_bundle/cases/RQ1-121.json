@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-121",
+  "category": "performance",
+  "finding": {
+    "column": 9,
+    "end_column": 9,
+    "end_line": 33,
+    "line": 33,
+    "message": "This data is associated with multiple components, you are advised to use the @Watch decorator to add update conditions to avoid unnecessary component update.",
+    "relative_path": "entry/src/main/ets/pages/audioWave/AudioEditWave.ets",
+    "rule": "@performance/multiple-associations-state-var-check",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/multiple-associations-state-var-check",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--multiple-associations-state-var-check.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "b23c94a4e2abbc5ba5e5f5bca923d449f998f48824ada68044818111875cbc5c",
+    "path": "source_files/b23c94a4e2abbc5ba5e5f5bca923d449f998f48824ada68044818111875cbc5c.json",
+    "sha256": "79cf028dd69489dabe270aadd2b50e8e00a8dd67c5ff8b69d5652191b39bfa51"
+  }
+}

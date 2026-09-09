@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-046",
+  "category": "performance",
+  "rule": "@performance/timezone-interface-check",
+  "rule_description": "在获取非本地时间时，建议使用统一标准的i18n.Calendar接口获取时间时区相关信息。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/timezone_case.ets",
+      "line": 6,
+      "column": 52,
+      "severity": "suggestion",
+      "message": "Use I18n APIs correctly to obtain or set the time zone.",
+      "rule": "@performance/timezone-interface-check"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/timezone_case.ets",
+      "content": "import i18n from '@ohos.i18n';\n\nexport function resolveRemoteOffset(zoneId: string): number {\n  const scheduleCalendar = i18n.getCalendar(i18n.getSystemLocale());\n  scheduleCalendar.setTimeZone(zoneId);\n  const baseOffset: number = scheduleCalendar.get('zone_offset');\n  return baseOffset;\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/timezone_case.ets",
+      "content": "import i18n from '@ohos.i18n';\n\nexport function resolveRemoteOffset(zoneId: string): number {\n  const scheduleCalendar = i18n.getCalendar(i18n.getSystemLocale());\n  scheduleCalendar.setTimeZone(zoneId);\n  const baseOffset: number = scheduleCalendar.get('zone_offset');\n  const daylightOffset: number = scheduleCalendar.get('dst_offset');\n  return baseOffset + daylightOffset;\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/timezone_case.ets",
+      "content": "import i18n from '@ohos.i18n';\n\nexport function resolveRemoteOffset(zoneId: string): number {\n  const scheduleCalendar = i18n.getCalendar(i18n.getSystemLocale());\n  scheduleCalendar.setTimeZone(zoneId);\n  const baseOffset: number = scheduleCalendar.get('zone_offset');\n  scheduleCalendar.get('dst_offset');\n  return baseOffset;\n}\n"
+    }
+  ]
+}

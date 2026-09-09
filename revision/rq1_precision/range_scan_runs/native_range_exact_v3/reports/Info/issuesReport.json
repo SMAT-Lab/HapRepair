@@ -1,0 +1,1242 @@
+[
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony/arkui_ace_engine/examples/Info/entry/src/main/ets/pages/counterStatic/CounterParallelization.ets",
+    "messages": [
+      {
+        "line": 64,
+        "column": 11,
+        "endLine": 79,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 83,
+        "column": 11,
+        "endLine": 98,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 102,
+        "column": 11,
+        "endLine": 117,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 121,
+        "column": 11,
+        "endLine": 136,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 140,
+        "column": 11,
+        "endLine": 155,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 159,
+        "column": 11,
+        "endLine": 174,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 178,
+        "column": 11,
+        "endLine": 193,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 197,
+        "column": 11,
+        "endLine": 212,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 216,
+        "column": 11,
+        "endLine": 231,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 235,
+        "column": 11,
+        "endLine": 250,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 254,
+        "column": 11,
+        "endLine": 269,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 273,
+        "column": 11,
+        "endLine": 288,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 292,
+        "column": 11,
+        "endLine": 307,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 311,
+        "column": 11,
+        "endLine": 326,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 330,
+        "column": 11,
+        "endLine": 345,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 349,
+        "column": 11,
+        "endLine": 364,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 368,
+        "column": 11,
+        "endLine": 383,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 387,
+        "column": 11,
+        "endLine": 402,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 406,
+        "column": 11,
+        "endLine": 421,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 425,
+        "column": 11,
+        "endLine": 440,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony/arkui_ace_engine/examples/Info/entry/src/main/ets/pages/dataPanelStatic/DataPanelParallelization.ets",
+    "messages": [
+      {
+        "line": 170,
+        "column": 11,
+        "endLine": 180,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 184,
+        "column": 11,
+        "endLine": 189,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 193,
+        "column": 11,
+        "endLine": 198,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 202,
+        "column": 11,
+        "endLine": 208,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 212,
+        "column": 11,
+        "endLine": 218,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 222,
+        "column": 11,
+        "endLine": 236,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 240,
+        "column": 11,
+        "endLine": 254,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 258,
+        "column": 11,
+        "endLine": 272,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 276,
+        "column": 11,
+        "endLine": 290,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 294,
+        "column": 11,
+        "endLine": 308,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 312,
+        "column": 11,
+        "endLine": 326,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 330,
+        "column": 11,
+        "endLine": 344,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 348,
+        "column": 11,
+        "endLine": 362,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 366,
+        "column": 11,
+        "endLine": 380,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 384,
+        "column": 11,
+        "endLine": 398,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 402,
+        "column": 11,
+        "endLine": 416,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 420,
+        "column": 11,
+        "endLine": 434,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 438,
+        "column": 11,
+        "endLine": 452,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 456,
+        "column": 11,
+        "endLine": 470,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 474,
+        "column": 11,
+        "endLine": 483,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony/arkui_ace_engine/examples/Info/entry/src/main/ets/pages/gaugeStatic/GaugeParallelization.ets",
+    "messages": [
+      {
+        "line": 119,
+        "column": 11,
+        "endLine": 141,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 145,
+        "column": 11,
+        "endLine": 167,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 171,
+        "column": 11,
+        "endLine": 193,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 197,
+        "column": 11,
+        "endLine": 219,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 223,
+        "column": 11,
+        "endLine": 245,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 249,
+        "column": 11,
+        "endLine": 271,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 275,
+        "column": 11,
+        "endLine": 297,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 301,
+        "column": 11,
+        "endLine": 323,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 327,
+        "column": 11,
+        "endLine": 349,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 353,
+        "column": 11,
+        "endLine": 375,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 379,
+        "column": 11,
+        "endLine": 401,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 405,
+        "column": 11,
+        "endLine": 427,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 431,
+        "column": 11,
+        "endLine": 453,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 457,
+        "column": 11,
+        "endLine": 479,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 483,
+        "column": 11,
+        "endLine": 505,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 509,
+        "column": 11,
+        "endLine": 531,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 535,
+        "column": 11,
+        "endLine": 557,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 561,
+        "column": 11,
+        "endLine": 583,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 587,
+        "column": 11,
+        "endLine": 609,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 613,
+        "column": 11,
+        "endLine": 626,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony/arkui_ace_engine/examples/Info/entry/src/main/ets/pages/loadingProgressStatic/LoadingProgressParallelization.ets",
+    "messages": [
+      {
+        "line": 149,
+        "column": 11,
+        "endLine": 153,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 157,
+        "column": 11,
+        "endLine": 162,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 166,
+        "column": 11,
+        "endLine": 170,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 174,
+        "column": 11,
+        "endLine": 178,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 182,
+        "column": 11,
+        "endLine": 188,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 192,
+        "column": 11,
+        "endLine": 198,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 202,
+        "column": 11,
+        "endLine": 208,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 212,
+        "column": 11,
+        "endLine": 217,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 221,
+        "column": 11,
+        "endLine": 227,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 231,
+        "column": 11,
+        "endLine": 237,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 241,
+        "column": 11,
+        "endLine": 247,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 251,
+        "column": 11,
+        "endLine": 257,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 261,
+        "column": 11,
+        "endLine": 267,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 271,
+        "column": 11,
+        "endLine": 277,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 281,
+        "column": 11,
+        "endLine": 287,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 291,
+        "column": 11,
+        "endLine": 297,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 301,
+        "column": 11,
+        "endLine": 307,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 311,
+        "column": 11,
+        "endLine": 317,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 321,
+        "column": 11,
+        "endLine": 327,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 331,
+        "column": 11,
+        "endLine": 337,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony/arkui_ace_engine/examples/Info/entry/src/main/ets/pages/patternLockStatic/PatternLockoParallelization.ets",
+    "messages": [
+      {
+        "line": 67,
+        "column": 11,
+        "endLine": 83,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 87,
+        "column": 11,
+        "endLine": 103,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 107,
+        "column": 11,
+        "endLine": 123,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 127,
+        "column": 11,
+        "endLine": 139,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 143,
+        "column": 11,
+        "endLine": 146,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 150,
+        "column": 11,
+        "endLine": 153,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 157,
+        "column": 11,
+        "endLine": 160,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 164,
+        "column": 11,
+        "endLine": 167,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 171,
+        "column": 11,
+        "endLine": 174,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 178,
+        "column": 11,
+        "endLine": 181,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 185,
+        "column": 11,
+        "endLine": 188,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 192,
+        "column": 11,
+        "endLine": 195,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 199,
+        "column": 11,
+        "endLine": 202,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 206,
+        "column": 11,
+        "endLine": 209,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 213,
+        "column": 11,
+        "endLine": 216,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 220,
+        "column": 11,
+        "endLine": 223,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 227,
+        "column": 11,
+        "endLine": 230,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 234,
+        "column": 11,
+        "endLine": 237,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 241,
+        "column": 11,
+        "endLine": 244,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 248,
+        "column": 11,
+        "endLine": 251,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 255,
+        "column": 11,
+        "endLine": 258,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony/arkui_ace_engine/examples/Info/entry/src/main/ets/pages/progressStatic/ProgressParallelization.ets",
+    "messages": [
+      {
+        "line": 134,
+        "column": 11,
+        "endLine": 139,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 143,
+        "column": 11,
+        "endLine": 148,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 152,
+        "column": 11,
+        "endLine": 157,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 161,
+        "column": 11,
+        "endLine": 173,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 177,
+        "column": 11,
+        "endLine": 182,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 186,
+        "column": 11,
+        "endLine": 193,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 197,
+        "column": 11,
+        "endLine": 202,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 206,
+        "column": 11,
+        "endLine": 211,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 215,
+        "column": 11,
+        "endLine": 220,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 224,
+        "column": 11,
+        "endLine": 229,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 233,
+        "column": 11,
+        "endLine": 238,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 242,
+        "column": 11,
+        "endLine": 247,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 251,
+        "column": 11,
+        "endLine": 256,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 260,
+        "column": 11,
+        "endLine": 265,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 269,
+        "column": 11,
+        "endLine": 274,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 278,
+        "column": 11,
+        "endLine": 283,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 287,
+        "column": 11,
+        "endLine": 292,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 296,
+        "column": 11,
+        "endLine": 301,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 305,
+        "column": 11,
+        "endLine": 310,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      },
+      {
+        "line": 314,
+        "column": 11,
+        "endLine": 319,
+        "endColumn": 13,
+        "rangeSource": "ir-statement",
+        "severity": "WARN",
+        "message": "For performance purposes, set keyGenerator for ForEach.",
+        "rule": "@performance/foreach-args-check"
+      }
+    ]
+  }
+]

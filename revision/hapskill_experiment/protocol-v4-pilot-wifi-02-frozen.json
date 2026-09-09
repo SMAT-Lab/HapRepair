@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-HAPSKILL-V4-DEVELOPMENT-PILOT",
+  "status": "development-only",
+  "research_objective": "Exercise HapRepair Skill v4 rule-interaction feedback and best-valid final candidate selection before freezing formal experiments.",
+  "model": {
+    "requested_id": "gpt-5.6-luna",
+    "provider": "xsp",
+    "reasoning_effort": "high",
+    "runs_per_project_condition": 1
+  },
+  "scheduling": {
+    "maximum_no_diff_retries_per_round": 2
+  },
+  "retrieval": {
+    "skill_protocol_path": "../../skills/haprepair-openharmony-repair/references/protocol-v4.json",
+    "skill_protocol_id": "haprepair-skill-v4-20260803",
+    "skill_protocol_sha256": "385eae2325dcb0455309912de4ad8f4fbd6ed6ac5836adb11eb7b029545c3889",
+    "require_success_for_covered_rules": false,
+    "role": "optional rule evidence"
+  },
+  "pilot": {
+    "run_id": "exp_hapskill_v4_development_pilot_wifi_02",
+    "project": "wifi_testapp",
+    "paper_facing": false,
+    "maximum_post_edit_validation_scans": 5,
+    "condition_order": [
+      "hapskill"
+    ]
+  },
+  "stop_condition": "Stop after zero target findings or five post-edit validation scans, then restore best-valid before the evaluator-only final scan.",
+  "claim_boundary": "Development evidence only; do not pool with paper-facing effectiveness results."
+}

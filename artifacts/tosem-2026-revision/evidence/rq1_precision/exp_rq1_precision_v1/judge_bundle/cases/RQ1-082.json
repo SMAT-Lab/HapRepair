@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-082",
+  "category": "performance",
+  "finding": {
+    "column": 7,
+    "end_column": 7,
+    "end_line": 141,
+    "line": 141,
+    "message": "Reduce redundant nested container",
+    "relative_path": "entry/src/main/ets/MainAbility/pages/MultiNavigation/MultiNavigation28.ets",
+    "rule": "@performance/hp-arkui-remove-container-without-property",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-remove-container-without-property",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/layout-animation-media.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-remove-container-without-property.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "84b5cf4b415c4904f471f27a38f3c17accbc3471aab7ad0bcb3de2e88ddfaeb0",
+    "path": "source_files/84b5cf4b415c4904f471f27a38f3c17accbc3471aab7ad0bcb3de2e88ddfaeb0.json",
+    "sha256": "f266fa7ddaf968550563a0e689d80206cc2340d8f2859cfa1a96693cf94284e0"
+  }
+}

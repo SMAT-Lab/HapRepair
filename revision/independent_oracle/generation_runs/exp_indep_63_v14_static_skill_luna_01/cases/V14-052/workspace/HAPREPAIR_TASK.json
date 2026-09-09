@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-052",
+  "target_rule": "@performance/hp-arkui-remove-redundant-nest-container",
+  "codelinter_rule": "@performance/hp-arkui-remove-redundant-nest-container",
+  "rule_description": "避免冗余的嵌套",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/redundant_nest_container_case.ets",
+      "line": 6,
+      "column": 7,
+      "severity": "suggestion",
+      "message": "Avoid redundant nesting",
+      "rule": "@performance/hp-arkui-remove-redundant-nest-container"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/redundant_nest_container_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

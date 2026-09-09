@@ -1,0 +1,80 @@
+{
+  "schema_version": 2,
+  "audit_id": "e4b_localization_provenance_audit_v2",
+  "recorded_at": "2026-08-07T21:58:53+08:00",
+  "supersedes": "paper/rebuttal/e4b_localization/provenance_audit_v1/audit.json",
+  "decision": "PASS_CONTROLLED_RECALL_RUN",
+  "decision_reason": "The exact upstream snapshot was recovered and the author confirmed that the ground truth was manually constructed and frozen before prediction, that HomeCheck was evaluated afterward, and that the package is the intended controlled benchmark.",
+  "recovered_source": {
+    "upstream_repository": "https://gitcode.com/openharmony/xts_acts.git",
+    "upstream_commit": "5b0be8e9ede379a68e85eef08f211f479d12ecd9",
+    "upstream_path": "arkui/ace_ets_module_ui/ace_ets_module_scroll/ace_ets_module_list02",
+    "upstream_tree": "996268adca0141685c731a676ca08f6739418558",
+    "haprepair_commit": "d4beae30f03a2e92322176ff257a3f5a1d4e3bf2",
+    "haprepair_path": "revision/ace_ets_module_list02",
+    "haprepair_tree": "996268adca0141685c731a676ca08f6739418558",
+    "tree_match": true
+  },
+  "frozen_benchmark": {
+    "ground_truth_path": "HapRepair/revision/ace_ets_module_list02_gt.json",
+    "ground_truth_sha256": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3",
+    "file_count": 18,
+    "positive_defect_count": 38,
+    "rule_count": 8,
+    "single_defect_file_count": 6,
+    "multi_defect_file_count": 12,
+    "pre_prediction_freeze": "PASS_BY_AUTHOR_ATTESTATION",
+      "author_attestation": "paper/rebuttal/e4b_localization/provenance_audit_v2/author_attestation.json"
+  },
+  "gate_reclassification": [
+    {
+      "id": "exact_upstream_snapshot",
+      "v1_status": "FAIL",
+      "v2_status": "PASS",
+      "reason": "The upstream and copied directory resolve to the identical Git tree 996268adca0141685c731a676ca08f6739418558."
+    },
+    {
+      "id": "pre_prediction_ground_truth_freeze",
+      "v1_status": "FAIL",
+      "v2_status": "PASS_BY_AUTHOR_ATTESTATION",
+      "reason": "The author explicitly confirmed that the GT was frozen before prediction; the later public Git import is a preservation timestamp, not the GT creation time."
+    },
+    {
+      "id": "benchmark_scope",
+      "v1_status": "FAIL",
+      "v2_status": "PASS_WITH_LIMITATIONS",
+      "reason": "The package is admitted as a fixed, positive-enriched controlled benchmark. Primary inference is recall over the 38 frozen positives, not prevalence or recall over all 113 upstream files."
+    },
+    {
+      "id": "manual_ground_truth_construction",
+      "v1_status": "UNRESOLVED",
+      "v2_status": "PASS_BY_AUTHOR_ATTESTATION",
+      "reason": "The author confirms that the 38 examples were manually constructed from rule descriptions and source inspection; HomeCheck was then evaluated on those examples and detected all 38."
+    }
+  ],
+  "reporting_boundary": {
+    "primary_metric": "HomeCheck recall over 38 frozen manually constructed examples; four-condition comparison over 30 unique (relative_file, rule) targets with source lines ignored",
+    "secondary_metrics": [
+      "conditional precision and F1 within the 18 selected files and eight-rule closed set",
+      "line-free file-rule recall",
+      "single-defect and multi-defect recall",
+      "missing file-rule, extra file-rule, and parse-failure counts"
+    ],
+    "prohibited_inferences": [
+      "real-project recall",
+      "prevalence across the complete 113-file module",
+      "cross-language generality",
+      "semantic repair correctness"
+    ]
+  },
+  "authorized_conditions": {
+    "homecheck": true,
+    "llm_models": [
+      "gpt-5.6-luna",
+      "gpt-5.6-sol",
+      "deepseek-v4-flash"
+    ],
+    "llm_file_conditions": 54
+  },
+  "metric_scope_decision": "paper/rebuttal/e4b_localization/exp_loc_18_three_model_v1/metric_scope_decision_v2.json"
+}

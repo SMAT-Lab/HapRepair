@@ -1,0 +1,14 @@
+[2026-08-07T16:26:27.795] [INFO] [2040111] [HomeCheck] - [ConfigUtils] Checking started.
+[2026-08-07T16:26:27.796] [ERROR] [2040111] [HomeCheck] - [FileUtils] Error occurred while reading file list from .: Error: EISDIR: illegal operation on a directory, read
+[2026-08-07T16:26:27.833] [INFO] [2040111] [HomeCheck] - [CheckEntry] File count: 50
+[2026-08-07T16:26:27.834] [INFO] [2040111] [HomeCheck] - [CheckEntry] Build sceneConfig completed.
+[2026-08-07T16:26:37.334] [INFO] [2040111] [HomeCheck] - [CheckEntry] Build scene completed.
+[2026-08-07T16:26:37.520] [INFO] [2040111] [HomeCheck] - [CheckEntry] Infer types completed.
+[2026-08-07T16:26:37.521] [INFO] [2040111] [HomeCheck] - [ConfigUtils] The npmPath:npm
+[2026-08-07T16:26:37.521] [INFO] [2040111] [HomeCheck] - [ConfigUtils] The npmInstallDir:/home/zhihao/hdd/haprepair/homecheck
+[2026-08-07T16:26:38.019] [INFO] [2040111] [HomeCheck] - [Message] ===== progress: 60% ======
+[2026-08-07T16:26:38.061] [INFO] [2040111] [HomeCheck] - [Message] ===== progress: 80% ======
+[2026-08-07T16:26:38.138] [INFO] [2040111] [HomeCheck] - [Message] ===== progress: 100% ======
+[2026-08-07T16:26:38.139] [INFO] [2040111] [HomeCheck] - [CheckEntry] 285 issues from checker - @security/no-commented-code
+[2026-08-07T16:26:38.142] [INFO] [2040111] [HomeCheck] - [Main] Checking completed.
+[2026-08-07T16:26:38.142] [INFO] [2040111] [HomeCheck] - [Main] HomeCheck took: 10.358 s.

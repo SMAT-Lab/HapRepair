@@ -1,0 +1,19 @@
+[
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony/multimedia_camera_framework/frameworks/js/camera_napi/cameraAnimSample/entry/src/main/ets/views/ModeComponent.ets",
+    "messages": [
+      {
+        "line": 51,
+        "column": 5,
+        "rangeStartLine": 51,
+        "rangeStartColumn": 5,
+        "endLine": 51,
+        "endColumn": 56,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  }
+]

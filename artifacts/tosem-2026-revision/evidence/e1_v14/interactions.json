@@ -1,0 +1,464 @@
+[
+  {
+    "project": "HealthyPotAssistant",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/dark-color-mode-check": 1,
+      "@performance/foreach-args-check": 4,
+      "@performance/hp-arkui-remove-container-without-property": 1,
+      "@performance/hp-arkui-remove-redundant-state-var": 3,
+      "@performance/hp-arkui-remove-unchanged-state-var": 4,
+      "@performance/init-list-component": 1,
+      "@performance/multiple-associations-state-var-check": 2,
+      "@performance/reuse-date-instances-check": 2,
+      "@security/no-commented-code": 36
+    },
+    "introduced_rules": {
+      "@performance/foreach-index-check": 3
+    },
+    "sibling_edge_count": 5,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "Image",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/avoid-overusing-custom-component-check": 146,
+      "@performance/foreach-args-check": 219,
+      "@performance/hp-arkui-avoid-empty-callback": 6,
+      "@performance/hp-arkui-combine-same-arg-animateto": 1,
+      "@performance/hp-arkui-image-async-load": 4,
+      "@performance/hp-arkui-no-state-var-access-in-loop": 166,
+      "@performance/hp-arkui-remove-container-without-property": 9,
+      "@performance/hp-arkui-remove-redundant-state-var": 243,
+      "@performance/hp-arkui-remove-unchanged-state-var": 258,
+      "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid": 1,
+      "@performance/hp-arkui-suggest-use-effectkit-blur": 26,
+      "@performance/hp-arkui-use-reusable-component": 1,
+      "@performance/hp-arkui-use-transition-to-replace-animateto": 2,
+      "@performance/init-list-component": 15,
+      "@performance/js-code-cache-by-precompile-check": 1,
+      "@performance/monitor-invisible-area-in-image-animation": 8,
+      "@performance/multiple-associations-state-var-check": 1,
+      "@performance/reuse-date-instances-check": 18,
+      "@performance/tabs-on-change-check": 5,
+      "@performance/typed-array-check": 1,
+      "@security/no-commented-code": 8
+    },
+    "introduced_rules": {
+      "@performance/foreach-index-check": 100,
+      "@performance/hp-arkui-replace-nested-reusable-component-by-builder": 23
+    },
+    "sibling_edge_count": 107,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "Image",
+    "round": 2,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/foreach-args-check": 1,
+      "@performance/foreach-index-check": 26,
+      "@performance/hp-arkui-no-state-var-access-in-loop": 18,
+      "@performance/hp-arkui-remove-container-without-property": 1,
+      "@performance/hp-arkui-use-local-var-to-replace-state-var": 12,
+      "@performance/hp-arkui-use-taskpool-for-web-request": 2,
+      "@performance/hp-arkui-use-transition-to-replace-animateto": 1,
+      "@performance/reuse-date-instances-check": 1
+    },
+    "introduced_rules": {
+      "@performance/avoid-overusing-custom-component-check": 23,
+      "@performance/hp-arkui-replace-nested-reusable-component-by-builder": 1
+    },
+    "sibling_edge_count": 0,
+    "has_unresolved_sibling_exchange": false,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "Image",
+    "round": 3,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/foreach-args-check": 1,
+      "@performance/foreach-index-check": 83
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-remove-unchanged-state-var": 1
+    },
+    "sibling_edge_count": 1,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "Info",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/foreach-args-check": 121,
+      "@performance/foreach-index-check": 1,
+      "@performance/hp-arkui-avoid-empty-callback": 8,
+      "@performance/hp-arkui-remove-container-without-property": 8,
+      "@performance/hp-arkui-remove-redundant-state-var": 158,
+      "@performance/hp-arkui-remove-unchanged-state-var": 180,
+      "@performance/init-list-component": 2,
+      "@performance/multiple-associations-state-var-check": 1
+    },
+    "introduced_rules": {
+      "@performance/foreach-index-check": 121,
+      "@performance/hp-arkui-remove-redundant-nest-container": 1
+    },
+    "sibling_edge_count": 9,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "ace_ets_module_imageText_api12",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/hp-arkui-avoid-empty-callback": 52,
+      "@performance/hp-arkui-no-state-var-access-in-loop": 27,
+      "@performance/hp-arkui-remove-container-without-property": 35,
+      "@performance/hp-arkui-remove-redundant-state-var": 160,
+      "@performance/hp-arkui-remove-unchanged-state-var": 160
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-remove-redundant-nest-container": 26
+    },
+    "sibling_edge_count": 26,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "ace_ets_module_nowear_waterflow",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/hp-arkui-avoid-empty-callback": 1,
+      "@performance/hp-arkui-remove-container-without-property": 26,
+      "@performance/hp-arkui-remove-redundant-state-var": 160,
+      "@performance/hp-arkui-remove-unchanged-state-var": 183,
+      "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid": 51,
+      "@performance/hp-arkui-use-reusable-component": 50
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-use-attributeUpdater-control-refresh-scope": 1
+    },
+    "sibling_edge_count": 0,
+    "has_unresolved_sibling_exchange": false,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "ace_ets_module_swiper",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/hp-arkui-avoid-empty-callback": 1,
+      "@performance/hp-arkui-remove-container-without-property": 9,
+      "@performance/hp-arkui-remove-redundant-state-var": 53,
+      "@performance/hp-arkui-remove-unchanged-state-var": 44,
+      "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid": 88,
+      "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload": 124,
+      "@performance/hp-arkui-use-reusable-component": 138
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-no-func-as-arg-for-reusable-component": 21
+    },
+    "sibling_edge_count": 40,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "ace_ets_module_swiper",
+    "round": 2,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/hp-arkui-no-func-as-arg-for-reusable-component": 21
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-use-reusable-component": 21
+    },
+    "sibling_edge_count": 19,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "ace_ets_module_swiper",
+    "round": 3,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/hp-arkui-use-reusable-component": 21
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-replace-nested-reusable-component-by-builder": 1
+    },
+    "sibling_edge_count": 0,
+    "has_unresolved_sibling_exchange": false,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "ace_ets_module_swiper_api11",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/hp-arkui-avoid-empty-callback": 1,
+      "@performance/hp-arkui-remove-redundant-state-var": 32,
+      "@performance/hp-arkui-remove-unchanged-state-var": 25,
+      "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid": 84,
+      "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload": 120,
+      "@performance/hp-arkui-use-reusable-component": 130
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-no-func-as-arg-for-reusable-component": 13
+    },
+    "sibling_edge_count": 19,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "acts_validator",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/hp-arkui-avoid-empty-callback": 106,
+      "@performance/hp-arkui-load-on-demand": 1,
+      "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator": 1,
+      "@performance/hp-arkui-remove-container-without-property": 81,
+      "@performance/hp-arkui-remove-redundant-state-var": 384,
+      "@performance/hp-arkui-remove-unchanged-state-var": 499,
+      "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid": 1,
+      "@performance/hp-arkui-use-reusable-component": 1,
+      "@performance/hp-performance-no-closures": 48
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid": 1,
+      "@performance/hp-arkui-suggest-reuseid-for-if-else-reusable-component": 1,
+      "@performance/hp-arkui-use-reusable-component": 1
+    },
+    "sibling_edge_count": 14,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "acts_validator",
+    "round": 5,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/hp-arkui-suggest-reuseid-for-if-else-reusable-component": 3
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-replace-nested-reusable-component-by-builder": 1
+    },
+    "sibling_edge_count": 0,
+    "has_unresolved_sibling_exchange": false,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "applications_photos",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/hp-arkui-no-state-var-access-in-loop": 7,
+      "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator": 5,
+      "@performance/hp-arkui-remove-container-without-property": 6,
+      "@performance/hp-arkui-remove-redundant-nest-container": 4,
+      "@performance/hp-arkui-remove-redundant-state-var": 31,
+      "@performance/hp-arkui-remove-unchanged-state-var": 29,
+      "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid": 5,
+      "@performance/hp-arkui-use-reusable-component": 2,
+      "@performance/hp-arkui-use-row-column-to-replace-flex": 1
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-replace-nested-reusable-component-by-builder": 1,
+      "@performance/hp-arkui-suggest-reuseid-for-if-else-reusable-component": 2,
+      "@performance/hp-arkui-use-attributeUpdater-control-refresh-scope": 3
+    },
+    "sibling_edge_count": 7,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "applications_systemui",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/hp-arkui-remove-container-without-property": 3,
+      "@performance/hp-arkui-remove-redundant-nest-container": 1,
+      "@performance/hp-arkui-remove-redundant-state-var": 25,
+      "@performance/hp-arkui-remove-unchanged-state-var": 22,
+      "@performance/hp-arkui-suggest-use-effectkit-blur": 1,
+      "@performance/hp-arkui-use-row-column-to-replace-flex": 3,
+      "@performance/hp-performance-no-dynamic-cls-func": 14
+    },
+    "introduced_rules": {
+      "@performance/hp-performance-no-closures": 1
+    },
+    "sibling_edge_count": 1,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "audio_suite",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/foreach-args-check": 21,
+      "@performance/high-frequency-log-check": 2,
+      "@performance/hp-arkui-no-state-var-access-in-loop": 11,
+      "@performance/hp-arkui-remove-container-without-property": 38,
+      "@performance/hp-arkui-remove-redundant-state-var": 34,
+      "@performance/hp-arkui-remove-unchanged-state-var": 25,
+      "@performance/hp-arkui-use-local-var-to-replace-state-var": 10,
+      "@performance/hp-performance-no-closures": 1,
+      "@performance/init-list-component": 4,
+      "@performance/multiple-associations-state-var-check": 8,
+      "@performance/reuse-date-instances-check": 3,
+      "@security/no-commented-code": 35,
+      "@security/no-unsafe-hash": 1
+    },
+    "introduced_rules": {
+      "@performance/foreach-index-check": 10
+    },
+    "sibling_edge_count": 24,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "audio_suite",
+    "round": 3,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/avoid-overusing-custom-component-check": 10,
+      "@performance/init-list-component": 1
+    },
+    "introduced_rules": {
+      "@performance/foreach-index-check": 1
+    },
+    "sibling_edge_count": 0,
+    "has_unresolved_sibling_exchange": false,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "bluetoothtest",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/hp-arkui-avoid-empty-callback": 1,
+      "@performance/hp-arkui-no-state-var-access-in-loop": 23,
+      "@performance/hp-arkui-remove-container-without-property": 7,
+      "@performance/hp-arkui-remove-redundant-nest-container": 1,
+      "@performance/hp-arkui-remove-redundant-state-var": 235,
+      "@performance/hp-arkui-remove-unchanged-state-var": 199,
+      "@performance/hp-arkui-use-id-in-get-resource-sync-api": 1,
+      "@performance/hp-arkui-use-row-column-to-replace-flex": 4,
+      "@performance/hp-performance-no-closures": 22
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-use-row-column-to-replace-flex": 1
+    },
+    "sibling_edge_count": 1,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "bluetoothtest",
+    "round": 2,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/hp-arkui-use-row-column-to-replace-flex": 1
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-remove-container-without-property": 1
+    },
+    "sibling_edge_count": 1,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "flutter_embedding",
+    "round": 2,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/avoid-overusing-custom-component-check": 2
+    },
+    "introduced_rules": {
+      "@security/no-commented-code": 1
+    },
+    "sibling_edge_count": 0,
+    "has_unresolved_sibling_exchange": false,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "ohos_mail_base",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/dark-color-mode-check": 2,
+      "@performance/foreach-args-check": 1,
+      "@performance/hp-arkui-avoid-empty-callback": 1,
+      "@performance/hp-arkui-remove-redundant-state-var": 3,
+      "@performance/hp-arkui-remove-unchanged-state-var": 4,
+      "@performance/hp-arkui-use-id-in-get-resource-sync-api": 3,
+      "@performance/hp-performance-no-closures": 5,
+      "@performance/hp-performance-no-dynamic-cls-func": 3,
+      "@performance/init-list-component": 1,
+      "@performance/js-code-cache-by-precompile-check": 1,
+      "@performance/multiple-associations-state-var-check": 2,
+      "@performance/reuse-date-instances-check": 4,
+      "@security/no-commented-code": 104,
+      "@security/no-cycle": 3
+    },
+    "introduced_rules": {
+      "@performance/hp-performance-no-closures": 1
+    },
+    "sibling_edge_count": 1,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "shopping",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/dark-color-mode-check": 1,
+      "@performance/hp-arkui-remove-container-without-property": 3,
+      "@performance/hp-arkui-remove-redundant-nest-container": 1,
+      "@performance/hp-arkui-remove-redundant-state-var": 20,
+      "@performance/hp-arkui-remove-unchanged-state-var": 24,
+      "@performance/hp-arkui-use-row-column-to-replace-flex": 25,
+      "@performance/multiple-associations-state-var-check": 8,
+      "@security/no-commented-code": 18
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-remove-redundant-nest-container": 5
+    },
+    "sibling_edge_count": 6,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  },
+  {
+    "project": "wifi_testapp",
+    "round": 1,
+    "provisional": false,
+    "eliminated_rules": {
+      "@performance/hp-arkui-avoid-empty-callback": 1,
+      "@performance/hp-arkui-no-state-var-access-in-loop": 19,
+      "@performance/hp-arkui-remove-container-without-property": 4,
+      "@performance/hp-arkui-remove-redundant-state-var": 473,
+      "@performance/hp-arkui-remove-unchanged-state-var": 466,
+      "@performance/hp-arkui-use-id-in-get-resource-sync-api": 2,
+      "@performance/hp-arkui-use-local-var-to-replace-state-var": 21,
+      "@performance/hp-arkui-use-row-column-to-replace-flex": 5
+    },
+    "introduced_rules": {
+      "@performance/hp-arkui-use-local-var-to-replace-state-var": 8
+    },
+    "sibling_edge_count": 3,
+    "has_unresolved_sibling_exchange": true,
+    "interpretation": "Same-file related-family exchanges remain unfinished and cannot promote the candidate to best-valid. Other associations are descriptive only."
+  }
+]

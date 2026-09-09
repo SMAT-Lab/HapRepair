@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-197",
+  "category": "security",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 15,
+    "line": 15,
+    "message": "Dependency cycle detected: flutter/src/main/ets/embedding/engine/loader/FlutterLoader.ets -> flutter/src/main/ets/embedding/engine/FlutterNapi.ets -> flutter/src/main/ets/embedding/engine/FlutterEngine.ets -> flutter/src/main/ets/embedding/engine/systemchannels/LifecycleChannel.ets -> flutter/src/main/ets/embedding/engine/dart/DartExecutor.ets -> flutter/src/main/ets/FlutterInjector.ets -> flutter/src/main/ets/embedding/engine/loader/FlutterLoader.ets",
+    "relative_path": "flutter/src/main/ets/embedding/engine/loader/FlutterLoader.ets",
+    "rule": "@security/no-cycle",
+    "severity": "warn"
+  },
+  "rule": "@security/no-cycle",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-cycle.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "0e2269ce90d4785e2c2ecb32de47b3c2a975a0c9b4e868691e0282ed501ebbae",
+    "path": "source_files/0e2269ce90d4785e2c2ecb32de47b3c2a975a0c9b4e868691e0282ed501ebbae.json",
+    "sha256": "af0e9209e6ddb900d15bc6f346920e01a1aa95540b87f41e236c5e37a7475095"
+  }
+}

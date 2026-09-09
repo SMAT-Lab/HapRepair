@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-034",
+  "category": "performance",
+  "rule": "@performance/reuse-date-instances-check",
+  "rule_description": "Avoid repeated creation of **Date** objects in loops or frequently called methods. Prioritize reusing existing instances or using timestamps for calculations.",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/reuse_date_instances_case.ets",
+      "line": 6,
+      "column": 29,
+      "severity": "warn",
+      "message": "Avoid repeated creation of Date objects in loops or frequently called methods.",
+      "rule": "@performance/reuse-date-instances-check"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/reuse_date_instances_case.ets",
+      "content": "class ClockSampler {\n  private displayValue: string = '';\n\n  start(): void {\n    setInterval(() => {\n      const current: Date = new Date();\n      this.displayValue = current.toISOString();\n    }, 1000);\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/reuse_date_instances_case.ets",
+      "content": "class ClockSampler {\n  private timestamp: number = 0;\n\n  start(): void {\n    setInterval(() => {\n      this.timestamp = Date.now();\n    }, 1000);\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/reuse_date_instances_case.ets",
+      "content": "class ClockSampler {\n  private displayValue: string = '';\n  private current: Date = new Date();\n\n  start(): void {\n    setInterval(() => {\n      this.current.setTime(Date.now());\n      this.displayValue = this.current.toISOString();\n    }, 1000);\n  }\n}\n"
+    }
+  ]
+}

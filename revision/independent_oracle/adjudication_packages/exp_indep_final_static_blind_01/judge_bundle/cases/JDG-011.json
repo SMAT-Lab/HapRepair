@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-011",
+  "category": "performance",
+  "rule": "@performance/hp-arkui-use-object-link-to-replace-prop",
+  "rule_description": "建议使用@ObjectLink代替@Prop减少不必要的深拷贝",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/object_link_case.ets",
+      "line": 9,
+      "column": 3,
+      "severity": "warn",
+      "message": "Use @ObjectLink instead of @Prop to reduce unnecessary deep copies",
+      "rule": "@performance/hp-arkui-use-object-link-to-replace-prop"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/object_link_case.ets",
+      "content": "@Observed\nclass ProfileData {\n  name: string;\n  constructor(name: string) { this.name = name; }\n}\n\n@Component\nstruct ProfileName {\n  @Prop profile: ProfileData;\n  build() { Text(this.profile.name) }\n}\n\n@Entry\n@Component\nstruct ProfilePage {\n  @State profiles: ProfileData[] = [new ProfileData('Lin')];\n  build() { ProfileName({ profile: this.profiles[0] }) }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/object_link_case.ets",
+      "content": "@Observed\nclass ProfileData {\n  name: string;\n  constructor(name: string) { this.name = name; }\n}\n\n@Component\nstruct ProfileName {\n  @ObjectLink profile: ProfileData;\n  build() { Text(this.profile.name) }\n}\n\n@Entry\n@Component\nstruct ProfilePage {\n  @State profiles: ProfileData[] = [new ProfileData('Lin')];\n  build() { ProfileName({ profile: this.profiles[0] }) }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/object_link_case.ets",
+      "content": "@Observed\nclass ProfileData {\n  name: string;\n  constructor(name: string) { this.name = name; }\n}\n\n@Component\nstruct ProfileName {\n  @ObjectLink profile: ProfileData;\n  build() { Text(this.profile.name) }\n}\n\n@Entry\n@Component\nstruct ProfilePage {\n  @State profiles: ProfileData[] = [new ProfileData('Lin')];\n  build() { ProfileName({ profile: this.profiles[0] }) }\n}\n"
+    }
+  ]
+}

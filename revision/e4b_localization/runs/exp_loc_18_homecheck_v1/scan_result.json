@@ -1,0 +1,43 @@
+{
+  "operation": "scan",
+  "status": "scanned",
+  "exit_code": 0,
+  "elapsed_seconds": 4.891075405001175,
+  "command": [
+    "/home/zhihao/deveco/command-line-tools/codelinter/bin/codelinter",
+    "--config",
+    "/home/zhihao/hdd/haprepair/HapRepair/skills/haprepair-openharmony-repair/assets/homecheck-config.json5",
+    "--format",
+    "json",
+    "--output",
+    "/home/zhihao/hdd/haprepair/HapRepair/revision/e4b_localization/runs/exp_loc_18_homecheck_v1/scans/initial/report.json",
+    "/home/zhihao/hdd/haprepair/HapRepair/revision/ace_ets_module_list02"
+  ],
+  "raw_finding_count": 38,
+  "target_finding_count": 38,
+  "excluded_non_target_finding_count": 0,
+  "findings_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/e4b_localization/runs/exp_loc_18_homecheck_v1/scans/initial/findings.json",
+  "findings_sha256": "cb00163a48997e1334d09c5d46c92208ad71fdbd2c81090bdb48adf2078feb58",
+  "all_findings_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/e4b_localization/runs/exp_loc_18_homecheck_v1/scans/initial/all_findings.json",
+  "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/e4b_localization/runs/exp_loc_18_homecheck_v1/scans/initial/report.json",
+  "stdout_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/e4b_localization/runs/exp_loc_18_homecheck_v1/scans/initial/stdout.log",
+  "stderr_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/e4b_localization/runs/exp_loc_18_homecheck_v1/scans/initial/stderr.log",
+  "parse_error": null,
+  "attempt_id": "initial",
+  "kind": "initial",
+  "completed_at": "2026-08-07T14:36:31.922266+00:00",
+  "budget_consumed": false,
+  "metrics": {
+    "initial_alerts": 38,
+    "final_alerts": 38,
+    "eliminated_alerts": 0,
+    "remaining_alerts": 38,
+    "introduced_alerts": 0,
+    "net_reduction": 0
+  },
+  "alert_deltas_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/e4b_localization/runs/exp_loc_18_homecheck_v1/scans/initial/alert_deltas.json",
+  "validation_budget": {
+    "consumed": 0,
+    "maximum": 5
+  }
+}

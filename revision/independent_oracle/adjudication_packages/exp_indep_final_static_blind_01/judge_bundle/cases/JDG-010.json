@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-010",
+  "category": "performance",
+  "rule": "@performance/sparse-array-check",
+  "rule_description": "建议避免使用稀疏数组。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/sparse_array_case.ets",
+      "line": 2,
+      "column": 40,
+      "severity": "suggestion",
+      "message": "Sparse array detected. Avoid using sparse arrays.",
+      "rule": "@performance/sparse-array-check"
+    },
+    {
+      "file": "entry/src/main/ets/cases/sparse_array_case.ets",
+      "line": 3,
+      "column": 12,
+      "severity": "suggestion",
+      "message": "Sparse array detected. Avoid using sparse arrays.",
+      "rule": "@performance/sparse-array-check"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/sparse_array_case.ets",
+      "content": "function storeLateReading(value: number): number[] {\n  const readings: number[] = new Array(4096);\n  readings[4095] = value;\n  return readings;\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/sparse_array_case.ets",
+      "content": "function storeLateReading(value: number): number[] {\n  const readings: number[] = [];\n  readings.push(value);\n  return readings;\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/sparse_array_case.ets",
+      "content": "function storeLateReading(value: number): number[] {\n  const readings: number[] = Array.from({ length: 4096 }, () => undefined as number);\n  readings[4095] = value;\n  return readings;\n}\n"
+    }
+  ]
+}

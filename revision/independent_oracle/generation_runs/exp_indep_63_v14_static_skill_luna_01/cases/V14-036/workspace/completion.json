@@ -1,0 +1,45 @@
+{
+  "selected_rules": [
+    "@performance/hp-arkui-load-on-demand"
+  ],
+  "consulted_specs": {
+    "@performance/hp-arkui-load-on-demand": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md",
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/collections-reuse.md"
+    ]
+  },
+  "consulted_guides": {
+    "@performance/hp-arkui-load-on-demand": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--hp-arkui-load-on-demand.md"
+    ]
+  },
+  "entity_repairs": [
+    {
+      "rule": "@performance/hp-arkui-load-on-demand",
+      "relative_path": "entry/src/main/ets/cases/load_on_demand_case.ets",
+      "locations": [
+        {
+          "line": 29,
+          "column": 7
+        }
+      ],
+      "entities": [
+        "ForEach render of ServiceAlertInbox.alerts inside ServiceAlertInbox.build"
+      ],
+      "invariants": [
+        "data-source ordering and end-of-list behavior",
+        "stable and unique collection keys",
+        "callback item meaning and rendered alert values",
+        "preservation of the existing component and public entry declaration"
+      ],
+      "evidence": [
+        "The only supplied source defines a fixed ordered string array with 20 distinct alert values and no mutations, callers, lifecycle hooks, or tests.",
+        "The render callback reads only the alert string, and the existing key generator returns that same primitive string.",
+        "The surrounding List, ListItem, Row, Text content, spacing, width, and height are unchanged."
+      ],
+      "transformation": "Added a local AlertDataSource implementing IDataSource over the existing alerts array, changed the List child from ForEach to LazyForEach, and retained the alert string as the key generator.",
+      "status": "repaired"
+    }
+  ],
+  "unresolved_external": []
+}

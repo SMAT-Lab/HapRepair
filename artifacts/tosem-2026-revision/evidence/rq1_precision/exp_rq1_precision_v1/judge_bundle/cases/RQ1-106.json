@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-106",
+  "category": "performance",
+  "finding": {
+    "column": 3,
+    "end_column": 3,
+    "end_line": 62,
+    "line": 62,
+    "message": "Remove unchanged state variables",
+    "relative_path": "entry/src/main/ets/pages/subScenarioTest/wifiManagerConnectScenarioTest.ets",
+    "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-remove-unchanged-state-var.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "12d3e216db9df9b1c89a43632bb0cf577674126814d308182969f58d21f3f203",
+    "path": "source_files/12d3e216db9df9b1c89a43632bb0cf577674126814d308182969f58d21f3f203.json",
+    "sha256": "7dd8f7ca7e1018dcbd62d20ccff07a189df3d686e219aff972b37e4f6b9333fc"
+  }
+}

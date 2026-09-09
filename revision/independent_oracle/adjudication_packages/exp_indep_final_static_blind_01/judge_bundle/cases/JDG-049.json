@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-049",
+  "category": "security",
+  "rule": "@security/no-unsafe-rsa-sign",
+  "rule_description": "RSA 签名需使用 PSS + SHA256/384 等安全散列。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_rsa_sign_case.ets",
+      "line": 3,
+      "column": 49,
+      "severity": "error",
+      "message": "Use unsafe RSA sign algorithm.",
+      "rule": "@security/no-unsafe-rsa-sign"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_rsa_sign_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst exportSigner = cryptoFramework.createSign('RSA1024|PSS|SHA1|MGF1_SHA1');\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_rsa_sign_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst exportSigner = cryptoFramework.createSign('RSA3072|PSS|SHA256|MGF1_SHA256');\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_rsa_sign_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst exportSigner = cryptoFramework.createSign('RSA3072|PSS|SHA256|MGF1_SHA256');\n"
+    }
+  ]
+}

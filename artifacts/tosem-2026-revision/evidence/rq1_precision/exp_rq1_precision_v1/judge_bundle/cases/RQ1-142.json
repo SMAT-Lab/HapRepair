@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-142",
+  "category": "performance",
+  "finding": {
+    "column": 5,
+    "end_column": 5,
+    "end_line": 321,
+    "line": 321,
+    "message": "Use .id when using getColorSync and getStringSync",
+    "relative_path": "entry/src/main/ets/pages/newApi/AllInOneView.ets",
+    "rule": "@performance/hp-arkui-use-id-in-get-resource-sync-api",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-use-id-in-get-resource-sync-api",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/computation-api.md"
+    ],
+    "static_reference_available": false,
+    "static_reference_path": null
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "11ad54b94d2b22cf7d9a7b4926c7c9cd351041a0c689adc77951e682a3ba157b",
+    "path": "source_files/11ad54b94d2b22cf7d9a7b4926c7c9cd351041a0c689adc77951e682a3ba157b.json",
+    "sha256": "c45c621a5d3d00a5ea073a14d64c68a6bb4eeca7e6d59121d2f0ef7bc787b940"
+  }
+}

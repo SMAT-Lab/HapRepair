@@ -1,0 +1,35 @@
+Error in usercustomize; set PYTHONVERBOSE for traceback:
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/ari_test/uc_loaded.txt'
+test_allocation_is_deterministic (test_rq1_precision.AllocationTests.test_allocation_is_deterministic) ... ok
+test_hamilton_allocation_preserves_minimum_and_target (test_rq1_precision.AllocationTests.test_hamilton_allocation_preserves_minimum_and_target) ... ok
+test_invalid_minimum_fails (test_rq1_precision.AllocationTests.test_invalid_minimum_fails) ... ok
+test_frozen_sample_sizes_and_rule_coverage (test_rq1_precision.FrozenPopulationTests.test_frozen_sample_sizes_and_rule_coverage) ... ok
+test_sample_is_unique_and_has_estimable_strata (test_rq1_precision.FrozenPopulationTests.test_sample_is_unique_and_has_estimable_strata) ... ok
+test_sampling_is_reproducible (test_rq1_precision.FrozenPopulationTests.test_sampling_is_reproducible) ... ok
+test_duplicate_native_identity_is_rejected_as_ambiguous (test_build_range_sidecar.RangeSidecarTests.test_duplicate_native_identity_is_rejected_as_ambiguous) ... ok
+test_legacy_range_is_skipped (test_build_range_sidecar.RangeSidecarTests.test_legacy_range_is_skipped) ... ok
+test_message_mismatch_is_not_aligned (test_build_range_sidecar.RangeSidecarTests.test_message_mismatch_is_not_aligned) ... ok
+test_native_range_may_start_after_reported_container_line (test_build_range_sidecar.RangeSidecarTests.test_native_range_may_start_after_reported_container_line) ... ok
+test_native_range_may_start_before_reported_line (test_build_range_sidecar.RangeSidecarTests.test_native_range_may_start_before_reported_line) ... ok
+test_strict_identity_match_adds_annotation_only_range (test_build_range_sidecar.RangeSidecarTests.test_strict_identity_match_adds_annotation_only_range) ... ok
+test_api_reads_evidence_and_saves_label (annotation_app.test_server.ApiTests.test_api_reads_evidence_and_saves_label) ... ok
+test_api_rejects_incomplete_annotation (annotation_app.test_server.ApiTests.test_api_rejects_incomplete_annotation) ... ok
+test_combined_server_switches_roles_and_keeps_files_separate (annotation_app.test_server.ApiTests.test_combined_server_switches_roles_and_keeps_files_separate) ... ok
+test_compact_save_response_omits_case_bundle (annotation_app.test_server.ApiTests.test_compact_save_response_omits_case_bundle) ... ok
+test_fixed_role_ignores_role_query_and_never_exposes_other_author (annotation_app.test_server.ApiTests.test_fixed_role_ignores_role_query_and_never_exposes_other_author) ... ok
+test_static_frontend_is_served (annotation_app.test_server.ApiTests.test_static_frontend_is_served) ... ok
+test_adjudicator_is_locked_until_231_labels_per_author (annotation_app.test_server.StoreTests.test_adjudicator_is_locked_until_231_labels_per_author) ... ok
+test_adjudicator_receives_disagreements_only (annotation_app.test_server.StoreTests.test_adjudicator_receives_disagreements_only) ... ok
+test_author_files_freeze_when_both_are_complete (annotation_app.test_server.StoreTests.test_author_files_freeze_when_both_are_complete) ... ok
+test_author_persistence_is_atomic_and_role_isolated (annotation_app.test_server.StoreTests.test_author_persistence_is_atomic_and_role_isolated) ... ok
+test_case_contains_complete_source_and_rule_evidence (annotation_app.test_server.StoreTests.test_case_contains_complete_source_and_rule_evidence) ... ok
+test_case_merges_native_range_sidecar_without_mutating_finding (annotation_app.test_server.StoreTests.test_case_merges_native_range_sidecar_without_mutating_finding) ... ok
+test_non_correct_label_requires_rationale (annotation_app.test_server.StoreTests.test_non_correct_label_requires_rationale) ... ok
+test_sidecar_range_may_begin_after_frozen_container_location (annotation_app.test_server.StoreTests.test_sidecar_range_may_begin_after_frozen_container_location) ... ok
+test_sidecar_range_may_begin_before_frozen_report_line (annotation_app.test_server.StoreTests.test_sidecar_range_may_begin_before_frozen_report_line) ... ok
+test_sidecar_range_must_stay_inside_frozen_source (annotation_app.test_server.StoreTests.test_sidecar_range_must_stay_inside_frozen_source) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 4.917s
+
+OK

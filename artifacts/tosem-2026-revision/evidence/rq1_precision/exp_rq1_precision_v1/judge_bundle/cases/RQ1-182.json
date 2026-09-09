@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-182",
+  "category": "performance",
+  "finding": {
+    "column": 3,
+    "end_column": 3,
+    "end_line": 26,
+    "line": 26,
+    "message": "Remove unchanged state variables",
+    "relative_path": "entry/src/main/ets/MainAbility/pages/flex/AlignSelfPage.ets",
+    "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-remove-unchanged-state-var.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "fbb621b7d8d9203b1b5bb9d914f3fa52ce734995fedd43a553efdf6da13576a1",
+    "path": "source_files/fbb621b7d8d9203b1b5bb9d914f3fa52ce734995fedd43a553efdf6da13576a1.json",
+    "sha256": "cce9f57bac6ddf98cbbbbc4142c29fa6440c134e56b6dc80e51ed528f36cc712"
+  }
+}

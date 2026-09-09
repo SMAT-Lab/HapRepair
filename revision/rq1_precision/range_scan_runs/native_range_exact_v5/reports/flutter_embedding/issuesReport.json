@@ -1,0 +1,373 @@
+[
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/source_recovery/flutter_engine_gitcode/shell/platform/ohos/flutter_embedding/flutter/src/main/ets/embedding/engine/mutatorsstack/FlutterMutatorView.ets",
+    "messages": [
+      {
+        "line": 51,
+        "column": 5,
+        "rangeStartLine": 51,
+        "rangeStartColumn": 5,
+        "endLine": 52,
+        "endColumn": 45,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 52,
+        "column": 5,
+        "rangeStartLine": 51,
+        "rangeStartColumn": 5,
+        "endLine": 52,
+        "endColumn": 45,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/source_recovery/flutter_engine_gitcode/shell/platform/ohos/flutter_embedding/flutter/src/main/ets/embedding/ohos/FlutterEntry.ets",
+    "messages": [
+      {
+        "line": 54,
+        "column": 7,
+        "rangeStartLine": 54,
+        "rangeStartColumn": 7,
+        "endLine": 55,
+        "endColumn": 56,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 55,
+        "column": 7,
+        "rangeStartLine": 54,
+        "rangeStartColumn": 7,
+        "endLine": 55,
+        "endColumn": 56,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/source_recovery/flutter_engine_gitcode/shell/platform/ohos/flutter_embedding/flutter/src/main/ets/embedding/ohos/KeyData.ets",
+    "messages": [
+      {
+        "line": 14,
+        "column": 3,
+        "rangeStartLine": 14,
+        "rangeStartColumn": 3,
+        "endLine": 14,
+        "endColumn": 40,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 15,
+        "column": 3,
+        "rangeStartLine": 15,
+        "rangeStartColumn": 3,
+        "endLine": 15,
+        "endColumn": 55,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/source_recovery/flutter_engine_gitcode/shell/platform/ohos/flutter_embedding/flutter/src/main/ets/embedding/ohos/TouchEventProcessor.ets",
+    "messages": [
+      {
+        "line": 8,
+        "column": 1,
+        "rangeStartLine": 8,
+        "rangeStartColumn": 1,
+        "endLine": 10,
+        "endColumn": 41,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 9,
+        "column": 1,
+        "rangeStartLine": 8,
+        "rangeStartColumn": 1,
+        "endLine": 10,
+        "endColumn": 41,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 10,
+        "column": 1,
+        "rangeStartLine": 8,
+        "rangeStartColumn": 1,
+        "endLine": 10,
+        "endColumn": 41,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/source_recovery/flutter_engine_gitcode/shell/platform/ohos/flutter_embedding/flutter/src/main/ets/plugin/common/EventChannel.ets",
+    "messages": [
+      {
+        "line": 46,
+        "column": 5,
+        "rangeStartLine": 46,
+        "rangeStartColumn": 5,
+        "endLine": 46,
+        "endColumn": 42,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/source_recovery/flutter_engine_gitcode/shell/platform/ohos/flutter_embedding/flutter/src/main/ets/plugin/editing/ListenableEditingState.ets",
+    "messages": [
+      {
+        "line": 288,
+        "column": 7,
+        "rangeStartLine": 288,
+        "rangeStartColumn": 7,
+        "endLine": 288,
+        "endColumn": 20,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 308,
+        "column": 7,
+        "rangeStartLine": 308,
+        "rangeStartColumn": 7,
+        "endLine": 308,
+        "endColumn": 21,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/source_recovery/flutter_engine_gitcode/shell/platform/ohos/flutter_embedding/flutter/src/main/ets/view/FlutterView.ets",
+    "messages": [
+      {
+        "line": 259,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 260,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 261,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 262,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 263,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 264,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 265,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 266,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 267,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 268,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 269,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 270,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 271,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 272,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 273,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 274,
+        "column": 5,
+        "rangeStartLine": 259,
+        "rangeStartColumn": 5,
+        "endLine": 274,
+        "endColumn": 9,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  }
+]

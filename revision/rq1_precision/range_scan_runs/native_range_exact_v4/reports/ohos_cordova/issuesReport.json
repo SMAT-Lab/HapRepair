@@ -1,0 +1,19 @@
+[
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony-SIG/ohos_cordova/library/src/main/ets/cordova/PluginManager.ets",
+    "messages": [
+      {
+        "line": 245,
+        "column": 5,
+        "rangeStartLine": 245,
+        "rangeStartColumn": 5,
+        "endLine": 245,
+        "endColumn": 40,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  }
+]

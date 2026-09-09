@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-097",
+  "category": "security",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 60,
+    "line": 60,
+    "message": "Delete the related code completely when it is invalid.",
+    "relative_path": "DfuLibrary/src/main/ets/dfu/internal/Manifest.ts",
+    "rule": "@security/no-commented-code",
+    "severity": "warn"
+  },
+  "rule": "@security/no-commented-code",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-commented-code.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "c20b48747cfe32e4e324a2173959521db205504a72e02ad1dd322151792a81d4",
+    "path": "source_files/c20b48747cfe32e4e324a2173959521db205504a72e02ad1dd322151792a81d4.json",
+    "sha256": "309410b6623d04954aefc5573da93da48c8de25386c72442927df0d4b8102cb6"
+  }
+}

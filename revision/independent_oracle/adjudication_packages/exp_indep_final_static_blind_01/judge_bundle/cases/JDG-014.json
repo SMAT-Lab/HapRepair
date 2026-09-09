@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-014",
+  "category": "performance",
+  "rule": "@performance/number-init-check",
+  "rule_description": "该规则将检查number是否正确使用。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/number_init_case.ets",
+      "line": 4,
+      "column": 17,
+      "severity": "suggestion",
+      "message": "Number variable of both int and float types detected. The value assigned to a variable should be of the type declared for the variable.",
+      "rule": "@performance/number-init-check"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/number_init_case.ets",
+      "content": "function revisedThreshold(enabled: boolean): number {\n  let threshold = 4;\n  if (enabled) {\n    threshold = 4.75;\n  }\n  return threshold;\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/number_init_case.ets",
+      "content": "function revisedThreshold(enabled: boolean): number {\n  let threshold = 4.25;\n  if (enabled) {\n    threshold = 4.75;\n  }\n  return threshold;\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/number_init_case.ets",
+      "content": "function revisedThreshold(enabled: boolean): number {\n  let threshold = 4.0;\n  if (enabled) {\n    threshold = 4.75;\n  }\n  return threshold;\n}\n"
+    }
+  ]
+}

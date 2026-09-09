@@ -1,0 +1,1052 @@
+[
+  {
+    "order": 1,
+    "judge_blind_id": "JDG-001",
+    "source_blind_id": "V14-045",
+    "case_id": "case_performance_typed_array_check",
+    "category": "performance",
+    "rule": "@performance/typed-array-check",
+    "source_result_sha256": "c08363372c642a0ed60b507ee14859c2aafc5b3bdac6e3384a220b05a8c36f86",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/typed_array_case.ets",
+        "sha256": "42ff94ae17522710de17fe4eb388fb9284fbdde7dd9d3e3438de7fd5702cd9f2",
+        "size_bytes": 360
+      }
+    ]
+  },
+  {
+    "order": 2,
+    "judge_blind_id": "JDG-002",
+    "source_blind_id": "V14-022",
+    "case_id": "case_security_no_unsafe_sm2_key",
+    "category": "security",
+    "rule": "@security/no-unsafe-sm2-key",
+    "source_result_sha256": "4e9dfae96b5795fccd287fe2d0f32da879073214d7c153e262192e49933645b2",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_sm2_key_case.ets",
+        "sha256": "5bc50e5f41d3441f6e05350c7e6a1886f2809a7f262df5bc08f860718f179e4b",
+        "size_bytes": 120
+      }
+    ]
+  },
+  {
+    "order": 3,
+    "judge_blind_id": "JDG-003",
+    "source_blind_id": "V14-027",
+    "case_id": "case_performance_hp_arkui_use_transition_to_replace_animateto",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-use-transition-to-replace-animateto",
+    "source_result_sha256": "484d2ffc29933b01644005be983ed6afea1a7a8473532bc27894ca55a41490ae",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/transition_animation_case.ets",
+        "sha256": "2756530541a5891054c804a2fd3e37afaea94e7b2dce6194a872555e9493f1ea",
+        "size_bytes": 421
+      }
+    ]
+  },
+  {
+    "order": 4,
+    "judge_blind_id": "JDG-004",
+    "source_blind_id": "V14-038",
+    "case_id": "case_performance_hp_arkui_avoid_empty_callback",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-avoid-empty-callback",
+    "source_result_sha256": "cf85186919631c28a7d826f256124e1c35278ebf26dfc7ae7c158d20d0f02c92",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/empty_callback_case.ets",
+        "sha256": "5f2d83f53ebd08387ab2473d32050c8e49954ed6894c461cb5372460c8157ac7",
+        "size_bytes": 82
+      }
+    ]
+  },
+  {
+    "order": 5,
+    "judge_blind_id": "JDG-005",
+    "source_blind_id": "V14-063",
+    "case_id": "case_performance_hp_arkui_reduce_pan_gesture_distance",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-reduce-pan-gesture-distance",
+    "source_result_sha256": "2324d449803a6e1fbea4124d2e99ea717a30f92c5b16d83a56f64abbbdcd3dbd",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/pan_gesture_distance_case.ets",
+        "sha256": "ea5b32010aa773d1f50139c35b0594ef6856a533ef7ed6e495795a6149f3073b",
+        "size_bytes": 358
+      }
+    ]
+  },
+  {
+    "order": 6,
+    "judge_blind_id": "JDG-006",
+    "source_blind_id": "V14-056",
+    "case_id": "case_performance_hp_arkui_no_func_as_arg_for_reusable_component",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-no-func-as-arg-for-reusable-component",
+    "source_result_sha256": "711a9e3ff8568afee4e206a44c9678151c92fd0a6ff396a3461a016c2e1b4aa2",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/reusable_func_arg_case.ets",
+        "sha256": "17ba6a9223c4fb3e5ff4890a0ee5ec5606b73863217cb3fd4fc5018bfcd2dcfd",
+        "size_bytes": 572
+      }
+    ]
+  },
+  {
+    "order": 7,
+    "judge_blind_id": "JDG-007",
+    "source_blind_id": "V14-012",
+    "case_id": "case_performance_hp_arkts_no_use_any_export_other",
+    "category": "performance",
+    "rule": "@performance/hp-arkts-no-use-any-export-other",
+    "source_result_sha256": "024cb9b29fafe998c5415841413618d4c0ea2ca4a354bd03581fcde3d9860165",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/export_other_case.ets",
+        "sha256": "6bfe75d6116c8ca6f48ee1919a6975ee2c353eabadcb67b9422f07a1b0967564",
+        "size_bytes": 123
+      },
+      {
+        "path": "entry/src/main/ets/cases/export_other_model.ets",
+        "sha256": "28d2cb8d28ae6a8c0702e65a47e32a972dc2000e35832d19102f16763b49ff08",
+        "size_bytes": 50
+      }
+    ]
+  },
+  {
+    "order": 8,
+    "judge_blind_id": "JDG-008",
+    "source_blind_id": "V14-007",
+    "case_id": "case_performance_hp_arkui_remove_container_without_property",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-remove-container-without-property",
+    "source_result_sha256": "0bec9e0c1021e7a62239fc4c7b270a47f9ce86af155cf95872d450d6b0def86f",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/container_without_property_case.ets",
+        "sha256": "096e3242999715491a2948dd86aa37312174a91ef2f6bdc999298716f5175808",
+        "size_bytes": 80
+      }
+    ]
+  },
+  {
+    "order": 9,
+    "judge_blind_id": "JDG-009",
+    "source_blind_id": "V14-036",
+    "case_id": "case_performance_hp_arkui_load_on_demand",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-load-on-demand",
+    "source_result_sha256": "fea1217364888b708699147031ddc49a9c40758d2b8f2cfb260d8cfbb0d634be",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/load_on_demand_case.ets",
+        "sha256": "d04501340148249a55c60de2b9deeedffe8fc248f2eb453272aa153d22b8851b",
+        "size_bytes": 1594
+      }
+    ]
+  },
+  {
+    "order": 10,
+    "judge_blind_id": "JDG-010",
+    "source_blind_id": "V14-010",
+    "case_id": "case_performance_sparse_array_check",
+    "category": "performance",
+    "rule": "@performance/sparse-array-check",
+    "source_result_sha256": "db7a7b8b142af1e904d99ac65656d9c378a69f279b63915224b8a445bf0f47a2",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/sparse_array_case.ets",
+        "sha256": "f2b2c301ed8bc046f6165de63070f83ff2a2c099e61f21a58ff53c62939e5e67",
+        "size_bytes": 186
+      }
+    ]
+  },
+  {
+    "order": 11,
+    "judge_blind_id": "JDG-011",
+    "source_blind_id": "V14-018",
+    "case_id": "case_performance_hp_arkui_use_object_link_to_replace_prop",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-use-object-link-to-replace-prop",
+    "source_result_sha256": "b5e54a4fde966beccce5a9dfd21d82ba0b74b77d95225e3eed485f266feb8bf5",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/object_link_case.ets",
+        "sha256": "87400440d0e488d0fc7747782e2808a8f0c1db062f463a2cf9c5cb925988b9ac",
+        "size_bytes": 367
+      }
+    ]
+  },
+  {
+    "order": 12,
+    "judge_blind_id": "JDG-012",
+    "source_blind_id": "V14-040",
+    "case_id": "case_foreach_args_check",
+    "category": "performance",
+    "rule": "@performance/foreach-args-check",
+    "source_result_sha256": "0fc30b6ae2a8cdc97fb3956c5122844e7972ea8c2bd4372f63c1b43d57f556a0",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/foreach_args_case.ets",
+        "sha256": "ccedd5d83e6c5c8a13abf9b8f9350f1093e9eaae5dd566f5407db48285ccbdc8",
+        "size_bytes": 496
+      }
+    ]
+  },
+  {
+    "order": 13,
+    "judge_blind_id": "JDG-013",
+    "source_blind_id": "V14-041",
+    "case_id": "case_performance_hp_arkui_use_local_var_to_replace_state_var",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+    "source_result_sha256": "f4df49fc0f8750b5b161116cbf84707c739129b5e28a4edc9e6118947450565f",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/local_state_calculation_case.ets",
+        "sha256": "d015bfd19c6887cf602816a5dda7600523b7cef13c1053a0bb9c58a6a377095b",
+        "size_bytes": 436
+      }
+    ]
+  },
+  {
+    "order": 14,
+    "judge_blind_id": "JDG-014",
+    "source_blind_id": "V14-033",
+    "case_id": "case_performance_number_init_check",
+    "category": "performance",
+    "rule": "@performance/number-init-check",
+    "source_result_sha256": "a40fb6839e946111154fd531c90629eb93cbd39dede94798675a941c13dc344f",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/number_init_case.ets",
+        "sha256": "860621df9c6429ef9b76c6abf9db2a40dcc29619627010c9e4a674a0d73a8a35",
+        "size_bytes": 142
+      }
+    ]
+  },
+  {
+    "order": 15,
+    "judge_blind_id": "JDG-015",
+    "source_blind_id": "V14-021",
+    "case_id": "case_security_no_unsafe_kdf",
+    "category": "security",
+    "rule": "@security/no-unsafe-kdf",
+    "source_result_sha256": "d4e1172914bb5a736484ce2ccaeee067f56f7d94a306d21821f4a0589bb4a00c",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_kdf_case.ets",
+        "sha256": "2d0c1800ed95c43a0db5845686d30b50055b62bb836f5f9e95c981ddc4acf8f2",
+        "size_bytes": 107
+      }
+    ]
+  },
+  {
+    "order": 16,
+    "judge_blind_id": "JDG-016",
+    "source_blind_id": "V14-059",
+    "case_id": "case_security_no_unsafe_dsa",
+    "category": "security",
+    "rule": "@security/no-unsafe-dsa",
+    "source_result_sha256": "42b0b77a49541802b334ebb74f5a2353dd1c2055ca0ddde7b71fd8fcf8199fa3",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_dsa_case.ets",
+        "sha256": "96021451267ef217114f6a35d1c52c352fb5ce7c330edfd06b7733276096cdaf",
+        "size_bytes": 134
+      }
+    ]
+  },
+  {
+    "order": 17,
+    "judge_blind_id": "JDG-017",
+    "source_blind_id": "V14-044",
+    "case_id": "case_performance_hp_arkui_remove_unchanged_state_var",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+    "source_result_sha256": "418b5b8cf62e76e4c9539128490376eb0936e4bf76ac0e319acb066fed8cfec4",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unchanged_state_var_case.ets",
+        "sha256": "ca87e40253a89f021557aa10d165dfc45c5ff5ba01d89f3565d7578882f5cb23",
+        "size_bytes": 129
+      }
+    ]
+  },
+  {
+    "order": 18,
+    "judge_blind_id": "JDG-018",
+    "source_blind_id": "V14-003",
+    "case_id": "case_security_no_unsafe_sm4",
+    "category": "security",
+    "rule": "@security/no-unsafe-sm4",
+    "source_result_sha256": "37980cd0355ef4af40860cab86a493178c703bd1628d3380d60368f25723dc62",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_sm4_case.ets",
+        "sha256": "9e6290253e69c052fdb2dca6e223b0b292fca2ce13648730e53e7761c8998a5a",
+        "size_bytes": 241
+      }
+    ]
+  },
+  {
+    "order": 19,
+    "judge_blind_id": "JDG-019",
+    "source_blind_id": "V14-017",
+    "case_id": "case_performance_hp_arkts_no_use_any_export_current",
+    "category": "performance",
+    "rule": "@performance/hp-arkts-no-use-any-export-current",
+    "source_result_sha256": "47450397fee20b2a42ee8ebd271ee57e4877ecb3ced7fcc4daf3bce8ee556024",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/export_current_case.ets",
+        "sha256": "1d4d65e766abcbbd5a62852bc7943e46efacee4efcee7a438cda78fa435f560f",
+        "size_bytes": 73
+      }
+    ]
+  },
+  {
+    "order": 20,
+    "judge_blind_id": "JDG-020",
+    "source_blind_id": "V14-031",
+    "case_id": "case_security_no_unsafe_ecdsa",
+    "category": "security",
+    "rule": "@security/no-unsafe-ecdsa",
+    "source_result_sha256": "2095a145828c4c78d32b9a9802bbf7619fd5feade222d148b315a3dc53bf2683",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_ecdsa_case.ets",
+        "sha256": "841002220b6aee2e17dff34ee9a5c329e771587ce81a3584d2a6aa3a8b71a743",
+        "size_bytes": 130
+      }
+    ]
+  },
+  {
+    "order": 21,
+    "judge_blind_id": "JDG-021",
+    "source_blind_id": "V14-024",
+    "case_id": "case_security_no_unsafe_rsa_key",
+    "category": "security",
+    "rule": "@security/no-unsafe-rsa-key",
+    "source_result_sha256": "ec93fd4304b7aad9aa5ee70aeec690106f58d1754967b4b28ae9c0dcc4985782",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_rsa_key_case.ets",
+        "sha256": "ab405eec4f48ccc6697ae15baede63d7e47373dc08edfc5fda4508b1e5482db3",
+        "size_bytes": 149
+      }
+    ]
+  },
+  {
+    "order": 22,
+    "judge_blind_id": "JDG-022",
+    "source_blind_id": "V14-035",
+    "case_id": "case_security_no_cycle",
+    "category": "security",
+    "rule": "@security/no-cycle",
+    "source_result_sha256": "98b9a3eac36b26c36726b6ae85e2b514214fffa591b47fcac932a530efb18c27",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/cycle_alpha_case.ets",
+        "sha256": "42854892ee4d34ac06364a914f67b598187ea628d755c9c194bcfe141bf4db58",
+        "size_bytes": 123
+      },
+      {
+        "path": "entry/src/main/ets/cases/cycle_beta_case.ets",
+        "sha256": "61b8bf8697062874b15e3b1562261282f4061acfb719a5549c939d284cdae078",
+        "size_bytes": 119
+      },
+      {
+        "path": "entry/src/main/ets/cases/cycle_values_case.ets",
+        "sha256": "0d1e76757d4c1bde76c39fe9bf8fe6dbff6392c2b60f86588b16f6d7fe6f7747",
+        "size_bytes": 86
+      }
+    ]
+  },
+  {
+    "order": 23,
+    "judge_blind_id": "JDG-023",
+    "source_blind_id": "V14-025",
+    "case_id": "case_performance_hp_arkui_image_async_load",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-image-async-load",
+    "source_result_sha256": "32ad8b53e5a00b00e1ff6f47515e26f0df39454d06b02afec00d6cb92c126103",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/image_async_load_case.ets",
+        "sha256": "8e8fb33ed9e896e7852dbf133e326f765a425fd72e03c468061c92ad8e585643",
+        "size_bytes": 136
+      }
+    ]
+  },
+  {
+    "order": 24,
+    "judge_blind_id": "JDG-024",
+    "source_blind_id": "V14-037",
+    "case_id": "case_performance_js_code_cache_by_precompile_check",
+    "category": "performance",
+    "rule": "@performance/js-code-cache-by-precompile-check",
+    "source_result_sha256": "564e111cfdc8d7ebae5b3e0de63edfe02e2b7f83b7c79783ca9258249150395c",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/web_precompile_case.ets",
+        "sha256": "f5f9d6cbf480bcf363f71f70d299feabfda2e44b477058d0a50e3311fe29df4e",
+        "size_bytes": 580
+      }
+    ]
+  },
+  {
+    "order": 25,
+    "judge_blind_id": "JDG-025",
+    "source_blind_id": "V14-054",
+    "case_id": "case_security_no_unsafe_dsa_key",
+    "category": "security",
+    "rule": "@security/no-unsafe-dsa-key",
+    "source_result_sha256": "2cca71dcb5b6885e6b39df092af1dd2450e838e70e6e71bf1a3b47b715212d24",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_dsa_key_case.ets",
+        "sha256": "d069c9fca1e8292c2fc61ac796cb0d02c58e83deef781af25c58d4a7e31b35c8",
+        "size_bytes": 141
+      }
+    ]
+  },
+  {
+    "order": 26,
+    "judge_blind_id": "JDG-026",
+    "source_blind_id": "V14-049",
+    "case_id": "case_performance_hp_arkui_no_state_var_access_in_loop",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+    "source_result_sha256": "c3d4ff24f9718ded3c59f9f678e7bd54ff9f2028434f52f1aef0fe8a12de0afa",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/state_var_loop_case.ets",
+        "sha256": "c58a6643f3e24a0bcb026782e7af54e92bb6d9442bf851edafd688136123dc3e",
+        "size_bytes": 445
+      }
+    ]
+  },
+  {
+    "order": 27,
+    "judge_blind_id": "JDG-027",
+    "source_blind_id": "V14-043",
+    "case_id": "case_performance_waterflow_data_preload_check",
+    "category": "performance",
+    "rule": "@performance/waterflow-data-preload-check",
+    "source_result_sha256": "3db3cdd21d453ed8f2a449f6820325e7201b18ec50f05e7034a4c71919f1238b",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/waterflow_preload_case.ets",
+        "sha256": "e9fcbb4ab0ea64cfc41ba440d66fa0e0fddc60ed1b3bf1a2ddd92287700f97c4",
+        "size_bytes": 1261
+      }
+    ]
+  },
+  {
+    "order": 28,
+    "judge_blind_id": "JDG-028",
+    "source_blind_id": "V14-052",
+    "case_id": "case_performance_hp_arkui_remove_redundant_nest_container",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+    "source_result_sha256": "3a938fd59043530353d94d487daabae8c7a449e7a36013d5e9bb487b28a727df",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/redundant_nest_container_case.ets",
+        "sha256": "eea5026248cb3124791bdb5dfb10f77d8451cc4015ea0ec3e2ecf2e91645ee30",
+        "size_bytes": 212
+      }
+    ]
+  },
+  {
+    "order": 29,
+    "judge_blind_id": "JDG-029",
+    "source_blind_id": "V14-050",
+    "case_id": "case_security_no_unsafe_sm2_cipher",
+    "category": "security",
+    "rule": "@security/no-unsafe-sm2-cipher",
+    "source_result_sha256": "bc75650dbc743aca7640eb38a061b8cfd27e3982050d3c2a484e082a43642738",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_sm2_cipher_case.ets",
+        "sha256": "f44179713cd2d37bb6d478b0c14a63064a5d7ee49b9924d556296b14967aa297",
+        "size_bytes": 111
+      }
+    ]
+  },
+  {
+    "order": 30,
+    "judge_blind_id": "JDG-030",
+    "source_blind_id": "V14-061",
+    "case_id": "case_performance_hp_arkui_suggest_reuseid_for_if_else_reusable_component",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-suggest-reuseid-for-if-else-reusable-component",
+    "source_result_sha256": "4fdaa9ebd08c78b4748cce42df08ae68513ae6719e54c2a6d77b0175f3d06317",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/reuseid_branch_case.ets",
+        "sha256": "7fb8afee39939e1aad9ca773cd078f6a81deb77e89b7edb112bb82ca3180515a",
+        "size_bytes": 1639
+      },
+      {
+        "path": "entry/src/main/ets/cases/reuseid_branch_components.ets",
+        "sha256": "7cfa7dfe5dab670c1950259fb59d774bb6b17f392aabacf30043a915e07d8db8",
+        "size_bytes": 632
+      }
+    ]
+  },
+  {
+    "order": 31,
+    "judge_blind_id": "JDG-031",
+    "source_blind_id": "V14-015",
+    "case_id": "case_security_no_commented_code",
+    "category": "security",
+    "rule": "@security/no-commented-code",
+    "source_result_sha256": "7157eca374c91d441029b7fc1e73fd424ab66dc9890a49a071b5e2e6dd90f664",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/commented_code_case.ets",
+        "sha256": "ba0885f8fa5b8c4050d6708215f9adf2828e0bfe85a464bc2572f8ec3e627efe",
+        "size_bytes": 50
+      }
+    ]
+  },
+  {
+    "order": 32,
+    "judge_blind_id": "JDG-032",
+    "source_blind_id": "V14-051",
+    "case_id": "case_performance_hp_arkui_use_reusable_component",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-use-reusable-component",
+    "source_result_sha256": "1072c5477367f0a628f60ead94ac1b5943533e39a49ad8accfb159be9064659d",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/reusable_component_case.ets",
+        "sha256": "b0140b3e9b32b5418aae19ca9ea44f261390a4bad50f24de7225f1e6f0f55f34",
+        "size_bytes": 466
+      }
+    ]
+  },
+  {
+    "order": 33,
+    "judge_blind_id": "JDG-033",
+    "source_blind_id": "V14-062",
+    "case_id": "case_hw_ets_eslint_init_list_component",
+    "category": "arkts_eslint",
+    "rule": "@hw-ets-eslint/init-list-component",
+    "source_result_sha256": "0aea362c416e3f64f9b2923a1f22639c68ff7080da7e1b010f36601a91ceff37",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/init_list_component_case.ets",
+        "sha256": "3151ad85ef4d97efdf6bac2c061a807086f43c5416d01d4c156f94c253463fe5",
+        "size_bytes": 323
+      }
+    ]
+  },
+  {
+    "order": 34,
+    "judge_blind_id": "JDG-034",
+    "source_blind_id": "V14-048",
+    "case_id": "case_performance_reuse_date_instances_check",
+    "category": "performance",
+    "rule": "@performance/reuse-date-instances-check",
+    "source_result_sha256": "a59b91a2ecc064535c398b0ecfe5154bd6037609bcdcc078b3301814a102abea",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/reuse_date_instances_case.ets",
+        "sha256": "a07391c29bdedd0e6fbd0fa643e7e4528166713f3f412c8f0653c79180bb764a",
+        "size_bytes": 253
+      }
+    ]
+  },
+  {
+    "order": 35,
+    "judge_blind_id": "JDG-035",
+    "source_blind_id": "V14-039",
+    "case_id": "case_security_no_unsafe_aes",
+    "category": "security",
+    "rule": "@security/no-unsafe-aes",
+    "source_result_sha256": "712d08114f301e0a15a1b1532a7da0fdd8f7718061ed72e24077f4d886a35071",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_aes_case.ets",
+        "sha256": "f39ad0a3a9d35ccd6996e1e2093c2a706d5e93e2d850df72ee7ffe3c6a3dab04",
+        "size_bytes": 138
+      }
+    ]
+  },
+  {
+    "order": 36,
+    "judge_blind_id": "JDG-036",
+    "source_blind_id": "V14-034",
+    "case_id": "case_performance_multiple_associations_state_var_check",
+    "category": "performance",
+    "rule": "@performance/multiple-associations-state-var-check",
+    "source_result_sha256": "64c3c65cef06948cc1edb706bdde8c6e3730d57c13fc4a23970d73a898e879cf",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/multiple_state_association_case.ets",
+        "sha256": "6101f2d2e093906d8b659a992ba173a81db61bbafb68195b270c18b0d15ce09f",
+        "size_bytes": 982
+      }
+    ]
+  },
+  {
+    "order": 37,
+    "judge_blind_id": "JDG-037",
+    "source_blind_id": "V14-028",
+    "case_id": "case_security_no_unsafe_huks",
+    "category": "security",
+    "rule": "@security/no-unsafe-huks",
+    "source_result_sha256": "2c97214053aef5fbe20846acee3aaf3e554b872b6bd8d9471f0fcc92478f2cd5",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_huks_case.ets",
+        "sha256": "6f2c2e9e00096e0f8301fe96c8232fe64a73d4aeaa691192f00cc1d2a7250149",
+        "size_bytes": 792
+      }
+    ]
+  },
+  {
+    "order": 38,
+    "judge_blind_id": "JDG-038",
+    "source_blind_id": "V14-046",
+    "case_id": "case_performance_lottie_animation_destroy_check",
+    "category": "performance",
+    "rule": "@performance/lottie-animation-destroy-check",
+    "source_result_sha256": "4bcc694f2bbada1f44587d0bf610cc42a75703749c74c6ad59d5472b0125c22d",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/lottie_destroy_case.ets",
+        "sha256": "fe39510beafd4a6b9bf64ceb3dea129e774b7eae3432daed49c3572f63ef074e",
+        "size_bytes": 773
+      }
+    ]
+  },
+  {
+    "order": 39,
+    "judge_blind_id": "JDG-039",
+    "source_blind_id": "V14-005",
+    "case_id": "case_security_no_unsafe_dh_key",
+    "category": "security",
+    "rule": "@security/no-unsafe-dh-key",
+    "source_result_sha256": "562db660b8f6edd9d7945d2dffa2a28ba047369d04b6ab24cc1dd5d9825ea46b",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_dh_key_case.ets",
+        "sha256": "ea06f1924a619be9145b5559c05a4d956dc3ccb43819070a603fc3c3640f8a19",
+        "size_bytes": 146
+      }
+    ]
+  },
+  {
+    "order": 40,
+    "judge_blind_id": "JDG-040",
+    "source_blind_id": "V14-026",
+    "case_id": "case_performance_hp_arkui_avoid_update_auto_state_var_in_abouttoreuse",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse",
+    "source_result_sha256": "608255e4bba09d07e526f7a35194d97c39df534776174826a61cf4a31b1561a8",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/about_to_reuse_state_case.ets",
+        "sha256": "873b074f841a85e2a9f60e14716ed4a140ecc33900951ce9208247f1fa273a86",
+        "size_bytes": 226
+      }
+    ]
+  },
+  {
+    "order": 41,
+    "judge_blind_id": "JDG-041",
+    "source_blind_id": "V14-006",
+    "case_id": "case_security_no_unsafe_dh",
+    "category": "security",
+    "rule": "@security/no-unsafe-dh",
+    "source_result_sha256": "7e84f9cf96819096436c77b7361a68480c249590c4074c3c1d8352626717e675",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_dh_case.ets",
+        "sha256": "f26afd776356d1a042383bf57968e8b4d1d9af441549a50c44ac0752463abc29",
+        "size_bytes": 138
+      }
+    ]
+  },
+  {
+    "order": 42,
+    "judge_blind_id": "JDG-042",
+    "source_blind_id": "V14-057",
+    "case_id": "case_security_no_unsafe_3des",
+    "category": "security",
+    "rule": "@security/no-unsafe-3des",
+    "source_result_sha256": "d1ef490e293247d82a999280f44ea43400e72abeafaefe236adf1eac7ebf3c68",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_3des_case.ets",
+        "sha256": "7682a8110382d38dfd61f7ac2d58fd49b785a5ba919f7bcf6ae91c7dd2fff15e",
+        "size_bytes": 185
+      }
+    ]
+  },
+  {
+    "order": 43,
+    "judge_blind_id": "JDG-043",
+    "source_blind_id": "V14-020",
+    "case_id": "case_performance_hp_arkui_no_stringify_in_lazyforeach_key_generator",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+    "source_result_sha256": "49d1351fb35495acd48f557e95b22dc0ec88440370486d21151f120b9f8e8b2b",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/lazyforeach_stringify_case.ets",
+        "sha256": "4621b01c632b7b41b4ebd23666d6ad2b86221db4bc6ece8b41e1edbff875e36c",
+        "size_bytes": 316
+      }
+    ]
+  },
+  {
+    "order": 44,
+    "judge_blind_id": "JDG-044",
+    "source_blind_id": "V14-055",
+    "case_id": "case_performance_no_high_loaded_frame_rate_range",
+    "category": "performance",
+    "rule": "@performance/no-high-loaded-frame-rate-range",
+    "source_result_sha256": "d7c90f0834ec3d62878bf3ea8e10d2c4d039fdad0359e39708142935fe4423ac",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/high_frame_rate_case.ets",
+        "sha256": "43d0b847e3b98cebaa821eb60753e05b34cc40c2a2238406b4a7bf3c24fd5760",
+        "size_bytes": 401
+      }
+    ]
+  },
+  {
+    "order": 45,
+    "judge_blind_id": "JDG-045",
+    "source_blind_id": "V14-004",
+    "case_id": "case_security_no_unsafe_mac",
+    "category": "security",
+    "rule": "@security/no-unsafe-mac",
+    "source_result_sha256": "d9b08c62d87a8df8fb56ad84c4f8d44ce9f9e6e11d18d25c95d3875fbcff70e0",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_mac_case.ets",
+        "sha256": "b3a525ee5431a4ce25810d2f215754e533812a259c5aa1f01af9719e8237d55a",
+        "size_bytes": 129
+      }
+    ]
+  },
+  {
+    "order": 46,
+    "judge_blind_id": "JDG-046",
+    "source_blind_id": "V14-047",
+    "case_id": "case_performance_timezone_interface_check",
+    "category": "performance",
+    "rule": "@performance/timezone-interface-check",
+    "source_result_sha256": "57816b2f880ed9ea6f09e2595d7ca20d4f0fa397017c9967130b80e169ab0b4b",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/timezone_case.ets",
+        "sha256": "4e1728724ff59ca155af261f427608b89443c5166acd5953ba346a9e89aab48e",
+        "size_bytes": 330
+      }
+    ]
+  },
+  {
+    "order": 47,
+    "judge_blind_id": "JDG-047",
+    "source_blind_id": "V14-008",
+    "case_id": "case_performance_high_frequency_log_check",
+    "category": "performance",
+    "rule": "@performance/high-frequency-log-check",
+    "source_result_sha256": "3153fd49f216c5d6126417ad9fcfc2bae92ea8f7fab46b26e62894e418d816bf",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/high_frequency_log_case.ets",
+        "sha256": "6554cdd37ca19eb6ebe7e420e602d0c2209bf156c9c3167a014a59df2f48f45e",
+        "size_bytes": 217
+      }
+    ]
+  },
+  {
+    "order": 48,
+    "judge_blind_id": "JDG-048",
+    "source_blind_id": "V14-013",
+    "case_id": "case_performance_foreach_index_check",
+    "category": "performance",
+    "rule": "@performance/foreach-index-check",
+    "source_result_sha256": "3a0a49728383049f8f6fe2827cd02e943d1b4a716309256467551a3478b590ea",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/foreach_index_case.ets",
+        "sha256": "3385383fc44e3d1d7ca860ee4fe0feb463ab0e336fd1a77668fa2c9066bd0085",
+        "size_bytes": 451
+      }
+    ]
+  },
+  {
+    "order": 49,
+    "judge_blind_id": "JDG-049",
+    "source_blind_id": "V14-060",
+    "case_id": "case_security_no_unsafe_rsa_sign",
+    "category": "security",
+    "rule": "@security/no-unsafe-rsa-sign",
+    "source_result_sha256": "1d3d4d2bb3fdc0f5fa46e7ab4c7b6fedc2a620c7b2caf790f87cb70016d939a9",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_rsa_sign_case.ets",
+        "sha256": "de67efda1aef66242757d3a7e64e056c94196a11f208d52d9b30a42bb5e39f5c",
+        "size_bytes": 146
+      }
+    ]
+  },
+  {
+    "order": 50,
+    "judge_blind_id": "JDG-050",
+    "source_blind_id": "V14-053",
+    "case_id": "case_security_no_unsafe_hash",
+    "category": "security",
+    "rule": "@security/no-unsafe-hash",
+    "source_result_sha256": "c48aa63ae06ad23c220d8196e9a912b7485250e6bb9032e92fe1e119e4824541",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_hash_case.ets",
+        "sha256": "a92aa846d6f9a16a24fd29700c1e836ab14537296353e3039d80d753b32fd01d",
+        "size_bytes": 119
+      }
+    ]
+  },
+  {
+    "order": 51,
+    "judge_blind_id": "JDG-051",
+    "source_blind_id": "V14-058",
+    "case_id": "case_performance_hp_arkui_remove_redundant_state_var",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-remove-redundant-state-var",
+    "source_result_sha256": "a2abda7791d279c7ab2aa6d4b06b2ce6001b7b73ad5a75888987f9de4fe83355",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/redundant_state_var_case.ets",
+        "sha256": "25a7eac871318a6cf93c59c35ca9000e77315e82db7263a745e637a0d27122ea",
+        "size_bytes": 233
+      }
+    ]
+  },
+  {
+    "order": 52,
+    "judge_blind_id": "JDG-052",
+    "source_blind_id": "V14-002",
+    "case_id": "case_performance_hp_performance_no_closures",
+    "category": "performance",
+    "rule": "@performance/hp-performance-no-closures",
+    "source_result_sha256": "96a9e81ea9bf812f758b22908d5cc0336223d0a02dfa19848f09197c25f03c26",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/no_closures_case.ets",
+        "sha256": "2ec9d935a0f1cc0a6063f331837f37a0553274e09e1e3db9dc6a575d89d49697",
+        "size_bytes": 193
+      }
+    ]
+  },
+  {
+    "order": 53,
+    "judge_blind_id": "JDG-053",
+    "source_blind_id": "V14-023",
+    "case_id": "case_performance_hp_arkui_use_row_column_to_replace_flex",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+    "source_result_sha256": "1f194bcdfb7ac449ecc17276d66ba9bb4bfc59f5328a2b3bb5fbf810abfcc5d3",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/flex_layout_case.ets",
+        "sha256": "93febeac797998ea06b2af2db3f97f8b7a65a2793c6b0e4241149fd4dbff71e8",
+        "size_bytes": 530
+      }
+    ]
+  },
+  {
+    "order": 54,
+    "judge_blind_id": "JDG-054",
+    "source_blind_id": "V14-011",
+    "case_id": "case_performance_hp_arkui_set_cache_count_for_lazyforeach_grid",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+    "source_result_sha256": "83a42d0e3be400fdaa67697576edbc3e1cfc27d0ee7ec7428471fa72a1105b8c",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/grid_cache_count_case.ets",
+        "sha256": "b75c31913cee2e5bcef8af3da47248f35f16f9120968f292812cd6e69d256b28",
+        "size_bytes": 360
+      }
+    ]
+  },
+  {
+    "order": 55,
+    "judge_blind_id": "JDG-055",
+    "source_blind_id": "V14-016",
+    "case_id": "case_performance_dark_color_mode_check",
+    "category": "performance",
+    "rule": "@performance/dark-color-mode-check",
+    "source_result_sha256": "96cd7216fbf8e372377bd726afeb3ae17f909139b8118efb86c0dbf3be06d31b",
+    "candidate_source": "capture_recovery_overlay",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/module.json5",
+        "sha256": "c2508935cba779425e539f48e801d0f084bbd8b72b5b98a1f4d17cec955b095c",
+        "size_bytes": 234
+      },
+      {
+        "path": "entry/src/main/resources/base/element/color.json",
+        "sha256": "6c6da47a6a3d41bf8bd41445978f11abd9ba54bf057fc31b448532733b848883",
+        "size_bytes": 92
+      },
+      {
+        "path": "entry/src/main/resources/dark/element/color.json",
+        "sha256": "9a14f5c30b43af3ca874b6d21e9a5173556a684a508ecf7aaa443a1014d60b2c",
+        "size_bytes": 92
+      }
+    ]
+  },
+  {
+    "order": 56,
+    "judge_blind_id": "JDG-056",
+    "source_blind_id": "V14-042",
+    "case_id": "case_performance_hp_arkui_use_scale_to_replace_attr_animateto",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-use-scale-to-replace-attr-animateto",
+    "source_result_sha256": "9344cd0c24f3ff34da0b03cb5474d991459f9ce366434fd6dffcdd11e3bb5850",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/scale_animation_case.ets",
+        "sha256": "e1ee0d5b82d4b030809f16df2221ee528141db9d48b43e55ef85376e65563e22",
+        "size_bytes": 534
+      }
+    ]
+  },
+  {
+    "order": 57,
+    "judge_blind_id": "JDG-057",
+    "source_blind_id": "V14-014",
+    "case_id": "case_performance_hp_arkui_use_grid_layout_options",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-use-grid-layout-options",
+    "source_result_sha256": "eb3a26946b279c26ccdd5651cd4d9cf6cf0da0fbd2dff5eef9e59d6d7c74ea21",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/grid_layout_options_case.ets",
+        "sha256": "3b79081490e7f538b9a6128d87e113e2bcb342741093b2de68e59acc9333a3e9",
+        "size_bytes": 566
+      }
+    ]
+  },
+  {
+    "order": 58,
+    "judge_blind_id": "JDG-058",
+    "source_blind_id": "V14-019",
+    "case_id": "case_security_no_unsafe_ecdh",
+    "category": "security",
+    "rule": "@security/no-unsafe-ecdh",
+    "source_result_sha256": "411520bfb999fbdeb7461bbc73cf483bd45e6f0ca72a347338dbabb865baf965",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_ecdh_case.ets",
+        "sha256": "c5cd06084bab0f0d5746154efdce58659fafe2664d2925469ae16d267d4f6669",
+        "size_bytes": 112
+      }
+    ]
+  },
+  {
+    "order": 59,
+    "judge_blind_id": "JDG-059",
+    "source_blind_id": "V14-032",
+    "case_id": "case_performance_hp_arkui_suggest_cache_avplayer",
+    "category": "performance",
+    "rule": "@performance/hp-arkui-suggest-cache-avplayer",
+    "source_result_sha256": "4cf03d01947d44ea19a50b26ffae8777bc9bc803199548e9b4fada5bee41bbe0",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/avplayer_cache_case.ets",
+        "sha256": "df54d9fe926605e2d3606109e2cbdf33e895a1ffcfbfed587b43bb92370ad3a6",
+        "size_bytes": 1630
+      }
+    ]
+  },
+  {
+    "order": 60,
+    "judge_blind_id": "JDG-060",
+    "source_blind_id": "V14-009",
+    "case_id": "case_performance_constant_property_referencing_check_in_loops",
+    "category": "performance",
+    "rule": "@performance/constant-property-referencing-check-in-loops",
+    "source_result_sha256": "19146f0aabb99fd59036e0a1c545613b05746c526d312e0aed5655ad8f6f68dd",
+    "candidate_source": "frozen_runner_accepted_workspace",
+    "candidate_file_hashes": [
+      {
+        "path": "entry/src/main/ets/cases/constant_property_loop_case.ets",
+        "sha256": "79f2530f30a68b91ca7532bde36b5c03890157483561348007a6f1f90ba8402a",
+        "size_bytes": 368
+      }
+    ]
+  }
+]

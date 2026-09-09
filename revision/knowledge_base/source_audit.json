@@ -1,0 +1,211 @@
+{
+  "deduplication_key": [
+    "rule",
+    "problem_code",
+    "repair_code"
+  ],
+  "normalization": "CRLF/CR converted to LF; outer whitespace stripped",
+  "paper_facing_view": "rule_complete_383",
+  "source_files": [
+    {
+      "source_file": "data/vul_pairs.xlsx",
+      "sha256": "d91ff95e7acc8eccfdd40dd2b996b64db5b7a691936e3e7dc31a59c40226b832",
+      "row_count": 269,
+      "distinct_rule_count": 38,
+      "sheets": [
+        {
+          "sheet": "Sheet1",
+          "row_count": 269,
+          "distinct_rule_count": 38,
+          "columns": [
+            "规则",
+            "描述",
+            "问题代码样例",
+            "问题解释",
+            "修复代码样例",
+            "差异",
+            "difflib"
+          ]
+        }
+      ]
+    },
+    {
+      "source_file": "data/output.xlsx",
+      "sha256": "1647a630d2fc5696351ae4e7f5f0f09b91979274621605fd236dfa2bcc6f16ce",
+      "row_count": 60,
+      "distinct_rule_count": 12,
+      "sheets": [
+        {
+          "sheet": "Sheet1",
+          "row_count": 60,
+          "distinct_rule_count": 12,
+          "columns": [
+            "rule",
+            "description",
+            "problem_code",
+            "problem_explain",
+            "problem_fix"
+          ]
+        }
+      ]
+    },
+    {
+      "source_file": "data/security_pairs.xlsx",
+      "sha256": "e17cbecbc50fcd092855b25096d9278f50a691fbe15d20a1eac690c0c3296b0a",
+      "row_count": 96,
+      "distinct_rule_count": 20,
+      "sheets": [
+        {
+          "sheet": "Sheet1",
+          "row_count": 96,
+          "distinct_rule_count": 20,
+          "columns": [
+            "Rule",
+            "Description",
+            "Problem Code Example",
+            "Problem Explanation",
+            "Repair Code Example",
+            "Diff",
+            "Difflib"
+          ]
+        }
+      ]
+    },
+    {
+      "source_file": "data/addition.xlsx",
+      "sha256": "7b30b7f287890c32f832e73d3e2e75e55cfd2cd6cb6aa4ee28a9faebdddb923b",
+      "row_count": 1,
+      "distinct_rule_count": 1,
+      "sheets": [
+        {
+          "sheet": "Sheet1",
+          "row_count": 1,
+          "distinct_rule_count": 1,
+          "columns": [
+            "规则",
+            "描述",
+            "问题代码样例",
+            "问题解释",
+            "修复代码样例",
+            "差异",
+            "difflib"
+          ]
+        }
+      ]
+    },
+    {
+      "source_file": "data/missing_pairs.xlsx",
+      "sha256": "1964d6f3dc762ed713a5adb9a981608537e07c699c40ee752640da4b4edc7342",
+      "row_count": 5,
+      "distinct_rule_count": 5,
+      "sheets": [
+        {
+          "sheet": "Sheet1",
+          "row_count": 5,
+          "distinct_rule_count": 5,
+          "columns": [
+            "Rule",
+            "Description",
+            "Problem Code Example",
+            "Problem Explanation",
+            "Repair Code Example",
+            "Diff",
+            "Difflib"
+          ]
+        }
+      ]
+    }
+  ],
+  "views": {
+    "published_378": {
+      "source_files": [
+        "data/vul_pairs.xlsx",
+        "data/output.xlsx",
+        "data/security_pairs.xlsx",
+        "data/addition.xlsx"
+      ],
+      "raw_row_count": 426,
+      "exact_unique_pair_count": 378,
+      "exact_duplicate_row_count": 48,
+      "distinct_rule_count": 58,
+      "pair_counts_by_category": {
+        "other": 1,
+        "performance": 271,
+        "security": 106
+      },
+      "pair_counts_by_namespace": {
+        "hw-ets-eslint": 1,
+        "performance": 271,
+        "security": 106
+      },
+      "rule_counts_by_category": {
+        "other": 1,
+        "performance": 37,
+        "security": 20
+      },
+      "rule_counts_by_namespace": {
+        "hw-ets-eslint": 1,
+        "performance": 37,
+        "security": 20
+      },
+      "empty_field_counts": {
+        "rule": 0,
+        "description": 0,
+        "problem_code": 0,
+        "problem_explanation": 0,
+        "repair_code": 0,
+        "diff": 14,
+        "difflib": 14
+      }
+    },
+    "rule_complete_383": {
+      "source_files": [
+        "data/vul_pairs.xlsx",
+        "data/output.xlsx",
+        "data/security_pairs.xlsx",
+        "data/addition.xlsx",
+        "data/missing_pairs.xlsx"
+      ],
+      "raw_row_count": 431,
+      "exact_unique_pair_count": 383,
+      "exact_duplicate_row_count": 48,
+      "distinct_rule_count": 63,
+      "pair_counts_by_category": {
+        "other": 1,
+        "performance": 276,
+        "security": 106
+      },
+      "pair_counts_by_namespace": {
+        "hw-ets-eslint": 1,
+        "performance": 276,
+        "security": 106
+      },
+      "rule_counts_by_category": {
+        "other": 1,
+        "performance": 42,
+        "security": 20
+      },
+      "rule_counts_by_namespace": {
+        "hw-ets-eslint": 1,
+        "performance": 42,
+        "security": 20
+      },
+      "empty_field_counts": {
+        "rule": 0,
+        "description": 0,
+        "problem_code": 0,
+        "problem_explanation": 0,
+        "repair_code": 0,
+        "diff": 14,
+        "difflib": 14
+      }
+    }
+  },
+  "duplicate_group_count": 48,
+  "near_duplicate_review": {
+    "threshold": 0.8,
+    "score": "mean of problem-code and repair-code SequenceMatcher ratios",
+    "candidate_count": 306,
+    "automatic_removal": false
+  }
+}

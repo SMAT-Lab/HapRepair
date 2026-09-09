@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "audit_id": "exp_loc_18_three_model_v1_formal_run_audit",
+  "generated_at": "2026-08-07T14:43:56.564280+00:00",
+  "status": "passed",
+  "passed": true,
+  "run_id": "exp_loc_18_three_model_v1",
+  "checks": [
+    {
+      "name": "protocol_and_ground_truth_hashes",
+      "passed": true,
+      "detail": {
+        "protocol_sha256": "baaf76932d8013e8eaa0b1f840fb4ba02e37412caef5f0e3bc4903a3e9b6bbeb",
+        "ground_truth_sha256": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3"
+      }
+    },
+    {
+      "name": "manifest_contract",
+      "passed": true,
+      "detail": {
+        "mode": "formal",
+        "models": [
+          "gpt-5.6-luna",
+          "gpt-5.6-sol",
+          "deepseek-v4-flash"
+        ],
+        "file_count": 18,
+        "expected_condition_count": 54
+      }
+    },
+    {
+      "name": "exact_condition_partition",
+      "passed": true,
+      "detail": {
+        "expected": 54,
+        "observed": 54,
+        "unique": 54,
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "record_hash_and_prompt_binding",
+      "passed": true,
+      "detail": {
+        "error_count": 0,
+        "errors": []
+      }
+    },
+    {
+      "name": "requested_reported_model_identity",
+      "passed": true,
+      "detail": {
+        "mismatch_count": 0,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "thinking_disabled",
+      "passed": true,
+      "detail": {
+        "reasoning_effort": "none",
+        "reasoning_content_field_count": 0,
+        "nonempty_reasoning_content_count": 0,
+        "reasoning_tokens_field_count": 0,
+        "nonzero_reasoning_tokens_count": 0
+      }
+    },
+    {
+      "name": "api_completion",
+      "passed": true,
+      "detail": {
+        "api_failure_count": 0,
+        "failures": [],
+        "transport_retry_count": 0,
+        "non_success_attempt_count": 0
+      }
+    },
+    {
+      "name": "summary_exact_recomputation",
+      "passed": true,
+      "detail": {
+        "model_summaries_match": true
+      }
+    }
+  ],
+  "observations": {
+    "response_count": 54,
+    "finish_reasons": {
+      "stop": 54
+    },
+    "parse_failure_count": 0,
+    "parse_failures": [],
+    "parse_failure_disposition": "Preserved as zero valid predictions under the frozen protocol; no semantic resampling.",
+    "out_of_range_prediction_count": 1,
+    "out_of_range_predictions": [
+      {
+        "model": "gpt-5.6-luna",
+        "file": "entry/src/main/ets/MainAbility/pages/ListItemGroup/list_ux.ets",
+        "rule": "@performance/hp-arkui-avoid-empty-callback",
+        "line": 259,
+        "max_line": 255
+      }
+    ],
+    "token_usage": {
+      "gpt-5.6-luna": {
+        "prompt_tokens": 21959,
+        "completion_tokens": 2402,
+        "total_tokens": 24361
+      },
+      "gpt-5.6-sol": {
+        "prompt_tokens": 21959,
+        "completion_tokens": 804,
+        "total_tokens": 22763
+      },
+      "deepseek-v4-flash": {
+        "prompt_tokens": 22709,
+        "completion_tokens": 5029,
+        "total_tokens": 27738
+      }
+    }
+  },
+  "metrics": {
+    "gpt-5.6-luna": {
+      "overall": {
+        "tp": 5,
+        "fp": 105,
+        "fn": 33,
+        "precision": 0.045454545454545456,
+        "recall": 0.13157894736842105,
+        "f1": 0.06756756756756757
+      },
+      "single_defect_files": {
+        "tp": 0,
+        "fp": 22,
+        "fn": 6,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "multi_defect_files": {
+        "tp": 5,
+        "fp": 83,
+        "fn": 27,
+        "precision": 0.056818181818181816,
+        "recall": 0.15625,
+        "f1": 0.08333333333333333
+      },
+      "rule_only_recall": 0.42105263157894735,
+      "within_one_line_recall": 0.23684210526315788
+    },
+    "gpt-5.6-sol": {
+      "overall": {
+        "tp": 2,
+        "fp": 30,
+        "fn": 36,
+        "precision": 0.0625,
+        "recall": 0.05263157894736842,
+        "f1": 0.05714285714285714
+      },
+      "single_defect_files": {
+        "tp": 0,
+        "fp": 9,
+        "fn": 6,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "multi_defect_files": {
+        "tp": 2,
+        "fp": 21,
+        "fn": 30,
+        "precision": 0.08695652173913043,
+        "recall": 0.0625,
+        "f1": 0.07272727272727272
+      },
+      "rule_only_recall": 0.4473684210526316,
+      "within_one_line_recall": 0.2631578947368421
+    },
+    "deepseek-v4-flash": {
+      "overall": {
+        "tp": 5,
+        "fp": 211,
+        "fn": 33,
+        "precision": 0.023148148148148147,
+        "recall": 0.13157894736842105,
+        "f1": 0.03937007874015748
+      },
+      "single_defect_files": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 6,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "multi_defect_files": {
+        "tp": 5,
+        "fp": 203,
+        "fn": 27,
+        "precision": 0.02403846153846154,
+        "recall": 0.15625,
+        "f1": 0.04166666666666667
+      },
+      "rule_only_recall": 0.3684210526315789,
+      "within_one_line_recall": 0.13157894736842105
+    }
+  },
+  "hashes": {
+    "protocol": "baaf76932d8013e8eaa0b1f840fb4ba02e37412caef5f0e3bc4903a3e9b6bbeb",
+    "ground_truth": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3",
+    "run_manifest": "b9fab392c97f286571d5c065aad2a19e9341c4fe7f8034844a0a6bbeb8fa1932",
+    "summary": "03b973a8cc7d89512f2cf590c21d6aa147f6df79396d64957a039f04d209a010",
+    "response_set": "90e5e2a25a50a4735e8de2404c9524dd763b127e8f1dfb48634e2b8369cf4329"
+  },
+  "reporting_boundary": "Precision and F1 are conditional on the selected 18 files and eight-rule closed set; real-project recall remains unknown.",
+  "next_action": "Use this audited LLM run in the joint E4b evaluation."
+}

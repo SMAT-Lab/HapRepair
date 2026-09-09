@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-018",
+  "category": "security",
+  "rule": "@security/no-unsafe-sm4",
+  "rule_description": "SM4 禁止使用 ECB 等不安全分组模式。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_sm4_case.ets",
+      "line": 6,
+      "column": 21,
+      "severity": "warn",
+      "message": "Do not use the insecure ECB encryption mode in the SM4 encryption algorithm; it is recommended to use the secure SM4 interface in the Petal Aegis SDK.",
+      "rule": "@security/no-unsafe-sm4"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_sm4_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\n@Component\nstruct LegacyLocalStoreCipher {\n  create(): void {\n    cryptoFramework.createCipher('SM4_128|ECB|PKCS7');\n  }\n\n  build() {\n    Text('legacy local store cipher')\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_sm4_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\n@Component\nstruct LegacyLocalStoreCipher {\n  create(): void {\n    cryptoFramework.createCipher('SM4_128|CBC|PKCS7');\n  }\n\n  build() {\n    Text('legacy local store cipher')\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_sm4_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\n@Component\nstruct LegacyLocalStoreCipher {\n  create(): void {\n    cryptoFramework.createCipher('SM4_128|CBC|PKCS7');\n  }\n\n  build() {\n    Text('legacy local store cipher')\n  }\n}\n"
+    }
+  ]
+}

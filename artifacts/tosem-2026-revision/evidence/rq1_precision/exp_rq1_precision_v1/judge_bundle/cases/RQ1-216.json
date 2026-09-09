@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-216",
+  "category": "performance",
+  "finding": {
+    "column": 13,
+    "end_column": 13,
+    "end_line": 502,
+    "line": 502,
+    "message": "Replace Flex with Column/Row",
+    "relative_path": "entry/src/main/ets/pages/detailPage/detail.ets",
+    "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/layout-animation-media.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-use-row-column-to-replace-flex.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "551045af517bb31204f0fd321ac594e9abf9c1211ba523a69a70455671c5f51a",
+    "path": "source_files/551045af517bb31204f0fd321ac594e9abf9c1211ba523a69a70455671c5f51a.json",
+    "sha256": "f055e2e60e55f029ae96719189c9ca4907aad828ffb86f319ce58a0b1d537242"
+  }
+}

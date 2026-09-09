@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-193",
+  "category": "security",
+  "finding": {
+    "column": 5,
+    "end_column": 5,
+    "end_line": 1047,
+    "line": 1047,
+    "message": "Delete the related code completely when it is invalid.",
+    "relative_path": "entry/src/main/ets/pages/AudioTrackEdit.ets",
+    "rule": "@security/no-commented-code",
+    "severity": "warn"
+  },
+  "rule": "@security/no-commented-code",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-commented-code.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "b38ceda9f876e8e58beb7f74db452406aff738d8d2d534ccd5338705e5bfbf41",
+    "path": "source_files/b38ceda9f876e8e58beb7f74db452406aff738d8d2d534ccd5338705e5bfbf41.json",
+    "sha256": "c46ed70e56c772299e06c6f10c82365b43bc85cdb5e0382383fe227d6dd0ba8d"
+  }
+}

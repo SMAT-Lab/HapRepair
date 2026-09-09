@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-025",
+  "target_rule": "@performance/hp-arkui-image-async-load",
+  "codelinter_rule": "@performance/hp-arkui-image-async-load",
+  "rule_description": "建议大图片使用异步加载",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/image_async_load_case.ets",
+      "line": 8,
+      "column": 7,
+      "severity": "suggestion",
+      "message": "Asynchronously load large images",
+      "rule": "@performance/hp-arkui-image-async-load"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/image_async_load_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

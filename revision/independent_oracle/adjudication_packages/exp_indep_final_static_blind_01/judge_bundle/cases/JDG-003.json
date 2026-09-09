@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-003",
+  "category": "performance",
+  "rule": "@performance/hp-arkui-use-transition-to-replace-animateto",
+  "rule_description": "Use transition for component transition animation",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/transition_animation_case.ets",
+      "line": 11,
+      "column": 11,
+      "severity": "warn",
+      "message": "Use transition for component transition animation",
+      "rule": "@performance/hp-arkui-use-transition-to-replace-animateto"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/transition_animation_case.ets",
+      "content": "@Entry\n@Component\nstruct FadingNotice {\n  @State visible: boolean = true;\n  @State noticeOpacity: number = 1;\n\n  build() {\n    Column() {\n      if (this.visible) {\n        Text('Saved')\n          .opacity(this.noticeOpacity)\n      }\n      Button('Toggle')\n        .onClick(() => {\n          this.visible = true;\n          animateTo({\n            duration: 500,\n            onFinish: () => {\n              if (this.noticeOpacity === 0) {\n                this.visible = false;\n              }\n            }\n          }, () => {\n            this.noticeOpacity = this.noticeOpacity === 1 ? 0 : 1;\n          });\n        })\n    }\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/transition_animation_case.ets",
+      "content": "@Entry\n@Component\nstruct FadingNotice {\n  @State visible: boolean = true;\n\n  build() {\n    Column() {\n      if (this.visible) {\n        Text('Saved')\n          .id('saved-notice')\n          .transition(TransitionEffect.OPACITY.animation({ duration: 500 }))\n      }\n      Button('Toggle')\n        .onClick(() => {\n          this.visible = !this.visible;\n        })\n    }\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/transition_animation_case.ets",
+      "content": "@Entry\n@Component\nstruct FadingNotice {\n  @State visible: boolean = true;\n  @State noticeOpacity: number = 1;\n\n  build() {\n    Column() {\n      if (this.visible) {\n        Text('Saved')\n          .opacity(this.noticeOpacity)\n          .transition(TransitionEffect.OPACITY.animation({ duration: 500 }))\n      }\n      Button('Toggle')\n        .onClick(() => {\n          this.visible = !this.visible;\n        })\n    }\n  }\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "formal": true,
+  "run_id": "exp_loc_18_three_model_v1",
+  "model_requested": "gpt-5.6-luna",
+  "file": "entry/src/main/ets/MainAbility/pages/index/index.ets",
+  "source_sha256": "864979e7b02681aefc933b730373b919009e5beab95100c87cacf8363342fe30",
+  "prompt_sha256": "710a321d387edb98333fc2c2322022ee50d6a5ec5f4876e6a668ceea6076d198",
+  "protocol_sha256": "baaf76932d8013e8eaa0b1f840fb4ba02e37412caef5f0e3bc4903a3e9b6bbeb",
+  "ground_truth_sha256": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3",
+  "started_at": "2026-08-07T14:07:44.114386+00:00",
+  "provider_route": {
+    "api_base_env": "OPENAI_API_BASE",
+    "api_key_env": "OPENAI_API_KEY",
+    "api_base_sha256": "0a2cad5028420559b4d734677727ec94f7edeabf6d6ca73df8ad4103695bf48d"
+  },
+  "status": "completed",
+  "model_reported": "gpt-5.6-luna",
+  "response_id": "resp_034a4d7d2771361f016a75e6b07c1c8191be25ef2074715ada",
+  "usage": {
+    "prompt_tokens": 665,
+    "completion_tokens": 29,
+    "total_tokens": 694
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": 200,
+      "elapsed_seconds": 1.6358328000060283,
+      "result": "success"
+    }
+  ],
+  "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-avoid-empty-callback\",\"line\":44}]}",
+  "predicted_defects": [
+    {
+      "rule": "@performance/hp-arkui-avoid-empty-callback",
+      "line": 44
+    }
+  ],
+  "parse_ok": true,
+  "parse_error": null,
+  "raw_response": {
+    "id": "resp_034a4d7d2771361f016a75e6b07c1c8191be25ef2074715ada",
+    "object": "chat.completion",
+    "created": 1786111665,
+    "model": "gpt-5.6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-avoid-empty-callback\",\"line\":44}]}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 665,
+      "completion_tokens": 29,
+      "total_tokens": 694
+    }
+  },
+  "completed_at": "2026-08-07T14:07:45.751518+00:00",
+  "elapsed_seconds": 1.6371455090120435
+}

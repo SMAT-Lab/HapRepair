@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_security_no_unsafe_aes",
+  "blind_id": "V14-039",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbd1-d7df-7da2-a16b-86687cd42d79",
+  "usage": {
+    "input_tokens": 240553,
+    "cached_input_tokens": 202496,
+    "output_tokens": 5155,
+    "total_tokens": 245708
+  },
+  "wall_seconds": 116.34897851900314,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 53,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc 'find /workspace -maxdepth 2 -type f -print'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"pwd; rg --files -g 'HAPREPAIR_TASK.json' -g '*.ets' -g '*.ts' -g '*.json' -g '*.md' -g '\"'!node_modules'\"' -g '\"'!build'\"' -g '\"'!oh_modules'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"ls -la /codex-home; find /codex-home -maxdepth 4 -type f -name 'SKILL.md' -o -name 'operations.md'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,320p' entry/src/main/ets/cases/unsafe_aes_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,360p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills/haprepair-openharmony-repair -maxdepth 3 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,360p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,300p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-aes.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json; rg -n -i 'unsafe-aes|no-unsafe-aes|AES' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-aes.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n 'attachmentCipher|unsafe_aes|createCipher|cryptoFramework' /workspace -g '\"'!HAPREPAIR_TASK.json'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git diff -- entry/src/main/ets/cases/unsafe_aes_case.ets; git status --short'",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/cases/unsafe_aes_case.ets; rg -n \\\"AES256\\\\|(ECB|NoPadding)|createCipher\\\" entry/src/main/ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'rg --files entry/src/main/ets | sort; find entry -type f -maxdepth 8 -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/cases/unsafe_aes_case.ets; printf '\\\\nCompletion report:\\\\n'; sed -n '1,260p' completion.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 5 -type f -not -path '/workspace/.git/*' -print | sort; rg -n \\\"ECB|NoPadding|AES256\\\\|GCM\\\\|PKCS7\\\" /workspace -g '\"'!HAPREPAIR_TASK.json'\"' -g '\"'!completion.json'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"python3 -m json.tool HAPREPAIR_TASK.json >/dev/null && python3 -m json.tool completion.json >/dev/null && echo 'JSON valid'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "57b300e44665038f7f2344fa2d2eb4f03510bc7e268abd31204c3d47358725ef",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_aes_case.ets",
+      "sha256": "f39ad0a3a9d35ccd6996e1e2093c2a706d5e93e2d850df72ee7ffe3c6a3dab04",
+      "size_bytes": 138,
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst attachmentCipher = cryptoFramework.createCipher('AES256|GCM|PKCS7');\n"
+    }
+  ],
+  "trace_sha256": "edeac6197cfea3aeac6bec8ab886ea77caabd5d2ab2a681451a40fccdffd76a9",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:45:05.809952+00:00",
+  "rejection_reasons": []
+}

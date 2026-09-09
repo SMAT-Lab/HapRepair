@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_security_no_unsafe_sm4",
+  "blind_id": "V14-003",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbdc-002a-7e90-ace1-39f3d4d83baa",
+  "usage": {
+    "input_tokens": 185982,
+    "cached_input_tokens": 146688,
+    "output_tokens": 3877,
+    "total_tokens": 189859
+  },
+  "wall_seconds": 95.48972195800161,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 52,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"pwd && rg --files -g 'HAPREPAIR_TASK.json' -g '\"'!node_modules'\"' -g '\"'!oh_modules'\"' -g '\"'!build'\"' -g '\"'!out'\"' | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'rg --files /codex-home/skills/.system/haprepair-openharmony-repair | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'ls -la / /workspace /codex-home 2>&1'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,320p' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find / -path '*/haprepair-openharmony-repair/SKILL.md' -o -path '*/haprepair-openharmony-repair/references/operations.md' 2>/dev/null\"",
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '261,520p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find entry -type f -not -path '*/node_modules/*' -not -path '*/build/*' -print | sort && sed -n '1,240p' entry/src/main/ets/cases/unsafe_sm4_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'rg --files /codex-home/skills/haprepair-openharmony-repair | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,360p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-sm4.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json && rg -n -C 4 'no-unsafe-sm4|SM4|ECB' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs /codex-home/skills/haprepair-openharmony-repair/references/repair-guides\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git status --short && git diff -- entry/src/main/ets/cases/unsafe_sm4_case.ets'",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -uu entry | sort && rg -n -uu 'cryptoFramework|SM4|ECB|LegacyLocalStoreCipher|createCipher|security' entry\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace -type f -not -path '*/.git/*' -print | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,80p' entry/src/main/ets/cases/unsafe_sm4_case.ets && rg -n 'SM4_128\\\\|ECB|SM4_128\\\\|CBC|SM4.*GCM|SM4.*CFB|SM4.*CTR|SM4.*OFB' /workspace /codex-home/skills/haprepair-openharmony-repair --glob '*.ets' --glob '*.ts' --glob '*.md' --glob '*.json' --glob '*.json5'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n 'createCipher\\\\(|SM4' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-sm4.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "12c12959f77ae3166906852247be8069367c0171fbfb94f3e97b0f7c72118a19",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_sm4_case.ets",
+      "sha256": "9e6290253e69c052fdb2dca6e223b0b292fca2ce13648730e53e7761c8998a5a",
+      "size_bytes": 241,
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\n@Component\nstruct LegacyLocalStoreCipher {\n  create(): void {\n    cryptoFramework.createCipher('SM4_128|CBC|PKCS7');\n  }\n\n  build() {\n    Text('legacy local store cipher')\n  }\n}\n"
+    }
+  ],
+  "trace_sha256": "7af475bc236b768bd080f051ce79499f92ed84e0c9fcb67ebc632eb69ef0cdad",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:55:50.378542+00:00",
+  "rejection_reasons": []
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-017",
+  "target_rule": "@performance/hp-arkts-no-use-any-export-current",
+  "codelinter_rule": "@performance/hp-arkts-no-use-any-export-current",
+  "rule_description": "避免使用export * 导出当前module中定义的类型和数据。\n\n冷启动完成时延场景下，建议优先修改",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/export_current_case.ets",
+      "line": 5,
+      "column": 1,
+      "severity": "warn",
+      "message": "Do not use export * to export types and data defined in the current module",
+      "rule": "@performance/hp-arkts-no-use-any-export-current"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/export_current_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

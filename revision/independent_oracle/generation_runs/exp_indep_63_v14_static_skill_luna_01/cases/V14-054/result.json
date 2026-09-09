@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_security_no_unsafe_dsa_key",
+  "blind_id": "V14-054",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbd6-4a2d-74c3-9ea7-a95f5f515643",
+  "usage": {
+    "input_tokens": 146700,
+    "cached_input_tokens": 116224,
+    "output_tokens": 2618,
+    "total_tokens": 149318
+  },
+  "wall_seconds": 68.87179979199573,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 46,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -g '\"'!node_modules'\"' -g '\"'!oh_modules'\"' | sed -n '1,240p'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -g 'HAPREPAIR_TASK.json' -g '\"'!node_modules'\"' -g '\"'!oh_modules'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git status --short'",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills/haprepair-openharmony-repair -maxdepth 3 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,320p' entry/src/main/ets/cases/unsafe_dsa_key_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,280p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find . -maxdepth 5 -type f -not -path './.git/*' -print | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-dsa-key.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,360p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n \\\"DSA(1024|2048|3072)|createAsyKeyGenerator|no-unsafe-dsa-key\\\" /workspace /codex-home/skills/haprepair-openharmony-repair/references -g '\"'!node_modules'\"' -g '\"'!oh_modules'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/unsafe_dsa_key_case.ets && wc -l entry/src/main/ets/cases/unsafe_dsa_key_case.ets && file entry/src/main/ets/cases/unsafe_dsa_key_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'rg -n \"DSA1024|DSA2048|createAsyKeyGenerator|cryptoFramework|signingKeyGenerator\" entry/src/main/ets/cases/unsafe_dsa_key_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/unsafe_dsa_key_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum entry/src/main/ets/cases/unsafe_dsa_key_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find entry/src/main/ets/cases -maxdepth 1 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "bc17d4622073b79c1498de27c58c0ed8091ef5c5d31a96c1bad58aa08aee80d4",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_dsa_key_case.ets",
+      "sha256": "d069c9fca1e8292c2fc61ac796cb0d02c58e83deef781af25c58d4a7e31b35c8",
+      "size_bytes": 141,
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst signingKeyGenerator = cryptoFramework.createAsyKeyGenerator('DSA2048');\n"
+    }
+  ],
+  "trace_sha256": "21e1b0e1108057917819c0cdd07065316071ada5ab99ae2e474e1e9c35b241be",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:49:09.768382+00:00",
+  "rejection_reasons": []
+}

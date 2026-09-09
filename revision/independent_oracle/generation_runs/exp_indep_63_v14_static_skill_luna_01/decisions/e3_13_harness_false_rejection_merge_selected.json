@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "decision_id": "E3-13",
+  "verdict": "selected",
+  "canonical_action": "merge_harness_failure_replacements",
+  "final_result": {
+    "correct": 63,
+    "total": 63,
+    "performance": "42/42",
+    "arkts_eslint": "1/1",
+    "security": "20/20"
+  },
+  "reason": "The three parent outputs were rejected only by command-string substring matching over benign local search and environment-inspection commands. All three parent invocations completed with non-empty patches, token usage, zero exit status, and empty stderr, and none invoked HomeCheck, CodeLinter, or repair_session. The regenerated candidates are therefore replacements for harness-level lexical false rejections rather than a separate scientific condition.",
+  "reporting_policy": {
+    "canonical_paper_facing_result": "63/63",
+    "report_60_of_63_as_parallel_result": false,
+    "report_replacements_as_sensitivity": false,
+    "describe_as_api_retry": false,
+    "historical_60_of_63_artifacts": "retained unchanged as superseded audit history"
+  },
+  "provenance": {
+    "main_generation_run": "..",
+    "main_annotation_package": "../../../adjudication_packages/exp_indep_final_static_blind_01",
+    "replacement_generation_run": "../../../generation_runs/exp_indep_3_v14_protocol_rejection_retry_luna_01",
+    "replacement_annotation_package": "../../../adjudication_packages/exp_indep_3_v14_retry_sensitivity_blind_01",
+    "root_cause_report": "../protocol_rejection_analysis_v1/report.json",
+    "canonical_merged_result": "../../../final_evaluation_v1"
+  },
+  "supersedes_reporting_policy_in": [
+    "../../../generation_runs/exp_indep_3_v14_protocol_rejection_retry_luna_01/decisions/e3_09_protocol_rejection_retry_selected.json",
+    "../../../adjudication_packages/exp_indep_3_v14_retry_sensitivity_blind_01/sensitivity_summary.json"
+  ],
+  "next_stage": "Cross-experiment reconciliation. Manuscript editing remains closed."
+}

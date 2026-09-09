@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-07T14:43:56.681924+00:00",
+  "identity": "unique (relative_file, rule); source line ignored",
+  "protocol_sha256": "baaf76932d8013e8eaa0b1f840fb4ba02e37412caef5f0e3bc4903a3e9b6bbeb",
+  "ground_truth_sha256": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3",
+  "model_summaries": {
+    "homecheck-codelinter-6.0.240": {
+      "file_count": 18,
+      "completed_file_count": 18,
+      "parse_failure_count": 0,
+      "api_failure_count": 0,
+      "exact_match_file_count": 18,
+      "strata": {
+        "multi_defect_files": {
+          "tp": 24,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "overall": {
+          "tp": 30,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "rule:@performance/hp-arkui-avoid-empty-callback": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "rule:@performance/hp-arkui-load-on-demand": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "rule:@performance/hp-arkui-remove-container-without-property": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "rule:@performance/hp-arkui-remove-redundant-nest-container": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "rule:@performance/hp-arkui-remove-redundant-state-var": {
+          "tp": 8,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "rule:@performance/hp-arkui-remove-unchanged-state-var": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "rule:@performance/hp-arkui-set-cache-count-for-lazyforeach-grid": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "rule:@performance/hp-arkui-use-reusable-component": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "single_defect_files": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "per_file": [
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/List/List07.ets",
+          "gt_rule_count": 2,
+          "predicted_rule_count": 2,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/List/List1.ets",
+          "gt_rule_count": 1,
+          "predicted_rule_count": 1,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/List/ListFlingCallback.ets",
+          "gt_rule_count": 2,
+          "predicted_rule_count": 2,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/List/ListLevel1.ets",
+          "gt_rule_count": 2,
+          "predicted_rule_count": 2,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/List/ListScroll.ets",
+          "gt_rule_count": 2,
+          "predicted_rule_count": 2,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/List/ListScrollEdgeCallback.ets",
+          "gt_rule_count": 2,
+          "predicted_rule_count": 2,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/List/listIdle.ets",
+          "gt_rule_count": 2,
+          "predicted_rule_count": 2,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/List/listSwipeActionApi12.ets",
+          "gt_rule_count": 2,
+          "predicted_rule_count": 2,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/List/listVisibleContent.ets",
+          "gt_rule_count": 2,
+          "predicted_rule_count": 2,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/ListItem/ListItem.ets",
+          "gt_rule_count": 3,
+          "predicted_rule_count": 3,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/ListItemGroup/list_ux.ets",
+          "gt_rule_count": 2,
+          "predicted_rule_count": 2,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/ListItemGroup/singleHozDiff.ets",
+          "gt_rule_count": 2,
+          "predicted_rule_count": 2,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/childrenMainSize/get.ets",
+          "gt_rule_count": 1,
+          "predicted_rule_count": 1,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/childrenMainSize/set.ets",
+          "gt_rule_count": 1,
+          "predicted_rule_count": 1,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/contentOffset/offsetAlignEnd.ets",
+          "gt_rule_count": 1,
+          "predicted_rule_count": 1,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/contentOffset/offsetAlignStart.ets",
+          "gt_rule_count": 1,
+          "predicted_rule_count": 1,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/contentOffset/toIndexStartOffset.ets",
+          "gt_rule_count": 1,
+          "predicted_rule_count": 1,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "file": "entry/src/main/ets/MainAbility/pages/index/index.ets",
+          "gt_rule_count": 1,
+          "predicted_rule_count": 1,
+          "parse_ok": true,
+          "status": "completed",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      ]
+    }
+  },
+  "condition_identity": {
+    "id": "homecheck-codelinter-6.0.240",
+    "codelinter": "6.0.240",
+    "homecheck_source_commit": "461ad0a2f3a71a22ceeb18f7cc4a9fa67c986c59",
+    "overlay_manifest_sha256": "ca0555024524ad76c0d6f058bb98a36729a92c8b701f373b776bdb7e677f625c",
+    "config_sha256": "91de02b03d0c5df48d3da615eb0b17615f2f9ad0e0f7f575119c964ae3b9cc95"
+  },
+  "whole_module_target_finding_count": 38,
+  "manual_example_recall": {
+    "detected": 38,
+    "total": 38,
+    "recall": 1.0
+  },
+  "selected_finding_count": 38,
+  "outside_selected_universe_count": 0,
+  "error_taxonomy": {
+    "true_positive_file_rule_count": 30,
+    "missing_file_rule_count": 0,
+    "extra_file_rule_count": 0,
+    "parse_failure_file_count": 0
+  }
+}

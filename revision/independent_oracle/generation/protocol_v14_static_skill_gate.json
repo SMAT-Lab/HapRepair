@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "validated_at": "2026-08-07T09:56:09.551977+00:00",
+  "protocol_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/independent_oracle/generation/protocol_v14_static_skill.json",
+  "protocol_sha256": "ea9cb0115cfbe113337d99f826fc6d9a476a92c94e0509b5fcb26dbc7d29b801",
+  "runner_sha256": "3b34f87fa3faaa65468646f97b90c5ee5e1f54ab4c09f49aba79996a020cf495",
+  "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+  "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+  "checks": {
+    "case_count": true,
+    "rule_count": true,
+    "taxonomy": true,
+    "dynamic_retrieval_disabled": true,
+    "embedding_absent": true,
+    "ranking_absent": true,
+    "top_k_absent": true,
+    "knowledge_base_not_mounted": true,
+    "reference_project_not_mounted": true,
+    "human_repair_hidden": true,
+    "historical_outputs_hidden": true,
+    "single_invocation": true,
+    "single_candidate": true,
+    "no_automatic_retry": true
+  },
+  "all_passed": true,
+  "model_calls": 0
+}

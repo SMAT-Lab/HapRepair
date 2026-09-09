@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_performance_hp_arkts_no_use_any_export_other",
+  "blind_id": "V14-012",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbb8-a42a-7c82-a398-7d8f175e8154",
+  "usage": {
+    "input_tokens": 169021,
+    "cached_input_tokens": 138496,
+    "output_tokens": 3608,
+    "total_tokens": 172629
+  },
+  "wall_seconds": 107.44251304699719,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 46,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 3 -type f -name 'HAPREPAIR_TASK.json' -print\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- workspace files ---'; rg --files -g 'HAPREPAIR_TASK.json' -g '*.ets' -g '*.ts' -g '*.json' -g '*.md' -g '*.d.ts' -g '*.har' -g '*.oh-package.json' -g 'module.json5' -g 'build-profile.json5' | sed -n '1,240p'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"wc -l /codex-home/skills/haprepair-openharmony-repair/SKILL.md /codex-home/skills/haprepair-openharmony-repair/references/operations.md; sed -n '261,520p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'for f in $(rg --files entry/src/main/ets); do printf '\"'\\\\n--- %s ---\\\\n' \\\"\"'$f\"; nl -ba \"$f\"; done'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n --hidden --glob '\"'!HAPREPAIR_TASK.json'\"' --glob '\"'!*.lock'\"' --glob '\"'!*.log'\"' 'export_other_case|export_other_model|ForEach|@Reusable|any|indexOf|no-' .\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'rg --files /codex-home/skills/haprepair-openharmony-repair | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n --glob '*.md' --glob '*.json' 'hp-arkts-no-use-any-export-other|export-other|export \\\\* to export|export \\\\*' /codex-home/skills/haprepair-openharmony-repair\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find . -maxdepth 4 -type f -not -path './.git/*' -print | sort; printf '\\\\n--- git status ---\\\\n'; git status --short\"",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json; sed -n '1,180p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-structure.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,160p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--hp-arkts-no-use-any-export-other.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -g '\"'!HAPREPAIR_TASK.json'\"' /workspace | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/export_other_case.ets; nl -ba entry/src/main/ets/cases/export_other_model.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 3 -type f -printf '%P\\\\n' | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"python3 -m json.tool completion.json >/dev/null && printf '%s\\\\n' 'completion.json: valid JSON'; rg -n 'export \\\\*|export \\\\{ CatalogEntry \\\\}' entry/src/main/ets/cases completion.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "703c7b2b02f26a8802d453660cb5f516778a810d8e610f3d6243095b9d1f82f1",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/export_other_case.ets",
+      "sha256": "6bfe75d6116c8ca6f48ee1919a6975ee2c353eabadcb67b9422f07a1b0967564",
+      "size_bytes": 123,
+      "content": "export { CatalogEntry } from './export_other_model';\n\nexport class CatalogService {\n  readonly name: string = 'catalog';\n}\n"
+    },
+    {
+      "path": "entry/src/main/ets/cases/export_other_model.ets",
+      "sha256": "28d2cb8d28ae6a8c0702e65a47e32a972dc2000e35832d19102f16763b49ff08",
+      "size_bytes": 50,
+      "content": "export class CatalogEntry {\n  sku: string = '';\n}\n"
+    }
+  ],
+  "trace_sha256": "8bfa57d4ee86d5ceaa7f8682392a1d0faed01261e2839ad4aa581ba7263876b7",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:17:25.595418+00:00",
+  "rejection_reasons": []
+}

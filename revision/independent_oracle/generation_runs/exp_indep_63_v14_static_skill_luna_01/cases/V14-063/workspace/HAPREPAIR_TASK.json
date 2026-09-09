@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-063",
+  "target_rule": "@performance/hp-arkui-reduce-pan-gesture-distance",
+  "codelinter_rule": "@performance/hp-arkui-reduce-pangesture-distance",
+  "rule_description": "建议设置合理的拖动距离",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/pan_gesture_distance_case.ets",
+      "line": 12,
+      "column": 11,
+      "severity": "suggestion",
+      "message": "Reduce the pan gesture recognition distance",
+      "rule": "@performance/hp-arkui-reduce-pangesture-distance"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/pan_gesture_distance_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

@@ -1,0 +1,31 @@
+{
+  "detector_unchanged": "CodeLinter 6.0.240",
+  "homecheck_path": "/home/zhihao/hdd/haprepair/homecheck",
+  "homecheck_source_commit": "696a50798301cac11f3878febfbf909ee18a70aa",
+  "homecheck_source_diff_sha256": "3c9f7728b376cd73e7353dd79233068b85634ece8dced97ec5a2ac5b1bc93107",
+  "purpose": "annotation_display_only",
+  "results": [
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-a55kk5cu/project.json",
+        "--configPath=/tmp/haprepair-range-scan-a55kk5cu/rules.json"
+      ],
+      "commit": "e4316d7c4cd49cbb54daa86ed9f7689925d6e084",
+      "exit_code": 0,
+      "invalid_rules": [],
+      "project": "ohos_dfu_library",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_no_comment_dfu_v1/reports/ohos_dfu_library/issuesReport.json",
+      "report_sha256": "9984bd6b848a5e12862a49ce7e5160ddf1706ba99e1beb6024667f4ad2a75c67",
+      "rules": [
+        "@security/no-commented-code"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony-SIG/ohos_dfu_library/ohos/ohos_dfu_library",
+      "tree_oid": "7bfd067058be7e96ef385a52f3399d088213a56a"
+    }
+  ],
+  "sample_path": "/home/zhihao/hdd/haprepair/paper/rebuttal/rq1_precision/exp_rq1_precision_v1/frozen_sample.jsonl",
+  "sample_sha256": "273addcb4afe0ed5fc9af9c5e07015eb4debe3aeb554a8c2b7691d8e6f51c06e",
+  "schema_version": 1
+}

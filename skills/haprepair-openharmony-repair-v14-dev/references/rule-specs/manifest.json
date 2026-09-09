@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "interaction_window_lines": 5,
+  "core": "core-invariants.md",
+  "aliases": {
+    "@performance/init-list-component": "@hw-ets-eslint/init-list-component",
+    "@performance/hp-arkui-reduce-pan-gesture-distance": "@performance/hp-arkui-reduce-pangesture-distance"
+  },
+  "families": [
+    {
+      "id": "state-reactivity",
+      "spec": "state-reactivity.md",
+      "interacts_with": ["collections-reuse"],
+      "rules": [
+        "@performance/hp-arkts-no-use-any-export-current",
+        "@performance/hp-arkts-no-use-any-export-other",
+        "@performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse",
+        "@performance/hp-arkui-no-func-as-arg-for-reusable-component",
+        "@performance/hp-arkui-no-state-var-access-in-loop",
+        "@performance/hp-arkui-remove-redundant-state-var",
+        "@performance/hp-arkui-remove-unchanged-state-var",
+        "@performance/hp-arkui-use-local-var-to-replace-state-var",
+        "@performance/hp-arkui-use-object-link-to-replace-prop",
+        "@performance/multiple-associations-state-var-check"
+      ]
+    },
+    {
+      "id": "collections-reuse",
+      "spec": "collections-reuse.md",
+      "interacts_with": ["state-reactivity", "layout-animation-media"],
+      "rules": [
+        "@hw-ets-eslint/init-list-component",
+        "@performance/avoid-overusing-custom-component-check",
+        "@performance/foreach-args-check",
+        "@performance/foreach-index-check",
+        "@performance/hp-arkui-load-on-demand",
+        "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+        "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+        "@performance/hp-arkui-suggest-reuseid-for-if-else-reusable-component",
+        "@performance/hp-arkui-use-grid-layout-options",
+        "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload",
+        "@performance/hp-arkui-use-reusable-component",
+        "@performance/waterflow-data-preload-check"
+      ]
+    },
+    {
+      "id": "layout-animation-media",
+      "spec": "layout-animation-media.md",
+      "interacts_with": ["collections-reuse", "state-reactivity"],
+      "rules": [
+        "@performance/dark-color-mode-check",
+        "@performance/hp-arkui-combine-same-arg-animateto",
+        "@performance/hp-arkui-image-async-load",
+        "@performance/hp-arkui-reduce-pangesture-distance",
+        "@performance/hp-arkui-remove-container-without-property",
+        "@performance/hp-arkui-remove-redundant-nest-container",
+        "@performance/hp-arkui-suggest-use-effectkit-blur",
+        "@performance/hp-arkui-use-row-column-to-replace-flex",
+        "@performance/hp-arkui-use-scale-to-replace-attr-animateto",
+        "@performance/hp-arkui-use-transition-to-replace-animateto",
+        "@performance/hp-arkui-use-word-break-to-replace-zero-width-space",
+        "@performance/lottie-animation-destroy-check",
+        "@performance/monitor-invisible-area-in-image-animation",
+        "@performance/no-high-loaded-frame-rate-range",
+        "@performance/tabs-on-change-check"
+      ]
+    },
+    {
+      "id": "computation-api",
+      "spec": "computation-api.md",
+      "interacts_with": ["state-reactivity", "collections-reuse"],
+      "rules": [
+        "@performance/constant-property-referencing-check-in-loops",
+        "@performance/high-frequency-log-check",
+        "@performance/hp-arkui-avoid-empty-callback",
+        "@performance/hp-arkui-suggest-cache-avplayer",
+        "@performance/hp-arkui-use-id-in-get-resource-sync-api",
+        "@performance/hp-arkui-use-taskpool-for-web-request",
+        "@performance/hp-performance-no-closures",
+        "@performance/hp-performance-no-dynamic-cls-func",
+        "@performance/js-code-cache-by-precompile-check",
+        "@performance/number-init-check",
+        "@performance/reuse-date-instances-check",
+        "@performance/sparse-array-check",
+        "@performance/timezone-interface-check",
+        "@performance/typed-array-check"
+      ]
+    },
+    {
+      "id": "security-structure",
+      "spec": "security-structure.md",
+      "interacts_with": [],
+      "rules": [
+        "@security/no-commented-code",
+        "@security/no-cycle"
+      ]
+    },
+    {
+      "id": "security-crypto",
+      "spec": "security-crypto.md",
+      "interacts_with": [],
+      "rules": [
+        "@security/no-unsafe-3des",
+        "@security/no-unsafe-aes",
+        "@security/no-unsafe-dh",
+        "@security/no-unsafe-dh-key",
+        "@security/no-unsafe-dsa",
+        "@security/no-unsafe-dsa-key",
+        "@security/no-unsafe-ecdh",
+        "@security/no-unsafe-ecdsa",
+        "@security/no-unsafe-hash",
+        "@security/no-unsafe-huks",
+        "@security/no-unsafe-kdf",
+        "@security/no-unsafe-mac",
+        "@security/no-unsafe-rsa-encrypt",
+        "@security/no-unsafe-rsa-key",
+        "@security/no-unsafe-rsa-sign",
+        "@security/no-unsafe-sm2-cipher",
+        "@security/no-unsafe-sm2-key",
+        "@security/no-unsafe-sm4"
+      ]
+    }
+  ]
+}

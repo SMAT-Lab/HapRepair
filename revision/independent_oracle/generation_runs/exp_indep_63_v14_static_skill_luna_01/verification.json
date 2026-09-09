@@ -1,0 +1,28 @@
+{
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "checks": {
+    "protocol_hash_matches_snapshot": true,
+    "case_count_63": true,
+    "unique_case_ids_63": true,
+    "unique_blind_ids_63": true,
+    "unique_rules_63": true,
+    "taxonomy_42_1_20": true,
+    "no_dynamic_retrieval": true,
+    "raw_knowledge_base_not_mounted": true,
+    "human_reference_not_mounted": true,
+    "historical_outputs_not_mounted": true,
+    "all_task_hashes_match": true,
+    "all_input_hashes_match": true,
+    "all_installed_skill_hashes_match": true,
+    "frozen_benchmark_and_leakage_inputs_valid": true,
+    "all_63_results_present": true,
+    "all_63_candidates_accepted": false,
+    "exactly_one_attempt_per_case": true,
+    "all_source_diffs_present": false,
+    "no_restricted_commands": false,
+    "no_input_deletions": true,
+    "task_files_unchanged": true
+  },
+  "all_passed": false,
+  "output_errors": []
+}

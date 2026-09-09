@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-005",
+  "category": "security",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 87,
+    "line": 87,
+    "message": "Delete the related code completely when it is invalid.",
+    "relative_path": "entry/src/main/ets/MainAbility/pages/jobModelSettings.ets",
+    "rule": "@security/no-commented-code",
+    "severity": "warn"
+  },
+  "rule": "@security/no-commented-code",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-commented-code.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "2e5c158e6f1c28f4a037ee94b825842f0273e1d21289f99d1c0c730ef0dddbe9",
+    "path": "source_files/2e5c158e6f1c28f4a037ee94b825842f0273e1d21289f99d1c0c730ef0dddbe9.json",
+    "sha256": "0c86699bb6d821efe2a954d2774406279cdf7fd4b7b69dd8b98a4a4c4f5788ca"
+  }
+}

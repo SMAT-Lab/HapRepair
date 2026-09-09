@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-037",
+  "category": "security",
+  "rule": "@security/no-unsafe-huks",
+  "rule_description": "HUKS 中禁止 ECB/SHA1/NONE 等不安全配置。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_huks_case.ets",
+      "line": 26,
+      "column": 6,
+      "severity": "warn",
+      "message": "Do not use insecure encryption modes ECB, insecure digest algorithms MD5, SHA1, and padding algorithms NONE, PKCS1-V1_5 in Huks.",
+      "rule": "@security/no-unsafe-huks"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_huks_case.ets",
+      "content": "import { huks } from '@kit.UniversalKeystoreKit';\n\nconst signingProperties: Array<huks.HuksParam> = [\n      {\n        tag: huks.HuksTag.HUKS_TAG_ALGORITHM,\n        value: huks.HuksKeyAlg.HUKS_ALG_ECC\n      },\n      {\n        tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,\n        value: huks.HuksKeySize.HUKS_ECC_KEY_SIZE_256\n      },\n      {\n        tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,\n        value: huks.HuksCipherMode.HUKS_MODE_ECB\n      },\n      {\n        tag: huks.HuksTag.HUKS_TAG_DIGEST,\n        value: huks.HuksKeyDigest.HUKS_DIGEST_SHA1\n      },\n      {\n        tag: huks.HuksTag.HUKS_TAG_PADDING,\n        value: huks.HuksKeyPadding.HUKS_PADDING_NONE\n      }\n];\nconst options: huks.HuksOptions = { properties: signingProperties };\nhuks.generateKeyItem('revision-signing-key', options);\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_huks_case.ets",
+      "content": "import { huks } from '@kit.UniversalKeystoreKit';\n\nconst signingProperties: Array<huks.HuksParam> = [\n      {\n        tag: huks.HuksTag.HUKS_TAG_ALGORITHM,\n        value: huks.HuksKeyAlg.HUKS_ALG_ECC\n      },\n      {\n        tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,\n        value: huks.HuksKeySize.HUKS_ECC_KEY_SIZE_256\n      },\n      {\n        tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,\n        value: huks.HuksCipherMode.HUKS_MODE_CBC\n      },\n      {\n        tag: huks.HuksTag.HUKS_TAG_DIGEST,\n        value: huks.HuksKeyDigest.HUKS_DIGEST_SHA256\n      },\n      {\n        tag: huks.HuksTag.HUKS_TAG_PADDING,\n        value: huks.HuksKeyPadding.HUKS_PADDING_PKCS7\n      }\n];\nconst options: huks.HuksOptions = { properties: signingProperties };\nhuks.generateKeyItem('revision-signing-key', options);\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_huks_case.ets",
+      "content": "import { huks } from '@kit.UniversalKeystoreKit';\n\nconst signingProperties: Array<huks.HuksParam> = [\n      {\n        tag: huks.HuksTag.HUKS_TAG_ALGORITHM,\n        value: huks.HuksKeyAlg.HUKS_ALG_ECC\n      },\n      {\n        tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,\n        value: huks.HuksKeySize.HUKS_ECC_KEY_SIZE_256\n      },\n      {\n        tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,\n        value: huks.HuksCipherMode.HUKS_MODE_CBC\n      },\n      {\n        tag: huks.HuksTag.HUKS_TAG_DIGEST,\n        value: huks.HuksKeyDigest.HUKS_DIGEST_SHA256\n      },\n      {\n        tag: huks.HuksTag.HUKS_TAG_PADDING,\n        value: huks.HuksKeyPadding.HUKS_PADDING_PKCS7\n      }\n];\nconst options: huks.HuksOptions = { properties: signingProperties };\nhuks.generateKeyItem('revision-signing-key', options);\n"
+    }
+  ]
+}

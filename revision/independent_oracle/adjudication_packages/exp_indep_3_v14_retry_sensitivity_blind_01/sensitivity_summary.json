@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14-REJECTION-RETRY-SENSITIVITY",
+  "package_id": "exp_indep_3_v14_retry_sensitivity_blind_01",
+  "status": "complete",
+  "classification": "protocol-rejection retry sensitivity; not an API or endpoint retry",
+  "claim_scope": "Author-requested sensitivity for retrying three parent protocol rejections; not an API retry and not a replacement for the main result.",
+  "annotation_validation": {
+    "author_1_complete": true,
+    "author_2_complete": true,
+    "required_adjudications_complete": true,
+    "case_hashes_verified": true
+  },
+  "retry_results": {
+    "total": 3,
+    "correct": 3,
+    "not_correct": 0,
+    "strict_correctness_rate": 1.0,
+    "strict_correctness_percentage": 100.0,
+    "final_label_counts": {
+      "Correct": 3,
+      "Suspicious": 0,
+      "Incorrect": 0
+    },
+    "by_category": {
+      "performance": {
+        "total": 2,
+        "correct": 2,
+        "not_correct": 0,
+        "strict_correctness_rate": 1.0,
+        "strict_correctness_percentage": 100.0,
+        "final_label_counts": {
+          "Correct": 2,
+          "Suspicious": 0,
+          "Incorrect": 0
+        }
+      },
+      "security": {
+        "total": 1,
+        "correct": 1,
+        "not_correct": 0,
+        "strict_correctness_rate": 1.0,
+        "strict_correctness_percentage": 100.0,
+        "final_label_counts": {
+          "Correct": 1,
+          "Suspicious": 0,
+          "Incorrect": 0
+        }
+      }
+    }
+  },
+  "inter_rater_agreement": {
+    "denominator": 3,
+    "agreement_count": 3,
+    "disagreement_count": 0,
+    "raw_agreement": 1.0,
+    "raw_agreement_percentage": 100.0,
+    "cohen_kappa": {
+      "value": null,
+      "status": "not_estimable_no_marginal_variation",
+      "observed_agreement": 1.0,
+      "expected_agreement": 1.0,
+      "explanation": "Both annotators used a single identical category for every human candidate, so the kappa denominator is zero."
+    }
+  },
+  "adjudication": {
+    "required_case_count": 0,
+    "completed_case_count": 0,
+    "no_third_author_decisions_required": true
+  },
+  "parent_main_result": {
+    "correct": 60,
+    "total": 63,
+    "strict_correctness_percentage": 95.23809523809524,
+    "replace_parent_main_result": false
+  },
+  "retry_completed_sensitivity": {
+    "correct": 63,
+    "total": 63,
+    "not_correct": 0,
+    "strict_correctness_rate": 1.0,
+    "strict_correctness_percentage": 100.0,
+    "by_frozen_category": {
+      "performance": {
+        "total": 42,
+        "correct": 42,
+        "not_correct": 0,
+        "strict_correctness_rate": 1.0,
+        "strict_correctness_percentage": 100.0
+      },
+      "arkts_eslint": {
+        "total": 1,
+        "correct": 1,
+        "not_correct": 0,
+        "strict_correctness_rate": 1.0,
+        "strict_correctness_percentage": 100.0
+      },
+      "security": {
+        "total": 20,
+        "correct": 20,
+        "not_correct": 0,
+        "strict_correctness_rate": 1.0,
+        "strict_correctness_percentage": 100.0
+      }
+    },
+    "interpretation": "Combines the 60 main human candidates with the three separately regenerated candidates; this is not the single-invocation estimate."
+  },
+  "evaluation_summary": {
+    "outcome": "supported_as_sensitivity",
+    "evaluation_summary": "All three regenerated candidates were independently labeled Correct by both authors, yielding a retry-completed sensitivity of 63/63.",
+    "claim_update": "The final-v14 controlled cases are all semantically correct when the three lexical protocol rejections receive a fresh generation.",
+    "baseline_relation": "Supplementary to, and not a replacement for, the 60/63 parent single-invocation intention-to-treat result.",
+    "failure_mode": "Parent failures were harness-level command-string lexical rejections, not API or semantic repair failures.",
+    "next_action": "Proceed to cross-experiment reconciliation."
+  },
+  "source_sha256": {
+    "package_manifest": "c038f0786b706469b07f6724bd4d819791cf8681d073d7aa71048fcef89f2264",
+    "coordinator_manifest": "b05eae57e10dfdb0f4c5a6fcc56683747a41312c33b975adf9af36efd00381af",
+    "labels_author_1": "91db49e76bcde67df0c69087e1f18bab17fcfa51c5f493a33a9f2bffad02a199",
+    "labels_author_2": "91db49e76bcde67df0c69087e1f18bab17fcfa51c5f493a33a9f2bffad02a199",
+    "third_author_adjudication": "9b6058349f954bd5e851a5bc3929738bdda0331c077aafe1f67cacb04c6ac04b",
+    "parent_main_summary": "b0330c8d754573bd4ded882db9a44221afc32b6a0018f6bb71d5557a64f77689"
+  }
+}

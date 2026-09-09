@@ -1,0 +1,59 @@
+[
+  {
+    "case_id": "case_performance_hp_arkui_combine_same_arg_animateto",
+    "blind_id": "RTRY-001",
+    "rule": "@performance/hp-arkui-combine-same-arg-animateto",
+    "case_dir": "cases/RTRY-001",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/combine_animate_to_case.ets",
+        "sha256": "74db82588688e7b35a98f096a8e325859f58e75c2c52c7086900906efb0c7387",
+        "size_bytes": 563
+      }
+    ],
+    "task_sha256": "afa966583c22f862807ceec6b3e09b9e4286665d529357e236fa2fb56d3514d6",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_rsa_encrypt",
+    "blind_id": "RTRY-002",
+    "rule": "@security/no-unsafe-rsa-encrypt",
+    "case_dir": "cases/RTRY-002",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_rsa_encrypt_case.ets",
+        "sha256": "0978d625d0d681e54abc87d9652090cf88e7c05b64657edef33ccc08071f68f5",
+        "size_bytes": 131
+      }
+    ],
+    "task_sha256": "460792bbfa6ee8f8fee2b1ddac7a3b316cca56143215bc256a0212f188443cdf",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_avoid_overusing_custom_component_check",
+    "blind_id": "RTRY-003",
+    "rule": "@performance/avoid-overusing-custom-component-check",
+    "case_dir": "cases/RTRY-003",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/avoid_custom_component_case.ets",
+        "sha256": "7548faec074757d9fb422fcc7dd03516c03806679e56f5677f13c2e98e0639ca",
+        "size_bytes": 392
+      }
+    ],
+    "task_sha256": "ffbe766097ce830d2840530fe565da1faf27ce8f9fc3b24ebb658c234c96b536",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  }
+]

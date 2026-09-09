@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-HAPSKILL-V4-THREAD-SCOPE-SMOKE",
+  "status": "development-only",
+  "research_objective": "Verify that complete-cluster repair remains effective when coding-agent context is reset after each evaluator-validated round.",
+  "model": {
+    "requested_id": "gpt-5.6-luna",
+    "provider": "xsp",
+    "reasoning_effort": "high",
+    "runs_per_project_condition": 1
+  },
+  "scheduling": {
+    "maximum_no_diff_retries_per_round": 2,
+    "thread_scope": "active_round"
+  },
+  "retrieval": {
+    "skill_protocol_path": "../../skills/haprepair-openharmony-repair/references/protocol-v4.json",
+    "skill_protocol_id": "haprepair-skill-v4-20260803",
+    "skill_protocol_sha256": "dbbbff88bcc6343bbe570a072949af8701135cf3c8ea2622704b1c2f008a1253",
+    "require_success_for_covered_rules": false,
+    "role": "optional rule evidence"
+  },
+  "pilot": {
+    "run_id": "exp_hapskill_v4_thread_scope_smoke_wifi_01",
+    "project": "wifi_testapp",
+    "paper_facing": false,
+    "maximum_post_edit_validation_scans": 2,
+    "condition_order": [
+      "hapskill"
+    ]
+  },
+  "comparison_anchor": {
+    "run_id": "exp_hapskill_v4_development_pilot_wifi_02",
+    "rounds": [1, 2],
+    "thread_scope": "cross_round"
+  },
+  "claim_boundary": "Development efficiency evidence only; do not pool with paper-facing effectiveness results."
+}

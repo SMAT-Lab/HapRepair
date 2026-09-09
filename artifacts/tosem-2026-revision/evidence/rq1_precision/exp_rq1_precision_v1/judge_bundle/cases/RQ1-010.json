@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-010",
+  "category": "performance",
+  "finding": {
+    "column": 11,
+    "end_column": 11,
+    "end_line": 213,
+    "line": 213,
+    "message": "For performance purposes, set keyGenerator for ForEach.",
+    "relative_path": "entry/src/main/ets/pages/patternLockStatic/PatternLockoParallelization.ets",
+    "rule": "@performance/foreach-args-check",
+    "severity": "warn"
+  },
+  "rule": "@performance/foreach-args-check",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/collections-reuse.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--foreach-args-check.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "31fe3e43a9950d3da45a776b9e10b48cc0e0f09f1ed2beed50d4f7a5a772a621",
+    "path": "source_files/31fe3e43a9950d3da45a776b9e10b48cc0e0f09f1ed2beed50d4f7a5a772a621.json",
+    "sha256": "7e1e8bc59a7b192d79af494a4c7968f7ce1746156e3c9ecf71a4373aca702fae"
+  }
+}

@@ -1,0 +1,178 @@
+[
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony-SIG/ohos_dfu_library/ohos/ohos_dfu_library/DfuLibrary/src/main/ets/dfu/BaseDfuImpl.ts",
+    "messages": [
+      {
+        "line": 116,
+        "column": 5,
+        "rangeStartLine": 116,
+        "rangeStartColumn": 5,
+        "endLine": 116,
+        "endColumn": 21,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 122,
+        "column": 5,
+        "rangeStartLine": 122,
+        "rangeStartColumn": 5,
+        "endLine": 122,
+        "endColumn": 21,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 127,
+        "column": 5,
+        "rangeStartLine": 127,
+        "rangeStartColumn": 5,
+        "endLine": 127,
+        "endColumn": 21,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony-SIG/ohos_dfu_library/ohos/ohos_dfu_library/DfuLibrary/src/main/ets/dfu/internal/HexInputStream.ts",
+    "messages": [
+      {
+        "line": 42,
+        "column": 5,
+        "rangeStartLine": 42,
+        "rangeStartColumn": 5,
+        "endLine": 42,
+        "endColumn": 56,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony-SIG/ohos_dfu_library/ohos/ohos_dfu_library/DfuLibrary/src/main/ets/dfu/internal/Manifest.ts",
+    "messages": [
+      {
+        "line": 50,
+        "column": 1,
+        "rangeStartLine": 37,
+        "rangeStartColumn": 1,
+        "endLine": 80,
+        "endColumn": 5,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 53,
+        "column": 1,
+        "rangeStartLine": 37,
+        "rangeStartColumn": 1,
+        "endLine": 80,
+        "endColumn": 5,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 55,
+        "column": 1,
+        "rangeStartLine": 37,
+        "rangeStartColumn": 1,
+        "endLine": 80,
+        "endColumn": 5,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 56,
+        "column": 1,
+        "rangeStartLine": 37,
+        "rangeStartColumn": 1,
+        "endLine": 80,
+        "endColumn": 5,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 60,
+        "column": 1,
+        "rangeStartLine": 37,
+        "rangeStartColumn": 1,
+        "endLine": 80,
+        "endColumn": 5,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 64,
+        "column": 1,
+        "rangeStartLine": 37,
+        "rangeStartColumn": 1,
+        "endLine": 80,
+        "endColumn": 5,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 68,
+        "column": 1,
+        "rangeStartLine": 37,
+        "rangeStartColumn": 1,
+        "endLine": 80,
+        "endColumn": 5,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      },
+      {
+        "line": 78,
+        "column": 1,
+        "rangeStartLine": 37,
+        "rangeStartColumn": 1,
+        "endLine": 80,
+        "endColumn": 5,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  },
+  {
+    "filePath": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony-SIG/ohos_dfu_library/ohos/ohos_dfu_library/DfuLibrary/src/main/ets/dfu/internal/scanner/BootloaderScanner.ts",
+    "messages": [
+      {
+        "line": 43,
+        "column": 5,
+        "rangeStartLine": 43,
+        "rangeStartColumn": 5,
+        "endLine": 43,
+        "endColumn": 98,
+        "rangeSource": "comment-block",
+        "severity": "WARN",
+        "message": "Delete the related code completely when it is invalid.",
+        "rule": "@security/no-commented-code"
+      }
+    ]
+  }
+]

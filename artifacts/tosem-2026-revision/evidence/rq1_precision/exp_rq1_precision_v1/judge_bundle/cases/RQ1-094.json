@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-094",
+  "category": "performance",
+  "finding": {
+    "column": 13,
+    "end_column": 13,
+    "end_line": 75,
+    "line": 75,
+    "message": "Use transition for component transition animation",
+    "relative_path": "entry/src/main/ets/pages/example/ImageExample114.ets",
+    "rule": "@performance/hp-arkui-use-transition-to-replace-animateto",
+    "severity": "warn"
+  },
+  "rule": "@performance/hp-arkui-use-transition-to-replace-animateto",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/layout-animation-media.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-use-transition-to-replace-animateto.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "60979e8dc1ced41582ace0f729dd1857b601b79eacc04144bf40d98ee2c7e89b",
+    "path": "source_files/60979e8dc1ced41582ace0f729dd1857b601b79eacc04144bf40d98ee2c7e89b.json",
+    "sha256": "18b2f2936084b8bcb4c6951cf7cf1d3aa5400cc5d1d19fb35da57413bd9ad9dd"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-043",
+  "category": "security",
+  "finding": {
+    "column": 9,
+    "end_column": 9,
+    "end_line": 263,
+    "line": 263,
+    "message": "Delete the related code completely when it is invalid.",
+    "relative_path": "entry/src/main/ets/pages/Index.ets",
+    "rule": "@security/no-commented-code",
+    "severity": "warn"
+  },
+  "rule": "@security/no-commented-code",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-commented-code.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "f78f259d02cd048c0a3d6c3076c8d09a0eb524f06a368ce12849e87b3ca36109",
+    "path": "source_files/f78f259d02cd048c0a3d6c3076c8d09a0eb524f06a368ce12849e87b3ca36109.json",
+    "sha256": "0b9ec7569bd6ba39b794169943332dc71a11345bbcb7a81a568d0f14329c36d7"
+  }
+}

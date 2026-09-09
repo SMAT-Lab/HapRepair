@@ -1,0 +1,30 @@
+{
+  "detector_unchanged": "CodeLinter 6.0.240",
+  "homecheck_path": "/home/zhihao/hdd/haprepair/homecheck",
+  "homecheck_source_commit": "696a50798301cac11f3878febfbf909ee18a70aa",
+  "homecheck_source_diff_sha256": "0c068996e065f9923bf0355d8e6e8dfef29d07610b233b4210b49283981210b2",
+  "purpose": "annotation_display_only",
+  "results": [
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-d82i5pze/project.json",
+        "--configPath=/tmp/haprepair-range-scan-d82i5pze/rules.json"
+      ],
+      "commit": "10305e89a57ddfba5909ad55028251bf36933b4c",
+      "exit_code": 0,
+      "project": "HealthyPotAssistant",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_rq1_005_v3/reports/HealthyPotAssistant/issuesReport.json",
+      "report_sha256": "77f73eaf1540eed0daa9c8346759e866507c2b18b8961a6fc1beb64132e2893a",
+      "rules": [
+        "@security/no-commented-code"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony-SIG/contest/2022_ArkUI_Bootcamp/13510335281+HealthyPotAssistant/HealthyPotAssistant",
+      "tree_oid": "caa44304b85cbc69d4737fe55842658cba3355af"
+    }
+  ],
+  "sample_path": "/home/zhihao/hdd/haprepair/paper/rebuttal/rq1_precision/exp_rq1_precision_v1/frozen_sample.jsonl",
+  "sample_sha256": "273addcb4afe0ed5fc9af9c5e07015eb4debe3aeb554a8c2b7691d8e6f51c06e",
+  "schema_version": 1
+}

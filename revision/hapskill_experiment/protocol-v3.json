@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-HAPSKILL-10",
+  "status": "v3-implementation-under-validation",
+  "research_question": "Does adding HapRepair's rule-conditioned repair knowledge to the same coding agent improve OpenHarmony alert repair under a common deterministic localization and validation protocol?",
+  "null_hypothesis": "The agent-integrated HapRepair condition does not improve effectiveness, introduced-alert control, validation reliability, difficult-rule coverage, or efficiency over the vanilla coding-agent condition.",
+  "alternative_hypothesis": "The agent-integrated HapRepair condition improves at least one preregistered effectiveness, reliability, difficult-rule, or efficiency outcome without an undisclosed protocol difference.",
+  "research_type": "controlled paired software-engineering experiment",
+  "research_objective": "Measure the incremental value of HapRepair's frozen rule-conditioned retrieval capability when localization, model, project inputs, evaluator gates, scheduling policy, and scan budget are held constant.",
+  "conditions": {
+    "C0": "vanilla",
+    "C1": "hapskill"
+  },
+  "model": {
+    "requested_id": "gpt-5.6-luna",
+    "provider": "xsp",
+    "reasoning_effort": "high",
+    "runs_per_project_condition": 1
+  },
+  "common_contract": {
+    "target_rule_prefixes": [
+      "@performance/",
+      "@security/",
+      "@hw-ets-eslint/"
+    ],
+    "maximum_post_edit_validation_scans": 5,
+    "initial_scan_counts_against_budget": false,
+    "final_scan_counts_against_budget": false,
+    "final_scan_is_fed_back": false,
+    "same_initial_localization": true,
+    "same_structural_public_api_build_test_gates": true,
+    "same_budget_aware_scheduling_prompt": true,
+    "alert_identity": "multiset over (relative_path, rule, whitespace-normalized message)",
+    "source_diff_gate": "Validation requires a real ArkTS/TypeScript source diff relative to the active round snapshot.",
+    "no_diff_behavior": "Keep the active round open, resume the same agent thread, and do not run gates or consume a validation scan.",
+    "candidate_retention": "Retain candidates after structural, public-API, configured build, or configured test failure; return detailed failure evidence and continue repair in place.",
+    "last_valid_restoration": "If the interaction ends with an invalid candidate, archive it and restore the latest candidate that passed every available gate before the evaluator-only final scan.",
+    "condition_symmetry": "The vanilla and HapRepair-skill conditions use identical scheduling prompts, no-diff retries, candidate-retention, validation-budget, and final-abandonment behavior."
+  },
+  "scheduling": {
+    "priority": "Prioritize high-frequency homogeneous rule clusters by safe expected alert reduction per remaining validation scan, then affected files.",
+    "smallest_repair_scope": "Per alert instance, not a cap on compatible instances or files handled in one round.",
+    "maximum_no_diff_retries_per_round": 2,
+    "retry_thread": "same Codex thread",
+    "retry_localization": "same active-round localization"
+  },
+  "condition_difference": {
+    "vanilla": "No HapRepair repository, skill, corpus, retrieval output, reference repair, or other-condition artifact is mounted or exposed.",
+    "hapskill": "A restricted Unix-socket broker exposes inspect-rule and frozen Top-1 same-rule Stella retrieval; one successful example may guide all inspected homogeneous instances of that rule in the round; the corpus and HapRepair repository remain outside the agent-visible filesystem."
+  },
+  "retrieval": {
+    "skill_protocol_id": "haprepair-skill-v3-20260803",
+    "skill_protocol_sha256": "91e876e7ddba46d690f66eeb2a05bdbe57382e1fff435bf65258fcc26837fc29",
+    "corpus_pair_count": 383,
+    "corpus_rule_count": 63,
+    "corpus_sha256": "85c2f6f17799bed681201efec8ad3bf204d768d8150226e25369906ad10ae714",
+    "backend": "stella",
+    "encoder": "dunzhang/stella_en_1.5B_v5",
+    "encoder_revision": "7817065102fd9e1b031fe874e910c01f40b2f001",
+    "top_k": 1,
+    "context": "agent-selected adaptive repository context",
+    "fixed_window_extractor": false,
+    "same_rule_round_reuse": true
+  },
+  "dataset": {
+    "selection": "../coding_agent_baseline/selected_projects.json",
+    "selected_count": 10,
+    "selection_seed": 20260802,
+    "selection_timing": "before repair outcomes",
+    "formal_input_rule": "Formal execution requires a freshly frozen target-finding manifest for each pinned source tree.",
+    "formal_inputs": "formal_inputs.json",
+    "formal_inputs_sha256": "4d6a86c4babdd684f3c4ff547b55ea713fc9b6613297eeb5d4eca95a4c0c0a87",
+    "frozen_target_alert_total": 4393,
+    "git_and_tree_oid_verified": true,
+    "source_tree_hash_verified_at_condition_start": true
+  },
+  "formal_run": {
+    "run_id": "exp_hapskill_10_luna_formal_04",
+    "supersedes_run_id": "exp_hapskill_10_luna_formal_03",
+    "superseded_reason": "formal_03 exposed a wasted no-diff validation round and insufficient budget-aware batching on a high-frequency homogeneous workload; completed and partial outputs are retained as diagnostic evidence and excluded from v3 analysis",
+    "condition_order": [
+      "ohos_cordova:vanilla",
+      "ohos_cordova:hapskill",
+      "HealthyPotAssistant:hapskill",
+      "HealthyPotAssistant:vanilla",
+      "applications_permission_manager:vanilla",
+      "applications_permission_manager:hapskill",
+      "applications_photos:hapskill",
+      "applications_photos:vanilla",
+      "asn1_ber:vanilla",
+      "asn1_ber:hapskill",
+      "ace_ets_module_swiper_api11:hapskill",
+      "ace_ets_module_swiper_api11:vanilla",
+      "bluetoothtest:vanilla",
+      "bluetoothtest:hapskill",
+      "TextComponentTest:hapskill",
+      "TextComponentTest:vanilla",
+      "wifi_testapp:vanilla",
+      "wifi_testapp:hapskill",
+      "acts_validator:hapskill",
+      "acts_validator:vanilla"
+    ]
+  },
+  "excluded_formal_runs": [
+    {
+      "run_id": "exp_hapskill_10_luna_formal_01",
+      "reason": "Evaluator wrapper infrastructure failure before Hvigor; retained as non-pooled incident evidence."
+    },
+    {
+      "run_id": "exp_hapskill_10_luna_formal_02",
+      "reason": "Interrupted method-development run under the superseded immediate-rollback policy; retained and excluded from analysis."
+    },
+    {
+      "run_id": "exp_hapskill_10_luna_formal_03",
+      "reason": "Superseded v2 diagnostic run with a no-diff scan-budget defect and non-budget-aware homogeneous-cluster scheduling; retained and excluded from v3 analysis."
+    }
+  ],
+  "pilot": {
+    "run_id": "exp_hapskill_v3_paired_pilot_wifi_01",
+    "project": "wifi_testapp",
+    "paper_facing": false,
+    "maximum_post_edit_validation_scans": 5,
+    "condition_order": [
+      "vanilla",
+      "hapskill"
+    ]
+  },
+  "reported_metrics": [
+    "initial_alerts",
+    "final_alerts",
+    "eliminated_alerts",
+    "remaining_alerts",
+    "introduced_alerts",
+    "net_reduction",
+    "validation_scan_count",
+    "no_diff_retry_count",
+    "repair_required_round_count",
+    "last_valid_round",
+    "final_candidate_abandonment",
+    "build_status",
+    "test_status",
+    "input_tokens",
+    "output_tokens",
+    "total_tokens",
+    "api_cost_if_traceable",
+    "wall_clock_seconds",
+    "per_rule_alert_deltas"
+  ],
+  "stop_condition": "Stop early only when no target findings remain and the current candidate is accepted; otherwise stop after five post-edit validation attempts. No-diff edit retries do not consume validation attempts and are bounded per round. If the final candidate still requires repair, archive it and restore last-valid before the final scan.",
+  "abandonment_condition": "Stop and preserve the run on input mismatch, protocol/hash drift, model/provider drift, broker failure, scanner failure, agent access to a restricted artifact, or exhaustion of bounded no-diff edit retries.",
+  "claim_boundary": "HomeCheck alert elimination is not semantic correctness; real-project results apply only to detected defects."
+}

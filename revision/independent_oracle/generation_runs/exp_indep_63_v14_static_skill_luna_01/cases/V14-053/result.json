@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_security_no_unsafe_hash",
+  "blind_id": "V14-053",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbd9-d027-74a3-a2ea-890908d38c9e",
+  "usage": {
+    "input_tokens": 219875,
+    "cached_input_tokens": 191232,
+    "output_tokens": 2868,
+    "total_tokens": 222743
+  },
+  "wall_seconds": 70.40620442199724,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 50,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg --files /codex-home 2>/dev/null | rg 'haprepair-openharmony-repair/(SKILL\\\\.md|references/|scripts/)' | head -80\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git status --short'",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l /codex-home/skills/haprepair-openharmony-repair/SKILL.md /codex-home/skills/haprepair-openharmony-repair/references/operations.md'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -g 'HAPREPAIR_TASK.json' -g '\"'!node_modules'\"' -g '\"'!build'\"' /workspace\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,130p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '131,260p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,180p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' entry/src/main/ets/cases/unsafe_hash_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -C 6 'no-unsafe-hash|unsafe-hash|weak hash|hash' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/index.md /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-hash.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,300p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n --hidden -g '\"'!HAPREPAIR_TASK.json'\"' -g '\"'!node_modules'\"' 'cacheDigest|createMd|cryptoFramework|MD5|SHA1|SHA-1|hash' /workspace\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,180p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/index.md && sed -n '1,160p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -g '\"'!node_modules'\"' /workspace | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-hash.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,40p' entry/src/main/ets/cases/unsafe_hash_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n 'MD5|SHA1|SHA256|createMd|cacheDigest' entry/src/main/ets/cases/unsafe_hash_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"stat -c '%n %s bytes' entry/src/main/ets/cases/unsafe_hash_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "6cf36bf09b62ecb0df4f4b2d9d68bdb826cb7b1363632c97a57085954ae0f005",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_hash_case.ets",
+      "sha256": "a92aa846d6f9a16a24fd29700c1e836ab14537296353e3039d80d753b32fd01d",
+      "size_bytes": 119,
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst cacheDigest = cryptoFramework.createMd('SHA256');\n"
+    }
+  ],
+  "trace_sha256": "6a51372a9e98975d37044967c389808f6b12148687c94075e3098b64900ef724",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:53:02.292576+00:00",
+  "rejection_reasons": []
+}

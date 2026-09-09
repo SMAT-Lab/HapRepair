@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-159",
+  "category": "security",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 31,
+    "line": 31,
+    "message": "Delete the related code completely when it is invalid.",
+    "relative_path": "YFree/src/main/ets/storage.ets",
+    "rule": "@security/no-commented-code",
+    "severity": "warn"
+  },
+  "rule": "@security/no-commented-code",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-commented-code.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "9fe7011eb046b810b0b61ecd899f6e772ab664933153649835c11f13829ed2bd",
+    "path": "source_files/9fe7011eb046b810b0b61ecd899f6e772ab664933153649835c11f13829ed2bd.json",
+    "sha256": "196f63d90455da7fcb2b8b302831d0e666c0bce12bab172218fc4e8960f52bc5"
+  }
+}

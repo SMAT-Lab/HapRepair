@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-007",
+  "category": "performance",
+  "finding": {
+    "column": 3,
+    "end_column": 3,
+    "end_line": 48,
+    "line": 48,
+    "message": "Remove unchanged state variables",
+    "relative_path": "entry/src/main/ets/pages/subManualApiTest/BrInterfaceTest.ets",
+    "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-remove-unchanged-state-var.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "245931f1003a6c0e896e1e07453973abc9eb81b06d4d67b11a3da9d4ccf82b64",
+    "path": "source_files/245931f1003a6c0e896e1e07453973abc9eb81b06d4d67b11a3da9d4ccf82b64.json",
+    "sha256": "1afb0e90f025c442e09bd064da1a336c19e4be033247d87f6e89fcd5eb37931b"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-212",
+  "category": "performance",
+  "finding": {
+    "column": 3,
+    "end_column": 3,
+    "end_line": 66,
+    "line": 66,
+    "message": "Avoid dynamically declaring functions and classes",
+    "relative_path": "common/src/main/ets/default/commonEvent/CommonEventManager.ts",
+    "rule": "@performance/hp-performance-no-dynamic-cls-func",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-performance-no-dynamic-cls-func",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/computation-api.md"
+    ],
+    "static_reference_available": false,
+    "static_reference_path": null
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "abf74da0d3c9499bb00f3340507b792cae695eeac0af55062614934e6add2d94",
+    "path": "source_files/abf74da0d3c9499bb00f3340507b792cae695eeac0af55062614934e6add2d94.json",
+    "sha256": "7384563bb8d4946ca6e9fbc02112c1532e5d26e269df80bd1c9a67b497e8c865"
+  }
+}

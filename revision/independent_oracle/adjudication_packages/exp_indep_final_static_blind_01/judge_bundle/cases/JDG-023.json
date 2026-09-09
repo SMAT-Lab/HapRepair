@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-023",
+  "category": "performance",
+  "rule": "@performance/hp-arkui-image-async-load",
+  "rule_description": "建议大图片使用异步加载",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/image_async_load_case.ets",
+      "line": 8,
+      "column": 7,
+      "severity": "suggestion",
+      "message": "Asynchronously load large images",
+      "rule": "@performance/hp-arkui-image-async-load"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/image_async_load_case.ets",
+      "content": "@Entry\n@Component\nstruct PosterPreview {\n  build() {\n    Image($r('app.media.large_poster'))\n      .width(180)\n      .height(240)\n      .syncLoad(true)\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/image_async_load_case.ets",
+      "content": "@Entry\n@Component\nstruct PosterPreview {\n  build() {\n    Image($r('app.media.large_poster'))\n      .width(180)\n      .height(240)\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/image_async_load_case.ets",
+      "content": "@Entry\n@Component\nstruct PosterPreview {\n  build() {\n    Image($r('app.media.large_poster'))\n      .width(180)\n      .height(240)\n  }\n}\n"
+    }
+  ]
+}

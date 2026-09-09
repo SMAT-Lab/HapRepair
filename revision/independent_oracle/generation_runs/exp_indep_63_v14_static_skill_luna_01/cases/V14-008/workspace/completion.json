@@ -1,0 +1,40 @@
+{
+  "selected_rules": [
+    "@performance/high-frequency-log-check"
+  ],
+  "consulted_specs": {
+    "@performance/high-frequency-log-check": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md",
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/computation-api.md"
+    ]
+  },
+  "consulted_guides": {},
+  "entity_repairs": [
+    {
+      "rule": "@performance/high-frequency-log-check",
+      "relative_path": "entry/src/main/ets/cases/high_frequency_log_case.ets",
+      "locations": [
+        {
+          "line": 11,
+          "column": 7
+        }
+      ],
+      "entities": [
+        "ActivityFeed.build onWillScroll callback"
+      ],
+      "invariants": [
+        "callback invocation timing and callback shape",
+        "required diagnostics and argument side effects",
+        "component and public API preservation"
+      ],
+      "evidence": [
+        "The manifest contains one finding and one supplied source file.",
+        "The callback only logged a static informational scroll message; there are no error, audit, support, state, or call-site dependencies in the supplied repository.",
+        "The @Entry component, ActivityFeed struct, build method, Scroll layout, and onWillScroll registration remain declared with the same signatures."
+      ],
+      "transformation": "Removed the per-event console.info call and retained the onWillScroll callback with a local event marker, preserving the component structure and callback registration without high-frequency logging.",
+      "status": "repaired"
+    }
+  ],
+  "unresolved_external": []
+}

@@ -1,0 +1,8 @@
+--- a/entry/src/main/ets/cases/export_other_case.ets
++++ b/entry/src/main/ets/cases/export_other_case.ets
+@@ -1,4 +1,4 @@
+-export * from './export_other_model';
++export { CatalogEntry } from './export_other_model';
+ 
+ export class CatalogService {
+   readonly name: string = 'catalog';

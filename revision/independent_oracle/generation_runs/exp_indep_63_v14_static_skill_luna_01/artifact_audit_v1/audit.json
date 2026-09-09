@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "analysis_id": "E3-05-final-v14-artifact-audit-v1",
+  "parent_run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "parent_question": "Can the final v14 HapRepair Skill repair 63 independently authored and two-sided-CodeLinter-confirmed cases without dynamic retrieval, human reference access, or post-edit HomeCheck feedback?",
+  "analysis_question": "Are all 63 single-invocation outputs complete, hash-consistent, and classifiable without adding a model call?",
+  "inspection_only": true,
+  "additional_model_calls": 0,
+  "fixed_conditions": [
+    "Frozen benchmark, model, provider, prompt, Skill, and per-case invocation budget",
+    "Original result.json, metrics.json, verification.json, traces, and workspaces remain unchanged",
+    "Rejected cases are visible and receive no retry"
+  ],
+  "execution_envelope": {
+    "resource_class": "local deterministic filesystem audit",
+    "model_or_gpu_required": false,
+    "binding_constraint": "Do not mutate frozen outputs or decide the recovery counting policy without author confirmation."
+  },
+  "observed": {
+    "request_started_count": 63,
+    "request_finished_count": 63,
+    "raw_accepted_candidate_count": 59,
+    "raw_rejected_case_count": 4,
+    "max_observed_concurrency": 4,
+    "raw_rejected_cases": [
+      {
+        "case_id": "case_performance_avoid_overusing_custom_component_check",
+        "blind_id": "V14-030",
+        "rejection_reasons": [
+          "restricted_command_observed"
+        ],
+        "restricted_commands": [
+          "/usr/bin/bash -lc \"find . -maxdepth 3 -type f -print | sort; printf '\\\\n--- task-related environment ---\\\\n'; env | rg '\"'^HAPREPAIR|''^HVIGOR|''^CODELINTER'\"' || true\""
+        ]
+      },
+      {
+        "case_id": "case_performance_dark_color_mode_check",
+        "blind_id": "V14-016",
+        "rejection_reasons": [
+          "no_source_diff",
+          "required_source_missing"
+        ],
+        "restricted_commands": []
+      },
+      {
+        "case_id": "case_performance_hp_arkui_combine_same_arg_animateto",
+        "blind_id": "V14-001",
+        "rejection_reasons": [
+          "restricted_command_observed"
+        ],
+        "restricted_commands": [
+          "/usr/bin/bash -lc \"find . -maxdepth 8 -type f -print | sort; rg -n 'homecheck|CodeLinter|repair_session' HAPREPAIR_TASK.json entry/src/main/ets/cases/combine_animate_to_case.ets\""
+        ]
+      },
+      {
+        "case_id": "case_security_no_unsafe_rsa_encrypt",
+        "blind_id": "V14-029",
+        "rejection_reasons": [
+          "restricted_command_observed"
+        ],
+        "restricted_commands": [
+          "/usr/bin/bash -lc \"env | rg '\"'^HAPREPAIR|''^CODELINTER|''^HVIGOR'\"' || true\""
+        ]
+      }
+    ],
+    "capture_recoverable_count": 1,
+    "capture_recoveries": [
+      {
+        "case_id": "case_performance_dark_color_mode_check",
+        "blind_id": "V14-016",
+        "original_status": "rejected",
+        "original_rejection_reasons": [
+          "no_source_diff",
+          "required_source_missing"
+        ],
+        "original_result_sha256": "96cd7216fbf8e372377bd726afeb3ae17f909139b8118efb86c0dbf3be06d31b",
+        "trace_sha256": "e9951fe488121c49d383894fc4f42eee2da21ea4b4e4fdb0fe84c1fa0b9c7e4c",
+        "capture_bug": "The frozen runner snapshots only .ets/.ts files, although this case's input and repair use .json5/.json resource files.",
+        "changed_files": [
+          {
+            "path": "entry/src/main/resources/base/element/color.json",
+            "change": "added",
+            "sha256": "6c6da47a6a3d41bf8bd41445978f11abd9ba54bf057fc31b448532733b848883",
+            "size_bytes": 92
+          },
+          {
+            "path": "entry/src/main/resources/dark/element/color.json",
+            "change": "added",
+            "sha256": "9a14f5c30b43af3ca874b6d21e9a5173556a684a508ecf7aaa443a1014d60b2c",
+            "size_bytes": 92
+          }
+        ],
+        "missing_original_inputs_under_full_capture": [],
+        "recovered_patch_sha256": "714f3b0f5a98eaf357c808d3af9b64e5104517106f742e182a2afb8e4a10cf4a",
+        "decision_status": "pending_author_confirmation"
+      }
+    ],
+    "counting_views": {
+      "frozen_runner_raw": {
+        "candidate_count": 59,
+        "generation_failure_count": 4
+      },
+      "capture_aware_if_author_approved": {
+        "candidate_count": 60,
+        "generation_failure_count": 3
+      }
+    },
+    "strict_verifier_all_passed": false,
+    "strict_verifier_false_checks": [
+      "all_63_candidates_accepted",
+      "all_source_diffs_present",
+      "no_restricted_commands"
+    ]
+  },
+  "checks": {
+    "manifest_has_63_cases": true,
+    "request_started_exactly_once_per_case": true,
+    "request_finished_exactly_once_per_case": true,
+    "all_63_terminal_results_present": true,
+    "result_identity_and_status_match_events": true,
+    "frozen_acceptance_logic_reproduced": true,
+    "all_case_artifact_hashes_match": true,
+    "requested_model_matches_protocol_for_all_cases": true,
+    "usage_complete_and_arithmetically_consistent": true,
+    "timing_complete_and_positive": true,
+    "no_systemic_failure": true,
+    "metrics_terminal_counts_match_results": true,
+    "strict_verifier_failures_are_fully_explained": true,
+    "parallel_amendment_respected": true,
+    "capture_recovery_is_unique": true
+  },
+  "artifact_audit_passed": true,
+  "claim_update": "The 63-call generation is terminal and reconstructable. One resource-file candidate was misclassified by the frozen .ets/.ts-only capture layer; its counting treatment remains pending author confirmation. Semantic correctness remains unmeasured until blind annotation.",
+  "comparability": "Case-level inputs and generation conditions remain comparable. The two reported counting views differ only in whether the verified capture-layer recovery is admitted.",
+  "next_action": "Obtain the author's counting decision, freeze one package policy, then build the new blind annotation package without rerunning any case."
+}

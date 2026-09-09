@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-178",
+  "category": "performance",
+  "finding": {
+    "column": 9,
+    "end_column": 9,
+    "end_line": 1066,
+    "line": 1066,
+    "message": "You are advised to initialize the width and height attributes of the List component.",
+    "relative_path": "entry/src/main/ets/pages/testcase/ImageTestcase013.ets",
+    "rule": "@performance/init-list-component",
+    "severity": "warn"
+  },
+  "rule": "@performance/init-list-component",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/collections-reuse.md"
+    ],
+    "static_reference_available": false,
+    "static_reference_path": null
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "a33b2df796de97341ddcca5473bff8be4411a10ff4449e98fbf05420d5e67e86",
+    "path": "source_files/a33b2df796de97341ddcca5473bff8be4411a10ff4449e98fbf05420d5e67e86.json",
+    "sha256": "78ad33259e17573bf7ce4b0308b5bda05fb4b23d90647940aa16df85e6310dbb"
+  }
+}

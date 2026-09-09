@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-008",
+  "category": "performance",
+  "finding": {
+    "column": 7,
+    "end_column": 7,
+    "end_line": 130,
+    "line": 130,
+    "message": "Set cachedCount to an appropriate value when using LazyForEach in grids",
+    "relative_path": "entry/src/main/ets/MainAbility/pages/WaterFlow/waterFlow6.ets",
+    "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/collections-reuse.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-set-cache-count-for-lazyforeach-grid.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "7e98c8eefdb1b2dc6c3b39687df5bc3d366582d88c69bec8d85f1a22d66920e8",
+    "path": "source_files/7e98c8eefdb1b2dc6c3b39687df5bc3d366582d88c69bec8d85f1a22d66920e8.json",
+    "sha256": "3250bcdf316a0b6560e25ae05d17e0c4a846f3b1d04c5059ebc70f278583fc52"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-067",
+  "category": "performance",
+  "finding": {
+    "column": 5,
+    "end_column": 5,
+    "end_line": 617,
+    "line": 617,
+    "message": "Replace state variables with local variables for temporary calculation",
+    "relative_path": "entry/src/main/ets/pages/Index.ets",
+    "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+    "severity": "warn"
+  },
+  "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-use-local-var-to-replace-state-var.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "8e24ebdd425730fe9c068c53361458421c2b2885cb25db5d12c27b380a045940",
+    "path": "source_files/8e24ebdd425730fe9c068c53361458421c2b2885cb25db5d12c27b380a045940.json",
+    "sha256": "4c01eba5a7651bff95ad0b8f6f9f770385cbbef6739a6d089d52e30709f81136"
+  }
+}

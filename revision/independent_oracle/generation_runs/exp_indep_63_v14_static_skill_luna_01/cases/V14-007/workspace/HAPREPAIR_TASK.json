@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-007",
+  "target_rule": "@performance/hp-arkui-remove-container-without-property",
+  "codelinter_rule": "@performance/hp-arkui-remove-container-without-property",
+  "rule_description": "建议尽量减少视图嵌套层次",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/container_without_property_case.ets",
+      "line": 5,
+      "column": 5,
+      "severity": "suggestion",
+      "message": "Reduce redundant nested container",
+      "rule": "@performance/hp-arkui-remove-container-without-property"
+    },
+    {
+      "file": "entry/src/main/ets/cases/container_without_property_case.ets",
+      "line": 6,
+      "column": 7,
+      "severity": "suggestion",
+      "message": "Reduce redundant nested container",
+      "rule": "@performance/hp-arkui-remove-container-without-property"
+    },
+    {
+      "file": "entry/src/main/ets/cases/container_without_property_case.ets",
+      "line": 7,
+      "column": 9,
+      "severity": "suggestion",
+      "message": "Reduce redundant nested container",
+      "rule": "@performance/hp-arkui-remove-container-without-property"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/container_without_property_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

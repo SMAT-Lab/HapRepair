@@ -1,0 +1,386 @@
+{
+  "schema_version": 1,
+  "source_corpus_sha256": "85c2f6f17799bed681201efec8ad3bf204d768d8150226e25369906ad10ae714",
+  "pair_count": 383,
+  "rule_count": 63,
+  "rules": [
+    {
+      "rule": "@hw-ets-eslint/init-list-component",
+      "file": "hw-ets-eslint--init-list-component.md",
+      "example_count": 1,
+      "sha256": "554fdc71648a4a575394fbc4f27be965aff5f3222f242da853a59c88a75847e1"
+    },
+    {
+      "rule": "@performance/avoid-overusing-custom-component-check",
+      "file": "performance--avoid-overusing-custom-component-check.md",
+      "example_count": 1,
+      "sha256": "c2975e48413313eb3cd78ab75b0e807b87eb4be75c0c34b57322a84d2cdd59a0"
+    },
+    {
+      "rule": "@performance/constant-property-referencing-check-in-loops",
+      "file": "performance--constant-property-referencing-check-in-loops.md",
+      "example_count": 17,
+      "sha256": "8251ec907e99138ccaa7fdf15aa5391d1c2cbf1572c82489f2eb6bf8740f480f"
+    },
+    {
+      "rule": "@performance/dark-color-mode-check",
+      "file": "performance--dark-color-mode-check.md",
+      "example_count": 1,
+      "sha256": "857101295700bf85cb1b43e5cf0fd1d586a1bf1c0ae29737a54d215e93381649"
+    },
+    {
+      "rule": "@performance/foreach-args-check",
+      "file": "performance--foreach-args-check.md",
+      "example_count": 23,
+      "sha256": "9ed695a200a1f1bf578e726afb150df52567521a876d85d79eeb8a7a3aff283e"
+    },
+    {
+      "rule": "@performance/foreach-index-check",
+      "file": "performance--foreach-index-check.md",
+      "example_count": 1,
+      "sha256": "0c325da635d4acdaef307b581b91d8f549e40375ebfa35163ec8044b8390e73f"
+    },
+    {
+      "rule": "@performance/high-frequency-log-check",
+      "file": "performance--high-frequency-log-check.md",
+      "example_count": 20,
+      "sha256": "f8f5aad2f3266794155e01aba1e731668591781c1f78744958590a9c0a4ebc73"
+    },
+    {
+      "rule": "@performance/hp-arkts-no-use-any-export-current",
+      "file": "performance--hp-arkts-no-use-any-export-current.md",
+      "example_count": 3,
+      "sha256": "39e0f2113441c1c4de67500bf041204b481c277fdebd1efb7da0631a0d1f8f83"
+    },
+    {
+      "rule": "@performance/hp-arkts-no-use-any-export-other",
+      "file": "performance--hp-arkts-no-use-any-export-other.md",
+      "example_count": 3,
+      "sha256": "cd6be9d6cc2f551b2c4aa5262d4fadc5eda27443d2557ea8c24196e290bc377e"
+    },
+    {
+      "rule": "@performance/hp-arkui-avoid-empty-callback",
+      "file": "performance--hp-arkui-avoid-empty-callback.md",
+      "example_count": 5,
+      "sha256": "545870b40a7a86ead7cd6b9d7d89c602da287965713cb6f3596bcda83bf58e61"
+    },
+    {
+      "rule": "@performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse",
+      "file": "performance--hp-arkui-avoid-update-auto-state-var-in-aboutToReuse.md",
+      "example_count": 3,
+      "sha256": "238e189331a6ee172fd5bf2c665916cec306b1975371fdcca80a280d663fc7ce"
+    },
+    {
+      "rule": "@performance/hp-arkui-combine-same-arg-animateto",
+      "file": "performance--hp-arkui-combine-same-arg-animateto.md",
+      "example_count": 5,
+      "sha256": "b25caace43da670b62670c4a61802382019c6ac1558ca77a198ba1a59f2477fc"
+    },
+    {
+      "rule": "@performance/hp-arkui-image-async-load",
+      "file": "performance--hp-arkui-image-async-load.md",
+      "example_count": 3,
+      "sha256": "f76d72a899bf0a09fb7fcd2b14df90ef3675823e4c275165a38d07faac1c1c80"
+    },
+    {
+      "rule": "@performance/hp-arkui-load-on-demand",
+      "file": "performance--hp-arkui-load-on-demand.md",
+      "example_count": 8,
+      "sha256": "1fa9d21a43271e7bde7d8b4971dbbc4c3ad078023c5f61604a38e6fb02f7685c"
+    },
+    {
+      "rule": "@performance/hp-arkui-no-func-as-arg-for-reusable-component",
+      "file": "performance--hp-arkui-no-func-as-arg-for-reusable-component.md",
+      "example_count": 2,
+      "sha256": "2ce667457885c73c5b627709ec8201ee31f237f9e1e5f7c6230827a199925676"
+    },
+    {
+      "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+      "file": "performance--hp-arkui-no-state-var-access-in-loop.md",
+      "example_count": 4,
+      "sha256": "f9d0f39e1269defb8a19fc329ecc9bd413dd5521a042094c36da29df8ce13824"
+    },
+    {
+      "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+      "file": "performance--hp-arkui-no-stringify-in-lazyforeach-key-generator.md",
+      "example_count": 7,
+      "sha256": "7c167bcd6f8a1065ad342c4a43266f09be3261d74d5a321c906959086beeb48e"
+    },
+    {
+      "rule": "@performance/hp-arkui-reduce-pan-gesture-distance",
+      "file": "performance--hp-arkui-reduce-pan-gesture-distance.md",
+      "example_count": 2,
+      "sha256": "add43e7345fda9409d1985ba09157a8e958fb370d40a4d497fffb683ce372341"
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "file": "performance--hp-arkui-remove-container-without-property.md",
+      "example_count": 5,
+      "sha256": "4cb0617411b9ca1aba9bf8c9669c56ec331887a1b20ef5797d47c47c96d82510"
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+      "file": "performance--hp-arkui-remove-redundant-nest-container.md",
+      "example_count": 5,
+      "sha256": "21a190aea8b1613da0dac9ac7905ee9d02b4f7c129cb92a46cbcece9a9f46831"
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "file": "performance--hp-arkui-remove-redundant-state-var.md",
+      "example_count": 5,
+      "sha256": "7cf79969fc743c3655e9d3f2d8dd8ac1f3f3359be9998a4c9e617c6e04e06204"
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "file": "performance--hp-arkui-remove-unchanged-state-var.md",
+      "example_count": 5,
+      "sha256": "de961e88c8ec87861cb270f004719f66dcb50ed88e3e6a8284e6a2281205441d"
+    },
+    {
+      "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+      "file": "performance--hp-arkui-set-cache-count-for-lazyforeach-grid.md",
+      "example_count": 5,
+      "sha256": "31501185b91912901e2a0957d6369efa1ea0efe863574befaaf7d463328c8f15"
+    },
+    {
+      "rule": "@performance/hp-arkui-suggest-cache-avplayer",
+      "file": "performance--hp-arkui-suggest-cache-avplayer.md",
+      "example_count": 3,
+      "sha256": "cf0a9645f6993c638c42e602d619c16f24ef1d22273efe1ad1d4efd09ff8f1cd"
+    },
+    {
+      "rule": "@performance/hp-arkui-suggest-reuseid-for-if-else-reusable-component",
+      "file": "performance--hp-arkui-suggest-reuseid-for-if-else-reusable-component.md",
+      "example_count": 1,
+      "sha256": "e759b9f95aec0f3672b14991d7d6e593f7ef5ceb1c9e37f1e31ec1d1173b1517"
+    },
+    {
+      "rule": "@performance/hp-arkui-use-grid-layout-options",
+      "file": "performance--hp-arkui-use-grid-layout-options.md",
+      "example_count": 3,
+      "sha256": "3b49481e85fc0c2e617378d9c1c3ecec19b79c6ee903c29e043049c539d69b95"
+    },
+    {
+      "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+      "file": "performance--hp-arkui-use-local-var-to-replace-state-var.md",
+      "example_count": 5,
+      "sha256": "d1f8e695fa474364dd89566fc6dc8c7c4fcdd465fa6246624954262c40149d6a"
+    },
+    {
+      "rule": "@performance/hp-arkui-use-object-link-to-replace-prop",
+      "file": "performance--hp-arkui-use-object-link-to-replace-prop.md",
+      "example_count": 1,
+      "sha256": "bc4454045c200e62c7b16a96212a1a810d37eb48e05fee64de563a2501f8f2d7"
+    },
+    {
+      "rule": "@performance/hp-arkui-use-reusable-component",
+      "file": "performance--hp-arkui-use-reusable-component.md",
+      "example_count": 6,
+      "sha256": "7c472d6741a49ddeb2ba7de4b8fd015ec150983ed7516fcfc70218d9c14f9b77"
+    },
+    {
+      "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+      "file": "performance--hp-arkui-use-row-column-to-replace-flex.md",
+      "example_count": 1,
+      "sha256": "8642c47fd031ba9cab928632ac54cbebddf990391de08f9b411ba2f198302652"
+    },
+    {
+      "rule": "@performance/hp-arkui-use-scale-to-replace-attr-animateto",
+      "file": "performance--hp-arkui-use-scale-to-replace-attr-animateto.md",
+      "example_count": 1,
+      "sha256": "31daf93e340610ed2571bf74de7ffe83664b6b274edeeb24c967beae698b8e85"
+    },
+    {
+      "rule": "@performance/hp-arkui-use-transition-to-replace-animateto",
+      "file": "performance--hp-arkui-use-transition-to-replace-animateto.md",
+      "example_count": 1,
+      "sha256": "b7a545a0c68acb92b1702ee3e49f77acc38045233f681c0aa2f295b7f09e57d1"
+    },
+    {
+      "rule": "@performance/hp-performance-no-closures",
+      "file": "performance--hp-performance-no-closures.md",
+      "example_count": 1,
+      "sha256": "863f657c531b8811548ad685bdea7b42af3ae6fae716c659b3cee3b7dec637aa"
+    },
+    {
+      "rule": "@performance/js-code-cache-by-precompile-check",
+      "file": "performance--js-code-cache-by-precompile-check.md",
+      "example_count": 1,
+      "sha256": "3f8f38cf11ee26456730ff4ebe580f3c92f32689116da065baf2da4fa5c912cd"
+    },
+    {
+      "rule": "@performance/lottie-animation-destroy-check",
+      "file": "performance--lottie-animation-destroy-check.md",
+      "example_count": 15,
+      "sha256": "def44f4e23a7e6ff39f7f7a118c660aad9ad659ff464a3aa8f76be6e48c9e1f0"
+    },
+    {
+      "rule": "@performance/multiple-associations-state-var-check",
+      "file": "performance--multiple-associations-state-var-check.md",
+      "example_count": 15,
+      "sha256": "6be867a7e533aa32379d0ec8b6c883196d671705e05d212b99e285a138f1e7c5"
+    },
+    {
+      "rule": "@performance/no-high-loaded-frame-rate-range",
+      "file": "performance--no-high-loaded-frame-rate-range.md",
+      "example_count": 15,
+      "sha256": "e9099d76ce39aeb8df1fee3b2a0dd6f795f00a4f0a995a5c4be5f675b02e7333"
+    },
+    {
+      "rule": "@performance/number-init-check",
+      "file": "performance--number-init-check.md",
+      "example_count": 15,
+      "sha256": "a820078ddef0aae43978add6102e0495236a9109359c45a30859b4bf021e61ed"
+    },
+    {
+      "rule": "@performance/reuse-date-instances-check",
+      "file": "performance--reuse-date-instances-check.md",
+      "example_count": 1,
+      "sha256": "b46879ce39c53ea48a6d9b247f253c8b4fe9c90fcab78faf365c34d5a8c74644"
+    },
+    {
+      "rule": "@performance/sparse-array-check",
+      "file": "performance--sparse-array-check.md",
+      "example_count": 15,
+      "sha256": "f54ecb9acec4562dd4133f9f0fc652452100ec8c947408217aa3bd950c21d8ea"
+    },
+    {
+      "rule": "@performance/timezone-interface-check",
+      "file": "performance--timezone-interface-check.md",
+      "example_count": 8,
+      "sha256": "c35e6f0552f328aa148ded92d818c3a462de647484ab860a2168754010155ff5"
+    },
+    {
+      "rule": "@performance/typed-array-check",
+      "file": "performance--typed-array-check.md",
+      "example_count": 15,
+      "sha256": "2695b3179293992f918c9723d1f4e62e103aed657061b195ae197c186af6b413"
+    },
+    {
+      "rule": "@performance/waterflow-data-preload-check",
+      "file": "performance--waterflow-data-preload-check.md",
+      "example_count": 20,
+      "sha256": "731d356104d9d2acce5cda194dc585d77f1a60565dc1dde770d171d76d38c3ad"
+    },
+    {
+      "rule": "@security/no-commented-code",
+      "file": "security--no-commented-code.md",
+      "example_count": 5,
+      "sha256": "cb5e4e267d8456d63e8b87714be5045497af6547ad05b62c78aa66df6e16770d"
+    },
+    {
+      "rule": "@security/no-cycle",
+      "file": "security--no-cycle.md",
+      "example_count": 11,
+      "sha256": "86027dd26d00d6fc8bda417fadf6a8d9408e1fe0d4a1653db47199e38d55e1e2"
+    },
+    {
+      "rule": "@security/no-unsafe-3des",
+      "file": "security--no-unsafe-3des.md",
+      "example_count": 5,
+      "sha256": "e222ff61138b155e290ba7f41b4878714f351dddbff835e5050f35dc8ab78232"
+    },
+    {
+      "rule": "@security/no-unsafe-aes",
+      "file": "security--no-unsafe-aes.md",
+      "example_count": 5,
+      "sha256": "f9d99e3f265d3a7b7f17322d733ddb0259d611820d7c8d5306ab0e07612358c6"
+    },
+    {
+      "rule": "@security/no-unsafe-dh",
+      "file": "security--no-unsafe-dh.md",
+      "example_count": 5,
+      "sha256": "d0fbad28ba61892d4b74b5feffa188ba4b789145b9c81d2bbff4e55d41fd6c1d"
+    },
+    {
+      "rule": "@security/no-unsafe-dh-key",
+      "file": "security--no-unsafe-dh-key.md",
+      "example_count": 5,
+      "sha256": "8413aa1c2d41ed437d37ca822351945e980046567c806bb6a27238e892ab29cf"
+    },
+    {
+      "rule": "@security/no-unsafe-dsa",
+      "file": "security--no-unsafe-dsa.md",
+      "example_count": 5,
+      "sha256": "e6de1f3c5be5594aab3f5399cec03cf849ba6c006c36c1911cb3794dac1a7b63"
+    },
+    {
+      "rule": "@security/no-unsafe-dsa-key",
+      "file": "security--no-unsafe-dsa-key.md",
+      "example_count": 5,
+      "sha256": "18197e07a60097d4298789131a61442cd0dcdbf09f880b66352ad8585bb770a7"
+    },
+    {
+      "rule": "@security/no-unsafe-ecdh",
+      "file": "security--no-unsafe-ecdh.md",
+      "example_count": 5,
+      "sha256": "427977702ba15c96490e95c9021d122d351d926437f026dd6b80ef7ca3f01a63"
+    },
+    {
+      "rule": "@security/no-unsafe-ecdsa",
+      "file": "security--no-unsafe-ecdsa.md",
+      "example_count": 5,
+      "sha256": "d80e6d1357371f0dce065a3bd4fdb7f5fed5c1b85695f2d1e06ca87956840739"
+    },
+    {
+      "rule": "@security/no-unsafe-hash",
+      "file": "security--no-unsafe-hash.md",
+      "example_count": 5,
+      "sha256": "e4e81d75fe5315b58d7592cc42d266e5b37a5ca2ee4f2e89c63df1c74e5a1e3f"
+    },
+    {
+      "rule": "@security/no-unsafe-huks",
+      "file": "security--no-unsafe-huks.md",
+      "example_count": 5,
+      "sha256": "6e9f6615d041c7741b5b290a957c2713b85b311e91bef4ea3a3a84979aa1065e"
+    },
+    {
+      "rule": "@security/no-unsafe-kdf",
+      "file": "security--no-unsafe-kdf.md",
+      "example_count": 5,
+      "sha256": "1ba0956312bd6efae0f50e2dfda6d1d598b32e5bbad9a25562e6aa27fa2b8470"
+    },
+    {
+      "rule": "@security/no-unsafe-mac",
+      "file": "security--no-unsafe-mac.md",
+      "example_count": 5,
+      "sha256": "b291967de63a7c6d8aaf6084c420b368804ce5f1eb575b4cd34fbf61d39f291b"
+    },
+    {
+      "rule": "@security/no-unsafe-rsa-encrypt",
+      "file": "security--no-unsafe-rsa-encrypt.md",
+      "example_count": 5,
+      "sha256": "6f355513aae082076857bb587fc9d920c14fb6335b02324a1437d51b127c67b6"
+    },
+    {
+      "rule": "@security/no-unsafe-rsa-key",
+      "file": "security--no-unsafe-rsa-key.md",
+      "example_count": 5,
+      "sha256": "3fb7d076a9a64d95b97ba1e6a094b69554817f80f91565295e2fd3a07135354d"
+    },
+    {
+      "rule": "@security/no-unsafe-rsa-sign",
+      "file": "security--no-unsafe-rsa-sign.md",
+      "example_count": 5,
+      "sha256": "381137eb8bf656d303e2fc44ad7a1ed6ab7770d2ab9b9074e82b930a8cf415be"
+    },
+    {
+      "rule": "@security/no-unsafe-sm2-cipher",
+      "file": "security--no-unsafe-sm2-cipher.md",
+      "example_count": 5,
+      "sha256": "a0d1aebf3f5235d20a78d99ae16969c51ff98da01fedb111bf7efe94bc733349"
+    },
+    {
+      "rule": "@security/no-unsafe-sm2-key",
+      "file": "security--no-unsafe-sm2-key.md",
+      "example_count": 5,
+      "sha256": "123c821e63a3c063421843f1ebf7f190a7d10c4dbca43798bbea4d29fe4018df"
+    },
+    {
+      "rule": "@security/no-unsafe-sm4",
+      "file": "security--no-unsafe-sm4.md",
+      "example_count": 5,
+      "sha256": "fdd8bc9d914a166877b736445bd9b8cf06331066d553b57b209e59ba3bae1ddf"
+    }
+  ]
+}

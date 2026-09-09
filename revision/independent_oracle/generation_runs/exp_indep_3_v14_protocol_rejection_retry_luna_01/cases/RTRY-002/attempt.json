@@ -1,0 +1,9 @@
+{
+  "event": "request_started",
+  "timestamp": "2026-08-07T12:58:55.096108+00:00",
+  "case_id": "case_security_no_unsafe_rsa_encrypt",
+  "blind_id": "RTRY-002",
+  "attempt": 1,
+  "requested_model": "gpt-5.6-luna",
+  "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86"
+}

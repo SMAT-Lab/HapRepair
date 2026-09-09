@@ -1,0 +1,23 @@
+{
+  "id": "haprepair-homecheck-codelinter-6.0.240-compat-v1",
+  "base_codelinter_version": "6.0.240",
+  "homecheck_source_commit": "461ad0a2f3a71a22ceeb18f7cc4a9fa67c986c59",
+  "reason": "CodeLinter 6.0.240 resolves HarmonyOS SDK API calls through ../js/api and represents FlowItem.onAppear as ArkInvokeStmt, while the bundled HomeCheck checkers expect api paths and ArkAssignStmt. The overlay normalizes those equivalent SDK paths, accepts both callback statement forms, and enables the equivalent HomeCheck reuseId checker because the Linux performanceAgent implementation does not report its documented examples.",
+  "changes": [
+    "Normalize @ohosSdk/../js/api/ to @ohosSdk/api/ before signature comparison in eight HomeCheck checkers.",
+    "Accept ArkInvokeStmt as well as ArkAssignStmt for WaterFlow onAppear callbacks.",
+    "Enable @performance/suggest-reuseid-for-if-else-reusable-component-check as the recorded alias for the non-reporting hp rule."
+  ],
+  "files": {
+    "linter/arkPerfCheck/node_modules/homecheck/lib/checker/security/NoUnsafeHuksCheck.js": "47496a64f49cab6872f4dc1d2656ce6f8e253d507c7ab69f17afe1b530649e26",
+    "linter/arkPerfCheck/node_modules/homecheck/lib/checker/security/NoUnsafeKdfCheck.js": "b2857751f2d919b262a5965e4efd71b141dcb5a967cd481d0ccc8391dc7d80ff",
+    "linter/arkPerfCheck/node_modules/homecheck/lib/checker/security/NoUnsafeSm4Check.js": "5af9a839c364276f54e2152180ac5587b38673083cac923b97d1016e62292e77",
+    "linter/arkPerfCheck/node_modules/homecheck/lib/checker/security/NoUnsafeEcdhCheck.js": "5202995a9e6bafc328105698e6c4c139c814b1e3a5b968ad5f772a552b92fe17",
+    "linter/arkPerfCheck/node_modules/homecheck/lib/checker/security/NoUnsafeSm2KeyCheck.js": "4a03af4b7af6ad9daaa564c320630c9ffe7ca6ec7601f30606fbe6217b749457",
+    "linter/arkPerfCheck/node_modules/homecheck/lib/checker/security/NoUnsafeSm2CipherCheck.js": "ff641838525a4e5d3a375ad40737dd45b8a3a31a0f4d314c87d0afc814c74fe6",
+    "linter/arkPerfCheck/node_modules/homecheck/lib/checker/performance/JsCodeCacheByPrecompileCheck.js": "a3ecf35a16a910d4026f4e3d87e49ac5214d9a8d6ffcf84db7ea223bab7b5d56",
+    "linter/arkPerfCheck/node_modules/homecheck/lib/checker/performance/TimezoneInterfaceCheck.js": "e2732119df1e9d897f425c0289fb89853cec3910bf02725c590c8167e092367d",
+    "linter/arkPerfCheck/node_modules/homecheck/lib/checker/performance/WaterFlowUpdateDataCheck.js": "0408394a692b47ab44d5df01296d6d1a06e452d35d3732588b12483ee6cf2abe",
+    "linter/arkPerfCheck/ruleSet.json": "788f6fca6c4cc1068dbcc123e57f54f1f143480fbac1b096129cb083dde1a73d"
+  }
+}

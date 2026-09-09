@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-016",
+  "target_rule": "@performance/dark-color-mode-check",
+  "codelinter_rule": "@performance/dark-color-mode-check",
+  "rule_description": "Implementing dark mode can significantly reduce power consumption. Your application should adapt its UI based on the device's current theme settings.",
+  "target_findings": [
+    {
+      "file": "entry/src/main/module.json5",
+      "line": 0,
+      "column": 0,
+      "severity": "suggestion",
+      "message": "Implement dark mode adaptation for reduced power consumption.",
+      "rule": "@performance/dark-color-mode-check"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/module.json5"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

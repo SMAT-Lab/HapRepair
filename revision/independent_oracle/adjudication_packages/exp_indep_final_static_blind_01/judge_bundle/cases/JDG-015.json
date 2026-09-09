@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-015",
+  "category": "security",
+  "rule": "@security/no-unsafe-kdf",
+  "rule_description": "PBKDF2/HKDF 派生不得使用 SHA1。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_kdf_case.ets",
+      "line": 3,
+      "column": 17,
+      "severity": "warn",
+      "message": "Do not use insecure digest algorithm SHA1 in PBKDF2 and HKDF key derivation algorithms; it is recommended to use the secure PBKDF2 and HKDF interface in the Petal Aegis SDK.",
+      "rule": "@security/no-unsafe-kdf"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_kdf_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\ncryptoFramework.createKdf('PBKDF2|SHA1');\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_kdf_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\ncryptoFramework.createKdf('PBKDF2|SHA256');\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_kdf_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\ncryptoFramework.createKdf('PBKDF2|SHA256');\n"
+    }
+  ]
+}

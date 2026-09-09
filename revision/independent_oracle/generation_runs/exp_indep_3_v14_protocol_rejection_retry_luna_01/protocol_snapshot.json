@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14-REJECTION-RETRY-SENSITIVITY",
+  "run_id": "exp_indep_3_v14_protocol_rejection_retry_luna_01",
+  "status": "frozen",
+  "tier": "supplementary/test",
+  "research_question": "Under an explicitly separate retry sensitivity, do fresh generations for the three parent protocol rejections yield protocol-compliant candidates?",
+  "null_hypothesis": "The final v14 Skill does not produce semantically correct repairs for the frozen controlled cases beyond outcomes attributable to invalid, missing, or behavior-changing candidates.",
+  "alternative_hypothesis": "The final v14 Skill produces semantically correct behavior-preserving repairs for a measurable share of the frozen controlled cases.",
+  "research_type": "controlled repair-component correctness experiment",
+  "research_objective": "Measure the sensitivity of final-v14 correctness to retrying only the three restricted-command parent rejections without reclassifying them as API failures.",
+  "model": {
+    "requested_id": "gpt-5.6-luna",
+    "provider": "xsp",
+    "reasoning_effort": "high",
+    "codex_agent_invocations_per_case": 1,
+    "accepted_candidates_per_case": 1,
+    "automatic_retries": 0,
+    "temperature": "not explicitly configurable through the frozen Codex CLI harness",
+    "top_p": "provider default",
+    "seed": "not exposed",
+    "nondeterminism_note": "Each case receives one Codex agent invocation; the provider does not expose a deterministic seed."
+  },
+  "runtime": {
+    "container_image": "hybrid-gym-codex:0.146.0",
+    "container_image_id": "sha256:9cc027cd2f9404ccd58c61e367fe712895188a926c07d464ea0936e893b9a89a",
+    "codex_cli": "0.146.0",
+    "network": "bridge for the model endpoint only",
+    "workspace_mount_policy": "Each container receives only one case workspace, one isolated CODEX_HOME containing the frozen Skill, one empty run-state home, and read-only Codex authentication."
+  },
+  "method": {
+    "skill_source": "skills/haprepair-openharmony-repair-v14-dev",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "skill_file_count": 87,
+    "skill_file_hashes": {
+      "SKILL.md": "f7587619bc50588df2b835ffbf4b40dee7d6d57b0721e5926608cb2ce3eb683e",
+      "references/protocol.json": "dadf88695638c8c17ac96d07cffa694d6cdb4ecb3bafb2f138bd6b60f00f14aa",
+      "references/repair-guides/manifest.json": "ec958a60597fd0d0fd8f404962ab3a3621aee370ccd0a78487159eb66bfce7f7",
+      "references/rule-specs/manifest.json": "2d3ad8e88365e35666473f17c06cedbc77979434bf544c3fc60ef06dfea55f6b"
+    },
+    "prompt_template": "revision/independent_oracle/generation/prompt_template_v14_static_skill.txt",
+    "prompt_template_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "runner": "revision/independent_oracle/generation/run_generation_v14_static_skill.py",
+    "runner_sha256": "3b34f87fa3faaa65468646f97b90c5ee5e1f54ab4c09f49aba79996a020cf495",
+    "semantic_specs_delivery": "Readable inside the installed Skill and selected by the agent under SKILL.md; not copied into the task prompt.",
+    "static_reference_delivery": "All deterministic same-rule guide files are readable as optional provenance inside the installed Skill; no guide text is injected into the task prompt.",
+    "dynamic_retrieval": false,
+    "embedding_model": null,
+    "similarity_ranking": false,
+    "top_k": null,
+    "knowledge_base_mounted": false,
+    "homecheck_controller_available_for_feedback": false,
+    "claim_boundary": "This evaluates the one-candidate final-v14 repair component, not project-scale iterative validation or the causal benefit of static references."
+  },
+  "benchmark": {
+    "case_manifest": "revision/independent_oracle/cases_manifest.json",
+    "case_manifest_sha256": "4e212948eb28e1766ac2e5ad58e44ba1a07708e17ed00cb8fb98c0f1996f2d5a",
+    "case_count": 63,
+    "rule_count": 63,
+    "taxonomy": {
+      "performance": 42,
+      "arkts_eslint": 1,
+      "security": 20
+    },
+    "defective_project": "revision/independent_oracle/benchmark/defective_project",
+    "reference_project": "revision/independent_oracle/benchmark/repaired_project",
+    "reference_project_mounted": false,
+    "validation_summary": "revision/independent_oracle/runs/independent_oracle_63_frozen_03/summary.json",
+    "validation_summary_sha256": "a5f012a0f7d34f47ce71e7d95a5a29a16fcc4a1423b2b6dcf926d89ec0b7c065",
+    "defective_report": "revision/independent_oracle/runs/independent_oracle_63_frozen_03/defective.json",
+    "defective_report_sha256": "6cb7a7de3c1d48aec31deb47191bd2131e75752b926ba5f6711f26ff63d1b227",
+    "case_results": "revision/independent_oracle/runs/independent_oracle_63_frozen_03/case_results.csv",
+    "case_results_sha256": "1c4c832073349250b920dd2bb80038fc6649b5b59dac51cfa5656ea13db3e37b",
+    "input_visibility": "For each case, expose only its defective_files, frozen target findings, rule ID, and rule description."
+  },
+  "leakage_gate": {
+    "report": "revision/independent_oracle/leakage_audit.json",
+    "report_sha256": "ee3b2c0022bb813cf7609c640e6a3c803432de017418e3243095b920c8f00172",
+    "required_pass": true,
+    "human_repair_hidden": true,
+    "historical_generation_outputs_hidden": true,
+    "old_adjudication_hidden": true,
+    "raw_383_pair_database_hidden": true
+  },
+  "blind_id_seed": 20260807,
+  "execution": {
+    "prepare_policy": "Create all 63 isolated case workspaces and CODEX_HOME trees before any benchmark model invocation; freeze per-file, task, prompt, Skill, protocol, and environment hashes.",
+    "smoke_policy": "Run one excluded synthetic non-benchmark case only to validate Codex/Skill/edit capture wiring; smoke output is never correctness evidence.",
+    "candidate_policy": "A candidate is accepted only after one exit-zero Codex invocation with JSON events, a non-empty source diff, no deleted input source, unchanged task metadata, and no restricted command.",
+    "retry_policy": "No automatic or silent retry. A rejected or infrastructurally failed benchmark case remains a recorded terminal case under this run ID.",
+    "feedback_policy": "No post-edit HomeCheck or CodeLinter scan, controller feedback, test result, or human reference is supplied to the model.",
+    "artifact_policy": "Preserve prompt/task hashes, exact source input/output, patch, full Codex JSONL trace, stderr, commands, usage, timestamps, and acceptance reasons for every case."
+  },
+  "stop_condition": "Stop after exactly one Codex agent invocation per selected case; after all 63 cases, proceed to artifact verification and blind human adjudication without repair retries.",
+  "abandonment_condition": "Before benchmark execution, stop on any frozen input, Skill, prompt, runner, container, model, provider, isolation, or smoke failure. During execution, preserve each terminal case result and stop launching further cases only on a systemic protocol or endpoint failure.",
+  "reported_metrics": [
+    "attempted_cases",
+    "accepted_candidates",
+    "rejected_cases",
+    "input_tokens",
+    "cached_input_tokens",
+    "output_tokens",
+    "wall_seconds",
+    "overall_semantic_correctness",
+    "performance_semantic_correctness",
+    "arkts_eslint_semantic_correctness",
+    "security_semantic_correctness",
+    "raw_author_agreement",
+    "cohen_kappa_if_estimable",
+    "adjudication_count"
+  ],
+  "claim_boundary": "Generation completeness is not correctness. Semantic correctness is determined only by two new independent author labels and third-author adjudication for disagreements; no whole-repository or cross-model generality claim is authorized.",
+  "sensitivity_parent": {
+    "run_id": "exp_indep_63_v14_static_skill_luna_01",
+    "classification": "protocol-rejection retry sensitivity; not an API or endpoint retry",
+    "replace_parent_main_result": false
+  }
+}

@@ -1,0 +1,34 @@
+--- a/entry/src/main/ets/cases/combine_animate_to_case.ets
++++ b/entry/src/main/ets/cases/combine_animate_to_case.ets
+@@ -5,14 +5,17 @@
+   @State panelColor: Color = Color.Blue;
+ 
+   resize(): void {
+-    animateTo({ curve: Curve.Ease, duration: 600 }, () => {
+-      this.panelWidth = 240;
+-    });
++    this.panelWidth = 240;
+   }
+ 
+   recolor(): void {
++    this.panelColor = Color.Green;
++  }
++
++  animatePanelChanges(): void {
+     animateTo({ curve: Curve.Ease, duration: 600 }, () => {
+-      this.panelColor = Color.Green;
++      this.resize();
++      this.recolor();
+     });
+   }
+ 
+@@ -21,8 +24,7 @@
+       .width(this.panelWidth)
+       .backgroundColor(this.panelColor)
+       .onClick(() => {
+-        this.resize();
+-        this.recolor();
++        this.animatePanelChanges();
+       })
+   }
+ }

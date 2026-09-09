@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "formal": false,
+  "run_id": "exp_loc_18_three_model_smoke_02",
+  "model_requested": "gpt-5.6-luna",
+  "file": "entry/src/main/ets/MainAbility/pages/List/List07.ets",
+  "source_sha256": "9c3543f0629fd43d6906383dc02a07c47a3450dff0fe5c6be0adb84ec2a2f110",
+  "prompt_sha256": "9f6a972036b351aedd84bf8a8d745406996530f5692ad47bc50d668eddf67def",
+  "protocol_sha256": "9ddb8ec06cb0abb917979afd3c2e5518e871ba6b81fb12e32ffcff76c1cb7f4a",
+  "ground_truth_sha256": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3",
+  "started_at": "2026-08-07T14:05:27.362124+00:00",
+  "provider_route": {
+    "api_base_env": "OPENAI_API_BASE",
+    "api_key_env": "OPENAI_API_KEY",
+    "api_base_sha256": "0a2cad5028420559b4d734677727ec94f7edeabf6d6ca73df8ad4103695bf48d"
+  },
+  "status": "completed",
+  "model_reported": "gpt-5.6-luna",
+  "response_id": "resp_00cf0de03fc78286016a75e629405c819196127850d7b530bd",
+  "usage": {
+    "prompt_tokens": 2206,
+    "completion_tokens": 2226,
+    "total_tokens": 4432,
+    "completion_tokens_details": {
+      "reasoning_tokens": 2070
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": null,
+      "elapsed_seconds": 0.10029376699822024,
+      "result": "transport_error",
+      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)>"
+    },
+    {
+      "attempt": 2,
+      "status": 200,
+      "elapsed_seconds": 41.60803300999396,
+      "result": "success"
+    }
+  ],
+  "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-avoid-empty-callback\",\"line\":34},{\"rule\":\"@performance/hp-arkui-remove-unchanged-state-var\",\"line\":42},{\"rule\":\"@performance/hp-arkui-remove-unchanged-state-var\",\"line\":43},{\"rule\":\"@performance/hp-arkui-load-on-demand\",\"line\":62},{\"rule\":\"@performance/hp-arkui-load-on-demand\",\"line\":88},{\"rule\":\"@performance/hp-arkui-load-on-demand\",\"line\":114},{\"rule\":\"@performance/hp-arkui-load-on-demand\",\"line\":140},{\"rule\":\"@performance/hp-arkui-load-on-demand\",\"line\":166}]}",
+  "predicted_defects": [
+    {
+      "rule": "@performance/hp-arkui-avoid-empty-callback",
+      "line": 34
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "line": 42
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "line": 43
+    },
+    {
+      "rule": "@performance/hp-arkui-load-on-demand",
+      "line": 62
+    },
+    {
+      "rule": "@performance/hp-arkui-load-on-demand",
+      "line": 88
+    },
+    {
+      "rule": "@performance/hp-arkui-load-on-demand",
+      "line": 114
+    },
+    {
+      "rule": "@performance/hp-arkui-load-on-demand",
+      "line": 140
+    },
+    {
+      "rule": "@performance/hp-arkui-load-on-demand",
+      "line": 166
+    }
+  ],
+  "parse_ok": true,
+  "parse_error": null,
+  "raw_response": {
+    "id": "resp_00cf0de03fc78286016a75e629405c819196127850d7b530bd",
+    "object": "chat.completion",
+    "created": 1786111569,
+    "model": "gpt-5.6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-avoid-empty-callback\",\"line\":34},{\"rule\":\"@performance/hp-arkui-remove-unchanged-state-var\",\"line\":42},{\"rule\":\"@performance/hp-arkui-remove-unchanged-state-var\",\"line\":43},{\"rule\":\"@performance/hp-arkui-load-on-demand\",\"line\":62},{\"rule\":\"@performance/hp-arkui-load-on-demand\",\"line\":88},{\"rule\":\"@performance/hp-arkui-load-on-demand\",\"line\":114},{\"rule\":\"@performance/hp-arkui-load-on-demand\",\"line\":140},{\"rule\":\"@performance/hp-arkui-load-on-demand\",\"line\":166}]}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2206,
+      "completion_tokens": 2226,
+      "total_tokens": 4432,
+      "completion_tokens_details": {
+        "reasoning_tokens": 2070
+      }
+    }
+  },
+  "completed_at": "2026-08-07T14:06:10.071814+00:00",
+  "elapsed_seconds": 42.70971013500821
+}

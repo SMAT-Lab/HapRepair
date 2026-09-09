@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-054",
+  "category": "performance",
+  "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+  "rule_description": "建议在Grid下使用LazyForEach时设置合理的cacheCount",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/grid_cache_count_case.ets",
+      "line": 7,
+      "column": 5,
+      "severity": "suggestion",
+      "message": "Set cachedCount to an appropriate value when using LazyForEach in grids",
+      "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/grid_cache_count_case.ets",
+      "content": "@Entry\n@Component\nstruct ThumbnailGrid {\n  private thumbnails: number[] = [1, 2, 3, 4, 5, 6];\n\n  build() {\n    Grid() {\n      LazyForEach(this.thumbnails, (thumbnail: number) => {\n        GridItem() {\n          Text(`${thumbnail}`)\n        }\n      }, (thumbnail: number) => thumbnail.toString())\n    }\n    .columnsTemplate('1fr 1fr')\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/grid_cache_count_case.ets",
+      "content": "@Entry\n@Component\nstruct ThumbnailGrid {\n  private thumbnails: number[] = [1, 2, 3, 4, 5, 6];\n\n  build() {\n    Grid() {\n      LazyForEach(this.thumbnails, (thumbnail: number) => {\n        GridItem() {\n          Text(`${thumbnail}`)\n        }\n      }, (thumbnail: number) => thumbnail.toString())\n    }\n    .cachedCount(2)\n    .columnsTemplate('1fr 1fr')\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/grid_cache_count_case.ets",
+      "content": "@Entry\n@Component\nstruct ThumbnailGrid {\n  private thumbnails: number[] = [1, 2, 3, 4, 5, 6];\n\n  build() {\n    Grid() {\n      LazyForEach(this.thumbnails, (thumbnail: number) => {\n        GridItem() {\n          Text(`${thumbnail}`)\n        }\n      }, (thumbnail: number) => thumbnail.toString())\n    }\n    .cachedCount(1)\n    .columnsTemplate('1fr 1fr')\n  }\n}\n"
+    }
+  ]
+}

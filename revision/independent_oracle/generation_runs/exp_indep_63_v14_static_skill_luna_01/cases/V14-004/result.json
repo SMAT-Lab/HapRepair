@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_security_no_unsafe_mac",
+  "blind_id": "V14-004",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbd3-c470-7020-a7ca-c590e9e491c7",
+  "usage": {
+    "input_tokens": 162252,
+    "cached_input_tokens": 114176,
+    "output_tokens": 2970,
+    "total_tokens": 165222
+  },
+  "wall_seconds": 75.39250307600014,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 44,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"rg --files /workspace -g '\"'!node_modules'\"' -g '\"'!**/.git/**'\"' | sed -n '1,240p'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -g 'HAPREPAIR_TASK.json' -g '\"'!node_modules'\"' -g '\"'!**/.git/**'\"' /workspace\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/unsafe_mac_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills/haprepair-openharmony-repair -maxdepth 3 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n \\\"unsafe_mac|mac|rule|spec|core_spec|family_spec|finding|alert|completion\\\" HAPREPAIR_TASK.json /codex-home/skills/haprepair-openharmony-repair --glob '\"'!**/guides/**'\"' --glob '\"'!**/corpus/**'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,300p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,180p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n \\\"createMac|SHA1|SHA256|SHA384|SHA512|Mac\\\" /workspace --glob '\"'!HAPREPAIR_TASK.json'\"' --glob '\"'!**/.git/**'\"' --glob '\"'!node_modules/**'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git status --short && git diff -- entry/src/main/ets/cases/unsafe_mac_case.ets HAPREPAIR_TASK.json'",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/unsafe_mac_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'rg -n \"SHA1|SHA256|createMac\" entry/src/main/ets/cases/unsafe_mac_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 5 -type f -not -path '/workspace/.git/*' -print | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"python3 -m json.tool completion.json >/dev/null && sed -n '1,220p' completion.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "73943fd76a4fbafbd5967fe0c9e772bb506c1436aa2cab1b92d15ec02a4a9d56",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_mac_case.ets",
+      "sha256": "b3a525ee5431a4ce25810d2f215754e533812a259c5aa1f01af9719e8237d55a",
+      "size_bytes": 129,
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst requestAuthenticator = cryptoFramework.createMac('SHA256');\n"
+    }
+  ],
+  "trace_sha256": "76bfbee7e797e69f5b282f6d341fa1fa8e1eb7e01a61657ea4d573c2ea36b045",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:46:26.096117+00:00",
+  "rejection_reasons": []
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14-REJECTION-RETRY-SENSITIVITY",
+  "run_id": "exp_indep_3_v14_protocol_rejection_retry_luna_01",
+  "contract_sha256": "6cdfeb90383c9b23264e981780cdb716973853278f0996f8cd2f630a5cf478be",
+  "checks": {
+    "contract_frozen": true,
+    "parent_protocol_hash_matches": true,
+    "exactly_three_parent_rejections": true,
+    "selected_cases_exist": true,
+    "parent_results_are_completed_protocol_rejections": true,
+    "same_model": true,
+    "same_method": true,
+    "same_benchmark": true,
+    "same_leakage_gate": true,
+    "not_classified_as_api_retry": true,
+    "parent_main_result_not_replaced": true
+  },
+  "all_passed": true,
+  "model_calls": 0
+}

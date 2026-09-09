@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-014",
+  "target_rule": "@performance/hp-arkui-use-grid-layout-options",
+  "codelinter_rule": "@performance/hp-arkui-use-grid-layout-options",
+  "rule_description": "建议在指定位置时使用GridLayoutOptions提升Grid性能",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/grid_layout_options_case.ets",
+      "line": 7,
+      "column": 5,
+      "severity": "warn",
+      "message": "Use GridLayoutOptions when specifying the position in grids",
+      "rule": "@performance/hp-arkui-use-grid-layout-options"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/grid_layout_options_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

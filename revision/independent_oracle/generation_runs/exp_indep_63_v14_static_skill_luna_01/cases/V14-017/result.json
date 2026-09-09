@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_performance_hp_arkts_no_use_any_export_current",
+  "blind_id": "V14-017",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbb6-c466-7420-9502-70374e3b05e5",
+  "usage": {
+    "input_tokens": 250505,
+    "cached_input_tokens": 213760,
+    "output_tokens": 5365,
+    "total_tokens": 255870
+  },
+  "wall_seconds": 122.93795696199959,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 36,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md && sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md && printf '\\\\n-- workspace files --\\\\n' && rg --files -g 'HAPREPAIR_TASK.json' -g '\"'!node_modules'\"' -g '\"'!oh_modules'\"' /workspace\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -g '\"'!node_modules'\"' -g '\"'!oh_modules'\"' -g '\"'!build'\"' -g '\"'!**/.hvigor/**'\"' | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills/haprepair-openharmony-repair -maxdepth 3 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -C 8 'no-use-any-export-current|export-current' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--hp-arkts-no-use-any-export-current.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md && printf '\\\\n-- computation-api --\\\\n' && sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/computation-api.md && printf '\\\\n-- manifest/index --\\\\n' && sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json && sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/index.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/cases/export_current_case.ets && printf '\\\\n-- status --\\\\n' && git status --short && printf '\\\\n-- repository metadata --\\\\n' && rg --files -g '\"'!*node_modules*'\"' -g '\"'!*oh_modules*'\"' | sort\"",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/state-reactivity.md && printf '\\\\n-- exact rule references --\\\\n' && rg -n -C 12 'hp-arkts-no-use-any-export-current|export \\\\*|current module|public type' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/*.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/cases/export_current_case.ets && printf '\\\\n-- relevant symbols --\\\\n' && rg -n 'SessionRecord|export \\\\*|export \\\\{' entry/src/main/ets/cases/export_current_case.ets && printf '\\\\n-- workspace files --\\\\n' && rg --files | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/cases/export_current_case.ets && printf '\\\\n-- completion --\\\\n' && sed -n '1,240p' completion.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n 'export \\\\*|export \\\\{ SessionRecord \\\\}|class SessionRecord|token: string' entry/src/main/ets/cases/export_current_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"python3 -m json.tool completion.json >/dev/null && echo 'completion.json: valid JSON'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "dcddf8508515de1fef2642bc7dff1c8b85a02e565abf8ee1479058f31e19c570",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/export_current_case.ets",
+      "sha256": "1d4d65e766abcbbd5a62852bc7943e46efacee4efcee7a438cda78fa435f560f",
+      "size_bytes": 73,
+      "content": "class SessionRecord {\n  token: string = '';\n}\n\nexport { SessionRecord };\n"
+    }
+  ],
+  "trace_sha256": "988e2e32cff78ec541a4a597472b57607d8ba5668c9b6d11ac45dd0e8bfb54e1",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:15:38.137950+00:00",
+  "rejection_reasons": []
+}

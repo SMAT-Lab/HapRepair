@@ -1,0 +1,54 @@
+{
+  "experiment": "EXP-INDEP-63",
+  "paper_facing_corpus": "rule_complete_383",
+  "pair_count": 383,
+  "rule_count": 63,
+  "protocol_requirement": "Hold out one pair per rule, exclude the held-out pair and confirmed near duplicates from retrieval, and retain at least one same-rule retrieval example.",
+  "strict_same_rule_rag_holdout": {
+    "eligible_rule_count_by_pair_cardinality": 51,
+    "blocked_rule_count_by_pair_cardinality": 12,
+    "blocked_singleton_rules": [
+      "@hw-ets-eslint/init-list-component",
+      "@performance/avoid-overusing-custom-component-check",
+      "@performance/dark-color-mode-check",
+      "@performance/foreach-index-check",
+      "@performance/hp-arkui-suggest-reuseid-for-if-else-reusable-component",
+      "@performance/hp-arkui-use-object-link-to-replace-prop",
+      "@performance/hp-arkui-use-row-column-to-replace-flex",
+      "@performance/hp-arkui-use-scale-to-replace-attr-animateto",
+      "@performance/hp-arkui-use-transition-to-replace-animateto",
+      "@performance/hp-performance-no-closures",
+      "@performance/js-code-cache-by-precompile-check",
+      "@performance/reuse-date-instances-check"
+    ]
+  },
+  "near_duplicate_candidate_sensitivity": {
+    "0.80": {
+      "rules_with_at_least_two_candidate_components": 50,
+      "rules_with_one_candidate_component": 13,
+      "multi_pair_rules_collapsed_to_one_candidate_component": [
+        "@performance/waterflow-data-preload-check"
+      ]
+    },
+    "0.85": {
+      "rules_with_at_least_two_candidate_components": 51,
+      "rules_with_one_candidate_component": 12,
+      "multi_pair_rules_collapsed_to_one_candidate_component": []
+    },
+    "0.90": {
+      "rules_with_at_least_two_candidate_components": 51,
+      "rules_with_one_candidate_component": 12,
+      "multi_pair_rules_collapsed_to_one_candidate_component": []
+    },
+    "0.95": {
+      "rules_with_at_least_two_candidate_components": 51,
+      "rules_with_one_candidate_component": 12,
+      "multi_pair_rules_collapsed_to_one_candidate_component": []
+    }
+  },
+  "interpretation": [
+    "Similarity edges are review candidates, not confirmed duplicate labels.",
+    "The 12 singleton rules cannot support both a held-out case and a same-rule retrieval example from the current 383-pair corpus.",
+    "No final held-out/retrieval split is generated until the singleton-rule protocol is resolved and near-duplicate judgments are frozen."
+  ]
+}

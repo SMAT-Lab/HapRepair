@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-222",
+  "category": "performance",
+  "finding": {
+    "column": 3,
+    "end_column": 3,
+    "end_line": 41,
+    "line": 41,
+    "message": "Remove unchanged state variables",
+    "relative_path": "entry/src/main/ets/MainAbility/pages/WaterFlow/WaterFlowSectionDemo/WaterFlowSectionDemo05.ets",
+    "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-remove-unchanged-state-var.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "d21a6a8b2b2339c4084e5f2329e4711850c754351781bb697138ff8956626388",
+    "path": "source_files/d21a6a8b2b2339c4084e5f2329e4711850c754351781bb697138ff8956626388.json",
+    "sha256": "6f065d300bfdc87d33eb1f913b1c180927cbd9019684f0d9800a6b0c54b38f55"
+  }
+}

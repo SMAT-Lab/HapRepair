@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-211",
+  "category": "performance",
+  "finding": {
+    "column": 9,
+    "end_column": 9,
+    "end_line": 1881,
+    "line": 1881,
+    "message": "For performance purposes, set keyGenerator for ForEach.",
+    "relative_path": "entry/src/main/ets/pages/example/ImageComprehensiveTest002.ets",
+    "rule": "@performance/foreach-args-check",
+    "severity": "warn"
+  },
+  "rule": "@performance/foreach-args-check",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/collections-reuse.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--foreach-args-check.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "5e45c915714d9b6365ffb348c333ad61977d82bf93b4de9034b9538607b211f4",
+    "path": "source_files/5e45c915714d9b6365ffb348c333ad61977d82bf93b4de9034b9538607b211f4.json",
+    "sha256": "a306ce15595756bb77e12d420d8570ca3d5561e58c8caf580fe90c542c145fb5"
+  }
+}

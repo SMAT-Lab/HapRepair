@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-118",
+  "category": "performance",
+  "finding": {
+    "column": 3,
+    "end_column": 3,
+    "end_line": 27,
+    "line": 27,
+    "message": "Remove unchanged state variables",
+    "relative_path": "entry/src/main/ets/pages/ArkUI/moveList.ets",
+    "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-remove-unchanged-state-var.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "d18576262ec84f1e78c8641f0b6a9daf62881bc9d9111a380628d71217aa4614",
+    "path": "source_files/d18576262ec84f1e78c8641f0b6a9daf62881bc9d9111a380628d71217aa4614.json",
+    "sha256": "db6d2bf7e264566d0ffb91308c4a8bd245cb6461ae896242a2ddabd9289bd3b4"
+  }
+}

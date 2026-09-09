@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-027",
+  "category": "performance",
+  "rule": "@performance/waterflow-data-preload-check",
+  "rule_description": "建议对waterflow子组件进行数据预加载。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/waterflow_preload_case.ets",
+      "line": 34,
+      "column": 5,
+      "severity": "suggestion",
+      "message": "Preload data in the WaterFlow component for better scrolling experience.",
+      "rule": "@performance/waterflow-data-preload-check"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/waterflow_preload_case.ets",
+      "content": "class PhotoDataSource implements IDataSource {\n  private items: number[] = [1, 2, 3, 4, 5, 6];\n  private listeners: DataChangeListener[] = [];\n\n  totalCount(): number { return this.items.length; }\n  getData(index: number): number { return this.items[index]; }\n\n  registerDataChangeListener(listener: DataChangeListener): void {\n    this.listeners.push(listener);\n  }\n\n  unregisterDataChangeListener(listener: DataChangeListener): void {\n    const index: number = this.listeners.indexOf(listener);\n    if (index >= 0) {\n      this.listeners.splice(index, 1);\n    }\n  }\n\n  addLastItem(): void {\n    const index: number = this.items.length;\n    this.items.push(index + 1);\n    this.listeners.forEach((listener: DataChangeListener) => {\n      listener.onDataAdd(index);\n    });\n  }\n}\n\n@Entry\n@Component\nstruct PhotoWaterFlow {\n  private dataSource: PhotoDataSource = new PhotoDataSource();\n\n  build() {\n    WaterFlow() {\n      LazyForEach(this.dataSource, (item: number) => {\n        FlowItem() {\n          Text(`Photo ${item}`)\n        }\n      }, (item: number) => item.toString())\n    }\n    .cachedCount(4)\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/waterflow_preload_case.ets",
+      "content": "class PhotoDataSource implements IDataSource {\n  private items: number[] = [1, 2, 3, 4, 5, 6];\n  private listeners: DataChangeListener[] = [];\n\n  totalCount(): number { return this.items.length; }\n  getData(index: number): number { return this.items[index]; }\n\n  registerDataChangeListener(listener: DataChangeListener): void {\n    this.listeners.push(listener);\n  }\n\n  unregisterDataChangeListener(listener: DataChangeListener): void {\n    const index: number = this.listeners.indexOf(listener);\n    if (index >= 0) {\n      this.listeners.splice(index, 1);\n    }\n  }\n\n  addLastItem(): void {\n    const index: number = this.items.length;\n    this.items.push(index + 1);\n    this.listeners.forEach((listener: DataChangeListener) => {\n      listener.onDataAdd(index);\n    });\n  }\n}\n\n@Entry\n@Component\nstruct PhotoWaterFlow {\n  private dataSource: PhotoDataSource = new PhotoDataSource();\n\n  build() {\n    WaterFlow() {\n      LazyForEach(this.dataSource, (item: number) => {\n        FlowItem() {\n          Text(`Photo ${item}`)\n        }\n        .onAppear(() => {\n          if (item + 2 === this.dataSource.totalCount()) {\n            this.dataSource.addLastItem();\n          }\n        })\n      }, (item: number) => item.toString())\n    }\n    .cachedCount(4)\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/waterflow_preload_case.ets",
+      "content": "class PhotoDataSource implements IDataSource {\n  private items: number[] = [1, 2, 3, 4, 5, 6];\n  private listeners: DataChangeListener[] = [];\n\n  totalCount(): number { return this.items.length; }\n  getData(index: number): number { return this.items[index]; }\n\n  registerDataChangeListener(listener: DataChangeListener): void {\n    this.listeners.push(listener);\n  }\n\n  unregisterDataChangeListener(listener: DataChangeListener): void {\n    const index: number = this.listeners.indexOf(listener);\n    if (index >= 0) {\n      this.listeners.splice(index, 1);\n    }\n  }\n\n  addLastItem(): void {\n    const index: number = this.items.length;\n    this.items.push(index + 1);\n    this.listeners.forEach((listener: DataChangeListener) => {\n      listener.onDataAdd(index);\n    });\n  }\n}\n\n@Entry\n@Component\nstruct PhotoWaterFlow {\n  private dataSource: PhotoDataSource = new PhotoDataSource();\n\n  build() {\n    WaterFlow() {\n      LazyForEach(this.dataSource, (item: number) => {\n        FlowItem() {\n          Text(`Photo ${item}`)\n        }\n        .onAppear(() => {\n          if (item + 2 == this.dataSource.totalCount()) {\n            this.dataSource.addLastItem();\n          }\n        })\n      }, (item: number) => item.toString())\n    }\n    .cachedCount(4)\n  }\n}\n"
+    }
+  ]
+}

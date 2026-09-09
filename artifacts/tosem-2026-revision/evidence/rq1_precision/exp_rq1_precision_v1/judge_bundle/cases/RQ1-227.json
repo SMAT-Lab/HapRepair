@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-227",
+  "category": "security",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 7,
+    "line": 7,
+    "message": "Dependency cycle detected: flutter/src/main/ets/util/MessageChannelUtils.ets -> flutter/src/main/ets/plugin/common/BasicMessageChannel.ets -> flutter/src/main/ets/util/MessageChannelUtils.ets",
+    "relative_path": "flutter/src/main/ets/util/MessageChannelUtils.ets",
+    "rule": "@security/no-cycle",
+    "severity": "warn"
+  },
+  "rule": "@security/no-cycle",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-cycle.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "0b2d767353ddd6c5d825a70870c897bccbe0456112ee50dd555cc0e40abe5c50",
+    "path": "source_files/0b2d767353ddd6c5d825a70870c897bccbe0456112ee50dd555cc0e40abe5c50.json",
+    "sha256": "e86274584521688e426a4707242aab7f2160ec17f4c6698699b53a1597042d4e"
+  }
+}

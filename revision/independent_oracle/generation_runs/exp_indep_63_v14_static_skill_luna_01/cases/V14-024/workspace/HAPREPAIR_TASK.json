@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-024",
+  "target_rule": "@security/no-unsafe-rsa-key",
+  "codelinter_rule": "@security/no-unsafe-rsa-key",
+  "rule_description": "RSA 密钥长度必须不小于 2048 bit。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_rsa_key_case.ets",
+      "line": 3,
+      "column": 66,
+      "severity": "error",
+      "message": "Use unsafe RSA key.",
+      "rule": "@security/no-unsafe-rsa-key"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/unsafe_rsa_key_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

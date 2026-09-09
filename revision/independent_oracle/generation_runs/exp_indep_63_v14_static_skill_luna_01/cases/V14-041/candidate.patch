@@ -1,0 +1,16 @@
+--- a/entry/src/main/ets/cases/local_state_calculation_case.ets
++++ b/entry/src/main/ets/cases/local_state_calculation_case.ets
+@@ -4,9 +4,10 @@
+   @State payable: number = 0;
+ 
+   recalculate(subtotal: number, deliveryFee: number, discount: number): void {
+-    this.payable = subtotal;
+-    this.payable += deliveryFee;
+-    this.payable -= discount;
++    let payable = subtotal;
++    payable += deliveryFee;
++    payable -= discount;
++    this.payable = payable;
+   }
+ 
+   build() {

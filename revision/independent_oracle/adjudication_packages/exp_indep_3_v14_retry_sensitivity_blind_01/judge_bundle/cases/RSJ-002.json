@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "RSJ-002",
+  "category": "performance",
+  "rule": "@performance/hp-arkui-combine-same-arg-animateto",
+  "rule_description": "建议动画参数相同时使用同一个animateTo",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/combine_animate_to_case.ets",
+      "line": 24,
+      "column": 9,
+      "severity": "warn",
+      "message": "Combine animateTo calls that share the same parameters",
+      "rule": "@performance/hp-arkui-combine-same-arg-animateto"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/combine_animate_to_case.ets",
+      "content": "@Entry\n@Component\nstruct DualAnimationPanel {\n  @State panelWidth: number = 160;\n  @State panelColor: Color = Color.Blue;\n\n  resize(): void {\n    animateTo({ curve: Curve.Ease, duration: 600 }, () => {\n      this.panelWidth = 240;\n    });\n  }\n\n  recolor(): void {\n    animateTo({ curve: Curve.Ease, duration: 600 }, () => {\n      this.panelColor = Color.Green;\n    });\n  }\n\n  build() {\n    Button('Animate')\n      .width(this.panelWidth)\n      .backgroundColor(this.panelColor)\n      .onClick(() => {\n        this.resize();\n        this.recolor();\n      })\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/combine_animate_to_case.ets",
+      "content": "@Entry\n@Component\nstruct DualAnimationPanel {\n  @State panelWidth: number = 160;\n  @State panelColor: Color = Color.Blue;\n\n  animatePanel(): void {\n    animateTo({ curve: Curve.Ease, duration: 600 }, () => {\n      this.panelWidth = 240;\n      this.panelColor = Color.Green;\n    });\n  }\n\n  build() {\n    Button('Animate')\n      .width(this.panelWidth)\n      .backgroundColor(this.panelColor)\n      .onClick(() => {\n        this.animatePanel();\n      })\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/combine_animate_to_case.ets",
+      "content": "@Entry\n@Component\nstruct DualAnimationPanel {\n  @State panelWidth: number = 160;\n  @State panelColor: Color = Color.Blue;\n\n  resize(): void {\n    this.panelWidth = 240;\n  }\n\n  recolor(): void {\n    this.panelColor = Color.Green;\n  }\n\n  animatePanelChanges(): void {\n    animateTo({ curve: Curve.Ease, duration: 600 }, () => {\n      this.resize();\n      this.recolor();\n    });\n  }\n\n  build() {\n    Button('Animate')\n      .width(this.panelWidth)\n      .backgroundColor(this.panelColor)\n      .onClick(() => {\n        this.animatePanelChanges();\n      })\n  }\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-009",
+  "category": "performance",
+  "rule": "@performance/hp-arkui-load-on-demand",
+  "rule_description": "建议使用按需加载。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/load_on_demand_case.ets",
+      "line": 29,
+      "column": 7,
+      "severity": "warn",
+      "message": "Use LazyForEach when appropriate",
+      "rule": "@performance/hp-arkui-load-on-demand"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/load_on_demand_case.ets",
+      "content": "@Entry\n@Component\nstruct ServiceAlertInbox {\n  private alerts: string[] = [\n    'payment-latency',\n    'search-timeout',\n    'image-backlog',\n    'quota-warning',\n    'sync-delayed',\n    'cache-pressure',\n    'auth-retry',\n    'storage-near-limit',\n    'worker-stalled',\n    'network-jitter',\n    'upload-paused',\n    'download-slow',\n    'index-rebuilding',\n    'replica-lag',\n    'queue-depth-high',\n    'certificate-expiring',\n    'clock-drift',\n    'memory-pressure',\n    'cpu-saturation',\n    'service-degraded'\n  ];\n\n  build() {\n    List({ space: 6 }) {\n      ForEach(this.alerts, (alert: string) => {\n        ListItem() {\n          Row({ space: 8 }) {\n            Text('!').fontColor(Color.Red)\n            Text(alert)\n          }\n        }\n      }, (alert: string) => alert)\n    }\n    .width('92%')\n    .height(360)\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/load_on_demand_case.ets",
+      "content": "@Entry\n@Component\nstruct ServiceAlertInbox {\n  private alerts: string[] = [\n    'payment-latency',\n    'search-timeout',\n    'image-backlog',\n    'quota-warning',\n    'sync-delayed',\n    'cache-pressure',\n    'auth-retry',\n    'storage-near-limit',\n    'worker-stalled',\n    'network-jitter',\n    'upload-paused',\n    'download-slow',\n    'index-rebuilding',\n    'replica-lag',\n    'queue-depth-high',\n    'certificate-expiring',\n    'clock-drift',\n    'memory-pressure',\n    'cpu-saturation',\n    'service-degraded'\n  ];\n\n  build() {\n    List({ space: 6 }) {\n      LazyForEach(this.alerts, (alert: string) => {\n        ListItem() {\n          Row({ space: 8 }) {\n            Text('!').fontColor(Color.Red)\n            Text(alert)\n          }\n        }\n      }, (alert: string) => alert)\n    }\n    .width('92%')\n    .height(360)\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/load_on_demand_case.ets",
+      "content": "class AlertDataSource implements IDataSource {\n  private items: string[]\n  private listeners: DataChangeListener[] = []\n\n  constructor(items: string[]) {\n    this.items = items\n  }\n\n  totalCount(): number {\n    return this.items.length\n  }\n\n  getData(index: number): string {\n    return this.items[index]\n  }\n\n  registerDataChangeListener(listener: DataChangeListener): void {\n    if (this.listeners.indexOf(listener) < 0) {\n      this.listeners.push(listener)\n    }\n  }\n\n  unregisterDataChangeListener(listener: DataChangeListener): void {\n    const index: number = this.listeners.indexOf(listener)\n    if (index >= 0) {\n      this.listeners.splice(index, 1)\n    }\n  }\n}\n\n@Entry\n@Component\nstruct ServiceAlertInbox {\n  private alerts: string[] = [\n    'payment-latency',\n    'search-timeout',\n    'image-backlog',\n    'quota-warning',\n    'sync-delayed',\n    'cache-pressure',\n    'auth-retry',\n    'storage-near-limit',\n    'worker-stalled',\n    'network-jitter',\n    'upload-paused',\n    'download-slow',\n    'index-rebuilding',\n    'replica-lag',\n    'queue-depth-high',\n    'certificate-expiring',\n    'clock-drift',\n    'memory-pressure',\n    'cpu-saturation',\n    'service-degraded'\n  ];\n  private alertDataSource: AlertDataSource = new AlertDataSource(this.alerts)\n\n  build() {\n    List({ space: 6 }) {\n      LazyForEach(this.alertDataSource, (alert: string) => {\n        ListItem() {\n          Row({ space: 8 }) {\n            Text('!').fontColor(Color.Red)\n            Text(alert)\n          }\n        }\n      }, (alert: string) => alert)\n    }\n    .width('92%')\n    .height(360)\n  }\n}\n"
+    }
+  ]
+}

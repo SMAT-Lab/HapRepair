@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "formal": true,
+  "run_id": "exp_loc_18_three_model_v1",
+  "model_requested": "gpt-5.6-sol",
+  "file": "entry/src/main/ets/MainAbility/pages/childrenMainSize/get.ets",
+  "source_sha256": "014aecc02c9d3eff0aa15f351c8ddf5e1fb48044fd29dd55e3b303443066f8c7",
+  "prompt_sha256": "6d3f4ecd08c074bcd220d3334b110b04770f020e198d579ec81bfc88bd98aae7",
+  "protocol_sha256": "baaf76932d8013e8eaa0b1f840fb4ba02e37412caef5f0e3bc4903a3e9b6bbeb",
+  "ground_truth_sha256": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3",
+  "started_at": "2026-08-07T14:07:49.428356+00:00",
+  "provider_route": {
+    "api_base_env": "OPENAI_API_BASE",
+    "api_key_env": "OPENAI_API_KEY",
+    "api_base_sha256": "0a2cad5028420559b4d734677727ec94f7edeabf6d6ca73df8ad4103695bf48d"
+  },
+  "status": "completed",
+  "model_reported": "gpt-5.6-sol",
+  "response_id": "resp_02f4332787636490016a75e6b608e08191a8b40b6e28c881cd",
+  "usage": {
+    "prompt_tokens": 841,
+    "completion_tokens": 49,
+    "total_tokens": 890
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": 200,
+      "elapsed_seconds": 4.274332687011338,
+      "result": "success"
+    }
+  ],
+  "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-remove-unchanged-state-var\",\"line\":19},{\"rule\":\"@performance/hp-arkui-remove-container-without-property\",\"line\":48}]}",
+  "predicted_defects": [
+    {
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "line": 19
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "line": 48
+    }
+  ],
+  "parse_ok": true,
+  "parse_error": null,
+  "raw_response": {
+    "id": "resp_02f4332787636490016a75e6b608e08191a8b40b6e28c881cd",
+    "object": "chat.completion",
+    "created": 1786111673,
+    "model": "gpt-5.6-sol",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-remove-unchanged-state-var\",\"line\":19},{\"rule\":\"@performance/hp-arkui-remove-container-without-property\",\"line\":48}]}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 841,
+      "completion_tokens": 49,
+      "total_tokens": 890
+    }
+  },
+  "completed_at": "2026-08-07T14:07:53.703271+00:00",
+  "elapsed_seconds": 4.274927977006882
+}

@@ -1,0 +1,40 @@
+{
+  "selected_rules": [
+    "@performance/hp-arkui-use-transition-to-replace-animateto"
+  ],
+  "consulted_specs": {
+    "@performance/hp-arkui-use-transition-to-replace-animateto": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md",
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/layout-animation-media.md"
+    ]
+  },
+  "consulted_guides": {},
+  "entity_repairs": [
+    {
+      "rule": "@performance/hp-arkui-use-transition-to-replace-animateto",
+      "relative_path": "entry/src/main/ets/cases/transition_animation_case.ets",
+      "locations": [
+        {
+          "line": 11,
+          "column": 11
+        }
+      ],
+      "entities": [
+        "FadingNotice.build conditional Saved notice and Toggle click handler"
+      ],
+      "invariants": [
+        "visible owns insertion and removal of the notice subtree",
+        "the 500 ms opacity animation and user-visible Saved literal are preserved",
+        "the toggle action preserves show/hide sequencing and transition lifecycle"
+      ],
+      "evidence": [
+        "The supplied source is the only project source file and has no external call sites or related animation implementation",
+        "visible is read only by the conditional render and mutated only by the button handler",
+        "noticeOpacity remains bound to the notice opacity and is initialized to 1"
+      ],
+      "transformation": "Kept the FadingNotice component and state declarations, attached TransitionEffect.OPACITY with duration 500 to the conditional Text, and replaced the imperative animateTo callback with a visible state toggle so insertion and removal drive the fade.",
+      "status": "repaired"
+    }
+  ],
+  "unresolved_external": []
+}

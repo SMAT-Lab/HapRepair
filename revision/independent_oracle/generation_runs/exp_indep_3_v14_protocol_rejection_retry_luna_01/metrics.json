@@ -1,0 +1,25 @@
+{
+  "run_id": "exp_indep_3_v14_protocol_rejection_retry_luna_01",
+  "status": "complete",
+  "prepared_case_count": 3,
+  "attempted_case_count": 3,
+  "accepted_candidate_count": 3,
+  "rejected_case_count": 0,
+  "pending_case_count": 0,
+  "one_request_per_attempted_case": true,
+  "dynamic_retrieval": false,
+  "homecheck_feedback": false,
+  "semantic_correctness_status": "not_adjudicated",
+  "usage": {
+    "input_tokens": 557774,
+    "cached_input_tokens": 463872,
+    "output_tokens": 10614,
+    "total_tokens": 568388
+  },
+  "wall_seconds_sum": 267.00663043199165,
+  "api_cost_usd": null,
+  "cost_note": "Provider billing is unavailable and is not inferred.",
+  "classification": "protocol-rejection retry sensitivity; not an API or endpoint retry",
+  "parent_run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "replace_parent_main_result": false
+}

@@ -1,0 +1,6 @@
+{
+  "content": "/*\n* Copyright (c) 2023 Hunan OpenValley Digital Industry Development Co., Ltd. All rights reserved.\n* Use of this source code is governed by a BSD-style license that can be\n* found in the LICENSE_KHZG file.\n*/\n\nimport BasicMessageChannel, { MessageHandler, Reply } from '../../../plugin/common/BasicMessageChannel';\nimport JSONMessageCodec from '../../../plugin/common/JSONMessageCodec';\nimport DartExecutor from '../dart/DartExecutor';\nimport Log from '../../../util/Log';\n\nconst TAG = \"TestChannel\"\n\nexport default class TestChannel {\n  private channel: BasicMessageChannel<String>;\n\n  constructor(dartExecutor: DartExecutor) {\n    this.channel = new BasicMessageChannel<String>(dartExecutor, \"flutter/test\", JSONMessageCodec.INSTANCE);\n    let callback = new MessageCallback();\n    this.channel.setMessageHandler(callback);\n  }\n}\n\nclass MessageCallback implements MessageHandler<string> {\n  onMessage(message: string, reply: Reply<string>) {\n    Log.d(TAG, \"receive msg = \" + message);\n    reply.reply(\"收到消息啦：\" + message);\n  }\n}",
+  "content_sha256": "824e79d091c70f66e2efbd4726d993f11d6384198e75e4e4918f409f53ef4706",
+  "relative_path": "flutter/src/main/ets/embedding/engine/systemchannels/TestChannel.ets",
+  "schema_version": 1
+}

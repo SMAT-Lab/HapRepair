@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-036",
+  "category": "performance",
+  "rule": "@performance/multiple-associations-state-var-check",
+  "rule_description": "多个组件关联同一数据时，建议在组件中使用@Watch装饰器添加更新条件，避免不必要的组件更新。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/multiple_state_association_case.ets",
+      "line": 9,
+      "column": 9,
+      "severity": "suggestion",
+      "message": "This data is associated with multiple components, you are advised to use the @Watch decorator to add update conditions to avoid unnecessary component update.",
+      "rule": "@performance/multiple-associations-state-var-check"
+    },
+    {
+      "file": "entry/src/main/ets/cases/multiple_state_association_case.ets",
+      "line": 15,
+      "column": 9,
+      "severity": "suggestion",
+      "message": "This data is associated with multiple components, you are advised to use the @Watch decorator to add update conditions to avoid unnecessary component update.",
+      "rule": "@performance/multiple-associations-state-var-check"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/multiple_state_association_case.ets",
+      "content": "@Observed\nclass DashboardTheme {\n  fontSize: number = 16;\n  fontColor: string = '#222222';\n}\n\n@Component\nstruct DashboardTitle {\n  @Link theme: DashboardTheme;\n  build() { Text('Title').fontSize(this.theme.fontSize) }\n}\n\n@Component\nstruct DashboardSubtitle {\n  @Link theme: DashboardTheme;\n  build() { Text('Subtitle').fontColor(this.theme.fontColor) }\n}\n\n@Entry\n@Component\nstruct DashboardPage {\n  @State theme: DashboardTheme = new DashboardTheme();\n  build() {\n    Column() {\n      DashboardTitle({ theme: this.theme })\n      DashboardSubtitle({ theme: this.theme })\n    }\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/multiple_state_association_case.ets",
+      "content": "@Observed\nclass DashboardTheme {\n  fontSize: number = 16;\n  fontColor: string = '#222222';\n}\n\n@Component\nstruct DashboardTitle {\n  @Link @Watch('syncTheme') theme: DashboardTheme;\n  @State fontSize: number = 16;\n  syncTheme(): void { this.fontSize = this.theme.fontSize; }\n  build() { Text('Title').fontSize(this.fontSize) }\n}\n\n@Component\nstruct DashboardSubtitle {\n  @Link @Watch('syncTheme') theme: DashboardTheme;\n  @State fontColor: string = '#222222';\n  syncTheme(): void { this.fontColor = this.theme.fontColor; }\n  build() { Text('Subtitle').fontColor(this.fontColor) }\n}\n\n@Entry\n@Component\nstruct DashboardPage {\n  @State theme: DashboardTheme = new DashboardTheme();\n  build() {\n    Column() {\n      DashboardTitle({ theme: this.theme })\n      DashboardSubtitle({ theme: this.theme })\n    }\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/multiple_state_association_case.ets",
+      "content": "@Observed\nclass DashboardTheme {\n  fontSize: number = 16;\n  fontColor: string = '#222222';\n}\n\n@Component\nstruct DashboardTitle {\n  @Link @Watch('onThemeChange') theme: DashboardTheme;\n  @State localFontSize: number = 16;\n\n  onThemeChange() {\n    if (this.localFontSize !== this.theme.fontSize) {\n      this.localFontSize = this.theme.fontSize;\n    }\n  }\n\n  build() { Text('Title').fontSize(this.localFontSize) }\n}\n\n@Component\nstruct DashboardSubtitle {\n  @Link @Watch('onThemeChange') theme: DashboardTheme;\n  @State localFontColor: string = '#222222';\n\n  onThemeChange() {\n    if (this.localFontColor !== this.theme.fontColor) {\n      this.localFontColor = this.theme.fontColor;\n    }\n  }\n\n  build() { Text('Subtitle').fontColor(this.localFontColor) }\n}\n\n@Entry\n@Component\nstruct DashboardPage {\n  @State theme: DashboardTheme = new DashboardTheme();\n  build() {\n    Column() {\n      DashboardTitle({ theme: this.theme })\n      DashboardSubtitle({ theme: this.theme })\n    }\n  }\n}\n"
+    }
+  ]
+}

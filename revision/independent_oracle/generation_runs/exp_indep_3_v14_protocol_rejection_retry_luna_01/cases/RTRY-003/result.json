@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14-REJECTION-RETRY-SENSITIVITY",
+  "run_id": "exp_indep_3_v14_protocol_rejection_retry_luna_01",
+  "case_id": "case_performance_avoid_overusing_custom_component_check",
+  "blind_id": "RTRY-003",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdc4e-23fa-7c61-a073-6ae5a5ca3f84",
+  "usage": {
+    "input_tokens": 195552,
+    "cached_input_tokens": 164608,
+    "output_tokens": 3434,
+    "total_tokens": 198986
+  },
+  "wall_seconds": 84.44774733899976,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 37,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"pwd && printf '%s\\\\n' '--- skill ---' && sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/SKILL.md && printf '%s\\\\n' '--- operations ---' && sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/references/operations.md && printf '%s\\\\n' '--- workspace files ---' && rg --files -g 'HAPREPAIR_TASK.json' -g '*.ets' -g '*.ts' -g '*.json' -g '*.js' -g '*.md' /workspace | sed -n '1,240p'\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- skill candidates ---' && find /codex-home /workspace -path '*/haprepair-openharmony-repair/SKILL.md' -o -name 'HAPREPAIR_TASK.json' 2>/dev/null && printf '%s\\\\n' '--- top-level workspace ---' && find /workspace -maxdepth 3 -type f -print | sort | sed -n '1,240p'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"wc -l /codex-home/skills/haprepair-openharmony-repair/SKILL.md /codex-home/skills/haprepair-openharmony-repair/references/operations.md && sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md && printf '%s\\\\n' '--- operations ---' && sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- task ---' && sed -n '1,260p' /workspace/HAPREPAIR_TASK.json && printf '%s\\\\n' '--- all workspace files ---' && rg --files -uu /workspace | sort | sed -n '1,320p'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/avoid_custom_component_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -i --glob '*.md' --glob '*.json' 'avoid-overusing-custom-component|overusing.*custom|custom component' /codex-home/skills/haprepair-openharmony-repair | sed -n '1,240p'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /codex-home/skills/haprepair-openharmony-repair -maxdepth 4 -type f -print | sort | sed -n '1,320p'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md && printf '%s\\\\n' '--- collections-reuse ---' && sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/collections-reuse.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--avoid-overusing-custom-component-check.md && printf '%s\\\\n' '--- rule manifest entry ---' && rg -n -C 8 'avoid-overusing-custom-component-check' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n 'StatusChip|StatusBoard|avoid_custom_component_case|labels' /workspace -uu\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/cases/avoid_custom_component_case.ets && printf '%s\\\\n' '--- declarations/call sites ---' && rg -n '@Builder|@Component|StatusChip|ForEach' entry/src/main/ets/cases/avoid_custom_component_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git diff --check && git diff -- entry/src/main/ets/cases/avoid_custom_component_case.ets'",
+      "exit_code": 129,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git status --short'",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "422b6311290ee2ee086d0bf7764b35b7b343d9b0994dd598f618040fa5c5ccb8",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/avoid_custom_component_case.ets",
+      "sha256": "38ea9eb4b0b3504fc070b2c57cebda1473692522cf2a658d7ab539df4dea2d16",
+      "size_bytes": 467,
+      "content": "@Builder\nfunction StatusChipBuilder(label: string) {\n  Text(label)\n    .padding(6)\n    .backgroundColor(Color.Gray)\n}\n\n@Component\nstruct StatusChip {\n  @Prop label: string;\n\n  build() {\n    StatusChipBuilder(this.label)\n  }\n}\n\n@Entry\n@Component\nstruct StatusBoard {\n  private labels: string[] = ['Ready', 'Busy'];\n\n  build() {\n    Row() {\n      ForEach(this.labels, (label: string) => {\n        StatusChipBuilder(label)\n      }, (label: string) => label)\n    }\n  }\n}\n"
+    }
+  ],
+  "trace_sha256": "e2e92b50030a1eb0739b1aa05414a6feaeb9cda6e04941195691bf5e689ade3a",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T13:00:19.568368+00:00",
+  "rejection_reasons": []
+}

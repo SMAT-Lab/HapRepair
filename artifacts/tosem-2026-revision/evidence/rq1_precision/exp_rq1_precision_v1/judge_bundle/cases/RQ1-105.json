@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-105",
+  "category": "performance",
+  "finding": {
+    "column": 5,
+    "end_column": 5,
+    "end_line": 57,
+    "line": 57,
+    "message": "Avoid redundant nesting",
+    "relative_path": "entry/src/main/ets/pages/collect/collected.ets",
+    "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/layout-animation-media.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-remove-redundant-nest-container.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "aa8ad56aa79fbd5f3ab798287b2fa2857ea8a2a80c232728707ba77fb349393e",
+    "path": "source_files/aa8ad56aa79fbd5f3ab798287b2fa2857ea8a2a80c232728707ba77fb349393e.json",
+    "sha256": "837ffb13a972327839deced01ec632a47b068aaeeeeaebf3f5ccad4be27992ab"
+  }
+}

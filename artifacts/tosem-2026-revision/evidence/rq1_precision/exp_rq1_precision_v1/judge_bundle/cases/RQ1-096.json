@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-096",
+  "category": "performance",
+  "finding": {
+    "column": 5,
+    "end_column": 5,
+    "end_line": 430,
+    "line": 430,
+    "message": "Preload data in the WaterFlow component for better scrolling experience.",
+    "relative_path": "entry/src/main/ets/pages/example/ImageExample100.ets",
+    "rule": "@performance/waterflow-data-preload-check",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/waterflow-data-preload-check",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/collections-reuse.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--waterflow-data-preload-check.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "7b7fb595d029cfa9ff9a6aba585279f850be90848d352860f5d6a613426be8a7",
+    "path": "source_files/7b7fb595d029cfa9ff9a6aba585279f850be90848d352860f5d6a613426be8a7.json",
+    "sha256": "71ec1c5c27daccd86842db6cc9bf205c30c23d94962f699aa8f3a1c5c4860a18"
+  }
+}

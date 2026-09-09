@@ -1,0 +1,1864 @@
+{
+  "case_count": 231,
+  "case_files": [
+    {
+      "blind_id": "RQ1-001",
+      "category": "security",
+      "order": 1,
+      "path": "cases/RQ1-001.json",
+      "rule": "@security/no-cycle",
+      "sha256": "16225ee184b5c23b281434b97c9a5146a8d37dcb2fb61f0efeb2d7a7be11ad93"
+    },
+    {
+      "blind_id": "RQ1-002",
+      "category": "performance",
+      "order": 2,
+      "path": "cases/RQ1-002.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "b036ab63780dd7d86f9b06124422ccaf48de358eb85046a1ca3c1ae5340366aa"
+    },
+    {
+      "blind_id": "RQ1-003",
+      "category": "performance",
+      "order": 3,
+      "path": "cases/RQ1-003.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "b690454caeeaa42b25519042a6c4f8bcfe6696ad491f6ce33803f1cd536f67fc"
+    },
+    {
+      "blind_id": "RQ1-004",
+      "category": "performance",
+      "order": 4,
+      "path": "cases/RQ1-004.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "0c28f512e476f7b162d6f8dcdb04dbb6f7b203a543232142954b3bc6f16d62f0"
+    },
+    {
+      "blind_id": "RQ1-005",
+      "category": "security",
+      "order": 5,
+      "path": "cases/RQ1-005.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "b7af9905806d9529cd38c10d30d6d065bf66a99a978f59b1d530c9e463702275"
+    },
+    {
+      "blind_id": "RQ1-006",
+      "category": "security",
+      "order": 6,
+      "path": "cases/RQ1-006.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "aa15288af388a0bf19e6f6d00c8476006a3e0c75250e47206b2a9aa9ccaf0a47"
+    },
+    {
+      "blind_id": "RQ1-007",
+      "category": "performance",
+      "order": 7,
+      "path": "cases/RQ1-007.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "e29ef95e55f5926335ad4eea61c028c91f804dcab7b156786fd768e9e7400fab"
+    },
+    {
+      "blind_id": "RQ1-008",
+      "category": "performance",
+      "order": 8,
+      "path": "cases/RQ1-008.json",
+      "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+      "sha256": "ff0713684af01e7d8ecaa785e1138b2220a698a83d6b21bbd9e28fb2969be198"
+    },
+    {
+      "blind_id": "RQ1-009",
+      "category": "security",
+      "order": 9,
+      "path": "cases/RQ1-009.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "f11eb2ea841a0fba0b0c07d1fe295acc380443663e2a79c77dfa8917ebd75baa"
+    },
+    {
+      "blind_id": "RQ1-010",
+      "category": "performance",
+      "order": 10,
+      "path": "cases/RQ1-010.json",
+      "rule": "@performance/foreach-args-check",
+      "sha256": "1df7f2a5d25808abb26de77cdfbc7651a44a58c37d7375cf9c5b6e487af8916f"
+    },
+    {
+      "blind_id": "RQ1-011",
+      "category": "performance",
+      "order": 11,
+      "path": "cases/RQ1-011.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "6a9717bd4d81520a10dd42f825008474b1a2940389ac8c792d8a7dda8a23e62e"
+    },
+    {
+      "blind_id": "RQ1-012",
+      "category": "performance",
+      "order": 12,
+      "path": "cases/RQ1-012.json",
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "sha256": "8400dd06669e58799ff68a32f0d5de8a8e0ca8cc9c2ca74d99aad79dd5e43c68"
+    },
+    {
+      "blind_id": "RQ1-013",
+      "category": "performance",
+      "order": 13,
+      "path": "cases/RQ1-013.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "6211456473b0fa6ca59e278c7cb622a397b965fefe4a3fc137f19c31b9312c11"
+    },
+    {
+      "blind_id": "RQ1-014",
+      "category": "performance",
+      "order": 14,
+      "path": "cases/RQ1-014.json",
+      "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+      "sha256": "1589511fa0d30167bc9e66e8df0399bb4db6d75e9bbaad6633dd9a0fb96d1dea"
+    },
+    {
+      "blind_id": "RQ1-015",
+      "category": "performance",
+      "order": 15,
+      "path": "cases/RQ1-015.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "fb9ea8f4b545b2483c29d66720f364dc85311d4fa8bb3f12acecd211e9cf177a"
+    },
+    {
+      "blind_id": "RQ1-016",
+      "category": "performance",
+      "order": 16,
+      "path": "cases/RQ1-016.json",
+      "rule": "@performance/hp-arkui-use-transition-to-replace-animateto",
+      "sha256": "7861cbf61c3d3ae8d04a9920cddeaae9e0f2078667f858de08081aa50a675ffe"
+    },
+    {
+      "blind_id": "RQ1-017",
+      "category": "performance",
+      "order": 17,
+      "path": "cases/RQ1-017.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "ce06be538df51daeb61e7c44c73ac2089d9964b1569bb3cb2e65f6ad65df4613"
+    },
+    {
+      "blind_id": "RQ1-018",
+      "category": "performance",
+      "order": 18,
+      "path": "cases/RQ1-018.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "0ae1662185f312c035d80fd3a2fda501f8466ebdf76426257796ec923b8d9a31"
+    },
+    {
+      "blind_id": "RQ1-019",
+      "category": "performance",
+      "order": 19,
+      "path": "cases/RQ1-019.json",
+      "rule": "@performance/hp-arkui-avoid-empty-callback",
+      "sha256": "9d7362df1d8cb7208d1909bee23a0afa0bc8f779a5b68f67f364c1e289dad97f"
+    },
+    {
+      "blind_id": "RQ1-020",
+      "category": "performance",
+      "order": 20,
+      "path": "cases/RQ1-020.json",
+      "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+      "sha256": "3f7033ba7e46a108a9d64ce0609dc99cdc130457321a6276172fd830743058d9"
+    },
+    {
+      "blind_id": "RQ1-021",
+      "category": "performance",
+      "order": 21,
+      "path": "cases/RQ1-021.json",
+      "rule": "@performance/hp-arkui-use-word-break-to-replace-zero-width-space",
+      "sha256": "7691d400d18a44daa40f453a42c9dbcb102f417b96882222883de9f9e9d551ef"
+    },
+    {
+      "blind_id": "RQ1-022",
+      "category": "performance",
+      "order": 22,
+      "path": "cases/RQ1-022.json",
+      "rule": "@performance/avoid-overusing-custom-component-check",
+      "sha256": "065746f51f8a43f59a4321e189e7c95588101d608d75abed185ebef0e9d33ed8"
+    },
+    {
+      "blind_id": "RQ1-023",
+      "category": "security",
+      "order": 23,
+      "path": "cases/RQ1-023.json",
+      "rule": "@security/no-cycle",
+      "sha256": "20cec69ab8e81abcbe7961d4fac128aeaee7ef9726bc104809dd620bd5cba63d"
+    },
+    {
+      "blind_id": "RQ1-024",
+      "category": "security",
+      "order": 24,
+      "path": "cases/RQ1-024.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "cf328edbc4396cefefe4ddc3d630288f681b6872eb93929343a6a1853e0b2a74"
+    },
+    {
+      "blind_id": "RQ1-025",
+      "category": "performance",
+      "order": 25,
+      "path": "cases/RQ1-025.json",
+      "rule": "@performance/foreach-args-check",
+      "sha256": "c837b0f010c97ea1fa4f6fdc99817388f0440b4cc8925f9bfd848608227067f7"
+    },
+    {
+      "blind_id": "RQ1-026",
+      "category": "performance",
+      "order": 26,
+      "path": "cases/RQ1-026.json",
+      "rule": "@performance/foreach-args-check",
+      "sha256": "49396f368fdd6bf47c8773e027f0de934c25945454ed07fc71e9aa0004a0deef"
+    },
+    {
+      "blind_id": "RQ1-027",
+      "category": "performance",
+      "order": 27,
+      "path": "cases/RQ1-027.json",
+      "rule": "@performance/tabs-on-change-check",
+      "sha256": "5fe9686ab8ca7d6564b51e9ca6e0011f0ab3a1609634574fc64888e49de0fd07"
+    },
+    {
+      "blind_id": "RQ1-028",
+      "category": "performance",
+      "order": 28,
+      "path": "cases/RQ1-028.json",
+      "rule": "@performance/hp-arkui-use-reusable-component",
+      "sha256": "fbf31398e83cac34133712d43f75e34041da2b5a304f4f28417124cbd4d5c312"
+    },
+    {
+      "blind_id": "RQ1-029",
+      "category": "performance",
+      "order": 29,
+      "path": "cases/RQ1-029.json",
+      "rule": "@performance/high-frequency-log-check",
+      "sha256": "2688941d212704c85ee27b44072305f8cd92e2303d455916a8f28b33cac5d6b9"
+    },
+    {
+      "blind_id": "RQ1-030",
+      "category": "performance",
+      "order": 30,
+      "path": "cases/RQ1-030.json",
+      "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+      "sha256": "4a18e9c46fcb10c41a8120f589b29ef15bcec12edac7f4f9344543b8086fd224"
+    },
+    {
+      "blind_id": "RQ1-031",
+      "category": "security",
+      "order": 31,
+      "path": "cases/RQ1-031.json",
+      "rule": "@security/no-cycle",
+      "sha256": "37d7c6791240086f3aca883a99b78c1e3c4d3a71f6c1c1718b0dc6d2a5a7b7fe"
+    },
+    {
+      "blind_id": "RQ1-032",
+      "category": "performance",
+      "order": 32,
+      "path": "cases/RQ1-032.json",
+      "rule": "@performance/hp-arkui-avoid-empty-callback",
+      "sha256": "0970c1e5b97750f5a81fbe404e7e4d6840d51c65baadb2a5c37eaf76be237ff3"
+    },
+    {
+      "blind_id": "RQ1-033",
+      "category": "performance",
+      "order": 33,
+      "path": "cases/RQ1-033.json",
+      "rule": "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload",
+      "sha256": "40bc4fa4cf18d130cf3d266e41db975e9838c5dd69e533b101ba7eb04d0dc87c"
+    },
+    {
+      "blind_id": "RQ1-034",
+      "category": "security",
+      "order": 34,
+      "path": "cases/RQ1-034.json",
+      "rule": "@security/no-unsafe-hash",
+      "sha256": "b619c8c5a022710a760f4130180270cf56b75090689110d33553092b14fc63a7"
+    },
+    {
+      "blind_id": "RQ1-035",
+      "category": "performance",
+      "order": 35,
+      "path": "cases/RQ1-035.json",
+      "rule": "@performance/hp-arkui-use-id-in-get-resource-sync-api",
+      "sha256": "36a846bf1ecbe26627cf8e2c10b92d9212507a29f5c3833c2b3450953e5baf21"
+    },
+    {
+      "blind_id": "RQ1-036",
+      "category": "performance",
+      "order": 36,
+      "path": "cases/RQ1-036.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "d4272306451f695388d572cbe0382e4ecaff206ea8f75b0416cc46311654c9a3"
+    },
+    {
+      "blind_id": "RQ1-037",
+      "category": "performance",
+      "order": 37,
+      "path": "cases/RQ1-037.json",
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "sha256": "3e55e87dd574f88995990b22ce76b5757cb1f7bdd029a2621996ab62ffcf1aed"
+    },
+    {
+      "blind_id": "RQ1-038",
+      "category": "performance",
+      "order": 38,
+      "path": "cases/RQ1-038.json",
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "sha256": "f6d88f479ea690eddf29248544f85f171f6f67582def31447f50757eea983cb3"
+    },
+    {
+      "blind_id": "RQ1-039",
+      "category": "security",
+      "order": 39,
+      "path": "cases/RQ1-039.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "217bb64a76e2ef2d33cb1f57c8e68d8378a8c7d27d3498a560d0bc66778516b5"
+    },
+    {
+      "blind_id": "RQ1-040",
+      "category": "performance",
+      "order": 40,
+      "path": "cases/RQ1-040.json",
+      "rule": "@performance/monitor-invisible-area-in-image-animation",
+      "sha256": "cac2c99f59bcab89dc5660d3274c087aec9b2c01024e3b643ec9997e62e3a4ee"
+    },
+    {
+      "blind_id": "RQ1-041",
+      "category": "performance",
+      "order": 41,
+      "path": "cases/RQ1-041.json",
+      "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+      "sha256": "09c2cb9111a7a378236a169697f91e5d0ac7c461779916ff2b9156aacfe36a2e"
+    },
+    {
+      "blind_id": "RQ1-042",
+      "category": "performance",
+      "order": 42,
+      "path": "cases/RQ1-042.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "78b144a6ff525bac20351330dff1794e9aa2e4e54c16e1379016958167546e1a"
+    },
+    {
+      "blind_id": "RQ1-043",
+      "category": "security",
+      "order": 43,
+      "path": "cases/RQ1-043.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "c73e4b9333e246487d93895584619fbbf3ca4663eaaeef1b1f27193b7b97bea0"
+    },
+    {
+      "blind_id": "RQ1-044",
+      "category": "performance",
+      "order": 44,
+      "path": "cases/RQ1-044.json",
+      "rule": "@performance/hp-arkui-use-transition-to-replace-animateto",
+      "sha256": "4ef73594289c5223dc4ed67133c63da8af8177c40bf628e3680535ef095f2fb6"
+    },
+    {
+      "blind_id": "RQ1-045",
+      "category": "security",
+      "order": 45,
+      "path": "cases/RQ1-045.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "e905f91155f91045efdcba243d4ba22f9451b9192d81fb5a3840649e4c5edf6f"
+    },
+    {
+      "blind_id": "RQ1-046",
+      "category": "performance",
+      "order": 46,
+      "path": "cases/RQ1-046.json",
+      "rule": "@performance/js-code-cache-by-precompile-check",
+      "sha256": "b525fe562c4e05ad3a1c998f9f337e6bbd30c63269c7d5eb81a371d6bcbe501a"
+    },
+    {
+      "blind_id": "RQ1-047",
+      "category": "security",
+      "order": 47,
+      "path": "cases/RQ1-047.json",
+      "rule": "@security/no-cycle",
+      "sha256": "ea56c28f4c7119291c8799d63cf3c31626c3e6074ad8a2ca9185b27a3d99e916"
+    },
+    {
+      "blind_id": "RQ1-048",
+      "category": "performance",
+      "order": 48,
+      "path": "cases/RQ1-048.json",
+      "rule": "@performance/high-frequency-log-check",
+      "sha256": "b09ce62674751e1c5b95f2793155870fb93a0d87fa58a9e9d4aac1e3140f9d75"
+    },
+    {
+      "blind_id": "RQ1-049",
+      "category": "security",
+      "order": 49,
+      "path": "cases/RQ1-049.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "d22135126686e47d04592ac83ba0b2c3c967536b9f582562843c175fa6e059ad"
+    },
+    {
+      "blind_id": "RQ1-050",
+      "category": "performance",
+      "order": 50,
+      "path": "cases/RQ1-050.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "4f83dfea8a9e669863dee2049ac281deebb4ff6ab5dbb167044924cfa6600885"
+    },
+    {
+      "blind_id": "RQ1-051",
+      "category": "performance",
+      "order": 51,
+      "path": "cases/RQ1-051.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "821c5b281c4e6d383721fa17fc07793617e26ebbee4b1cfa5ee6fde1682e1d55"
+    },
+    {
+      "blind_id": "RQ1-052",
+      "category": "security",
+      "order": 52,
+      "path": "cases/RQ1-052.json",
+      "rule": "@security/no-cycle",
+      "sha256": "b442d38d0c71200480464893d6aeb2eae5f021a2c7d85feec058a580fc1f4206"
+    },
+    {
+      "blind_id": "RQ1-053",
+      "category": "performance",
+      "order": 53,
+      "path": "cases/RQ1-053.json",
+      "rule": "@performance/hp-arkui-use-taskpool-for-web-request",
+      "sha256": "2d8e7f8fa5bfacdca69943b2222d8ef07a0cb984c4da4eda45dd0f8e42df4b58"
+    },
+    {
+      "blind_id": "RQ1-054",
+      "category": "performance",
+      "order": 54,
+      "path": "cases/RQ1-054.json",
+      "rule": "@performance/dark-color-mode-check",
+      "sha256": "fa8bfb49fd9e97e8c6575bc79e40f6ad7415635f53ed1887a23c3c417fb727bb"
+    },
+    {
+      "blind_id": "RQ1-055",
+      "category": "performance",
+      "order": 55,
+      "path": "cases/RQ1-055.json",
+      "rule": "@performance/multiple-associations-state-var-check",
+      "sha256": "9ff9866730799cc939de1396cd2ad32035b531687bb5239bd92cd4c3344099a4"
+    },
+    {
+      "blind_id": "RQ1-056",
+      "category": "security",
+      "order": 56,
+      "path": "cases/RQ1-056.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "72881c4987f8acebd7f4c65a0bb2b97061a99716ea1d0b46240f3a5b99f193c0"
+    },
+    {
+      "blind_id": "RQ1-057",
+      "category": "performance",
+      "order": 57,
+      "path": "cases/RQ1-057.json",
+      "rule": "@performance/hp-arkui-image-async-load",
+      "sha256": "997e093e0c3ae9dc29b6696eb3a7c5bf990b7e2021dbb647635197249ae852ea"
+    },
+    {
+      "blind_id": "RQ1-058",
+      "category": "security",
+      "order": 58,
+      "path": "cases/RQ1-058.json",
+      "rule": "@security/no-cycle",
+      "sha256": "6e54f2eb5fea589b73b24e293e996da91770ee5df7490ed22a460e26a20280f3"
+    },
+    {
+      "blind_id": "RQ1-059",
+      "category": "security",
+      "order": 59,
+      "path": "cases/RQ1-059.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "9b1e63ae2c73aa83c2d58e59c85a1cca92541fa1f20f2bb35cff7c2c0af20708"
+    },
+    {
+      "blind_id": "RQ1-060",
+      "category": "security",
+      "order": 60,
+      "path": "cases/RQ1-060.json",
+      "rule": "@security/no-cycle",
+      "sha256": "1cc0a1880d80efa31f67f9011d319da208eb4907b4368ce0542880083c8702e2"
+    },
+    {
+      "blind_id": "RQ1-061",
+      "category": "security",
+      "order": 61,
+      "path": "cases/RQ1-061.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "53a49e88499f1421ff76870262353dc3045f61e1af68da461b24343b82ed87c7"
+    },
+    {
+      "blind_id": "RQ1-062",
+      "category": "security",
+      "order": 62,
+      "path": "cases/RQ1-062.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "da6876ae90c35bdf1624d6fa7d540ff56deec638583c9959e7a94bf1572363bb"
+    },
+    {
+      "blind_id": "RQ1-063",
+      "category": "performance",
+      "order": 63,
+      "path": "cases/RQ1-063.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "c435128ff96e6ef9209767e2b0cc30b9d66d1ec7408887749637c9274308f91f"
+    },
+    {
+      "blind_id": "RQ1-064",
+      "category": "performance",
+      "order": 64,
+      "path": "cases/RQ1-064.json",
+      "rule": "@performance/foreach-args-check",
+      "sha256": "bc01fecf87143f72a4e30fd254ba4d330b98232047f205e698687e7d7504bc5f"
+    },
+    {
+      "blind_id": "RQ1-065",
+      "category": "performance",
+      "order": 65,
+      "path": "cases/RQ1-065.json",
+      "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+      "sha256": "d704df2b95c2937f108699462b063bc9ebe0b788f5147fb8903158d52ad5e2b6"
+    },
+    {
+      "blind_id": "RQ1-066",
+      "category": "performance",
+      "order": 66,
+      "path": "cases/RQ1-066.json",
+      "rule": "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload",
+      "sha256": "a8f7df6c09ec9a71a2943eba95df735bb3636c3efca87b88285d412dad84d07c"
+    },
+    {
+      "blind_id": "RQ1-067",
+      "category": "performance",
+      "order": 67,
+      "path": "cases/RQ1-067.json",
+      "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+      "sha256": "40f7e2518289bc2db4b6f29d304ebbda2cf399ff146c4db89e2b4bbdf6c2a352"
+    },
+    {
+      "blind_id": "RQ1-068",
+      "category": "performance",
+      "order": 68,
+      "path": "cases/RQ1-068.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "e6fe7a64a9622b812cdc2a8d57127a6d132ad47df4a376b753e0ed805569557f"
+    },
+    {
+      "blind_id": "RQ1-069",
+      "category": "performance",
+      "order": 69,
+      "path": "cases/RQ1-069.json",
+      "rule": "@performance/hp-performance-no-closures",
+      "sha256": "12548399ffdf498924446d5c9aeeb8957890276fcfa19e206f460a51b7c9ebef"
+    },
+    {
+      "blind_id": "RQ1-070",
+      "category": "security",
+      "order": 70,
+      "path": "cases/RQ1-070.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "425dfc98ee5cc6b06b677782a9627b58242eb61024f44ef94b069ae42fe33c9a"
+    },
+    {
+      "blind_id": "RQ1-071",
+      "category": "security",
+      "order": 71,
+      "path": "cases/RQ1-071.json",
+      "rule": "@security/no-cycle",
+      "sha256": "700c3a7ee049028f539a3b3e9f2f5d29127f1deb12fc4668617c111599591bd9"
+    },
+    {
+      "blind_id": "RQ1-072",
+      "category": "performance",
+      "order": 72,
+      "path": "cases/RQ1-072.json",
+      "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+      "sha256": "ce96949ddcf92ce43970b5e99e61a79d7b803e7affadddbf0288ec4664e0684f"
+    },
+    {
+      "blind_id": "RQ1-073",
+      "category": "performance",
+      "order": 73,
+      "path": "cases/RQ1-073.json",
+      "rule": "@performance/constant-property-referencing-check-in-loops",
+      "sha256": "154d32ac60e6120de7c4d40f952aa4eecef6d1c5040cd47b0cf85cd252e3fd32"
+    },
+    {
+      "blind_id": "RQ1-074",
+      "category": "performance",
+      "order": 74,
+      "path": "cases/RQ1-074.json",
+      "rule": "@performance/hp-arkts-no-use-any-export-other",
+      "sha256": "22d852688a60506271bc8e037b292033f226858c4c971985fb4c68c7f4f993c5"
+    },
+    {
+      "blind_id": "RQ1-075",
+      "category": "security",
+      "order": 75,
+      "path": "cases/RQ1-075.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "0d343d00b713b121c505acbc50cb9e322a08d7230999b18f079d08993098b015"
+    },
+    {
+      "blind_id": "RQ1-076",
+      "category": "performance",
+      "order": 76,
+      "path": "cases/RQ1-076.json",
+      "rule": "@performance/reuse-date-instances-check",
+      "sha256": "a9f0f80254854f113545cbce9f989677b361a599eee9de2ccfd9416161f9cf2b"
+    },
+    {
+      "blind_id": "RQ1-077",
+      "category": "security",
+      "order": 77,
+      "path": "cases/RQ1-077.json",
+      "rule": "@security/no-cycle",
+      "sha256": "734f2b711fb0836f03198d8e802e81bef621e0f0de36556e1211d4162c9ddaf2"
+    },
+    {
+      "blind_id": "RQ1-078",
+      "category": "performance",
+      "order": 78,
+      "path": "cases/RQ1-078.json",
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "sha256": "50c74c90c79751c1efa0e37fda1f0f76f1bdd8625c1dad3b873ca85b22eea4bc"
+    },
+    {
+      "blind_id": "RQ1-079",
+      "category": "performance",
+      "order": 79,
+      "path": "cases/RQ1-079.json",
+      "rule": "@performance/hp-arkui-use-taskpool-for-web-request",
+      "sha256": "4bfeb3c611610aa0c291792794a650986b09764e83c9c45ec77fe2bb0ae4ddc8"
+    },
+    {
+      "blind_id": "RQ1-080",
+      "category": "performance",
+      "order": 80,
+      "path": "cases/RQ1-080.json",
+      "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+      "sha256": "2a39ac6c0b4cd9e760ea4c9be71129d5f03735341d7bebb97bd675ab5efdc0f8"
+    },
+    {
+      "blind_id": "RQ1-081",
+      "category": "performance",
+      "order": 81,
+      "path": "cases/RQ1-081.json",
+      "rule": "@performance/high-frequency-log-check",
+      "sha256": "4a8df6c3917a8b9af849ed4f4fb10c7f419e5f3ce4bd0d601fd7377afab70179"
+    },
+    {
+      "blind_id": "RQ1-082",
+      "category": "performance",
+      "order": 82,
+      "path": "cases/RQ1-082.json",
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "sha256": "882f908d3e02fa33d43de1357bb805a5c85b1013ee1643f341481f374a1f8a4f"
+    },
+    {
+      "blind_id": "RQ1-083",
+      "category": "security",
+      "order": 83,
+      "path": "cases/RQ1-083.json",
+      "rule": "@security/no-cycle",
+      "sha256": "f4a00418110a4a87b372c37423407122ecf59303a4f3ada9958eb4899803d9ef"
+    },
+    {
+      "blind_id": "RQ1-084",
+      "category": "security",
+      "order": 84,
+      "path": "cases/RQ1-084.json",
+      "rule": "@security/no-cycle",
+      "sha256": "b989457f3097482f496c6aa00c20a9e17db73b8d9ec7ec4125a63e981a12bf50"
+    },
+    {
+      "blind_id": "RQ1-085",
+      "category": "performance",
+      "order": 85,
+      "path": "cases/RQ1-085.json",
+      "rule": "@performance/hp-arkui-avoid-empty-callback",
+      "sha256": "6adedd655b99acb125b8f2ca9365dab7be4e648fed27fa4dcb29951c538e878f"
+    },
+    {
+      "blind_id": "RQ1-086",
+      "category": "performance",
+      "order": 86,
+      "path": "cases/RQ1-086.json",
+      "rule": "@performance/avoid-overusing-custom-component-check",
+      "sha256": "5cbb625545b7778c2cb70a1e0a14bd35697eb96f5c4048ea91d29a1ac60f274f"
+    },
+    {
+      "blind_id": "RQ1-087",
+      "category": "performance",
+      "order": 87,
+      "path": "cases/RQ1-087.json",
+      "rule": "@performance/js-code-cache-by-precompile-check",
+      "sha256": "5e1c6def6101e2242ade3dc048c4b6f7a0a83b7154bd0d2cd22582617971695a"
+    },
+    {
+      "blind_id": "RQ1-088",
+      "category": "security",
+      "order": 88,
+      "path": "cases/RQ1-088.json",
+      "rule": "@security/no-cycle",
+      "sha256": "ceb3436c618566bbcdab7b20ad4a57c3f9bc4861173216178c46bbfbf2d0dde7"
+    },
+    {
+      "blind_id": "RQ1-089",
+      "category": "security",
+      "order": 89,
+      "path": "cases/RQ1-089.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "6a8dae780fd006d8ccdc1876fc832ac77161a8920971a3312f5a6ea447519ccd"
+    },
+    {
+      "blind_id": "RQ1-090",
+      "category": "security",
+      "order": 90,
+      "path": "cases/RQ1-090.json",
+      "rule": "@security/no-cycle",
+      "sha256": "0f9ba4c92c32ed27d66179f2c5b459d28150528b5f801fb13290d1b248851e41"
+    },
+    {
+      "blind_id": "RQ1-091",
+      "category": "performance",
+      "order": 91,
+      "path": "cases/RQ1-091.json",
+      "rule": "@performance/multiple-associations-state-var-check",
+      "sha256": "0300a7327ab5ae269e073578cd72323b9c47d3d58d90c56137f646d6fb91199c"
+    },
+    {
+      "blind_id": "RQ1-092",
+      "category": "performance",
+      "order": 92,
+      "path": "cases/RQ1-092.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "7970d65498c6bd74307377cb63f93002f370cd3cf762862dec828cb797fc19dc"
+    },
+    {
+      "blind_id": "RQ1-093",
+      "category": "performance",
+      "order": 93,
+      "path": "cases/RQ1-093.json",
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "sha256": "0de5ed564312de8db702745125b70c8ac9343b1ae123b34e37cf514e93a3012f"
+    },
+    {
+      "blind_id": "RQ1-094",
+      "category": "performance",
+      "order": 94,
+      "path": "cases/RQ1-094.json",
+      "rule": "@performance/hp-arkui-use-transition-to-replace-animateto",
+      "sha256": "7b9c51193d8cc9f08f25edcd5a1aff3e863a8ae3d40c1509ace8beac0a5e7562"
+    },
+    {
+      "blind_id": "RQ1-095",
+      "category": "security",
+      "order": 95,
+      "path": "cases/RQ1-095.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "b3850907f094aeef8cada0f7e7f50e673ff5faf4499278358c3b59c313706a62"
+    },
+    {
+      "blind_id": "RQ1-096",
+      "category": "performance",
+      "order": 96,
+      "path": "cases/RQ1-096.json",
+      "rule": "@performance/waterflow-data-preload-check",
+      "sha256": "77e0de563875eeda4d981072f15adb0068779f4b41e0fb6ea16a9df14cbbe0d4"
+    },
+    {
+      "blind_id": "RQ1-097",
+      "category": "security",
+      "order": 97,
+      "path": "cases/RQ1-097.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "3b57c9861f2db5d72bbbe1d4a9d688db92953b2ee1f7b25cbe9b7aa0352f12e8"
+    },
+    {
+      "blind_id": "RQ1-098",
+      "category": "security",
+      "order": 98,
+      "path": "cases/RQ1-098.json",
+      "rule": "@security/no-cycle",
+      "sha256": "32669878f8cfc89db7ee0143136eac6a2b7ed5c6ad6e844f55ab1a6906ec67b6"
+    },
+    {
+      "blind_id": "RQ1-099",
+      "category": "performance",
+      "order": 99,
+      "path": "cases/RQ1-099.json",
+      "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+      "sha256": "6eb3e99624710861635f4c6b98e8e54adef13dd91db1381da25e6a4445a4bf6a"
+    },
+    {
+      "blind_id": "RQ1-100",
+      "category": "performance",
+      "order": 100,
+      "path": "cases/RQ1-100.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "80444267d7ec86bed09b70a257a169607277ce50dd3762341f77b6a999135ee2"
+    },
+    {
+      "blind_id": "RQ1-101",
+      "category": "performance",
+      "order": 101,
+      "path": "cases/RQ1-101.json",
+      "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+      "sha256": "0c7a671b4cf6689e2a215670a403de49219a30de2f67c06c9ebcd118e1511d3f"
+    },
+    {
+      "blind_id": "RQ1-102",
+      "category": "performance",
+      "order": 102,
+      "path": "cases/RQ1-102.json",
+      "rule": "@performance/hp-performance-no-dynamic-cls-func",
+      "sha256": "696292dd6d2b00270073a1e5a540ae317c7b8de86dce909786cd6f7f73108c29"
+    },
+    {
+      "blind_id": "RQ1-103",
+      "category": "performance",
+      "order": 103,
+      "path": "cases/RQ1-103.json",
+      "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+      "sha256": "bd154291f9d1a9f0ac8e934751db0984865b6203f2cfd89de5633849bff9cc24"
+    },
+    {
+      "blind_id": "RQ1-104",
+      "category": "security",
+      "order": 104,
+      "path": "cases/RQ1-104.json",
+      "rule": "@security/no-cycle",
+      "sha256": "df688078cbde101e11c3662669caeb716ca0fc46793d2b8a614e2662cc3f7882"
+    },
+    {
+      "blind_id": "RQ1-105",
+      "category": "performance",
+      "order": 105,
+      "path": "cases/RQ1-105.json",
+      "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+      "sha256": "69d681abbe1fe263bd1edf4d8d6809da191d4839a40145c050dc55f45310df4c"
+    },
+    {
+      "blind_id": "RQ1-106",
+      "category": "performance",
+      "order": 106,
+      "path": "cases/RQ1-106.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "98eaa9bd1c98eaa44e697b16539b31800d0cfd48d5a1724d8691a9fd372ae4d3"
+    },
+    {
+      "blind_id": "RQ1-107",
+      "category": "performance",
+      "order": 107,
+      "path": "cases/RQ1-107.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "10bc88129982d30a2cb478796245658003c8055ace791f9c5ccd906e0de44096"
+    },
+    {
+      "blind_id": "RQ1-108",
+      "category": "performance",
+      "order": 108,
+      "path": "cases/RQ1-108.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "10d81f8f2dc4a45abde2d6610731ef4a746291ac0883cd5bc10ea806d1b9f75e"
+    },
+    {
+      "blind_id": "RQ1-109",
+      "category": "security",
+      "order": 109,
+      "path": "cases/RQ1-109.json",
+      "rule": "@security/no-cycle",
+      "sha256": "75ab33ac23f716186da4080d489bc4e8556421d1cc6a79d96d4385113e34c291"
+    },
+    {
+      "blind_id": "RQ1-110",
+      "category": "security",
+      "order": 110,
+      "path": "cases/RQ1-110.json",
+      "rule": "@security/no-cycle",
+      "sha256": "7ecb5cd7546ae1bf1e4304f277ba911e59e047db6f01ced51af0abe319881de4"
+    },
+    {
+      "blind_id": "RQ1-111",
+      "category": "performance",
+      "order": 111,
+      "path": "cases/RQ1-111.json",
+      "rule": "@performance/hp-arkts-no-use-any-export-other",
+      "sha256": "ec181df952092305b953d3616e2c3ab602121888aca7d4af9e07009c9ebb22e3"
+    },
+    {
+      "blind_id": "RQ1-112",
+      "category": "security",
+      "order": 112,
+      "path": "cases/RQ1-112.json",
+      "rule": "@security/no-cycle",
+      "sha256": "ad7e56da25131f722ca188f1436d01fc9788db0ea489e2747442d3cfdf567ff6"
+    },
+    {
+      "blind_id": "RQ1-113",
+      "category": "performance",
+      "order": 113,
+      "path": "cases/RQ1-113.json",
+      "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+      "sha256": "645721329eeb70c127d3c96f5593c172a5f6590cb8eb23f00938955b967b72af"
+    },
+    {
+      "blind_id": "RQ1-114",
+      "category": "performance",
+      "order": 114,
+      "path": "cases/RQ1-114.json",
+      "rule": "@performance/hp-arkui-use-id-in-get-resource-sync-api",
+      "sha256": "cb06e4ea88ad48da4bed89be89e0802584c65eeff6ae5feb515046c0f85565e9"
+    },
+    {
+      "blind_id": "RQ1-115",
+      "category": "performance",
+      "order": 115,
+      "path": "cases/RQ1-115.json",
+      "rule": "@performance/hp-arkts-no-use-any-export-other",
+      "sha256": "b648bfe811b723e40ba5fa16b3dbb96791f0b1166e9119e26bd75a670f9712b4"
+    },
+    {
+      "blind_id": "RQ1-116",
+      "category": "performance",
+      "order": 116,
+      "path": "cases/RQ1-116.json",
+      "rule": "@performance/avoid-overusing-custom-component-check",
+      "sha256": "386968e69122cad5a0e5fc9c6007a4f21d1c576082763e2cb1061fbbf9d1471d"
+    },
+    {
+      "blind_id": "RQ1-117",
+      "category": "performance",
+      "order": 117,
+      "path": "cases/RQ1-117.json",
+      "rule": "@performance/hp-performance-no-dynamic-cls-func",
+      "sha256": "27a91281c5475bb1c691167084465eba95b51f16e7f2d8177a02e63e84f53a8b"
+    },
+    {
+      "blind_id": "RQ1-118",
+      "category": "performance",
+      "order": 118,
+      "path": "cases/RQ1-118.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "615d11c2e060db52ba5b403e9869129dd0dc69c3b8b02903295292ab7c8e49e5"
+    },
+    {
+      "blind_id": "RQ1-119",
+      "category": "performance",
+      "order": 119,
+      "path": "cases/RQ1-119.json",
+      "rule": "@performance/hp-arkui-suggest-use-effectkit-blur",
+      "sha256": "9b28bf39f002fadeca5359d8fc14919606a2dea5a1564ed7dc0c276093c674b4"
+    },
+    {
+      "blind_id": "RQ1-120",
+      "category": "performance",
+      "order": 120,
+      "path": "cases/RQ1-120.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "d73b75112640b7ab75feb9e07a5df32b9a727f21e26b6bab4ac2ceb866b46ddb"
+    },
+    {
+      "blind_id": "RQ1-121",
+      "category": "performance",
+      "order": 121,
+      "path": "cases/RQ1-121.json",
+      "rule": "@performance/multiple-associations-state-var-check",
+      "sha256": "a0fb9de515374579d3244ceeb8142fbd5637a0e9b0ddde2ed5f2f04c0f81b129"
+    },
+    {
+      "blind_id": "RQ1-122",
+      "category": "performance",
+      "order": 122,
+      "path": "cases/RQ1-122.json",
+      "rule": "@performance/hp-arkui-use-reusable-component",
+      "sha256": "02c5905e6e223cfa576bd293ba938a08e5f7ad28c3e426c5a3d130f7241322a2"
+    },
+    {
+      "blind_id": "RQ1-123",
+      "category": "performance",
+      "order": 123,
+      "path": "cases/RQ1-123.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "1d3eaeda86a5d4dcbcaba40d5de0db88fabeb7074a5c19a50b661ab69fa56d7d"
+    },
+    {
+      "blind_id": "RQ1-124",
+      "category": "performance",
+      "order": 124,
+      "path": "cases/RQ1-124.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "232074ca7399ebc0e0ff477cffb66859d953345468fe9181b609b5a189782128"
+    },
+    {
+      "blind_id": "RQ1-125",
+      "category": "performance",
+      "order": 125,
+      "path": "cases/RQ1-125.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "f474b497aa4507e9389647fcb65145a6dd3c304dbf7003c0299321dd2264c5d3"
+    },
+    {
+      "blind_id": "RQ1-126",
+      "category": "performance",
+      "order": 126,
+      "path": "cases/RQ1-126.json",
+      "rule": "@performance/foreach-index-check",
+      "sha256": "974805c97ec7daf4ba67b491234a4355ca6ad4665140f4ca66b11a32a42b1fdb"
+    },
+    {
+      "blind_id": "RQ1-127",
+      "category": "performance",
+      "order": 127,
+      "path": "cases/RQ1-127.json",
+      "rule": "@performance/hp-arkui-suggest-use-effectkit-blur",
+      "sha256": "b966f31dfecfc25a213bb0f3354e6d1c6494d60ae54e134cb33263acd7174f57"
+    },
+    {
+      "blind_id": "RQ1-128",
+      "category": "performance",
+      "order": 128,
+      "path": "cases/RQ1-128.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "1582e997d3d703c1e2a8ef83265e54763bdcb920e46dab64b11daf5dc3fb304c"
+    },
+    {
+      "blind_id": "RQ1-129",
+      "category": "performance",
+      "order": 129,
+      "path": "cases/RQ1-129.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "78089dcbef0e582ab5a5404da990734519362f4c21a6cead9374c2cca7b54df2"
+    },
+    {
+      "blind_id": "RQ1-130",
+      "category": "security",
+      "order": 130,
+      "path": "cases/RQ1-130.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "832db8edeef35b4d22c610baec51202dd236d007a1f2f547799c527086aee9e7"
+    },
+    {
+      "blind_id": "RQ1-131",
+      "category": "performance",
+      "order": 131,
+      "path": "cases/RQ1-131.json",
+      "rule": "@performance/waterflow-data-preload-check",
+      "sha256": "326039bc75ad200caca24faeeaf496967caa5f077edb0f6974459381e8eacf1c"
+    },
+    {
+      "blind_id": "RQ1-132",
+      "category": "security",
+      "order": 132,
+      "path": "cases/RQ1-132.json",
+      "rule": "@security/no-cycle",
+      "sha256": "13f282a0b19b95e07edd271abc2ad28615a97086c6f97d0154fa01ec05ae4ab6"
+    },
+    {
+      "blind_id": "RQ1-133",
+      "category": "performance",
+      "order": 133,
+      "path": "cases/RQ1-133.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "07c86ccab55f820affe32d83512f3f57bf91e5f7706951f3e0a4e116e42e8743"
+    },
+    {
+      "blind_id": "RQ1-134",
+      "category": "performance",
+      "order": 134,
+      "path": "cases/RQ1-134.json",
+      "rule": "@performance/typed-array-check",
+      "sha256": "27962ad714913045ae3f5563dfe537cfd17d8d74e3c295c3f276ba4c3b6fcb60"
+    },
+    {
+      "blind_id": "RQ1-135",
+      "category": "performance",
+      "order": 135,
+      "path": "cases/RQ1-135.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "95617b34a92e771efcfe36650b7bfc895010697e977030f931f85b569c486ad4"
+    },
+    {
+      "blind_id": "RQ1-136",
+      "category": "performance",
+      "order": 136,
+      "path": "cases/RQ1-136.json",
+      "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+      "sha256": "de0a032940448ec1000bdad2ddbb5038b80cbc6ed83b291cef4484a08a30a75a"
+    },
+    {
+      "blind_id": "RQ1-137",
+      "category": "performance",
+      "order": 137,
+      "path": "cases/RQ1-137.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "41aeebe1295dde10d35cedab91e04409fea398c856ca4efb75091344ead0665d"
+    },
+    {
+      "blind_id": "RQ1-138",
+      "category": "performance",
+      "order": 138,
+      "path": "cases/RQ1-138.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "2515844523e543bb500a617194e144549f56adf420c64ebdccacd00e50ae07ef"
+    },
+    {
+      "blind_id": "RQ1-139",
+      "category": "security",
+      "order": 139,
+      "path": "cases/RQ1-139.json",
+      "rule": "@security/no-cycle",
+      "sha256": "5a69339bcfad745ec235f9569f5a48bed2be5493423cbf31bf4d6850eeb86a89"
+    },
+    {
+      "blind_id": "RQ1-140",
+      "category": "performance",
+      "order": 140,
+      "path": "cases/RQ1-140.json",
+      "rule": "@performance/hp-arkui-use-reusable-component",
+      "sha256": "14f5f0454e715c689a389d9c8933d8f010d8436d01d32807081efbc2a70a901a"
+    },
+    {
+      "blind_id": "RQ1-141",
+      "category": "performance",
+      "order": 141,
+      "path": "cases/RQ1-141.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "4e5b5056ec5677748a9f173f1fb24493765eb3664b39bec2aeb5a5531373af7b"
+    },
+    {
+      "blind_id": "RQ1-142",
+      "category": "performance",
+      "order": 142,
+      "path": "cases/RQ1-142.json",
+      "rule": "@performance/hp-arkui-use-id-in-get-resource-sync-api",
+      "sha256": "739bafdc88c3e4658ff891c31701ac995a8d65285e7da8750f46e8f0fd1c91ef"
+    },
+    {
+      "blind_id": "RQ1-143",
+      "category": "performance",
+      "order": 143,
+      "path": "cases/RQ1-143.json",
+      "rule": "@performance/tabs-on-change-check",
+      "sha256": "19c4769761ddf97c8dceba7c949f3585a92a1c1a0be7e3fe31dda06df3f32c39"
+    },
+    {
+      "blind_id": "RQ1-144",
+      "category": "performance",
+      "order": 144,
+      "path": "cases/RQ1-144.json",
+      "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+      "sha256": "5877a70bc3829e8f4f1dacf0d9aea796c67a93bf9f21b398a7c2c3a4a603cc22"
+    },
+    {
+      "blind_id": "RQ1-145",
+      "category": "performance",
+      "order": 145,
+      "path": "cases/RQ1-145.json",
+      "rule": "@performance/monitor-invisible-area-in-image-animation",
+      "sha256": "46455416be1c1b2ace85e3c44e9c4a4ed9b3cfbf1373827d618098f0c130eb14"
+    },
+    {
+      "blind_id": "RQ1-146",
+      "category": "security",
+      "order": 146,
+      "path": "cases/RQ1-146.json",
+      "rule": "@security/no-cycle",
+      "sha256": "de1a41d033c71bf61ac24e6465194be0ff21192f0f8565e5e871b60626bbe916"
+    },
+    {
+      "blind_id": "RQ1-147",
+      "category": "performance",
+      "order": 147,
+      "path": "cases/RQ1-147.json",
+      "rule": "@performance/foreach-index-check",
+      "sha256": "fb3b5d6b4e3ff1f52a7b44a6ee47147d5a8b16264203055d07c550e8ca9024dc"
+    },
+    {
+      "blind_id": "RQ1-148",
+      "category": "security",
+      "order": 148,
+      "path": "cases/RQ1-148.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "a1b00b0c07ca3469724a25d37e4280dd12eab1bad876cd4cfd347c1075827d50"
+    },
+    {
+      "blind_id": "RQ1-149",
+      "category": "security",
+      "order": 149,
+      "path": "cases/RQ1-149.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "2f7b8b84d61c7f8ff5e539557929dd3ca241d4ccb7bb7e7598db3f5897d04710"
+    },
+    {
+      "blind_id": "RQ1-150",
+      "category": "performance",
+      "order": 150,
+      "path": "cases/RQ1-150.json",
+      "rule": "@performance/reuse-date-instances-check",
+      "sha256": "22f4a4a753b95458a1f7deecc8f86bbabbccaba519ed8419553539c1a2ea0c05"
+    },
+    {
+      "blind_id": "RQ1-151",
+      "category": "performance",
+      "order": 151,
+      "path": "cases/RQ1-151.json",
+      "rule": "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload",
+      "sha256": "271545e98bf8d5e2885e649ef67a7c17e636f751e23f4b4a68f0e12c3edc1fad"
+    },
+    {
+      "blind_id": "RQ1-152",
+      "category": "security",
+      "order": 152,
+      "path": "cases/RQ1-152.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "67e0dbd7a80aa94d6923b54d70199d5d56f9d4a4679855fd9a61140888c6220a"
+    },
+    {
+      "blind_id": "RQ1-153",
+      "category": "security",
+      "order": 153,
+      "path": "cases/RQ1-153.json",
+      "rule": "@security/no-cycle",
+      "sha256": "14eb6a23760926e19a5d9aacee3b3ac45ddb9b09f3fc72a4442ff8f76c2b1950"
+    },
+    {
+      "blind_id": "RQ1-154",
+      "category": "performance",
+      "order": 154,
+      "path": "cases/RQ1-154.json",
+      "rule": "@performance/hp-performance-no-closures",
+      "sha256": "f46864127541ce37f1156d496db62b3690ec23853c6dc3a9aa27b34512164eda"
+    },
+    {
+      "blind_id": "RQ1-155",
+      "category": "security",
+      "order": 155,
+      "path": "cases/RQ1-155.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "af7733865d93a1b097cee55a04d51cab9566b6127f1de064ca4ba3f1bf04d990"
+    },
+    {
+      "blind_id": "RQ1-156",
+      "category": "performance",
+      "order": 156,
+      "path": "cases/RQ1-156.json",
+      "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+      "sha256": "f0a5845158b40d74374d4465253241cc4d855859ec36cbc4416c9d295385e44c"
+    },
+    {
+      "blind_id": "RQ1-157",
+      "category": "performance",
+      "order": 157,
+      "path": "cases/RQ1-157.json",
+      "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+      "sha256": "eaf9b55f5fdd30aebf61b762979e8b95175edc4bf2b27321b9a5dfc23bdfce57"
+    },
+    {
+      "blind_id": "RQ1-158",
+      "category": "performance",
+      "order": 158,
+      "path": "cases/RQ1-158.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "e32afe3cd4d1874faeb3b3bba53cfc02ea9dd736d481f537ed5629f4dc847c65"
+    },
+    {
+      "blind_id": "RQ1-159",
+      "category": "security",
+      "order": 159,
+      "path": "cases/RQ1-159.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "f1e84232a99161a011bbf5c334e39bd7e1511b8ec313c0f45f35bd57174165cb"
+    },
+    {
+      "blind_id": "RQ1-160",
+      "category": "performance",
+      "order": 160,
+      "path": "cases/RQ1-160.json",
+      "rule": "@performance/hp-arkui-avoid-empty-callback",
+      "sha256": "0428eab1bfc5ba29a64ddea8ba1d09af4d9a923768722c6d29710077a6422b9e"
+    },
+    {
+      "blind_id": "RQ1-161",
+      "category": "security",
+      "order": 161,
+      "path": "cases/RQ1-161.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "a5466525a16316bc080efaf1e7c4a4292505e69892610fa5c619e67ec719994e"
+    },
+    {
+      "blind_id": "RQ1-162",
+      "category": "performance",
+      "order": 162,
+      "path": "cases/RQ1-162.json",
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "sha256": "69932813681f8ed8e71f4d169065d8f308dc2e52e96ce418b9399c8ed541e643"
+    },
+    {
+      "blind_id": "RQ1-163",
+      "category": "performance",
+      "order": 163,
+      "path": "cases/RQ1-163.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "4add666298baf7199c4783efcd7dea664fb689a18a8b84e786ad40434a21bb89"
+    },
+    {
+      "blind_id": "RQ1-164",
+      "category": "performance",
+      "order": 164,
+      "path": "cases/RQ1-164.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "2a6cc86e396bf1a1be7970ca0a602a47d364ea864285e2c2c655682f0fb49f27"
+    },
+    {
+      "blind_id": "RQ1-165",
+      "category": "performance",
+      "order": 165,
+      "path": "cases/RQ1-165.json",
+      "rule": "@performance/hp-arkui-use-grid-layout-options",
+      "sha256": "dd48893bc519b48ebcb723fefd0507da7d7b06a647d5ef2d2959fb1ea3487615"
+    },
+    {
+      "blind_id": "RQ1-166",
+      "category": "performance",
+      "order": 166,
+      "path": "cases/RQ1-166.json",
+      "rule": "@performance/waterflow-data-preload-check",
+      "sha256": "c23ed79061157e5baa7cca90c66452e2748b7820f7cd1890bec01ea0d818dfae"
+    },
+    {
+      "blind_id": "RQ1-167",
+      "category": "performance",
+      "order": 167,
+      "path": "cases/RQ1-167.json",
+      "rule": "@performance/reuse-date-instances-check",
+      "sha256": "d76992a24e27f9c6aa980d94711622c51a10422162365903bc3259054fe0d4b7"
+    },
+    {
+      "blind_id": "RQ1-168",
+      "category": "performance",
+      "order": 168,
+      "path": "cases/RQ1-168.json",
+      "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+      "sha256": "c8fb519da36c667a703f7b2d6949f3d05b824f8bf61a27376b6539835a518cc9"
+    },
+    {
+      "blind_id": "RQ1-169",
+      "category": "performance",
+      "order": 169,
+      "path": "cases/RQ1-169.json",
+      "rule": "@performance/foreach-index-check",
+      "sha256": "d2ac3f5562fe6f8d321c89700c2efdfee2216e6e01b10fe0757b4c8ebf699e3b"
+    },
+    {
+      "blind_id": "RQ1-170",
+      "category": "performance",
+      "order": 170,
+      "path": "cases/RQ1-170.json",
+      "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+      "sha256": "02d20f78bbbc889de882b22735da280449fe0f6ca906edfa1de99061caa56198"
+    },
+    {
+      "blind_id": "RQ1-171",
+      "category": "performance",
+      "order": 171,
+      "path": "cases/RQ1-171.json",
+      "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+      "sha256": "782ed347a179d8dc2b14458c2a176200d6156238f1382cd70f810a9478015603"
+    },
+    {
+      "blind_id": "RQ1-172",
+      "category": "performance",
+      "order": 172,
+      "path": "cases/RQ1-172.json",
+      "rule": "@performance/hp-arkui-avoid-empty-callback",
+      "sha256": "bbe66470ca49ed11f0051a607db15cce9f918a02e53ba3e63bfa22b3d858d003"
+    },
+    {
+      "blind_id": "RQ1-173",
+      "category": "security",
+      "order": 173,
+      "path": "cases/RQ1-173.json",
+      "rule": "@security/no-cycle",
+      "sha256": "8b6beb724c7c21925f251221e1c57ef26527d76fb9eb2b825ecfa5c6f18685f5"
+    },
+    {
+      "blind_id": "RQ1-174",
+      "category": "security",
+      "order": 174,
+      "path": "cases/RQ1-174.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "e9816cae7f09f36787d455edef2d191ffaeb7006d719a4c5fb8d06059fe84e67"
+    },
+    {
+      "blind_id": "RQ1-175",
+      "category": "performance",
+      "order": 175,
+      "path": "cases/RQ1-175.json",
+      "rule": "@performance/init-list-component",
+      "sha256": "91682724f619e2050eef33b4e9fa9471790a1c994dc870cc37a6e2d1760cd6ea"
+    },
+    {
+      "blind_id": "RQ1-176",
+      "category": "performance",
+      "order": 176,
+      "path": "cases/RQ1-176.json",
+      "rule": "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload",
+      "sha256": "fa9bf9d5af54726a516c89a871336effbe348d919c48be643972ad9edf4e03e1"
+    },
+    {
+      "blind_id": "RQ1-177",
+      "category": "performance",
+      "order": 177,
+      "path": "cases/RQ1-177.json",
+      "rule": "@performance/constant-property-referencing-check-in-loops",
+      "sha256": "d39d074b87922fa395d09f100fc2d1d7ef241cd8f7c5cf373e6dd3bc00c758d7"
+    },
+    {
+      "blind_id": "RQ1-178",
+      "category": "performance",
+      "order": 178,
+      "path": "cases/RQ1-178.json",
+      "rule": "@performance/init-list-component",
+      "sha256": "35bf8b0cea10858d0df0ef660a6cdc323630b42ee478767081b143fac7209d11"
+    },
+    {
+      "blind_id": "RQ1-179",
+      "category": "performance",
+      "order": 179,
+      "path": "cases/RQ1-179.json",
+      "rule": "@performance/foreach-args-check",
+      "sha256": "9744ad565be8bd020289431f13da53391b3a6d5e329eabee3c21eebc6786b29f"
+    },
+    {
+      "blind_id": "RQ1-180",
+      "category": "performance",
+      "order": 180,
+      "path": "cases/RQ1-180.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "5b1de0d20e15cee979238bf596936fa6feb06a98ffdab52f8ac87a6000299d5b"
+    },
+    {
+      "blind_id": "RQ1-181",
+      "category": "security",
+      "order": 181,
+      "path": "cases/RQ1-181.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "6dec2a37cd821600e0d13126cdf6648eb7edfb7590258727be041942e1892218"
+    },
+    {
+      "blind_id": "RQ1-182",
+      "category": "performance",
+      "order": 182,
+      "path": "cases/RQ1-182.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "e472dd7d3672006237ccc7b5c3cacf1b0af4840b4f6f6325d6a4932f02d7b89d"
+    },
+    {
+      "blind_id": "RQ1-183",
+      "category": "performance",
+      "order": 183,
+      "path": "cases/RQ1-183.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "8c537bf488950c9b4abd45bd09eb7dc4055cc05f8b26bb974f171989da741b89"
+    },
+    {
+      "blind_id": "RQ1-184",
+      "category": "performance",
+      "order": 184,
+      "path": "cases/RQ1-184.json",
+      "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+      "sha256": "3e71915c9b88f635500e44b88327629d17b6750e22bc971ccba8c45fbed2aa76"
+    },
+    {
+      "blind_id": "RQ1-185",
+      "category": "performance",
+      "order": 185,
+      "path": "cases/RQ1-185.json",
+      "rule": "@performance/hp-arkui-use-reusable-component",
+      "sha256": "055fc1d4ea34f2ab0d9cd1ff4170a2c33f3d66901a87582c88be7f3dfcf805a5"
+    },
+    {
+      "blind_id": "RQ1-186",
+      "category": "security",
+      "order": 186,
+      "path": "cases/RQ1-186.json",
+      "rule": "@security/no-cycle",
+      "sha256": "76094546e43b6ab1e2e35cbe8fef83b594849e468719c1ceb39fc2962ed84a7c"
+    },
+    {
+      "blind_id": "RQ1-187",
+      "category": "performance",
+      "order": 187,
+      "path": "cases/RQ1-187.json",
+      "rule": "@performance/hp-arkui-use-reusable-component",
+      "sha256": "99414b14af3c38603cb21dd0a10441d738eef7c75217a91936077a11eacaaf48"
+    },
+    {
+      "blind_id": "RQ1-188",
+      "category": "performance",
+      "order": 188,
+      "path": "cases/RQ1-188.json",
+      "rule": "@performance/tabs-on-change-check",
+      "sha256": "83bb845b52637c1c5cecd9e39bf13a927590f6ba25c994fcbc5ab3f321b70a10"
+    },
+    {
+      "blind_id": "RQ1-189",
+      "category": "security",
+      "order": 189,
+      "path": "cases/RQ1-189.json",
+      "rule": "@security/no-cycle",
+      "sha256": "c8ab0eb7452ccf62020eb66f57fa3235a89d9a42f02d12516a5271662db99ccc"
+    },
+    {
+      "blind_id": "RQ1-190",
+      "category": "performance",
+      "order": 190,
+      "path": "cases/RQ1-190.json",
+      "rule": "@performance/hp-performance-no-closures",
+      "sha256": "8757dd629f33332897cdb97a1e511ab949fcad2b807bf7a1152db33f4658b7a1"
+    },
+    {
+      "blind_id": "RQ1-191",
+      "category": "performance",
+      "order": 191,
+      "path": "cases/RQ1-191.json",
+      "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+      "sha256": "81091e366746128f0c71b323b01e9fe9071adbbd06743e76496f9762659fcbe4"
+    },
+    {
+      "blind_id": "RQ1-192",
+      "category": "performance",
+      "order": 192,
+      "path": "cases/RQ1-192.json",
+      "rule": "@performance/hp-performance-no-closures",
+      "sha256": "c016a56cf1ac8fda5da3c7c974cba0d5238c21189f83fe7dcdbc334eadda42e3"
+    },
+    {
+      "blind_id": "RQ1-193",
+      "category": "security",
+      "order": 193,
+      "path": "cases/RQ1-193.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "93fb414254c2e0c80d82bc417304d956346cca4805ef56893ae3cb9fea7e6ccb"
+    },
+    {
+      "blind_id": "RQ1-194",
+      "category": "security",
+      "order": 194,
+      "path": "cases/RQ1-194.json",
+      "rule": "@security/no-cycle",
+      "sha256": "c5229bccd3b838d8c9639fa2f8cf87b24f1865b4b047a46d73f1c9fc0fda9ace"
+    },
+    {
+      "blind_id": "RQ1-195",
+      "category": "performance",
+      "order": 195,
+      "path": "cases/RQ1-195.json",
+      "rule": "@performance/hp-arkui-load-on-demand",
+      "sha256": "1def46efa5f03a6329a655b2a7cd61358a362843ca9e4979e58bd65cc07d6ff0"
+    },
+    {
+      "blind_id": "RQ1-196",
+      "category": "security",
+      "order": 196,
+      "path": "cases/RQ1-196.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "5b5debbcded42a803e14cd4811c4b50a2e4dbe9ef9d3dfcd192a09a0440d599d"
+    },
+    {
+      "blind_id": "RQ1-197",
+      "category": "security",
+      "order": 197,
+      "path": "cases/RQ1-197.json",
+      "rule": "@security/no-cycle",
+      "sha256": "444a9371bbe13ee20803a9f93bf62b8481929a05354f2dbb9c5cdde3a88104cb"
+    },
+    {
+      "blind_id": "RQ1-198",
+      "category": "performance",
+      "order": 198,
+      "path": "cases/RQ1-198.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "880851ab5a772513cfc6e67990d3aa943a8b1dc8314410edcb87b32196f4347c"
+    },
+    {
+      "blind_id": "RQ1-199",
+      "category": "security",
+      "order": 199,
+      "path": "cases/RQ1-199.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "260e382dc4dfef415fd1b5809099d8822280ec0ace3ca82a94b1f383718af096"
+    },
+    {
+      "blind_id": "RQ1-200",
+      "category": "performance",
+      "order": 200,
+      "path": "cases/RQ1-200.json",
+      "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+      "sha256": "962201dffcd6b35acd18ea95a29e292e9ec7859b46ce5078dfc5caf6d1b5ddb5"
+    },
+    {
+      "blind_id": "RQ1-201",
+      "category": "performance",
+      "order": 201,
+      "path": "cases/RQ1-201.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "a583b6b8d3c6fc4d120bc80ef9a6feb4c3948f22787549d40f49712f7266ab87"
+    },
+    {
+      "blind_id": "RQ1-202",
+      "category": "performance",
+      "order": 202,
+      "path": "cases/RQ1-202.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "7f6e7770a1d4ac5392a207c29d614e39325f8580a3e4909174c4cca93fd9eeb7"
+    },
+    {
+      "blind_id": "RQ1-203",
+      "category": "performance",
+      "order": 203,
+      "path": "cases/RQ1-203.json",
+      "rule": "@performance/hp-arkui-suggest-use-effectkit-blur",
+      "sha256": "34058a32551bdd5779c8d7bca6835a13586d338c593523912b03fef8b047c070"
+    },
+    {
+      "blind_id": "RQ1-204",
+      "category": "performance",
+      "order": 204,
+      "path": "cases/RQ1-204.json",
+      "rule": "@performance/dark-color-mode-check",
+      "sha256": "baba37bfff9500840ea669e983c3476a0ac7f5c07d366ca2e738d92654cb1ec1"
+    },
+    {
+      "blind_id": "RQ1-205",
+      "category": "security",
+      "order": 205,
+      "path": "cases/RQ1-205.json",
+      "rule": "@security/no-cycle",
+      "sha256": "297a7fbfab3e914de94483a067c9c3df96cb4b9228d296f8abbcf7142b744e82"
+    },
+    {
+      "blind_id": "RQ1-206",
+      "category": "security",
+      "order": 206,
+      "path": "cases/RQ1-206.json",
+      "rule": "@security/no-cycle",
+      "sha256": "360194cc76a01e9fb4e27e5ab60b8447d26b824569323fc339273aaf6dfb956e"
+    },
+    {
+      "blind_id": "RQ1-207",
+      "category": "performance",
+      "order": 207,
+      "path": "cases/RQ1-207.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "ff08568221937086722f63ee7827d16d66fb1dff1cad3a044522e375b7906ada"
+    },
+    {
+      "blind_id": "RQ1-208",
+      "category": "performance",
+      "order": 208,
+      "path": "cases/RQ1-208.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "16cf6f16bbe219d5bd8ef8b6872d91e95578ce877bf31edb2842f017659734de"
+    },
+    {
+      "blind_id": "RQ1-209",
+      "category": "performance",
+      "order": 209,
+      "path": "cases/RQ1-209.json",
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "sha256": "87d8d3281094f3e66c5736e2c3b1288b340933fe8e4f0b23eb74ef3657c1f52a"
+    },
+    {
+      "blind_id": "RQ1-210",
+      "category": "performance",
+      "order": 210,
+      "path": "cases/RQ1-210.json",
+      "rule": "@performance/dark-color-mode-check",
+      "sha256": "78ed1def9277fd45a80f88c75c9d2a67594cf3bde0b7df4b61ad40aacd37d5a8"
+    },
+    {
+      "blind_id": "RQ1-211",
+      "category": "performance",
+      "order": 211,
+      "path": "cases/RQ1-211.json",
+      "rule": "@performance/foreach-args-check",
+      "sha256": "0903ccb09b7c4089c4fd785e5396830295c27149068a41e5d5bbb70c65af1579"
+    },
+    {
+      "blind_id": "RQ1-212",
+      "category": "performance",
+      "order": 212,
+      "path": "cases/RQ1-212.json",
+      "rule": "@performance/hp-performance-no-dynamic-cls-func",
+      "sha256": "c7e2b26118ca82f1327263a4ac74e339a6de4a6dc2acb232fbc7672372662916"
+    },
+    {
+      "blind_id": "RQ1-213",
+      "category": "performance",
+      "order": 213,
+      "path": "cases/RQ1-213.json",
+      "rule": "@performance/js-code-cache-by-precompile-check",
+      "sha256": "417ed5558d14b2f6e3fd378d54d4c55c32bfb27a36eb7dd24921741b5c49ee4b"
+    },
+    {
+      "blind_id": "RQ1-214",
+      "category": "performance",
+      "order": 214,
+      "path": "cases/RQ1-214.json",
+      "rule": "@performance/hp-arkui-combine-same-arg-animateto",
+      "sha256": "65ed7e4b0e62090912db79e17ca0a5f4fd81c63dd643fbee2d90e66ebf2af99d"
+    },
+    {
+      "blind_id": "RQ1-215",
+      "category": "performance",
+      "order": 215,
+      "path": "cases/RQ1-215.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "a89526a42a2ce517a5e4a5c82713fb406634680d214acfae61aef25ac00f1534"
+    },
+    {
+      "blind_id": "RQ1-216",
+      "category": "performance",
+      "order": 216,
+      "path": "cases/RQ1-216.json",
+      "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+      "sha256": "143cf40ae0454024cf7bd431e906f0dbe5b7fad28dc16fde3dea8f32df89ca34"
+    },
+    {
+      "blind_id": "RQ1-217",
+      "category": "performance",
+      "order": 217,
+      "path": "cases/RQ1-217.json",
+      "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+      "sha256": "3517aed9e85fd1953f5bbc57f1960ea7e315c88d067c191640722bb3bd366f4b"
+    },
+    {
+      "blind_id": "RQ1-218",
+      "category": "performance",
+      "order": 218,
+      "path": "cases/RQ1-218.json",
+      "rule": "@performance/hp-arkui-image-async-load",
+      "sha256": "8a636bcc701124c68648b0cabb4236c4728118c338dad9484e7bd39a289be244"
+    },
+    {
+      "blind_id": "RQ1-219",
+      "category": "security",
+      "order": 219,
+      "path": "cases/RQ1-219.json",
+      "rule": "@security/no-commented-code",
+      "sha256": "5757c2c09ba6bd87db28ffa637211a4cec7ae67e7f93e6d25e6d787e9aa2cb25"
+    },
+    {
+      "blind_id": "RQ1-220",
+      "category": "performance",
+      "order": 220,
+      "path": "cases/RQ1-220.json",
+      "rule": "@performance/avoid-overusing-custom-component-check",
+      "sha256": "8a0476f27438529f33d06c59960f5b81bb38e9b6580e2da2ed30ad29e2706383"
+    },
+    {
+      "blind_id": "RQ1-221",
+      "category": "performance",
+      "order": 221,
+      "path": "cases/RQ1-221.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "829fc1616e27a5b1068bfebffd0447f9779d8568eeb1751b79ca7845bd5f4c0c"
+    },
+    {
+      "blind_id": "RQ1-222",
+      "category": "performance",
+      "order": 222,
+      "path": "cases/RQ1-222.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "c3a961100b03bb54e60266720ad586dd1f3afbe9d3594b0d177cc92d689106ae"
+    },
+    {
+      "blind_id": "RQ1-223",
+      "category": "performance",
+      "order": 223,
+      "path": "cases/RQ1-223.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "1a066ca42e6084753f325d10d172ef6fb51730eef0e4a076d4a98b099260ac74"
+    },
+    {
+      "blind_id": "RQ1-224",
+      "category": "performance",
+      "order": 224,
+      "path": "cases/RQ1-224.json",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "sha256": "06e05448d3fffd6217347449b8e2b55880959b1f65cabc9ec4ce62dd43df4ada"
+    },
+    {
+      "blind_id": "RQ1-225",
+      "category": "performance",
+      "order": 225,
+      "path": "cases/RQ1-225.json",
+      "rule": "@performance/hp-arkui-image-async-load",
+      "sha256": "b5e08f713f80a7a3fcd90dac730a4742c1ed9fffa227eb12338ec733b15a0104"
+    },
+    {
+      "blind_id": "RQ1-226",
+      "category": "performance",
+      "order": 226,
+      "path": "cases/RQ1-226.json",
+      "rule": "@performance/init-list-component",
+      "sha256": "ebfb0ffd4004200e9f17c90aa82fc9c895df88cfd39539f578e501112163af03"
+    },
+    {
+      "blind_id": "RQ1-227",
+      "category": "security",
+      "order": 227,
+      "path": "cases/RQ1-227.json",
+      "rule": "@security/no-cycle",
+      "sha256": "7fbb9e63ee538673a3c893e2fa8fcc47ad799f0a59d938307472f74e5840689d"
+    },
+    {
+      "blind_id": "RQ1-228",
+      "category": "performance",
+      "order": 228,
+      "path": "cases/RQ1-228.json",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "sha256": "c84249b280d73326ba72968550b3d42a0e5715a497999cdd99b228ad8e564934"
+    },
+    {
+      "blind_id": "RQ1-229",
+      "category": "performance",
+      "order": 229,
+      "path": "cases/RQ1-229.json",
+      "rule": "@performance/hp-arkui-use-reusable-component",
+      "sha256": "40c45a1a078909c17250346e8beac7df9e455dd0537359c7b55a0b1b1629d67f"
+    },
+    {
+      "blind_id": "RQ1-230",
+      "category": "performance",
+      "order": 230,
+      "path": "cases/RQ1-230.json",
+      "rule": "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload",
+      "sha256": "a51f8ae4b51111417b7241c0458a542a173979ac0c8990475eb014abba8e199f"
+    },
+    {
+      "blind_id": "RQ1-231",
+      "category": "performance",
+      "order": 231,
+      "path": "cases/RQ1-231.json",
+      "rule": "@performance/monitor-invisible-area-in-image-animation",
+      "sha256": "80fc9e9e1e41db785c59025453fa931b245a6f936fe40da1eabf14d9dfd66eed"
+    }
+  ],
+  "experiment": "EXP-RQ1-PRECISION",
+  "labels": [
+    "Correct",
+    "Suspicious",
+    "Incorrect"
+  ],
+  "package_id": "exp_rq1_precision_v1",
+  "schema_version": 1,
+  "strict_correct_labels": [
+    "Correct"
+  ]
+}

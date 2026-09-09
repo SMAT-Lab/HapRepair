@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "formal": true,
+  "run_id": "exp_loc_18_three_model_v1",
+  "model_requested": "deepseek-v4-flash",
+  "file": "entry/src/main/ets/MainAbility/pages/List/List1.ets",
+  "source_sha256": "18130a1b11c9d4cc0f6ef86628df56863c1e07a612ec112af54a94383ebcaf0c",
+  "prompt_sha256": "9992b7ab43ec09324d0cd35cd8186b9a81504943794ef8e93caf1d07bddea117",
+  "protocol_sha256": "baaf76932d8013e8eaa0b1f840fb4ba02e37412caef5f0e3bc4903a3e9b6bbeb",
+  "ground_truth_sha256": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3",
+  "started_at": "2026-08-07T14:07:53.229080+00:00",
+  "provider_route": {
+    "api_base_env": "DS_API_BASE",
+    "api_key_env": "DS_API_KEY",
+    "api_base_sha256": "a34e2a4708ed1c61008a151688838dcf1c44d4e7f08054633e72ba7c0b16cfc1"
+  },
+  "status": "completed",
+  "model_reported": "deepseek-v4-flash",
+  "response_id": "188cda6f-bd32-45bb-991d-04dce31795ca",
+  "usage": {
+    "prompt_tokens": 1467,
+    "completion_tokens": 73,
+    "total_tokens": 1540,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1467
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": 200,
+      "elapsed_seconds": 1.392791723003029,
+      "result": "success"
+    }
+  ],
+  "content": "```json\n{\"defects\":[{\"rule\":\"@performance/hp-arkui-load-on-demand\",\"line\":38},{\"rule\":\"@performance/hp-arkui-remove-redundant-state-var\",\"line\":29},{\"rule\":\"@performance/hp-arkui-remove-redundant-state-var\",\"line\":30}]}\n```",
+  "predicted_defects": [
+    {
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "line": 29
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "line": 30
+    },
+    {
+      "rule": "@performance/hp-arkui-load-on-demand",
+      "line": 38
+    }
+  ],
+  "parse_ok": true,
+  "parse_error": null,
+  "raw_response": {
+    "id": "188cda6f-bd32-45bb-991d-04dce31795ca",
+    "object": "chat.completion",
+    "created": 1786111673,
+    "model": "deepseek-v4-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```json\n{\"defects\":[{\"rule\":\"@performance/hp-arkui-load-on-demand\",\"line\":38},{\"rule\":\"@performance/hp-arkui-remove-redundant-state-var\",\"line\":29},{\"rule\":\"@performance/hp-arkui-remove-redundant-state-var\",\"line\":30}]}\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1467,
+      "completion_tokens": 73,
+      "total_tokens": 1540,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1467
+    },
+    "system_fingerprint": "fp_a18b46594c_prod0820_fp8_kvcache_20260402"
+  },
+  "completed_at": "2026-08-07T14:07:54.622374+00:00",
+  "elapsed_seconds": 1.393287861996214
+}

@@ -1,0 +1,572 @@
+{
+  "schema_version": 1,
+  "benchmark": "EXP-INDEP-63",
+  "knowledge_base_view": "rule_complete_383",
+  "construction": "New controlled cases stored outside the retrieval database",
+  "validation_contract": {
+    "defective": "CodeLinter reports the target rule for the case files",
+    "repaired": "CodeLinter does not report the target rule for the case files",
+    "reference_visibility": "The repaired project is hidden during patch generation",
+    "database_mutation": false
+  },
+  "cases": [
+    {
+      "case_id": "case_hw_ets_eslint_init_list_component",
+      "rule": "@hw-ets-eslint/init-list-component",
+      "codelinter_rule": "@performance/init-list-component",
+      "rule_description": "This rule validates the initial values of the width and height attributes of the List component.",
+      "defective_files": [
+        "entry/src/main/ets/cases/init_list_component_case.ets"
+      ],
+      "repaired_files": [
+        "entry/src/main/ets/cases/init_list_component_case.ets"
+      ],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_avoid_overusing_custom_component_check",
+      "rule": "@performance/avoid-overusing-custom-component-check",
+      "rule_description": "During application development, reducing the use of custom components—especially within loops—can exponentially decrease the number of **CustomNode** instances in the **FrameNode** tree, significantly improving page loading and rendering performance. When custom components are necessary, consider using @Builder functions as alternatives. Unlike custom components, @Builder functions do not create new tree nodes in the backend **FrameNode** tree. For example, when displaying card lists using **ForEach**, if the cards only need to present information without requiring complex custom component capabilities like lifecycle functions, you can create an @Builder function instead of a custom card component.",
+      "defective_files": ["entry/src/main/ets/cases/avoid_custom_component_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/avoid_custom_component_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_constant_property_referencing_check_in_loops",
+      "rule": "@performance/constant-property-referencing-check-in-loops",
+      "rule_description": "在循环如需频繁访问某个常量，且该属性引用常量在循环中不会改变，建议提取到循环外部，减少属性访问的次数",
+      "defective_files": [
+        "entry/src/main/ets/cases/constant_property_loop_case.ets"
+      ],
+      "repaired_files": [
+        "entry/src/main/ets/cases/constant_property_loop_case.ets"
+      ],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_dark_color_mode_check",
+      "rule": "@performance/dark-color-mode-check",
+      "rule_description": "Implementing dark mode can significantly reduce power consumption. Your application should adapt its UI based on the device's current theme settings.",
+      "defective_files": ["entry/src/main/module.json5"],
+      "repaired_files": [
+        "entry/src/main/module.json5",
+        "entry/src/main/resources/dark/element/color.json"
+      ],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_foreach_args_check",
+      "rule": "@performance/foreach-args-check",
+      "defective_files": [
+        "entry/src/main/ets/cases/foreach_args_case.ets"
+      ],
+      "repaired_files": [
+        "entry/src/main/ets/cases/foreach_args_case.ets"
+      ],
+      "status": "draft",
+      "rule_description": "建议在ForEach参数中设置keyGenerator"
+    },
+    {
+      "case_id": "case_performance_foreach_index_check",
+      "rule": "@performance/foreach-index-check",
+      "rule_description": "The **keyGenerator** parameter in **ForEach** is a callback that allows you to define your own key generation rules. However, if the generated keys incorporate index values, inserting new data into the data source can trigger a cascading effect. This insertion causes all subsequent items to have altered keys, potentially leading to unnecessary reconstruction of numerous components and a decline in rendering performance.",
+      "defective_files": [
+        "entry/src/main/ets/cases/foreach_index_case.ets"
+      ],
+      "repaired_files": [
+        "entry/src/main/ets/cases/foreach_index_case.ets"
+      ],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_high_frequency_log_check",
+      "rule": "@performance/high-frequency-log-check",
+      "rule_description": "不建议在高频函数中使用Hilog。",
+      "defective_files": [
+        "entry/src/main/ets/cases/high_frequency_log_case.ets"
+      ],
+      "repaired_files": [
+        "entry/src/main/ets/cases/high_frequency_log_case.ets"
+      ],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkts_no_use_any_export_current",
+      "rule": "@performance/hp-arkts-no-use-any-export-current",
+      "rule_description": "避免使用export * 导出当前module中定义的类型和数据。\n\n冷启动完成时延场景下，建议优先修改",
+      "defective_files": ["entry/src/main/ets/cases/export_current_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/export_current_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkts_no_use_any_export_other",
+      "rule": "@performance/hp-arkts-no-use-any-export-other",
+      "rule_description": "避免使用export * 导出其他module中定义的类型和数据。\n\n冷启动完成时延场景下，建议优先修改。",
+      "defective_files": [
+        "entry/src/main/ets/cases/export_other_case.ets",
+        "entry/src/main/ets/cases/export_other_model.ets"
+      ],
+      "repaired_files": [
+        "entry/src/main/ets/cases/export_other_case.ets",
+        "entry/src/main/ets/cases/export_other_model.ets"
+      ],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_avoid_empty_callback",
+      "rule": "@performance/hp-arkui-avoid-empty-callback",
+      "rule_description": "避免设置空的系统回调监听。\n\n根据ArkUI编程规范，建议修改。",
+      "defective_files": ["entry/src/main/ets/cases/empty_callback_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/empty_callback_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_avoid_update_auto_state_var_in_abouttoreuse",
+      "rule": "@performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse",
+      "rule_description": "避免在aboutToReuse中对自动更新值的状态变量进行更新。",
+      "defective_files": ["entry/src/main/ets/cases/about_to_reuse_state_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/about_to_reuse_state_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_combine_same_arg_animateto",
+      "rule": "@performance/hp-arkui-combine-same-arg-animateto",
+      "rule_description": "建议动画参数相同时使用同一个animateTo",
+      "defective_files": ["entry/src/main/ets/cases/combine_animate_to_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/combine_animate_to_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_image_async_load",
+      "rule": "@performance/hp-arkui-image-async-load",
+      "rule_description": "建议大图片使用异步加载",
+      "defective_files": ["entry/src/main/ets/cases/image_async_load_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/image_async_load_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_load_on_demand",
+      "rule": "@performance/hp-arkui-load-on-demand",
+      "rule_description": "建议使用按需加载。",
+      "defective_files": ["entry/src/main/ets/cases/load_on_demand_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/load_on_demand_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_no_func_as_arg_for_reusable_component",
+      "rule": "@performance/hp-arkui-no-func-as-arg-for-reusable-component",
+      "rule_description": "避免使用函数作为复用的自定义组件创建时的入参。",
+      "defective_files": ["entry/src/main/ets/cases/reusable_func_arg_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/reusable_func_arg_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_no_state_var_access_in_loop",
+      "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+      "rule_description": "避免在for、while等循环逻辑中频繁读取状态变量。",
+      "defective_files": ["entry/src/main/ets/cases/state_var_loop_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/state_var_loop_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_no_stringify_in_lazyforeach_key_generator",
+      "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+      "rule_description": "在使用LazyForEach进行组件复用的key生成器函数里，不要使用stringify。",
+      "defective_files": ["entry/src/main/ets/cases/lazyforeach_stringify_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/lazyforeach_stringify_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_reduce_pan_gesture_distance",
+      "rule": "@performance/hp-arkui-reduce-pan-gesture-distance",
+      "codelinter_rule": "@performance/hp-arkui-reduce-pangesture-distance",
+      "rule_description": "建议设置合理的拖动距离",
+      "defective_files": ["entry/src/main/ets/cases/pan_gesture_distance_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/pan_gesture_distance_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_remove_container_without_property",
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "rule_description": "建议尽量减少视图嵌套层次",
+      "defective_files": ["entry/src/main/ets/cases/container_without_property_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/container_without_property_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_remove_redundant_nest_container",
+      "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+      "rule_description": "避免冗余的嵌套",
+      "defective_files": ["entry/src/main/ets/cases/redundant_nest_container_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/redundant_nest_container_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_remove_redundant_state_var",
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "rule_description": "建议移除不关联UI组件的状态变量设置",
+      "defective_files": ["entry/src/main/ets/cases/redundant_state_var_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/redundant_state_var_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_remove_unchanged_state_var",
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "rule_description": "建议移除未改变的状态变量设置。\n\n通用丢帧场景下，建议优先修改。",
+      "defective_files": ["entry/src/main/ets/cases/unchanged_state_var_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unchanged_state_var_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_set_cache_count_for_lazyforeach_grid",
+      "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+      "rule_description": "建议在Grid下使用LazyForEach时设置合理的cacheCount",
+      "defective_files": ["entry/src/main/ets/cases/grid_cache_count_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/grid_cache_count_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_suggest_cache_avplayer",
+      "rule": "@performance/hp-arkui-suggest-cache-avplayer",
+      "rule_description": "建议缓存AVPlayer实例減少起播时延。\n\n音视频起播速度慢的场景下，建议优先修改",
+      "defective_files": ["entry/src/main/ets/cases/avplayer_cache_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/avplayer_cache_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_suggest_reuseid_for_if_else_reusable_component",
+      "rule": "@performance/hp-arkui-suggest-reuseid-for-if-else-reusable-component",
+      "codelinter_rule": "@performance/suggest-reuseid-for-if-else-reusable-component-check",
+      "rule_description": "建议使用reuseId标记不同结构的组件构成",
+      "defective_files": [
+        "entry/src/main/ets/cases/reuseid_branch_case.ets",
+        "entry/src/main/ets/cases/reuseid_branch_components.ets"
+      ],
+      "repaired_files": [
+        "entry/src/main/ets/cases/reuseid_branch_case.ets",
+        "entry/src/main/ets/cases/reuseid_branch_components.ets"
+      ],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_use_grid_layout_options",
+      "rule": "@performance/hp-arkui-use-grid-layout-options",
+      "rule_description": "建议在指定位置时使用GridLayoutOptions提升Grid性能",
+      "defective_files": ["entry/src/main/ets/cases/grid_layout_options_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/grid_layout_options_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_use_local_var_to_replace_state_var",
+      "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+      "rule_description": "建议使用临时变量替换状态变量",
+      "defective_files": ["entry/src/main/ets/cases/local_state_calculation_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/local_state_calculation_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_use_object_link_to_replace_prop",
+      "rule": "@performance/hp-arkui-use-object-link-to-replace-prop",
+      "rule_description": "建议使用@ObjectLink代替@Prop减少不必要的深拷贝",
+      "defective_files": ["entry/src/main/ets/cases/object_link_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/object_link_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_use_reusable_component",
+      "rule": "@performance/hp-arkui-use-reusable-component",
+      "rule_description": "建议复杂组件的定义，尽量使用组件复用。",
+      "defective_files": ["entry/src/main/ets/cases/reusable_component_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/reusable_component_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_use_row_column_to_replace_flex",
+      "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+      "rule_description": "建议使用Column/Row替代Flex",
+      "defective_files": ["entry/src/main/ets/cases/flex_layout_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/flex_layout_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_use_scale_to_replace_attr_animateto",
+      "rule": "@performance/hp-arkui-use-scale-to-replace-attr-animateto",
+      "rule_description": "Use the scale animation to replace animateTo when the component layout is changed",
+      "defective_files": ["entry/src/main/ets/cases/scale_animation_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/scale_animation_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_arkui_use_transition_to_replace_animateto",
+      "rule": "@performance/hp-arkui-use-transition-to-replace-animateto",
+      "rule_description": "Use transition for component transition animation",
+      "defective_files": ["entry/src/main/ets/cases/transition_animation_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/transition_animation_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_hp_performance_no_closures",
+      "rule": "@performance/hp-performance-no-closures",
+      "rule_description": "建议函数内部变量尽量使用参数传递",
+      "defective_files": ["entry/src/main/ets/cases/no_closures_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/no_closures_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_js_code_cache_by_precompile_check",
+      "rule": "@performance/js-code-cache-by-precompile-check",
+      "rule_description": "By pre-compiling the used JavaScript files into bytecode and caching it locally, you can significantly reduce the time required for both the first and second page loads.",
+      "defective_files": ["entry/src/main/ets/cases/web_precompile_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/web_precompile_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_lottie_animation_destroy_check",
+      "rule": "@performance/lottie-animation-destroy-check",
+      "rule_description": "在动画完成后及时销毁以防止内存浪费。",
+      "defective_files": ["entry/src/main/ets/cases/lottie_destroy_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/lottie_destroy_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_multiple_associations_state_var_check",
+      "rule": "@performance/multiple-associations-state-var-check",
+      "rule_description": "多个组件关联同一数据时，建议在组件中使用@Watch装饰器添加更新条件，避免不必要的组件更新。",
+      "defective_files": ["entry/src/main/ets/cases/multiple_state_association_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/multiple_state_association_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_no_high_loaded_frame_rate_range",
+      "rule": "@performance/no-high-loaded-frame-rate-range",
+      "rule_description": "不允许锁定最高帧率运行。",
+      "defective_files": ["entry/src/main/ets/cases/high_frame_rate_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/high_frame_rate_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_number_init_check",
+      "rule": "@performance/number-init-check",
+      "rule_description": "该规则将检查number是否正确使用。",
+      "defective_files": [
+        "entry/src/main/ets/cases/number_init_case.ets"
+      ],
+      "repaired_files": [
+        "entry/src/main/ets/cases/number_init_case.ets"
+      ],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_reuse_date_instances_check",
+      "rule": "@performance/reuse-date-instances-check",
+      "rule_description": "Avoid repeated creation of **Date** objects in loops or frequently called methods. Prioritize reusing existing instances or using timestamps for calculations.",
+      "defective_files": [
+        "entry/src/main/ets/cases/reuse_date_instances_case.ets"
+      ],
+      "repaired_files": [
+        "entry/src/main/ets/cases/reuse_date_instances_case.ets"
+      ],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_sparse_array_check",
+      "rule": "@performance/sparse-array-check",
+      "rule_description": "建议避免使用稀疏数组。",
+      "defective_files": [
+        "entry/src/main/ets/cases/sparse_array_case.ets"
+      ],
+      "repaired_files": [
+        "entry/src/main/ets/cases/sparse_array_case.ets"
+      ],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_timezone_interface_check",
+      "rule": "@performance/timezone-interface-check",
+      "rule_description": "在获取非本地时间时，建议使用统一标准的i18n.Calendar接口获取时间时区相关信息。",
+      "defective_files": ["entry/src/main/ets/cases/timezone_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/timezone_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_typed_array_check",
+      "rule": "@performance/typed-array-check",
+      "rule_description": "数值数组推荐使用TypedArray。",
+      "defective_files": [
+        "entry/src/main/ets/cases/typed_array_case.ets"
+      ],
+      "repaired_files": [
+        "entry/src/main/ets/cases/typed_array_case.ets"
+      ],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_performance_waterflow_data_preload_check",
+      "rule": "@performance/waterflow-data-preload-check",
+      "rule_description": "建议对waterflow子组件进行数据预加载。",
+      "defective_files": ["entry/src/main/ets/cases/waterflow_preload_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/waterflow_preload_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_commented_code",
+      "rule": "@security/no-commented-code",
+      "rule_description": "禁止以注释形式保留废弃或敏感代码。",
+      "defective_files": ["entry/src/main/ets/cases/commented_code_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/commented_code_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_cycle",
+      "rule": "@security/no-cycle",
+      "rule_description": "该规则禁止使用循环依赖",
+      "defective_files": ["entry/src/main/ets/cases/cycle_alpha_case.ets", "entry/src/main/ets/cases/cycle_beta_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/cycle_alpha_case.ets", "entry/src/main/ets/cases/cycle_beta_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_3des",
+      "rule": "@security/no-unsafe-3des",
+      "rule_description": "3DES 不得使用 ECB 模式。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_3des_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_3des_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_aes",
+      "rule": "@security/no-unsafe-aes",
+      "rule_description": "AES 只能使用 CBC/GCM + 安全填充，禁止 ECB/NoPadding。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_aes_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_aes_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_dh",
+      "rule": "@security/no-unsafe-dh",
+      "rule_description": "DH 协商算法必须使用 2048 bit 以上安全参数。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_dh_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_dh_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_dh_key",
+      "rule": "@security/no-unsafe-dh-key",
+      "rule_description": "DH 密钥模数必须 >= 2048 bit。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_dh_key_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_dh_key_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_dsa",
+      "rule": "@security/no-unsafe-dsa",
+      "rule_description": "DSA 签名/验签禁止使用 SHA1，模数需 >= 2048。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_dsa_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_dsa_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_dsa_key",
+      "rule": "@security/no-unsafe-dsa-key",
+      "rule_description": "DSA 密钥模数需 >= 2048 bit。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_dsa_key_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_dsa_key_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_ecdh",
+      "rule": "@security/no-unsafe-ecdh",
+      "rule_description": "ECC 密钥生成必须选择安全曲线（例如 ECC256 及以上）。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_ecdh_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_ecdh_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_ecdsa",
+      "rule": "@security/no-unsafe-ecdsa",
+      "rule_description": "ECDSA 签名/验签禁止使用 SHA1。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_ecdsa_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_ecdsa_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_hash",
+      "rule": "@security/no-unsafe-hash",
+      "rule_description": "禁止 MD5/SHA1 等弱哈希算法。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_hash_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_hash_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_huks",
+      "rule": "@security/no-unsafe-huks",
+      "rule_description": "HUKS 中禁止 ECB/SHA1/NONE 等不安全配置。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_huks_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_huks_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_kdf",
+      "rule": "@security/no-unsafe-kdf",
+      "rule_description": "PBKDF2/HKDF 派生不得使用 SHA1。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_kdf_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_kdf_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_mac",
+      "rule": "@security/no-unsafe-mac",
+      "rule_description": "HMAC/MAC 算法禁止使用 SHA1。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_mac_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_mac_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_rsa_encrypt",
+      "rule": "@security/no-unsafe-rsa-encrypt",
+      "rule_description": "RSA 加密需要 2048 bit+ 且使用 OAEP 等安全填充。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_rsa_encrypt_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_rsa_encrypt_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_rsa_key",
+      "rule": "@security/no-unsafe-rsa-key",
+      "rule_description": "RSA 密钥长度必须不小于 2048 bit。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_rsa_key_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_rsa_key_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_rsa_sign",
+      "rule": "@security/no-unsafe-rsa-sign",
+      "rule_description": "RSA 签名需使用 PSS + SHA256/384 等安全散列。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_rsa_sign_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_rsa_sign_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_sm2_cipher",
+      "rule": "@security/no-unsafe-sm2-cipher",
+      "rule_description": "SM2 加解密禁止使用 MD5/SHA1 等弱摘要。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_sm2_cipher_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_sm2_cipher_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_sm2_key",
+      "rule": "@security/no-unsafe-sm2-key",
+      "rule_description": "SM2 密钥生成需显式指定安全曲线参数。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_sm2_key_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_sm2_key_case.ets"],
+      "status": "draft"
+    },
+    {
+      "case_id": "case_security_no_unsafe_sm4",
+      "rule": "@security/no-unsafe-sm4",
+      "rule_description": "SM4 禁止使用 ECB 等不安全分组模式。",
+      "defective_files": ["entry/src/main/ets/cases/unsafe_sm4_case.ets"],
+      "repaired_files": ["entry/src/main/ets/cases/unsafe_sm4_case.ets"],
+      "status": "draft"
+    }
+  ]
+}

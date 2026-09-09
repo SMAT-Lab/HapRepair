@@ -1,0 +1,11 @@
+--- a/entry/src/main/ets/cases/unchanged_state_var_case.ets
++++ b/entry/src/main/ets/cases/unchanged_state_var_case.ets
+@@ -1,7 +1,7 @@
+ @Entry
+ @Component
+ struct StaticActionLabel {
+-  @State actionLabel: string = 'Continue';
++  actionLabel: string = 'Continue';
+ 
+   build() {
+     Button(this.actionLabel)

@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-210",
+  "category": "performance",
+  "finding": {
+    "column": 0,
+    "end_column": 0,
+    "end_line": 0,
+    "line": 0,
+    "message": "Implement dark mode adaptation for reduced power consumption.",
+    "relative_path": "YFree/src/main/module.json5",
+    "rule": "@performance/dark-color-mode-check",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/dark-color-mode-check",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/layout-animation-media.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--dark-color-mode-check.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "d1a5197fa83a55ea5796db8bbfbf40f6f66161c8d24fb4a242e9e0c93a6e9bc7",
+    "path": "source_files/d1a5197fa83a55ea5796db8bbfbf40f6f66161c8d24fb4a242e9e0c93a6e9bc7.json",
+    "sha256": "2a793624d5883a8e8e633b3113c082796511d18384d039108faffcef4b67c7b8"
+  }
+}

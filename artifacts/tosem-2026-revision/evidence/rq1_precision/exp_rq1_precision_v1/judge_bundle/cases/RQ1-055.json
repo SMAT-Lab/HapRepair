@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-055",
+  "category": "performance",
+  "finding": {
+    "column": 9,
+    "end_column": 9,
+    "end_line": 19,
+    "line": 19,
+    "message": "This data is associated with multiple components, you are advised to use the @Watch decorator to add update conditions to avoid unnecessary component update.",
+    "relative_path": "entry/src/main/ets/pages/collect/singlePage3.ets",
+    "rule": "@performance/multiple-associations-state-var-check",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/multiple-associations-state-var-check",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--multiple-associations-state-var-check.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "b35e37f5b2e3875ffe4981b74c36fd6d2fdd323bde5d2056324803b663ea74ef",
+    "path": "source_files/b35e37f5b2e3875ffe4981b74c36fd6d2fdd323bde5d2056324803b663ea74ef.json",
+    "sha256": "08c52bfe3c57c44b17be9e22758fd09e9339ec203053de953762ddfb13f29b9b"
+  }
+}

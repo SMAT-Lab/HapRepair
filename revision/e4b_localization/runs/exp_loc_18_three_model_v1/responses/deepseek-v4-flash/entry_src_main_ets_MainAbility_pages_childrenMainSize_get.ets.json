@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "formal": true,
+  "run_id": "exp_loc_18_three_model_v1",
+  "model_requested": "deepseek-v4-flash",
+  "file": "entry/src/main/ets/MainAbility/pages/childrenMainSize/get.ets",
+  "source_sha256": "014aecc02c9d3eff0aa15f351c8ddf5e1fb48044fd29dd55e3b303443066f8c7",
+  "prompt_sha256": "6d3f4ecd08c074bcd220d3334b110b04770f020e198d579ec81bfc88bd98aae7",
+  "protocol_sha256": "baaf76932d8013e8eaa0b1f840fb4ba02e37412caef5f0e3bc4903a3e9b6bbeb",
+  "ground_truth_sha256": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3",
+  "started_at": "2026-08-07T14:07:56.064434+00:00",
+  "provider_route": {
+    "api_base_env": "DS_API_BASE",
+    "api_key_env": "DS_API_KEY",
+    "api_base_sha256": "a34e2a4708ed1c61008a151688838dcf1c44d4e7f08054633e72ba7c0b16cfc1"
+  },
+  "status": "completed",
+  "model_reported": "deepseek-v4-flash",
+  "response_id": "b2bf1c70-0639-4560-9a10-59b7b3ca1885",
+  "usage": {
+    "prompt_tokens": 862,
+    "completion_tokens": 29,
+    "total_tokens": 891,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 606
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": 200,
+      "elapsed_seconds": 0.8950505579996388,
+      "result": "success"
+    }
+  ],
+  "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-remove-redundant-state-var\",\"line\":22}]}",
+  "predicted_defects": [
+    {
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "line": 22
+    }
+  ],
+  "parse_ok": true,
+  "parse_error": null,
+  "raw_response": {
+    "id": "b2bf1c70-0639-4560-9a10-59b7b3ca1885",
+    "object": "chat.completion",
+    "created": 1786111676,
+    "model": "deepseek-v4-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-remove-redundant-state-var\",\"line\":22}]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 862,
+      "completion_tokens": 29,
+      "total_tokens": 891,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 606
+    },
+    "system_fingerprint": "fp_a18b46594c_prod0820_fp8_kvcache_20260402"
+  },
+  "completed_at": "2026-08-07T14:07:56.959932+00:00",
+  "elapsed_seconds": 0.8954949239996495
+}

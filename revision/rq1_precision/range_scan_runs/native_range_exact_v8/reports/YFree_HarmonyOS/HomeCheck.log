@@ -1,0 +1,18 @@
+[2026-08-07T16:04:57.868] [INFO] [1975994] [HomeCheck] - [ConfigUtils] Checking started.
+[2026-08-07T16:04:57.869] [ERROR] [1975994] [HomeCheck] - [FileUtils] Error occurred while reading file list from .: Error: EISDIR: illegal operation on a directory, read
+[2026-08-07T16:04:57.885] [INFO] [1975994] [HomeCheck] - [CheckEntry] File count: 22
+[2026-08-07T16:04:57.886] [INFO] [1975994] [HomeCheck] - [CheckEntry] Build sceneConfig completed.
+[2026-08-07T16:05:06.822] [INFO] [1975994] [HomeCheck] - [CheckEntry] Build scene completed.
+[2026-08-07T16:05:06.928] [INFO] [1975994] [HomeCheck] - [CheckEntry] Infer types completed.
+[2026-08-07T16:05:06.929] [INFO] [1975994] [HomeCheck] - [ConfigUtils] The npmPath:npm
+[2026-08-07T16:05:06.930] [INFO] [1975994] [HomeCheck] - [ConfigUtils] The npmInstallDir:/home/zhihao/hdd/haprepair/homecheck
+[2026-08-07T16:05:06.974] [INFO] [1975994] [HomeCheck] - [Message] ===== progress: 60% ======
+[2026-08-07T16:05:06.987] [ERROR] [1975994] [ArkAnalyzer] - [ViewTreeBuilder] ViewTree->addCustomComponentNode @YFree_HarmonyOS/YFree/src/main/ets/views.ets: YEmpty build viewtree fail.
+[2026-08-07T16:05:06.989] [ERROR] [1975994] [ArkAnalyzer] - [ViewTreeBuilder] ViewTree->addCustomComponentNode @YFree_HarmonyOS/YFree/src/main/ets/views.ets: YEmpty build viewtree fail.
+[2026-08-07T16:05:06.990] [ERROR] [1975994] [ArkAnalyzer] - [ViewTreeBuilder] ViewTree->addCustomComponentNode @YFree_HarmonyOS/YFree/src/main/ets/views.ets: YEmpty build viewtree fail.
+[2026-08-07T16:05:06.991] [ERROR] [1975994] [ArkAnalyzer] - [ViewTreeBuilder] ViewTree->addCustomComponentNode @YFree_HarmonyOS/YFree/src/main/ets/views.ets: YEmpty build viewtree fail.
+[2026-08-07T16:05:06.992] [ERROR] [1975994] [ArkAnalyzer] - [ViewTreeBuilder] ViewTree->addCustomComponentNode @YFree_HarmonyOS/YFree/src/main/ets/views.ets: YEmpty build viewtree fail.
+[2026-08-07T16:05:07.000] [INFO] [1975994] [HomeCheck] - [Message] ===== progress: 100% ======
+[2026-08-07T16:05:07.000] [INFO] [1975994] [HomeCheck] - [CheckEntry] 18 issues from checker - @security/no-commented-code
+[2026-08-07T16:05:07.002] [INFO] [1975994] [HomeCheck] - [Main] Checking completed.
+[2026-08-07T16:05:07.002] [INFO] [1975994] [HomeCheck] - [Main] HomeCheck took: 9.144 s.

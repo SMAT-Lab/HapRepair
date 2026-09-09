@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-039",
+  "category": "security",
+  "rule": "@security/no-unsafe-dh-key",
+  "rule_description": "DH 密钥模数必须 >= 2048 bit。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_dh_key_case.ets",
+      "line": 3,
+      "column": 68,
+      "severity": "error",
+      "message": "Use unsafe DH key.",
+      "rule": "@security/no-unsafe-dh-key"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_dh_key_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst exchangeKeyGenerator = cryptoFramework.createAsyKeyGenerator('DH_modp1536');\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_dh_key_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst exchangeKeyGenerator = cryptoFramework.createAsyKeyGenerator('DH_modp3072');\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_dh_key_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst exchangeKeyGenerator = cryptoFramework.createAsyKeyGenerator('DH_modp2048');\n"
+    }
+  ]
+}

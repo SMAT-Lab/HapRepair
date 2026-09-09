@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-090",
+  "category": "security",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 11,
+    "line": 11,
+    "message": "Dependency cycle detected: flutter/src/main/ets/plugin/editing/TextInputPlugin.ets -> flutter/src/main/ets/embedding/engine/systemchannels/TextInputChannel.ets -> flutter/src/main/ets/plugin/editing/TextInputPlugin.ets",
+    "relative_path": "flutter/src/main/ets/plugin/editing/TextInputPlugin.ets",
+    "rule": "@security/no-cycle",
+    "severity": "warn"
+  },
+  "rule": "@security/no-cycle",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-cycle.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "8de3b3f243b980c138c098110ab1cce50e0223c008f450b688f6d57434101811",
+    "path": "source_files/8de3b3f243b980c138c098110ab1cce50e0223c008f450b688f6d57434101811.json",
+    "sha256": "7f134d2fae290856551cd23d851384360394eba20f6ab36eb2257295e8a84328"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_security_no_unsafe_dsa",
+  "blind_id": "V14-059",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbd5-63ae-7b51-95aa-3ba79db05683",
+  "usage": {
+    "input_tokens": 143798,
+    "cached_input_tokens": 124416,
+    "output_tokens": 2556,
+    "total_tokens": 146354
+  },
+  "wall_seconds": 58.89568261500244,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 36,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- workspace files ---'; rg --files -g 'HAPREPAIR_TASK.json' -g '\"'!node_modules'\"' -g '\"'!oh_modules'\"'; printf '%s\\\\n' '--- top level ---'; rg --files -g '\"'!node_modules'\"' -g '\"'!oh_modules'\"' | sed -n '1,160p'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,320p' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"wc -l /codex-home/skills/haprepair-openharmony-repair/SKILL.md /codex-home/skills/haprepair-openharmony-repair/references/operations.md; sed -n '241,520p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills/haprepair-openharmony-repair -maxdepth 4 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/cases/unsafe_dsa_case.ets; printf '%s\\\\n' '--- source metadata ---'; file entry/src/main/ets/cases/unsafe_dsa_case.ets; printf '%s\\\\n' '--- all project files including hidden top-level ---'; find . -maxdepth 4 -type f -not -path './.git/*' -print | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/index.md; printf '%s\\\\n' '--- manifest ---'; sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md; printf '%s\\\\n' '--- security crypto ---'; sed -n '1,400p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,280p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-dsa.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"git diff -- entry/src/main/ets/cases/unsafe_dsa_case.ets; printf '%s\\\\n' '--- final source ---'; nl -ba entry/src/main/ets/cases/unsafe_dsa_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git status --short'",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'rg -n \"DSA|SHA1|SHA256|createVerify\" entry/src/main/ets/cases/unsafe_dsa_case.ets HAPREPAIR_TASK.json'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "63512002631f222b9161b71f05296af4544a3c0c9071d72d56c30a906b847cfb",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_dsa_case.ets",
+      "sha256": "96021451267ef217114f6a35d1c52c352fb5ce7c330edfd06b7733276096cdaf",
+      "size_bytes": 134,
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst legacyVerifier = cryptoFramework.createVerify('DSA2048|SHA256');\n"
+    }
+  ],
+  "trace_sha256": "8a31c5ef330d08ba78d84a7f8f8055aa0746c222cafb4ada95822bbfad5adcb2",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:48:00.742681+00:00",
+  "rejection_reasons": []
+}

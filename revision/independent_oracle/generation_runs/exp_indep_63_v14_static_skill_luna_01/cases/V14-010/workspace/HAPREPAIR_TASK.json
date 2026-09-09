@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-010",
+  "target_rule": "@performance/sparse-array-check",
+  "codelinter_rule": "@performance/sparse-array-check",
+  "rule_description": "建议避免使用稀疏数组。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/sparse_array_case.ets",
+      "line": 2,
+      "column": 40,
+      "severity": "suggestion",
+      "message": "Sparse array detected. Avoid using sparse arrays.",
+      "rule": "@performance/sparse-array-check"
+    },
+    {
+      "file": "entry/src/main/ets/cases/sparse_array_case.ets",
+      "line": 3,
+      "column": 12,
+      "severity": "suggestion",
+      "message": "Sparse array detected. Avoid using sparse arrays.",
+      "rule": "@performance/sparse-array-check"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/sparse_array_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

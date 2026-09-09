@@ -1,0 +1,43 @@
+{
+  "selected_rules": [
+    "@security/no-unsafe-rsa-encrypt"
+  ],
+  "consulted_specs": {
+    "@security/no-unsafe-rsa-encrypt": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md",
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md"
+    ]
+  },
+  "consulted_guides": {
+    "@security/no-unsafe-rsa-encrypt": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-rsa-encrypt.md"
+    ]
+  },
+  "entity_repairs": [
+    {
+      "rule": "@security/no-unsafe-rsa-encrypt",
+      "relative_path": "entry/src/main/ets/cases/unsafe_rsa_encrypt_case.ets",
+      "locations": [
+        {
+          "line": 3,
+          "column": 51
+        }
+      ],
+      "entities": [
+        "RSA cipher configuration in the module-scope exportCipher declaration"
+      ],
+      "invariants": [
+        "RSA key size is at least 2048 bits",
+        "OAEP padding and explicit SHA-256/MGF1-SHA-256 parameters are used",
+        "Existing import, declaration, API shape, and cipher construction behavior are preserved"
+      ],
+      "evidence": [
+        "The supplied source contains one RSA encryption call and no decryptor, key-generation path, call site, persisted ciphertext, or peer contract",
+        "The original RSA1024|PKCS1 identifier is the sole unsafe configuration in the workspace"
+      ],
+      "transformation": "Replaced RSA1024|PKCS1 with RSA2048|PKCS1_OAEP|SHA256|MGF1_SHA256 while retaining the existing cryptoFramework import, exportCipher declaration, and createCipher call.",
+      "status": "repaired"
+    }
+  ],
+  "unresolved_external": []
+}

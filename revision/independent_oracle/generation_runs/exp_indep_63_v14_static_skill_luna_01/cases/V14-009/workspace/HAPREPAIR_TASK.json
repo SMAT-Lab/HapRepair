@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-009",
+  "target_rule": "@performance/constant-property-referencing-check-in-loops",
+  "codelinter_rule": "@performance/constant-property-referencing-check-in-loops",
+  "rule_description": "在循环如需频繁访问某个常量，且该属性引用常量在循环中不会改变，建议提取到循环外部，减少属性访问的次数",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/constant_property_loop_case.ets",
+      "line": 8,
+      "column": 30,
+      "severity": "suggestion",
+      "message": "This property access occurs within a loop and returns a constant result; you are advised to extract it outside the loop body to reduce the number of property access times.",
+      "rule": "@performance/constant-property-referencing-check-in-loops"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/constant_property_loop_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-077",
+  "category": "security",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 16,
+    "line": 16,
+    "message": "Dependency cycle detected: DfuLibrary/src/main/ets/dfu/LegacyDfuImpl.ts -> DfuLibrary/src/main/ets/dfu/BaseCustomDfuImpl.ts -> DfuLibrary/src/main/ets/dfu/BaseDfuImpl.ts -> DfuLibrary/src/main/ets/dfu/DfuBaseService.ts -> DfuLibrary/src/main/ets/dfu/DfuServiceProvider.ts -> DfuLibrary/src/main/ets/dfu/LegacyButtonlessDfuImpl.ts -> DfuLibrary/src/main/ets/dfu/LegacyDfuImpl.ts",
+    "relative_path": "DfuLibrary/src/main/ets/dfu/LegacyDfuImpl.ts",
+    "rule": "@security/no-cycle",
+    "severity": "warn"
+  },
+  "rule": "@security/no-cycle",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-cycle.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "9c60800c18bc0fcca72a41560e9f7796bc3bd309493027c07be26dc8cb7b6d4f",
+    "path": "source_files/9c60800c18bc0fcca72a41560e9f7796bc3bd309493027c07be26dc8cb7b6d4f.json",
+    "sha256": "c0f8849e323ba8c5eadb8647ef344fc84c169a2ef73675e728a8f444a6ab2999"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "analysis_id": "E3-protocol-rejection-root-cause-v1",
+  "parent_object": "exp_indep_63_v14_static_skill_luna_01",
+  "question": "Why were V14-001, V14-029, and V14-030 rejected initially?",
+  "inspection_target": "Frozen parent/retry result records, command traces, runner lexical restriction markers, and the Skill agent-mode instructions.",
+  "fixed_conditions": "Retry used the same model, provider, reasoning effort, prompt, Skill, benchmark input, and isolation; only a fresh nondeterministic invocation changed.",
+  "direct_cause": "The runner's post-hoc lexical filter rejected each otherwise completed candidate because one shell command string contained a restricted marker.",
+  "root_cause": "A hidden acceptance-policy mismatch: the Skill tells the agent about HAPREPAIR_AGENT_MODE and unavailable HomeCheck/CodeLinter operations, while the runner treats even mentioning those tool names inside benign env/rg inspection commands as a terminal violation.",
+  "not_observed": [
+    "API or endpoint failure",
+    "nonzero Codex exit",
+    "empty model response",
+    "missing source patch",
+    "actual HomeCheck, CodeLinter, or repair_session invocation",
+    "human-reference or historical-output access"
+  ],
+  "case_count": 3,
+  "cases": [
+    {
+      "source_blind_id": "V14-001",
+      "retry_blind_id": "RTRY-001",
+      "case_id": "case_performance_hp_arkui_combine_same_arg_animateto",
+      "parent_status": "rejected",
+      "parent_rejection_reasons": [
+        "restricted_command_observed"
+      ],
+      "parent_api_failure_excluded": true,
+      "parent_total_tokens": 188467,
+      "parent_patch_sha256": "444fd607137e235f9fb890d03c9f892fcdaf0cd38a5b08e1f825b9a4b37c68d3",
+      "triggering_commands": [
+        {
+          "command": "/usr/bin/bash -lc \"find . -maxdepth 8 -type f -print | sort; rg -n 'homecheck|CodeLinter|repair_session' HAPREPAIR_TASK.json entry/src/main/ets/cases/combine_animate_to_case.ets\"",
+          "matched_markers": [
+            "homecheck",
+            "codelinter"
+          ],
+          "probe_type": "local task/source metadata search",
+          "command_exit_code": 0
+        }
+      ],
+      "forbidden_tool_invocation_observed": false,
+      "retry_status": "accepted",
+      "retry_restricted_commands": [],
+      "parent_result_sha256": "f4776b93b2c012b159a4d28bf0455fcaecb446147a1e028f13dfd4f42e47ebbc",
+      "retry_result_sha256": "7b1336b7bc82de99d4b55fd9da2788295a83a7c6e515e12de1e9d17420cbb2ad"
+    },
+    {
+      "source_blind_id": "V14-029",
+      "retry_blind_id": "RTRY-002",
+      "case_id": "case_security_no_unsafe_rsa_encrypt",
+      "parent_status": "rejected",
+      "parent_rejection_reasons": [
+        "restricted_command_observed"
+      ],
+      "parent_api_failure_excluded": true,
+      "parent_total_tokens": 260663,
+      "parent_patch_sha256": "7ce5d99ad01a491475bedfaac7557e6beb82b2df7ae95936c878311234b2d940",
+      "triggering_commands": [
+        {
+          "command": "/usr/bin/bash -lc \"env | rg '\"'^HAPREPAIR|''^CODELINTER|''^HVIGOR'\"' || true\"",
+          "matched_markers": [
+            "codelinter"
+          ],
+          "probe_type": "agent-mode environment discovery",
+          "command_exit_code": 0
+        }
+      ],
+      "forbidden_tool_invocation_observed": false,
+      "retry_status": "accepted",
+      "retry_restricted_commands": [],
+      "parent_result_sha256": "5afffe77bc57dc4c5ccff36ca425c7cc94587994a23d249a4db2b0d9f820c176",
+      "retry_result_sha256": "9b35c31c194f152e79e5a2081eace9c33d816cf0b9913f2ab03f2e06ffd6f0f3"
+    },
+    {
+      "source_blind_id": "V14-030",
+      "retry_blind_id": "RTRY-003",
+      "case_id": "case_performance_avoid_overusing_custom_component_check",
+      "parent_status": "rejected",
+      "parent_rejection_reasons": [
+        "restricted_command_observed"
+      ],
+      "parent_api_failure_excluded": true,
+      "parent_total_tokens": 263417,
+      "parent_patch_sha256": "02e49b1d20fdd3f701b7116baad263767ba78dabddb39821bd1fc06a525e5c36",
+      "triggering_commands": [
+        {
+          "command": "/usr/bin/bash -lc \"find . -maxdepth 3 -type f -print | sort; printf '\\\\n--- task-related environment ---\\\\n'; env | rg '\"'^HAPREPAIR|''^HVIGOR|''^CODELINTER'\"' || true\"",
+          "matched_markers": [
+            "codelinter"
+          ],
+          "probe_type": "agent-mode environment discovery",
+          "command_exit_code": 0
+        }
+      ],
+      "forbidden_tool_invocation_observed": false,
+      "retry_status": "accepted",
+      "retry_restricted_commands": [],
+      "parent_result_sha256": "fdb23c318c2853df230827c272c76b539ef49bc011ff117fe76323b314958dbe",
+      "retry_result_sha256": "098d058d9856ed3e968f11fff525c99f973af192eed73831bf77fe1500f4e685"
+    }
+  ],
+  "claim_update": "The three outcomes are harness-level lexical protocol rejections, not semantic repair failures or API failures. The main 60/63 result remains the frozen intention-to-treat estimate; the retry-completed result is a separate sensitivity.",
+  "comparability": "The retry is controlled on all frozen inputs and settings, but is not a single-invocation estimate because only rejected cases received another draw.",
+  "recommended_runner_fix_for_future_runs": [
+    "Expose the forbidden-operation policy explicitly in the task contract.",
+    "Classify parsed executable/tool targets rather than substrings anywhere in a shell command.",
+    "Distinguish benign environment/task inspection from actual forbidden tool invocation or forbidden-path access."
+  ],
+  "next_action": "Close E3 after the retry sensitivity summary and global reconciliation."
+}

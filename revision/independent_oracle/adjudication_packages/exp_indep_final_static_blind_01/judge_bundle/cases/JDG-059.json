@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-059",
+  "category": "performance",
+  "rule": "@performance/hp-arkui-suggest-cache-avplayer",
+  "rule_description": "建议缓存AVPlayer实例減少起播时延。\n\n音视频起播速度慢的场景下，建议优先修改",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/avplayer_cache_case.ets",
+      "line": 18,
+      "column": 7,
+      "severity": "warn",
+      "message": "Suggestion Cache AVPlayer instance to shorten the playback start delay",
+      "rule": "@performance/hp-arkui-suggest-cache-avplayer"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/avplayer_cache_case.ets",
+      "content": "import media from '@ohos.multimedia.media';\n\n@Entry\n@Component\nstruct VoiceMemoPreview {\n  private previewPlayer?: media.AVPlayer;\n  @State status: string = 'Preparing preview';\n\n  aboutToAppear(): void {\n    media.createAVPlayer().then((player: media.AVPlayer) => {\n      this.previewPlayer = player;\n      this.status = 'Preview ready';\n    });\n  }\n\n  aboutToDisappear(): void {\n    if (this.previewPlayer) {\n      this.previewPlayer.release();\n    }\n    this.previewPlayer = undefined;\n  }\n\n  build() {\n    Column({ space: 10 }) {\n      Text('Voice memo')\n      Text(this.status)\n    }\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/avplayer_cache_case.ets",
+      "content": "import media from '@ohos.multimedia.media';\n\n@Entry\n@Component\nstruct VoiceMemoPreview {\n  private previewPlayer?: media.AVPlayer;\n  @State status: string = 'Preparing preview';\n\n  aboutToAppear(): void {\n    media.createAVPlayer().then((player: media.AVPlayer) => {\n      this.previewPlayer = player;\n      this.status = 'Preview ready';\n    });\n  }\n\n  aboutToDisappear(): void {\n    const activePlayer = this.previewPlayer;\n    if (activePlayer) {\n      activePlayer.reset();\n    }\n    this.status = 'Preview cached';\n  }\n\n  build() {\n    Column({ space: 10 }) {\n      Text('Voice memo')\n      Text(this.status)\n    }\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/avplayer_cache_case.ets",
+      "content": "import media from '@ohos.multimedia.media';\n\nclass PreviewPlayerCache {\n  private player?: media.AVPlayer;\n  private pendingPlayer?: Promise<media.AVPlayer>;\n\n  acquire(): Promise<media.AVPlayer> {\n    if (this.player) {\n      return Promise.resolve(this.player);\n    }\n    if (!this.pendingPlayer) {\n      this.pendingPlayer = media.createAVPlayer().then((player: media.AVPlayer) => {\n        this.player = player;\n        this.pendingPlayer = undefined;\n        return player;\n      }).catch((error) => {\n        this.pendingPlayer = undefined;\n        throw error;\n      });\n    }\n    return this.pendingPlayer;\n  }\n\n  reset(): void {\n    this.player?.reset();\n  }\n}\n\nconst previewPlayerCache: PreviewPlayerCache = new PreviewPlayerCache();\n\n@Entry\n@Component\nstruct VoiceMemoPreview {\n  private previewPlayer?: media.AVPlayer;\n  private appearanceId: number = 0;\n  @State status: string = 'Preparing preview';\n\n  aboutToAppear(): void {\n    const currentAppearanceId: number = ++this.appearanceId;\n    this.status = 'Preparing preview';\n    previewPlayerCache.acquire().then((player: media.AVPlayer) => {\n      if (currentAppearanceId !== this.appearanceId) {\n        return;\n      }\n      this.previewPlayer = player;\n      this.status = 'Preview ready';\n    }).catch(() => {\n      if (currentAppearanceId === this.appearanceId) {\n        this.status = 'Preview unavailable';\n      }\n    });\n  }\n\n  aboutToDisappear(): void {\n    ++this.appearanceId;\n    previewPlayerCache.reset();\n    this.previewPlayer = undefined;\n  }\n\n  build() {\n    Column({ space: 10 }) {\n      Text('Voice memo')\n      Text(this.status)\n    }\n  }\n}\n"
+    }
+  ]
+}

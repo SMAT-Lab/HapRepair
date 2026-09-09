@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-040",
+  "category": "performance",
+  "finding": {
+    "column": 7,
+    "end_column": 7,
+    "end_line": 116,
+    "line": 116,
+    "message": "Use monitorInvisibleArea with ImageAnimator whenever possible.",
+    "relative_path": "entry/src/main/ets/pages/ImageRotate/ImageRotateExample001.ets",
+    "rule": "@performance/monitor-invisible-area-in-image-animation",
+    "severity": "warn"
+  },
+  "rule": "@performance/monitor-invisible-area-in-image-animation",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/layout-animation-media.md"
+    ],
+    "static_reference_available": false,
+    "static_reference_path": null
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "74d9c24209515afa0da8b435cd2b06282d1c2fedf16983927fc1bcfacc8d0f89",
+    "path": "source_files/74d9c24209515afa0da8b435cd2b06282d1c2fedf16983927fc1bcfacc8d0f89.json",
+    "sha256": "939bd4d038af1276c0dbcc0a34fda35ea7c6865d9cd996fba9d63cced5cf88ae"
+  }
+}

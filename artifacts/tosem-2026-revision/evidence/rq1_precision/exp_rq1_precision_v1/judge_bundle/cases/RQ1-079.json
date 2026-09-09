@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-079",
+  "category": "performance",
+  "finding": {
+    "column": 5,
+    "end_column": 5,
+    "end_line": 39,
+    "line": 39,
+    "message": "Use taskpool for asynchronous processing of network resource requests and responses",
+    "relative_path": "entry/src/main/ets/pages/example/ImageExample002.ets",
+    "rule": "@performance/hp-arkui-use-taskpool-for-web-request",
+    "severity": "warn"
+  },
+  "rule": "@performance/hp-arkui-use-taskpool-for-web-request",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/computation-api.md"
+    ],
+    "static_reference_available": false,
+    "static_reference_path": null
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "0a3eca567cae498ae2fbbfea8ffea86c25d4ce5d15a4f281d956416c71a4185b",
+    "path": "source_files/0a3eca567cae498ae2fbbfea8ffea86c25d4ce5d15a4f281d956416c71a4185b.json",
+    "sha256": "9971ecf777a0a8c0108f07e3da5d430cd12682c2c8409dee5dbb731da8942b0f"
+  }
+}

@@ -1,0 +1,11 @@
+--- a/entry/src/main/ets/cases/flex_layout_case.ets
++++ b/entry/src/main/ets/cases/flex_layout_case.ets
+@@ -2,7 +2,7 @@
+ @Component
+ struct StatusToolbar {
+   build() {
+-    Flex({ direction: FlexDirection.Row }) {
++    Row() {
+       Flex() { Text('Queued') }.padding(6).backgroundColor(0xFFF3CD)
+       Flex() { Text('Running') }.padding(6).backgroundColor(0xD1ECF1)
+       Flex() { Text('Blocked') }.padding(6).backgroundColor(0xF8D7DA)

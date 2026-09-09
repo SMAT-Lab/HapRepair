@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-002",
+  "category": "security",
+  "rule": "@security/no-unsafe-sm2-key",
+  "rule_description": "SM2 密钥生成需显式指定安全曲线参数。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_sm2_key_case.ets",
+      "line": 3,
+      "column": 17,
+      "severity": "warn",
+      "message": "Do not use insecure key length SM2 key negotiation algorithm; it is recommended to use the secure SM2 interface in the Petal Aegis SDK.",
+      "rule": "@security/no-unsafe-sm2-key"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_sm2_key_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\ncryptoFramework.createAsyKeyGenerator('SM2|SHA256');\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_sm2_key_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\ncryptoFramework.createAsyKeyGenerator('SM2_256|SHA256');\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_sm2_key_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\ncryptoFramework.createAsyKeyGenerator('SM2_256|SHA256');\n"
+    }
+  ]
+}

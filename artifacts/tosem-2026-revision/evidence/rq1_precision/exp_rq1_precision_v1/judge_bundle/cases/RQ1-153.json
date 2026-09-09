@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-153",
+  "category": "security",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 18,
+    "line": 18,
+    "message": "Dependency cycle detected: lib/src/main/ets/utils/file_stream.ts -> lib/src/main/ets/utils/encodings.ts -> lib/src/main/ets/utils/common.ts -> lib/src/main/ets/utils/file_stream.ts",
+    "relative_path": "lib/src/main/ets/utils/file_stream.ts",
+    "rule": "@security/no-cycle",
+    "severity": "warn"
+  },
+  "rule": "@security/no-cycle",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-cycle.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "215ae49a101eea4844e8d969aa2d00be582bcb9248c1f65fccb67ac0a4746e2e",
+    "path": "source_files/215ae49a101eea4844e8d969aa2d00be582bcb9248c1f65fccb67ac0a4746e2e.json",
+    "sha256": "5d295526291cee06848efcb506dd4d33151a746d6394d0fd8c76a53b3d0a4481"
+  }
+}

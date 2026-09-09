@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-AGENT-REF-10",
+  "status": "frozen",
+  "research_question": "What contextual repair effectiveness, validation behavior, and efficiency does a strong contemporary coding agent achieve on the unchanged ten-project reference subset under the same localization and evaluator budget?",
+  "null_hypothesis": "No directional superiority hypothesis is preregistered because this is a limited contemporary reference rather than the paper's primary method claim.",
+  "alternative_hypothesis": "No directional superiority hypothesis is preregistered; all effect directions, including ties or reference-agent advantages, will be reported.",
+  "research_type": "limited contextual reference experiment",
+  "research_objective": "Provide a runnable contemporary coding-agent reference while preserving the original ten-project membership and avoiding a claim that HapRepair must outperform agents.",
+  "model": {
+    "requested_id": "gpt-5.6-luna",
+    "provider": "xsp",
+    "reasoning_effort": "high",
+    "runs_per_project_condition": 1,
+    "temperature": "not explicitly configurable through the frozen Codex harness",
+    "top_p": "provider default",
+    "output_length": "provider default",
+    "seed": "not exposed",
+    "nondeterminism_note": "A single run remains potentially nondeterministic even without an exposed sampling-temperature control."
+  },
+  "runtime": {
+    "container_image": "hybrid-gym-codex:0.146.0",
+    "container_image_id": "sha256:9cc027cd2f9404ccd58c61e367fe712895188a926c07d464ea0936e893b9a89a",
+    "codex_cli": "0.146.0",
+    "python": "3.13.11",
+    "codelinter": "6.0.240",
+    "codelinter_config_sha256": "91de02b03d0c5df48d3da615eb0b17615f2f9ad0e0f7f575119c964ae3b9cc95",
+    "codelinter_overlay_sha256": "ca0555024524ad76c0d6f058bb98a36729a92c8b701f373b776bdb7e677f625c",
+    "openharmony_sdk_manifest_sha256": "dd1f23fab928cca17b8a3daeb5a6f0b8566b460d9c85b24684b39da80f84cde7",
+    "sdk_build_components_sha256": "ba07957c4def67422612d794593e1c5fc7f0991afaf289e26483c895544aa49d",
+    "sdk_native_api20_sha256": "a9bbeae7b72c80ae573d5439bb88e9d5cbe202d260f8394f24ae37669911d4f4"
+  },
+  "common_contract": {
+    "target_rule_prefixes": [
+      "@performance/",
+      "@security/",
+      "@hw-ets-eslint/"
+    ],
+    "maximum_post_edit_validation_scans": 5,
+    "initial_scan_counts_against_budget": false,
+    "final_scan_counts_against_budget": false,
+    "final_scan_is_fed_back": false,
+    "thread_scope": "active_round",
+    "same_initial_localization": true,
+    "alert_identity": "multiset over (relative_path, rule, whitespace-normalized message)",
+    "source_diff_gate": "Validation requires a real ArkTS/TypeScript source diff relative to the active round snapshot.",
+    "target_coverage_gate": "Every affected file for every required rule in the frozen round plan must be completed or concretely blocked before a validation scan is consumed.",
+    "candidate_retention": "Retain candidates after structural, public-API, configured build, or configured test failure and continue repair in place.",
+    "best_valid_selection": "Before the evaluator-only final scan, restore the valid candidate with the lexicographically best score over final alerts, introduced alerts, changed source files, and round.",
+    "build_test_policy": "Use only evaluator gates frozen as available in the input manifest; otherwise label the project statically validated only.",
+    "arkts_diagnostic_policy": "For configured builds, compiler ignoreWarning applies only to ArkTS checker diagnostics; later compilation, resolution, packaging, and process failures remain fatal."
+  },
+  "scheduling": {
+    "maximum_no_diff_retries_per_round": 2,
+    "thread_scope": "active_round",
+    "round_target_policy": "Use the same complete-cluster scheduling and file-coverage contract as the HapRepair Skill condition.",
+    "complete_cluster_policy": "For every required rule, inspect every affected file and account for all localized instances before validation.",
+    "homogeneous_batch_policy": "Use reviewed mechanical batching for a demonstrated homogeneous transformation; the smallest safe edit is per instance, not a cap on files.",
+    "interaction_policy": "Feed residual and introduced alert observations into later rounds without access to HapRepair Skill interaction state."
+  },
+  "retrieval": {
+    "skill_protocol_path": "../../skills/haprepair-openharmony-repair/references/protocol-v4.json",
+    "skill_protocol_id": "haprepair-skill-v4-20260803",
+    "skill_protocol_sha256": "dbbbff88bcc6343bbe570a072949af8701135cf3c8ea2622704b1c2f008a1253",
+    "exposed_to_agent": false,
+    "require_success_for_covered_rules": false,
+    "isolation": "The reference agent cannot access the HapRepair corpus, Skill broker/state, retrieval output, independent-oracle references, or another condition's patches."
+  },
+  "dataset": {
+    "formal_inputs": "formal_inputs_agent_ref_10_v4.json",
+    "formal_inputs_sha256": "abc82fa6576cc0e7da976694cfca29bc5b58868c499b701b8e57a8414a601f76",
+    "parent_hapskill_35_inputs_sha256": "759104715e61e8a449388c0d4805252103509aaf3d1eeb80fe1ed1996899413c",
+    "project_count": 10,
+    "frozen_target_finding_count": 4393,
+    "membership": "The original reference subset is unchanged and includes wifi_testapp; no resampling or replacement is permitted.",
+    "source_identity": "Each reference record is byte-identical metadata copied from its matching frozen 35-project input record."
+  },
+  "execution": {
+    "evaluation_date_policy": "Formal run manifests record exact UTC start/completion timestamps; execution is authorized no earlier than 2026-08-04 (Asia/Shanghai).",
+    "maximum_concurrent_conditions": 8,
+    "retrieval_devices": [
+      "cuda:0",
+      "cuda:1",
+      "cuda:2",
+      "cuda:3"
+    ],
+    "gpu_policy": "Devices remain part of the common scheduler contract although the Vanilla reference does not start a retrieval broker.",
+    "retry_policy": "Do not automatically rerun a stochastic condition. Agent-internal no-diff and coverage retries are bounded by the round protocol. An external retry requires a documented infrastructure failure before usable condition evidence and a new audited run ID.",
+    "abort_policy": "On the first condition failure, stop launching new conditions, let already active conditions finish, preserve all directories and logs, and mark the scheduler stopped.",
+    "resume_policy": "A resumed scheduler may skip hash-matching completed conditions and launch untouched conditions. Any incomplete condition directory blocks resume pending audit; it is never deleted or silently reused.",
+    "formal_04_forbidden": true
+  },
+  "formal_run": {
+    "run_id": "exp_agent_ref_10_luna_v4_formal_01",
+    "condition": "vanilla",
+    "condition_order": [
+      "TextComponentTest:vanilla",
+      "ace_ets_module_swiper_api11:vanilla",
+      "acts_validator:vanilla",
+      "applications_photos:vanilla",
+      "bluetoothtest:vanilla",
+      "wifi_testapp:vanilla",
+      "HealthyPotAssistant:vanilla",
+      "asn1_ber:vanilla",
+      "applications_permission_manager:vanilla",
+      "ohos_cordova:vanilla"
+    ]
+  },
+  "reported_metrics": [
+    "initial_alerts",
+    "final_alerts",
+    "eliminated_alerts",
+    "remaining_alerts",
+    "introduced_alerts",
+    "net_reduction",
+    "per_rule_alert_deltas",
+    "validation_scan_count",
+    "coverage_retry_count",
+    "no_diff_retry_count",
+    "repair_required_round_count",
+    "best_valid_round",
+    "final_candidate_selection",
+    "build_status",
+    "test_status",
+    "input_tokens",
+    "cached_input_tokens",
+    "output_tokens",
+    "total_tokens",
+    "api_cost_if_traceable",
+    "wall_clock_seconds"
+  ],
+  "stop_condition": "Stop early only when an accepted candidate has zero target findings; otherwise stop after five post-edit validation scans and then restore best-valid for the evaluator-only final scan.",
+  "abandonment_condition": "Stop and preserve evidence on input/protocol/model/provider drift, scanner failure, restricted-artifact access, bounded edit-retry exhaustion, or an incomplete formal condition.",
+  "reporting": {
+    "primary": "Report the full ten-project contextual reference aggregate alongside matching HapRepair Skill results from EXP-HAPSKILL-35; do not rerun Skill conditions merely to form pairs.",
+    "sensitivity": "Also report the nine-project aggregate after excluding development-exposed wifi_testapp.",
+    "effect_direction": "Report ties, regressions, and reference-agent advantages without reinterpretation as HapRepair improvements."
+  },
+  "claim_boundary": "This is a strong contemporary coding-agent reference, not the unique state of the art and not a preregistered superiority test. HomeCheck alert elimination is not semantic correctness."
+}

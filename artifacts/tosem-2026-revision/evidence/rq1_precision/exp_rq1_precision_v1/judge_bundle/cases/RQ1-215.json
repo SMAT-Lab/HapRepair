@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-215",
+  "category": "performance",
+  "finding": {
+    "column": 3,
+    "end_column": 3,
+    "end_line": 36,
+    "line": 36,
+    "message": "Remove state variables that are not associated with a UI component",
+    "relative_path": "entry/src/main/ets/MainAbility/pages/WaterFlow/WaterFlowSectionDemo/WaterFlowSectionDemo23.ets",
+    "rule": "@performance/hp-arkui-remove-redundant-state-var",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-remove-redundant-state-var",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-remove-redundant-state-var.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "b66c7b6e884ad9e7f19198a466088b62976b90930d69e0350c0b013dd6b55f16",
+    "path": "source_files/b66c7b6e884ad9e7f19198a466088b62976b90930d69e0350c0b013dd6b55f16.json",
+    "sha256": "f24fd9d1691fb936c03809fe471f9b6e6a1eaa20905bd4e36d4fa3c51a68f58f"
+  }
+}

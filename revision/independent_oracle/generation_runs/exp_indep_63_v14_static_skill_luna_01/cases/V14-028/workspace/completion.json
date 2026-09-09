@@ -1,0 +1,40 @@
+{
+  "selected_rules": [
+    "@security/no-unsafe-huks"
+  ],
+  "consulted_specs": {
+    "@security/no-unsafe-huks": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md",
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md"
+    ]
+  },
+  "consulted_guides": {},
+  "entity_repairs": [
+    {
+      "rule": "@security/no-unsafe-huks",
+      "relative_path": "entry/src/main/ets/cases/unsafe_huks_case.ets",
+      "locations": [
+        {
+          "line": 26,
+          "column": 6
+        }
+      ],
+      "entities": [
+        "Module-scope signingProperties HUKS key-generation configuration"
+      ],
+      "invariants": [
+        "cryptographic protocol compatibility",
+        "alias, purpose, authorization, access control, and lifecycle consistency",
+        "preservation of the existing ECC key-generation call"
+      ],
+      "evidence": [
+        "The workspace contains no other source files, importers, consumers, persisted ciphertext, or remote-peer contract for this alias.",
+        "The alias, ECC algorithm, 256-bit key size, options object, and generateKeyItem call remain unchanged.",
+        "The three insecure enum values were isolated in signingProperties and replaced with CBC, SHA256, and PKCS7 values."
+      ],
+      "transformation": "Kept the existing HUKS key-generation entity and replaced ECB, SHA1, and NONE parameter values with CBC, SHA256, and PKCS7 while preserving the alias and call structure.",
+      "status": "repaired"
+    }
+  ],
+  "unresolved_external": []
+}

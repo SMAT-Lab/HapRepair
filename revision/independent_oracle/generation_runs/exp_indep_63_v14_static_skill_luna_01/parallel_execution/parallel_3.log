@@ -1,0 +1,207 @@
+generation progress 1/1: V14-028 accepted
+{
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "status": "partial",
+  "prepared_case_count": 63,
+  "attempted_case_count": 26,
+  "accepted_candidate_count": 23,
+  "rejected_case_count": 3,
+  "pending_case_count": 37,
+  "one_request_per_attempted_case": true,
+  "dynamic_retrieval": false,
+  "homecheck_feedback": false,
+  "semantic_correctness_status": "not_adjudicated",
+  "usage": {
+    "input_tokens": 5691565,
+    "cached_input_tokens": 4840192,
+    "output_tokens": 106557,
+    "total_tokens": 5798122
+  },
+  "wall_seconds_sum": 2729.1458904979954,
+  "api_cost_usd": null,
+  "cost_note": "Provider billing is unavailable and is not inferred."
+}
+generation progress 1/1: V14-021 accepted
+{
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "status": "partial",
+  "prepared_case_count": 63,
+  "attempted_case_count": 31,
+  "accepted_candidate_count": 28,
+  "rejected_case_count": 3,
+  "pending_case_count": 32,
+  "one_request_per_attempted_case": true,
+  "dynamic_retrieval": false,
+  "homecheck_feedback": false,
+  "semantic_correctness_status": "not_adjudicated",
+  "usage": {
+    "input_tokens": 6747125,
+    "cached_input_tokens": 5676288,
+    "output_tokens": 130747,
+    "total_tokens": 6877872
+  },
+  "wall_seconds_sum": 3316.1455144530046,
+  "api_cost_usd": null,
+  "cost_note": "Provider billing is unavailable and is not inferred."
+}
+generation progress 1/1: V14-004 accepted
+{
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "status": "partial",
+  "prepared_case_count": 63,
+  "attempted_case_count": 34,
+  "accepted_candidate_count": 31,
+  "rejected_case_count": 3,
+  "pending_case_count": 29,
+  "one_request_per_attempted_case": true,
+  "dynamic_retrieval": false,
+  "homecheck_feedback": false,
+  "semantic_correctness_status": "not_adjudicated",
+  "usage": {
+    "input_tokens": 7247995,
+    "cached_input_tokens": 6080768,
+    "output_tokens": 139008,
+    "total_tokens": 7387003
+  },
+  "wall_seconds_sum": 3523.1357460930085,
+  "api_cost_usd": null,
+  "cost_note": "Provider billing is unavailable and is not inferred."
+}
+generation progress 1/1: V14-029 rejected
+{
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "status": "partial",
+  "prepared_case_count": 63,
+  "attempted_case_count": 39,
+  "accepted_candidate_count": 35,
+  "rejected_case_count": 4,
+  "pending_case_count": 24,
+  "one_request_per_attempted_case": true,
+  "dynamic_retrieval": false,
+  "homecheck_feedback": false,
+  "semantic_correctness_status": "not_adjudicated",
+  "usage": {
+    "input_tokens": 8353917,
+    "cached_input_tokens": 7054080,
+    "output_tokens": 159852,
+    "total_tokens": 8513769
+  },
+  "wall_seconds_sum": 4000.4958260840067,
+  "api_cost_usd": null,
+  "cost_note": "Provider billing is unavailable and is not inferred."
+}
+generation progress 1/1: V14-024 accepted
+{
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "status": "partial",
+  "prepared_case_count": 63,
+  "attempted_case_count": 43,
+  "accepted_candidate_count": 39,
+  "rejected_case_count": 4,
+  "pending_case_count": 20,
+  "one_request_per_attempted_case": true,
+  "dynamic_retrieval": false,
+  "homecheck_feedback": false,
+  "semantic_correctness_status": "not_adjudicated",
+  "usage": {
+    "input_tokens": 9003235,
+    "cached_input_tokens": 7602176,
+    "output_tokens": 173020,
+    "total_tokens": 9176255
+  },
+  "wall_seconds_sum": 4329.655414747998,
+  "api_cost_usd": null,
+  "cost_note": "Provider billing is unavailable and is not inferred."
+}
+generation progress 1/1: V14-060 accepted
+{
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "status": "partial",
+  "prepared_case_count": 63,
+  "attempted_case_count": 45,
+  "accepted_candidate_count": 41,
+  "rejected_case_count": 4,
+  "pending_case_count": 18,
+  "one_request_per_attempted_case": true,
+  "dynamic_retrieval": false,
+  "homecheck_feedback": false,
+  "semantic_correctness_status": "not_adjudicated",
+  "usage": {
+    "input_tokens": 9366638,
+    "cached_input_tokens": 7913728,
+    "output_tokens": 180319,
+    "total_tokens": 9546957
+  },
+  "wall_seconds_sum": 4505.610765972997,
+  "api_cost_usd": null,
+  "cost_note": "Provider billing is unavailable and is not inferred."
+}
+generation progress 1/1: V14-050 accepted
+{
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "status": "partial",
+  "prepared_case_count": 63,
+  "attempted_case_count": 51,
+  "accepted_candidate_count": 47,
+  "rejected_case_count": 4,
+  "pending_case_count": 12,
+  "one_request_per_attempted_case": true,
+  "dynamic_retrieval": false,
+  "homecheck_feedback": false,
+  "semantic_correctness_status": "not_adjudicated",
+  "usage": {
+    "input_tokens": 10722996,
+    "cached_input_tokens": 9060864,
+    "output_tokens": 204189,
+    "total_tokens": 10927185
+  },
+  "wall_seconds_sum": 5072.959821691984,
+  "api_cost_usd": null,
+  "cost_note": "Provider billing is unavailable and is not inferred."
+}
+generation progress 1/1: V14-022 accepted
+{
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "status": "partial",
+  "prepared_case_count": 63,
+  "attempted_case_count": 55,
+  "accepted_candidate_count": 51,
+  "rejected_case_count": 4,
+  "pending_case_count": 8,
+  "one_request_per_attempted_case": true,
+  "dynamic_retrieval": false,
+  "homecheck_feedback": false,
+  "semantic_correctness_status": "not_adjudicated",
+  "usage": {
+    "input_tokens": 11751216,
+    "cached_input_tokens": 9963264,
+    "output_tokens": 220295,
+    "total_tokens": 11971511
+  },
+  "wall_seconds_sum": 5446.133579256981,
+  "api_cost_usd": null,
+  "cost_note": "Provider billing is unavailable and is not inferred."
+}
+generation progress 1/1: V14-003 accepted
+{
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "status": "partial",
+  "prepared_case_count": 63,
+  "attempted_case_count": 57,
+  "accepted_candidate_count": 53,
+  "rejected_case_count": 4,
+  "pending_case_count": 6,
+  "one_request_per_attempted_case": true,
+  "dynamic_retrieval": false,
+  "homecheck_feedback": false,
+  "semantic_correctness_status": "not_adjudicated",
+  "usage": {
+    "input_tokens": 12093544,
+    "cached_input_tokens": 10248448,
+    "output_tokens": 226627,
+    "total_tokens": 12320171
+  },
+  "wall_seconds_sum": 5613.867201653986,
+  "api_cost_usd": null,
+  "cost_note": "Provider billing is unavailable and is not inferred."
+}

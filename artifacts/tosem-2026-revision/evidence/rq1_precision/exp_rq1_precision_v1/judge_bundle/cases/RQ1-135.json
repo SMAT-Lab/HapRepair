@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-135",
+  "category": "performance",
+  "finding": {
+    "column": 3,
+    "end_column": 3,
+    "end_line": 47,
+    "line": 47,
+    "message": "Remove state variables that are not associated with a UI component",
+    "relative_path": "entry/src/main/ets/pages/subProfileTestManager/handsFreeAudioGatewayProfileTestManager.ets",
+    "rule": "@performance/hp-arkui-remove-redundant-state-var",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-remove-redundant-state-var",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-remove-redundant-state-var.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "74d2dc2c6b45ab36fd59f0f067ce83ed22990574bb0a182dd282b4ef1d883cac",
+    "path": "source_files/74d2dc2c6b45ab36fd59f0f067ce83ed22990574bb0a182dd282b4ef1d883cac.json",
+    "sha256": "b8510f331845fe5084b3e72eaff8b17a816365e06f0449229edbd0071219f8ba"
+  }
+}

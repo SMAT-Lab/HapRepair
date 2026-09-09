@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-3-BLIND-REPAIR-ADJUDICATION",
+  "package_id": "exp_indep_3_blind_01",
+  "case_count": 3,
+  "category_counts": {
+    "performance": 2,
+    "security": 1
+  },
+  "order_seed": 20260808,
+  "labels": [
+    "Correct",
+    "Suspicious",
+    "Incorrect"
+  ],
+  "strict_correct_labels": [
+    "Correct"
+  ],
+  "case_files": [
+    {
+      "blind_id": "RSJ-001",
+      "path": "cases/RSJ-001.json",
+      "sha256": "d982d9c4e0e24e93b70e0708d0a30aec604d2ebc490680049c7fa91cab2a5f20"
+    },
+    {
+      "blind_id": "RSJ-002",
+      "path": "cases/RSJ-002.json",
+      "sha256": "6abddf0d2a1421ff044e2d74b9aa6203cb4d8029b6f6ad4fd3bd6d3be853973c"
+    },
+    {
+      "blind_id": "RSJ-003",
+      "path": "cases/RSJ-003.json",
+      "sha256": "a1b6ba722263424052c34d6b511c2d73135c1017aa2f9b8f58711daf48504561"
+    }
+  ]
+}

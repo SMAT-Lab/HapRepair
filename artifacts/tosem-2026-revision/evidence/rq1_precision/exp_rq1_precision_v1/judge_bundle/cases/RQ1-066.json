@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-066",
+  "category": "performance",
+  "finding": {
+    "column": 7,
+    "end_column": 7,
+    "end_line": 55,
+    "line": 55,
+    "message": "Use the swiper preloading mechanism with the OnAnimationStart callback",
+    "relative_path": "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin54.ets",
+    "rule": "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload",
+    "severity": "warn"
+  },
+  "rule": "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/collections-reuse.md"
+    ],
+    "static_reference_available": false,
+    "static_reference_path": null
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "9b09bcb885df09f27a3a6dc140b7757f8b3f58080143d8dd48f695289ce987c6",
+    "path": "source_files/9b09bcb885df09f27a3a6dc140b7757f8b3f58080143d8dd48f695289ce987c6.json",
+    "sha256": "6766a51d72bbe0858a437aa57c5c0a4df7e4c7e285963938ef1bb1c9ca03e649"
+  }
+}

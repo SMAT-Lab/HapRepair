@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-185",
+  "category": "performance",
+  "finding": {
+    "column": 17,
+    "end_column": 17,
+    "end_line": 924,
+    "line": 924,
+    "message": "Use reusable components to define complex components whenever possible",
+    "relative_path": "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets",
+    "rule": "@performance/hp-arkui-use-reusable-component",
+    "severity": "warn"
+  },
+  "rule": "@performance/hp-arkui-use-reusable-component",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/collections-reuse.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-use-reusable-component.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "4643817d3497d222db5663020d75a28f34e4cf3e0bf867c7f03d078cab574497",
+    "path": "source_files/4643817d3497d222db5663020d75a28f34e4cf3e0bf867c7f03d078cab574497.json",
+    "sha256": "93d280b360f207e26899cb272f34c37bbde13f673dfc25c8e4b3d798258a5f6c"
+  }
+}

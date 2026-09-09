@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-006",
+  "target_rule": "@security/no-unsafe-dh",
+  "codelinter_rule": "@security/no-unsafe-dh",
+  "rule_description": "DH 协商算法必须使用 2048 bit 以上安全参数。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_dh_case.ets",
+      "line": 3,
+      "column": 60,
+      "severity": "error",
+      "message": "Use unsafe DH key exchange algorithm.",
+      "rule": "@security/no-unsafe-dh"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/unsafe_dh_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_security_no_unsafe_dh",
+  "blind_id": "V14-006",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbd3-9fc1-7563-a668-3d48483f188e",
+  "usage": {
+    "input_tokens": 171530,
+    "cached_input_tokens": 151808,
+    "output_tokens": 2285,
+    "total_tokens": 173815
+  },
+  "wall_seconds": 60.1727669230022,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 36,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"pwd && printf '%s\\\\n' '--- files ---' && rg --files -g '\"'!node_modules'\"' -g '\"'!build'\"' -g '\"'!out'\"' | sort | sed -n '1,240p' && printf '%s\\\\n' '--- skill ---' && sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' entry/src/main/ets/cases/unsafe_dh_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills/haprepair-openharmony-repair -maxdepth 3 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,280p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n \\\"DH_modp|no-unsafe-dh|createKeyAgreement|KeyAgreement\\\" /workspace /codex-home/skills/haprepair-openharmony-repair/references -g '\"'!*.json'\"' -g '\"'!SKILL.md'\"' -g '\"'!operations.md'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,360p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-dh.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,280p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '210,330p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-dh.md && printf '%s\\\\n' '--- task/source metadata ---' && stat -c '%n %s bytes' HAPREPAIR_TASK.json entry/src/main/ets/cases/unsafe_dh_case.ets && git status --short\"",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/unsafe_dh_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find . -maxdepth 6 -type f -not -path './.git/*' -print | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'rg -n \"DH_modp|createKeyAgreement|legacyAgreement\" entry/src/main/ets/cases/unsafe_dh_case.ets HAPREPAIR_TASK.json'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "4b38948716b4352e32e3de317ac838d688f3a696e25c49f966fdc678d421ba0c",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_dh_case.ets",
+      "sha256": "f26afd776356d1a042383bf57968e8b4d1d9af441549a50c44ac0752463abc29",
+      "size_bytes": 138,
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst legacyAgreement = cryptoFramework.createKeyAgreement('DH_modp2048');\n"
+    }
+  ],
+  "trace_sha256": "1a6c0aac74fd68246a5ca989df9af336645a6dd6e53412a03871568bb558b93d",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:46:06.142530+00:00",
+  "rejection_reasons": []
+}

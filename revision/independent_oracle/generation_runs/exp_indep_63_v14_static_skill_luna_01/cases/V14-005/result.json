@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_security_no_unsafe_dh_key",
+  "blind_id": "V14-005",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbd4-89a9-7a13-8b82-88a3f55c5623",
+  "usage": {
+    "input_tokens": 178572,
+    "cached_input_tokens": 155904,
+    "output_tokens": 2213,
+    "total_tokens": 180785
+  },
+  "wall_seconds": 55.37168534199736,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 41,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /workspace -maxdepth 2 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- workspace files ---'; rg --files -g 'HAPREPAIR_TASK.json' -g '*.ets' -g '*.ts' -g '*.json' -g '\"'!node_modules'\"' | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/cases/unsafe_dh_key_case.ets; printf '%s\\\\n' '--- all supplied source files ---'; find entry/src/main/ets -type f -maxdepth 10 -print -exec wc -l {} \\\\;\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills/haprepair-openharmony-repair -maxdepth 3 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n \\\"createAsyKeyGenerator|DH_modp|DH\\\" /workspace /codex-home/skills/haprepair-openharmony-repair --glob '*.ets' --glob '*.ts' --glob '*.md' --glob '*.json' --glob '*.py'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -i --glob '*.md' --glob '*.json' --glob '*.py' 'no-unsafe-dh-key|unsafe DH|DH_modp1536|DH.*2048' /codex-home/skills/haprepair-openharmony-repair\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'cat /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'cat /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '80,125p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json; sed -n '1,90p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-dh-key.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find . -maxdepth 4 -type f -print | sort; printf '%s\\\\n' '--- git status ---'; git status --short --untracked-files=all\"",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/unsafe_dh_key_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n 'DH_modp1536|DH_modp2048|createAsyKeyGenerator' entry/src/main/ets/cases/unsafe_dh_key_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /workspace -maxdepth 3 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "4b610c091a26cc50bc3e8d308765f41e668e7d4f206c9c63a8a4112723747dab",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_dh_key_case.ets",
+      "sha256": "ea06f1924a619be9145b5559c05a4d956dc3ccb43819070a603fc3c3640f8a19",
+      "size_bytes": 146,
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst exchangeKeyGenerator = cryptoFramework.createAsyKeyGenerator('DH_modp2048');\n"
+    }
+  ],
+  "trace_sha256": "5afab2f492add69449e4b61d8ed92ba23df7b8c5ef808fa5957ac17dea4dcc56",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:47:01.677661+00:00",
+  "rejection_reasons": []
+}

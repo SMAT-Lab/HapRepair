@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-023",
+  "category": "security",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 17,
+    "line": 17,
+    "message": "Dependency cycle detected: DfuLibrary/src/main/ets/dfu/internal/ArchiveInputStream.ts -> DfuLibrary/src/main/ets/dfu/DfuBaseService.ts -> DfuLibrary/src/main/ets/dfu/DfuServiceProvider.ts -> DfuLibrary/src/main/ets/dfu/BaseDfuImpl.ts -> DfuLibrary/src/main/ets/dfu/internal/ArchiveInputStream.ts",
+    "relative_path": "DfuLibrary/src/main/ets/dfu/internal/ArchiveInputStream.ts",
+    "rule": "@security/no-cycle",
+    "severity": "warn"
+  },
+  "rule": "@security/no-cycle",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-cycle.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "05e4819055cafd82c565ba29f423b6a61e3f35cda51d17084c85d25bbbd824f3",
+    "path": "source_files/05e4819055cafd82c565ba29f423b6a61e3f35cda51d17084c85d25bbbd824f3.json",
+    "sha256": "3e650970e94ce865626e21137310e7f7dbc024d00089c75d87982d41b1182b46"
+  }
+}

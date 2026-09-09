@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-057",
+  "category": "performance",
+  "finding": {
+    "column": 11,
+    "end_column": 11,
+    "end_line": 108,
+    "line": 108,
+    "message": "Asynchronously load large images",
+    "relative_path": "permissionmanager/src/main/ets/pages/securityDialog.ets",
+    "rule": "@performance/hp-arkui-image-async-load",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-image-async-load",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/layout-animation-media.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-image-async-load.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "0642ce55ca6f14410ff044ff1f9fe3ab9f91854aa36f3e2d6c3fb13fe8ad592d",
+    "path": "source_files/0642ce55ca6f14410ff044ff1f9fe3ab9f91854aa36f3e2d6c3fb13fe8ad592d.json",
+    "sha256": "478c23885cbfb16d4850af4c06651b62d556927186fb618f8562b600ad140c4a"
+  }
+}

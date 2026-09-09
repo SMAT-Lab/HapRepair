@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "source_run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "count": 3,
+  "category_counts": {
+    "performance": 2,
+    "security": 1
+  },
+  "rows": [
+    {
+      "source_blind_id": "V14-030",
+      "case_id": "case_performance_avoid_overusing_custom_component_check",
+      "category": "performance",
+      "rule": "@performance/avoid-overusing-custom-component-check",
+      "source_result_sha256": "fdb23c318c2853df230827c272c76b539ef49bc011ff117fe76323b314958dbe",
+      "rejection_reasons": [
+        "restricted_command_observed"
+      ],
+      "restricted_commands": [
+        "/usr/bin/bash -lc \"find . -maxdepth 3 -type f -print | sort; printf '\\\\n--- task-related environment ---\\\\n'; env | rg '\"'^HAPREPAIR|''^HVIGOR|''^CODELINTER'\"' || true\""
+      ],
+      "automatic_final_label": "GenerationFailure",
+      "strict_correct": false
+    },
+    {
+      "source_blind_id": "V14-001",
+      "case_id": "case_performance_hp_arkui_combine_same_arg_animateto",
+      "category": "performance",
+      "rule": "@performance/hp-arkui-combine-same-arg-animateto",
+      "source_result_sha256": "f4776b93b2c012b159a4d28bf0455fcaecb446147a1e028f13dfd4f42e47ebbc",
+      "rejection_reasons": [
+        "restricted_command_observed"
+      ],
+      "restricted_commands": [
+        "/usr/bin/bash -lc \"find . -maxdepth 8 -type f -print | sort; rg -n 'homecheck|CodeLinter|repair_session' HAPREPAIR_TASK.json entry/src/main/ets/cases/combine_animate_to_case.ets\""
+      ],
+      "automatic_final_label": "GenerationFailure",
+      "strict_correct": false
+    },
+    {
+      "source_blind_id": "V14-029",
+      "case_id": "case_security_no_unsafe_rsa_encrypt",
+      "category": "security",
+      "rule": "@security/no-unsafe-rsa-encrypt",
+      "source_result_sha256": "5afffe77bc57dc4c5ccff36ca425c7cc94587994a23d249a4db2b0d9f820c176",
+      "rejection_reasons": [
+        "restricted_command_observed"
+      ],
+      "restricted_commands": [
+        "/usr/bin/bash -lc \"env | rg '\"'^HAPREPAIR|''^CODELINTER|''^HVIGOR'\"' || true\""
+      ],
+      "automatic_final_label": "GenerationFailure",
+      "strict_correct": false
+    }
+  ]
+}

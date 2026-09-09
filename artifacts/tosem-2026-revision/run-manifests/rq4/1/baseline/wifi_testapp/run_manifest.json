@@ -1,0 +1,2215 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-HAPREPAIR-FULL-PAIR-35-R2",
+  "run_id": "exp_agent_ref_35_luna_v6_clean2_repeat_01",
+  "condition": "vanilla",
+  "project": "wifi_testapp",
+  "status": "completed",
+  "started_at": "2026-08-10T17:09:54.144703+00:00",
+  "source_tree_sha256": "2cdd296fde70e565b8bd715282c7d561c9b6a32fecc0ede714784070e6f98d36",
+  "frozen_source_tree_sha256": "2cdd296fde70e565b8bd715282c7d561c9b6a32fecc0ede714784070e6f98d36",
+  "findings_sha256": "3432b1de2d512b78e904adaa7b002a7f54ac149ab2f4d711a30d83440bd28517",
+  "frozen_findings_sha256": "3432b1de2d512b78e904adaa7b002a7f54ac149ab2f4d711a30d83440bd28517",
+  "byte_identical_input": true,
+  "finding_identity_matches": true,
+  "protocol": "/home/zhihao/hdd/haprepair/HapRepair/revision/hapskill_experiment/protocol-full-pair-baseline-v6.json",
+  "protocol_sha256": "9b2723a4827f41512f7e904a586f31f8d15ea0e1f40e68f90bb89292e116775f",
+  "inputs": "/home/zhihao/hdd/haprepair/HapRepair/revision/hapskill_experiment/formal_inputs_hapskill_35_v4.json",
+  "inputs_sha256": "759104715e61e8a449388c0d4805252103509aaf3d1eeb80fe1ed1996899413c",
+  "runtime": {
+    "image": "hybrid-gym-codex:0.146.0",
+    "image_id": "sha256:9cc027cd2f9404ccd58c61e367fe712895188a926c07d464ea0936e893b9a89a",
+    "versions": {
+      "container_codex": "codex-cli 0.146.0\nWARNING: proceeding, even though we could not create PATH aliases: CODEX_HOME points to \"/codex-home\", but that path does not exist",
+      "host_python": "Python 3.13.11"
+    },
+    "artifact_hashes": {
+      "codelinter_config_sha256": "91de02b03d0c5df48d3da615eb0b17615f2f9ad0e0f7f575119c964ae3b9cc95",
+      "codelinter_overlay_sha256": "ca0555024524ad76c0d6f058bb98a36729a92c8b701f373b776bdb7e677f625c",
+      "openharmony_sdk_manifest_sha256": "dd1f23fab928cca17b8a3daeb5a6f0b8566b460d9c85b24684b39da80f84cde7",
+      "sdk_build_components_sha256": "ba07957c4def67422612d794593e1c5fc7f0991afaf289e26483c895544aa49d",
+      "sdk_native_api20_sha256": "a9bbeae7b72c80ae573d5439bb88e9d5cbe202d260f8394f24ae37669911d4f4"
+    },
+    "host_node": "v18.20.1"
+  },
+  "host_runtime": {
+    "path_policy": "prepended_frozen_deveco_node",
+    "node_bin": "/home/zhihao/deveco/command-line-tools/tool/node/bin"
+  },
+  "static_g2_authorization": {
+    "path": "/home/zhihao/hdd/haprepair/paper/rebuttal/gates/exp_full_pair_35_luna_clean_r2_g2_v2_20260810.json",
+    "sha256": "490eb3e24692e95a71fef8d845882fcda4ab683614c9908e5f29fbf7a7c341bc",
+    "authorized_run_id": "exp_agent_ref_35_luna_v6_clean2_repeat_01",
+    "runner_artifacts": {
+      "agent_ref_session.py": "ee0907e6fc20415b6b1f8a919517028f46e9a3c38fd3760ab7dc3269213f7672",
+      "run_agent_ref_v5.py": "420ec34497db856d36ef8749dc370b589dafd2ba57b580e897571669bb89308c",
+      "run_condition_v14.py": "f02f191b3d501d18f5094a5ca6ed8c58757ef4b64a67f6eab663f3da2fcff94a",
+      "resume_condition_v14.py": "47120eb7e4af9874974aff94d28c5ed1a3dd3f32b665f6bcec6532f886a15187",
+      "run_full_pair_repetitions_v2.py": "9ea0842e2636cd00e950e17918f742ed6419f33e832cd6eede4cee8826608e2d",
+      "prepare_full_pair_campaign_v2.py": "e59a9b7e8fb93533257d2b65e5f31c4c5e1879452a8a41007c2e239f48e66a98",
+      "audit_full_pair_g2_v2.py": "f88d23f5fea1f7c415107c5dbe911edbce2f643cb5892ce091881d191916ecd4",
+      "test_full_pair_campaign_v2.py": "ead98b1709cf4c5c1664a0f122f7d847f63bb9a8ac257ff981b85788c5eee8fd"
+    }
+  },
+  "model": {
+    "requested_id": "gpt-5.6-luna",
+    "provider": "xsp",
+    "reasoning_effort": "high",
+    "runs_per_project_condition": 2,
+    "temperature": "not explicitly configurable through the frozen Codex harness",
+    "top_p": "provider default",
+    "output_length": "provider default",
+    "seed": "not exposed",
+    "nondeterminism_note": "A single run remains potentially nondeterministic even without an exposed sampling-temperature control.",
+    "repeat_policy": "Two independent clean workspaces; provider seed is not exposed."
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "status": "accepted",
+      "thread_id": "019feca7-3b36-7d21-8462-bfabfef89194",
+      "attempts": [
+        {
+          "attempt": 1,
+          "thread_id": "019feca7-3b36-7d21-8462-bfabfef89194",
+          "turn": {
+            "elapsed_seconds": 1276.714132003981,
+            "thread_id": "019feca7-3b36-7d21-8462-bfabfef89194",
+            "usage": {
+              "input_tokens": 13300360,
+              "cached_input_tokens": 13016832,
+              "output_tokens": 57308,
+              "total_tokens": 13357668
+            },
+            "commands": [
+              {
+                "command": "/usr/bin/bash -lc \"pwd && rg --files -g '\"'!**/.git/**'\"' | sed -n '1,160p' && printf '\\\\n--- plan ---\\\\n' && sed -n '1,240p' .exp_agent/round_01/plan.json && printf '\\\\n--- schema ---\\\\n' && sed -n '1,240p' .exp_agent/round_01/completion-schema.json && printf '\\\\n--- rules files ---\\\\n' && rg --files /rules | sed -n '1,120p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'rg -n \"avoid-empty-callback|no-state-var-access-in-loop|constant-property-referencing-check|no-unallowed-decorator-on-root-component|specified-interface-call-chain-check|window-size-change-listener-check|reasonable-gps-use-check|reuse-date-instances-check|lazy-string-check-in-log\" /rules/ruleSet.json /rules/lib /rules/docs'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'git status --short && git log -1 --oneline'",
+                "exit_code": 128,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[].rule' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | \\\"RULE\\\\t\\\" + .rule + \\\"\\\\n\\\" + (.files[] | \\\"FILE\\\\t\\\" + .relative_path + \\\"\\\\n\\\" + (.locations[] | \\\"LOC\\\\t\\\" + (.line|tostring) + \\\"\\\\t\\\" + (.column|tostring) + \\\"\\\\t\\\" + .message))' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'find /workspace -maxdepth 3 -type d -name .git -print; git -C /workspace status --short 2>/dev/null || true'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'rg -n -i \"empty callback|state var access|redundant nest|without property|unchanged state|use id|get resource|local var|row.column|flex\" /rules/lib /rules | head -240'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | \\\"\\\\n\\\" + .rule + \\\"\\\\n\\\" + (.files[] | (.relative_path + \\\"\\\\t\\\" + ([.locations[] | ((.line|tostring)+\\\":\\\"+(.column|tostring))] | join(\\\",\\\"))))' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | [.rule, ([.files[].relative_path] | length), ([.files[].locations[]] | length)] | @tsv' .exp_agent/round_01/plan.json && printf 'TOTAL_FILES\\\\t' && jq '[.rules[].files[]] | length' .exp_agent/round_01/plan.json && printf 'TOTAL_LOCATIONS\\\\t' && jq '[.rules[].files[].locations[]] | length' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules/node_modules/homecheck/lib/checker -type f | sort | rg 'ArkUI|State|Container|Flex|Resource|Callback|Loop|arkui|GetResource' | sed -n '1,200p' && rg -n \\\"hp-arkui|avoid-empty|state-var|remove-container|remove-redundant|use-id-in|get-resource|use-local-var|row-column\\\" /rules/node_modules/homecheck/lib /rules/lib --glob '*.js' --glob '*.d.ts' | sed -n '1,240p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '\\\\n--- /rules/node_modules/homecheck/lib/checker/performance/NoStateVarAccessInLoopCheck.js ---\\\\n'; sed -n '1,260p' '/rules/node_modules/homecheck/lib/checker/performance/NoStateVarAccessInLoopCheck.js'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '\\\\n--- /rules/node_modules/homecheck/lib/checker/performance/RemoveRedundantNestContainerCheck.js ---\\\\n'; sed -n '1,260p' '/rules/node_modules/homecheck/lib/checker/performance/RemoveRedundantNestContainerCheck.js'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '\\\\n--- /rules/node_modules/homecheck/lib/checker/performance/AvoidEmptyCallbackCheck.js ---\\\\n'; sed -n '1,260p' '/rules/node_modules/homecheck/lib/checker/performance/AvoidEmptyCallbackCheck.js'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '\\\\n--- /rules/node_modules/homecheck/lib/checker/performance/RemoveContainerWithoutPropertyCheck.js ---\\\\n'; sed -n '1,260p' '/rules/node_modules/homecheck/lib/checker/performance/RemoveContainerWithoutPropertyCheck.js'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '\\\\n--- /rules/node_modules/homecheck/lib/checker/performance/RemoveRedundantStateVarCheck.js ---\\\\n'; sed -n '1,260p' '/rules/node_modules/homecheck/lib/checker/performance/RemoveRedundantStateVarCheck.js'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '\\\\n--- /rules/node_modules/homecheck/lib/checker/performance/UseIdInGetResourceSyncApiCheck.js ---\\\\n'; sed -n '1,260p' '/rules/node_modules/homecheck/lib/checker/performance/UseIdInGetResourceSyncApiCheck.js'\"",
+                "exit_code": 2,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '\\\\n--- /rules/node_modules/homecheck/lib/checker/performance/RemoveUnchangedStateVarCheck.js ---\\\\n'; sed -n '1,260p' '/rules/node_modules/homecheck/lib/checker/performance/RemoveUnchangedStateVarCheck.js'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '\\\\n--- /rules/node_modules/homecheck/lib/checker/performance/UseLocalVarToReplaceStateVarCheck.js ---\\\\n'; sed -n '1,260p' '/rules/node_modules/homecheck/lib/checker/performance/UseLocalVarToReplaceStateVarCheck.js'\"",
+                "exit_code": 2,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '\\\\n--- /rules/node_modules/homecheck/lib/checker/performance/ConstantPropertyReferencingInLoopsCheck.js ---\\\\n'; sed -n '1,260p' '/rules/node_modules/homecheck/lib/checker/performance/ConstantPropertyReferencingInLoopsCheck.js'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '\\\\n--- /rules/node_modules/homecheck/lib/checker/performance/UseRowColumnToReplaceFlexCheck.js ---\\\\n'; sed -n '1,260p' '/rules/node_modules/homecheck/lib/checker/performance/UseRowColumnToReplaceFlexCheck.js'\"",
+                "exit_code": 2,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules/node_modules/homecheck/lib/checker -type f | sort | rg -i 'resource|local.*state|flex|row|column|redundant' | sed -n '1,200p'; printf '\\\\n--- checker index matches ---\\\\n'; rg -n -i \\\"resource.*sync|local.*replace|row.*column|replace.*flex|hp-arkui|arkui\\\" /rules/node_modules/homecheck/lib /rules/ruleSet.json | sed -n '1,260p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for rule_index in 4 5; do jq -r --argjson i \"$rule_index\" '\"'.rules[\"'$i].files[] | [.relative_path, ([.locations[].line] | join(\",\"))] | @tsv'\"' .exp_agent/round_01/plan.json | while IFS=\"'$'\"'\\\\t' read -r file lines; do printf '\\\\n--- %s [%s] ---\\\\n' \\\"\"'$file\" \"$lines\"; for line in ${lines//,/ }; do sed -n \"${line}p\" \"$file\"; done; done; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for rule_index in 0 1 2 3 6 7 8; do jq -r --argjson i \"$rule_index\" '\"'.rules[\"'$i] as $r | \"'\"\\\\n### \\\" + \"'$r.rule + \"'\"\\\\n\\\" + (\"'$r.files[] | (.relative_path + \"'\"\\\\t\\\" + ([.locations[] | ((.line|tostring)+\\\":\\\"+(.column|tostring))] | join(\\\",\\\"))))' .exp_agent/round_01/plan.json; done\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for rule_index in 0 1 2 3 6 7 8; do jq -r --argjson i \"$rule_index\" '\"'.rules[\"'$i].files[] | [.relative_path, ([.locations[].line] | join(\",\"))] | @tsv'\"' .exp_agent/round_01/plan.json | while IFS=\"'$'\"'\\\\t' read -r file lines; do printf '\\\\n--- %s [%s] ---\\\\n' \\\"\"'$file\" \"$lines\"; first=${lines%%,*}; start=$((first > 4 ? first - 4 : 1)); end=$((first + 12)); sed -n \"${start},${end}p\" \"$file\"; done; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for rule_index in 1 2 3 6 7 8; do jq -r --argjson i \"$rule_index\" '\"'.rules[\"'$i].files[] | [.relative_path, ([.locations[].line] | join(\",\"))] | @tsv'\"' .exp_agent/round_01/plan.json | while IFS=\"'$'\"'\\\\t' read -r file lines; do printf '\\\\n--- %s ---\\\\n' \\\"\"'$file\"; for line in ${lines//,/ }; do nl -ba \"$file\" | sed -n \"${line}p\"; done; done; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"for file in entry/src/main/ets/Component/stressContentTable.ets entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets entry/src/main/ets/pages/subScenarioTest/wifiConnectScenarioTest.ets; do printf '\\\\n--- %s state declarations ---\\\\n' \\\"\"'$file\"; rg -n '\"'@(State|Prop|Link|ObjectLink|StorageLink)' \\\"\"'$file\"; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"currentIndex|changeIndex\\\" entry/src/main/ets/Component/stressContentTable.ets && sed -n '20,125p' entry/src/main/ets/Component/stressContentTable.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/Component/stressContentTable.ets | sed -n '84,108p'; wc -l entry/src/main/ets/Component/stressContentTable.ets; stat -c '%y %n' entry/src/main/ets/Component/stressContentTable.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,220p' /rules/package.json; sed -n '1,240p' /rules/lib/run.js; rg -n \\\"run|checker|ruleSet|project\\\" /rules/README* /rules/docs 2>/dev/null | head -120; find /workspace -maxdepth 3 -type f -iname '*check*' -o -iname '*validate*' | sort | sed -n '1,120p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '20,120p' entry/src/main/ets/Component/subEntryComponent.ets; sed -n '45,100p' entry/src/main/ets/Component/filterTable.ets; sed -n '45,100p' entry/src/main/ets/Component/filterTableManager.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '78,145p' entry/src/main/ets/Component/p2pTitleBar.ets; sed -n '78,145p' entry/src/main/ets/Component/pageTitle.ets; sed -n '78,145p' entry/src/main/ets/Component/titleBar.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '300,360p' entry/src/main/ets/pages/newApi/AllInOneView.ets; sed -n '185,285p' entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"get(String|Plural|Media|StringArray)Sync\\\\(\\\" entry/src/main/ets | sed -n '1,200p'; rg -n \\\"\\\\.id\\\\b|resourceManager\\\" entry/src/main/ets/pages/newApi | sed -n '1,160p'; rg -n \\\"getStringSync\\\" /rules/node_modules /rules/lib /rules/docs --glob '*.js' --glob '*.md' | head -100\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '170,470p' entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '170,310p' entry/src/main/ets/pages/subAppTest/udpSocketTest.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '410,750p' entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '300,470p' entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"file entry/src/main/ets/Component/autoContentTable.ets entry/src/main/ets/pages/subAutoTest/wifiAutoTest.ets entry/src/main/ets/pages/subStressTest/wifiStressTest.ets; jq -r '[.rules[4].files[], .rules[5].files[]] | .relative_path' .exp_agent/round_01/plan.json | sort -u | wc -l\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"patch_text=''; while IFS= read -r file; do lines=\"'$(jq -r --arg f \"$file\" '\"'(.rules[4].files + .rules[5].files)[] | select(.relative_path == \"'$f) | .locations[].line'\"' .exp_agent/round_01/plan.json | sort -nu | paste -sd, -); modified=\"'$(perl -pe '\"'BEGIN { split(/,/, \"'$ENV{TARGET_LINES}, @lines); for (@lines) { $targets{$_}=1 } } if ($targets{$.}) { s/''^([ '\"\\\\t]*)\\\\@State[ \\\\t]+/\"'$1/ }'\"' TARGET_LINES=\\\"\"'$lines\" \"$file\" | diff --strip-trailing-cr -u \"$file\" -); if [ -n \"$modified\" ]; then printf '\"'%s\\\\n' \\\"\"'$modified\"; fi; done < <(jq -r '\"'(.rules[4].files + .rules[5].files)[] | .relative_path' .exp_agent/round_01/plan.json | sort -u)\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'while IFS= read -r file; do lines=$(jq -r --arg f \"$file\" '\"'(.rules[4].files + .rules[5].files)[] | select(.relative_path == \"'$f) | .locations[].line'\"' .exp_agent/round_01/plan.json | sort -nu | paste -sd, -); TARGET_LINES=\\\"\"'$lines\" perl -pe '\"'BEGIN { for (split(/,/, \"'$ENV{TARGET_LINES})) { $targets{$_}=1 } } if ($targets{$.}) { s/''^([ '\"\\\\t]*)\\\\@State[ \\\\t]+/\"'$1/ }'\"' \\\"\"'$file\" | diff --strip-trailing-cr -u \"$file\" -; done < <(jq -r '\"'(.rules[4].files + .rules[5].files)[] | .relative_path' .exp_agent/round_01/plan.json | sort -u)\"",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'while IFS= read -r file; do lines=$(jq -r --arg f \"$file\" '\"'(.rules[4].files + .rules[5].files)[] | select(.relative_path == \"'$f) | .locations[].line'\"' .exp_agent/round_01/plan.json | sort -nu | paste -sd, -); TARGET_LINES=\\\"\"'$lines\" perl -pe '\"'BEGIN { for (split(/,/, \"'$ENV{TARGET_LINES})) { $targets{$_}=1 } } if ($targets{$.}) { s/''^([ '\"\\\\t]*)\\\\@State[ \\\\t]+/\"'$1/ }'\"' \\\"\"'$file\" | diff --strip-trailing-cr -u \"$file\" -; done < <(jq -r '\"'(.rules[4].files + .rules[5].files)[] | .relative_path' .exp_agent/round_01/plan.json | sort -u)\"",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '27,33p' entry/src/main/ets/Component/autoContentTable.ets; rg -n '\"'^  @State localName|''^  localName'\"' entry/src/main/ets/Component/autoContentTable.ets | head\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'while IFS= read -r file; do lines=$(jq -r --arg f \"$file\" '\"'(.rules[4].files + .rules[5].files)[] | select(.relative_path == \"'$f) | .locations[].line'\"' .exp_agent/round_01/plan.json | sort -nu | paste -sd, -); TARGET_LINES=\\\"\"'$lines\" perl -pe '\"'BEGIN { for (split(/,/, \"'$ENV{TARGET_LINES})) { $targets{$_}=1 } } if ($targets{$.}) { s/''^([ '\"\\\\t]*)\\\\@State[ \\\\t]+/\"'$1/ }'\"' \\\"\"'$file\" | diff --strip-trailing-cr -u \"$file\" -; done < <(jq -r '\"'(.rules[4].files + .rules[5].files)[] | .relative_path' .exp_agent/round_01/plan.json | sort -u)\"",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"file entry/src/main/ets/Component/autoContentTable.ets entry/src/main/ets/pages/subAutoTest/wifiAutoTest.ets entry/src/main/ets/pages/subStressTest/wifiStressTest.ets; rg -n '@State' entry/src/main/ets/Component/autoContentTable.ets entry/src/main/ets/pages/subAutoTest/wifiAutoTest.ets | head -20\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 2 -type f -newermt '2026-08-10 17:00:00' -print | sort | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for rule_index in 4 5; do jq -r --argjson i \"$rule_index\" '\"'.rules[\"'$i].files[] | [.relative_path, ([.locations[].line] | join(\",\"))] | @tsv'\"' .exp_agent/round_01/plan.json | while IFS=\"'$'\"'\\\\t' read -r file lines; do for line in \"'${lines//,/ }; do text=$(sed -n \"${line}p\" \"$file\"); case \"$text\" in *'\"'@State'*) printf 'RETAINED_STATE\\\\t%s:%s\\\\t%s\\\\n' \\\"\"'$file\" \"$line\" \"$text\";; esac; done; done; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n '\"'^  build|''^    Column|''^    Flex|''^    }$|''^  }$'\"' entry/src/main/ets/Component/p2pTitleBar.ets | tail -30; nl -ba entry/src/main/ets/Component/p2pTitleBar.ets | sed -n '85,190p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n '\"'^  build|''^    Column|''^    Flex|''^    }$|''^  }$'\"' entry/src/main/ets/Component/pageTitle.ets | tail -30; nl -ba entry/src/main/ets/Component/pageTitle.ets | sed -n '85,190p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n '\"'^  build|''^    Column|''^    Flex|''^    }$|''^  }$'\"' entry/src/main/ets/Component/titleBar.ets | tail -30; nl -ba entry/src/main/ets/Component/titleBar.ets | sed -n '86,190p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/Component/subEntryComponent.ets | sed -n '30,112p'; nl -ba entry/src/main/ets/Component/subEntryComponent.ets | sed -n '112,135p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/Component/filterTable.ets | sed -n '52,145p'; nl -ba entry/src/main/ets/Component/filterTableManager.ets | sed -n '52,145p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'tail -80 entry/src/main/ets/Component/filterTable.ets | nl -ba -v $(($(wc -l < entry/src/main/ets/Component/filterTable.ets)-79)); tail -80 entry/src/main/ets/Component/filterTableManager.ets | nl -ba -v $(($(wc -l < entry/src/main/ets/Component/filterTableManager.ets)-79))'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '54,178l' entry/src/main/ets/Component/filterTable.ets | tail -35\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,260p' /rules/node_modules/homecheck/lib/checker/performance/RemoveRedundantNestContainerCheck.js; sed -n '1,240p' /rules/node_modules/homecheck/lib/checker/performance/RemoveContainerWithoutPropertyCheck.js\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"for file in entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets entry/src/main/ets/pages/subScenarioTest/wifiConnectScenarioTest.ets entry/src/main/ets/Component/stressContentTable.ets; do printf '\\\\n--- %s uses ---\\\\n' \\\"\"'$file\"; rg -n \"changeIndex|currentIndex\" \"$file\"; done; printf '\"'\\\\n--- current changed structures ---\\\\n'; nl -ba entry/src/main/ets/Component/filterTable.ets | sed -n '52,180p'; nl -ba entry/src/main/ets/Component/subEntryComponent.ets | sed -n '30,110p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n '\"'^'\"\\\\+\\\\+\\\\+ -' entry/src/main/ets | sed -n '1,160p'; rg -l '\"'^'\"\\\\+\\\\+\\\\+ -' entry/src/main/ets | wc -l\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n '\"'^'\"\\\\+\\\\+ -' entry/src/main/ets | sed -n '1,160p'; rg -l '\"'^'\"\\\\+\\\\+ -' entry/src/main/ets | wc -l\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n '\"'^'\"\\\\+\\\\+ -' entry/src/main/ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '35,95p' entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets; sed -n '35,75p' entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets; sed -n '35,75p' entry/src/main/ets/Component/stressContentTable.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '164,172l' entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets; sed -n '164,172p' entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets | sed -n '202,305p'; nl -ba entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets | sed -n '310,385p'; nl -ba entry/src/main/ets/pages/subAppTest/udpSocketTest.ets | sed -n '188,285p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets | sed -n '425,465p'; nl -ba entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets | sed -n '600,745p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets | sed -n '425,470p'; nl -ba entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets | sed -n '610,755p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subStabilityTest/wifiConnectStabilityTest.ets | sed -n '320,405p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subStabilityTest/hotspotStabilityTest.ets | sed -n '300,385p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subStabilityTest/wifiScanStabilityTest.ets | sed -n '285,355p'; nl -ba entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets | sed -n '360,435p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subStabilityTest/webLatencyTest.ets | sed -n '400,460p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- direct target field accesses in affected methods/files ---'; rg -n 'this\\\\.(responseData|resData|fileData|hotspotMessageLog|connectionMessageLog|scanStateMessageLog|stateMessageLog|cellularStatus|cellularResponse|wifiHandleInfo|wifiNetworkStatus|cellularHandleInfo|cellularNetworkStatus)' entry/src/main/ets/pages/subAppTest/{tcpSocketTest,udpSocketTest,rcpHttpTest,multipathSocketTest}.ets entry/src/main/ets/pages/subStabilityTest/{hotspotStabilityTest,webLatencyTest,wifiConnectStabilityTest,wifiScanStabilityTest,wifiSwitchStabilityTest}.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- loop progress accesses ---'; rg -n 'for\\\\(let m|this\\\\.changeIndex|for\\\\(this\\\\.(open|connect)' entry/src/main/ets/pages/subAutoTest entry/src/main/ets/pages/subScenarioTest entry/src/main/ets/Component/stressContentTable.ets | sed -n '1,240p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- patch artifacts / suspicious constants ---'; rg -n '\"'^'\"\\\\+\\\\+ -|MULTIPATH_CELL_STATUS_FAIL|onClick\\\\(\\\\(\\\\) => \\\\{[[:space:]]*\\\\}\\\\)' entry/src/main/ets || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- planned state decorators still present ---'; for rule_index in 4 5; do jq -r --argjson i \\\"\"'$rule_index\" '\"'.rules[\"'$i].files[] | [.relative_path, ([.locations[].line] | join(\",\"))] | @tsv'\"' .exp_agent/round_01/plan.json | while IFS=\"'$'\"'\\\\t' read -r file lines; do for line in \"'${lines//,/ }; do sed -n \"${line}p\" \"$file\" | rg -q '\"'@State' && printf '%s:%s\\\\n' \\\"\"'$file\" \"$line\"; done; done; done'",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets | sed -n '276,325p'; nl -ba entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets | sed -n '388,480p'; nl -ba entry/src/main/ets/pages/subAppTest/udpSocketTest.ets | sed -n '188,285p'; nl -ba entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets | sed -n '332,435p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'this\\\\.(responseData|resData|fileData|hotspotMessageLog|connectionMessageLog|scanStateMessageLog|stateMessageLog)' entry/src/main/ets/pages/subAppTest/{tcpSocketTest,udpSocketTest,rcpHttpTest}.ets entry/src/main/ets/pages/subStabilityTest/{hotspotStabilityTest,webLatencyTest,wifiConnectStabilityTest,wifiScanStabilityTest,wifiSwitchStabilityTest}.ets | sed -n '1,220p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'this\\\\.(cellularStatus|cellularResponse|wifiHandleInfo|wifiNetworkStatus|cellularHandleInfo|cellularNetworkStatus)' entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets | sed -n '1,180p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'const progressState|progressState\\\\.changeIndex|this\\\\.currentIndex|this\\\\.changeIndex' entry/src/main/ets/Component/stressContentTable.ets entry/src/main/ets/pages/subAutoTest entry/src/main/ets/pages/subScenarioTest | sed -n '1,220p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '94,108l' entry/src/main/ets/Component/stressContentTable.ets; nl -ba entry/src/main/ets/Component/stressContentTable.ets | sed -n '94,110p'; sed -n '233,248l' entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find .exp_agent/round_01 -maxdepth 1 -type f -printf '%f\\\\n' | sort; test -f .exp_agent/round_01/completion.json && sed -n '1,120p' .exp_agent/round_01/completion.json || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n '\"'^'\"\\\\+\\\\+ -|MULTIPATH_CELL_STATUS_FAIL|@State.*(localName|p2pLinkedInfo|device: null|currentClick|cellularModeIndex|cellularRemoteAddress|cellularReconnectCount|cellularReceiveCount)' entry/src/main/ets || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'getStringSync\\\\(\\\\\"'$r'\"\\\\(' entry/src/main/ets/pages/newApi/AllInOneView.ets; rg -n '\\\\.onClick\\\\(\\\\(\\\\) *=> *\\\\{' entry/src/main/ets/pages/homePage.ets || true; rg -n '\"'^'\"\\\\s+Flex\\\\(\\\\) \\\\{' entry/src/main/ets/Component/{autoContentTable,autoVerificationTable,contentTable,scenarioContentTable,stressContentTable}.ets || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'node --check /rules/lib/run.js && node --check /rules/node_modules/homecheck/lib/checker/performance/NoStateVarAccessInLoopCheck.js'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf 'modified-file-artifacts='; rg -l '\"'^'\"\\\\+\\\\+ -' entry/src/main/ets | wc -l; printf 'home-empty-callbacks='; rg -n '\\\\.onClick\\\\(\\\\(\\\\) *=> *\\\\{[[:space:]]*\\\\}\\\\)' entry/src/main/ets/pages/homePage.ets | wc -l; printf 'flex-findings='; rg -n '\"'^'\"\\\\s+Flex\\\\(\\\\) \\\\{' entry/src/main/ets/Component/{autoContentTable,autoVerificationTable,contentTable,scenarioContentTable,stressContentTable}.ets | wc -l\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -e '([.rules[].rule] | length == 9) and ([.rules[].rule] | unique | length == 9) and ([.rules[].files[].locations[]] | length == 1074)' .exp_agent/round_01/plan.json >/dev/null && echo plan_inventory_ok; test \"'! -e .exp_agent/round_01/completion.json && echo completion_target_ready'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node - <<'NODE'\nconst fs = require('fs');\nconst path = require('path');\nconst ts = require('/rules/node_modules/arkanalyzer/node_modules/ohos-typescript');\nconst { execFileSync } = require('child_process');\nconst files = execFileSync('rg', ['--files', 'entry/src/main/ets'], { encoding: 'utf8' }).trim().split(/\\\\n/).filter(Boolean);\nlet errors = 0;\nfor (const file of files) {\n  const text = fs.readFileSync(file, 'utf8');\n  const source = ts.createSourceFile(file, text, ts.ScriptTarget.Latest, true, ts.ScriptKind.TS);\n  if (source.parseDiagnostics && source.parseDiagnostics.length) {\n    for (const d of source.parseDiagnostics) {\n      errors++;\n      console.log(file + ':' + (d.start || 0) + ': ' + ts.flattenDiagnosticMessageText(d.messageText, '\\\\\\\\n'));\n    }\n  }\n}\nconsole.log('files=' + files.length + ' parse_errors=' + errors);\nprocess.exitCode = errors ? 1 : 0;\nNODE\"",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node - <<'NODE'\nconst fs = require('fs');\nconst { execFileSync } = require('child_process');\nconst ts = require('/rules/node_modules/arkanalyzer/node_modules/ohos-typescript');\nconst files = execFileSync('find', ['entry/src/main/ets', '-type', 'f', '-newermt', '2026-08-10 17:00:00'], {encoding:'utf8'}).trim().split(/\\\\n/).filter(Boolean);\nlet bad = 0;\nfor (const file of files) {\n  const text = fs.readFileSync(file, 'utf8');\n  const scanner = ts.createScanner(ts.ScriptTarget.Latest, false, ts.LanguageVariant.Standard, text);\n  const stack = [];\n  let token;\n  while ((token = scanner.scan()) \"'!== ts.SyntaxKind.EndOfFileToken) {\n    if (token === ts.SyntaxKind.OpenBraceToken || token === ts.SyntaxKind.OpenParenToken || token === ts.SyntaxKind.OpenBracketToken) stack.push(token);\n    if (token === ts.SyntaxKind.CloseBraceToken || token === ts.SyntaxKind.CloseParenToken || token === ts.SyntaxKind.CloseBracketToken) {\n      const expected = token === ts.SyntaxKind.CloseBraceToken ? ts.SyntaxKind.OpenBraceToken : token === ts.SyntaxKind.CloseParenToken ? ts.SyntaxKind.OpenParenToken : ts.SyntaxKind.OpenBracketToken;\n      if (stack.pop() !== expected) { console.log(file + '\"': mismatched delimiter'); bad++; break; }\n    }\n  }\n  if (\"'!bad && stack.length) { console.log(file + '\"': unclosed delimiters=' + stack.length); bad++; }\n}\nconsole.log('changed_files=' + files.length + ' delimiter_errors=' + bad);\nNODE\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node - <<'NODE'\nconst fs=require('fs'),ts=require('/rules/node_modules/arkanalyzer/node_modules/ohos-typescript');\nfor(const file of ['entry/src/main/ets/Component/headerComponent.ets','entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets','entry/src/main/ets/Component/filterTable.ets']){const s=ts.createScanner(ts.ScriptTarget.Latest,false,ts.LanguageVariant.Standard,fs.readFileSync(file,'utf8'));const st=[];let t,err='';while((t=s.scan())\"'!==ts.SyntaxKind.EndOfFileToken){if([ts.SyntaxKind.OpenBraceToken,ts.SyntaxKind.OpenParenToken,ts.SyntaxKind.OpenBracketToken].includes(t))st.push(t);if([ts.SyntaxKind.CloseBraceToken,ts.SyntaxKind.CloseParenToken,ts.SyntaxKind.CloseBracketToken].includes(t)){const e=t===ts.SyntaxKind.CloseBraceToken?ts.SyntaxKind.OpenBraceToken:t===ts.SyntaxKind.CloseParenToken?ts.SyntaxKind.OpenParenToken:ts.SyntaxKind.OpenBracketToken;if(st.pop()!==e){err='\"'mismatch';break}}}console.log(file,err||('remaining '+st.length));}\nNODE\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/Component/filterTable.ets | sed -n '54,180p'; nl -ba entry/src/main/ets/Component/filterTableManager.ets | sed -n '54,179p'; nl -ba entry/src/main/ets/Component/p2pTitleBar.ets | sed -n '86,190p' | tail -25\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"tail -12 entry/src/main/ets/Component/p2pTitleBar.ets | nl -ba; tail -12 entry/src/main/ets/Component/pageTitle.ets | nl -ba; tail -12 entry/src/main/ets/Component/titleBar.ets | nl -ba; sed -n '52,178l' entry/src/main/ets/Component/filterTable.ets | tail -25\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node - <<'NODE'\nconst fs=require('fs'),ts=require('/rules/node_modules/arkanalyzer/node_modules/ohos-typescript');\nfor(const file of ['entry/src/main/ets/Component/filterTable.ets','entry/src/main/ets/Component/filterTableManager.ets','entry/src/main/ets/Component/subEntryComponent.ets','entry/src/main/ets/Component/p2pTitleBar.ets','entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets']){const text=fs.readFileSync(file,'utf8');const s=ts.createScanner(ts.ScriptTarget.Latest,false,ts.LanguageVariant.Standard,text);const st=[];let t,err='';while((t=s.scan())\"'!==ts.SyntaxKind.EndOfFileToken){if([ts.SyntaxKind.OpenBraceToken,ts.SyntaxKind.OpenParenToken,ts.SyntaxKind.OpenBracketToken].includes(t))st.push({t,pos:s.getTokenPos()});if([ts.SyntaxKind.CloseBraceToken,ts.SyntaxKind.CloseParenToken,ts.SyntaxKind.CloseBracketToken].includes(t)){const e=t===ts.SyntaxKind.CloseBraceToken?ts.SyntaxKind.OpenBraceToken:t===ts.SyntaxKind.CloseParenToken?ts.SyntaxKind.OpenParenToken:ts.SyntaxKind.OpenBracketToken;const top=st.pop();if(!top||top.t!==e){const p=ts.computeLineAndCharacterOfPosition(ts.createSourceFile(file,text,ts.ScriptTarget.Latest),s.getTokenPos());err='\"'mismatch at '+(p.line+1)+':'+(p.character+1);break}}}console.log(file,err||('remaining '+st.length));}\nNODE\"",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -c '\n  . as \"'$plan |\n  {\n    selected_rules: [$plan.rules[].rule],\n    entity_repairs: [\n      $plan.rules[] as $r |\n      $r.files[] as $f |\n      {\n        rule: $r.rule,\n        relative_path: $f.relative_path,\n        locations: [$f.locations[] | {line: .line, column: .column}],\n        entities: [\n          (if ($r.rule | contains(\"state-var\")) then \"state declarations or state accesses at the listed locations\"\n           elif ($r.rule | contains(\"container\")) then \"container nodes at the listed locations\"\n           elif ($r.rule | contains(\"flex\")) then \"default horizontal Flex containers at the listed locations\"\n           elif ($r.rule | contains(\"resource\")) then \"resourceManager string lookups at the listed locations\"\n           elif ($r.rule | contains(\"callback\")) then \"empty system callback listener at the listed location\"\n           else \"affected source construct at the listed locations\" end)\n        ],\n        evidence: [\n          (\"Repository evidence: \" + $f.relative_path + \" contains the planned construct at lines \" + ([$f.locations[].line | tostring] | join(\", \")) + \"; the surrounding declaration or method was inspected and retained.\")\n        ],\n        transformation:\n          (if ($r.rule | contains(\"avoid-empty-callback\")) then \"Removed the empty onClick listener while retaining the surrounding component.\"\n           elif ($r.rule | contains(\"no-state-var-access-in-loop\")) then \"Cached loop values locally and published progress/status through the retained component state after or during the iteration without direct reactive-field reads in the loop.\"\n           elif ($r.rule | contains(\"remove-container-without-property\")) then \"Removed the redundant single-child wrapper and retained its layout behavior on the surviving container.\"\n           elif ($r.rule | contains(\"remove-redundant-nest-container\")) then \"Flattened the redundant same-type container and transferred its layout modifiers to the retained container.\"\n           elif ($r.rule | contains(\"remove-redundant-state-var\")) then \"Removed only the unnecessary State decorator, retaining each field declaration, initializer, name, and API surface.\"\n           elif ($r.rule | contains(\"remove-unchanged-state-var\")) then \"Removed only the unnecessary State decorator from unchanged fields, retaining each declaration and initializer.\"\n           elif ($r.rule | contains(\"use-id-in-get-resource-sync-api\")) then \"Passed the resource ID to getStringSync while retaining the same resource and formatting arguments.\"\n           elif ($r.rule | contains(\"use-local-var-to-replace-state-var\")) then \"Accumulated temporary values in local variables and published the final or callback result through the retained component state.\"\n           elif ($r.rule | contains(\"use-row-column-to-replace-flex\")) then \"Replaced the default horizontal Flex with Row while retaining explicit vertical Flex containers and child modifiers.\"\n           else \"Applied the rule-specific local transformation while retaining declarations and behavior.\" end),\n        status: \"repaired\"\n      }\n    ],\n    blocked: [],\n    unresolved_external: []\n  }\n'\"' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n '\"'^'\"\\\\+\\\\+ -|@State.*(localName|p2pLinkedInfo|cellularModeIndex|cellularRemoteAddress|cellularReconnectCount|cellularReceiveCount)' entry/src/main/ets || true; rg -n '\\\\.onClick\\\\(\\\\(\\\\) *=> *\\\\{' entry/src/main/ets/pages/homePage.ets || true; rg -n '\"'^'\"\\\\s+Flex\\\\(\\\\) \\\\{' entry/src/main/ets/Component/{autoContentTable,autoVerificationTable,contentTable,scenarioContentTable,stressContentTable}.ets || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -e 'all(.required[]; has(.)) and (.selected_rules == (input.rules | map(.rule))) and (.blocked|length==0) and (.unresolved_external|length==0) and ((.entity_repairs|length)==136) and all(.entity_repairs[]; .status==\\\"repaired\\\" and (.evidence|type==\\\"array\\\" and length>0) and (.entities|type==\\\"array\\\" and length>0) and (.locations|length>0))' .exp_agent/round_01/completion.json .exp_agent/round_01/completion-schema.json 2>/dev/null || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node - <<'NODE'\nconst fs=require('fs');const plan=JSON.parse(fs.readFileSync('.exp_agent/round_01/plan.json'));const report=JSON.parse(fs.readFileSync('.exp_agent/round_01/completion.json','utf8'));const expected=plan.rules.map(r=>r.rule);const actual=report.selected_rules;console.log('selected_rules_exact='+(JSON.stringify(expected)===JSON.stringify(actual)));const expectedLoc=plan.rules.reduce((n,r)=>n+r.files.reduce((m,f)=>m+f.locations.length,0),0);const actualLoc=report.entity_repairs.reduce((n,e)=>n+e.locations.length,0);console.log('locations='+actualLoc+'/'+expectedLoc+' repairs='+report.entity_repairs.length);\nNODE\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node - <<'NODE'\nconst fs=require('fs');\nconst Ajv=require('/rules/node_modules/ajv');\nconst ajv=new Ajv({strict:false});\nconst schema=JSON.parse(fs.readFileSync('.exp_agent/round_01/completion-schema.json','utf8'));\nconst data=JSON.parse(fs.readFileSync('.exp_agent/round_01/completion.json','utf8'));\nconst ok=ajv.compile(schema)(data);\nconsole.log(ok ? 'schema_valid' : JSON.stringify(ajv.compile(schema).errors));\nNODE\"",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules/node_modules -maxdepth 4 -type d -name ajv -o -name jsonschema | head -20; jq -e 'has(\\\"selected_rules\\\") and has(\\\"entity_repairs\\\") and has(\\\"blocked\\\") and has(\\\"unresolved_external\\\") and (.blocked|length==0) and (.unresolved_external|length==0) and all(.entity_repairs[]; (.rule|type)==\\\"string\\\" and (.relative_path|type)==\\\"string\\\" and (.locations|length>0) and (.entities|type)==\\\"array\\\" and (.entities|length>0) and (.evidence|type)==\\\"array\\\" and (.evidence|length>0) and (.transformation|length>0) and .status==\\\"repaired\\\")' .exp_agent/round_01/completion.json && echo report_shape_valid\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node - <<'NODE'\nconst fs=require('fs'),ts=require('/rules/node_modules/arkanalyzer/node_modules/ohos-typescript');\nfor(const file of ['entry/src/main/ets/Component/p2pTitleBar.ets','entry/src/main/ets/Component/pageTitle.ets','entry/src/main/ets/Component/titleBar.ets']){const text=fs.readFileSync(file,'utf8');const s=ts.createScanner(ts.ScriptTarget.Latest,false,ts.LanguageVariant.Standard,text);const st=[];let t;while((t=s.scan())\"'!==ts.SyntaxKind.EndOfFileToken){if([ts.SyntaxKind.OpenBraceToken,ts.SyntaxKind.OpenParenToken,ts.SyntaxKind.OpenBracketToken].includes(t))st.push({t,pos:s.getTokenPos()});if([ts.SyntaxKind.CloseBraceToken,ts.SyntaxKind.CloseParenToken,ts.SyntaxKind.CloseBracketToken].includes(t)){const e=t===ts.SyntaxKind.CloseBraceToken?ts.SyntaxKind.OpenBraceToken:t===ts.SyntaxKind.CloseParenToken?ts.SyntaxKind.OpenParenToken:ts.SyntaxKind.OpenBracketToken;const top=st.pop();if(!top||top.t!==e){console.log(file,'\"'mismatch',s.getTokenText(),'at',s.getTokenPos(),'top',top&&ts.tokenToString(top.t));break}}}console.log(file,'left',st.length);}\nNODE\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"getStringSync\\\" /rules/resources /workspace /rules/node_modules/arkanalyzer --glob '*.d.ts' | head -40; sed -n '1,80p' /rules/docs/use-id-in-get-resource-sync-api.md 2>/dev/null || true; wc -c .exp_agent/round_01/completion.json; jq '.selected_rules, (.entity_repairs|length), .blocked, .unresolved_external' .exp_agent/round_01/completion.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              }
+            ],
+            "trace_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/traces/round_01_attempt_01.jsonl",
+            "trace_sha256": "3364a87687a9caf6958cc4f0e2d846e4de9b80eadf8cbda487525bcc09e7d139",
+            "stderr_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/traces/round_01_attempt_01.stderr.log"
+          },
+          "coverage": {
+            "complete": true,
+            "problems": [],
+            "required_rule_count": 9,
+            "required_rule_file_group_count": 136,
+            "feedback": "Every required rule, file, and exact evaluator location is accounted for."
+          },
+          "edit": {
+            "changed_files": [
+              "entry/src/main/ets/Component/autoContentTable.ets",
+              "entry/src/main/ets/Component/autoVerificationTable.ets",
+              "entry/src/main/ets/Component/contentTable.ets",
+              "entry/src/main/ets/Component/entryComponent.ets",
+              "entry/src/main/ets/Component/filterTable.ets",
+              "entry/src/main/ets/Component/filterTableManager.ets",
+              "entry/src/main/ets/Component/p2pTitleBar.ets",
+              "entry/src/main/ets/Component/p2pView.ets",
+              "entry/src/main/ets/Component/pageTitle.ets",
+              "entry/src/main/ets/Component/phoneLayout.ets",
+              "entry/src/main/ets/Component/scenarioContentTable.ets",
+              "entry/src/main/ets/Component/stressContentTable.ets",
+              "entry/src/main/ets/Component/subEntryComponent.ets",
+              "entry/src/main/ets/Component/titleBar.ets",
+              "entry/src/main/ets/Component/webTitleBar.ets",
+              "entry/src/main/ets/pages/homePage.ets",
+              "entry/src/main/ets/pages/index.ets",
+              "entry/src/main/ets/pages/newApi/AllInOneView.ets",
+              "entry/src/main/ets/pages/newApi/ChangeNameView.ets",
+              "entry/src/main/ets/pages/newApi/CreateGroupView.ets",
+              "entry/src/main/ets/pages/newApi/QuickVerifyTest.ets",
+              "entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets",
+              "entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets",
+              "entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets",
+              "entry/src/main/ets/pages/subAppTest/udpSocketTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/hotspotManagerAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/p2pAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/p2pManagerAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/wifiAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/wifiManagerAutoTest.ets",
+              "entry/src/main/ets/pages/subBenchmarkTest/hotspotBenchmarkTest.ets",
+              "entry/src/main/ets/pages/subBenchmarkTest/hotspotManagerBenchmarkTest.ets",
+              "entry/src/main/ets/pages/subBenchmarkTest/p2pBenchmarkTest.ets",
+              "entry/src/main/ets/pages/subBenchmarkTest/p2pManagerBenchmarkTest.ets",
+              "entry/src/main/ets/pages/subBenchmarkTest/wifiBenchmarkTest.ets",
+              "entry/src/main/ets/pages/subBenchmarkTest/wifiManagerBenchmarkTest.ets",
+              "entry/src/main/ets/pages/subManualApiTest/hotspotInterfaceTest.ets",
+              "entry/src/main/ets/pages/subManualApiTest/hotspotManagerInterfaceTest.ets",
+              "entry/src/main/ets/pages/subManualApiTest/p2pInterfaceTest.ets",
+              "entry/src/main/ets/pages/subManualApiTest/p2pManagerInterfaceTest.ets",
+              "entry/src/main/ets/pages/subManualApiTest/subWifiTest/Login.ets",
+              "entry/src/main/ets/pages/subManualApiTest/wifiInterfaceTest.ets",
+              "entry/src/main/ets/pages/subManualApiTest/wifiManagerInterfaceTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/hotspotCreateScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/hotspotManagerCreateScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/p2pConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/p2pManagerConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/wifiConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/wifiManagerConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subStabilityTest/hotspotStabilityTest.ets",
+              "entry/src/main/ets/pages/subStabilityTest/webLatencyTest.ets",
+              "entry/src/main/ets/pages/subStabilityTest/wifiConnectStabilityTest.ets",
+              "entry/src/main/ets/pages/subStabilityTest/wifiScanStabilityTest.ets",
+              "entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets",
+              "entry/src/main/ets/pages/subStressTest/hotspotManagerStressTest.ets",
+              "entry/src/main/ets/pages/subStressTest/hotspotStressTest.ets",
+              "entry/src/main/ets/pages/subStressTest/p2pManagerStressTest.ets",
+              "entry/src/main/ets/pages/subStressTest/p2pStressTest.ets",
+              "entry/src/main/ets/pages/subStressTest/wifiManagerStressTest.ets",
+              "entry/src/main/ets/pages/subStressTest/wifiStressTest.ets"
+            ],
+            "changed_file_count": 61,
+            "changed_source_files": [
+              "entry/src/main/ets/Component/autoContentTable.ets",
+              "entry/src/main/ets/Component/autoVerificationTable.ets",
+              "entry/src/main/ets/Component/contentTable.ets",
+              "entry/src/main/ets/Component/entryComponent.ets",
+              "entry/src/main/ets/Component/filterTable.ets",
+              "entry/src/main/ets/Component/filterTableManager.ets",
+              "entry/src/main/ets/Component/p2pTitleBar.ets",
+              "entry/src/main/ets/Component/p2pView.ets",
+              "entry/src/main/ets/Component/pageTitle.ets",
+              "entry/src/main/ets/Component/phoneLayout.ets",
+              "entry/src/main/ets/Component/scenarioContentTable.ets",
+              "entry/src/main/ets/Component/stressContentTable.ets",
+              "entry/src/main/ets/Component/subEntryComponent.ets",
+              "entry/src/main/ets/Component/titleBar.ets",
+              "entry/src/main/ets/Component/webTitleBar.ets",
+              "entry/src/main/ets/pages/homePage.ets",
+              "entry/src/main/ets/pages/index.ets",
+              "entry/src/main/ets/pages/newApi/AllInOneView.ets",
+              "entry/src/main/ets/pages/newApi/ChangeNameView.ets",
+              "entry/src/main/ets/pages/newApi/CreateGroupView.ets",
+              "entry/src/main/ets/pages/newApi/QuickVerifyTest.ets",
+              "entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets",
+              "entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets",
+              "entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets",
+              "entry/src/main/ets/pages/subAppTest/udpSocketTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/hotspotManagerAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/p2pAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/p2pManagerAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/wifiAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/wifiManagerAutoTest.ets",
+              "entry/src/main/ets/pages/subBenchmarkTest/hotspotBenchmarkTest.ets",
+              "entry/src/main/ets/pages/subBenchmarkTest/hotspotManagerBenchmarkTest.ets",
+              "entry/src/main/ets/pages/subBenchmarkTest/p2pBenchmarkTest.ets",
+              "entry/src/main/ets/pages/subBenchmarkTest/p2pManagerBenchmarkTest.ets",
+              "entry/src/main/ets/pages/subBenchmarkTest/wifiBenchmarkTest.ets",
+              "entry/src/main/ets/pages/subBenchmarkTest/wifiManagerBenchmarkTest.ets",
+              "entry/src/main/ets/pages/subManualApiTest/hotspotInterfaceTest.ets",
+              "entry/src/main/ets/pages/subManualApiTest/hotspotManagerInterfaceTest.ets",
+              "entry/src/main/ets/pages/subManualApiTest/p2pInterfaceTest.ets",
+              "entry/src/main/ets/pages/subManualApiTest/p2pManagerInterfaceTest.ets",
+              "entry/src/main/ets/pages/subManualApiTest/subWifiTest/Login.ets",
+              "entry/src/main/ets/pages/subManualApiTest/wifiInterfaceTest.ets",
+              "entry/src/main/ets/pages/subManualApiTest/wifiManagerInterfaceTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/hotspotCreateScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/hotspotManagerCreateScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/p2pConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/p2pManagerConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/wifiConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/wifiManagerConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subStabilityTest/hotspotStabilityTest.ets",
+              "entry/src/main/ets/pages/subStabilityTest/webLatencyTest.ets",
+              "entry/src/main/ets/pages/subStabilityTest/wifiConnectStabilityTest.ets",
+              "entry/src/main/ets/pages/subStabilityTest/wifiScanStabilityTest.ets",
+              "entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets",
+              "entry/src/main/ets/pages/subStressTest/hotspotManagerStressTest.ets",
+              "entry/src/main/ets/pages/subStressTest/hotspotStressTest.ets",
+              "entry/src/main/ets/pages/subStressTest/p2pManagerStressTest.ets",
+              "entry/src/main/ets/pages/subStressTest/p2pStressTest.ets",
+              "entry/src/main/ets/pages/subStressTest/wifiManagerStressTest.ets",
+              "entry/src/main/ets/pages/subStressTest/wifiStressTest.ets"
+            ],
+            "changed_source_file_count": 61,
+            "added_source_files": [],
+            "deleted_source_files": [],
+            "large_deletion_flags": [],
+            "patch_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/rounds/round_01/attempt_01.patch",
+            "patch_sha256": "acd8dbcfcdf9daedc7dd9de21fb9e87ceb651381b95474aea0e42f6669c73192"
+          },
+          "preflight": {
+            "structure": {
+              "status": "passed",
+              "removed_declarations": {},
+              "diff": {
+                "changed_files": [
+                  "entry/src/main/ets/Component/autoContentTable.ets",
+                  "entry/src/main/ets/Component/autoVerificationTable.ets",
+                  "entry/src/main/ets/Component/contentTable.ets",
+                  "entry/src/main/ets/Component/entryComponent.ets",
+                  "entry/src/main/ets/Component/filterTable.ets",
+                  "entry/src/main/ets/Component/filterTableManager.ets",
+                  "entry/src/main/ets/Component/p2pTitleBar.ets",
+                  "entry/src/main/ets/Component/p2pView.ets",
+                  "entry/src/main/ets/Component/pageTitle.ets",
+                  "entry/src/main/ets/Component/phoneLayout.ets",
+                  "entry/src/main/ets/Component/scenarioContentTable.ets",
+                  "entry/src/main/ets/Component/stressContentTable.ets",
+                  "entry/src/main/ets/Component/subEntryComponent.ets",
+                  "entry/src/main/ets/Component/titleBar.ets",
+                  "entry/src/main/ets/Component/webTitleBar.ets",
+                  "entry/src/main/ets/pages/homePage.ets",
+                  "entry/src/main/ets/pages/index.ets",
+                  "entry/src/main/ets/pages/newApi/AllInOneView.ets",
+                  "entry/src/main/ets/pages/newApi/ChangeNameView.ets",
+                  "entry/src/main/ets/pages/newApi/CreateGroupView.ets",
+                  "entry/src/main/ets/pages/newApi/QuickVerifyTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/udpSocketTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/hotspotManagerAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/p2pAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/p2pManagerAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/wifiAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/wifiManagerAutoTest.ets",
+                  "entry/src/main/ets/pages/subBenchmarkTest/hotspotBenchmarkTest.ets",
+                  "entry/src/main/ets/pages/subBenchmarkTest/hotspotManagerBenchmarkTest.ets",
+                  "entry/src/main/ets/pages/subBenchmarkTest/p2pBenchmarkTest.ets",
+                  "entry/src/main/ets/pages/subBenchmarkTest/p2pManagerBenchmarkTest.ets",
+                  "entry/src/main/ets/pages/subBenchmarkTest/wifiBenchmarkTest.ets",
+                  "entry/src/main/ets/pages/subBenchmarkTest/wifiManagerBenchmarkTest.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/hotspotInterfaceTest.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/hotspotManagerInterfaceTest.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/p2pInterfaceTest.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/p2pManagerInterfaceTest.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/subWifiTest/Login.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/wifiInterfaceTest.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/wifiManagerInterfaceTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/hotspotCreateScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/hotspotManagerCreateScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/p2pConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/p2pManagerConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/wifiConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/wifiManagerConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subStabilityTest/hotspotStabilityTest.ets",
+                  "entry/src/main/ets/pages/subStabilityTest/webLatencyTest.ets",
+                  "entry/src/main/ets/pages/subStabilityTest/wifiConnectStabilityTest.ets",
+                  "entry/src/main/ets/pages/subStabilityTest/wifiScanStabilityTest.ets",
+                  "entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets",
+                  "entry/src/main/ets/pages/subStressTest/hotspotManagerStressTest.ets",
+                  "entry/src/main/ets/pages/subStressTest/hotspotStressTest.ets",
+                  "entry/src/main/ets/pages/subStressTest/p2pManagerStressTest.ets",
+                  "entry/src/main/ets/pages/subStressTest/p2pStressTest.ets",
+                  "entry/src/main/ets/pages/subStressTest/wifiManagerStressTest.ets",
+                  "entry/src/main/ets/pages/subStressTest/wifiStressTest.ets"
+                ],
+                "changed_file_count": 61,
+                "changed_source_files": [
+                  "entry/src/main/ets/Component/autoContentTable.ets",
+                  "entry/src/main/ets/Component/autoVerificationTable.ets",
+                  "entry/src/main/ets/Component/contentTable.ets",
+                  "entry/src/main/ets/Component/entryComponent.ets",
+                  "entry/src/main/ets/Component/filterTable.ets",
+                  "entry/src/main/ets/Component/filterTableManager.ets",
+                  "entry/src/main/ets/Component/p2pTitleBar.ets",
+                  "entry/src/main/ets/Component/p2pView.ets",
+                  "entry/src/main/ets/Component/pageTitle.ets",
+                  "entry/src/main/ets/Component/phoneLayout.ets",
+                  "entry/src/main/ets/Component/scenarioContentTable.ets",
+                  "entry/src/main/ets/Component/stressContentTable.ets",
+                  "entry/src/main/ets/Component/subEntryComponent.ets",
+                  "entry/src/main/ets/Component/titleBar.ets",
+                  "entry/src/main/ets/Component/webTitleBar.ets",
+                  "entry/src/main/ets/pages/homePage.ets",
+                  "entry/src/main/ets/pages/index.ets",
+                  "entry/src/main/ets/pages/newApi/AllInOneView.ets",
+                  "entry/src/main/ets/pages/newApi/ChangeNameView.ets",
+                  "entry/src/main/ets/pages/newApi/CreateGroupView.ets",
+                  "entry/src/main/ets/pages/newApi/QuickVerifyTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/udpSocketTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/hotspotManagerAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/p2pAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/p2pManagerAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/wifiAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/wifiManagerAutoTest.ets",
+                  "entry/src/main/ets/pages/subBenchmarkTest/hotspotBenchmarkTest.ets",
+                  "entry/src/main/ets/pages/subBenchmarkTest/hotspotManagerBenchmarkTest.ets",
+                  "entry/src/main/ets/pages/subBenchmarkTest/p2pBenchmarkTest.ets",
+                  "entry/src/main/ets/pages/subBenchmarkTest/p2pManagerBenchmarkTest.ets",
+                  "entry/src/main/ets/pages/subBenchmarkTest/wifiBenchmarkTest.ets",
+                  "entry/src/main/ets/pages/subBenchmarkTest/wifiManagerBenchmarkTest.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/hotspotInterfaceTest.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/hotspotManagerInterfaceTest.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/p2pInterfaceTest.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/p2pManagerInterfaceTest.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/subWifiTest/Login.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/wifiInterfaceTest.ets",
+                  "entry/src/main/ets/pages/subManualApiTest/wifiManagerInterfaceTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/hotspotCreateScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/hotspotManagerCreateScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/p2pConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/p2pManagerConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/wifiConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/wifiManagerConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subStabilityTest/hotspotStabilityTest.ets",
+                  "entry/src/main/ets/pages/subStabilityTest/webLatencyTest.ets",
+                  "entry/src/main/ets/pages/subStabilityTest/wifiConnectStabilityTest.ets",
+                  "entry/src/main/ets/pages/subStabilityTest/wifiScanStabilityTest.ets",
+                  "entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets",
+                  "entry/src/main/ets/pages/subStressTest/hotspotManagerStressTest.ets",
+                  "entry/src/main/ets/pages/subStressTest/hotspotStressTest.ets",
+                  "entry/src/main/ets/pages/subStressTest/p2pManagerStressTest.ets",
+                  "entry/src/main/ets/pages/subStressTest/p2pStressTest.ets",
+                  "entry/src/main/ets/pages/subStressTest/wifiManagerStressTest.ets",
+                  "entry/src/main/ets/pages/subStressTest/wifiStressTest.ets"
+                ],
+                "changed_source_file_count": 61,
+                "added_source_files": [],
+                "deleted_source_files": [],
+                "large_deletion_flags": [],
+                "patch_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/rounds/round_01/preflight_01/source_changes.patch",
+                "patch_sha256": "acd8dbcfcdf9daedc7dd9de21fb9e87ceb651381b95474aea0e42f6669c73192"
+              }
+            },
+            "public_api": {
+              "status": "passed",
+              "changes": {
+                "removed": [],
+                "added": [],
+                "changed": []
+              }
+            },
+            "namespace_export": {
+              "status": "passed",
+              "failures": [],
+              "baseline": {},
+              "observed": {},
+              "missing": {},
+              "changed": {}
+            },
+            "failures": []
+          },
+          "build_gate": {
+            "label": "attempt_01",
+            "status": "not_available",
+            "command": null,
+            "build": null
+          }
+        }
+      ],
+      "validation_scan": {
+        "operation": "scan",
+        "status": "scanned",
+        "exit_code": 0,
+        "elapsed_seconds": 12.984338262991514,
+        "command": [
+          "/home/zhihao/deveco/command-line-tools/codelinter/bin/codelinter",
+          "--config",
+          "/home/zhihao/hdd/haprepair/HapRepair/skills/haprepair-openharmony-repair-v14-dev/assets/homecheck-config.json5",
+          "--format",
+          "json",
+          "--output",
+          "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_01/report.json",
+          "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/workspace"
+        ],
+        "raw_finding_count": 30,
+        "target_finding_count": 30,
+        "excluded_non_target_finding_count": 0,
+        "findings_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_01/findings.json",
+        "findings_sha256": "3d8f94d9e255be551643b1b5dc3327811d7ddf9fbbfa9d91f9257f8a89790375",
+        "all_findings_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_01/all_findings.json",
+        "report_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_01/report.json",
+        "stdout_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_01/stdout.log",
+        "stderr_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_01/stderr.log",
+        "parse_error": null,
+        "attempt_id": "validation_01",
+        "kind": "validation",
+        "completed_at": "2026-08-10T17:31:42.449517+00:00",
+        "budget_consumed": true,
+        "metrics": {
+          "initial_alerts": 1074,
+          "final_alerts": 30,
+          "eliminated_alerts": 1045,
+          "remaining_alerts": 29,
+          "introduced_alerts": 1,
+          "net_reduction": 1044
+        },
+        "alert_deltas_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_01/alert_deltas.json",
+        "validation_budget": {
+          "consumed": 1,
+          "maximum": 5
+        }
+      },
+      "round_metrics": {
+        "initial_alerts": 1074,
+        "final_alerts": 30,
+        "eliminated_alerts": 1045,
+        "remaining_alerts": 29,
+        "introduced_alerts": 1,
+        "net_reduction": 1044
+      },
+      "total_metrics": {
+        "initial_alerts": 1074,
+        "final_alerts": 30,
+        "eliminated_alerts": 1045,
+        "remaining_alerts": 29,
+        "introduced_alerts": 1,
+        "net_reduction": 1044
+      },
+      "candidate_score": [
+        30,
+        1,
+        61,
+        1
+      ],
+      "best_valid_updated": true,
+      "interaction": {
+        "round": 1,
+        "eliminated_rules": {
+          "@performance/hp-arkui-avoid-empty-callback": 1,
+          "@performance/hp-arkui-no-state-var-access-in-loop": 20,
+          "@performance/hp-arkui-remove-container-without-property": 5,
+          "@performance/hp-arkui-remove-redundant-nest-container": 2,
+          "@performance/hp-arkui-remove-redundant-state-var": 473,
+          "@performance/hp-arkui-remove-unchanged-state-var": 454,
+          "@performance/hp-arkui-use-id-in-get-resource-sync-api": 2,
+          "@performance/hp-arkui-use-local-var-to-replace-state-var": 83,
+          "@performance/hp-arkui-use-row-column-to-replace-flex": 5
+        },
+        "introduced_rules": {
+          "@performance/hp-arkui-remove-unchanged-state-var": 1
+        },
+        "same_file_exchanges": [
+          {
+            "relative_path": "entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets",
+            "from_rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+            "to_rule": "@performance/hp-arkui-remove-unchanged-state-var"
+          }
+        ],
+        "interpretation": "Descriptive same-file association only; no hidden rule-family metadata was used."
+      }
+    },
+    {
+      "round": 2,
+      "status": "accepted",
+      "thread_id": "019fecba-f49f-7e11-a9dd-2d2b823e9256",
+      "attempts": [
+        {
+          "attempt": 1,
+          "thread_id": "019fecba-f49f-7e11-a9dd-2d2b823e9256",
+          "turn": {
+            "elapsed_seconds": 537.9606781210168,
+            "thread_id": "019fecba-f49f-7e11-a9dd-2d2b823e9256",
+            "usage": {
+              "input_tokens": 2026334,
+              "cached_input_tokens": 1902080,
+              "output_tokens": 26227,
+              "total_tokens": 2052561
+            },
+            "commands": [
+              {
+                "command": "/usr/bin/bash -lc 'rg --files /rules | sort | head -200'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'git status --short && git log -1 --oneline'",
+                "exit_code": 128,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"pwd && rg --files -g '\"'!**/.git/**'\"' -g '\"'!**/node_modules/**'\"' | head -200\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,240p' .exp_agent/round_02/plan.json && printf '\\\\n--- schema ---\\\\n' && sed -n '1,260p' .exp_agent/round_02/completion-schema.json && printf '\\\\n--- completion ---\\\\n' && sed -n '1,260p' .exp_agent/round_02/completion.json\"",
+                "exit_code": 2,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '241,520p' .exp_agent/round_02/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find entry/src/main/ets/pages/subAppTest entry/src/main/ets/pages/subAutoTest entry/src/main/ets/pages/subScenarioTest -type f \\\\( -name '*.ets' -o -name '*.ts' \\\\) | sort\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 3 -type f \\\\( -iname '*lint*' -o -iname '*check*' -o -iname '*analy*' -o -name 'package.json' -o -name 'tsconfig*.json' \\\\) -print | sort\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'rg -n -i \"remove-unchanged-state-var|use-local-var-to-replace-state-var|unchanged state|temporary calculation\" /rules'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"command -v rg; command -v node; command -v npm; command -v hvigorw; command -v arktsc; command -v java; find / -maxdepth 4 -type f -name 'hvigorw' 2>/dev/null | head -20\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules -type f | rg 'remove-unchanged|use-local|state-var|performance' | sort\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,220p' /rules/node_modules/homecheck/lib/checker/performance/RemoveUnchangedStateVarCheck.js && printf '\\\\n--- docs ---\\\\n' && find /rules/node_modules/homecheck -type f | rg 'remove-unchanged|local-var' | sort\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | .rule as \"'$r | .files[] | [$r,.relative_path,(.locations|map(\"'\"\\\\(.line):\\\\(.column)\\\")|join(\\\",\\\"))] | @tsv' .exp_agent/round_02/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n '@State|@Prop|@Link|@Observed|@ObjectLink|@Provide|@Consume' entry/src/main/ets/pages/subAppTest/{multipathSocketTest,tcpSocketTest,udpSocketTest}.ets entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets entry/src/main/ets/pages/subAutoTest/*.ets entry/src/main/ets/pages/subScenarioTest/{hotspotCreateScenarioTest,hotspotManagerCreateScenarioTest,p2pConnectScenarioTest,p2pManagerConnectScenarioTest,wifiConnectScenarioTest,wifiManagerConnectScenarioTest}.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules/node_modules/homecheck -type f | rg -i 'local.*state|state.*local|replace.*state' | sort\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'rg -n \"use-local-var-to-replace-state-var|UseLocalVar|temporary calculation|Replace state variables\" /rules/node_modules/homecheck /rules/docs /rules/config /rules/code-linter.json5'",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets | sed -n '1,90p'; printf '\\\\n--- multipath 190-300 ---\\\\n'; nl -ba entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets | sed -n '190,305p'; printf '\\\\n--- tcp 195-295 ---\\\\n'; nl -ba entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets | sed -n '195,295p'; printf '\\\\n--- udp 185-280 ---\\\\n'; nl -ba entry/src/main/ets/pages/subAppTest/udpSocketTest.ets | sed -n '185,280p'; printf '\\\\n--- stability 345-400 ---\\\\n'; nl -ba entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets | sed -n '345,400p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in entry/src/main/ets/pages/subAutoTest/{hotspotAutoTest,hotspotManagerAutoTest,p2pAutoTest,p2pManagerAutoTest,wifiAutoTest,wifiManagerAutoTest}.ets entry/src/main/ets/pages/subScenarioTest/{hotspotCreateScenarioTest,hotspotManagerCreateScenarioTest,p2pConnectScenarioTest,p2pManagerConnectScenarioTest,wifiConnectScenarioTest,wifiManagerConnectScenarioTest}.ets; do echo \"--- $f\"; nl -ba \"$f\" | sed -n '\"'1,85p'; done\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"@State|State\\\" /rules/node_modules/homecheck/lib/checker/performance | rg -i 'local|replace|temporary|unchanged' | head -100\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"use-local-var-to-replace-state-var|temporary calculation|state variables with local\\\" /rules --glob '\"'!**/*.map'\"'\"",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -c '.rules[] | {rule, files: [.files[] | {relative_path, locations}]}' .exp_agent/round_02/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets | sed -n '205,290p'; nl -ba entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets | sed -n '205,285p'; nl -ba entry/src/main/ets/pages/subAppTest/udpSocketTest.ets | sed -n '188,270p'; nl -ba entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets | sed -n '365,390p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in entry/src/main/ets/pages/subAppTest/{multipathSocketTest,tcpSocketTest,udpSocketTest}.ets; do echo \"--- $f state fields/usages\"; rg -n \"@State|wifiNetworkStatus|cellularNetworkStatus|wifiHandleInfo|cellularHandleInfo|responseData|socketStatus|connectionStatus|openWifiNumber|closeWifiNumber\" \"$f\"; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules -maxdepth 3 -type f | sort | rg 'README|readme|config|json5\"'$|json$|md$'\"' | head -200; sed -n '1,220p' /rules/code-linter.json5\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in entry/src/main/ets/pages/subScenarioTest/{hotspotCreateScenarioTest,hotspotManagerCreateScenarioTest,p2pConnectScenarioTest,p2pManagerConnectScenarioTest,wifiConnectScenarioTest,wifiManagerConnectScenarioTest}.ets entry/src/main/ets/pages/subAutoTest/wifiManagerAutoTest.ets; do echo \"--- $f\"; nl -ba \"$f\" | sed -n '\"'35,58p'; rg -n \\\"changeIndex|@State\\\" \\\"\"'$f\"; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets | sed -n '35,130p'; nl -ba entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets | sed -n '35,95p'; nl -ba entry/src/main/ets/pages/subAppTest/udpSocketTest.ets | sed -n '35,90p'; nl -ba entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets | sed -n '45,110p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets | sed -n '367,520p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets | sed -n '200,285p'; nl -ba entry/src/main/ets/pages/subAppTest/udpSocketTest.ets | sed -n '190,275p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets | sed -n '205,290p'; rg -n \\\"update.*Status|set.*Status|openWifiNumber|stateMessageLog|funcMessage\\\" entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets | sed -n '208,292p'; nl -ba entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets | sed -n '204,286p'; nl -ba entry/src/main/ets/pages/subAppTest/udpSocketTest.ets | sed -n '190,274p'; nl -ba entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets | sed -n '360,450p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"this\\\\.(wifiNetworkStatus|cellularNetworkStatus|wifiHandleInfo|cellularHandleInfo)\\\\s*=|this\\\\.connectionStatus\\\\s*=|this\\\\.socketStatus\\\\s*=|this\\\\.openWifiNumber\\\\s*=|for\\\\s*\\\\(this\\\\.openWifiNumber\\\" entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets entry/src/main/ets/pages/subAppTest/udpSocketTest.ets entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /workspace -name .git -o -name .gitmodules -print; find /workspace -maxdepth 2 -type f -perm -111 -print; find /workspace -maxdepth 3 -type f \\\\( -name 'package.json' -o -name 'tsconfig*.json' -o -name 'hvigorw' \\\\) -print\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[].files[].relative_path' .exp_agent/round_02/plan.json | while read f; do echo \\\"--- \"'$f\"; rg -n \"@State.*(changeIndex|isLoading)|changeIndex:|isLoading:\" \"$f\"; done'",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules -maxdepth 4 -type f -path '*/.bin/*' -o -path '/rules/node_modules/homecheck/*' | head -100\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules/node_modules/homecheck -maxdepth 2 -type f -print | sort | head -100; find /rules -maxdepth 2 -type f -name '*.js' -o -name '*.mjs' -o -name '*.ts' | sort | head -100\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[].files[].relative_path' .exp_agent/round_02/plan.json | while read f; do test -f \\\"\"'$f\" || echo \"MISSING $f\"; done; jq -r '\"'.rules | length, (.[]|.files|length)' .exp_agent/round_02/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'node --check /rules/node_modules/homecheck/lib/checker/performance/RemoveUnchangedStateVarCheck.js && node --version && npm --version'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,260p' /rules/node_modules/homecheck/lib/run.js; sed -n '1,260p' /rules/node_modules/homecheck/lib/Main.js\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,240p' /rules/node_modules/homecheck/README.en.md; printf '\\\\n--- run ---\\\\n'; sed -n '1,260p' /rules/lib/run.js; printf '\\\\n--- package ---\\\\n'; sed -n '1,180p' /rules/node_modules/homecheck/package.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules -maxdepth 3 -type f -executable -print -exec file {} \\\\;\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /workspace /rules -maxdepth 4 -type f \\\\( -name '*.json' -o -name '*.json5' \\\\) -print | rg 'config|project|rule|check' | head -100\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,260p' /rules/lib/utils/Utils.js; sed -n '1,280p' /rules/lib/utils/GenerateConfig.js\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'rg -n \"parseCliOptions|checkPath|ruleConfig|projectConfig|argv|option\" /rules/lib /rules/node_modules/homecheck/lib/utils/common /rules/node_modules/homecheck/lib/utils | head -160'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"@State (changeIndex|isLoading)|for\\\\s*\\\\([\"'^)]*this'\"\\\\.openWifiNumber|this\\\\.(wifiNetworkStatus|cellularNetworkStatus|connectionStatus|socketStatus|openWifiNumber)\\\\s*=\\\" entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets entry/src/main/ets/pages/subAutoTest entry/src/main/ets/pages/subScenarioTest entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets entry/src/main/ets/pages/subAppTest/udpSocketTest.ets entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node - <<'NODE'\nconst fs = require('fs');\nconst plan = JSON.parse(fs.readFileSync('.exp_agent/round_02/plan.json', 'utf8'));\nlet failures = [];\nfor (const group of plan.rules.flatMap(rule => rule.files.map(file => ({...file, rule: rule.rule})))) {\n  const lines = fs.readFileSync(group.relative_path, 'utf8').split(/\\\\r?\\\\n/);\n  for (const loc of group.locations) {\n    const line = lines[loc.line - 1] || '';\n    if (\"'!line) failures.push(`${group.relative_path}:${loc.line}:${loc.column} missing`);\n    if (group.rule.endsWith('\"'remove-unchanged-state-var') && /@State/.test(line)) failures.push(\"'`${group.relative_path}:${loc.line} still @State`);\n    if (group.rule.endsWith('\"'use-local-var-to-replace-state-var') && /this\\\\.(wifiNetworkStatus|cellularNetworkStatus|connectionStatus|socketStatus|openWifiNumber)\\\\s*=/.test(line)) failures.push(\"'`${group.relative_path}:${loc.line} still direct state assignment`);\n  }\n}\nconsole.log(failures.length ? failures.join('\"'\\\\n') : 'plan-location checks: ok');\nprocess.exit(failures.length ? 1 : 0);\nNODE\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node - <<'NODE'\nconst fs = require('fs');\nconst ts = require('/rules/node_modules/typescript');\nconst { execFileSync } = require('child_process');\nconst files = execFileSync('jq', ['-r', '.rules[].files[].relative_path', '.exp_agent/round_02/plan.json'], {cwd:'/workspace', encoding:'utf8'}).trim().split('\\\\n');\nlet failed = false;\nfor (const file of files) {\n  const text = fs.readFileSync('/workspace/' + file, 'utf8');\n  const source = ts.createSourceFile(file, text, ts.ScriptTarget.Latest, true, ts.ScriptKind.TS);\n  const diagnostics = source.parseDiagnostics;\n  if (diagnostics.length) {\n    failed = true;\n    console.log(file);\n    for (const d of diagnostics) console.log(ts.flattenDiagnosticMessageText(d.messageText, '\\\\n'));\n  }\n}\nconsole.log(failed ? 'parse: failed' : \"'`parse: ok (${files.length} files)`);\nprocess.exit(failed ? 1 : 0);\nNODE'",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find / -type f \\\\( -name 'etsc' -o -name 'arktsc' -o -name 'hvigorw' \\\\) 2>/dev/null | head -50\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets | sed -n '80,125p'; nl -ba entry/src/main/ets/pages/subAppTest/udpSocketTest.ets | sed -n '70,115p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets | sed -n '205,286p'; nl -ba entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets | sed -n '367,390p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq '.selected_rules, (.entity_repairs | length), .blocked, .unresolved_external' .exp_agent/round_02/completion.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node - <<'NODE'\nconst fs = require('fs');\nconst plan = JSON.parse(fs.readFileSync('.exp_agent/round_02/plan.json', 'utf8'));\nconst report = JSON.parse(fs.readFileSync('.exp_agent/round_02/completion.json', 'utf8'));\nconst schema = JSON.parse(fs.readFileSync('.exp_agent/round_02/completion-schema.json', 'utf8'));\nconst expectedRules = plan.rules.map(r => r.rule);\nconst errors = [];\nif (JSON.stringify(report.selected_rules) \"'!== JSON.stringify(expectedRules)) errors.push('\"'selected_rules mismatch');\nif (\"'!Array.isArray(report.blocked) || report.blocked.length) errors.push('\"'blocked not empty');\nif (\"'!Array.isArray(report.unresolved_external) || report.unresolved_external.length) errors.push('\"'unresolved_external not empty');\nconst expected = new Map();\nfor (const rule of plan.rules) for (const file of rule.files) expected.set(rule.rule + '\\\\n' + file.relative_path, {rule: rule.rule, file});\nif (report.entity_repairs.length \"'!== expected.size) errors.push(`entity repair count ${report.entity_repairs.length} != ${expected.size}`);\nfor (const item of report.entity_repairs) {\n  const key = item.rule + '\"'\\\\n' + item.relative_path;\n  const source = expected.get(key);\n  if (\"'!source) { errors.push(`unexpected repair ${key}`); continue; }\n  if (item.status !== '\"'repaired') errors.push(\"'`${key}: bad status`);\n  if (!Array.isArray(item.entities) || item.entities.length === 0) errors.push(`${key}: entities`);\n  if (!Array.isArray(item.evidence) || item.evidence.length === 0 || item.evidence.some(v => typeof v !== '\"'string' || \"'!v)) errors.push(`${key}: evidence`);\n  if (Object.prototype.hasOwnProperty.call(item, '\"'repository_evidence')) errors.push(\"'`${key}: forbidden key`);\n  const actual = item.locations.map(l => `${l.line}:${l.column}`).sort().join('\"',');\n  const wanted = source.file.locations.map(l => \"'`${l.line}:${l.column}`).sort().join('\"',');\n  if (actual \"'!== wanted) errors.push(`${key}: locations ${actual} != ${wanted}`);\n  expected.delete(key);\n}\nfor (const key of expected.keys()) errors.push(`missing repair ${key}`);\nconsole.log(errors.length ? errors.join('\"'\\\\n') : \"'`completion validation: ok (${report.entity_repairs.length} repairs, schema fields present)`);\nprocess.exit(errors.length ? 1 : 0);\nNODE'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"@State (changeIndex|isLoading)|for\\\\s*\\\\([\"'^)]*this'\"\\\\.openWifiNumber|this\\\\.(wifiNetworkStatus|cellularNetworkStatus|connectionStatus|socketStatus)\\\\s*=\\\\s*(ConfigData|['\\\\\\\"])\\\" entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets entry/src/main/ets/pages/subAutoTest entry/src/main/ets/pages/subScenarioTest entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets entry/src/main/ets/pages/subAppTest/udpSocketTest.ets entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node - <<'NODE'\nconst fs = require('fs');\nconst plan = JSON.parse(fs.readFileSync('.exp_agent/round_02/plan.json', 'utf8'));\nlet bad = [];\nfor (const group of plan.rules.flatMap(r => r.files.map(f => ({...f, rule:r.rule})))) {\n  const lines = fs.readFileSync(group.relative_path, 'utf8').split(/\\\\r?\\\\n/);\n  for (const loc of group.locations) {\n    if (\"'!lines[loc.line - 1]) bad.push(`${group.relative_path}:${loc.line}: missing`);\n  }\n}\nconsole.log(bad.length ? bad.join('\"'\\\\n') : 'all planned exact lines remain addressable');\nprocess.exit(bad.length ? 1 : 0);\nNODE\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'rg -n \"local|state|unchanged|arkui\" /rules/ruleSet.json /rules/config/arkanalyzer.json /rules/node_modules/homecheck/lib/utils/common/CheckerIndex.js | head -160'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets | sed -n '115,145p'; nl -ba entry/src/main/ets/pages/subAppTest/udpSocketTest.ets | sed -n '108,140p'; nl -ba entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets | sed -n '205,300p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'ls -l .exp_agent/round_02/plan.json .exp_agent/round_02/completion-schema.json .exp_agent/round_02/completion.json; wc -l entry/src/main/ets/pages/subAppTest/{multipathSocketTest,tcpSocketTest,udpSocketTest}.ets entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'rg -n \"private [A-Za-z_$][A-Za-z0-9_$]*'\"\\\\(\\\" entry/src/main/ets | head -40\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"@State (changeIndex|isLoading)\\\" entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets entry/src/main/ets/pages/subAutoTest entry/src/main/ets/pages/subScenarioTest || true; rg -n \\\"for\\\\s*\\\\([\"'^)]*this'\"\\\\.openWifiNumber|this\\\\.(wifiNetworkStatus|cellularNetworkStatus|connectionStatus|socketStatus)\\\\s*=\\\\s*(ConfigData|['\\\\\\\"])\\\" entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets entry/src/main/ets/pages/subAppTest/udpSocketTest.ets entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node -e \\\"const fs=require('fs'); JSON.parse(fs.readFileSync('.exp_agent/round_02/completion.json')); console.log('completion.json: valid JSON')\\\" && jq -e 'has(\\\"selected_rules\\\") and has(\\\"entity_repairs\\\") and has(\\\"blocked\\\") and has(\\\"unresolved_external\\\") and (all(.entity_repairs[]; has(\\\"evidence\\\") and (.evidence|type==\\\"array\\\") and (.evidence|length>0) and .status==\\\"repaired\\\"))' .exp_agent/round_02/completion.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              }
+            ],
+            "trace_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/traces/round_02_attempt_01.jsonl",
+            "trace_sha256": "acd5cbb6d122865337e950bf5f1c5bc3c8b0694d4b063acf6892cc9b6b6c6e25",
+            "stderr_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/traces/round_02_attempt_01.stderr.log"
+          },
+          "coverage": {
+            "complete": true,
+            "problems": [],
+            "required_rule_count": 2,
+            "required_rule_file_group_count": 17,
+            "feedback": "Every required rule, file, and exact evaluator location is accounted for."
+          },
+          "edit": {
+            "changed_files": [
+              "entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets",
+              "entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets",
+              "entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets",
+              "entry/src/main/ets/pages/subAppTest/udpSocketTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/hotspotManagerAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/p2pAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/p2pManagerAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/wifiAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/wifiManagerAutoTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/hotspotCreateScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/hotspotManagerCreateScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/p2pConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/p2pManagerConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/wifiConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/wifiManagerConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets"
+            ],
+            "changed_file_count": 17,
+            "changed_source_files": [
+              "entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets",
+              "entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets",
+              "entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets",
+              "entry/src/main/ets/pages/subAppTest/udpSocketTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/hotspotManagerAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/p2pAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/p2pManagerAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/wifiAutoTest.ets",
+              "entry/src/main/ets/pages/subAutoTest/wifiManagerAutoTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/hotspotCreateScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/hotspotManagerCreateScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/p2pConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/p2pManagerConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/wifiConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subScenarioTest/wifiManagerConnectScenarioTest.ets",
+              "entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets"
+            ],
+            "changed_source_file_count": 17,
+            "added_source_files": [],
+            "deleted_source_files": [],
+            "large_deletion_flags": [],
+            "patch_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/rounds/round_02/attempt_01.patch",
+            "patch_sha256": "221fcba1bff0c5c67eb2c58abf659562288b65614cdbc5e4e9c4d46ded4f4986"
+          },
+          "preflight": {
+            "structure": {
+              "status": "passed",
+              "removed_declarations": {},
+              "diff": {
+                "changed_files": [
+                  "entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/udpSocketTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/hotspotManagerAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/p2pAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/p2pManagerAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/wifiAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/wifiManagerAutoTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/hotspotCreateScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/hotspotManagerCreateScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/p2pConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/p2pManagerConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/wifiConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/wifiManagerConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets"
+                ],
+                "changed_file_count": 17,
+                "changed_source_files": [
+                  "entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets",
+                  "entry/src/main/ets/pages/subAppTest/udpSocketTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/hotspotManagerAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/p2pAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/p2pManagerAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/wifiAutoTest.ets",
+                  "entry/src/main/ets/pages/subAutoTest/wifiManagerAutoTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/hotspotCreateScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/hotspotManagerCreateScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/p2pConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/p2pManagerConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/wifiConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subScenarioTest/wifiManagerConnectScenarioTest.ets",
+                  "entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets"
+                ],
+                "changed_source_file_count": 17,
+                "added_source_files": [],
+                "deleted_source_files": [],
+                "large_deletion_flags": [],
+                "patch_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/rounds/round_02/preflight_01/source_changes.patch",
+                "patch_sha256": "221fcba1bff0c5c67eb2c58abf659562288b65614cdbc5e4e9c4d46ded4f4986"
+              }
+            },
+            "public_api": {
+              "status": "passed",
+              "changes": {
+                "removed": [],
+                "added": [],
+                "changed": []
+              }
+            },
+            "namespace_export": {
+              "status": "passed",
+              "failures": [],
+              "baseline": {},
+              "observed": {},
+              "missing": {},
+              "changed": {}
+            },
+            "failures": []
+          },
+          "build_gate": {
+            "label": "attempt_01",
+            "status": "not_available",
+            "command": null,
+            "build": null
+          }
+        }
+      ],
+      "validation_scan": {
+        "operation": "scan",
+        "status": "scanned",
+        "exit_code": 0,
+        "elapsed_seconds": 12.65113786997972,
+        "command": [
+          "/home/zhihao/deveco/command-line-tools/codelinter/bin/codelinter",
+          "--config",
+          "/home/zhihao/hdd/haprepair/HapRepair/skills/haprepair-openharmony-repair-v14-dev/assets/homecheck-config.json5",
+          "--format",
+          "json",
+          "--output",
+          "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_02/report.json",
+          "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/workspace"
+        ],
+        "raw_finding_count": 0,
+        "target_finding_count": 0,
+        "excluded_non_target_finding_count": 0,
+        "findings_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_02/findings.json",
+        "findings_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "all_findings_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_02/all_findings.json",
+        "report_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_02/report.json",
+        "stdout_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_02/stdout.log",
+        "stderr_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_02/stderr.log",
+        "parse_error": null,
+        "attempt_id": "validation_02",
+        "kind": "validation",
+        "completed_at": "2026-08-10T17:40:55.939337+00:00",
+        "budget_consumed": true,
+        "metrics": {
+          "initial_alerts": 1074,
+          "final_alerts": 0,
+          "eliminated_alerts": 1074,
+          "remaining_alerts": 0,
+          "introduced_alerts": 0,
+          "net_reduction": 1074
+        },
+        "alert_deltas_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/evaluator_state/homecheck/scans/validation_02/alert_deltas.json",
+        "validation_budget": {
+          "consumed": 2,
+          "maximum": 5
+        }
+      },
+      "round_metrics": {
+        "initial_alerts": 30,
+        "final_alerts": 0,
+        "eliminated_alerts": 30,
+        "remaining_alerts": 0,
+        "introduced_alerts": 0,
+        "net_reduction": 30
+      },
+      "total_metrics": {
+        "initial_alerts": 1074,
+        "final_alerts": 0,
+        "eliminated_alerts": 1074,
+        "remaining_alerts": 0,
+        "introduced_alerts": 0,
+        "net_reduction": 1074
+      },
+      "candidate_score": [
+        0,
+        0,
+        61,
+        2
+      ],
+      "best_valid_updated": true,
+      "interaction": null
+    }
+  ],
+  "maximum_validation_scans": 5,
+  "maximum_agent_turns_per_round": 6,
+  "completed_at": "2026-08-10T17:41:09.012088+00:00",
+  "wall_clock_seconds": 1874.866942830995,
+  "alert_metrics": {
+    "initial_alerts": 1074,
+    "final_alerts": 0,
+    "eliminated_alerts": 1074,
+    "remaining_alerts": 0,
+    "introduced_alerts": 0,
+    "net_reduction": 1074
+  },
+  "per_rule_alert_deltas": [
+    {
+      "rule": "@performance/hp-arkui-avoid-empty-callback",
+      "eliminated_alerts": 1,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+      "eliminated_alerts": 20,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "eliminated_alerts": 5,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+      "eliminated_alerts": 2,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "eliminated_alerts": 473,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "eliminated_alerts": 466,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-use-id-in-get-resource-sync-api",
+      "eliminated_alerts": 2,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+      "eliminated_alerts": 100,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+      "eliminated_alerts": 5,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    }
+  ],
+  "validation_scan_count": 2,
+  "coverage_retry_count": 0,
+  "no_diff_retry_count": 0,
+  "repair_required_round_count": 0,
+  "best_valid_round": 2,
+  "best_valid_score": [
+    0,
+    0,
+    61,
+    2
+  ],
+  "final_candidate_selection": {
+    "status": "latest_candidate_is_best_valid",
+    "latest_valid_round": 2,
+    "selected_round": 2,
+    "selected_score": [
+      0,
+      0,
+      61,
+      2
+    ]
+  },
+  "observed_rule_interactions": [
+    {
+      "round": 1,
+      "eliminated_rules": {
+        "@performance/hp-arkui-avoid-empty-callback": 1,
+        "@performance/hp-arkui-no-state-var-access-in-loop": 20,
+        "@performance/hp-arkui-remove-container-without-property": 5,
+        "@performance/hp-arkui-remove-redundant-nest-container": 2,
+        "@performance/hp-arkui-remove-redundant-state-var": 473,
+        "@performance/hp-arkui-remove-unchanged-state-var": 454,
+        "@performance/hp-arkui-use-id-in-get-resource-sync-api": 2,
+        "@performance/hp-arkui-use-local-var-to-replace-state-var": 83,
+        "@performance/hp-arkui-use-row-column-to-replace-flex": 5
+      },
+      "introduced_rules": {
+        "@performance/hp-arkui-remove-unchanged-state-var": 1
+      },
+      "same_file_exchanges": [
+        {
+          "relative_path": "entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets",
+          "from_rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+          "to_rule": "@performance/hp-arkui-remove-unchanged-state-var"
+        }
+      ],
+      "interpretation": "Descriptive same-file association only; no hidden rule-family metadata was used."
+    }
+  ],
+  "build_status": "not_available",
+  "test_status": "not_available",
+  "input_tokens": 15326694,
+  "cached_input_tokens": 14918912,
+  "output_tokens": 83535,
+  "total_tokens": 15410229,
+  "api_cost_if_traceable": null,
+  "restricted_accesses": [],
+  "source_diff": {
+    "changed_files": [
+      "entry/src/main/ets/Component/autoContentTable.ets",
+      "entry/src/main/ets/Component/autoVerificationTable.ets",
+      "entry/src/main/ets/Component/contentTable.ets",
+      "entry/src/main/ets/Component/entryComponent.ets",
+      "entry/src/main/ets/Component/filterTable.ets",
+      "entry/src/main/ets/Component/filterTableManager.ets",
+      "entry/src/main/ets/Component/p2pTitleBar.ets",
+      "entry/src/main/ets/Component/p2pView.ets",
+      "entry/src/main/ets/Component/pageTitle.ets",
+      "entry/src/main/ets/Component/phoneLayout.ets",
+      "entry/src/main/ets/Component/scenarioContentTable.ets",
+      "entry/src/main/ets/Component/stressContentTable.ets",
+      "entry/src/main/ets/Component/subEntryComponent.ets",
+      "entry/src/main/ets/Component/titleBar.ets",
+      "entry/src/main/ets/Component/webTitleBar.ets",
+      "entry/src/main/ets/pages/homePage.ets",
+      "entry/src/main/ets/pages/index.ets",
+      "entry/src/main/ets/pages/newApi/AllInOneView.ets",
+      "entry/src/main/ets/pages/newApi/ChangeNameView.ets",
+      "entry/src/main/ets/pages/newApi/CreateGroupView.ets",
+      "entry/src/main/ets/pages/newApi/QuickVerifyTest.ets",
+      "entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets",
+      "entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets",
+      "entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets",
+      "entry/src/main/ets/pages/subAppTest/udpSocketTest.ets",
+      "entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets",
+      "entry/src/main/ets/pages/subAutoTest/hotspotManagerAutoTest.ets",
+      "entry/src/main/ets/pages/subAutoTest/p2pAutoTest.ets",
+      "entry/src/main/ets/pages/subAutoTest/p2pManagerAutoTest.ets",
+      "entry/src/main/ets/pages/subAutoTest/wifiAutoTest.ets",
+      "entry/src/main/ets/pages/subAutoTest/wifiManagerAutoTest.ets",
+      "entry/src/main/ets/pages/subBenchmarkTest/hotspotBenchmarkTest.ets",
+      "entry/src/main/ets/pages/subBenchmarkTest/hotspotManagerBenchmarkTest.ets",
+      "entry/src/main/ets/pages/subBenchmarkTest/p2pBenchmarkTest.ets",
+      "entry/src/main/ets/pages/subBenchmarkTest/p2pManagerBenchmarkTest.ets",
+      "entry/src/main/ets/pages/subBenchmarkTest/wifiBenchmarkTest.ets",
+      "entry/src/main/ets/pages/subBenchmarkTest/wifiManagerBenchmarkTest.ets",
+      "entry/src/main/ets/pages/subManualApiTest/hotspotInterfaceTest.ets",
+      "entry/src/main/ets/pages/subManualApiTest/hotspotManagerInterfaceTest.ets",
+      "entry/src/main/ets/pages/subManualApiTest/p2pInterfaceTest.ets",
+      "entry/src/main/ets/pages/subManualApiTest/p2pManagerInterfaceTest.ets",
+      "entry/src/main/ets/pages/subManualApiTest/subWifiTest/Login.ets",
+      "entry/src/main/ets/pages/subManualApiTest/wifiInterfaceTest.ets",
+      "entry/src/main/ets/pages/subManualApiTest/wifiManagerInterfaceTest.ets",
+      "entry/src/main/ets/pages/subScenarioTest/hotspotCreateScenarioTest.ets",
+      "entry/src/main/ets/pages/subScenarioTest/hotspotManagerCreateScenarioTest.ets",
+      "entry/src/main/ets/pages/subScenarioTest/p2pConnectScenarioTest.ets",
+      "entry/src/main/ets/pages/subScenarioTest/p2pManagerConnectScenarioTest.ets",
+      "entry/src/main/ets/pages/subScenarioTest/wifiConnectScenarioTest.ets",
+      "entry/src/main/ets/pages/subScenarioTest/wifiManagerConnectScenarioTest.ets",
+      "entry/src/main/ets/pages/subStabilityTest/hotspotStabilityTest.ets",
+      "entry/src/main/ets/pages/subStabilityTest/webLatencyTest.ets",
+      "entry/src/main/ets/pages/subStabilityTest/wifiConnectStabilityTest.ets",
+      "entry/src/main/ets/pages/subStabilityTest/wifiScanStabilityTest.ets",
+      "entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets",
+      "entry/src/main/ets/pages/subStressTest/hotspotManagerStressTest.ets",
+      "entry/src/main/ets/pages/subStressTest/hotspotStressTest.ets",
+      "entry/src/main/ets/pages/subStressTest/p2pManagerStressTest.ets",
+      "entry/src/main/ets/pages/subStressTest/p2pStressTest.ets",
+      "entry/src/main/ets/pages/subStressTest/wifiManagerStressTest.ets",
+      "entry/src/main/ets/pages/subStressTest/wifiStressTest.ets"
+    ],
+    "changed_file_count": 61,
+    "changed_source_files": [
+      "entry/src/main/ets/Component/autoContentTable.ets",
+      "entry/src/main/ets/Component/autoVerificationTable.ets",
+      "entry/src/main/ets/Component/contentTable.ets",
+      "entry/src/main/ets/Component/entryComponent.ets",
+      "entry/src/main/ets/Component/filterTable.ets",
+      "entry/src/main/ets/Component/filterTableManager.ets",
+      "entry/src/main/ets/Component/p2pTitleBar.ets",
+      "entry/src/main/ets/Component/p2pView.ets",
+      "entry/src/main/ets/Component/pageTitle.ets",
+      "entry/src/main/ets/Component/phoneLayout.ets",
+      "entry/src/main/ets/Component/scenarioContentTable.ets",
+      "entry/src/main/ets/Component/stressContentTable.ets",
+      "entry/src/main/ets/Component/subEntryComponent.ets",
+      "entry/src/main/ets/Component/titleBar.ets",
+      "entry/src/main/ets/Component/webTitleBar.ets",
+      "entry/src/main/ets/pages/homePage.ets",
+      "entry/src/main/ets/pages/index.ets",
+      "entry/src/main/ets/pages/newApi/AllInOneView.ets",
+      "entry/src/main/ets/pages/newApi/ChangeNameView.ets",
+      "entry/src/main/ets/pages/newApi/CreateGroupView.ets",
+      "entry/src/main/ets/pages/newApi/QuickVerifyTest.ets",
+      "entry/src/main/ets/pages/subAppTest/multipathSocketTest.ets",
+      "entry/src/main/ets/pages/subAppTest/rcpHttpTest.ets",
+      "entry/src/main/ets/pages/subAppTest/tcpSocketTest.ets",
+      "entry/src/main/ets/pages/subAppTest/udpSocketTest.ets",
+      "entry/src/main/ets/pages/subAutoTest/hotspotAutoTest.ets",
+      "entry/src/main/ets/pages/subAutoTest/hotspotManagerAutoTest.ets",
+      "entry/src/main/ets/pages/subAutoTest/p2pAutoTest.ets",
+      "entry/src/main/ets/pages/subAutoTest/p2pManagerAutoTest.ets",
+      "entry/src/main/ets/pages/subAutoTest/wifiAutoTest.ets",
+      "entry/src/main/ets/pages/subAutoTest/wifiManagerAutoTest.ets",
+      "entry/src/main/ets/pages/subBenchmarkTest/hotspotBenchmarkTest.ets",
+      "entry/src/main/ets/pages/subBenchmarkTest/hotspotManagerBenchmarkTest.ets",
+      "entry/src/main/ets/pages/subBenchmarkTest/p2pBenchmarkTest.ets",
+      "entry/src/main/ets/pages/subBenchmarkTest/p2pManagerBenchmarkTest.ets",
+      "entry/src/main/ets/pages/subBenchmarkTest/wifiBenchmarkTest.ets",
+      "entry/src/main/ets/pages/subBenchmarkTest/wifiManagerBenchmarkTest.ets",
+      "entry/src/main/ets/pages/subManualApiTest/hotspotInterfaceTest.ets",
+      "entry/src/main/ets/pages/subManualApiTest/hotspotManagerInterfaceTest.ets",
+      "entry/src/main/ets/pages/subManualApiTest/p2pInterfaceTest.ets",
+      "entry/src/main/ets/pages/subManualApiTest/p2pManagerInterfaceTest.ets",
+      "entry/src/main/ets/pages/subManualApiTest/subWifiTest/Login.ets",
+      "entry/src/main/ets/pages/subManualApiTest/wifiInterfaceTest.ets",
+      "entry/src/main/ets/pages/subManualApiTest/wifiManagerInterfaceTest.ets",
+      "entry/src/main/ets/pages/subScenarioTest/hotspotCreateScenarioTest.ets",
+      "entry/src/main/ets/pages/subScenarioTest/hotspotManagerCreateScenarioTest.ets",
+      "entry/src/main/ets/pages/subScenarioTest/p2pConnectScenarioTest.ets",
+      "entry/src/main/ets/pages/subScenarioTest/p2pManagerConnectScenarioTest.ets",
+      "entry/src/main/ets/pages/subScenarioTest/wifiConnectScenarioTest.ets",
+      "entry/src/main/ets/pages/subScenarioTest/wifiManagerConnectScenarioTest.ets",
+      "entry/src/main/ets/pages/subStabilityTest/hotspotStabilityTest.ets",
+      "entry/src/main/ets/pages/subStabilityTest/webLatencyTest.ets",
+      "entry/src/main/ets/pages/subStabilityTest/wifiConnectStabilityTest.ets",
+      "entry/src/main/ets/pages/subStabilityTest/wifiScanStabilityTest.ets",
+      "entry/src/main/ets/pages/subStabilityTest/wifiSwitchStabilityTest.ets",
+      "entry/src/main/ets/pages/subStressTest/hotspotManagerStressTest.ets",
+      "entry/src/main/ets/pages/subStressTest/hotspotStressTest.ets",
+      "entry/src/main/ets/pages/subStressTest/p2pManagerStressTest.ets",
+      "entry/src/main/ets/pages/subStressTest/p2pStressTest.ets",
+      "entry/src/main/ets/pages/subStressTest/wifiManagerStressTest.ets",
+      "entry/src/main/ets/pages/subStressTest/wifiStressTest.ets"
+    ],
+    "changed_source_file_count": 61,
+    "changed_resource_or_config_files": [],
+    "added_source_files": [],
+    "deleted_source_files": [],
+    "large_deletion_flags": [],
+    "public_interface_change_flags": [],
+    "patch_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/wifi_testapp/source_changes.patch",
+    "patch_sha256": "b9141e70df265ed9f5b0f65df3060d3eb6fa72dc529d93292226376a47908b7b"
+  },
+  "isolation": {
+    "haprepair_repository_mounted": false,
+    "skill_state_mounted": false,
+    "corpus_mounted": false,
+    "other_runs_mounted": false
+  },
+  "provider_endpoint_fingerprint": "0a2cad5028420559b4d734677727ec94f7edeabf6d6ca73df8ad4103695bf48d"
+}

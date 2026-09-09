@@ -1,0 +1,14 @@
+--- a/entry/src/main/ets/cases/reuseid_branch_case.ets
++++ b/entry/src/main/ets/cases/reuseid_branch_case.ets
+@@ -45,9 +45,9 @@
+ 
+   build() {
+     List() {
+-      LazyForEach(this.rows, (item: ChatInfoEntry) => {
++      LazyForEach(this.rows, (item: ChatInfoEntry, index: number) => {
+         ListItem() {
+-          ChatRowView({ chatInfo: item })
++          ChatRowView({ chatInfo: item }).reuseId(this.rows.getReuseIdByIndex(index))
+         }
+       }, (item: ChatInfoEntry) => item.id)
+     }

@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-048",
+  "category": "performance",
+  "finding": {
+    "column": 15,
+    "end_column": 15,
+    "end_line": 390,
+    "line": 390,
+    "message": "Avoid printing logs in frequent functions. The call chain here is as follows: entry/src/main/ets/pages/audioWave/AudioEditWave.ets:390:this.handleCropDrag\n>>entry/src/main/ets/pages/audioWave/AudioEditWave.ets:224:console.warn",
+    "relative_path": "entry/src/main/ets/pages/audioWave/AudioEditWave.ets",
+    "rule": "@performance/high-frequency-log-check",
+    "severity": "warn"
+  },
+  "rule": "@performance/high-frequency-log-check",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/computation-api.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--high-frequency-log-check.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "b23c94a4e2abbc5ba5e5f5bca923d449f998f48824ada68044818111875cbc5c",
+    "path": "source_files/b23c94a4e2abbc5ba5e5f5bca923d449f998f48824ada68044818111875cbc5c.json",
+    "sha256": "79cf028dd69489dabe270aadd2b50e8e00a8dd67c5ff8b69d5652191b39bfa51"
+  }
+}

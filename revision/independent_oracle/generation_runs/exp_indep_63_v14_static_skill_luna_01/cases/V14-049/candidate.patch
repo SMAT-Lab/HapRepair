@@ -1,0 +1,15 @@
+--- a/entry/src/main/ets/cases/state_var_loop_case.ets
++++ b/entry/src/main/ets/cases/state_var_loop_case.ets
+@@ -8,9 +8,11 @@
+       Text(`Processed: ${this.processedCount}`)
+       Button('Process batch')
+         .onClick(() => {
++          let processedCount: number = this.processedCount;
+           for (let index: number = 0; index < 8; index++) {
+-            this.processedCount += 1;
++            processedCount += 1;
+           }
++          this.processedCount = processedCount;
+         })
+     }
+   }

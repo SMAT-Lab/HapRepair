@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-011",
+  "target_rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+  "codelinter_rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+  "rule_description": "建议在Grid下使用LazyForEach时设置合理的cacheCount",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/grid_cache_count_case.ets",
+      "line": 7,
+      "column": 5,
+      "severity": "suggestion",
+      "message": "Set cachedCount to an appropriate value when using LazyForEach in grids",
+      "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/grid_cache_count_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

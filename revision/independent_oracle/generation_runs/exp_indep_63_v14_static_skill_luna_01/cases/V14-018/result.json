@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_performance_hp_arkui_use_object_link_to_replace_prop",
+  "blind_id": "V14-018",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbd7-5793-7d80-aac6-f94f729a8431",
+  "usage": {
+    "input_tokens": 247882,
+    "cached_input_tokens": 212480,
+    "output_tokens": 4438,
+    "total_tokens": 252320
+  },
+  "wall_seconds": 104.98488430699945,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 58,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"pwd; rg --files -g 'HAPREPAIR_TASK.json' -g '\"'!node_modules'\"' -g '\"'!oh_modules'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git status --short'",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -g '\"'!node_modules'\"' -g '\"'!oh_modules'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /codex-home /workspace -path '*/haprepair-openharmony-repair/SKILL.md' -o -path '*/haprepair-openharmony-repair/references/operations.md'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"wc -l /codex-home/skills/haprepair-openharmony-repair/SKILL.md /codex-home/skills/haprepair-openharmony-repair/references/operations.md; sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '261,520p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md; sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/object_link_case.ets; file entry/src/main/ets/cases/object_link_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills/haprepair-openharmony-repair -maxdepth 3 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n \\\"object-link-to-replace-prop|ObjectLink|@Prop|ProfileData|ProfileName\\\" /workspace /codex-home/skills/haprepair-openharmony-repair --glob '\"'!*.jsonl'\"' --glob '\"'!*.pyc'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find . -maxdepth 4 -type f -not -path './.git/*' -print | sort; rg -n \\\"build|test|hvigor|module\\\" --glob 'module.json5' --glob 'build-profile.json5' --glob 'package.json' --glob 'README*' .\"",
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md; sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/state-reactivity.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,120p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/index.md; sed -n '1,100p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,130p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--hp-arkui-use-object-link-to-replace-prop.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace -type f -not -path '/workspace/HAPREPAIR_TASK.json' -print | sort | xargs -r -n1 sh -c 'printf \\\"--- %s ---\\\\n\\\" \\\"\"'$0\"; sed -n \"1,260p\" \"$0\"'\"' \"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /workspace -type f -not -name HAPREPAIR_TASK.json -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n \\\"@Prop|@ObjectLink|@Observed|@State|ProfileName|profiles\\\\[0\\\\]\\\" entry/src/main/ets/cases/object_link_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/object_link_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/cases/object_link_case.ets; nl -ba completion.json | sed -n '1,120p'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"python3 -m json.tool completion.json >/dev/null && printf '%s\\\\n' 'completion.json: valid JSON'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "b5a29ba307a3291e2b3f5741542b8b54069bdefd0f7de7579af16eaa7027cdad",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/object_link_case.ets",
+      "sha256": "87400440d0e488d0fc7747782e2808a8f0c1db062f463a2cf9c5cb925988b9ac",
+      "size_bytes": 367,
+      "content": "@Observed\nclass ProfileData {\n  name: string;\n  constructor(name: string) { this.name = name; }\n}\n\n@Component\nstruct ProfileName {\n  @ObjectLink profile: ProfileData;\n  build() { Text(this.profile.name) }\n}\n\n@Entry\n@Component\nstruct ProfilePage {\n  @State profiles: ProfileData[] = [new ProfileData('Lin')];\n  build() { ProfileName({ profile: this.profiles[0] }) }\n}\n"
+    }
+  ],
+  "trace_sha256": "ce5a0f58543306db71fa5601939060ec945f6acaedf4ddf3b567c53fce7214a3",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:50:54.761774+00:00",
+  "rejection_reasons": []
+}

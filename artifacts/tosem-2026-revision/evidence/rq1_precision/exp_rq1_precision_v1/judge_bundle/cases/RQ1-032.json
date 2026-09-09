@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-032",
+  "category": "performance",
+  "finding": {
+    "column": 13,
+    "end_column": 13,
+    "end_line": 261,
+    "line": 261,
+    "message": "Avoid setting empty system callback listeners",
+    "relative_path": "entry/src/main/ets/pages/example/ImageCroppingExample.ets",
+    "rule": "@performance/hp-arkui-avoid-empty-callback",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-avoid-empty-callback",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/computation-api.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-avoid-empty-callback.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "495c1c4c06dc139dcb6dae8834a4777550ec4bb4263826f3acb4b129fb845ce7",
+    "path": "source_files/495c1c4c06dc139dcb6dae8834a4777550ec4bb4263826f3acb4b129fb845ce7.json",
+    "sha256": "b49c4d303850f11d9401f34e2da38a377adcf35b291669198fca8edd5997d59f"
+  }
+}

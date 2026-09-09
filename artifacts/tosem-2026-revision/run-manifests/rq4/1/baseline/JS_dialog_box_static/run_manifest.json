@@ -1,0 +1,997 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-HAPREPAIR-FULL-PAIR-35-R2",
+  "run_id": "exp_agent_ref_35_luna_v6_clean2_repeat_01",
+  "condition": "vanilla",
+  "project": "JS_dialog_box_static",
+  "status": "completed",
+  "started_at": "2026-08-10T16:24:34.542262+00:00",
+  "source_tree_sha256": "2e13d14e3d0a761c614852092e563a4624778dcaf5139f6fbdccd7372f5ca07c",
+  "frozen_source_tree_sha256": "2e13d14e3d0a761c614852092e563a4624778dcaf5139f6fbdccd7372f5ca07c",
+  "findings_sha256": "347052f94f51d08dea971189fcc39ae29966bf1dfa7fe4d068fe8d2d0ed06f1c",
+  "frozen_findings_sha256": "347052f94f51d08dea971189fcc39ae29966bf1dfa7fe4d068fe8d2d0ed06f1c",
+  "byte_identical_input": true,
+  "finding_identity_matches": true,
+  "protocol": "/home/zhihao/hdd/haprepair/HapRepair/revision/hapskill_experiment/protocol-full-pair-baseline-v6.json",
+  "protocol_sha256": "9b2723a4827f41512f7e904a586f31f8d15ea0e1f40e68f90bb89292e116775f",
+  "inputs": "/home/zhihao/hdd/haprepair/HapRepair/revision/hapskill_experiment/formal_inputs_hapskill_35_v4.json",
+  "inputs_sha256": "759104715e61e8a449388c0d4805252103509aaf3d1eeb80fe1ed1996899413c",
+  "runtime": {
+    "image": "hybrid-gym-codex:0.146.0",
+    "image_id": "sha256:9cc027cd2f9404ccd58c61e367fe712895188a926c07d464ea0936e893b9a89a",
+    "versions": {
+      "container_codex": "codex-cli 0.146.0\nWARNING: proceeding, even though we could not create PATH aliases: CODEX_HOME points to \"/codex-home\", but that path does not exist",
+      "host_python": "Python 3.13.11"
+    },
+    "artifact_hashes": {
+      "codelinter_config_sha256": "91de02b03d0c5df48d3da615eb0b17615f2f9ad0e0f7f575119c964ae3b9cc95",
+      "codelinter_overlay_sha256": "ca0555024524ad76c0d6f058bb98a36729a92c8b701f373b776bdb7e677f625c",
+      "openharmony_sdk_manifest_sha256": "dd1f23fab928cca17b8a3daeb5a6f0b8566b460d9c85b24684b39da80f84cde7",
+      "sdk_build_components_sha256": "ba07957c4def67422612d794593e1c5fc7f0991afaf289e26483c895544aa49d",
+      "sdk_native_api20_sha256": "a9bbeae7b72c80ae573d5439bb88e9d5cbe202d260f8394f24ae37669911d4f4"
+    },
+    "host_node": "v18.20.1"
+  },
+  "host_runtime": {
+    "path_policy": "prepended_frozen_deveco_node",
+    "node_bin": "/home/zhihao/deveco/command-line-tools/tool/node/bin"
+  },
+  "static_g2_authorization": {
+    "path": "/home/zhihao/hdd/haprepair/paper/rebuttal/gates/exp_full_pair_35_luna_clean_r2_g2_v2_20260810.json",
+    "sha256": "490eb3e24692e95a71fef8d845882fcda4ab683614c9908e5f29fbf7a7c341bc",
+    "authorized_run_id": "exp_agent_ref_35_luna_v6_clean2_repeat_01",
+    "runner_artifacts": {
+      "agent_ref_session.py": "ee0907e6fc20415b6b1f8a919517028f46e9a3c38fd3760ab7dc3269213f7672",
+      "run_agent_ref_v5.py": "420ec34497db856d36ef8749dc370b589dafd2ba57b580e897571669bb89308c",
+      "run_condition_v14.py": "f02f191b3d501d18f5094a5ca6ed8c58757ef4b64a67f6eab663f3da2fcff94a",
+      "resume_condition_v14.py": "47120eb7e4af9874974aff94d28c5ed1a3dd3f32b665f6bcec6532f886a15187",
+      "run_full_pair_repetitions_v2.py": "9ea0842e2636cd00e950e17918f742ed6419f33e832cd6eede4cee8826608e2d",
+      "prepare_full_pair_campaign_v2.py": "e59a9b7e8fb93533257d2b65e5f31c4c5e1879452a8a41007c2e239f48e66a98",
+      "audit_full_pair_g2_v2.py": "f88d23f5fea1f7c415107c5dbe911edbce2f643cb5892ce091881d191916ecd4",
+      "test_full_pair_campaign_v2.py": "ead98b1709cf4c5c1664a0f122f7d847f63bb9a8ac257ff981b85788c5eee8fd"
+    }
+  },
+  "model": {
+    "requested_id": "gpt-5.6-luna",
+    "provider": "xsp",
+    "reasoning_effort": "high",
+    "runs_per_project_condition": 2,
+    "temperature": "not explicitly configurable through the frozen Codex harness",
+    "top_p": "provider default",
+    "output_length": "provider default",
+    "seed": "not exposed",
+    "nondeterminism_note": "A single run remains potentially nondeterministic even without an exposed sampling-temperature control.",
+    "repeat_policy": "Two independent clean workspaces; provider seed is not exposed."
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "status": "accepted",
+      "thread_id": "019fec7d-8ad5-7051-9471-f655a3868d4c",
+      "attempts": [
+        {
+          "attempt": 1,
+          "thread_id": "019fec7d-8ad5-7051-9471-f655a3868d4c",
+          "turn": {
+            "elapsed_seconds": 283.8918118069996,
+            "thread_id": "019fec7d-8ad5-7051-9471-f655a3868d4c",
+            "usage": {
+              "input_tokens": 735100,
+              "cached_input_tokens": 654848,
+              "output_tokens": 13868,
+              "total_tokens": 748968
+            },
+            "commands": [
+              {
+                "command": "/usr/bin/bash -lc \"pwd && printf '%s\\\\n' '--- top-level ---' && rg --files -g '\"'!**/.git/**'\"' -g '\"'!**/node_modules/**'\"' | sed -n '1,120p' && printf '%s\\\\n' '--- plan ---' && sed -n '1,240p' .exp_agent/round_01/plan.json && printf '%s\\\\n' '--- schema ---' && sed -n '1,240p' .exp_agent/round_01/completion-schema.json && printf '%s\\\\n' '--- rules files ---' && rg --files /rules | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/WebAttributeTest.ets | sed -n '1,240p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,520p' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets | sed -n '1,260p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'git status --short && git diff -- entry/src/main/ets/pages/WebAttributeTest.ets entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets'",
+                "exit_code": 128,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n -C 8 \\\"remove-container-without-property|remove-redundant-state-var|redundant-state|nested container\\\" /rules --glob '\"'!node_modules/**'\"'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/geolocationPermissions.ets | sed -n '1,180p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba /rules/node_modules/homecheck/lib/checker/performance/RemoveRedundantStateVarCheck.js | sed -n '1,240p' && printf '%s\\\\n' '--- container ---' && nl -ba /rules/node_modules/homecheck/lib/checker/performance/RemoveContainerWithoutPropertyCheck.js | sed -n '1,220p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'find /workspace -maxdepth 3 -type d -name .git -print; rg -n \"@State\" entry/src/main/ets/pages/WebAttributeTest.ets entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets entry/src/main/ets/pages/geolocationPermissions.ets'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg --files /rules/node_modules/homecheck | rg 'remove-(redundant-state-var|container-without-property).*md\"'$|docs'\"' | sed -n '1,120p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq '{selected_rules: [.rules[].rule], files: [.rules[].files[] | {rule: input_filename, path: .relative_path, locations: [.locations[] | {line,column,message}]}]}' plan.json 2>/dev/null || jq -r '.rules[] as \"'$r | $r.files[] | [$r.rule,.relative_path,([.locations[].line]|join(\",\"))] | @tsv'\"' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"remove-unchanged-state-var|remove-redundant-state-var|remove-container-without-property\\\" /rules/ruleSet.json /rules/code-linter.json5 /rules/node_modules/homecheck --glob '*.json' --glob '*.json5' | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n -C 12 \\\"class RemoveUnchangedStateVarCheck|RemoveUnchangedStateVarCheck|unchanged state\\\" /rules/node_modules/homecheck/lib /rules --glob '\"'!node_modules/homecheck/lib/checker/performance/RemoveRedundantStateVarCheck.js'\"' --glob '\"'!node_modules/homecheck/lib/checker/performance/RemoveContainerWithoutPropertyCheck.js'\"' --glob '\"'!node_modules/**/node_modules/**'\"'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n -C 5 \\\"webResultText|Row\\\\(\\\\)|Text\\\\(\\\" entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"this\\\\.(newScale|oldScale|geolocationAccess|blockNetwork|progress|geoShow|errorReceive|isHttpErrorReceive|isLargeThan|httpErrorReceive|isDownloadStart|newUrl|isRefreshed|loadedUrl|webInit|webCreated|searchResultCount|onInterceptKeyEventCode|onFaviconReceivedCalled|outputStr|handleCancel|title|onRequestSelectedCalled|testConsole)\\\\b|this\\\\.(Permission|str|webResult|count|javaScriptAccess|mixedSwitch|mixedAllSwitch|access|menuX|menuY|LinkUrl|ImageContent|MediaType|SourceType|InputFieldType|isEditable|EditStateFlags|SourceUrl|SelectionText|FileSelectorMode|RenderExitReason|fontSize|minFontSize|webId|zoomCount|webResultText|hasImageCbOnline|onContextMenuShowState|minLogicalFontSize|databaseAccess|PermissionRequestState|userAgentPC)\\\\b\\\" entry/src/main/ets/pages/WebAttributeTest.ets entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets entry/src/main/ets/pages/geolocationPermissions.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba /rules/node_modules/homecheck/lib/checker/performance/RemoveUnchangedStateVarCheck.js | sed -n '63,210p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"function (check|run)|homecheck|ark-analyzer|linter\\\" /rules/package.json /rules/lib /rules/node_modules/homecheck/package.json /rules/node_modules/homecheck/bin 2>/dev/null | sed -n '1,200p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"this\\\\.[A-Za-z_][A-Za-z0-9_]*\\\" entry/src/main/ets/pages/WebAttributeTest.ets | sed -n '1,240p'; printf '%s\\\\n' '--- geo usages ---'; rg -n \\\"this\\\\.[A-Za-z_][A-Za-z0-9_]*\\\" entry/src/main/ets/pages/geolocationPermissions.ets | sed -n '1,240p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets | sed -n '1,170p'; printf '%s\\\\n' '--- usages ---'; rg -n \\\"this\\\\.[A-Za-z_][A-Za-z0-9_]*\\\" entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,180p' /rules/lib/run.js && printf '%s\\\\n' '--- package ---' && sed -n '1,160p' /rules/package.json && printf '%s\\\\n' '--- project linter ---' && sed -n '1,220p' code-linter.json5\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/WebAttributeTest.ets | sed -n '43,105p'; printf '%s\\\\n' '--- web enum ---'; nl -ba entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets | sed -n '55,155p'; printf '%s\\\\n' '--- geo ---'; nl -ba entry/src/main/ets/pages/geolocationPermissions.ets | sed -n '30,45p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 3 -type f -name 'package.json' -o -name 'package.json5' | sort | xargs -r rg -n 'lint|check|build|test'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- remaining state declarations ---'; rg -n \\\"@State\\\" entry/src/main/ets/pages/WebAttributeTest.ets entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets entry/src/main/ets/pages/geolocationPermissions.ets; printf '%s\\\\n' '--- planned field names still decorated ---'; for f in newScale oldScale geolocationAccess blockNetwork progress geoShow errorReceive isHttpErrorReceive isLargeThan httpErrorReceive isDownloadStart newUrl isRefreshed loadedUrl webInit webCreated searchResultCount onInterceptKeyEventCode onFaviconReceivedCalled outputStr handleCancel title onRequestSelectedCalled testConsole Permission str webResult count javaScriptAccess mixedSwitch mixedAllSwitch menuX menuY LinkUrl ImageContent MediaType SourceType InputFieldType isEditable EditStateFlags SourceUrl SelectionText FileSelectorMode RenderExitReason fontSize webId zoomCount webResultText hasImageCbOnline onContextMenuShowState databaseAccess PermissionRequestState userAgentPC; do rg -n \\\"@State[[:space:]]+\"'$f\" entry/src/main/ets/pages/WebAttributeTest.ets entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets entry/src/main/ets/pages/geolocationPermissions.ets; done'",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba /rules/lib/utils/Utils.js | sed -n '45,150p'; printf '%s\\\\n' '--- generate ---'; nl -ba /rules/lib/utils/GenerateConfig.js | sed -n '45,130p'; printf '%s\\\\n' '--- file utils ---'; nl -ba /rules/lib/utils/FileUtils.js | sed -n '45,120p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,240p' .exp_agent/round_01/completion-schema.json && printf '%s\\\\n' '--- completion current ---' && if test -f .exp_agent/round_01/completion.json; then sed -n '1,260p' .exp_agent/round_01/completion.json; else echo '<missing>'; fi\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"parseCliOptions|checkPath|projectPath|apiVersion|ruleConfig\\\" /rules/lib /rules/node_modules/homecheck/lib --glob '*.js' | sed -n '1,220p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"sdkRootPath|sdkPath|sdkVersion|envPath\\\" /workspace /rules --glob '\"'!**/node_modules/**'\"' --glob '\"'!**/signature/**'\"' | sed -n '1,180p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"ls -la /workspace /workspace/.exp_agent/round_01 /rules | sed -n '1,200p'; command -v node; node --version; command -v ajv || true; command -v npx || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,240p' Test.json; printf '%s\\\\n' '--- build profile ---'; sed -n '1,180p' build-profile.json5; printf '%s\\\\n' '--- sdk candidates ---'; find / -maxdepth 4 -type d \\\\( -name ets -o -name 'ohos' \\\\) 2>/dev/null | sed -n '1,100p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find / -maxdepth 3 -type d \\\\( -iname '*sdk*' -o -iname '*openharmony*' -o -iname '*ohos*' \\\\) 2>/dev/null | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"python3 - <<'PY'\nimport json\nfrom pathlib import Path\np=json.loads(Path('.exp_agent/round_01/plan.json').read_text())\nfor rule in p['rules']:\n    print(rule['rule'])\n    for f in rule['files']:\n        print(' ', f['relative_path'], [(x['line'], x['column']) for x in f['locations']])\nPY\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node -e \\\"for (const p of ['ajv','jsonschema','yaml']) { try { console.log(p, require.resolve(p)); } catch (_) {} }\\\"; ls /rules/node_modules | rg 'ajv|schema|json' | sed -n '1,100p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /opt /usr /root /workspace -type f \\\\( -name 'sdkConfig.json' -o -name 'oh-package.json5' -o -name 'ets-loader' -o -name 'arktsc' \\\\) 2>/dev/null | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"python3 - <<'PY'\nimport json\nfrom pathlib import Path\n\nroot = Path('/workspace')\nplan = json.loads((root / '.exp_agent/round_01/plan.json').read_text())\nreport = json.loads((root / '.exp_agent/round_01/completion.json').read_text())\nschema = json.loads((root / '.exp_agent/round_01/completion-schema.json').read_text())\n\nexpected_rules = [rule['rule'] for rule in plan['rules']]\nassert report['selected_rules'] == expected_rules, (report['selected_rules'], expected_rules)\nassert report['blocked'] == []\nassert report['unresolved_external'] == []\nassert len(report['entity_repairs']) == sum(len(rule['files']) for rule in plan['rules'])\n\ndef key(rule, path):\n    return rule, path\nexpected = {}\nfor rule in plan['rules']:\n    for file_info in rule['files']:\n        expected[key(rule['rule'], file_info['relative_path'])] = file_info['locations']\nactual = {}\nfor repair in report['entity_repairs']:\n    assert repair['status'] == 'repaired'\n    assert repair['entities'] and all(isinstance(x, str) and x for x in repair['entities'])\n    assert repair['evidence'] and all(isinstance(x, str) and x for x in repair['evidence'])\n    assert repair['transformation']\n    k = key(repair['rule'], repair['relative_path'])\n    assert k not in actual, k\n    actual[k] = repair['locations']\nassert set(actual) == set(expected), (set(expected) - set(actual), set(actual) - set(expected))\nfor k, locations in expected.items():\n    got = [{name: loc[name] for name in ('line', 'column')} for loc in actual[k]]\n    want = [{name: loc[name] for name in ('line', 'column')} for loc in locations]\n    assert got == want, (k, got, want)\nassert sum(len(v) for v in actual.values()) == plan['finding_count'] == 100\n\n# Minimal schema checks for the supplied schema's required constraints.\nrequired_top = set(schema['required'])\nassert required_top <= set(report)\nfor repair in report['entity_repairs']:\n    assert set(schema['properties']['entity_repairs']['items']['required']) <= set(repair)\n    assert isinstance(repair['locations'], list) and repair['locations']\n    for loc in repair['locations']:\n        assert isinstance(loc['line'], int) and isinstance(loc['column'], int)\nprint('completion: valid JSON, required shape valid, all 100 plan locations represented')\nPY\n\npython3 - <<'PY'\nfrom pathlib import Path\nimport re\nroot = Path('/workspace')\nchecks = {\n    'entry/src/main/ets/pages/WebAttributeTest.ets': ['newScale','oldScale','geolocationAccess','blockNetwork','progress','geoShow','errorReceive','isHttpErrorReceive','isLargeThan','httpErrorReceive','isDownloadStart','newUrl','isRefreshed','loadedUrl','webInit','webCreated','searchResultCount','onInterceptKeyEventCode','onFaviconReceivedCalled','outputStr','handleCancel','title','onRequestSelectedCalled','testConsole'],\n    'entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets': ['Permission','str','webResult','count','javaScriptAccess','mixedSwitch','mixedAllSwitch','menuX','menuY','LinkUrl','ImageContent','MediaType','SourceType','InputFieldType','isEditable','EditStateFlags','SourceUrl','SelectionText','FileSelectorMode','RenderExitReason','fontSize','webId','zoomCount','webResultText','outputStr','hasImageCbOnline','onContextMenuShowState','databaseAccess','PermissionRequestState','userAgentPC'],\n    'entry/src/main/ets/pages/geolocationPermissions.ets': ['str','javaScriptAccess','incognito','origin'],\n}\nfor rel, fields in checks.items():\n    text = (root / rel).read_text()\n    for field in fields:\n        assert not re.search(r'@State\\\\s+' + re.escape(field) + r'\\\\b', text), (rel, field)\nweb = (root / 'entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets').read_text()\nassert 'Row() {\\\\n        Text(this.webResultText)' not in web\nprint('source: all planned state decorators removed; redundant single-child Row removed')\nPY\n\nprintf '%s\\\\n' '--- remaining relevant declarations ---'\nrg -n \\\"@State|Row\\\\(\\\\)|Text\\\\(this\\\\.webResultText\\\\)\\\" entry/src/main/ets/pages/WebAttributeTest.ets entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets entry/src/main/ets/pages/geolocationPermissions.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"python3 - <<'PY'\ntry:\n    import jsonschema\nexcept ImportError:\n    print('jsonschema: unavailable; structural validation already passed')\nelse:\n    from pathlib import Path\n    import json\n    root = Path('/workspace/.exp_agent/round_01')\n    jsonschema.validate(json.loads((root / 'completion.json').read_text()), json.loads((root / 'completion-schema.json').read_text()))\n    print('jsonschema: valid')\nPY\nwc -c .exp_agent/round_01/completion.json\nsed -n '1,24p' .exp_agent/round_01/completion.json\nsed -n '1,20p' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              }
+            ],
+            "trace_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/traces/round_01_attempt_01.jsonl",
+            "trace_sha256": "f152427dfb29a450d2c5868b6db04d5e9656252a85dbd96ef302281e1c25a826",
+            "stderr_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/traces/round_01_attempt_01.stderr.log"
+          },
+          "coverage": {
+            "complete": true,
+            "problems": [],
+            "required_rule_count": 3,
+            "required_rule_file_group_count": 7,
+            "feedback": "Every required rule, file, and exact evaluator location is accounted for."
+          },
+          "edit": {
+            "changed_files": [
+              "entry/src/main/ets/pages/WebAttributeTest.ets",
+              "entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets",
+              "entry/src/main/ets/pages/geolocationPermissions.ets"
+            ],
+            "changed_file_count": 3,
+            "changed_source_files": [
+              "entry/src/main/ets/pages/WebAttributeTest.ets",
+              "entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets",
+              "entry/src/main/ets/pages/geolocationPermissions.ets"
+            ],
+            "changed_source_file_count": 3,
+            "added_source_files": [],
+            "deleted_source_files": [],
+            "large_deletion_flags": [],
+            "patch_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/rounds/round_01/attempt_01.patch",
+            "patch_sha256": "edaa8cfcce334833ba3c763bc8d3779b7ffe20866d936c4bdac09c922a62c266"
+          },
+          "preflight": {
+            "structure": {
+              "status": "passed",
+              "removed_declarations": {},
+              "diff": {
+                "changed_files": [
+                  "entry/src/main/ets/pages/WebAttributeTest.ets",
+                  "entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets",
+                  "entry/src/main/ets/pages/geolocationPermissions.ets"
+                ],
+                "changed_file_count": 3,
+                "changed_source_files": [
+                  "entry/src/main/ets/pages/WebAttributeTest.ets",
+                  "entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets",
+                  "entry/src/main/ets/pages/geolocationPermissions.ets"
+                ],
+                "changed_source_file_count": 3,
+                "added_source_files": [],
+                "deleted_source_files": [],
+                "large_deletion_flags": [],
+                "patch_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/rounds/round_01/preflight_01/source_changes.patch",
+                "patch_sha256": "edaa8cfcce334833ba3c763bc8d3779b7ffe20866d936c4bdac09c922a62c266"
+              }
+            },
+            "public_api": {
+              "status": "passed",
+              "changes": {
+                "removed": [],
+                "added": [],
+                "changed": []
+              }
+            },
+            "namespace_export": {
+              "status": "passed",
+              "failures": [],
+              "baseline": {},
+              "observed": {},
+              "missing": {},
+              "changed": {}
+            },
+            "failures": []
+          },
+          "build_gate": {
+            "label": "attempt_01",
+            "status": "not_available",
+            "command": null,
+            "build": null
+          }
+        }
+      ],
+      "validation_scan": {
+        "operation": "scan",
+        "status": "scanned",
+        "exit_code": 0,
+        "elapsed_seconds": 2.3969044589903206,
+        "command": [
+          "/home/zhihao/deveco/command-line-tools/codelinter/bin/codelinter",
+          "--config",
+          "/home/zhihao/hdd/haprepair/HapRepair/skills/haprepair-openharmony-repair-v14-dev/assets/homecheck-config.json5",
+          "--format",
+          "json",
+          "--output",
+          "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_01/report.json",
+          "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/workspace"
+        ],
+        "raw_finding_count": 1,
+        "target_finding_count": 1,
+        "excluded_non_target_finding_count": 0,
+        "findings_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_01/findings.json",
+        "findings_sha256": "3e2f6a2c88d1e84a7c2b7c61e6c5fbdcd921523482baa1151bf096b330167d0f",
+        "all_findings_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_01/all_findings.json",
+        "report_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_01/report.json",
+        "stdout_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_01/stdout.log",
+        "stderr_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_01/stderr.log",
+        "parse_error": null,
+        "attempt_id": "validation_01",
+        "kind": "validation",
+        "completed_at": "2026-08-10T16:29:25.209722+00:00",
+        "budget_consumed": true,
+        "metrics": {
+          "initial_alerts": 100,
+          "final_alerts": 1,
+          "eliminated_alerts": 99,
+          "remaining_alerts": 1,
+          "introduced_alerts": 0,
+          "net_reduction": 99
+        },
+        "alert_deltas_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_01/alert_deltas.json",
+        "validation_budget": {
+          "consumed": 1,
+          "maximum": 5
+        }
+      },
+      "round_metrics": {
+        "initial_alerts": 100,
+        "final_alerts": 1,
+        "eliminated_alerts": 99,
+        "remaining_alerts": 1,
+        "introduced_alerts": 0,
+        "net_reduction": 99
+      },
+      "total_metrics": {
+        "initial_alerts": 100,
+        "final_alerts": 1,
+        "eliminated_alerts": 99,
+        "remaining_alerts": 1,
+        "introduced_alerts": 0,
+        "net_reduction": 99
+      },
+      "candidate_score": [
+        1,
+        0,
+        3,
+        1
+      ],
+      "best_valid_updated": true,
+      "interaction": null
+    },
+    {
+      "round": 2,
+      "status": "accepted",
+      "thread_id": "019fec81-ed2b-7850-a0f1-7c0ed0d91fc2",
+      "attempts": [
+        {
+          "attempt": 1,
+          "thread_id": "019fec81-ed2b-7850-a0f1-7c0ed0d91fc2",
+          "turn": {
+            "elapsed_seconds": 137.37375830698875,
+            "thread_id": "019fec81-ed2b-7850-a0f1-7c0ed0d91fc2",
+            "usage": {
+              "input_tokens": 371445,
+              "cached_input_tokens": 320512,
+              "output_tokens": 6037,
+              "total_tokens": 377482
+            },
+            "commands": [
+              {
+                "command": "/usr/bin/bash -lc \"pwd && printf '%s\\\\n' '--- top-level ---' && rg --files -g '\"'!**/node_modules/**'\"' -g '\"'!**/.git/**'\"' | head -200 && printf '%s\\\\n' '--- plan ---' && sed -n '1,240p' .exp_agent/round_02/plan.json && printf '%s\\\\n' '--- schema ---' && sed -n '1,240p' .exp_agent/round_02/completion-schema.json && printf '%s\\\\n' '--- exp files ---' && find .exp_agent/round_02 -maxdepth 1 -type f -print\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,180p' entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets && printf '%s\\\\n' '--- numbered ---' && nl -ba entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets | sed -n '50,90p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'rg -n \"hp-arkui-remove-unchanged-state-var|unchanged state|remove-unchanged\" /rules 2>/dev/null | head -100'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'git status --short && git log -1 --oneline --decorate'",
+                "exit_code": 128,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'find /rules -maxdepth 3 -type f -print 2>/dev/null | head -100'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,240p' /rules/node_modules/homecheck/lib/checker/performance/RemoveUnchangedStateVarCheck.js && printf '%s\\\\n' '--- docs ---' && sed -n '1,220p' /rules/docs/remove-unchanged-state-var-check.md\"",
+                "exit_code": 2,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 3 -type d -name .git -print -o -maxdepth 2 -type f -name .git -print; ls -la /workspace | sed -n '1,100p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"access|forceDarkAccess|WebViewEnumAndFontLibrary\\\" entry/src/main/ets entry/src/main/src/test entry/src/main/resources -g '*.ets' -g '*.json' -g '*.json5'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'rg -n \"@State\" entry/src/main/ets/pages/*.ets'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules -type f \\\\( -iname '*unchanged*' -o -iname '*state*var*' \\\\) -print\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets | sed -n '1,180p' && printf '%s\\\\n' '--- bytes around declaration ---' && od -An -tx1 -c -j 1050 -N 220 entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"forceDarkAccess|@State access\\\" . -g '\"'!**/.git/**'\"' -g '\"'!**/node_modules/**'\"'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules/node_modules/homecheck -maxdepth 3 -type f -name '*.md' -o -name '*.json' | head -100\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,220p' /rules/node_modules/homecheck/README.en.md && printf '%s\\\\n' '--- package ---' && sed -n '1,180p' /rules/node_modules/homecheck/package.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"homecheck|arkanalyzer|static validation|checker\\\" /rules -g '*.sh' -g '*.js' -g '*.md' -g 'package.json' | head -200\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'git -C /workspace diff -- entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets 2>/dev/null || diff -u <(git show 0e1b66cb7dcfd4c77d3caab43bcbdb2c61a2ab3b:entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets 2>/dev/null) entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets'",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets | sed -n '55,75p;136,148p'; printf '%s\\\\n' '--- remaining State refs ---'; rg -n \\\"@State|\\\\bState\\\\b\\\" entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"ls -la /rules && find /rules -maxdepth 2 -type f -perm -111 -print && sed -n '1,220p' /rules/package.json 2>/dev/null || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,150p' /rules/lib/run.js && sed -n '1,180p' /rules/lib/utils/GenerateConfig.js && sed -n '1,180p' /rules/lib/tools/utils/cliParser.js\"",
+                "exit_code": 2,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /workspace /rules -maxdepth 4 -type f \\\\( -name 'arkanalyzer.json' -o -name '*homecheck*.json*' -o -name 'config*.json*' \\\\) -print | head -100\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'rg -n \"ruleId|ruleConfig|CheckerStorage|remove-unchanged-state-var-check\" /rules/node_modules/homecheck/lib /rules/lib | head -180'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"command -v hvigor || true; command -v ohpm || true; command -v node; command -v jq || true; find /opt /usr/local /tools -maxdepth 4 -type f -iname '*ark*check*' -o -iname 'hvigorw' 2>/dev/null | head -50\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'test \"$(rg -n '\"'\"'^'\"\\\\s*@State\\\\s+access\\\\b' entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets || true)\\\" = \\\"\\\" && rg -n '\"'^'\"\\\\s*access: boolean = true|forceDarkAccess\\\\(this\\\\.access\\\\)' entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'git -C /workspace status --short 2>&1 || true; git -C /workspace diff --no-index /dev/null entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets >/tmp/webview.diff 2>&1; test $? -eq 1; sed -n '\"'1,15p' /tmp/webview.diff\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node -e \\\"const fs=require('fs'); const p=JSON.parse(fs.readFileSync('.exp_agent/round_02/plan.json')); if(JSON.stringify(p.rules.map(r=>r.rule))\"'!==JSON.stringify(['\"'@performance/hp-arkui-remove-unchanged-state-var'])) process.exit(1); console.log('plan selected rule verified')\\\"\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n \\\"@State\\\\s+access\\\\b|access: boolean = true|forceDarkAccess\\\\(this\\\\.access\\\\)\\\" entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets && wc -l entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets .exp_agent/round_02/completion.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node - <<'NODE'\nconst fs = require('fs');\nconst plan = JSON.parse(fs.readFileSync('.exp_agent/round_02/plan.json', 'utf8'));\nconst report = JSON.parse(fs.readFileSync('.exp_agent/round_02/completion.json', 'utf8'));\nconst schema = JSON.parse(fs.readFileSync('.exp_agent/round_02/completion-schema.json', 'utf8'));\nconst expected = plan.rules.map(rule => rule.rule);\nif (JSON.stringify(report.selected_rules) \"'!== JSON.stringify(expected)) throw new Error('\"'selected_rules mismatch');\nif (\"'!Array.isArray(report.blocked) || report.blocked.length !== 0) throw new Error('\"'blocked is not empty');\nif (\"'!Array.isArray(report.unresolved_external) || report.unresolved_external.length !== 0) throw new Error('\"'unresolved_external is not empty');\nif (\"'!Array.isArray(report.entity_repairs) || report.entity_repairs.length !== plan.finding_count) throw new Error('\"'entity repair count mismatch');\nfor (const repair of report.entity_repairs) {\n  for (const key of ['rule','relative_path','locations','entities','evidence','transformation','status']) if (\"'!(key in repair)) throw new Error(`missing ${key}`);\n  if (repair.status !== '\"'repaired' || \"'!repair.locations.length || !repair.entities.length || !repair.evidence.length || !repair.transformation) throw new Error('\"'invalid repair entry');\n  if ('repository_evidence' in repair) throw new Error('wrong evidence key present');\n}\nif (schema.required.join(',') \"'!== '\"'selected_rules,entity_repairs,blocked,unresolved_external') throw new Error('unexpected schema');\nconsole.log('completion JSON structural validation passed');\nNODE\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -e '.selected_rules == ([.entity_repairs[].rule] | unique) and (.blocked | length == 0) and (.unresolved_external | length == 0) and (.entity_repairs | all(.status == \\\"repaired\\\" and (.evidence | length > 0)))' .exp_agent/round_02/completion.json && jq . .exp_agent/round_02/completion.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node - <<'NODE'\nconst fs = require('fs');\nconst Ajv = require('/rules/node_modules/ajv');\nconst schema = JSON.parse(fs.readFileSync('.exp_agent/round_02/completion-schema.json', 'utf8'));\nconst report = JSON.parse(fs.readFileSync('.exp_agent/round_02/completion.json', 'utf8'));\nconst validate = new Ajv({allErrors: true, strict: false}).compile(schema);\nif (\"'!validate(report)) { console.error(validate.errors); process.exit(1); }\nconsole.log('\"'completion JSON validates against supplied schema');\nNODE\"",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              }
+            ],
+            "trace_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/traces/round_02_attempt_01.jsonl",
+            "trace_sha256": "32475d49388757b2a044277cbfb4258b87b23b35a176e780a8ccf349d6b2a9d6",
+            "stderr_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/traces/round_02_attempt_01.stderr.log"
+          },
+          "coverage": {
+            "complete": true,
+            "problems": [],
+            "required_rule_count": 1,
+            "required_rule_file_group_count": 1,
+            "feedback": "Every required rule, file, and exact evaluator location is accounted for."
+          },
+          "edit": {
+            "changed_files": [
+              "entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets"
+            ],
+            "changed_file_count": 1,
+            "changed_source_files": [
+              "entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets"
+            ],
+            "changed_source_file_count": 1,
+            "added_source_files": [],
+            "deleted_source_files": [],
+            "large_deletion_flags": [],
+            "patch_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/rounds/round_02/attempt_01.patch",
+            "patch_sha256": "290a7eda3ba78f5e6252031d38877be3577a90acb427d2b3ab0da5d1ff60bbe8"
+          },
+          "preflight": {
+            "structure": {
+              "status": "passed",
+              "removed_declarations": {},
+              "diff": {
+                "changed_files": [
+                  "entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets"
+                ],
+                "changed_file_count": 1,
+                "changed_source_files": [
+                  "entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets"
+                ],
+                "changed_source_file_count": 1,
+                "added_source_files": [],
+                "deleted_source_files": [],
+                "large_deletion_flags": [],
+                "patch_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/rounds/round_02/preflight_01/source_changes.patch",
+                "patch_sha256": "290a7eda3ba78f5e6252031d38877be3577a90acb427d2b3ab0da5d1ff60bbe8"
+              }
+            },
+            "public_api": {
+              "status": "passed",
+              "changes": {
+                "removed": [],
+                "added": [],
+                "changed": []
+              }
+            },
+            "namespace_export": {
+              "status": "passed",
+              "failures": [],
+              "baseline": {},
+              "observed": {},
+              "missing": {},
+              "changed": {}
+            },
+            "failures": []
+          },
+          "build_gate": {
+            "label": "attempt_01",
+            "status": "not_available",
+            "command": null,
+            "build": null
+          }
+        }
+      ],
+      "validation_scan": {
+        "operation": "scan",
+        "status": "scanned",
+        "exit_code": 0,
+        "elapsed_seconds": 2.4253955130116083,
+        "command": [
+          "/home/zhihao/deveco/command-line-tools/codelinter/bin/codelinter",
+          "--config",
+          "/home/zhihao/hdd/haprepair/HapRepair/skills/haprepair-openharmony-repair-v14-dev/assets/homecheck-config.json5",
+          "--format",
+          "json",
+          "--output",
+          "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_02/report.json",
+          "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/workspace"
+        ],
+        "raw_finding_count": 0,
+        "target_finding_count": 0,
+        "excluded_non_target_finding_count": 0,
+        "findings_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_02/findings.json",
+        "findings_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "all_findings_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_02/all_findings.json",
+        "report_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_02/report.json",
+        "stdout_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_02/stdout.log",
+        "stderr_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_02/stderr.log",
+        "parse_error": null,
+        "attempt_id": "validation_02",
+        "kind": "validation",
+        "completed_at": "2026-08-10T16:31:46.090969+00:00",
+        "budget_consumed": true,
+        "metrics": {
+          "initial_alerts": 100,
+          "final_alerts": 0,
+          "eliminated_alerts": 100,
+          "remaining_alerts": 0,
+          "introduced_alerts": 0,
+          "net_reduction": 100
+        },
+        "alert_deltas_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/evaluator_state/homecheck/scans/validation_02/alert_deltas.json",
+        "validation_budget": {
+          "consumed": 2,
+          "maximum": 5
+        }
+      },
+      "round_metrics": {
+        "initial_alerts": 1,
+        "final_alerts": 0,
+        "eliminated_alerts": 1,
+        "remaining_alerts": 0,
+        "introduced_alerts": 0,
+        "net_reduction": 1
+      },
+      "total_metrics": {
+        "initial_alerts": 100,
+        "final_alerts": 0,
+        "eliminated_alerts": 100,
+        "remaining_alerts": 0,
+        "introduced_alerts": 0,
+        "net_reduction": 100
+      },
+      "candidate_score": [
+        0,
+        0,
+        3,
+        2
+      ],
+      "best_valid_updated": true,
+      "interaction": null
+    }
+  ],
+  "maximum_validation_scans": 5,
+  "maximum_agent_turns_per_round": 6,
+  "completed_at": "2026-08-10T16:31:48.592218+00:00",
+  "wall_clock_seconds": 434.0488150710007,
+  "alert_metrics": {
+    "initial_alerts": 100,
+    "final_alerts": 0,
+    "eliminated_alerts": 100,
+    "remaining_alerts": 0,
+    "introduced_alerts": 0,
+    "net_reduction": 100
+  },
+  "per_rule_alert_deltas": [
+    {
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "eliminated_alerts": 1,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "eliminated_alerts": 52,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "eliminated_alerts": 47,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    }
+  ],
+  "validation_scan_count": 2,
+  "coverage_retry_count": 0,
+  "no_diff_retry_count": 0,
+  "repair_required_round_count": 0,
+  "best_valid_round": 2,
+  "best_valid_score": [
+    0,
+    0,
+    3,
+    2
+  ],
+  "final_candidate_selection": {
+    "status": "latest_candidate_is_best_valid",
+    "latest_valid_round": 2,
+    "selected_round": 2,
+    "selected_score": [
+      0,
+      0,
+      3,
+      2
+    ]
+  },
+  "observed_rule_interactions": [],
+  "build_status": "not_available",
+  "test_status": "not_available",
+  "input_tokens": 1106545,
+  "cached_input_tokens": 975360,
+  "output_tokens": 19905,
+  "total_tokens": 1126450,
+  "api_cost_if_traceable": null,
+  "restricted_accesses": [],
+  "source_diff": {
+    "changed_files": [
+      "entry/src/main/ets/pages/WebAttributeTest.ets",
+      "entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets",
+      "entry/src/main/ets/pages/geolocationPermissions.ets"
+    ],
+    "changed_file_count": 3,
+    "changed_source_files": [
+      "entry/src/main/ets/pages/WebAttributeTest.ets",
+      "entry/src/main/ets/pages/WebViewEnumAndFontLibrary.ets",
+      "entry/src/main/ets/pages/geolocationPermissions.ets"
+    ],
+    "changed_source_file_count": 3,
+    "changed_resource_or_config_files": [],
+    "added_source_files": [],
+    "deleted_source_files": [],
+    "large_deletion_flags": [],
+    "public_interface_change_flags": [],
+    "patch_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/JS_dialog_box_static/source_changes.patch",
+    "patch_sha256": "3e8f35f9ae67f25cb478b5b76819b266e0e27c5e9976df0bcf5bfa2ae53e2c87"
+  },
+  "isolation": {
+    "haprepair_repository_mounted": false,
+    "skill_state_mounted": false,
+    "corpus_mounted": false,
+    "other_runs_mounted": false
+  },
+  "provider_endpoint_fingerprint": "0a2cad5028420559b4d734677727ec94f7edeabf6d6ca73df8ad4103695bf48d"
+}

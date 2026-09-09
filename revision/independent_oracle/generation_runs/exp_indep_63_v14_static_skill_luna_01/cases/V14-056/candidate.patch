@@ -1,0 +1,15 @@
+--- a/entry/src/main/ets/cases/reusable_func_arg_case.ets
++++ b/entry/src/main/ets/cases/reusable_func_arg_case.ets
+@@ -18,10 +18,11 @@
+   }
+ 
+   build() {
++    const total: number = this.computeTotal();
+     List() {
+       ForEach(this.values, (value: number) => {
+         ListItem() {
+-          ComputedValueRow({ value: this.computeTotal() })
++          ComputedValueRow({ value: total })
+         }
+       }, (value: number) => value.toString())
+     }

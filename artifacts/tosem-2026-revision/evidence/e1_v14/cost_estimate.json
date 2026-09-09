@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "computed_on": "2026-08-11",
+  "model": "gpt-5.6-luna",
+  "service_tier": "default",
+  "pricing_basis": "OpenAI public standard short-context API prices; estimate, not provider invoice",
+  "pricing_source": "https://developers.openai.com/api/docs/pricing",
+  "pricing_source_accessed": "2026-08-11",
+  "usd_per_million_tokens": {
+    "uncached_input": 0.2,
+    "cached_input": 0.02,
+    "cache_write_input": 0.25,
+    "output_including_reasoning": 1.2
+  },
+  "token_counts": {
+    "input_total_including_cached": 940359022,
+    "uncached_input": 50417006,
+    "cached_input": 889942016,
+    "cache_write_input": 0,
+    "output_including_reasoning": 5770937,
+    "total_input_and_output": 946129959
+  },
+  "context_basis": {
+    "model_context_window": 258400,
+    "long_context_pricing_threshold": 272000,
+    "uses_short_context_rate": true
+  },
+  "estimated_usd": {
+    "uncached_input": 10.0834012,
+    "cached_input": 17.79884032,
+    "cache_write_input": 0.0,
+    "output": 6.9251244,
+    "total": 34.80736592,
+    "per_project_35": 0.9944961691428571,
+    "per_eliminated_alert_9847": 0.0035348204478521378
+  },
+  "evidence_boundary": "Token counts are trace-derived. Public list prices estimate model charges; actual invoiced expenditure was not exposed by the provider."
+}

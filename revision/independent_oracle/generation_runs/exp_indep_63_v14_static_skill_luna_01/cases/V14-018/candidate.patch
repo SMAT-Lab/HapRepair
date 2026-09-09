@@ -1,0 +1,11 @@
+--- a/entry/src/main/ets/cases/object_link_case.ets
++++ b/entry/src/main/ets/cases/object_link_case.ets
+@@ -6,7 +6,7 @@
+ 
+ @Component
+ struct ProfileName {
+-  @Prop profile: ProfileData;
++  @ObjectLink profile: ProfileData;
+   build() { Text(this.profile.name) }
+ }
+ 

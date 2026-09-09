@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-103",
+  "category": "performance",
+  "finding": {
+    "column": 21,
+    "end_column": 21,
+    "end_line": 343,
+    "line": 343,
+    "message": "Avoid frequent state variable reads inside loop logic",
+    "relative_path": "entry/src/main/ets/pages/ImageParallelization/ImageCallBack.ets",
+    "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+    "severity": "warn"
+  },
+  "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-no-state-var-access-in-loop.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "2dd4c0551bac8fd6db6353d5d43cf957b4a57ef8893bc7068730d27d3eb4f27d",
+    "path": "source_files/2dd4c0551bac8fd6db6353d5d43cf957b4a57ef8893bc7068730d27d3eb4f27d.json",
+    "sha256": "9c05d5f32f1afe10df87f62f19de159d7db413ffaf9b7843970d20805256bef6"
+  }
+}

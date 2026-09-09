@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-049",
+  "target_rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+  "codelinter_rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+  "rule_description": "避免在for、while等循环逻辑中频繁读取状态变量。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/state_var_loop_case.ets",
+      "line": 12,
+      "column": 13,
+      "severity": "warn",
+      "message": "Avoid frequent state variable reads inside loop logic",
+      "rule": "@performance/hp-arkui-no-state-var-access-in-loop"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/state_var_loop_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

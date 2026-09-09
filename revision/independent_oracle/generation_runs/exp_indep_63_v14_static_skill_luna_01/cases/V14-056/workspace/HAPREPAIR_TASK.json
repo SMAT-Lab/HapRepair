@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-056",
+  "target_rule": "@performance/hp-arkui-no-func-as-arg-for-reusable-component",
+  "codelinter_rule": "@performance/hp-arkui-no-func-as-arg-for-reusable-component",
+  "rule_description": "避免使用函数作为复用的自定义组件创建时的入参。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/reusable_func_arg_case.ets",
+      "line": 24,
+      "column": 11,
+      "severity": "warn",
+      "message": "Do not use functions as input parameters for creating reusable components",
+      "rule": "@performance/hp-arkui-no-func-as-arg-for-reusable-component"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/reusable_func_arg_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

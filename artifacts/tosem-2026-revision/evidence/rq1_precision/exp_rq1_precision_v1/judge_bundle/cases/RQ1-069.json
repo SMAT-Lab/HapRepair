@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-069",
+  "category": "performance",
+  "finding": {
+    "column": 3,
+    "end_column": 3,
+    "end_line": 387,
+    "line": 387,
+    "message": "Pass in parameters for internal variables of functions",
+    "relative_path": "entry/src/main/ets/pages/Player/Player_index.ets",
+    "rule": "@performance/hp-performance-no-closures",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-performance-no-closures",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/computation-api.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-performance-no-closures.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "df3ecfbaa63c352fffd7e9d85d5bcd9518edad70831124d38cb5070e078a28bd",
+    "path": "source_files/df3ecfbaa63c352fffd7e9d85d5bcd9518edad70831124d38cb5070e078a28bd.json",
+    "sha256": "90f5f4e51b68e36f1ca76bb75c41295d0191b82371faf4ecb6d00ed635c58016"
+  }
+}

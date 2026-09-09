@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-046",
+  "category": "performance",
+  "finding": {
+    "column": 5,
+    "end_column": 5,
+    "end_line": 276,
+    "line": 276,
+    "message": "Pre-compile JavaScript into bytecode in the onControllerAttached phase of the Web component for faster page loading.",
+    "relative_path": "library/src/main/ets/components/CordovaWeb.ets",
+    "rule": "@performance/js-code-cache-by-precompile-check",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/js-code-cache-by-precompile-check",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/computation-api.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--js-code-cache-by-precompile-check.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "fd42ede59ba12c0d08554b3331004c473ed7d7223d17c6c79219e8e44f15cbb5",
+    "path": "source_files/fd42ede59ba12c0d08554b3331004c473ed7d7223d17c6c79219e8e44f15cbb5.json",
+    "sha256": "13a158b6959bdece5ea8aef73363f890ad561a9a63c43a4e922be0283c73e745"
+  }
+}

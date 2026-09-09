@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-042",
+  "category": "security",
+  "rule": "@security/no-unsafe-3des",
+  "rule_description": "3DES 不得使用 ECB 模式。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_3des_case.ets",
+      "line": 4,
+      "column": 39,
+      "severity": "error",
+      "message": "Use unsafe symmetric encryption algorithm.",
+      "rule": "@security/no-unsafe-3des"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_3des_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nexport function createLegacyReportCipher(): cryptoFramework.Cipher {\n  return cryptoFramework.createCipher('3DES|ECB');\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_3des_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nexport function createLegacyReportCipher(): cryptoFramework.Cipher {\n  return cryptoFramework.createCipher('3DES|CBC');\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_3des_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nexport function createLegacyReportCipher(): cryptoFramework.Cipher {\n  return cryptoFramework.createCipher('3DES|CBC');\n}\n"
+    }
+  ]
+}

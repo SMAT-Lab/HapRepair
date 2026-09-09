@@ -1,0 +1,42 @@
+{
+  "selected_rules": [
+    "@performance/dark-color-mode-check"
+  ],
+  "consulted_specs": {
+    "@performance/dark-color-mode-check": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md",
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/layout-animation-media.md"
+    ]
+  },
+  "consulted_guides": {
+    "@performance/dark-color-mode-check": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--dark-color-mode-check.md"
+    ]
+  },
+  "entity_repairs": [
+    {
+      "rule": "@performance/dark-color-mode-check",
+      "relative_path": "entry/src/main/module.json5",
+      "locations": [
+        {
+          "line": 0,
+          "column": 0
+        }
+      ],
+      "entities": [
+        "Entry module theme resource set"
+      ],
+      "invariants": [
+        "Theme resource identity and base/dark key correspondence",
+        "Valid resource schema and explicit color contrast"
+      ],
+      "evidence": [
+        "The supplied module had no base or dark element resources and no explicit color literals to migrate.",
+        "The new base and dark color.json files are non-empty, parse as JSON, and define the same app_background key with light and dark values."
+      ],
+      "transformation": "Added paired base and dark element color resources while leaving the module manifest and its public configuration unchanged.",
+      "status": "repaired"
+    }
+  ],
+  "unresolved_external": []
+}

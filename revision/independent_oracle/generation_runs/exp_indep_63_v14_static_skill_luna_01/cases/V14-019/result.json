@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_security_no_unsafe_ecdh",
+  "blind_id": "V14-019",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbd7-57bf-7ec2-a430-9d36fba67596",
+  "usage": {
+    "input_tokens": 160814,
+    "cached_input_tokens": 137472,
+    "output_tokens": 3397,
+    "total_tokens": 164211
+  },
+  "wall_seconds": 84.60249582999677,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 41,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- workspace files ---'; rg --files -g 'HAPREPAIR_TASK.json' -g '\"'!node_modules'\"'; printf '%s\\\\n' '--- all files ---'; rg --files -g '\"'!node_modules'\"' | head -200\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' HAPREPAIR_TASK.json; printf '\\\\n--- source ---\\\\n'; sed -n '1,320p' entry/src/main/ets/cases/unsafe_ecdh_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'ls -la /codex-home; find /codex-home -maxdepth 4 -type f 2>/dev/null | head -120'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /codex-home /workspace -path '*/haprepair-openharmony-repair/SKILL.md' -o -path '*/haprepair-openharmony-repair/references/operations.md' 2>/dev/null\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills/haprepair-openharmony-repair -maxdepth 4 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,360p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,360p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,280p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md; printf '\\\\n--- security crypto ---\\\\n'; sed -n '1,360p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -C 4 'no-unsafe-ecdh|unsafe-ecdh|security-crypto|core-invariants' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/index.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find . -type f -not -path './.git/*' -not -path './node_modules/*' -print | sort; printf '\\\\n--- git status ---\\\\n'; git status --short; printf '\\\\n--- source with line numbers ---\\\\n'; nl -ba entry/src/main/ets/cases/unsafe_ecdh_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-ecdh.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/cases/unsafe_ecdh_case.ets; printf '\\\\n--- target literals ---\\\\n'; rg -n \\\"createAsyKeyGenerator|ECC\\\" . -g '\"'!HAPREPAIR_TASK.json'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find . -maxdepth 5 -type f -print | sort; printf '\\\\n--- task/source hashes ---\\\\n'; sha256sum HAPREPAIR_TASK.json entry/src/main/ets/cases/unsafe_ecdh_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "43c46c045c4f915249ef7cccc34407fa5f0d29706f163d4a219ecf5857748cb3",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_ecdh_case.ets",
+      "sha256": "c5cd06084bab0f0d5746154efdce58659fafe2664d2925469ae16d267d4f6669",
+      "size_bytes": 112,
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\ncryptoFramework.createAsyKeyGenerator('ECC256');\n"
+    }
+  ],
+  "trace_sha256": "1451e3b862368543ebf9311da0339075f846bb41c2492c0f800c9fb6dee838d6",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:50:34.675400+00:00",
+  "rejection_reasons": []
+}

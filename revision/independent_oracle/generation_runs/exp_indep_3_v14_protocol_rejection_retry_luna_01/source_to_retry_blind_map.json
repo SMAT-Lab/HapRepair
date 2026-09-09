@@ -1,0 +1,23 @@
+[
+  {
+    "retry_blind_id": "RTRY-001",
+    "source_blind_id": "V14-001",
+    "case_id": "case_performance_hp_arkui_combine_same_arg_animateto",
+    "rule": "@performance/hp-arkui-combine-same-arg-animateto",
+    "parent_result_sha256": "f4776b93b2c012b159a4d28bf0455fcaecb446147a1e028f13dfd4f42e47ebbc"
+  },
+  {
+    "retry_blind_id": "RTRY-002",
+    "source_blind_id": "V14-029",
+    "case_id": "case_security_no_unsafe_rsa_encrypt",
+    "rule": "@security/no-unsafe-rsa-encrypt",
+    "parent_result_sha256": "5afffe77bc57dc4c5ccff36ca425c7cc94587994a23d249a4db2b0d9f820c176"
+  },
+  {
+    "retry_blind_id": "RTRY-003",
+    "source_blind_id": "V14-030",
+    "case_id": "case_performance_avoid_overusing_custom_component_check",
+    "rule": "@performance/avoid-overusing-custom-component-check",
+    "parent_result_sha256": "fdb23c318c2853df230827c272c76b539ef49bc011ff117fe76323b314958dbe"
+  }
+]

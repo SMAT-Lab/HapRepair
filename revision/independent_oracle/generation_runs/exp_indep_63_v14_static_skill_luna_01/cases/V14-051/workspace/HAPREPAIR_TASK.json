@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-051",
+  "target_rule": "@performance/hp-arkui-use-reusable-component",
+  "codelinter_rule": "@performance/hp-arkui-use-reusable-component",
+  "rule_description": "建议复杂组件的定义，尽量使用组件复用。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/reusable_component_case.ets",
+      "line": 17,
+      "column": 9,
+      "severity": "warn",
+      "message": "Use reusable components to define complex components whenever possible",
+      "rule": "@performance/hp-arkui-use-reusable-component"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/reusable_component_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

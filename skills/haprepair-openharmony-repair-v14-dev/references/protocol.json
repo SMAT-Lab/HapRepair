@@ -1,0 +1,88 @@
+{
+  "schema_version": 3,
+  "protocol_id": "haprepair-skill-v14-namespace-export-safe-20260805",
+  "method": "HomeCheck localization, semantic-entity and interacting-rule-family repair, repository evidence, and verification-guided iteration",
+  "homecheck": {
+    "tool": "scripts/homecheck.py",
+    "engine_distribution": "CodeLinter",
+    "base_codelinter_version": "6.0.240",
+    "homecheck_source_commit": "461ad0a2f3a71a22ceeb18f7cc4a9fa67c986c59",
+    "config": "assets/homecheck-config.json5",
+    "identity_manifest": "assets/homecheck-overlay.json",
+    "maximum_validation_scans": 5,
+    "initial_scan_consumes_budget": false,
+    "failed_validation_consumes_budget": true,
+    "final_scan_consumes_budget": false,
+    "final_scan_is_fed_back": false
+  },
+  "candidate_session": {
+    "tool": "scripts/repair_session.py",
+    "state_location": "outside project workspace",
+    "required_operations": [
+      "init-session",
+      "scan-initial",
+      "begin-round",
+      "record-completion",
+      "preflight-round",
+      "validate-round",
+      "finalize"
+    ],
+    "target_unit": "semantic code entity plus all interacting rule-family findings",
+    "coverage": "every frozen alert location in every affected file",
+    "completion_evidence": [
+      "owning entities",
+      "applicable invariants",
+      "repository evidence",
+      "joint transformation",
+      "exact frozen alert locations"
+    ],
+    "blocked_policy": "ordinary blocked entries never satisfy coverage; risk increases required evidence rather than removing a target",
+    "external_constraint_policy": "unresolved_external is reportable but is not completed or counted as repaired",
+    "source_guard": "reject deleted source files, large deletions, and removed declarations",
+    "source_preservation": "retain every pre-existing struct, class, component, function, method, build method, exported symbol, and public API; never replace a component by deleting its original declaration",
+    "agent_controller_boundary": "when HAPREPAIR_AGENT_MODE=1, the agent edits source/configuration and the completion report only; all session mutations and HomeCheck scans remain evaluator-only",
+    "public_api_guard": "compare package-entrypoint exported API fingerprints with the initial project",
+    "semantic_guard": "reject new indexOf workarounds, unproven @Reusable additions, and unproven state-decorator changes",
+    "namespace_export_guard": "reject removal or redirection of baseline export-star-as namespace barrels",
+    "toolchain_boundary": "never edit project-local hvigor wrappers, evaluator caches, SDK files, or environment files to bypass infrastructure failures",
+    "resource_schema_safety": "dark-mode resources must be non-empty and schema-valid, with base/dark key correspondence",
+    "import_graph_safety": "no-cycle repairs require a complete edge classification, behavior-preserving graph transformation, and unchanged package-entry API; export/import rule exchanges are incomplete",
+    "build_test_order": "configured build, configured tests, then HomeCheck validation",
+    "arkts_warning_policy": "inject Hvigor ignoreWarning by default; strict mode is opt-in",
+    "failed_build_or_test": "retain and repair the candidate in place without consuming a HomeCheck validation scan",
+    "sibling_exchange_policy": "a same-file related-family alert exchange cannot promote best-valid",
+    "best_valid_score": [
+      "final target-alert count",
+      "introduced target-alert count",
+      "changed source-file count",
+      "round number"
+    ],
+    "finalization": "restore best-valid when necessary before the evaluator-only final scan"
+  },
+  "semantic_specs": {
+    "path": "references/rule-specs",
+    "normative": true,
+    "rule_identity_count": 71,
+    "coverage": "63 frozen-corpus rules plus eight observed rules absent from the corpus",
+    "planning": "exact rule-to-family routing plus same-file five-line interaction candidates"
+  },
+  "repair_examples": {
+    "path": "references/repair-guides",
+    "pair_count": 383,
+    "rule_count": 63,
+    "normative": false,
+    "purpose": "provenance and optional pattern evidence only; examples are never patch templates",
+    "dynamic_retrieval": false,
+    "embedding_model": null,
+    "similarity_ranking": false,
+    "network_service": false
+  },
+  "round_policy": {
+    "coverage": "repair every current alert location before validation",
+    "context": "coding-agent-native repository search without a fixed line window",
+    "transformation": "one joint behavior-preserving change per semantic entity and interacting rule family",
+    "feedback": "residual and introduced HomeCheck findings from the preceding validation scan",
+    "failed_candidate": "repair in place; never perform project-level or whole-round rollback"
+  },
+  "claim_boundary": "HomeCheck alert elimination is not semantic correctness; real-project claims apply only to detected alerts; security evidence is limited to observed rules"
+}

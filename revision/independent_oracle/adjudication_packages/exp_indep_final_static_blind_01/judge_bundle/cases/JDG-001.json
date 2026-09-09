@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-001",
+  "category": "performance",
+  "rule": "@performance/typed-array-check",
+  "rule_description": "数值数组推荐使用TypedArray。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/typed_array_case.ets",
+      "line": 2,
+      "column": 9,
+      "severity": "suggestion",
+      "message": "Array used only for numeric calculation detected. TypedArray is recommended.",
+      "rule": "@performance/typed-array-check"
+    },
+    {
+      "file": "entry/src/main/ets/cases/typed_array_case.ets",
+      "line": 3,
+      "column": 9,
+      "severity": "suggestion",
+      "message": "Array used only for numeric calculation detected. TypedArray is recommended.",
+      "rule": "@performance/typed-array-check"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/typed_array_case.ets",
+      "content": "function mergeSamples(): number[] {\n  const leftSamples: number[] = new Array(11, 17, 23);\n  const rightSamples: number[] = new Array(5, 7, 13);\n  const merged: number[] = new Array(3);\n  for (let index: number = 0; index < 3; index++) {\n    merged[index] = leftSamples[index] + rightSamples[index];\n  }\n  return merged;\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/typed_array_case.ets",
+      "content": "function mergeSamples(): Int16Array {\n  const leftSamples: Int16Array = new Int16Array([11, 17, 23]);\n  const rightSamples: Int16Array = new Int16Array([5, 7, 13]);\n  const merged: Int16Array = new Int16Array(3);\n  for (let index: number = 0; index < 3; index++) {\n    merged[index] = leftSamples[index] + rightSamples[index];\n  }\n  return merged;\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/typed_array_case.ets",
+      "content": "function mergeSamples(): number[] {\n  const leftSamples: Int32Array = new Int32Array([11, 17, 23]);\n  const rightSamples: Int32Array = new Int32Array([5, 7, 13]);\n  const merged: Int32Array = new Int32Array(3);\n  for (let index: number = 0; index < 3; index++) {\n    merged[index] = leftSamples[index] + rightSamples[index];\n  }\n  return Array.from(merged);\n}\n"
+    }
+  ]
+}

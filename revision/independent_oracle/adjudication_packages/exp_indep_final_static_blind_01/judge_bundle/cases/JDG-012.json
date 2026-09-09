@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-012",
+  "category": "performance",
+  "rule": "@performance/foreach-args-check",
+  "rule_description": "建议在ForEach参数中设置keyGenerator",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/foreach_args_case.ets",
+      "line": 15,
+      "column": 7,
+      "severity": "warn",
+      "message": "For performance purposes, set keyGenerator for ForEach.",
+      "rule": "@performance/foreach-args-check"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/foreach_args_case.ets",
+      "content": "interface InventoryRow {\n  sku: string;\n  quantity: number;\n}\n\n@Component\nstruct InventoryListCase {\n  private rows: InventoryRow[] = [\n    { sku: 'A-17', quantity: 4 },\n    { sku: 'B-08', quantity: 9 }\n  ];\n\n  build() {\n    List() {\n      ForEach(this.rows, (row: InventoryRow) => {\n        ListItem() {\n          Row() {\n            Text(row.sku)\n            Text(`${row.quantity}`)\n          }\n        }\n      })\n    }\n    .width('100%')\n    .height(320)\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/foreach_args_case.ets",
+      "content": "interface InventoryRow {\n  sku: string;\n  quantity: number;\n}\n\n@Component\nstruct InventoryListCase {\n  private rows: InventoryRow[] = [\n    { sku: 'A-17', quantity: 4 },\n    { sku: 'B-08', quantity: 9 }\n  ];\n\n  build() {\n    List() {\n      ForEach(this.rows, (row: InventoryRow) => {\n        ListItem() {\n          Row() {\n            Text(row.sku)\n            Text(`${row.quantity}`)\n          }\n        }\n      }, (row: InventoryRow) => row.sku)\n    }\n    .width('100%')\n    .height(320)\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/foreach_args_case.ets",
+      "content": "interface InventoryRow {\n  sku: string;\n  quantity: number;\n}\n\n@Component\nstruct InventoryListCase {\n  private rows: InventoryRow[] = [\n    { sku: 'A-17', quantity: 4 },\n    { sku: 'B-08', quantity: 9 }\n  ];\n\n  build() {\n    List() {\n      ForEach(this.rows, (row: InventoryRow) => {\n        ListItem() {\n          Row() {\n            Text(row.sku)\n            Text(`${row.quantity}`)\n          }\n        }\n      }, (row: InventoryRow) => row.sku)\n    }\n    .width('100%')\n    .height(320)\n  }\n}\n"
+    }
+  ]
+}

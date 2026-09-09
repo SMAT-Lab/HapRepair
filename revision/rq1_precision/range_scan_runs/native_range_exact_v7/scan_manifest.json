@@ -1,0 +1,285 @@
+{
+  "detector_unchanged": "CodeLinter 6.0.240",
+  "homecheck_path": "/home/zhihao/hdd/haprepair/homecheck",
+  "homecheck_source_commit": "696a50798301cac11f3878febfbf909ee18a70aa",
+  "homecheck_source_diff_sha256": "9a86bd5231c7972a8f3bac5558b88ffd046a0d36cc9988013c17496788e01f6d",
+  "purpose": "annotation_display_only",
+  "results": [
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-kszjsj_8/project.json",
+        "--configPath=/tmp/haprepair-range-scan-kszjsj_8/rules.json"
+      ],
+      "commit": "bab7df7818c3110903912fe8fbddeca461abe3f3",
+      "exit_code": 0,
+      "project": "CanvasTest",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/CanvasTest/issuesReport.json",
+      "report_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "rules": [
+        "@security/no-commented-code"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/source_recovery/kmptpc_oh_render_gitcode/test/CanvasTest",
+      "tree_oid": "8a17b5a1c3d70beca12e743e8bcff23fa179f9c3"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-mbg4h1w3/project.json",
+        "--configPath=/tmp/haprepair-range-scan-mbg4h1w3/rules.json"
+      ],
+      "commit": "10305e89a57ddfba5909ad55028251bf36933b4c",
+      "exit_code": 0,
+      "project": "HealthyPotAssistant",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/HealthyPotAssistant/issuesReport.json",
+      "report_sha256": "77f73eaf1540eed0daa9c8346759e866507c2b18b8961a6fc1beb64132e2893a",
+      "rules": [
+        "@security/no-commented-code"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony-SIG/contest/2022_ArkUI_Bootcamp/13510335281+HealthyPotAssistant/HealthyPotAssistant",
+      "tree_oid": "caa44304b85cbc69d4737fe55842658cba3355af"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-8w1j9isj/project.json",
+        "--configPath=/tmp/haprepair-range-scan-8w1j9isj/rules.json"
+      ],
+      "commit": "0e5669440d9a2896dacc40c5afbe3de9f4d20b59",
+      "exit_code": 0,
+      "project": "Image",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/Image/issuesReport.json",
+      "report_sha256": "79faf44949b37c09375b34ed3f1206bb99bd5f484f2f84a4d111bb40c1c62deb",
+      "rules": [
+        "@performance/avoid-overusing-custom-component-check",
+        "@performance/foreach-args-check",
+        "@performance/init-list-component",
+        "@security/no-commented-code"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony/arkui_ace_engine/examples/Image",
+      "tree_oid": "0546fcdacd4a79719ea7e06f5f1b13e417659fb9"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-0autkkaw/project.json",
+        "--configPath=/tmp/haprepair-range-scan-0autkkaw/rules.json"
+      ],
+      "commit": "0e5669440d9a2896dacc40c5afbe3de9f4d20b59",
+      "exit_code": 0,
+      "project": "Info",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/Info/issuesReport.json",
+      "report_sha256": "f0958bf9d6ce107052fecbec8e1ce9d4fbb3f421e5addea02272c0f7d864e3c7",
+      "rules": [
+        "@performance/foreach-args-check"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony/arkui_ace_engine/examples/Info",
+      "tree_oid": "ddb3917a7ecd87bd78c2e1ca8cf8b9801d3702cc"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-1jcbnaic/project.json",
+        "--configPath=/tmp/haprepair-range-scan-1jcbnaic/rules.json"
+      ],
+      "commit": "524289b349c39d73d8436be6da9d6302ae628c49",
+      "exit_code": 0,
+      "project": "YFree_HarmonyOS",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/YFree_HarmonyOS/issuesReport.json",
+      "report_sha256": "82c1d98fdb3f21e26980ff6120016ab9c8e075a17f4dd3946b816a11a5075a0e",
+      "rules": [
+        "@security/no-commented-code"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony-SIG/fluttertpc_flutter_yfree/YFree_HarmonyOS",
+      "tree_oid": "fc15ad6c2b43ddf3bbca48ca4ba369b233cdaffe"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-zlgf2k4p/project.json",
+        "--configPath=/tmp/haprepair-range-scan-zlgf2k4p/rules.json"
+      ],
+      "commit": "b79ac40f940b84c4077f7d393670a7f57cac10d3",
+      "exit_code": 0,
+      "project": "ace_ets_module_scroll_nowear_api12",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/ace_ets_module_scroll_nowear_api12/issuesReport.json",
+      "report_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "rules": [
+        "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony/xts_acts/arkui/ace_ets_module_ui/ace_ets_module_scroll/ace_ets_module_scroll_nowear_api12",
+      "tree_oid": "37f23153d5653f4627ca2d03e246f4bae70cd44f"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-9otg2grz/project.json",
+        "--configPath=/tmp/haprepair-range-scan-9otg2grz/rules.json"
+      ],
+      "commit": "0e1b66cb7dcfd4c77d3caab43bcbdb2c61a2ab3b",
+      "exit_code": 0,
+      "project": "ace_ets_module_swiper",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/ace_ets_module_swiper/issuesReport.json",
+      "report_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "rules": [
+        "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/source_recovery/xts_acts_gitcode/arkui/ace_ets_module_ui/ace_ets_module_swiper",
+      "tree_oid": "3c36284bacbc24299cac89fb5cb7657d5522c54d"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-x8w9z630/project.json",
+        "--configPath=/tmp/haprepair-range-scan-x8w9z630/rules.json"
+      ],
+      "commit": "b79ac40f940b84c4077f7d393670a7f57cac10d3",
+      "exit_code": 0,
+      "project": "ace_ets_module_swiper_api11",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/ace_ets_module_swiper_api11/issuesReport.json",
+      "report_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "rules": [
+        "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony/xts_acts/arkui/ace_ets_module_ui/ace_ets_module_scroll/ace_ets_module_swiper_api11",
+      "tree_oid": "a1fb31fe8904143caccfae2fd1e8dcadafad121c"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-cwshiskh/project.json",
+        "--configPath=/tmp/haprepair-range-scan-cwshiskh/rules.json"
+      ],
+      "commit": "12421e142788bfa77008a2c305d0b30b271fed78",
+      "exit_code": 0,
+      "project": "audio_suite",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/audio_suite/issuesReport.json",
+      "report_sha256": "4b64c76f2f3665799fa17afa8dc3c547b80d35361ecde73f8a7dd594b3e37c08",
+      "rules": [
+        "@security/no-commented-code"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/source_recovery/multimedia_audio_framework_gitcode/test/demo/audio_suite",
+      "tree_oid": "adca52ce7442f75696c5a4e462bb9b975582aa36"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-rwy_r3fn/project.json",
+        "--configPath=/tmp/haprepair-range-scan-rwy_r3fn/rules.json"
+      ],
+      "commit": "75a62371917ab87db71d92eac22c3ead8511ce55",
+      "exit_code": 0,
+      "project": "cameraAnimSample",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/cameraAnimSample/issuesReport.json",
+      "report_sha256": "f0a3292f9a8f5b579c44ab1ecbaf0103b9871f24ad37f7044f8128cad1947491",
+      "rules": [
+        "@security/no-commented-code"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony/multimedia_camera_framework/frameworks/js/camera_napi/cameraAnimSample",
+      "tree_oid": "dc3a142baca136d2052751a56a871e11c6d80ebb"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-yuj1cdll/project.json",
+        "--configPath=/tmp/haprepair-range-scan-yuj1cdll/rules.json"
+      ],
+      "commit": "586a3d4e88a3c01c09d749c744d25df9f75b7eb5",
+      "exit_code": 0,
+      "project": "flutter_embedding",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/flutter_embedding/issuesReport.json",
+      "report_sha256": "4e4c31394cec38fcf13af0ec5c9d147503b455451f7cacb67d003e3130d2a038",
+      "rules": [
+        "@security/no-commented-code"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/source_recovery/flutter_engine_gitcode/shell/platform/ohos/flutter_embedding",
+      "tree_oid": "c40bcf635d8cd7baeafe8790ba59148155749e8d"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-me3qu6v9/project.json",
+        "--configPath=/tmp/haprepair-range-scan-me3qu6v9/rules.json"
+      ],
+      "commit": "339433ac3c459cd4c3ca532ff8dc38e294e14249",
+      "exit_code": 0,
+      "project": "ohos_cordova",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/ohos_cordova/issuesReport.json",
+      "report_sha256": "f04807717ded5d2b546e6e4d4ea1b13191dc2d618349f481f2858d0e7c523638",
+      "rules": [
+        "@security/no-commented-code"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony-SIG/ohos_cordova",
+      "tree_oid": "a6cc75197a0ee77b7e7773cdc5c89bb48241851a"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-7a7pw2k_/project.json",
+        "--configPath=/tmp/haprepair-range-scan-7a7pw2k_/rules.json"
+      ],
+      "commit": "e4316d7c4cd49cbb54daa86ed9f7689925d6e084",
+      "exit_code": 0,
+      "project": "ohos_dfu_library",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/ohos_dfu_library/issuesReport.json",
+      "report_sha256": "f14a7e2f3acca72aaabbaee6efe5f5cb53bed39b64715537d59ba05ad96745b3",
+      "rules": [
+        "@security/no-commented-code"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony-SIG/ohos_dfu_library/ohos/ohos_dfu_library",
+      "tree_oid": "7bfd067058be7e96ef385a52f3399d088213a56a"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-bn9ry0vm/project.json",
+        "--configPath=/tmp/haprepair-range-scan-bn9ry0vm/rules.json"
+      ],
+      "commit": "81b8d803c41433b78e8a365cbec96450c9c87c72",
+      "exit_code": 0,
+      "project": "ohos_mail_base",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/ohos_mail_base/issuesReport.json",
+      "report_sha256": "de6c675d2457c48d62ce2de9488b66c598a1df4eec19705589c0b9d5f2a36209",
+      "rules": [
+        "@security/no-commented-code"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony-TPC/ohos_mail_base",
+      "tree_oid": "36e2a43cab5330f502ad996d2724e6c2412ee46a"
+    },
+    {
+      "command": [
+        "node",
+        "/home/zhihao/hdd/haprepair/homecheck/lib/run.js",
+        "--projectConfigPath=/tmp/haprepair-range-scan-izh070sh/project.json",
+        "--configPath=/tmp/haprepair-range-scan-izh070sh/rules.json"
+      ],
+      "commit": "6fcaae73f77ced494de7e3765f8cb3756901b7bf",
+      "exit_code": 0,
+      "project": "shopping",
+      "report_path": "/home/zhihao/hdd/haprepair/HapRepair/revision/rq1_precision/range_scan_runs/native_range_exact_v7/reports/shopping/issuesReport.json",
+      "report_sha256": "91dcf32d6c64886b119ca9962d74992d5b228d4c46f91ce1c610c006569ed80b",
+      "rules": [
+        "@security/no-commented-code"
+      ],
+      "source_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_agent_10/repos/OpenHarmony-SIG/arkcompiler_ets_frontend/arkoala-arkts/loader/app/shopping",
+      "tree_oid": "40ec7590bc1c9d68d58447e4577247ae0061e10c"
+    }
+  ],
+  "sample_path": "/home/zhihao/hdd/haprepair/paper/rebuttal/rq1_precision/exp_rq1_precision_v1/frozen_sample.jsonl",
+  "sample_sha256": "273addcb4afe0ed5fc9af9c5e07015eb4debe3aeb554a8c2b7691d8e6f51c06e",
+  "schema_version": 1
+}

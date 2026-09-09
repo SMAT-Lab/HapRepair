@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-104",
+  "category": "security",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 11,
+    "line": 11,
+    "message": "Dependency cycle detected: flutter/src/main/ets/embedding/ohos/FlutterEngineProvider.ets -> flutter/src/main/ets/embedding/engine/FlutterEngine.ets -> flutter/src/main/ets/embedding/engine/renderer/FlutterRenderer.ets -> flutter/src/main/ets/embedding/ohos/FlutterAbility.ets -> flutter/src/main/ets/embedding/ohos/FlutterAbilityAndEntryDelegate.ets -> flutter/src/main/ets/embedding/ohos/FlutterEngineProvider.ets",
+    "relative_path": "flutter/src/main/ets/embedding/ohos/FlutterEngineProvider.ets",
+    "rule": "@security/no-cycle",
+    "severity": "warn"
+  },
+  "rule": "@security/no-cycle",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-cycle.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "709b98e72a998bd8c604d9d68b5947ea73fc9232a4f73501bfe4316e18e3c85b",
+    "path": "source_files/709b98e72a998bd8c604d9d68b5947ea73fc9232a4f73501bfe4316e18e3c85b.json",
+    "sha256": "aba628551535592426eefa7df899b96581b747ba877b8037b4729c01e3408999"
+  }
+}

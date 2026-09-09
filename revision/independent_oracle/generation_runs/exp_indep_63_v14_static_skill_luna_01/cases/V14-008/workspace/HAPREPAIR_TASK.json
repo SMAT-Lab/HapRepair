@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-008",
+  "target_rule": "@performance/high-frequency-log-check",
+  "codelinter_rule": "@performance/high-frequency-log-check",
+  "rule_description": "不建议在高频函数中使用Hilog。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/high_frequency_log_case.ets",
+      "line": 11,
+      "column": 7,
+      "severity": "warn",
+      "message": "Avoid printing logs in frequent functions. The call chain here is as follows: entry/src/main/ets/cases/high_frequency_log_case.ets:11:console.info",
+      "rule": "@performance/high-frequency-log-check"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/high_frequency_log_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

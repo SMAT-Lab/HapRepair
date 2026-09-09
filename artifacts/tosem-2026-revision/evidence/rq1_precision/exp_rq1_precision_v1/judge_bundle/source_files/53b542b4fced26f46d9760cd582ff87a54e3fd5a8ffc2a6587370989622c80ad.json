@@ -1,0 +1,6 @@
+{
+  "content": "{\n  \"module\": {\n    \"name\": \"library\",\n    \"type\": \"har\",\n    \"deviceTypes\": [\n      \"default\",\n      \"tablet\",\n      \"2in1\"\n    ],\n    \"requestPermissions\": [\n      {\n        \"name\": \"ohos.permission.INTERNET\"\n      }\n    ]\n  }\n}\n",
+  "content_sha256": "53b542b4fced26f46d9760cd582ff87a54e3fd5a8ffc2a6587370989622c80ad",
+  "relative_path": "library/src/main/module.json5",
+  "schema_version": 1
+}

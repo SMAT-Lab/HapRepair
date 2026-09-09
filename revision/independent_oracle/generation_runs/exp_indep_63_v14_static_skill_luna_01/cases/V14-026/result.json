@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_performance_hp_arkui_avoid_update_auto_state_var_in_abouttoreuse",
+  "blind_id": "V14-026",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbbb-9476-78f0-bbc6-1c7d04d9b6f1",
+  "usage": {
+    "input_tokens": 200395,
+    "cached_input_tokens": 165888,
+    "output_tokens": 3743,
+    "total_tokens": 204138
+  },
+  "wall_seconds": 91.39119852899603,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 50,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- files ---'; rg --files -g 'HAPREPAIR_TASK.json' -g '\"'!node_modules'\"' -g '\"'!oh_modules'\"'; printf '%s\\\\n' '--- root ---'; ls -la\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills -maxdepth 4 -type f -name SKILL.md -o -name operations.md'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' HAPREPAIR_TASK.json; printf '%s\\\\n' '--- entry files ---'; rg --files entry\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /codex-home -maxdepth 4 -type d -iname '*haprepair*' -o -iname '*openharmony*'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"wc -l /codex-home/skills/haprepair-openharmony-repair/SKILL.md /codex-home/skills/haprepair-openharmony-repair/references/operations.md; sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '221,460p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md; printf '%s\\\\n' '--- operations ---'; sed -n '1,280p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- source ---'; nl -ba entry/src/main/ets/cases/about_to_reuse_state_case.ets; printf '%s\\\\n' '--- all workspace files ---'; rg --files -g '\"'!node_modules'\"' -g '\"'!oh_modules'\"' -g '\"'!build'\"' | sort; printf '%s\\\\n' '--- git status ---'; git status --short\"",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills/haprepair-openharmony-repair -maxdepth 4 -type f | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md; printf '%s\\\\n' '--- state ---'; sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/state-reactivity.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -C 8 'avoid-update-auto-state-var-in-aboutToReuse|aboutToReuse|state-reactivity|core-invariants' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/index.md /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--hp-arkui-avoid-update-auto-state-var-in-aboutToReuse.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -S 'ReusedScoreRow|aboutToReuse|score' /workspace /codex-home/skills/haprepair-openharmony-repair/references/rule-specs --glob '\"'!HAPREPAIR_TASK.json'\"' --glob '\"'!*.pyc'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,280p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/collections-reuse.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -S --hidden --glob '\"'!HAPREPAIR_TASK.json'\"' --glob '\"'!node_modules'\"' --glob '\"'!oh_modules'\"' 'ReusedScoreRow|@Link|@State|aboutToReuse|@Reusable|score' /workspace\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 5 -type f -not -path '*/.git/*' -print | sort; find /workspace -maxdepth 5 -type d -print | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/about_to_reuse_state_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c entry/src/main/ets/cases/about_to_reuse_state_case.ets; find /workspace -maxdepth 5 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -S '@Link|@State|aboutToReuse|ReusedScoreRow|build\\\\(' entry/src/main/ets/cases/about_to_reuse_state_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "5acb632e6789d1e34d5da451352b7adb88f9887c1ff3bd42b5a11b46fc0a3af7",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/about_to_reuse_state_case.ets",
+      "sha256": "873b074f841a85e2a9f60e14716ed4a140ecc33900951ce9208247f1fa273a86",
+      "size_bytes": 226,
+      "content": "@Reusable\n@Component\nstruct ReusedScoreRow {\n  @State score: number = 0;\n\n  aboutToReuse(params: Record<string, Object>): void {\n    this.score = params.score as number;\n  }\n\n  build() {\n    Text(`Score: ${this.score}`)\n  }\n}\n"
+    }
+  ],
+  "trace_sha256": "3ddb86f8e2ae900e912b65ccb7534d53d89312ecef41ec4139fa513deecbb681",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:20:22.036848+00:00",
+  "rejection_reasons": []
+}

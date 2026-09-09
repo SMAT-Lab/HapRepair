@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-195",
+  "category": "performance",
+  "finding": {
+    "column": 11,
+    "end_column": 11,
+    "end_line": 328,
+    "line": 328,
+    "message": "Use LazyForEach when appropriate",
+    "relative_path": "entry/src/main/ets/pages/ArkUI/ArkUI_index.ets",
+    "rule": "@performance/hp-arkui-load-on-demand",
+    "severity": "warn"
+  },
+  "rule": "@performance/hp-arkui-load-on-demand",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/collections-reuse.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-load-on-demand.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "39c95987143ed87170e2e7190a747d62dd1d9424883d653749dcebe8ee92ab19",
+    "path": "source_files/39c95987143ed87170e2e7190a747d62dd1d9424883d653749dcebe8ee92ab19.json",
+    "sha256": "4bd304a39527b2ac144d42a9342511296ea6eeae267f744dab36c7be8873f029"
+  }
+}

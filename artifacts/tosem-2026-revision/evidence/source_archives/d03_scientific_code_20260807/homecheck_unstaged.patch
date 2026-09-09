@@ -1,0 +1,932 @@
+diff --git a/ruleSet.json b/ruleSet.json
+index de468d76..d06400cb 100644
+--- a/ruleSet.json
++++ b/ruleSet.json
+@@ -170,6 +170,7 @@
+     "@performance/constant-property-referencing-check-in-loops": 3,
+     "@performance/effectkit-blur-check": 3,
+     "@performance/foreach-args-check": 3,
++    "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid": 1,
+     "@performance/foreach-index-check": 1,
+     "@performance/image-sync-load-check": 3,
+     "@performance/list-init-check": 1,
+@@ -442,4 +443,4 @@
+     "@previewer/no-page-method-on-preview-component": 2,
+     "@previewer/no-unallowed-decorator-on-root-component": 2
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/Index.ts b/src/Index.ts
+index cd762baa..c99e31b5 100644
+--- a/src/Index.ts
++++ b/src/Index.ts
+@@ -26,6 +26,7 @@ export * from './matcher/Matchers';
+ export { CheckerStorage } from './utils/common/CheckerStorage';
+ export { Rule } from './model/Rule';
+ export { Defects, IssueReport, FileReports } from './model/Defects';
++export type { DefectRange, DefectRangeSource } from './model/Defects';
+ export { FixData, FixDetail, FixRequest, FixResult } from './model/FixData';
+ export { Message, MessageType } from './model/Message';
+ export { ProjectConfig } from './model/ProjectConfig';
+@@ -45,4 +46,4 @@ export { AstTreeUtils, ts } from 'arkanalyzer';
+ export * as arkanalyzer from 'arkanalyzer';
+ 
+ // tools
+-export { runTool, Tools } from './tools/toolEntry';
+\ No newline at end of file
++export { runTool, Tools } from './tools/toolEntry';
+diff --git a/src/checker/performance/AvoidOverusingCustomComponentCheck.ts b/src/checker/performance/AvoidOverusingCustomComponentCheck.ts
+index 4ac65590..faf7b90f 100644
+--- a/src/checker/performance/AvoidOverusingCustomComponentCheck.ts
++++ b/src/checker/performance/AvoidOverusingCustomComponentCheck.ts
+@@ -19,6 +19,7 @@ import Logger, { LOG_MODULE_TYPE } from 'arkanalyzer/lib/utils/logger';
+ import {Rule, Defects, MatcherTypes, MatcherCallback, ClassMatcher} from '../../Index';
+ import { CheckerStorage } from '../../utils/common/CheckerStorage';
+ import { IssueReport } from '../../model/Defects';
++import { DefectRangeUtils } from '../../utils/common/DefectRangeUtils';
+ 
+ const logger = Logger.getLogger(LOG_MODULE_TYPE.HOMECHECK, 'ArrayDefinitionCheck');
+ const desCn = '优先使用@Builder方法而非自定义组件。';
+@@ -110,8 +111,9 @@ export class AvoidOverusingCustomComponentCheck implements BaseChecker {
+         }
+         let lineNum = baseLastLine + lineCount;
+         const severity = this.rule.alert ?? this.metaData.severity;
++        const range = DefectRangeUtils.fromText(baseLastLine, 1, code, 'declaration');
+         let defects = new Defects(lineNum, startColumn, endColumn, this.metaData.description, severity,
+-            this.rule.ruleId, filePath, this.metaData.ruleDocPath, true, false, false);
++            this.rule.ruleId, filePath, this.metaData.ruleDocPath, true, false, false, true, range);
+         this.issues.push(new IssueReport(defects, undefined));
+     }
+ }
+diff --git a/src/checker/performance/ForEachArgsCheck.ts b/src/checker/performance/ForEachArgsCheck.ts
+index 92aa63a3..45440051 100644
+--- a/src/checker/performance/ForEachArgsCheck.ts
++++ b/src/checker/performance/ForEachArgsCheck.ts
+@@ -19,7 +19,8 @@ import Logger, { LOG_MODULE_TYPE } from 'arkanalyzer/lib/utils/logger';
+ import { BaseChecker, BaseMetaData } from '../BaseChecker';
+ import { Rule, Defects, ClassMatcher, MatcherTypes, MethodMatcher, MatcherCallback, CheckerUtils} from '../../Index';
+ import { CheckerStorage } from '../../utils/common/CheckerStorage';
+-import { IssueReport } from '../../model/Defects';
++import { DefectRange, IssueReport } from '../../model/Defects';
++import { DefectRangeUtils } from '../../utils/common/DefectRangeUtils';
+ 
+ const logger = Logger.getLogger(LOG_MODULE_TYPE.HOMECHECK, 'ForeachArgsCheck');
+ const desCn = '为了更好的性能，请为ForEach设置keyGenerator。';
+@@ -96,7 +97,7 @@ export class ForeachArgsCheck implements BaseChecker {
+         const severity = this.rule.alert ?? this.metaData.severity;
+         const warnInfo = this.getLineAndColumn(stmt);
+         let defects = new Defects(warnInfo.line, warnInfo.startCol, warnInfo.endCol, this.metaData.description, severity, this.rule.ruleId,
+-            warnInfo.filePath, this.metaData.ruleDocPath, true, false, true);
++            warnInfo.filePath, this.metaData.ruleDocPath, true, false, true, true, warnInfo.range);
+         this.issues.push(new IssueReport(defects, undefined));
+     }
+ 
+@@ -105,6 +106,7 @@ export class ForeachArgsCheck implements BaseChecker {
+         startCol: number;
+         endCol: number;
+         filePath: string;
++        range?: DefectRange;
+     } {
+         const originPosition = stmt.getOriginPositionInfo();
+         const line = originPosition.getLineNo();
+@@ -117,7 +119,7 @@ export class ForeachArgsCheck implements BaseChecker {
+                 startCol += pos;
+                 const endCol = startCol + this.FOREACH_STR.length - 1;
+                 const originPath = arkFile.getFilePath();
+-                return { line, startCol, endCol, filePath: originPath };
++                return { line, startCol, endCol, filePath: originPath, range: DefectRangeUtils.fromStmt(stmt) };
+             }
+         } else {
+             logger.debug('ArkFile is null.');
+diff --git a/src/checker/performance/InitListComponentCheck.ts b/src/checker/performance/InitListComponentCheck.ts
+index 14de8a11..18000293 100644
+--- a/src/checker/performance/InitListComponentCheck.ts
++++ b/src/checker/performance/InitListComponentCheck.ts
+@@ -15,13 +15,14 @@
+ 
+ // 规则:init-list-component —— List 组件必须初始化 width/height 属性。
+ // 检测:List 组件若出现在 build 方法或 @Builder 方法内,且未通过直接调用、@Extend(List)/@Styles
+-import { ArkFile, ts } from 'arkanalyzer';
++import { ArkFile, FullPosition, ts } from 'arkanalyzer';
+ import Logger, { LOG_MODULE_TYPE } from 'arkanalyzer/lib/utils/logger';
+ import { BaseChecker, BaseMetaData } from '../BaseChecker';
+ import { Rule, Defects, MatcherTypes, MatcherCallback, FileMatcher } from '../../Index';
+ import { CheckerStorage } from '../../utils/common/CheckerStorage';
+ import { RuleListUtil } from '../../utils/common/DefectsList';
+ import { IssueReport } from '../../model/Defects';
++import { DefectRangeUtils } from '../../utils/common/DefectRangeUtils';
+ 
+ const logger = Logger.getLogger(LOG_MODULE_TYPE.HOMECHECK, 'InitListComponentCheck');
+ 
+@@ -314,11 +315,13 @@ export class InitListComponentCheck implements BaseChecker {
+         const target = this.getComponentNameNode(node) ?? node;
+         const { line, character } = sourceFile.getLineAndCharacterOfPosition(target.getStart());
+         const endChar = character + target.getText().length;
++        const range = DefectRangeUtils.fromFullPosition(
++            FullPosition.buildFromNode(node, sourceFile), 'ast-node');
+         const defect = new Defects(
+             line + 1, character + 1, endChar + 1,
+             this.metaData.description, severity, this.rule.ruleId,
+             this.filePath, this.metaData.ruleDocPath,
+-            true, false, false
++            true, false, false, true, range
+         );
+         this.issues.push(new IssueReport(defect, undefined));
+         RuleListUtil.push(defect);
+diff --git a/src/checker/performance/RemoveContainerWithoutPropertyCheck.ts b/src/checker/performance/RemoveContainerWithoutPropertyCheck.ts
+index 77212701..02251348 100644
+--- a/src/checker/performance/RemoveContainerWithoutPropertyCheck.ts
++++ b/src/checker/performance/RemoveContainerWithoutPropertyCheck.ts
+@@ -21,6 +21,7 @@ import { Rule } from '../../model/Rule';
+ import { ClassMatcher, MatcherCallback, MatcherTypes } from '../../matcher/Matchers';
+ import { CheckerStorage } from '../../utils/common/CheckerStorage';
+ import { ViewTreeTool } from '../../utils/checker/ViewTreeTool';
++import { DefectRangeUtils } from '../../utils/common/DefectRangeUtils';
+ 
+ const logger = Logger.getLogger(LOG_MODULE_TYPE.HOMECHECK, 'RemoveContainerWithoutPropertyCheck');
+ const desCn = '应该减少视图深度。';
+@@ -106,7 +107,7 @@ export class RemoveContainerWithoutPropertyCheck implements BaseChecker {
+         let endColumn = startColumn + viewRoot.name.length - 1;
+         const severity = this.rule.alert ?? this.metaData.severity;
+         let defects = new Defects(lineNum, startColumn, endColumn, this.metaData.description, severity, this.rule.ruleId,
+-            arkFilePath, this.metaData.ruleDocPath, true, false, true);
++            arkFilePath, this.metaData.ruleDocPath, true, false, true, true, DefectRangeUtils.fromStmt(stmt));
+         this.issues.push(new IssueReport(defects, undefined));
+     }
+ }
+diff --git a/src/checker/performance/RemoveRedundantStateVarCheck.ts b/src/checker/performance/RemoveRedundantStateVarCheck.ts
+index d2fd56d5..cea43140 100644
+--- a/src/checker/performance/RemoveRedundantStateVarCheck.ts
++++ b/src/checker/performance/RemoveRedundantStateVarCheck.ts
+@@ -20,7 +20,8 @@ import { BaseChecker, BaseMetaData } from '../BaseChecker';
+ import { Rule, Defects, ClassMatcher, MatcherTypes, MatcherCallback} from '../../Index';
+ import { CheckerStorage } from '../../utils/common/CheckerStorage';
+ import { ViewTreeTool } from '../../utils/checker/ViewTreeTool';
+-import { IssueReport } from '../../model/Defects';
++import { DefectRange, IssueReport } from '../../model/Defects';
++import { DefectRangeUtils } from '../../utils/common/DefectRangeUtils';
+ 
+ const logger = Logger.getLogger(LOG_MODULE_TYPE.HOMECHECK, 'RemoveRedundantStateVarCheck');
+ const desCn = '建议移除与UI组件无关的状态变量设置。';
+@@ -88,7 +89,7 @@ export class RemoveRedundantStateVarCheck implements BaseChecker {
+         const warnInfo = this.getLineAndColumn(target, arkField);
+         if (warnInfo) {
+             let defects = new Defects(warnInfo.lineNum, warnInfo.startCol, warnInfo.endCol, this.metaData.description, severity, this.rule.ruleId,
+-                warnInfo.filePath, this.metaData.ruleDocPath, true, false, false);
++                warnInfo.filePath, this.metaData.ruleDocPath, true, false, false, true, warnInfo.range);
+             this.issues.push(new IssueReport(defects, undefined));
+         }
+     }
+@@ -98,6 +99,7 @@ export class RemoveRedundantStateVarCheck implements BaseChecker {
+         startCol: number;
+         endCol: number;
+         filePath: string;
++        range?: DefectRange;
+     } {
+         const originPosition = arkField.getOriginPosition();
+         const lineNum = originPosition.getLineNo();
+@@ -108,7 +110,8 @@ export class RemoveRedundantStateVarCheck implements BaseChecker {
+             const startCol = originPosition.getColNo() + lineCode.indexOf(filedName);
+             const endCol = startCol + filedName.length - 1;
+             const originPath = arkFile.getFilePath();
+-            return { lineNum, startCol, endCol, filePath: originPath };
++            const range = DefectRangeUtils.fromText(lineNum, originPosition.getColNo(), lineCode, 'declaration');
++            return { lineNum, startCol, endCol, filePath: originPath, range };
+         } else {
+             logger.debug('ArkFile is null.');
+         }
+diff --git a/src/checker/performance/RemoveUnchangedStateVarCheck.ts b/src/checker/performance/RemoveUnchangedStateVarCheck.ts
+index 69a8d5db..4ab5d65c 100644
+--- a/src/checker/performance/RemoveUnchangedStateVarCheck.ts
++++ b/src/checker/performance/RemoveUnchangedStateVarCheck.ts
+@@ -20,7 +20,8 @@ import { BaseChecker, BaseMetaData } from '../BaseChecker';
+ import { Rule, Defects, ClassMatcher, MatcherTypes, MatcherCallback} from '../../Index';
+ import { CheckerStorage } from '../../utils/common/CheckerStorage';
+ import { ViewTreeTool } from '../../utils/checker/ViewTreeTool';
+-import { IssueReport } from '../../model/Defects';
++import { DefectRange, IssueReport } from '../../model/Defects';
++import { DefectRangeUtils } from '../../utils/common/DefectRangeUtils';
+ 
+ const logger = Logger.getLogger(LOG_MODULE_TYPE.HOMECHECK, 'RemoveUnchangedStateVarCheck');
+ const desCn = '考虑使用非状态变量。';
+@@ -162,7 +163,7 @@ export class RemoveUnchangedStateVarCheck implements BaseChecker {
+         const warnInfo = this.getLineAndColumn(target, arkField);
+         if (warnInfo) {
+             let defects = new Defects(warnInfo.lineNum, warnInfo.startCol, warnInfo.endCol, this.metaData.description, severity, this.rule.ruleId,
+-                warnInfo.filePath, this.metaData.ruleDocPath, true, false, false);
++                warnInfo.filePath, this.metaData.ruleDocPath, true, false, false, true, warnInfo.range);
+             this.issues.push(new IssueReport(defects, undefined));
+         }
+     }
+@@ -172,6 +173,7 @@ export class RemoveUnchangedStateVarCheck implements BaseChecker {
+         startCol: number;
+         endCol: number;
+         filePath: string;
++        range?: DefectRange;
+     } {
+         const originPosition = arkField.getOriginPosition();
+         const lineNum = originPosition.getLineNo();
+@@ -182,7 +184,8 @@ export class RemoveUnchangedStateVarCheck implements BaseChecker {
+             const startCol = originPosition.getColNo() + lineCode.indexOf(filedName);
+             const endCol = startCol + filedName.length - 1;
+             const originPath = arkFile.getFilePath();
+-            return { lineNum, startCol, endCol, filePath: originPath };
++            const range = DefectRangeUtils.fromText(lineNum, originPosition.getColNo(), lineCode, 'declaration');
++            return { lineNum, startCol, endCol, filePath: originPath, range };
+         } else {
+             logger.debug('ArkFile is null.');
+         }
+diff --git a/src/checker/performance/SetCachedCountForLazyforeachCheck.ts b/src/checker/performance/SetCachedCountForLazyforeachCheck.ts
+index 60213239..52a56eab 100644
+--- a/src/checker/performance/SetCachedCountForLazyforeachCheck.ts
++++ b/src/checker/performance/SetCachedCountForLazyforeachCheck.ts
+@@ -20,11 +20,14 @@ import { BaseChecker, BaseMetaData } from '../BaseChecker';
+ import { Rule, Defects, ClassMatcher, MatcherTypes, MatcherCallback} from '../../Index';
+ import { CheckerStorage } from '../../utils/common/CheckerStorage';
+ import { ViewTreeTool } from '../../utils/checker/ViewTreeTool';
+-import { IssueReport } from '../../model/Defects';
++import { DefectRange, IssueReport } from '../../model/Defects';
++import { DefectRangeUtils } from '../../utils/common/DefectRangeUtils';
+ 
+ const logger = Logger.getLogger(LOG_MODULE_TYPE.HOMECHECK, 'SetCachedCountForLazyforeachCheck');
+ const desCn = '设置cachedCount来预加载项目，以获得更好的滚动体验。';
+ const desEn = 'Set cachedCount to preloaded items to achieve better scrolling experience.';
++const gridRuleId = '@performance/hp-arkui-set-cache-count-for-lazyforeach-grid';
++const gridDesEn = 'Set cachedCount to an appropriate value when using LazyForEach in grids';
+ let warnInfo: WarnInfo = { lineNum: -1, startCol: -1, endCol: -1, filePath: '' };
+ const cacheCountControls: string[] = ['Grid', 'List', 'Swiper', 'WaterFlow'];
+ let viewTreeTool: ViewTreeTool = new ViewTreeTool();
+@@ -41,6 +44,7 @@ interface WarnInfo {
+     startCol: number;
+     endCol: number;
+     filePath: string;
++    range?: DefectRange;
+ };
+ 
+ export class SetCachedCountForLazyforeachCheck implements BaseChecker {
+@@ -92,6 +96,7 @@ export class SetCachedCountForLazyforeachCheck implements BaseChecker {
+             for (let [key, vals] of viewTreeRoot.attributes) {
+                 if (key === this.CREATE) {
+                     this.getWarnInfoByVals(name, vals);
++                    warnInfo.range = this.findLazyForEachRange(viewTreeRoot, warnInfo.filePath) ?? warnInfo.range;
+                 } else if (key === this.CACHED_COUNT) {
+                     hasCachedCount = true;
+                 }
+@@ -162,6 +167,28 @@ export class SetCachedCountForLazyforeachCheck implements BaseChecker {
+         return false;
+     }
+ 
++    private findLazyForEachRange(root: ViewTreeNode, filePath: string,
++        visited: Set<ViewTreeNode> = new Set()): DefectRange | undefined {
++        if (visited.has(root)) {
++            return undefined;
++        }
++        visited.add(root);
++        if (root.name === this.LAZY_FOREACH) {
++            const createStmt = root.attributes.get(this.CREATE)?.[0];
++            const arkFile = createStmt?.getCfg().getDeclaringMethod().getDeclaringArkFile();
++            if (createStmt && arkFile?.getFilePath() === filePath) {
++                return DefectRangeUtils.fromStmt(createStmt);
++            }
++        }
++        for (const child of root.children) {
++            const range = this.findLazyForEachRange(child, filePath, visited);
++            if (range) {
++                return range;
++            }
++        }
++        return undefined;
++    }
++
+     private getWarnInfoByVals(name: string, vals: [Stmt, (Constant | ArkInstanceFieldRef | MethodSignature)[]]): void {
+         for (let val of vals) {
+             if (val instanceof ArkAssignStmt) {
+@@ -179,14 +206,16 @@ export class SetCachedCountForLazyforeachCheck implements BaseChecker {
+             warnInfo.startCol = originPosition.getColNo();
+             warnInfo.endCol = warnInfo.startCol + name.length - 1;
+             warnInfo.filePath = arkFile.getFilePath();
++            warnInfo.range = DefectRangeUtils.fromStmt(stmt);
+         }
+     }
+ 
+     private addIssueReport(issues: IssueReport[]): void {
+         const severity = this.rule.alert ?? this.metaData.severity;
++        const description = this.rule.ruleId === gridRuleId ? gridDesEn : this.metaData.description;
+         if (warnInfo.lineNum !== -1 && !this.isExistIssueReport(issues)) {
+-            let defects = new Defects(warnInfo.lineNum, warnInfo.startCol, warnInfo.endCol, this.metaData.description, severity, this.rule.ruleId,
+-                warnInfo.filePath, this.metaData.ruleDocPath, true, false, false);
++            let defects = new Defects(warnInfo.lineNum, warnInfo.startCol, warnInfo.endCol, description, severity, this.rule.ruleId,
++                warnInfo.filePath, this.metaData.ruleDocPath, true, false, false, true, warnInfo.range);
+             this.issues.push(new IssueReport(defects, undefined));
+         }
+     }
+diff --git a/src/checker/security/NoCommentedCodeCheck.ts b/src/checker/security/NoCommentedCodeCheck.ts
+index 09f530e7..9ec3e206 100644
+--- a/src/checker/security/NoCommentedCodeCheck.ts
++++ b/src/checker/security/NoCommentedCodeCheck.ts
+@@ -16,12 +16,16 @@
+ import { ArkFile, ts } from 'arkanalyzer';
+ import Logger, { LOG_MODULE_TYPE } from 'arkanalyzer/lib/utils/logger';
+ import { FileMatcher, MatcherCallback, MatcherTypes, Rule } from '../../Index';
+-import { Defects, IssueReport } from '../../model/Defects';
++import { DefectRange, Defects, IssueReport } from '../../model/Defects';
+ import { CheckerStorage } from '../../utils/common/CheckerStorage';
+ import { RuleListUtil } from '../../utils/common/DefectsList';
+ import { BaseChecker, BaseMetaData } from '../BaseChecker';
++import { DefectRangeUtils } from '../../utils/common/DefectRangeUtils';
+ 
+ const logger = Logger.getLogger(LOG_MODULE_TYPE.HOMECHECK, 'NoCommentedCodeCheck');
++const parserCommentApi = ts as unknown as {
++    isInComment(sourceFile: ts.SourceFile, position: number): ts.CommentRange | undefined;
++};
+ 
+ // 规则描述（中英双语）：用 getter 根据 CheckerStorage 的语言设置动态返回，比静态字符串更友好。
+ const desCn = '当代码无效时，应完全删除相关代码。';
+@@ -96,11 +100,12 @@ export class NoCommentedCodeCheck implements BaseChecker {
+             }
+             const allComments = this.collectComments(sourceFile);
+             const merged = this.mergeLineComments(allComments);
++            const blockRanges = this.buildBlockRanges(merged);
+             const consumed = new Set<number>();
+             // 第一步：处理“连续行注释块”。只要块整体被判为代码，块内每条注释都上报。
+             this.reportMergedBlocks(merged, consumed);
+             // 第二步：处理未并入任何块的注释（块注释、被跳过的单行）。
+-            this.reportUnmergedComments(allComments, consumed);
++            this.reportUnmergedComments(allComments, consumed, blockRanges);
+         } catch (error) {
+             logger.error(`check ${arkFile.getFilePath()} failed: ${error}`);
+         }
+@@ -109,7 +114,7 @@ export class NoCommentedCodeCheck implements BaseChecker {
+     /** 上报被判为代码的合并块（块内每条注释都上报），并记录已处理的 pos 到 consumed。 */
+     private reportMergedBlocks(merged: MergedBlock[], consumed: Set<number>): void {
+         merged.forEach(block => {
+-            if (this.isValidCode(block.text)) {
++            if (this.isCodeEntity(block.text)) {
+                 this.reportBlockComments(block, consumed);
+             }
+         });
+@@ -117,54 +122,56 @@ export class NoCommentedCodeCheck implements BaseChecker {
+ 
+     /** 上报块内每条注释，并标记为已处理。 */
+     private reportBlockComments(block: MergedBlock, consumed: Set<number>): void {
++        const range = this.rangeForComments(block.comments);
+         block.comments.forEach(c => {
+-            this.reportIssue(c);
++            this.reportIssue(c, range);
+             consumed.add(c.range.pos);
+         });
+     }
+ 
+     /** 上报未并入任何块、且被判为代码的注释（块注释、独立单行）。 */
+-    private reportUnmergedComments(allComments: CommentInfo[], consumed: Set<number>): void {
++    private reportUnmergedComments(allComments: CommentInfo[], consumed: Set<number>,
++        blockRanges: Map<number, DefectRange>): void {
+         allComments.forEach(c => {
+-            if (!consumed.has(c.range.pos) && this.isValidCode(c.text)) {
+-                this.reportIssue(c);
++            if (!consumed.has(c.range.pos) && this.isCodeEntity(c.text)) {
++                this.reportIssue(c, blockRanges.get(c.range.pos) ?? this.rangeForComments([c]));
++            }
++        });
++    }
++
++    private buildBlockRanges(blocks: MergedBlock[]): Map<number, DefectRange> {
++        const ranges = new Map<number, DefectRange>();
++        blocks.forEach(block => {
++            const range = this.rangeForComments(block.comments);
++            if (range) {
++                block.comments.forEach(comment => ranges.set(comment.range.pos, range));
+             }
+         });
++        return ranges;
+     }
+ 
+-    // ---- 注释收集：遍历 AST，取每个节点的 leading/trailing 注释，按区间去重 ----
++    // ---- 注释收集：枚举注释起始符，用 parser-aware API 确认并按区间去重 ----
+ 
+     /** 收集文件里所有注释，转成 CommentInfo。 */
+     private collectComments(sourceFile: ts.SourceFile): CommentInfo[] {
+         const text = sourceFile.getFullText();
+-        const ranges: ts.CommentRange[] = [];
+-        const seen = new Set<string>();
+-        this.visitNode(sourceFile, text, ranges, seen);
+-        return ranges
+-            .filter(r => r.kind === ts.SyntaxKind.SingleLineCommentTrivia ||
+-                r.kind === ts.SyntaxKind.MultiLineCommentTrivia)
+-            .map(r => this.toCommentInfo(r, sourceFile));
+-    }
+-
+-    /** 递归遍历节点，收集其前导/尾随注释。 */
+-    private visitNode(node: ts.Node, text: string, ranges: ts.CommentRange[], seen: Set<string>): void {
+-        this.collectRanges(ts.getLeadingCommentRanges(text, node.pos), ranges, seen);
+-        this.collectRanges(ts.getTrailingCommentRanges(text, node.end), ranges, seen);
+-        ts.forEachChild(node, child => this.visitNode(child, text, ranges, seen));
+-    }
+-
+-    /** 把一批注释区间加入列表，用 “pos-end” 去重（同一注释可能被多个节点覆盖）。 */
+-    private collectRanges(src: ts.CommentRange[] | undefined, dst: ts.CommentRange[], seen: Set<string>): void {
+-        if (!src) {
+-            return;
+-        }
+-        src.forEach(r => {
+-            const key = `${r.pos}-${r.end}`;
+-            if (!seen.has(key)) {
+-                seen.add(key);
+-                dst.push(r);
++        const ranges = new Map<string, ts.CommentRange>();
++        const candidate = /\/[/\*]/gu;
++        let match: RegExpExecArray | null = candidate.exec(text);
++        while (match) {
++            // Query one character inside the delimiter: at the first slash TypeScript
++            // intentionally reports no enclosing comment.
++            const range = parserCommentApi.isInComment(sourceFile, match.index + 1);
++            if (range && (range.kind === ts.SyntaxKind.SingleLineCommentTrivia ||
++                range.kind === ts.SyntaxKind.MultiLineCommentTrivia)) {
++                ranges.set(`${range.pos}:${range.end}`, range);
+             }
+-        });
++            match = candidate.exec(text);
++        }
++
++        return [...ranges.values()]
++            .sort((left, right) => left.pos - right.pos)
++            .map(r => this.toCommentInfo(r, sourceFile));
+     }
+ 
+     /** CommentRange → CommentInfo（补上文本与行列号）。 */
+@@ -196,9 +203,8 @@ export class NoCommentedCodeCheck implements BaseChecker {
+         let current: MergedBlock | null = null;
+         comments.forEach(c => {
+             const trimmed = c.text.trim();
+-            // 只合并单行注释；中文开头、单词、忽略标记的直接跳过（它们本就不是代码）。
+-            if (c.range.kind !== ts.SyntaxKind.SingleLineCommentTrivia ||
+-                startWithChinese(trimmed) || isSingleWord(trimmed) || isIgnore(trimmed)) {
++            // 只按物理连续性合并。被注释代码内部仍可能包含中文字符串、TODO 或嵌套注释。
++            if (c.range.kind !== ts.SyntaxKind.SingleLineCommentTrivia) {
+                 current = null;
+                 return;
+             }
+@@ -218,6 +224,14 @@ export class NoCommentedCodeCheck implements BaseChecker {
+ 
+     // ---- 判断“注释里的内容是否是代码” ----
+ 
++    /**
++     * 注释实体整体可解析，或其中至少一条物理行是代码，就把完整实体视为被注释代码。
++     * ArkTS UI 链式调用和不完整的外层结构常使整块产生恢复性诊断，不能因此丢掉实体范围。
++     */
++    private isCodeEntity(text: string): boolean {
++        return this.isValidCode(text) || text.split(/\r?\n/u).some(line => this.isValidCode(line));
++    }
++
+     /** 综合判断：长度、单词、忽略标记、中文、以及能否 parse 成有效语句。返回 true 表示是代码。 */
+     private isValidCode(text: string): boolean {
+         const cleaned = removePrefixAndSuffixStar(text).trim();
+@@ -231,14 +245,31 @@ export class NoCommentedCodeCheck implements BaseChecker {
+     }
+ 
+     /** 上报一条告警（先生选择只检测、不做自动修复，故 fix 传 undefined）。 */
+-    private reportIssue(c: CommentInfo): void {
++    private rangeForComments(comments: CommentInfo[]): DefectRange | undefined {
++        const first = comments[0];
++        const last = comments[comments.length - 1];
++        const lastRange = DefectRangeUtils.fromText(
++            last.line, last.startCol, last.rawText, 'comment-block');
++        if (!lastRange) {
++            return undefined;
++        }
++        return {
++            startLine: first.line,
++            startColumn: first.startCol,
++            endLine: lastRange.endLine,
++            endColumn: lastRange.endColumn,
++            source: 'comment-block'
++        };
++    }
++
++    private reportIssue(c: CommentInfo, range: DefectRange | undefined): void {
+         const severity = this.rule.alert ?? this.metaData.severity;
+         const endCol = c.startCol + (c.range.end - c.range.pos);
+         const defect = new Defects(
+             c.line, c.startCol, endCol,
+             this.metaData.description, severity, this.rule.ruleId,
+             this.filePath, this.metaData.ruleDocPath,
+-            true, false, false
++            true, false, false, true, range
+         );
+         this.issues.push(new IssueReport(defect, undefined));
+         RuleListUtil.push(defect);
+@@ -255,7 +286,7 @@ function isSingleWord(text: string): boolean {
+ 
+ /** 是否含中文（中文注释不当代码）。 */
+ function startWithChinese(text: string): boolean {
+-    return /[一-龥]/u.test(text);
++    return /^[\s/*]*[一-龥]/u.test(text);
+ }
+ 
+ /** 需要忽略的注释：eslint-disable 指令、以及本身就是注释嵌套（// /*）。 */
+diff --git a/src/model/Defects.ts b/src/model/Defects.ts
+index 4c58eb09..ec971ae1 100644
+--- a/src/model/Defects.ts
++++ b/src/model/Defects.ts
+@@ -21,9 +21,24 @@ export const defectConf = {
+     defectSuffix: ''
+ };
+ 
++export type DefectRangeSource = 'legacy' | 'ast-node' | 'ir-statement' | 'ir-operand' | 'declaration' | 'comment-block';
++
++export interface DefectRange {
++    startLine: number;
++    startColumn: number;
++    endLine: number;
++    endColumn: number;
++    source: Exclude<DefectRangeSource, 'legacy'>;
++}
++
+ export class Defects {
+     reportLine: number;
+     reportColumn: number;
++    rangeStartLine: number;
++    rangeStartColumn: number;
++    endLine: number;
++    endColumn: number;
++    rangeSource: DefectRangeSource;
+     description: string = '';
+     severity: number = -1; // 0:info, 1:warning, 2:error
+     ruleId: string = '@perforce/<checker-name>';
+@@ -38,9 +53,15 @@ export class Defects {
+     fix?: FixData; // 修复数据（fixable=true时存在，Agent层可直接应用）
+ 
+     constructor(reportLine: number, reportColumn: number, endColumn: number, description: string, severity: number, ruleId: string,
+-        filePath: string, ruleDocPath: string, disabled: boolean, checked: boolean, fixable: boolean, showIgnoreIcon: boolean = true) {
++        filePath: string, ruleDocPath: string, disabled: boolean, checked: boolean, fixable: boolean, showIgnoreIcon: boolean = true,
++        range?: DefectRange) {
+         this.reportLine = reportLine;
+         this.reportColumn = reportColumn;
++        this.rangeStartLine = range?.startLine ?? reportLine;
++        this.rangeStartColumn = range?.startColumn ?? reportColumn;
++        this.endLine = range?.endLine ?? reportLine;
++        this.endColumn = range?.endColumn ?? endColumn;
++        this.rangeSource = range?.source ?? 'legacy';
+         this.description = description;
+         this.severity = severity;
+         this.ruleId = ruleId;
+@@ -73,4 +94,4 @@ export interface FileReports {
+     filePath: string;
+     defects: Defects[];
+     output?: string;
+-}
+\ No newline at end of file
++}
+diff --git a/src/utils/common/CheckerIndex.ts b/src/utils/common/CheckerIndex.ts
+index 1410e7a4..1c885c7f 100644
+--- a/src/utils/common/CheckerIndex.ts
++++ b/src/utils/common/CheckerIndex.ts
+@@ -670,6 +670,7 @@ export const projectRules = {
+     "@performance/lottie-animation-destroy-check": LottieAnimationDestoryCheck,
+     "@performance/multiple-associations-state-var-check": MultipleAssociationsStateVarCheck,
+     "@performance/set-cached-count-for-lazyforeach-check": SetCachedCountForLazyforeachCheck,
++    "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid": SetCachedCountForLazyforeachCheck,
+     "@performance/homepage-prepare-load-check": HomepagePrepareLoadCheck,
+     "@performance/image-format-check": ImageFormatCheck,
+     "@performance/image-size-check": ImageSizeCheck,
+@@ -714,4 +715,4 @@ export class ProxyChecker {
+         }
+         return new checker();
+     }
+-}
+\ No newline at end of file
++}
+diff --git a/src/utils/common/GeneratingJsonFile.ts b/src/utils/common/GeneratingJsonFile.ts
+index 3236d0fe..69905855 100644
+--- a/src/utils/common/GeneratingJsonFile.ts
++++ b/src/utils/common/GeneratingJsonFile.ts
+@@ -41,6 +41,11 @@ export class GeneratingJsonFile {
+                 const defectInfo: DefectInfo = {
+                     reportLine: defect.reportLine,
+                     reportColumn: defect.reportColumn,
++                    rangeStartLine: defect.rangeStartLine,
++                    rangeStartColumn: defect.rangeStartColumn,
++                    endLine: defect.endLine,
++                    endColumn: defect.endColumn,
++                    rangeSource: defect.rangeSource,
+                     ruleId: defect.ruleId,
+                     severity: severitys[defect.severity],
+                     mergeKey: defect.mergeKey,
+@@ -92,12 +97,22 @@ export class GeneratingJsonFile {
+                 const oneDefect: SimpleDefect = {
+                     line: 0,
+                     column: 0,
++                    rangeStartLine: 0,
++                    rangeStartColumn: 0,
++                    endLine: 0,
++                    endColumn: 0,
++                    rangeSource: 'legacy',
+                     severity: '',
+                     message: '',
+                     rule: '',
+                 };
+                 oneDefect.line = defect.reportLine;
+                 oneDefect.column = defect.reportColumn;
++                oneDefect.rangeStartLine = defect.rangeStartLine;
++                oneDefect.rangeStartColumn = defect.rangeStartColumn;
++                oneDefect.endLine = defect.endLine;
++                oneDefect.endColumn = defect.endColumn;
++                oneDefect.rangeSource = defect.rangeSource;
+                 oneDefect.severity = defect.severity;
+                 oneDefect.message = defect.description;
+                 oneDefect.rule = defect.ruleId;
+@@ -117,6 +132,11 @@ interface JsonResult {
+ interface SimpleDefect {
+     line: number;
+     column: number;
++    rangeStartLine: number;
++    rangeStartColumn: number;
++    endLine: number;
++    endColumn: number;
++    rangeSource: string;
+     severity: string;
+     message: string;
+     rule: string | null;
+@@ -133,6 +153,11 @@ interface DefectInfo {
+     mergeKey: string;
+     reportLine: number;
+     reportColumn: number;
++    rangeStartLine: number;
++    rangeStartColumn: number;
++    endLine: number;
++    endColumn: number;
++    rangeSource: string;
+     ruleId: string | null;
+     ruleDocPath: string | null;
+ }
+@@ -148,4 +173,4 @@ function writeFileFix(fileReports: FileReports[]): void {
+             };
+         };
+     };
+-}
+\ No newline at end of file
++}
+diff --git a/test/unittest/code/AvoidOverusingCustomComponentCheck.test.ts b/test/unittest/code/AvoidOverusingCustomComponentCheck.test.ts
+index 8c755d28..07840ff3 100644
+--- a/test/unittest/code/AvoidOverusingCustomComponentCheck.test.ts
++++ b/test/unittest/code/AvoidOverusingCustomComponentCheck.test.ts
+@@ -38,6 +38,8 @@ describe('AvoidOverusingCustomComponentTest', () => {
+         assert.equal(detectFileReport?.issues.length, expectReportList.length, 'The number of reported line is different from the expected number of line.');
+         detectFileReport?.issues.forEach((issue, index) => {
+             assert.include(issue.defect.fixKey, expectReportList[index]);
++            assert.equal(issue.defect.endLine, 99);
++            assert.equal(issue.defect.rangeSource, 'declaration');
+         });
+     });
+ 
+@@ -46,4 +48,4 @@ describe('AvoidOverusingCustomComponentTest', () => {
+         const detectedFileReport = checkEntry.fileChecks.find((fileCheck) => fileCheck.arkFile.getFilePath() === detectFile);
+         assert.equal(detectedFileReport?.issues.length, 0, 'The number of reported line should be 0.');
+     })
+-})
+\ No newline at end of file
++})
+diff --git a/test/unittest/code/ForEachArgsCheck.test.ts b/test/unittest/code/ForEachArgsCheck.test.ts
+index 1db819b4..965ea6ff 100644
+--- a/test/unittest/code/ForEachArgsCheck.test.ts
++++ b/test/unittest/code/ForEachArgsCheck.test.ts
+@@ -43,6 +43,8 @@ describe('ForeachArgsTest', () => {
+         assert.equal(detectFileReport?.issues.length, expectReportList.length, 'The number of reported line is different from the expected number of line.');
+         detectFileReport?.issues.forEach((issue, index) => {
+             assert.include(issue.defect.fixKey, expectReportList[index]);
++            assert.equal(issue.defect.endLine, 28);
++            assert.equal(issue.defect.rangeSource, 'ir-statement');
+         });
+     });
+ 
+@@ -72,4 +74,4 @@ describe('ForeachArgsTest', () => {
+             assert.include(issue.defect.fixKey, expectReportList[index]);
+         });
+     })
+-})
+\ No newline at end of file
++})
+diff --git a/test/unittest/code/InitListComponentCheck.test.ts b/test/unittest/code/InitListComponentCheck.test.ts
+index eea766bd..59a23689 100644
+--- a/test/unittest/code/InitListComponentCheck.test.ts
++++ b/test/unittest/code/InitListComponentCheck.test.ts
+@@ -40,6 +40,8 @@ describe('InitListComponentCheckTest', () => {
+         assert.equal(detectFileReport?.issues.length, expectReportList.length, 'List 未初始化宽高应上报 1 个');
+         detectFileReport?.issues.forEach((issue, index) => {
+             assert.include(issue.defect.fixKey, expectReportList[index]);
++            assert.equal(issue.defect.endLine, 24);
++            assert.equal(issue.defect.rangeSource, 'ast-node');
+         });
+     });
+ 
+diff --git a/test/unittest/code/NoCommentedCodeCheck.test.ts b/test/unittest/code/NoCommentedCodeCheck.test.ts
+index 3eb01211..aa380bbd 100644
+--- a/test/unittest/code/NoCommentedCodeCheck.test.ts
++++ b/test/unittest/code/NoCommentedCodeCheck.test.ts
+@@ -41,12 +41,31 @@ describe('NoCommentedCodeCheckTest', () => {
+         const detectFile: string = path.join(realPath, 'ets', 'NoCommentedCodeReport.ets');
+         const detectFileReport = checkEntry.fileChecks.find((fileCheck) => fileCheck.arkFile.getFilePath() === detectFile);
+         assert.isDefined(detectFileReport, 'The file path is error.');
+-        const expectReportList = ['18%1%16', '19%1%18', '20%1%19', '22%1%22', '24%1%21', '25%1%5', '27%1%28', '31%1%29', '33%1%16', '34%1%16', '35%1%5', '37%1%37'];
+-        assert.equal(detectFileReport?.issues.length, expectReportList.length, '注释代码应上报 12 个');
++        const expectReportList = ['18%1%16', '19%1%18', '20%1%19', '22%1%22', '24%1%21', '25%1%5', '27%1%28', '31%1%29', '33%1%16', '34%1%16', '35%1%5', '37%1%37', '43%1%26', '44%1%24', '45%1%5', '47%1%25', '48%1%22', '49%1%23', '52%1%16', '53%1%33', '54%1%5', '56%1%'];
++        assert.equal(detectFileReport?.issues.length, expectReportList.length, '注释代码应上报 22 个');
+         const keys = detectFileReport!.issues.map(i => i.defect.fixKey);
+         expectReportList.forEach(k => {
+             assert.isTrue(keys.some(fk => fk.startsWith(k)), `缺少告警 ${k}`);
+         });
++        const multilineLine = detectFileReport!.issues.find(i => i.defect.reportLine === 34)!.defect;
++        assert.equal(multilineLine.rangeStartLine, 33);
++        assert.equal(multilineLine.endLine, 35);
++        assert.equal(multilineLine.rangeSource, 'comment-block');
++        const blockComment = detectFileReport!.issues.find(i => i.defect.reportLine === 27)!.defect;
++        assert.equal(blockComment.rangeStartLine, 27);
++        assert.equal(blockComment.endLine, 29);
++        const localized = detectFileReport!.issues.find(i => i.defect.reportLine === 44)!.defect;
++        assert.equal(localized.rangeStartLine, 43);
++        assert.equal(localized.endLine, 45);
++        const partialBlock = detectFileReport!.issues.find(i => i.defect.reportLine === 49)!.defect;
++        assert.equal(partialBlock.rangeStartLine, 47);
++        assert.equal(partialBlock.endLine, 49);
++        const afterTemplate = detectFileReport!.issues.find(i => i.defect.reportLine === 53)!.defect;
++        assert.equal(afterTemplate.rangeStartLine, 52);
++        assert.equal(afterTemplate.endLine, 54);
++        const recoveredBlock = detectFileReport!.issues.find(i => i.defect.reportLine === 56)!.defect;
++        assert.equal(recoveredBlock.rangeStartLine, 56);
++        assert.equal(recoveredBlock.endLine, 59);
+     });
+ 
+     /**
+@@ -68,6 +87,6 @@ describe('NoCommentedCodeCheckTest', () => {
+         const f = path.join(realPath, 'ets', 'NoCommentedCodeReport.ts');
+         const r = checkEntry.fileChecks.find((fc) => fc.arkFile.getFilePath() === f);
+         assert.isDefined(r, 'Report.ts 应存在');
+-        assert.equal(r?.issues.length, 12, '.ts 扩展名与 .ets 行为一致,应上报 12 个');
++        assert.equal(r?.issues.length, 22, '.ts 扩展名与 .ets 行为一致,应上报 22 个');
+     });
+ });
+diff --git a/test/unittest/code/RemoveContainerWithoutPropertyCheck.test.ts b/test/unittest/code/RemoveContainerWithoutPropertyCheck.test.ts
+index d4e2de06..d34fc7d6 100644
+--- a/test/unittest/code/RemoveContainerWithoutPropertyCheck.test.ts
++++ b/test/unittest/code/RemoveContainerWithoutPropertyCheck.test.ts
+@@ -38,6 +38,8 @@ describe('RemoveContainerWithoutPropertyTest', () => {
+         assert.equal(detectFileReport?.issues.length, expectReportList.length, 'The number of reported line is different from the expected number of line.');
+         detectFileReport?.issues.forEach((issue, index) => {
+             assert.include(issue.defect.fixKey, expectReportList[index]);
++            assert.isAbove(issue.defect.endLine, issue.defect.reportLine);
++            assert.equal(issue.defect.rangeSource, 'ir-statement');
+         });
+     });
+ 
+@@ -46,4 +48,4 @@ describe('RemoveContainerWithoutPropertyTest', () => {
+         const detectedFileReport = checkEntry.fileChecks.find((fileCheck) => fileCheck.arkFile.getFilePath() === detectFile);
+         assert.equal(detectedFileReport?.issues.length, 0, 'The number of reported line should be 0.');
+     })
+-})
+\ No newline at end of file
++})
+diff --git a/test/unittest/code/RemoveRedundantStateVarCheck.test.ts b/test/unittest/code/RemoveRedundantStateVarCheck.test.ts
+index c1dfed66..8e871108 100644
+--- a/test/unittest/code/RemoveRedundantStateVarCheck.test.ts
++++ b/test/unittest/code/RemoveRedundantStateVarCheck.test.ts
+@@ -40,6 +40,8 @@ describe('RemoveRedundantStateVarTest', () => {
+         assert.equal(detectFileReport?.issues.length, expectReportList.length, 'The number of reported line is different from the expected number of line.');
+         detectFileReport?.issues.forEach((issue, index) => {
+             assert.include(issue.defect.fixKey, expectReportList[index]);
++            assert.equal(issue.defect.endLine, issue.defect.reportLine);
++            assert.equal(issue.defect.rangeSource, 'declaration');
+         });
+     });
+ 
+@@ -51,6 +53,8 @@ describe('RemoveRedundantStateVarTest', () => {
+         assert.equal(detectFileReport?.issues.length, expectReportList.length, 'The number of reported line is different from the expected number of line.');
+         detectFileReport?.issues.forEach((issue, index) => {
+             assert.include(issue.defect.fixKey, expectReportList[index]);
++            assert.equal(issue.defect.endLine, issue.defect.reportLine);
++            assert.equal(issue.defect.rangeSource, 'declaration');
+         });
+     });
+ 
+@@ -78,4 +82,4 @@ describe('RemoveRedundantStateVarTest', () => {
+         assert.equal(detectedFileReport?.issues.length, 0, 'The number of reported line should be 0.');
+     });
+ 
+-})
+\ No newline at end of file
++})
+diff --git a/test/unittest/code/RemoveUnchangedStateVarCheck.test.ts b/test/unittest/code/RemoveUnchangedStateVarCheck.test.ts
+index 0ed6322c..eda5046a 100644
+--- a/test/unittest/code/RemoveUnchangedStateVarCheck.test.ts
++++ b/test/unittest/code/RemoveUnchangedStateVarCheck.test.ts
+@@ -40,6 +40,8 @@ describe('RemoveUnchangedStateVarTest', () => {
+         assert.equal(detectFileReport?.issues.length, expectReportList.length, 'The number of reported line is different from the expected number of line.');
+         detectFileReport?.issues.forEach((issue, index) => {
+             assert.include(issue.defect.fixKey, expectReportList[index]);
++            assert.equal(issue.defect.endLine, issue.defect.reportLine);
++            assert.equal(issue.defect.rangeSource, 'declaration');
+         });
+     });
+ 
+@@ -54,4 +56,4 @@ describe('RemoveUnchangedStateVarTest', () => {
+         const detectedFileReport = checkEntry.fileChecks.find((fileCheck) => fileCheck.arkFile.getFilePath() === detectFile);
+         assert.equal(detectedFileReport?.issues.length, 0, 'The number of reported line should be 0.');
+     })
+-})
+\ No newline at end of file
++})
+diff --git a/test/unittest/code/SetCachedCountForLazyforeachCheck.test.ts b/test/unittest/code/SetCachedCountForLazyforeachCheck.test.ts
+index e632debc..8a34e1de 100644
+--- a/test/unittest/code/SetCachedCountForLazyforeachCheck.test.ts
++++ b/test/unittest/code/SetCachedCountForLazyforeachCheck.test.ts
+@@ -37,6 +37,11 @@ describe('SetCachedCountForLazyforeachTest', () => {
+             && (issue.defect.fixKey.includes('33%7%10') || issue.defect.fixKey.includes('96%7%15') ||
+                 issue.defect.fixKey.includes('42%15%18')));
+         expect(detectFileReports.length).toBe(3);
++        const gridReport = detectFileReports.find((issue) => issue.defect.reportLine === 33)?.defect;
++        expect(gridReport).toBeDefined();
++        expect(gridReport?.rangeStartLine).toBe(34);
++        expect(gridReport?.endLine).toBe(50);
++        expect(gridReport?.rangeSource).toBe('ir-statement');
+     });
+ 
+     test('SetCachedCountForLazyforeachTest_002', () => {
+@@ -44,6 +49,8 @@ describe('SetCachedCountForLazyforeachTest', () => {
+         let detectFileReports = checkEntry.projectCheck.issues.filter((issue) => (issue.defect.mergeKey.startsWith(detectFile))
+             && (issue.defect.fixKey.includes('16%7%12')));
+         expect(detectFileReports.length).toBe(1);
++        expect(detectFileReports[0].defect.rangeStartLine).toBe(17);
++        expect(detectFileReports[0].defect.endLine).toBe(25);
+     });
+ 
+     test('SetCachedCountForLazyforeachTest_003', () => {
+@@ -51,4 +58,4 @@ describe('SetCachedCountForLazyforeachTest', () => {
+         let detectFileReports = checkEntry.projectCheck.issues.filter((issue) => (issue.defect.mergeKey.startsWith(detectFile)));
+         expect(detectFileReports.length).toBe(0);
+     })
+-})
+\ No newline at end of file
++})
+diff --git a/test/unittest/sample/NoCommentedCode/ets/NoCommentedCodeNoReport.ets b/test/unittest/sample/NoCommentedCode/ets/NoCommentedCodeNoReport.ets
+index ea4ab89d..2165861e 100644
+--- a/test/unittest/sample/NoCommentedCode/ets/NoCommentedCodeNoReport.ets
++++ b/test/unittest/sample/NoCommentedCode/ets/NoCommentedCodeNoReport.ets
+@@ -17,3 +17,6 @@
+ // TODO: 待实现的功能
+ // eslint-disable-next-line no-console
+ let x: number = 1;
++const url = 'https://example.com/path';
++const template = `value ${x} // not a comment`;
++const slashPattern = /\/\//u;
+diff --git a/test/unittest/sample/NoCommentedCode/ets/NoCommentedCodeReport.ets b/test/unittest/sample/NoCommentedCode/ets/NoCommentedCodeReport.ets
+index eac2e52b..86fa4b1c 100644
+--- a/test/unittest/sample/NoCommentedCode/ets/NoCommentedCodeReport.ets
++++ b/test/unittest/sample/NoCommentedCode/ets/NoCommentedCodeReport.ets
+@@ -39,3 +39,21 @@ let a = 1;
+  a = a - 1;
+  }
+  */
++
++// function localized() {
++//   console.log('中文');
++// }
++
++// const localizedA = 1;
++// invalid prose here
++// let localizedB = 2;
++
++const templateValue = `value ${a}`;
++// if (a > 0) {
++//   console.log(templateValue);
++// }
++
++/*
++import { Broken } from './broken';
++ArkUI DSL {
++*/
+diff --git a/test/unittest/sample/NoCommentedCode/ets/NoCommentedCodeReport.ts b/test/unittest/sample/NoCommentedCode/ets/NoCommentedCodeReport.ts
+index bee98630..0c42efc6 100644
+--- a/test/unittest/sample/NoCommentedCode/ets/NoCommentedCodeReport.ts
++++ b/test/unittest/sample/NoCommentedCode/ets/NoCommentedCodeReport.ts
+@@ -39,3 +39,21 @@ let a = 1;
+  a = a - 1;
+  }
+  */
++
++// function localized() {
++//   console.log('中文');
++// }
++
++// const localizedA = 1;
++// invalid prose here
++// let localizedB = 2;
++
++const templateValue = `value ${a}`;
++// if (a > 0) {
++//   console.log(templateValue);
++// }
++
++/*
++import { Broken } from './broken';
++ArkUI DSL {
++*/

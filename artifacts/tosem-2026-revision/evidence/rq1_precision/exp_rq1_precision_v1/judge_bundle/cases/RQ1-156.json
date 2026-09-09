@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-156",
+  "category": "performance",
+  "finding": {
+    "column": 15,
+    "end_column": 15,
+    "end_line": 385,
+    "line": 385,
+    "message": "Do not use stringify in the key generator function of LazyForEach",
+    "relative_path": "product/phone/src/main/ets/pages/NewAlbumPage.ets",
+    "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+    "severity": "warn"
+  },
+  "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/collections-reuse.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-no-stringify-in-lazyforeach-key-generator.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "58b906315506fbed01cd649943f0fa12b44c95f568c9bd6657ccf7668d8105f2",
+    "path": "source_files/58b906315506fbed01cd649943f0fa12b44c95f568c9bd6657ccf7668d8105f2.json",
+    "sha256": "e21e4767349a1f23623af0d4cf1de1937616c03284eadf704610e12b6ef188ab"
+  }
+}

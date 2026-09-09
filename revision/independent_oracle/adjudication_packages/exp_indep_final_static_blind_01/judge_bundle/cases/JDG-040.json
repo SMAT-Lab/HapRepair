@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-040",
+  "category": "performance",
+  "rule": "@performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse",
+  "rule_description": "避免在aboutToReuse中对自动更新值的状态变量进行更新。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/about_to_reuse_state_case.ets",
+      "line": 7,
+      "column": 5,
+      "severity": "suggestion",
+      "message": "Avoid updating state variables in aboutToReuse with automatically updated values",
+      "rule": "@performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/about_to_reuse_state_case.ets",
+      "content": "@Reusable\n@Component\nstruct ReusedScoreRow {\n  @Link score: number;\n\n  aboutToReuse(params: Record<string, Object>): void {\n    this.score = params.score as number;\n  }\n\n  build() {\n    Text(`Score: ${this.score}`)\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/about_to_reuse_state_case.ets",
+      "content": "@Reusable\n@Component\nstruct ReusedScoreRow {\n  @State score: number = 0;\n\n  aboutToReuse(params: Record<string, Object>): void {\n    this.score = params.score as number;\n  }\n\n  build() {\n    Text(`Score: ${this.score}`)\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/about_to_reuse_state_case.ets",
+      "content": "@Reusable\n@Component\nstruct ReusedScoreRow {\n  @State score: number = 0;\n\n  aboutToReuse(params: Record<string, Object>): void {\n    this.score = params.score as number;\n  }\n\n  build() {\n    Text(`Score: ${this.score}`)\n  }\n}\n"
+    }
+  ]
+}

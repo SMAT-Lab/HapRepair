@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-054",
+  "target_rule": "@security/no-unsafe-dsa-key",
+  "codelinter_rule": "@security/no-unsafe-dsa-key",
+  "rule_description": "DSA 密钥模数需 >= 2048 bit。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_dsa_key_case.ets",
+      "line": 3,
+      "column": 67,
+      "severity": "error",
+      "message": "Use unsafe DSA key.",
+      "rule": "@security/no-unsafe-dsa-key"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/unsafe_dsa_key_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

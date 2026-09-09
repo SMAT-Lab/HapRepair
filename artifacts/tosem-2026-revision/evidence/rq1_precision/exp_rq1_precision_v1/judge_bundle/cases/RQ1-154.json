@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-154",
+  "category": "performance",
+  "finding": {
+    "column": 3,
+    "end_column": 3,
+    "end_line": 422,
+    "line": 422,
+    "message": "Pass in parameters for internal variables of functions",
+    "relative_path": "entry/src/main/ets/pages/subBenchmarkTest/gattClientVelocityBenchmarkTest.ets",
+    "rule": "@performance/hp-performance-no-closures",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-performance-no-closures",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/computation-api.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-performance-no-closures.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "6f42e0b70cbae892849bd4d9ee01f2c0fffd77b22fb4a892efd557a0e7d98c2b",
+    "path": "source_files/6f42e0b70cbae892849bd4d9ee01f2c0fffd77b22fb4a892efd557a0e7d98c2b.json",
+    "sha256": "52abfdcd6df0743a6d67d09021c8b477ad59d1defb0857fdf203db5d39c8ea95"
+  }
+}

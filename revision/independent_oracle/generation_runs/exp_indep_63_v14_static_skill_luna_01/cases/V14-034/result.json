@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_performance_multiple_associations_state_var_check",
+  "blind_id": "V14-034",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbd0-529e-7fc0-bee2-2dcb78295ff9",
+  "usage": {
+    "input_tokens": 200091,
+    "cached_input_tokens": 160000,
+    "output_tokens": 4353,
+    "total_tokens": 204444
+  },
+  "wall_seconds": 101.09582714100543,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 42,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"pwd && printf '%s\\\\n' '--- workspace files ---' && rg --files -g '\"'!*node_modules*'\"' -g '\"'!*.lock'\"' | sort | head -200 && printf '%s\\\\n' '--- task manifests ---' && find . -name HAPREPAIR_TASK.json -print\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"wc -l /codex-home/skills/haprepair-openharmony-repair/SKILL.md /codex-home/skills/haprepair-openharmony-repair/references/operations.md && sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' HAPREPAIR_TASK.json && printf '%s\\\\n' '--- source ---' && nl -ba entry/src/main/ets/cases/multiple_state_association_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'rg --files /codex-home/skills/haprepair-openharmony-repair | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find . -maxdepth 8 -type f -not -path './.git/*' -print | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -C 6 'multiple-associations-state-var-check' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/index.md /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--multiple-associations-state-var-check.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n '@(State|Link|Prop|Watch|Observed)|DashboardTheme|DashboardTitle|DashboardSubtitle|DashboardPage|theme' .\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md && printf '%s\\\\n' '--- state-reactivity ---' && sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/state-reactivity.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--multiple-associations-state-var-check.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,140p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/index.md && sed -n '1,100p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,520p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--multiple-associations-state-var-check.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"git status --short && git diff -- entry/src/main/ets/cases/multiple_state_association_case.ets && stat -c '%s bytes' entry/src/main/ets/cases/multiple_state_association_case.ets\"",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/multiple_state_association_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -C 2 '@Link|@Watch|@State|build\\\\(|onThemeChange|DashboardTheme|DashboardTitle|DashboardSubtitle|DashboardPage' entry/src/main/ets/cases/multiple_state_association_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find . -maxdepth 8 -type f -not -path './.git/*' -print | sort && printf '%s\\\\n' '--- task target locations ---' && rg -n 'multiple-associations-state-var-check|multiple_state_association_case' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "dd13e25db950526ae277b6bb70c0032e2793e3d6f2d6adf67207ec1930381fe0",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/multiple_state_association_case.ets",
+      "sha256": "6101f2d2e093906d8b659a992ba173a81db61bbafb68195b270c18b0d15ce09f",
+      "size_bytes": 982,
+      "content": "@Observed\nclass DashboardTheme {\n  fontSize: number = 16;\n  fontColor: string = '#222222';\n}\n\n@Component\nstruct DashboardTitle {\n  @Link @Watch('onThemeChange') theme: DashboardTheme;\n  @State localFontSize: number = 16;\n\n  onThemeChange() {\n    if (this.localFontSize !== this.theme.fontSize) {\n      this.localFontSize = this.theme.fontSize;\n    }\n  }\n\n  build() { Text('Title').fontSize(this.localFontSize) }\n}\n\n@Component\nstruct DashboardSubtitle {\n  @Link @Watch('onThemeChange') theme: DashboardTheme;\n  @State localFontColor: string = '#222222';\n\n  onThemeChange() {\n    if (this.localFontColor !== this.theme.fontColor) {\n      this.localFontColor = this.theme.fontColor;\n    }\n  }\n\n  build() { Text('Subtitle').fontColor(this.localFontColor) }\n}\n\n@Entry\n@Component\nstruct DashboardPage {\n  @State theme: DashboardTheme = new DashboardTheme();\n  build() {\n    Column() {\n      DashboardTitle({ theme: this.theme })\n      DashboardSubtitle({ theme: this.theme })\n    }\n  }\n}\n"
+    }
+  ],
+  "trace_sha256": "b88d500b39940f0a96504e6323c29f7bf15076bcdf7cbb915347a40ff348d73b",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:43:05.137312+00:00",
+  "rejection_reasons": []
+}

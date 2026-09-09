@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-059",
+  "target_rule": "@security/no-unsafe-dsa",
+  "codelinter_rule": "@security/no-unsafe-dsa",
+  "rule_description": "DSA 签名/验签禁止使用 SHA1，模数需 >= 2048。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_dsa_case.ets",
+      "line": 3,
+      "column": 53,
+      "severity": "error",
+      "message": "Use unsafe DSA sign algorithm.",
+      "rule": "@security/no-unsafe-dsa"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/unsafe_dsa_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

@@ -1,0 +1,13 @@
+--- a/entry/src/main/ets/cases/high_frame_rate_case.ets
++++ b/entry/src/main/ets/cases/high_frame_rate_case.ets
+@@ -10,8 +10,8 @@
+         animateTo({
+           duration: 800,
+           expectedFrameRateRange: {
+-            expected: 120,
+-            min: 120,
++            expected: 60,
++            min: 0,
+             max: 120
+           }
+         }, () => {

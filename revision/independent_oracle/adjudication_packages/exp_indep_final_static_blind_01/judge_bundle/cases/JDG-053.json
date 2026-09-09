@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-053",
+  "category": "performance",
+  "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+  "rule_description": "建议使用Column/Row替代Flex",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/flex_layout_case.ets",
+      "line": 5,
+      "column": 5,
+      "severity": "suggestion",
+      "message": "Replace Flex with Column/Row",
+      "rule": "@performance/hp-arkui-use-row-column-to-replace-flex"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/flex_layout_case.ets",
+      "content": "@Entry\n@Component\nstruct StatusToolbar {\n  build() {\n    Flex({ direction: FlexDirection.Row }) {\n      Flex() { Text('Queued') }.padding(6).backgroundColor(0xFFF3CD)\n      Flex() { Text('Running') }.padding(6).backgroundColor(0xD1ECF1)\n      Flex() { Text('Blocked') }.padding(6).backgroundColor(0xF8D7DA)\n      Flex() { Text('Review') }.padding(6).backgroundColor(0xE2E3E5)\n      Flex() { Text('Passed') }.padding(6).backgroundColor(0xD4EDDA)\n      Flex() { Text('Archived') }.padding(6).backgroundColor(0xE8DAEF)\n    }\n    .width('100%')\n    .height(64)\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/flex_layout_case.ets",
+      "content": "@Entry\n@Component\nstruct StatusToolbar {\n  build() {\n    Row() {\n      Flex() { Text('Queued') }.padding(6).backgroundColor(0xFFF3CD)\n      Flex() { Text('Running') }.padding(6).backgroundColor(0xD1ECF1)\n      Flex() { Text('Blocked') }.padding(6).backgroundColor(0xF8D7DA)\n      Flex() { Text('Review') }.padding(6).backgroundColor(0xE2E3E5)\n      Flex() { Text('Passed') }.padding(6).backgroundColor(0xD4EDDA)\n      Flex() { Text('Archived') }.padding(6).backgroundColor(0xE8DAEF)\n    }\n    .width('100%')\n    .height(64)\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/flex_layout_case.ets",
+      "content": "@Entry\n@Component\nstruct StatusToolbar {\n  build() {\n    Row() {\n      Flex() { Text('Queued') }.padding(6).backgroundColor(0xFFF3CD)\n      Flex() { Text('Running') }.padding(6).backgroundColor(0xD1ECF1)\n      Flex() { Text('Blocked') }.padding(6).backgroundColor(0xF8D7DA)\n      Flex() { Text('Review') }.padding(6).backgroundColor(0xE2E3E5)\n      Flex() { Text('Passed') }.padding(6).backgroundColor(0xD4EDDA)\n      Flex() { Text('Archived') }.padding(6).backgroundColor(0xE8DAEF)\n    }\n    .width('100%')\n    .height(64)\n  }\n}\n"
+    }
+  ]
+}

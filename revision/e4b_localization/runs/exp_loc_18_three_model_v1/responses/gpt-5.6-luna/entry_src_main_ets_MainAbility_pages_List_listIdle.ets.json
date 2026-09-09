@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "formal": true,
+  "run_id": "exp_loc_18_three_model_v1",
+  "model_requested": "gpt-5.6-luna",
+  "file": "entry/src/main/ets/MainAbility/pages/List/listIdle.ets",
+  "source_sha256": "fb02d681dbd019347921caf4e56782efdf7d745aa114e7e595c8cb400b2874b4",
+  "prompt_sha256": "f10587d4f36c62a99c06b9d1dea0075d1c943a411fc1ff17625927b83d227721",
+  "protocol_sha256": "baaf76932d8013e8eaa0b1f840fb4ba02e37412caef5f0e3bc4903a3e9b6bbeb",
+  "ground_truth_sha256": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3",
+  "started_at": "2026-08-07T14:07:38.608239+00:00",
+  "provider_route": {
+    "api_base_env": "OPENAI_API_BASE",
+    "api_key_env": "OPENAI_API_KEY",
+    "api_base_sha256": "0a2cad5028420559b4d734677727ec94f7edeabf6d6ca73df8ad4103695bf48d"
+  },
+  "status": "completed",
+  "model_reported": "gpt-5.6-luna",
+  "response_id": "resp_0ee01cf03b72cc28016a75e6ab7fc08198be213561dd8a5036",
+  "usage": {
+    "prompt_tokens": 1473,
+    "completion_tokens": 71,
+    "total_tokens": 1544
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": 200,
+      "elapsed_seconds": 3.0529310679994524,
+      "result": "success"
+    }
+  ],
+  "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-remove-redundant-state-var\",\"line\":24},{\"rule\":\"@performance/hp-arkui-use-reusable-component\",\"line\":77},{\"rule\":\"@performance/hp-arkui-set-cache-count-for-lazyforeach-grid\",\"line\":76}]}",
+  "predicted_defects": [
+    {
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "line": 24
+    },
+    {
+      "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+      "line": 76
+    },
+    {
+      "rule": "@performance/hp-arkui-use-reusable-component",
+      "line": 77
+    }
+  ],
+  "parse_ok": true,
+  "parse_error": null,
+  "raw_response": {
+    "id": "resp_0ee01cf03b72cc28016a75e6ab7fc08198be213561dd8a5036",
+    "object": "chat.completion",
+    "created": 1786111661,
+    "model": "gpt-5.6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-remove-redundant-state-var\",\"line\":24},{\"rule\":\"@performance/hp-arkui-use-reusable-component\",\"line\":77},{\"rule\":\"@performance/hp-arkui-set-cache-count-for-lazyforeach-grid\",\"line\":76}]}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1473,
+      "completion_tokens": 71,
+      "total_tokens": 1544
+    }
+  },
+  "completed_at": "2026-08-07T14:07:41.662070+00:00",
+  "elapsed_seconds": 3.0538412729947595
+}

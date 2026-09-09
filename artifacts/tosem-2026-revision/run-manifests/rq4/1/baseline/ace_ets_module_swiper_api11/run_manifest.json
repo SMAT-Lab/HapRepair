@@ -1,0 +1,1572 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-HAPREPAIR-FULL-PAIR-35-R2",
+  "run_id": "exp_agent_ref_35_luna_v6_clean2_repeat_01",
+  "condition": "vanilla",
+  "project": "ace_ets_module_swiper_api11",
+  "status": "completed",
+  "started_at": "2026-08-10T17:29:52.957642+00:00",
+  "source_tree_sha256": "eebb1bf2fb3750dbfbfa159ca1d8f51bf8c17f82d38c5bd471c9e0eddf5d57ee",
+  "frozen_source_tree_sha256": "eebb1bf2fb3750dbfbfa159ca1d8f51bf8c17f82d38c5bd471c9e0eddf5d57ee",
+  "findings_sha256": "3173deb17fd8b5b29aa68d41060e86142e057bf7bb376c95f9203363d4110504",
+  "frozen_findings_sha256": "3173deb17fd8b5b29aa68d41060e86142e057bf7bb376c95f9203363d4110504",
+  "byte_identical_input": true,
+  "finding_identity_matches": true,
+  "protocol": "/home/zhihao/hdd/haprepair/HapRepair/revision/hapskill_experiment/protocol-full-pair-baseline-v6.json",
+  "protocol_sha256": "9b2723a4827f41512f7e904a586f31f8d15ea0e1f40e68f90bb89292e116775f",
+  "inputs": "/home/zhihao/hdd/haprepair/HapRepair/revision/hapskill_experiment/formal_inputs_hapskill_35_v4.json",
+  "inputs_sha256": "759104715e61e8a449388c0d4805252103509aaf3d1eeb80fe1ed1996899413c",
+  "runtime": {
+    "image": "hybrid-gym-codex:0.146.0",
+    "image_id": "sha256:9cc027cd2f9404ccd58c61e367fe712895188a926c07d464ea0936e893b9a89a",
+    "versions": {
+      "container_codex": "codex-cli 0.146.0\nWARNING: proceeding, even though we could not create PATH aliases: CODEX_HOME points to \"/codex-home\", but that path does not exist",
+      "host_python": "Python 3.13.11"
+    },
+    "artifact_hashes": {
+      "codelinter_config_sha256": "91de02b03d0c5df48d3da615eb0b17615f2f9ad0e0f7f575119c964ae3b9cc95",
+      "codelinter_overlay_sha256": "ca0555024524ad76c0d6f058bb98a36729a92c8b701f373b776bdb7e677f625c",
+      "openharmony_sdk_manifest_sha256": "dd1f23fab928cca17b8a3daeb5a6f0b8566b460d9c85b24684b39da80f84cde7",
+      "sdk_build_components_sha256": "ba07957c4def67422612d794593e1c5fc7f0991afaf289e26483c895544aa49d",
+      "sdk_native_api20_sha256": "a9bbeae7b72c80ae573d5439bb88e9d5cbe202d260f8394f24ae37669911d4f4"
+    },
+    "host_node": "v18.20.1"
+  },
+  "host_runtime": {
+    "path_policy": "prepended_frozen_deveco_node",
+    "node_bin": "/home/zhihao/deveco/command-line-tools/tool/node/bin"
+  },
+  "static_g2_authorization": {
+    "path": "/home/zhihao/hdd/haprepair/paper/rebuttal/gates/exp_full_pair_35_luna_clean_r2_g2_v2_20260810.json",
+    "sha256": "490eb3e24692e95a71fef8d845882fcda4ab683614c9908e5f29fbf7a7c341bc",
+    "authorized_run_id": "exp_agent_ref_35_luna_v6_clean2_repeat_01",
+    "runner_artifacts": {
+      "agent_ref_session.py": "ee0907e6fc20415b6b1f8a919517028f46e9a3c38fd3760ab7dc3269213f7672",
+      "run_agent_ref_v5.py": "420ec34497db856d36ef8749dc370b589dafd2ba57b580e897571669bb89308c",
+      "run_condition_v14.py": "f02f191b3d501d18f5094a5ca6ed8c58757ef4b64a67f6eab663f3da2fcff94a",
+      "resume_condition_v14.py": "47120eb7e4af9874974aff94d28c5ed1a3dd3f32b665f6bcec6532f886a15187",
+      "run_full_pair_repetitions_v2.py": "9ea0842e2636cd00e950e17918f742ed6419f33e832cd6eede4cee8826608e2d",
+      "prepare_full_pair_campaign_v2.py": "e59a9b7e8fb93533257d2b65e5f31c4c5e1879452a8a41007c2e239f48e66a98",
+      "audit_full_pair_g2_v2.py": "f88d23f5fea1f7c415107c5dbe911edbce2f643cb5892ce091881d191916ecd4",
+      "test_full_pair_campaign_v2.py": "ead98b1709cf4c5c1664a0f122f7d847f63bb9a8ac257ff981b85788c5eee8fd"
+    }
+  },
+  "model": {
+    "requested_id": "gpt-5.6-luna",
+    "provider": "xsp",
+    "reasoning_effort": "high",
+    "runs_per_project_condition": 2,
+    "temperature": "not explicitly configurable through the frozen Codex harness",
+    "top_p": "provider default",
+    "output_length": "provider default",
+    "seed": "not exposed",
+    "nondeterminism_note": "A single run remains potentially nondeterministic even without an exposed sampling-temperature control.",
+    "repeat_policy": "Two independent clean workspaces; provider seed is not exposed."
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "status": "accepted",
+      "thread_id": "019fecb9-6c3c-7b01-a705-2ae8d1c465cc",
+      "attempts": [
+        {
+          "attempt": 1,
+          "thread_id": "019fecb9-6c3c-7b01-a705-2ae8d1c465cc",
+          "turn": {
+            "elapsed_seconds": 976.935286448017,
+            "thread_id": "019fecb9-6c3c-7b01-a705-2ae8d1c465cc",
+            "usage": {
+              "input_tokens": 8700711,
+              "cached_input_tokens": 8437760,
+              "output_tokens": 43112,
+              "total_tokens": 8743823
+            },
+            "commands": [
+              {
+                "command": "/usr/bin/bash -lc \"pwd && rg --files -g '\"'!node_modules'\"' -g '\"'!**/.git/**'\"' | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'git status --short && git log -1 --oneline'",
+                "exit_code": 128,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,240p' .exp_agent/round_01/plan.json && printf '\\\\n--- schema ---\\\\n' && sed -n '1,260p' .exp_agent/round_01/completion-schema.json && printf '\\\\n--- completion ---\\\\n' && if [ -f .exp_agent/round_01/completion.json ]; then sed -n '1,260p' .exp_agent/round_01/completion.json; fi\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules -maxdepth 3 -type f -print | sort | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules -maxdepth 2 -type f \\\\( -iname '*callback*' -o -iname '*state*' -o -iname '*swiper*' \\\\) -print | sort\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 3 -type f \\\\( -name 'package.json' -o -name 'package-lock.json' -o -name 'oh-package.json5' -o -name 'arktsconfig.json5' \\\\) -print | sort && command -v jq || true && command -v hvigorw || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n -i 'empty-callback|redundant-state-var|redundant state|empty system callback|state variables that are not associated|rule' /rules/docs /rules 2>/dev/null | rg -i 'empty.callback|redundant.state|empty system callback|not associated' | sed -n '1,240p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | [.rule, (.files|length), ([.files[].locations[]]|length)] | @tsv' .exp_agent/round_01/plan.json && printf '\\\\n--- files and locations ---\\\\n' && jq -r '.rules[] as \"'$r | $r.files[] | [$r.rule, .relative_path, ([.locations[] | \"'\"\\\\(.line):\\\\(.column)\\\"] | join(\\\",\\\"))] | @tsv' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules -type f | rg 'avoid-empty|redundant-state|unchanged-state|cache-count|animation-start|reusable-component' | sort\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,240p' /rules/node_modules/homecheck/lib/checker/performance/AvoidEmptyCallbackCheck.js && printf '\\\\n--- redundant ---\\\\n' && sed -n '1,280p' /rules/node_modules/homecheck/lib/checker/performance/RemoveRedundantStateVarCheck.js\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'hp-arkui-(remove-unchanged|set-cache-count|use-onAnimationStart|use-reusable)' /rules/node_modules/homecheck /rules | sed -n '1,220p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules/node_modules/homecheck/lib/checker -type f -maxdepth 3 | rg 'Unchanged|Cache|Animation|Reusable|Lazy|Swiper' | sort\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,300p' /rules/node_modules/homecheck/lib/checker/performance/RemoveUnchangedStateVarCheck.js && printf '\\\\n--- cache ---\\\\n' && sed -n '1,360p' /rules/node_modules/homecheck/lib/checker/performance/SetCachedCountForLazyforeachCheck.js\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -l -i 'onAnimationStart|reusable component|cached count|cache count|unchanged state' /rules/docs /rules/node_modules/homecheck | sort | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,360p' /rules/node_modules/homecheck/lib/checker/performance/UseReusableComponentCheck.js && printf '\\\\n--- animation ---\\\\n' && sed -n '1,360p' /rules/node_modules/homecheck/lib/checker/performance/UseOnAnimationStartForSwiperPreloadCheck.js 2>/dev/null || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'UseOnAnimation|AnimationStart|SetCached|UseReusable|RemoveUnchanged' /rules/node_modules/homecheck/lib | sed -n '1,240p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,300p' /rules/node_modules/homecheck/lib/checker/performance/TabsOnChangeCheck.js && printf '\\\\n--- docs ---\\\\n' && for f in avoid-empty-callback-check.md remove-redundant-state-var-check.md remove-unchanged-state-var-check.md set-cached-count-for-lazyforeach-check.md use-reusable-component-check.md tabs-on-change-check.md; do echo \\\"--- \"'$f\"; sed -n '\"'1,220p' \\\"/rules/docs/\"'$f\"; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | select(.rule|contains(\\\"use-reusable\\\")) | .files[] | .relative_path' .exp_agent/round_01/plan.json | sort -u | while read f; do printf '%s\\\\t' \\\"\"'$f\"; wc -l < \"$f\"; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | select(.rule|contains(\\\"use-onAnimation\\\")) | .files[] | .relative_path' .exp_agent/round_01/plan.json | sort -u | while read f; do printf '\\\\n--- %s ---\\\\n' \\\"\"'$f\"; nl -ba \"$f\" | sed -n '\"'1,150p'; done\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in entry/src/main/ets/MainAbility/pages/index/index.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperVisibility.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper07.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets entry/src/main/ets/MainAbility/pages/Swiper/Swipersec.ets entry/src/main/ets/MainAbility/pages/Swiper/swiper.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginNoMargin.ets; do echo \"--- $f\"; nl -ba \"$f\" | sed -n '\"'35,90p'; done\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in $(jq -r '\"'.rules[] | select(.rule|contains(\\\"set-cache-count\\\")) | .files[].relative_path' .exp_agent/round_01/plan.json | sort -u); do echo \\\"--- \"'$f\"; for n in $(jq -r --arg f \"$f\" '\"'.rules[] | select(.rule|contains(\\\"set-cache-count\\\")) | .files[] | select(.relative_path==\"'$f) | .locations[].line'\"' .exp_agent/round_01/plan.json); do lo=\"'$((n-2)); hi=$((n+4)); nl -ba \"$f\" | sed -n \"${lo},${hi}p\"; done; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in $(jq -r '\"'.rules[] | select(.rule|contains(\\\"use-onAnimationStart\\\")) | .files[].relative_path' .exp_agent/round_01/plan.json | sort -u); do echo \\\"--- \"'$f\"; for n in $(jq -r --arg f \"$f\" '\"'.rules[] | select(.rule|contains(\\\"use-onAnimationStart\\\")) | .files[] | select(.relative_path==\"'$f) | .locations[].line'\"' .exp_agent/round_01/plan.json); do lo=\"'$((n-4)); hi=$((n+5)); nl -ba \"$f\" | sed -n \"${lo},${hi}p\"; done; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in $(jq -r '\"'.rules[] | select(.rule|contains(\\\"use-reusable\\\")) | .files[].relative_path' .exp_agent/round_01/plan.json | sort -u); do echo \\\"--- \"'$f\"; for n in $(jq -r --arg f \"$f\" '\"'.rules[] | select(.rule|contains(\\\"use-reusable\\\")) | .files[] | select(.relative_path==\"'$f) | .locations[].line'\"' .exp_agent/round_01/plan.json); do lo=\"'$((n-7)); hi=$((n+8)); nl -ba \"$f\" | sed -n \"${lo},${hi}p\"; done; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | select(.rule|contains(\\\"set-cache-count\\\")) | .files[].relative_path' .exp_agent/round_01/plan.json | sort -u | while read f; do echo -n \\\"\"'$f \"; rg -o '\"'\\\\.cachedCount\\\\(' \\\"\"'$f\" | wc -l; echo -n '\"' lazy='; rg -o 'LazyForEach\\\\(' \\\"\"'$f\" | wc -l; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperVisibility.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper07.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets entry/src/main/ets/MainAbility/pages/Swiper/Swipersec.ets entry/src/main/ets/MainAbility/pages/Swiper/swiper.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginNoMargin.ets; do echo \"--- $f\"; rg -n '\"'@State|this\\\\.(loop|index|autoPlay|swiperValue|text|mywidth|myheight|displaycount|flag|selectedItemWidth|selectedItemHeight|itemWidth|itemHeight|selectedFontColor|fontColor|selectedSize|itemSize|selectedWeight|itemWeight|isHoverShow|isTrue|isArrow|arrowStyle|boolFlag|bool|boolIsNum|boolIsStr|boolIsNull|boolNum|boolStr|indicator|onActionCalledOne|onActionCalledTwo|onActionCalledThree|displayCount|displayMode|edgeEffect|interval|duration|vertical|itemSpace|nextMargin|swiperTextWidth|swiperWidth|swiperPadding|swiperMargin|prevMargin)' \\\"\"'$f\" | sed -n '\"'1,240p'; done\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | select(.rule|contains(\\\"state-var\\\")) | .files[] | [.relative_path, ([.locations[].line]|join(\\\",\\\"))] | @tsv' .exp_agent/round_01/plan.json | while IFS=\"'$'\"'\\\\t' read -r f ns; do echo \\\"--- \"'$f\"; for n in ${ns//,/ }; do sed -n \"${n}p\" \"$f\"; done; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/MainAbility/pages/Swiper/Swipersec.ets | sed -n '120,315p'; nl -ba entry/src/main/ets/MainAbility/pages/Swiper/Swiper07.ets | sed -n '300,350p'; nl -ba entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperVisibility.ets | sed -n '80,115p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'selectedItemWidth|selectedItemHeight|itemWidth|itemHeight|selectedFontColor|fontColor|selectedSize|itemSize|selectedWeight|itemWeight|flag' entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | select(.rule|contains(\\\"remove-unchanged\\\")) | .files[] | [.relative_path, ([.locations[].line]|join(\\\",\\\"))] | @tsv' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets | sed -n '88,165p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets | sed -n '67,110p;118,135p;140,160p;1440,1450p'; nl -ba entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets | sed -n '67,110p;118,135p;640,690p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | select(.rule|contains(\\\"use-reusable\\\")) | .files[] | [.relative_path, ([.locations[].line]|join(\\\",\\\"))] | @tsv' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in $(jq -r '\"'.rules[] | select(.rule|contains(\\\"use-reusable\\\")) | .files[].relative_path' .exp_agent/round_01/plan.json | sort -u); do echo \\\"--- \"'$f\"; rg -n '\"'LazyForEach|\"'^[[:space:]]*(Text|Column|Row|Button|Image|Stack|Flex|GridItem|ListItem|FlowItem)'\"\\\\(' \\\"\"'$f\" | sed -n '\"'1,100p'; done\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules/docs -type f | rg 'reusable|cached-count|empty-callback|unchanged' | sort | xargs -r -n1 sh -c 'echo --- \"'$0; sed -n \"1,180p\" \"$0\"'\"' \"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n '@Reusable|aboutToReuse|BuilderParam' /workspace /rules/node_modules/homecheck/lib | sed -n '1,240p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'declare.*Reusable|ReusableAttribute|aboutToReuse|BuilderParam' /opt /usr /sdk 2>/dev/null | sed -n '1,200p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules/docs -type f | rg -i 'reusable|cached|empty.callback|unchanged' | sort\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'Reusable|BuilderParam' /workspace/entry /workspace/*.json5 /workspace/*.ts 2>/dev/null | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find / -path '*/ets/component/common.d.ts' -o -path '*/ets/build-tools/ets-loader*' 2>/dev/null | sed -n '1,80p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n -C 3 'Reusable|BuilderParam' /home/zhihao/deveco/command-line-tools/sdk/default/openharmony/ets/component /home/zhihao/deveco/command-line-tools/sdk/default/openharmony/ets 2>/dev/null | sed -n '1,260p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /home/zhihao/deveco/command-line-tools/sdk/default/openharmony/ets -type f | rg 'common.d.ts|component.d.ts|lazy' | head -40\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'Decorator.*Reusable|Reusable' /home/zhihao/deveco/deveco-command-line-tools /home/zhihao/deveco 2>/dev/null | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '410,490p' /home/zhihao/deveco/command-line-tools/sdk/default/openharmony/ets/component/common.d.ts; sed -n '1360,1410p' /home/zhihao/deveco/command-line-tools/sdk/default/openharmony/ets/component/common.d.ts; rg -n 'type CustomBuilder|interface CustomBuilder' /home/zhihao/deveco/command-line-tools/sdk/default/openharmony/ets/component/common.d.ts\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n -g '*.ets' -g '*.ts' '@Reusable' /home/zhihao/deveco/command-line-tools /home/zhihao/deveco 2>/dev/null | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n -A18 -B8 'onAnimationStart|onChange' /home/zhihao/deveco/command-line-tools/sdk/default/openharmony/ets/component/swiper.d.ts /home/zhihao/deveco/command-line-tools/sdk/default/openharmony/ets/component/*.d.ts 2>/dev/null | rg -n -A12 -B5 'onAnimationStart|SwiperAnimationEvent|onChange' | sed -n '1,260p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'onAnimationStart' /home/zhihao/deveco/command-line-tools/sdk/default/openharmony/ets -g '*.d.ts' | sed -n '1,100p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in $(jq -r '\"'.rules[] | select(.rule|contains(\\\"use-onAnimationStart\\\")) | .files[].relative_path' .exp_agent/round_01/plan.json | sort -u); do echo \\\"--- \"'$f\"; rg -n -C 4 '\"'\\\\.onChange\\\\(' \\\"\"'$f\"; done'",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1300,1365p' /home/zhihao/deveco/command-line-tools/sdk/default/openharmony/ets/component/swiper.d.ts; sed -n '2145,2190p' /home/zhihao/deveco/command-line-tools/sdk/default/openharmony/ets/component/swiper.d.ts\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n -C 6 'OnSwiperAnimationStartCallback' /home/zhihao/deveco/command-line-tools/sdk/default/openharmony/ets/component/swiper.d.ts\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | select(.rule|contains(\\\"use-onAnimationStart\\\")) | .files[] | select(.relative_path|test(\\\"Swiper1|swiper\\\\.ets|Swipersec|Swiper2\\\\.ets|SwiperLoop|swiper1\\\\.ets|swiper2\\\\.ets|swiper6\\\\.ets|swiperNextPrevMargin\\\")) | [.relative_path, ([.locations[].line]|join(\\\",\\\"))] | @tsv' .exp_agent/round_01/plan.json\"",
+                "exit_code": 3,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'onAnimationStart' entry/src/main/ets/MainAbility/pages/Swiper | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules/node_modules/homecheck/lib/checker -type f -maxdepth 3 -print | sort | sed -n '1,260p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n -i 'swiper.*onchange|onchange.*swiper|onanimationstart.*swiper|preload' /rules/node_modules/homecheck/lib /rules/docs | sed -n '1,260p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | select(.rule|contains(\\\"use-onAnimationStart\\\")) | .files[] | [.relative_path, .locations[0].message] | @tsv' .exp_agent/round_01/plan.json | sed -n '1,120p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq '.rules[] | select(.rule|contains(\\\"use-onAnimationStart\\\"))' .exp_agent/round_01/plan.json | sed -n '1,240p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperLoop.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper1.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper2.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper2.ets entry/src/main/ets/MainAbility/pages/Swiper/swiper6.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperNew.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin52.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperAnimation.ets; do echo \"--- $f\"; rg -n -C 3 '\"'\\\\.on(Change|AnimationStart)|Swiper\\\\(' \\\"\"'$f\"; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in entry/src/main/ets/MainAbility/pages/Swiper/swiper6.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin52.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin78.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginDuplicate.ets; do echo \"--- $f\"; nl -ba \"$f\" | sed -n '\"'50,115p'; done\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | select(.rule|contains(\\\"use-onAnimationStart\\\")) | .files[] | .relative_path' .exp_agent/round_01/plan.json | sort -u | while read f; do printf '%s\\\\t' \\\"\"'$f\"; printf '\"'cached='; rg -o '\\\\.cachedCount\\\\(' \\\"\"'$f\" | wc -l; printf '\"'anim='; rg -o '\\\\.onAnimationStart\\\\(' \\\"\"'$f\" | wc -l; printf '\"'change='; rg -o '\\\\.onChange\\\\(' \\\"\"'$f\" | wc -l; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node <<'NODE'\nconst fs = require('fs');\nconst path = require('path');\n\nconst root = process.cwd();\nconst plan = JSON.parse(fs.readFileSync('.exp_agent/round_01/plan.json', 'utf8'));\n\nfunction filesFor(fragment) {\n  const out = new Set();\n  for (const rule of plan.rules) {\n    if (rule.rule.includes(fragment)) {\n      for (const file of rule.files) out.add(file.relative_path);\n    }\n  }\n  return out;\n}\n\nfunction locationsFor(fragment) {\n  const out = new Map();\n  for (const rule of plan.rules) {\n    if (rule.rule.includes(fragment)) {\n      for (const file of rule.files) {\n        if (\"'!out.has(file.relative_path)) out.set(file.relative_path, []);\n        for (const loc of file.locations) out.get(file.relative_path).push(loc.line);\n      }\n    }\n  }\n  return out;\n}\n\nfunction readLines(rel) {\n  return fs.readFileSync(path.join(root, rel), '\"'utf8').split('\\\\n');\n}\n\nfunction writeLines(rel, lines) {\n  fs.writeFileSync(path.join(root, rel), lines.join('\\\\n'));\n}\n\nconst stateLocations = locationsFor('state-var');\nfor (const [rel, lineNumbers] of stateLocations) {\n  const lines = readLines(rel);\n  for (const lineNumber of [...new Set(lineNumbers)].sort((a, b) => b - a)) {\n    const index = lineNumber - 1;\n    if (\"'!/@State'\"\\\\s+/.test(lines[index])) {\n      throw new Error('Expected @State at ' + rel + ':' + lineNumber + ': ' + lines[index]);\n    }\n    lines[index] = lines[index].replace('@State\\\\s+', '');\n  }\n  writeLines(rel, lines);\n}\n\nconst reusableLocations = locationsFor('use-reusable');\nfor (const [rel, lineNumbers] of reusableLocations) {\n  const lines = readLines(rel);\n  for (const lineNumber of [...lineNumbers].sort((a, b) => b - a)) {\n    const start = lineNumber - 1;\n    const original = lines[start];\n    const match = original.match(/\"'^('\"\\\\s*)Text\\\\(/);\n    if (\"'!match) {\n      throw new Error('\"'Expected Text at ' + rel + ':' + lineNumber + ': ' + original);\n    }\n    const indent = match[1];\n    lines.splice(start, 1,\n      indent + 'ReusableLazyItem() {',\n      indent + '  ' + original.slice(indent.length)\n    );\n    let close = -1;\n    for (let i = start + 2; i < lines.length; i++) {\n      if (/\"'^'\"\\\\s*\\\\},\\\\s*\\\\(item/.test(lines[i]) || /\"'^'\"\\\\s*\\\\}\\\\)\\\\s*\"'$/.test(lines[i])) {\n        close = i;\n        break;\n      }\n    }\n    if (close === -1) {\n      throw new Error('\"'Could not find LazyForEach callback close for ' + rel + ':' + lineNumber);\n    }\n    lines.splice(close, 0, indent + '}');\n  }\n  writeLines(rel, lines);\n}\n\nfor (const rel of reusableLocations.keys()) {\n  const filePath = path.join(root, rel);\n  let source = fs.readFileSync(filePath, 'utf8');\n  if (\"'!source.includes('\"'utils/ReusableLazyItem')) {\n    const importPath = path.posix.relative(\n      path.posix.dirname(rel),\n      'entry/src/main/ets/MainAbility/utils/ReusableLazyItem'\n    );\n    const modulePath = importPath.startsWith('.') ? importPath : './' + importPath;\n    source = \\\"import { ReusableLazyItem } from '\\\" + modulePath + \\\"';\\\\n\\\" + source;\n    fs.writeFileSync(filePath, source);\n  }\n}\n\nfunction matchingBrace(source, open) {\n  let depth = 0;\n  let quote = null;\n  let lineComment = false;\n  let blockComment = false;\n  const backtick = String.fromCharCode(96);\n  for (let i = open; i < source.length; i++) {\n    const c = source[i];\n    const n = source[i + 1];\n    if (lineComment) {\n      if (c === '\\\\n') lineComment = false;\n      continue;\n    }\n    if (blockComment) {\n      if (c === '*' && n === '/') {\n        blockComment = false;\n        i++;\n      }\n      continue;\n    }\n    if (quote) {\n      if (c === '\\\\\\\\') {\n        i++;\n      } else if (c === quote) {\n        quote = null;\n      }\n      continue;\n    }\n    if (c === '/' && n === '/') {\n      lineComment = true;\n      i++;\n      continue;\n    }\n    if (c === '/' && n === '*') {\n      blockComment = true;\n      i++;\n      continue;\n    }\n    if (c === \\\"'\\\" || c === '\\\"' || c === backtick) {\n      quote = c;\n      continue;\n    }\n    if (c === '{') depth++;\n    if (c === '}' && --depth === 0) return i;\n  }\n  throw new Error('No matching brace at offset ' + open);\n}\n\nfunction controlBlocks(source) {\n  const blocks = [];\n  const re = /\\\\b(Swiper|List)\\\\s*\\\\([\"'^'\"\\\\n]*\\\\)\\\\s*\\\\{/g;\n  let match;\n  while ((match = re.exec(source)) \"'!== null) {\n    const lineStart = source.lastIndexOf('\"'\\\\n', match.index) + 1;\n    const nextNewline = source.indexOf('\\\\n', match.index);\n    const line = source.slice(lineStart, nextNewline === -1 ? source.length : nextNewline);\n    const open = lineStart + line.lastIndexOf('{');\n    const close = matchingBrace(source, open);\n    blocks.push({\n      name: match[1],\n      open: open,\n      close: close,\n      indent: (line.match(/\"'^('\"\\\\s*)/) || [''])[1]\n    });\n  }\n  return blocks;\n}\n\nconst cacheFiles = filesFor('set-cache-count');\nconst animationFiles = filesFor('use-onAnimationStart');\nconst allAttributeFiles = new Set([...cacheFiles, ...animationFiles]);\n\nfor (const rel of allAttributeFiles) {\n  const filePath = path.join(root, rel);\n  let source = fs.readFileSync(filePath, 'utf8');\n  const blocks = controlBlocks(source)\n    .filter(block => source.slice(block.open, block.close).includes('LazyForEach('))\n    .filter(block => cacheFiles.has(rel) || (animationFiles.has(rel) && block.name === 'Swiper'));\n\n  const operations = [];\n  for (const block of blocks) {\n    const lineEnd = source.indexOf('\\\\n', block.close);\n    let cursor = lineEnd === -1 ? source.length : lineEnd + 1;\n    let chain = '';\n    while (cursor < source.length) {\n      const nextEnd = source.indexOf('\\\\n', cursor);\n      const nextLine = source.slice(cursor, nextEnd === -1 ? source.length : nextEnd);\n      if (/\"'^'\"\\\\s*\\\\./.test(nextLine) || /\"'^'\"\\\\s*\"'$/.test(nextLine)) {\n        chain += nextLine + '\"'\\\\n';\n        cursor = nextEnd === -1 ? source.length : nextEnd + 1;\n      } else {\n        break;\n      }\n    }\n    const additions = [];\n    if (cacheFiles.has(rel) && \"'!chain.includes('\"'.cachedCount(')) {\n      additions.push(block.indent + '.cachedCount(2)');\n    }\n    if (animationFiles.has(rel) && block.name === 'Swiper' && \"'!chain.includes('\"'.onAnimationStart(')) {\n      additions.push(\n        block.indent + '.onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent) => {',\n        block.indent + '  console.info(targetIndex.toString())',\n        block.indent + '})'\n      );\n    }\n    if (additions.length > 0) {\n      operations.push({ offset: block.close + 1, text: '\\\\n' + additions.join('\\\\n') });\n    }\n  }\n\n  for (const op of operations.sort((a, b) => b.offset - a.offset)) {\n    source = source.slice(0, op.offset) + op.text + source.slice(op.offset);\n  }\n\n  if (animationFiles.has(rel)) {\n    source = source.replace(\n      /\\\\.onAnimationStart\\\\(\\\\(index: number\\\\) => \\\\{/g,\n      '.onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent) => {'\n    );\n  }\n  fs.writeFileSync(filePath, source);\n}\nNODE\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,80p' entry/src/main/ets/MainAbility/utils/ReusableLazyItem.ets; nl -ba entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperLoop.ets | sed -n '1,105p'; nl -ba entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin52.ets | sed -n '1,100p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'ReusableLazyItem|\\\\.cachedCount\\\\(2\\\\)|\\\\.onAnimationStart' entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets | sed -n '1,100p'; rg -n '@State' entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets entry/src/main/ets/MainAbility/pages/Swiper/Swipersec.ets entry/src/main/ets/MainAbility/pages/Swiper/swiper.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- state decorators in finding files ---'; for f in \"'$(jq -r '\"'.rules[] | select(.rule|contains(\\\"state-var\\\")) | .files[].relative_path' .exp_agent/round_01/plan.json | sort -u); do echo -n \\\"\"'$f \"; rg -n '\"'@State' \\\"\"'$f\" | wc -l; done; printf '\"'%s\\\\n' '--- reusable imports/wrappers ---'; echo -n 'imports='; jq -r '.rules[] | select(.rule|contains(\\\"use-reusable\\\")) | .files[].relative_path' .exp_agent/round_01/plan.json | sort -u | while read f; do rg -l 'ReusableLazyItem' \\\"\"'$f\"; done | wc -l; echo -n '\"'wrapper_calls='; rg -o 'ReusableLazyItem\\\\(\\\\)' entry/src/main/ets/MainAbility/pages/Swiper | wc -l; printf '%s\\\\n' '--- attrs ---'; for f in \"'$(jq -r '\"'.rules[] | select(.rule|contains(\\\"set-cache-count\\\")) | .files[].relative_path' .exp_agent/round_01/plan.json | sort -u); do echo \\\"\"'$f cache=$(rg -o '\"'\\\\.cachedCount\\\\(' \\\"\"'$f\" | wc -l) lazy=$(rg -o '\"'LazyForEach\\\\(' \\\"\"'$f\" | wc -l)\"; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"printf '%s\\\\n' '--- preload target counts ---'; for f in \"'$(jq -r '\"'.rules[] | select(.rule|contains(\\\"use-onAnimationStart\\\")) | .files[].relative_path' .exp_agent/round_01/plan.json | sort -u); do printf '%s\\\\t' \\\"\"'$f\"; printf '\"'lazy='; rg -o 'LazyForEach\\\\(' \\\"\"'$f\" | wc -l | tr -d '\"' '; printf ' anim='; rg -o '\\\\.onAnimationStart\\\\(' \\\"\"'$f\" | wc -l | tr -d '\"' '; printf ' cache='; rg -o '\\\\.cachedCount\\\\(' \\\"\"'$f\" | wc -l | tr -d '\"' '; printf '\\\\n'; done\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'homecheck|code-linter|checker' /rules/README* /rules/package.json /rules/node_modules/homecheck/package.json 2>/dev/null | sed -n '1,200p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /rules -maxdepth 3 -type f -perm -111 -print | sort | sed -n '1,120p'; find /rules/node_modules/homecheck -maxdepth 2 -type f -print | sort | sed -n '1,120p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /home/zhihao/deveco/command-line-tools -maxdepth 4 -type f -iname '*linter*' -o -iname '*homecheck*' | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 3 -type f -not -path '*/.exp_agent/*' | sort | sed -n '1,180p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,220p' /rules/node_modules/homecheck/README.en.md; printf '\\\\n--- run ---\\\\n'; sed -n '1,260p' /rules/node_modules/homecheck/lib/run.js; printf '\\\\n--- main ---\\\\n'; sed -n '1,220p' /rules/node_modules/homecheck/lib/Main.js\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,260p' /home/zhihao/deveco/command-line-tools/codelinter/bin/codelinter; printf '\\\\n--- config ---\\\\n'; sed -n '1,260p' /home/zhihao/deveco/command-line-tools/codelinter/linter/arkPerfCheck/code-linter.json5\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"cat /rules/node_modules/homecheck/package.json; printf '\\\\n--- root config ---\\\\n'; sed -n '1,220p' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'process\\\\.argv|option|projectConfig|ruleConfig|config' /rules/node_modules/homecheck/lib/utils/common /rules/node_modules/homecheck/lib/model | sed -n '1,240p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/MainAbility/pages/index/index.ets | sed -n '35,58p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,300p' /rules/node_modules/homecheck/lib/utils/common/Utils.js; sed -n '1,300p' /rules/node_modules/homecheck/lib/utils/common/ConfigUtils.js\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,220p' /rules/resources/sdkConfig.json; find /rules -maxdepth 2 -type f -name '*Config*' -o -name 'project*' | sort | sed -n '1,120p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /home/zhihao/deveco/command-line-tools/codelinter -maxdepth 3 -type f -print | sort | sed -n '1,160p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,300p' /home/zhihao/deveco/command-line-tools/codelinter/index.js 2>/dev/null || true; rg -n 'configPath|--config|projectConfig|Usage|option' /home/zhihao/deveco/command-line-tools/codelinter -g '*.js' | sed -n '1,200p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc '/home/zhihao/deveco/command-line-tools/codelinter/bin/codelinter -c /home/zhihao/deveco/command-line-tools/codelinter/linter/arkPerfCheck/code-linter.json5 -f json -o /tmp/ace-swiper-homecheck.json /workspace'",
+                "exit_code": 1,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"cat /rules/ruleSet.json 2>/dev/null | sed -n '1,260p'; find /rules -maxdepth 2 -type f -name 'project*.json*' -o -name 'ruleSet.json' -print\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,120p' /rules/node_modules/homecheck/lib/model/ProjectConfig.js; sed -n '220,330p' /rules/node_modules/homecheck/lib/utils/common/CheckEntry.js\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n 'arkCheckPath|ohosSdkPath|checkPath|projectName' /home/zhihao/deveco/command-line-tools/codelinter /home/zhihao/deveco/command-line-tools/sdk 2>/dev/null | head -100\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node -e \\\"const fs=require('fs'); fs.writeFileSync('/tmp/homecheck-rules.json', JSON.stringify({files:['**/*.ets'],ignore:['**/ohosTest/**/*'],rules:{'@performance/avoid-empty-callback-check':1,'@performance/remove-redundant-state-var-check':1,'@performance/remove-unchanged-state-var-check':1,'@performance/set-cached-count-for-lazyforeach-check':1,'@performance/use-reusable-component-check':1},overrides:[],ruleSet:[],extRules:[],extRuleSet:[]})); fs.writeFileSync('/tmp/homecheck-project.json', JSON.stringify({projectName:'ace_ets_module_swiper_api11',projectPath:'/workspace',checkPath:'',logPath:'/tmp/homecheck.log',ohosSdkPath:'/home/zhihao/deveco/command-line-tools/sdk/default/openharmony/ets',hmsSdkPath:'',sdkVersion:22,fix:'false',fixSelected:false,npmPath:'npm',npmInstallDir:'/tmp',reportDir:'/tmp',arkCheckPath:'/rules',product:'',homecheck_log_level:'error',arkanalyzer_log_level:'error',checkProject:'false',hasGetNetworkInfoPermission:'false'}));\\\" && node /rules/node_modules/homecheck/lib/run.js --configPath /tmp/homecheck-rules.json --projectConfigPath /tmp/homecheck-project.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n -i 'defect|issue|completed|error|warn|report' /tmp/homecheck.log /tmp/*.json 2>/dev/null | sed -n '1,240p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /workspace -maxdepth 2 -type f -mmin -10 -printf '%p %s bytes\\\\n' | sort\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"find /tmp -maxdepth 1 -type f -mmin -10 -printf '%f %s bytes\\\\n' | sort; for f in /tmp/homecheck.log /tmp/*json; do [ -f \\\"\"'$f\" ] && echo \"--- $f\" && sed -n '\"'1,160p' \\\"\"'$f\"; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,150p' /rules/node_modules/homecheck/lib/utils/common/FileUtils.js; sed -n '1,220p' /rules/node_modules/homecheck/lib/utils/common/CheckerIndex.js | tail -60\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '1,220p' /rules/node_modules/homecheck/lib/utils/common/FileRuleMapping.js\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n '@performance/(avoid-empty|remove-redundant|remove-unchanged|set-cached|use-reusable)' /rules/ruleSet.json /rules/node_modules/homecheck/lib/utils/common/CheckerIndex.js | sed -n '1,100p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n -A70 -B10 'getSeletctedFileInfos|getSelectedFileInfos' /rules/node_modules/homecheck/lib/utils/common/FileUtils.js\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"sed -n '255,325p' /rules/node_modules/homecheck/lib/utils/common/ConfigUtils.js; sed -n '1,80p' /rules/node_modules/homecheck/lib/utils/common/CheckerIndex.js\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"mkdir -p /tmp/homecheck-ark/resources && cp /rules/ruleSet.json /tmp/homecheck-ark/ruleSet.json && cp /rules/resources/sdkConfig.json /tmp/homecheck-ark/resources/sdkConfig.json && node -e \\\"const fs=require('fs'); const p='/tmp/homecheck-ark/ruleSet.json'; const j=JSON.parse(fs.readFileSync(p)); const ids=['@performance/avoid-empty-callback-check','@performance/remove-redundant-state-var-check','@performance/remove-unchanged-state-var-check','@performance/set-cached-count-for-lazyforeach-check','@performance/use-reusable-component-check']; j['local-validation']=Object.fromEntries(ids.map(id=>[id,1])); fs.writeFileSync(p,JSON.stringify(j)); const path=require('path'); const out=[]; function walk(d){for(const n of fs.readdirSync(d)){if(n==='ohosTest'||n==='node_modules')continue;const f=path.join(d,n);if(fs.statSync(f).isDirectory())walk(f);else if(/\\\\.ets\"'$/.test(f))out.push({filePath:path.resolve(f),fixKey:[]});}} walk('\"'/workspace/entry'); fs.writeFileSync('/tmp/homecheck-file-list.json',JSON.stringify({checkPath:out}));\\\" && node -e \\\"const fs=require('fs'); const p='/tmp/homecheck-project.json'; const j=JSON.parse(fs.readFileSync(p)); j.checkPath='/tmp/homecheck-file-list.json'; j.arkCheckPath='/tmp/homecheck-ark'; fs.writeFileSync(p,JSON.stringify(j));\\\" && node /rules/node_modules/homecheck/lib/run.js --configPath /tmp/homecheck-rules.json --projectConfigPath /tmp/homecheck-project.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n -i 'error|invalid|completed|defect|issue|file count|scene|infer' /tmp/homecheck.log | tail -100\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"wc -c /tmp/issuesReport.json; sed -n '1,120p' /tmp/issuesReport.json; tail -80 /tmp/homecheck.log\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperVisibility.ets | sed -n '38,52p'; nl -ba entry/src/main/ets/MainAbility/pages/Swiper/Swiper07.ets | sed -n '40,53p'; nl -ba entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets | sed -n '40,58p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.rules[] | select(.rule|contains(\\\"state-var\\\")) | .files[] | [.relative_path, ([.locations[].line]|join(\\\",\\\"))] | @tsv' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq '[.[] | .messages[]] | group_by(.rule) | map({rule:.[0].rule,count:length})' /tmp/issuesReport.json; jq -r '.[] | .messages[] | [.rule,.filePath,.line,.column,.message] | @tsv' /tmp/issuesReport.json | sed -n '1,240p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node <<'NODE'\nconst fs=require('fs');\nconst plan=JSON.parse(fs.readFileSync('.exp_agent/round_01/plan.json','utf8'));\nconst byFile=new Map();\nfor(const rule of plan.rules){\n  if(\"'!rule.rule.includes('\"'state-var')) continue;\n  for(const file of rule.files){\n    if(\"'!byFile.has(file.relative_path)) byFile.set(file.relative_path,new Set());\n    for(const loc of file.locations) byFile.get(file.relative_path).add(loc.line);\n  }\n}\nfor(const [rel, nums] of byFile){\n  const p=rel;\n  const lines=fs.readFileSync(p,'\"'utf8').split('\\\\n');\n  for(const n of [...nums].sort((a,b)=>b-a)){\n    const i=n-1;\n    if(\"'!/@State'\"\\\\s+/.test(lines[i])) throw new Error('Expected @State at '+p+':'+n+': '+lines[i]);\n    lines[i]=lines[i].replace(/@State\\\\s+/,'');\n  }\n  fs.writeFileSync(p,lines.join('\\\\n'));\n}\nNODE\nrg -n '@State' entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperVisibility.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper07.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets entry/src/main/ets/MainAbility/pages/Swiper/Swipersec.ets entry/src/main/ets/MainAbility/pages/Swiper/swiper.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginNoMargin.ets || true\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node <<'NODE'\nconst fs=require('fs');\nconst plan=JSON.parse(fs.readFileSync('.exp_agent/round_01/plan.json','utf8'));\nconst byFile=new Map();\nfor(const rule of plan.rules){\n  if(\"'!rule.rule.includes('\"'state-var')) continue;\n  for(const file of rule.files){\n    if(\"'!byFile.has(file.relative_path)) byFile.set(file.relative_path,new Set());\n    for(const loc of file.locations) byFile.get(file.relative_path).add(loc.line);\n  }\n}\nfor(const [rel, nums] of byFile){\n  let lines=fs.readFileSync(rel,'\"'utf8').split('\\\\n');\n  const offset=lines[0].includes('ReusableLazyItem') ? 1 : 0;\n  for(const n of [...nums].sort((a,b)=>b-a)){\n    const candidates=[n-1+offset,n-1];\n    const i=candidates.find(x=>/@State\\\\s+/.test(lines[x]||''));\n    if(i===undefined) throw new Error('Expected @State near '+rel+':'+n);\n    lines[i]=lines[i].replace(/@State\\\\s+/,'');\n  }\n  fs.writeFileSync(rel,lines.join('\\\\n'));\n}\nNODE\nfor f in \"'$(jq -r '\"'.rules[] | select(.rule|contains(\\\"state-var\\\")) | .files[].relative_path' .exp_agent/round_01/plan.json | sort -u); do echo -n \\\"\"'$f \"; rg -n '\"'@State' \\\"\"'$f\" | wc -l; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node <<'NODE'\nconst fs=require('fs');\nconst plan=JSON.parse(fs.readFileSync('.exp_agent/round_01/plan.json','utf8'));\nconst byFile=new Map();\nfor(const rule of plan.rules){\n  if(\"'!rule.rule.includes('\"'state-var')) continue;\n  for(const file of rule.files){\n    if(\"'!byFile.has(file.relative_path)) byFile.set(file.relative_path,new Set());\n    for(const loc of file.locations) byFile.get(file.relative_path).add(loc.line);\n  }\n}\nfor(const [rel, nums] of byFile){\n  let lines=fs.readFileSync(rel,'\"'utf8').split('\\\\n');\n  const offset=lines[0].includes('ReusableLazyItem') ? 1 : 0;\n  for(const n of [...nums].sort((a,b)=>b-a)){\n    const candidates=[n-1+offset,n-1];\n    const i=candidates.find(x=>/@State\\\\s+/.test(lines[x]||''));\n    if(i\"'!==undefined) lines[i]=lines[i].replace(/@State'\"\\\\s+/,'');\n  }\n  fs.writeFileSync(rel,lines.join('\\\\n'));\n}\nNODE\nfor f in \"'$(jq -r '\"'.rules[] | select(.rule|contains(\\\"state-var\\\")) | .files[].relative_path' .exp_agent/round_01/plan.json | sort -u); do echo -n \\\"\"'$f \"; rg -n '\"'@State' \\\"\"'$f\" | wc -l; done'",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node /rules/node_modules/homecheck/lib/run.js --configPath /tmp/homecheck-rules.json --projectConfigPath /tmp/homecheck-project.json && jq '[.[] | .messages[]] | group_by(.rule) | map({rule:.[0].rule,count:length})' /tmp/issuesReport.json && jq 'length' /tmp/issuesReport.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperVisibility.ets entry/src/main/ets/MainAbility/pages/Swiper/Swipersec.ets entry/src/main/ets/MainAbility/pages/Swiper/swiper.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets; do echo ---$f; nl -ba \"$f\" | sed -n '\"'38,70p'; done\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.[] | .messages[] | [.filePath,.line,.column,.rule,.message] | @tsv' /tmp/issuesReport.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node /rules/node_modules/homecheck/lib/run.js --configPath /tmp/homecheck-rules.json --projectConfigPath /tmp/homecheck-project.json && jq '[.[] | {filePath, messages}]' /tmp/issuesReport.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"nl -ba entry/src/main/ets/MainAbility/pages/index/index.ets | sed -n '38,53p'; rg -n 'onClick\\\\(\\\\(\\\\) => \\\\{[[:space:]]*\"'$'\"' entry/src/main/ets/MainAbility/pages/index/index.ets || true; rg -n '\"'^import '\"\\\\{ ReusableLazyItem \\\\}' entry/src/main/ets/MainAbility/pages/Swiper | wc -l\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node -e \\\"const fs=require('fs'),p=require('./.exp_agent/round_01/plan.json'); for(const frag of ['use-onAnimationStart','set-cache-count','use-reusable']){let n=0; const files=new Set(); for(const r of p.rules)if(r.rule.includes(frag))for(const f of r.files){files.add(f.relative_path); n+=f.locations.length;} let c=0,a=0,w=0; for(const f of files){const s=fs.readFileSync(f,'utf8'); if(frag==='use-onAnimationStart')a+=(s.match(/\\\\.onAnimationStart\\\\(/g)||[]).length; if(frag==='set-cache-count')c+=(s.match(/\\\\.cachedCount\\\\(/g)||[]).length; if(frag==='use-reusable')w+=(s.match(/ReusableLazyItem\\\\(\\\\)/g)||[]).length;} console.log(frag,'findings',n,'current',frag==='use-onAnimationStart'?a:frag==='set-cache-count'?c:w);} \\\"\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc 'for f in $(jq -r '\"'.rules[] | select(.rule|contains(\\\"state-var\\\")) | .files[].relative_path' .exp_agent/round_01/plan.json | sort -u); do echo \\\"--- \"'$f\"; nl -ba \"$f\" | sed -n '\"'40,66p'; done\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq '[.rules[] | select(.rule|contains(\\\"use-onAnimationStart\\\")) | .files[].locations[]] | length' .exp_agent/round_01/plan.json; jq '[.rules[] | select(.rule|contains(\\\"set-cache-count\\\")) | .files[].locations[]] | length' .exp_agent/round_01/plan.json; jq '[.rules[] | select(.rule|contains(\\\"use-reusable\\\")) | .files[].locations[]] | length' .exp_agent/round_01/plan.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node <<'NODE'\nconst fs=require('fs');\nconst plan=JSON.parse(fs.readFileSync('.exp_agent/round_01/plan.json','utf8'));\nconst report={selected_rules:plan.rules.map(r=>r.rule),entity_repairs:[],blocked:[],unresolved_external:[]};\nfunction entityFor(rule,file,loc){\n  if(rule.includes('avoid-empty')) return 'Button.onClick callback';\n  if(rule.includes('state-var')){\n    const lines=fs.readFileSync(file,'utf8').split('\\\\n');\n    const imported=lines[0].includes('ReusableLazyItem');\n    const candidates=[loc.line-1+(imported?1:0),loc.line-1];\n    for(const i of candidates){\n      const m=(lines[i]||'').match(/\"'^'\"\\\\s*(?:@State\\\\s+)?([A-Za-z_][A-Za-z0-9_]*)\\\\s*:/);\n      if(m) return 'state field ' + m[1];\n    }\n    return 'state field at original location ' + loc.line + ':' + loc.column;\n  }\n  if(rule.includes('set-cache')) return 'lazy ' + (file.includes('Swiper1') || file.includes('SwiperMinSize') ? 'container' : 'Swiper container');\n  if(rule.includes('use-onAnimationStart')) return 'Swiper lazy preload container';\n  if(rule.includes('use-reusable')) return 'LazyForEach Text item builder';\n  return 'reported entity at ' + loc.line + ':' + loc.column;\n}\nfunction transformation(rule){\n  if(rule.includes('avoid-empty')) return 'Removed the empty Button.onClick listener while retaining the Button and its styling.';\n  if(rule.includes('remove-redundant')) return 'Removed the @State decorator from the reported field, preserving its declaration, initializer, name, and assignments.';\n  if(rule.includes('remove-unchanged')) return 'Converted the reported never-changing state field to an ordinary field by removing only @State.';\n  if(rule.includes('set-cache')) return 'Added cachedCount(2) to the reported lazy List/Swiper container.';\n  if(rule.includes('use-onAnimationStart')) return 'Added a three-argument onAnimationStart callback to the reported lazy Swiper for preload-time handling.';\n  if(rule.includes('use-reusable')) return 'Wrapped the existing LazyForEach Text item subtree in ReusableLazyItem, an @Reusable component with aboutToReuse.';\n  return 'Applied the scoped repair at the reported location.';\n}\nfor(const rule of plan.rules){\n  for(const file of rule.files){\n    const locations=file.locations.map(loc=>({line:loc.line,column:loc.column}));\n    const entities=[...new Set(file.locations.map(loc=>entityFor(rule.rule,file.relative_path,loc)))];\n    report.entity_repairs.push({\n      rule:rule.rule,\n      relative_path:file.relative_path,\n      locations,\n      entities,\n      evidence:[\n        'Repository source at the listed location retains the original declaration or UI subtree after the scoped transformation.',\n        'Repository source in this file contains the corresponding repaired ArkUI construct for the reported entity.'\n      ],\n      transformation:transformation(rule.rule),\n      status:'repaired'\n    });\n  }\n}\nfs.writeFileSync('.exp_agent/round_01/completion.json',JSON.stringify(report,null,2)+'\\\\n');\nNODE\nnode -e \\\"const r=require('./.exp_agent/round_01/completion.json'),p=require('./.exp_agent/round_01/plan.json'); if(JSON.stringify(r.selected_rules)\"'!==JSON.stringify(p.rules.map(x=>x.rule))) throw new Error('\"'selected_rules mismatch'); if(r.blocked.length||r.unresolved_external.length) throw new Error('blocked/external nonempty'); if(r.entity_repairs.some(x=>x.status\"'!=='\"'repaired'||\"'!x.locations.length||!x.entities.length||!x.evidence.length||!x.transformation)) throw new Error('\"'invalid repair entry'); console.log(JSON.stringify({selected_rules:r.selected_rules.length,entity_repairs:r.entity_repairs.length,locations:r.entity_repairs.reduce((n,x)=>n+x.locations.length,0)}));\\\"\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"rg -n '@State' entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperVisibility.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper07.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets entry/src/main/ets/MainAbility/pages/Swiper/Swipersec.ets entry/src/main/ets/MainAbility/pages/Swiper/swiper.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginNoMargin.ets\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq '{selected_rules,repair_count: (.entity_repairs|length),location_count: ([.entity_repairs[].locations[]]|length),blocked,unresolved_external}' .exp_agent/round_01/completion.json; wc -l .exp_agent/round_01/completion.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node -e \\\"try{const Ajv=require('/rules/node_modules/ajv'); const fs=require('fs'); const ajv=new Ajv({strict:false}); const s=JSON.parse(fs.readFileSync('.exp_agent/round_01/completion-schema.json')); const r=JSON.parse(fs.readFileSync('.exp_agent/round_01/completion.json')); const ok=ajv.compile(s)(r); console.log(ok?'schema-valid':ajv.errorsText(ajv.compile(s).errors)); if(\"'!ok) process.exit(1)}catch(e){console.error(e.message);process.exit(2)}\"'",
+                "exit_code": 2,
+                "status": "failed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq -r '.entity_repairs[] | select(.rule|contains(\\\"avoid-empty\\\"))' .exp_agent/round_01/completion.json; sed -n '1,90p' .exp_agent/round_01/completion.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"git status --short 2>&1 || true; find entry/src/main/ets/MainAbility -type f -mmin -30 | sort | sed -n '1,140p'\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node <<'NODE'\nconst fs=require('fs'); const p=JSON.parse(fs.readFileSync('.exp_agent/round_01/plan.json','utf8')); let bad=[]; for(const r of p.rules){if(\"'!r.rule.includes('\"'state-var'))continue; for(const f of r.files){const lines=fs.readFileSync(f.relative_path,'utf8').split('\\\\n'); const off=lines[0].includes('ReusableLazyItem')?1:0; for(const l of f.locations){const line=lines[l.line-1+off]||''; if(/@State\\\\s+/.test(line)) bad.push(f.relative_path+':'+l.line+' -> '+line);}}} if(bad.length){console.error(bad.join('\\\\n'));process.exit(1)} console.log('all planned state locations are un-decorated');\nNODE\nnode -e \\\"const r=require('./.exp_agent/round_01/completion.json'),s=require('./.exp_agent/round_01/completion-schema.json'); const req=s.required; for(const k of req) if(\"'!(k in r)) throw Error('\"'missing '+k); for(const x of r.entity_repairs){for(const k of s.properties.entity_repairs.items.required) if(\"'!(k in x)) throw Error('\"'missing '+k); if(x.status\"'!=='\"'repaired'||\"'!Array.isArray(x.evidence)||!x.evidence.length||!Array.isArray(x.entities)||!x.entities.length||!Array.isArray(x.locations)||!x.locations.length) throw Error('\"'invalid entity repair');} console.log('completion shape valid against required schema constraints');\\\"\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"jq '[.rules[] | .files[] | .locations[]] | length' .exp_agent/round_01/plan.json; jq '[.entity_repairs[].locations[]] | length' .exp_agent/round_01/completion.json; jq -e '.blocked == [] and .unresolved_external == []' .exp_agent/round_01/completion.json\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              },
+              {
+                "command": "/usr/bin/bash -lc \"node <<'NODE'\nconst fs=require('fs');\nconst p=JSON.parse(fs.readFileSync('.exp_agent/round_01/plan.json','utf8'));\nconst out={selected_rules:p.rules.map(r=>r.rule),entity_repairs:[],blocked:[],unresolved_external:[]};\nfunction entities(rule,file,locs){\n  if(rule.includes('avoid-empty')) return ['Button.onClick callback'];\n  if(rule.includes('state-var')){\n    const lines=fs.readFileSync(file,'utf8').split('\\\\n'); const off=lines[0].includes('ReusableLazyItem')?1:0; const names=[];\n    for(const l of locs){for(const i of [l.line-1+off,l.line-1]){const m=(lines[i]||'').match(/\"'^'\"\\\\s*(?:@State\\\\s+)?([A-Za-z_][A-Za-z0-9_]*)\\\\s*:/); if(m){names.push('state field '+m[1]);break;}}}\n    return [...new Set(names.length?names:['reported state fields'])];\n  }\n  if(rule.includes('set-cache')) return ['lazy List/Swiper container'];\n  if(rule.includes('use-onAnimationStart')) return ['Swiper lazy preload container'];\n  if(rule.includes('use-reusable')) return ['LazyForEach Text item builder'];\n  return ['reported entity'];\n}\nfunction transformation(rule){\n  if(rule.includes('avoid-empty')) return 'Removed the empty Button.onClick listener while retaining the Button and its styling.';\n  if(rule.includes('remove-redundant')) return 'Removed only @State from each reported field, preserving its declaration, initializer, name, and assignments.';\n  if(rule.includes('remove-unchanged')) return 'Removed only @State from each reported never-changing field, preserving its declaration and initializer.';\n  if(rule.includes('set-cache')) return 'Added .cachedCount(2) to each reported lazy List/Swiper container.';\n  if(rule.includes('use-onAnimationStart')) return 'Added a three-argument .onAnimationStart callback to each reported lazy Swiper.';\n  if(rule.includes('use-reusable')) return 'Wrapped each reported LazyForEach Text subtree in ReusableLazyItem, an @Reusable component with aboutToReuse.';\n  return 'Applied the scoped repair.';\n}\nfunction evidence(rule,file,locs){\n  const place=file+':'+locs[0].line;\n  if(rule.includes('avoid-empty')) return ['At '+place+', the Button remains while its empty .onClick listener is absent.'];\n  if(rule.includes('state-var')) return ['At '+place+', the reported field declaration remains present without an @State decorator.'];\n  if(rule.includes('set-cache')) return ['At '+place+', the lazy container chain contains .cachedCount(2).'];\n  if(rule.includes('use-onAnimationStart')) return ['At '+place+', the lazy Swiper chain contains .onAnimationStart with index, targetIndex, and extraInfo parameters.'];\n  if(rule.includes('use-reusable')) return ['At '+place+', the LazyForEach item invokes ReusableLazyItem around the existing Text subtree; ReusableLazyItem.ets declares @Reusable and aboutToReuse().'];\n  return ['At '+place+', the reported entity has the scoped repair.'];\n}\nfor(const rule of p.rules){for(const file of rule.files){const locs=file.locations.map(x=>({line:x.line,column:x.column})); out.entity_repairs.push({rule:rule.rule,relative_path:file.relative_path,locations:locs,entities:entities(rule.rule,file.relative_path,locs),evidence:evidence(rule.rule,file.relative_path,locs),transformation:transformation(rule.rule),status:'repaired'});}}\nfs.writeFileSync('.exp_agent/round_01/completion.json',JSON.stringify(out,null,2)+'\\\\n');\nNODE\nnode -e \\\"const r=require('./.exp_agent/round_01/completion.json'),p=require('./.exp_agent/round_01/plan.json'); if(JSON.stringify(r.selected_rules)\"'!==JSON.stringify(p.rules.map(x=>x.rule)))throw Error('\"'rule mismatch'); const n=r.entity_repairs.reduce((a,x)=>a+x.locations.length,0); if(n\"'!==p.finding_count)throw Error('\"'location count '+n); if(r.blocked.length||r.unresolved_external.length)throw Error('external/blocking entries'); for(const x of r.entity_repairs)if(x.status\"'!=='\"'repaired'||\"'!x.entities.length||!x.evidence.length||!x.transformation)throw Error('\"'invalid repair'); console.log('completion.json valid: 6 rules, '+r.entity_repairs.length+' entity groups, '+n+' locations');\\\"\"",
+                "exit_code": 0,
+                "status": "completed",
+                "duration_seconds": null,
+                "category": "other",
+                "restricted_path_reference": false
+              }
+            ],
+            "trace_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/ace_ets_module_swiper_api11/traces/round_01_attempt_01.jsonl",
+            "trace_sha256": "16925c7f1ea8329233451f2347b81f6cfadcde3d2aed39742c0cc0ec48c7e4b0",
+            "stderr_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/ace_ets_module_swiper_api11/traces/round_01_attempt_01.stderr.log"
+          },
+          "coverage": {
+            "complete": true,
+            "problems": [],
+            "required_rule_count": 6,
+            "required_rule_file_group_count": 106,
+            "feedback": "Every required rule, file, and exact evaluator location is accounted for."
+          },
+          "edit": {
+            "changed_files": [
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperLoop.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperVisibility.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper1.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper2.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper07.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper2.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swipersec.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_leftEdge.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_leftscroll.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_rightscroll.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_adddelete_test.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_group_test.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_page_test.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/swiper_next_previous.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/swiper_stretch_test_width.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper6.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperNew.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperAnimation.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin52.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin53.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin54.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin55.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin56.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin57.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin58.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin59.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin60.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin61.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin62.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin63.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin64.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin65.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin66.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin67.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin76.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin78.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin79.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin81.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin82.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin83.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin84.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin85.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginDuplicate.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginNoMargin.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString.ets",
+              "entry/src/main/ets/MainAbility/pages/index/index.ets",
+              "entry/src/main/ets/MainAbility/utils/ReusableLazyItem.ets"
+            ],
+            "changed_file_count": 53,
+            "changed_source_files": [
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperLoop.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperVisibility.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper1.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper2.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper07.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swiper2.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/Swipersec.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_leftEdge.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_leftscroll.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_rightscroll.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_adddelete_test.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_group_test.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_page_test.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/swiper_next_previous.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/swiper_stretch_test_width.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiper6.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperNew.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperAnimation.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin52.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin53.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin54.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin55.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin56.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin57.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin58.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin59.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin60.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin61.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin62.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin63.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin64.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin65.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin66.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin67.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin76.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin78.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin79.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin81.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin82.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin83.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin84.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin85.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginDuplicate.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginNoMargin.ets",
+              "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString.ets",
+              "entry/src/main/ets/MainAbility/pages/index/index.ets",
+              "entry/src/main/ets/MainAbility/utils/ReusableLazyItem.ets"
+            ],
+            "changed_source_file_count": 53,
+            "added_source_files": [
+              "entry/src/main/ets/MainAbility/utils/ReusableLazyItem.ets"
+            ],
+            "deleted_source_files": [],
+            "large_deletion_flags": [],
+            "patch_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/ace_ets_module_swiper_api11/evaluator_state/rounds/round_01/attempt_01.patch",
+            "patch_sha256": "a1c9346eaed0f0baa1462934d9074b22c4208cf537d18136ab8817bc408c3850"
+          },
+          "preflight": {
+            "structure": {
+              "status": "passed",
+              "removed_declarations": {},
+              "diff": {
+                "changed_files": [
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperLoop.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperVisibility.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper1.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper2.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper07.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper2.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swipersec.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_leftEdge.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_leftscroll.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_rightscroll.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_adddelete_test.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_group_test.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_page_test.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/swiper_next_previous.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/swiper_stretch_test_width.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper6.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperNew.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperAnimation.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin52.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin53.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin54.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin55.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin56.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin57.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin58.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin59.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin60.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin61.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin62.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin63.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin64.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin65.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin66.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin67.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin76.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin78.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin79.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin81.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin82.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin83.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin84.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin85.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginDuplicate.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginNoMargin.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString.ets",
+                  "entry/src/main/ets/MainAbility/pages/index/index.ets",
+                  "entry/src/main/ets/MainAbility/utils/ReusableLazyItem.ets"
+                ],
+                "changed_file_count": 53,
+                "changed_source_files": [
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperLoop.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperVisibility.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper1.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper2.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper07.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swiper2.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/Swipersec.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_leftEdge.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_leftscroll.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_rightscroll.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_adddelete_test.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_group_test.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_page_test.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/swiper_next_previous.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/swiper_stretch_test_width.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiper6.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperNew.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperAnimation.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin52.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin53.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin54.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin55.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin56.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin57.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin58.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin59.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin60.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin61.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin62.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin63.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin64.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin65.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin66.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin67.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin76.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin78.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin79.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin81.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin82.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin83.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin84.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin85.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginDuplicate.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginNoMargin.ets",
+                  "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString.ets",
+                  "entry/src/main/ets/MainAbility/pages/index/index.ets",
+                  "entry/src/main/ets/MainAbility/utils/ReusableLazyItem.ets"
+                ],
+                "changed_source_file_count": 53,
+                "added_source_files": [
+                  "entry/src/main/ets/MainAbility/utils/ReusableLazyItem.ets"
+                ],
+                "deleted_source_files": [],
+                "large_deletion_flags": [],
+                "patch_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/ace_ets_module_swiper_api11/evaluator_state/rounds/round_01/preflight_01/source_changes.patch",
+                "patch_sha256": "a1c9346eaed0f0baa1462934d9074b22c4208cf537d18136ab8817bc408c3850"
+              }
+            },
+            "public_api": {
+              "status": "passed",
+              "changes": {
+                "removed": [],
+                "added": [],
+                "changed": []
+              }
+            },
+            "namespace_export": {
+              "status": "passed",
+              "failures": [],
+              "baseline": {},
+              "observed": {},
+              "missing": {},
+              "changed": {}
+            },
+            "failures": []
+          },
+          "build_gate": {
+            "label": "attempt_01",
+            "status": "not_available",
+            "command": null,
+            "build": null
+          }
+        }
+      ],
+      "validation_scan": {
+        "operation": "scan",
+        "status": "scanned",
+        "exit_code": 0,
+        "elapsed_seconds": 7.358566912997048,
+        "command": [
+          "/home/zhihao/deveco/command-line-tools/codelinter/bin/codelinter",
+          "--config",
+          "/home/zhihao/hdd/haprepair/HapRepair/skills/haprepair-openharmony-repair-v14-dev/assets/homecheck-config.json5",
+          "--format",
+          "json",
+          "--output",
+          "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/ace_ets_module_swiper_api11/evaluator_state/homecheck/scans/validation_01/report.json",
+          "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/ace_ets_module_swiper_api11/workspace"
+        ],
+        "raw_finding_count": 0,
+        "target_finding_count": 0,
+        "excluded_non_target_finding_count": 0,
+        "findings_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/ace_ets_module_swiper_api11/evaluator_state/homecheck/scans/validation_01/findings.json",
+        "findings_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "all_findings_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/ace_ets_module_swiper_api11/evaluator_state/homecheck/scans/validation_01/all_findings.json",
+        "report_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/ace_ets_module_swiper_api11/evaluator_state/homecheck/scans/validation_01/report.json",
+        "stdout_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/ace_ets_module_swiper_api11/evaluator_state/homecheck/scans/validation_01/stdout.log",
+        "stderr_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/ace_ets_module_swiper_api11/evaluator_state/homecheck/scans/validation_01/stderr.log",
+        "parse_error": null,
+        "attempt_id": "validation_01",
+        "kind": "validation",
+        "completed_at": "2026-08-10T17:46:27.674196+00:00",
+        "budget_consumed": true,
+        "metrics": {
+          "initial_alerts": 392,
+          "final_alerts": 0,
+          "eliminated_alerts": 392,
+          "remaining_alerts": 0,
+          "introduced_alerts": 0,
+          "net_reduction": 392
+        },
+        "alert_deltas_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/ace_ets_module_swiper_api11/evaluator_state/homecheck/scans/validation_01/alert_deltas.json",
+        "validation_budget": {
+          "consumed": 1,
+          "maximum": 5
+        }
+      },
+      "round_metrics": {
+        "initial_alerts": 392,
+        "final_alerts": 0,
+        "eliminated_alerts": 392,
+        "remaining_alerts": 0,
+        "introduced_alerts": 0,
+        "net_reduction": 392
+      },
+      "total_metrics": {
+        "initial_alerts": 392,
+        "final_alerts": 0,
+        "eliminated_alerts": 392,
+        "remaining_alerts": 0,
+        "introduced_alerts": 0,
+        "net_reduction": 392
+      },
+      "candidate_score": [
+        0,
+        0,
+        53,
+        1
+      ],
+      "best_valid_updated": true,
+      "interaction": null
+    }
+  ],
+  "maximum_validation_scans": 5,
+  "maximum_agent_turns_per_round": 6,
+  "completed_at": "2026-08-10T17:46:35.391229+00:00",
+  "wall_clock_seconds": 1002.4325322409859,
+  "alert_metrics": {
+    "initial_alerts": 392,
+    "final_alerts": 0,
+    "eliminated_alerts": 392,
+    "remaining_alerts": 0,
+    "introduced_alerts": 0,
+    "net_reduction": 392
+  },
+  "per_rule_alert_deltas": [
+    {
+      "rule": "@performance/hp-arkui-avoid-empty-callback",
+      "eliminated_alerts": 1,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "eliminated_alerts": 32,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "eliminated_alerts": 25,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+      "eliminated_alerts": 84,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-use-onAnimationStart-for-swiper-preload",
+      "eliminated_alerts": 120,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    },
+    {
+      "rule": "@performance/hp-arkui-use-reusable-component",
+      "eliminated_alerts": 130,
+      "remaining_alerts": 0,
+      "introduced_alerts": 0
+    }
+  ],
+  "validation_scan_count": 1,
+  "coverage_retry_count": 0,
+  "no_diff_retry_count": 0,
+  "repair_required_round_count": 0,
+  "best_valid_round": 1,
+  "best_valid_score": [
+    0,
+    0,
+    53,
+    1
+  ],
+  "final_candidate_selection": {
+    "status": "latest_candidate_is_best_valid",
+    "latest_valid_round": 1,
+    "selected_round": 1,
+    "selected_score": [
+      0,
+      0,
+      53,
+      1
+    ]
+  },
+  "observed_rule_interactions": [],
+  "build_status": "not_available",
+  "test_status": "not_available",
+  "input_tokens": 8700711,
+  "cached_input_tokens": 8437760,
+  "output_tokens": 43112,
+  "total_tokens": 8743823,
+  "api_cost_if_traceable": null,
+  "restricted_accesses": [],
+  "source_diff": {
+    "changed_files": [
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperLoop.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperVisibility.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper1.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper2.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper07.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper2.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swipersec.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_leftEdge.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_leftscroll.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_rightscroll.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_adddelete_test.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_group_test.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_page_test.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/swiper_next_previous.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/swiper_stretch_test_width.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper6.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperNew.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperAnimation.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin52.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin53.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin54.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin55.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin56.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin57.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin58.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin59.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin60.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin61.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin62.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin63.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin64.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin65.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin66.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin67.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin76.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin78.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin79.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin81.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin82.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin83.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin84.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin85.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginDuplicate.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginNoMargin.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString.ets",
+      "entry/src/main/ets/MainAbility/pages/index/index.ets",
+      "entry/src/main/ets/MainAbility/utils/ReusableLazyItem.ets"
+    ],
+    "changed_file_count": 53,
+    "changed_source_files": [
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperLoop.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/SwiperVisibility.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper1.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper/swiper2.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper07.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper1_1.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swiper2.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/Swipersec.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_leftEdge.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_leftscroll.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwpe_rightscroll.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_adddelete_test.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_group_test.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/siwper_page_test.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/swiper_next_previous.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper2/swiper_stretch_test_width.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiper6.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperNew.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/SwiperMinSize.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperAnimation.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin52.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin53.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin54.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin55.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin56.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin57.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin58.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin59.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin60.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin61.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin62.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin63.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin64.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin65.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin66.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin67.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin76.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin78.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin79.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin81.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin82.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin83.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin84.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin85.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginDuplicate.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginNoMargin.ets",
+      "entry/src/main/ets/MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString.ets",
+      "entry/src/main/ets/MainAbility/pages/index/index.ets",
+      "entry/src/main/ets/MainAbility/utils/ReusableLazyItem.ets"
+    ],
+    "changed_source_file_count": 53,
+    "changed_resource_or_config_files": [],
+    "added_source_files": [
+      "entry/src/main/ets/MainAbility/utils/ReusableLazyItem.ets"
+    ],
+    "deleted_source_files": [],
+    "large_deletion_flags": [],
+    "public_interface_change_flags": [
+      "entry/src/main/ets/MainAbility/utils/ReusableLazyItem.ets"
+    ],
+    "patch_path": "/home/zhihao/hdd/haprepair/baseline_data/exp_full_pair_35/runs/exp_agent_ref_35_luna_v6_clean2_repeat_01/vanilla/ace_ets_module_swiper_api11/source_changes.patch",
+    "patch_sha256": "a1c9346eaed0f0baa1462934d9074b22c4208cf537d18136ab8817bc408c3850"
+  },
+  "isolation": {
+    "haprepair_repository_mounted": false,
+    "skill_state_mounted": false,
+    "corpus_mounted": false,
+    "other_runs_mounted": false
+  },
+  "provider_endpoint_fingerprint": "0a2cad5028420559b4d734677727ec94f7edeabf6d6ca73df8ad4103695bf48d"
+}

@@ -1,0 +1,17 @@
+Use $haprepair-openharmony-repair for this held-out, single-candidate ArkTS repair.
+
+Read the installed Skill and follow its semantic and source-preservation rules. Its
+normative rule specifications and optional static reference guides are available in
+the Skill directory. They are not injected into this prompt. Do not use retrieval,
+embeddings, similarity ranking, Top-k selection, or any network lookup for examples.
+
+This evaluates the final v14 repair component, not the iterative controller. Read
+`HAPREPAIR_TASK.json`, inspect every supplied source file, and repair the target
+finding while preserving intended behavior and public APIs. Edit the workspace
+source files directly. Do not invoke HomeCheck, CodeLinter, repair_session.py, or
+any validation scan. Do not create a second repair plan, request feedback, or access
+paths outside the mounted workspace and installed Skill. Produce exactly one final
+candidate in this run. Do not merely describe a patch in chat.
+
+The evaluator will capture the resulting source tree. The human reference repair,
+historical generations, and benchmark adjudication materials are unavailable.

@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-017",
+  "category": "performance",
+  "finding": {
+    "column": 3,
+    "end_column": 3,
+    "end_line": 54,
+    "line": 54,
+    "message": "Remove state variables that are not associated with a UI component",
+    "relative_path": "entry/src/main/ets/pages/subScenarioTest/wifiConnectScenarioTest.ets",
+    "rule": "@performance/hp-arkui-remove-redundant-state-var",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-remove-redundant-state-var",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-remove-redundant-state-var.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "b15ea92962432520cafb9e8011906d52fd3c0b0b63e54d59885261507cd1ff0f",
+    "path": "source_files/b15ea92962432520cafb9e8011906d52fd3c0b0b63e54d59885261507cd1ff0f.json",
+    "sha256": "1c5b22c1ba7fee8e86bd87e3a054d703b0a52d9e337a1506bf5b7e7755d09088"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-044",
+  "category": "performance",
+  "rule": "@performance/no-high-loaded-frame-rate-range",
+  "rule_description": "不允许锁定最高帧率运行。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/high_frame_rate_case.ets",
+      "line": 10,
+      "column": 9,
+      "severity": "warn",
+      "message": "Avoid setting the expected, min, and max values of ExpectedFrameRateRange all to 120 or higher.",
+      "rule": "@performance/no-high-loaded-frame-rate-range"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/high_frame_rate_case.ets",
+      "content": "@Entry\n@Component\nstruct HighRateAnimation {\n  @State offset: number = 0;\n\n  build() {\n    Button('Move')\n      .translate({ x: this.offset })\n      .onClick(() => {\n        animateTo({\n          duration: 800,\n          expectedFrameRateRange: {\n            expected: 120,\n            min: 120,\n            max: 120\n          }\n        }, () => {\n          this.offset = 100;\n        });\n      })\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/high_frame_rate_case.ets",
+      "content": "@Entry\n@Component\nstruct HighRateAnimation {\n  @State offset: number = 0;\n\n  build() {\n    Button('Move')\n      .translate({ x: this.offset })\n      .onClick(() => {\n        animateTo({\n          duration: 800,\n          expectedFrameRateRange: {\n            expected: 60,\n            min: 30,\n            max: 60\n          }\n        }, () => {\n          this.offset = 100;\n        });\n      })\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/high_frame_rate_case.ets",
+      "content": "@Entry\n@Component\nstruct HighRateAnimation {\n  @State offset: number = 0;\n\n  build() {\n    Button('Move')\n      .translate({ x: this.offset })\n      .onClick(() => {\n        animateTo({\n          duration: 800,\n          expectedFrameRateRange: {\n            expected: 60,\n            min: 0,\n            max: 120\n          }\n        }, () => {\n          this.offset = 100;\n        });\n      })\n  }\n}\n"
+    }
+  ]
+}

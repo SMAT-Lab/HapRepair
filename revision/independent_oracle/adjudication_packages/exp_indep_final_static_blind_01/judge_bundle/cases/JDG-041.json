@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-041",
+  "category": "security",
+  "rule": "@security/no-unsafe-dh",
+  "rule_description": "DH 协商算法必须使用 2048 bit 以上安全参数。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_dh_case.ets",
+      "line": 3,
+      "column": 60,
+      "severity": "error",
+      "message": "Use unsafe DH key exchange algorithm.",
+      "rule": "@security/no-unsafe-dh"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_dh_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst legacyAgreement = cryptoFramework.createKeyAgreement('DH_modp1536');\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_dh_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst legacyAgreement = cryptoFramework.createKeyAgreement('DH_modp3072');\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_dh_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nconst legacyAgreement = cryptoFramework.createKeyAgreement('DH_modp2048');\n"
+    }
+  ]
+}

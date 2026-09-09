@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_security_no_unsafe_3des",
+  "blind_id": "V14-057",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbd0-5220-74c2-b938-16d78cac6368",
+  "usage": {
+    "input_tokens": 204403,
+    "cached_input_tokens": 182272,
+    "output_tokens": 4300,
+    "total_tokens": 208703
+  },
+  "wall_seconds": 105.2174597580015,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 48,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"pwd && rg --files -g 'HAPREPAIR_TASK.json' -g '\"'!**/node_modules/**'\"' -g '\"'!**/build/**'\"'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find /codex-home/skills/haprepair-openharmony-repair -maxdepth 3 -type f | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' HAPREPAIR_TASK.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -g '\"'!HAPREPAIR_TASK.json'\"' -g '\"'!**/node_modules/**'\"' -g '\"'!**/build/**'\"' | sort\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/unsafe_3des_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md && sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-3des.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n 'no-unsafe-3des|3DES|3des|DES' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/security--no-unsafe-3des.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git status --short && git diff -- entry/src/main/ets/cases/unsafe_3des_case.ets'",
+      "exit_code": 128,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '80,118p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json && sed -n '1,180p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/index.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n --hidden -g '\"'!HAPREPAIR_TASK.json'\"' -g '\"'!**/node_modules/**'\"' -g '\"'!**/build/**'\"' 'createLegacyReportCipher|unsafe_3des_case|createCipher|3DES|LegacyReport' .\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find . -type f -not -path './.git/*' -not -path './entry/src/main/ets/cases/unsafe_3des_case.ets' -not -name 'HAPREPAIR_TASK.json' -print\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' HAPREPAIR_COMPLETION.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/unsafe_3des_case.ets && ! rg -n '\"'3DES\\\\|ECB' entry/src/main/ets/cases/unsafe_3des_case.ets && echo 'target-ecb: absent'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"python3 -m json.tool HAPREPAIR_COMPLETION.json >/dev/null && echo 'completion-json: valid'\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "7dce0f2469adfbeadf7582a495345e3ac5e8fee5b7c4d08d7a073cc44ec8abce",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_3des_case.ets",
+      "sha256": "7682a8110382d38dfd61f7ac2d58fd49b785a5ba919f7bcf6ae91c7dd2fff15e",
+      "size_bytes": 185,
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\nexport function createLegacyReportCipher(): cryptoFramework.Cipher {\n  return cryptoFramework.createCipher('3DES|CBC');\n}\n"
+    }
+  ],
+  "trace_sha256": "c458b8c6820c773aaab21f4483522f695fcd10e2355464729c2e57f9d84f6118",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:43:09.275461+00:00",
+  "rejection_reasons": []
+}

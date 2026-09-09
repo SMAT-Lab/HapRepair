@@ -1,0 +1,49 @@
+{
+  "selected_rules": ["@security/no-cycle"],
+  "consulted_specs": {
+    "@security/no-cycle": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md",
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-structure.md"
+    ]
+  },
+  "consulted_guides": {},
+  "entity_repairs": [
+    {
+      "rule": "@security/no-cycle",
+      "relative_path": "entry/src/main/ets/cases/cycle_alpha_case.ets",
+      "locations": [{"line": 1, "column": 1}],
+      "entities": ["alphaValue module initializer and its runtime import edge"],
+      "invariants": [
+        "runtime dependency graph is acyclic",
+        "public export name and number signature remain unchanged",
+        "module initialization is deterministic"
+      ],
+      "evidence": [
+        "The imported binding was read in a top-level value initializer, so the edge was runtime rather than type-only.",
+        "The repository contains no other imports, callers, barrels, side effects, or package-entry exports for these modules.",
+        "The compatibility export declaration remains in the original module and reads its value from the shared module."
+      ],
+      "transformation": "Redirected the runtime edge to a new lowest-common values module and retained alphaValue as the original module's compatibility export.",
+      "status": "repaired"
+    },
+    {
+      "rule": "@security/no-cycle",
+      "relative_path": "entry/src/main/ets/cases/cycle_beta_case.ets",
+      "locations": [{"line": 1, "column": 1}],
+      "entities": ["betaValue module initializer and its runtime import edge"],
+      "invariants": [
+        "runtime dependency graph is acyclic",
+        "public export name and number signature remain unchanged",
+        "module initialization is deterministic"
+      ],
+      "evidence": [
+        "The imported binding was read in a top-level value initializer, so the edge was runtime rather than type-only.",
+        "The repository contains no other imports, callers, barrels, side effects, or package-entry exports for these modules.",
+        "The compatibility export declaration remains in the original module and reads its value from the shared module."
+      ],
+      "transformation": "Redirected the runtime edge to a new lowest-common values module and retained betaValue as the original module's compatibility export.",
+      "status": "repaired"
+    }
+  ],
+  "unresolved_external": []
+}

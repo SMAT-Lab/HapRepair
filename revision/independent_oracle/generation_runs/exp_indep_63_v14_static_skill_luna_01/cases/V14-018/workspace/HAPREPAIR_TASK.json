@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-018",
+  "target_rule": "@performance/hp-arkui-use-object-link-to-replace-prop",
+  "codelinter_rule": "@performance/hp-arkui-use-object-link-to-replace-prop",
+  "rule_description": "建议使用@ObjectLink代替@Prop减少不必要的深拷贝",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/object_link_case.ets",
+      "line": 9,
+      "column": 3,
+      "severity": "warn",
+      "message": "Use @ObjectLink instead of @Prop to reduce unnecessary deep copies",
+      "rule": "@performance/hp-arkui-use-object-link-to-replace-prop"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/object_link_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-048",
+  "category": "performance",
+  "rule": "@performance/foreach-index-check",
+  "rule_description": "The **keyGenerator** parameter in **ForEach** is a callback that allows you to define your own key generation rules. However, if the generated keys incorporate index values, inserting new data into the data source can trigger a cascading effect. This insertion causes all subsequent items to have altered keys, potentially leading to unnecessary reconstruction of numerous components and a decline in rendering performance.",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/foreach_index_case.ets",
+      "line": 15,
+      "column": 7,
+      "severity": "suggestion",
+      "message": "For a sound rendering performance, avoid using the index as the return value or part of the return value for the keyGenerator parameter of ForEach.",
+      "rule": "@performance/foreach-index-check"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/foreach_index_case.ets",
+      "content": "interface TaskSummary {\n  id: string;\n  title: string;\n}\n\n@Component\nstruct TaskSummaryList {\n  private tasks: TaskSummary[] = [\n    { id: 'task-a', title: 'Review' },\n    { id: 'task-b', title: 'Publish' }\n  ];\n\n  build() {\n    List() {\n      ForEach(this.tasks, (task: TaskSummary) => {\n        ListItem() {\n          Text(task.title)\n        }\n      }, (task: TaskSummary, index: number) => `${task.id}-${index}`)\n    }\n    .width('100%')\n    .height(220)\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/foreach_index_case.ets",
+      "content": "interface TaskSummary {\n  id: string;\n  title: string;\n}\n\n@Component\nstruct TaskSummaryList {\n  private tasks: TaskSummary[] = [\n    { id: 'task-a', title: 'Review' },\n    { id: 'task-b', title: 'Publish' }\n  ];\n\n  build() {\n    List() {\n      ForEach(this.tasks, (task: TaskSummary) => {\n        ListItem() {\n          Text(task.title)\n        }\n      }, (task: TaskSummary) => task.id)\n    }\n    .width('100%')\n    .height(220)\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/foreach_index_case.ets",
+      "content": "interface TaskSummary {\n  id: string;\n  title: string;\n}\n\n@Component\nstruct TaskSummaryList {\n  private tasks: TaskSummary[] = [\n    { id: 'task-a', title: 'Review' },\n    { id: 'task-b', title: 'Publish' }\n  ];\n\n  build() {\n    List() {\n      ForEach(this.tasks, (task: TaskSummary) => {\n        ListItem() {\n          Text(task.title)\n        }\n      }, (task: TaskSummary, index: number) => task.id)\n    }\n    .width('100%')\n    .height(220)\n  }\n}\n"
+    }
+  ]
+}

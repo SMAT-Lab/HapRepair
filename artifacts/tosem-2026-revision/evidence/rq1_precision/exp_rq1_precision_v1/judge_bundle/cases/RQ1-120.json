@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-120",
+  "category": "performance",
+  "finding": {
+    "column": 3,
+    "end_column": 3,
+    "end_line": 85,
+    "line": 85,
+    "message": "Remove state variables that are not associated with a UI component",
+    "relative_path": "entry/src/main/ets/pages/5-3dev/RichEditor.ets",
+    "rule": "@performance/hp-arkui-remove-redundant-state-var",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-remove-redundant-state-var",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-remove-redundant-state-var.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "d80742c96338edaa890bf7105b3208849011cb123909d532450c0ae2dc4a6f8e",
+    "path": "source_files/d80742c96338edaa890bf7105b3208849011cb123909d532450c0ae2dc4a6f8e.json",
+    "sha256": "662e4aa45748554779776cf43036983aafc0e60c63d5d6f951a8e841befed7c6"
+  }
+}

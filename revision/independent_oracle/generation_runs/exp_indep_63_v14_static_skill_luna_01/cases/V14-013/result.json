@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "case_id": "case_performance_foreach_index_check",
+  "blind_id": "V14-013",
+  "attempt": 1,
+  "status": "accepted",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "019fdbb3-4339-7d60-b9bc-1990df7362bb",
+  "usage": {
+    "input_tokens": 213516,
+    "cached_input_tokens": 177152,
+    "output_tokens": 3773,
+    "total_tokens": 217289
+  },
+  "wall_seconds": 86.41797876900091,
+  "exit_code": 0,
+  "systemic_failure": false,
+  "event_count": 52,
+  "commands": [
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/.system/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -g 'HAPREPAIR_TASK.json' -g '*.ets' -g '*.ts' -g '*.json' -g '*.hml' -g '*.css' -g '*.d.ts' /workspace\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '261,520p' /codex-home/skills/.system/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"pwd; rg --files /codex-home /workspace 2>/dev/null | rg 'haprepair-openharmony-repair|SKILL.md|operations.md' | head -80\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' HAPREPAIR_TASK.json; printf '\\\\n--- SOURCE ---\\\\n'; nl -ba entry/src/main/ets/cases/foreach_index_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"find / -path '*haprepair-openharmony-repair/SKILL.md' -o -path '*haprepair-openharmony-repair/references/operations.md' 2>/dev/null | head -20\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,520p' /codex-home/skills/haprepair-openharmony-repair/SKILL.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,320p' /codex-home/skills/haprepair-openharmony-repair/references/operations.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/collections-reuse.md; printf '\\\\n--- INDEX ---\\\\n'; sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/index.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--foreach-args-check.md; printf '\\\\n--- MANIFEST MATCH ---\\\\n'; rg -n -C 4 'foreach-index-check|foreach-args-check' /codex-home/skills/haprepair-openharmony-repair/references\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l /codex-home/skills/haprepair-openharmony-repair/SKILL.md /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/collections-reuse.md /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--foreach-index-check.md'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,120p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/manifest.json\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,180p' /codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--foreach-index-check.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,260p' /codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'find . -maxdepth 6 -type f -print | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n --hidden --glob '\"'!*HAPREPAIR_TASK.json'\"' 'TaskSummary|TaskSummaryList|foreach_index_case|ForEach|task-a|task-b' .\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git status --short; git diff -- entry/src/main/ets/cases/foreach_index_case.ets; find entry -maxdepth 6 -type f -print 2>/dev/null | sort'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'nl -ba entry/src/main/ets/cases/foreach_index_case.ets'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n 'ForEach|keyGenerator|index|TaskSummary|task\\\\.id' entry/src/main/ets/cases/foreach_index_case.ets\"",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    },
+    {
+      "command": "/usr/bin/bash -lc 'git -C /workspace status --short 2>&1 || true'",
+      "exit_code": 0,
+      "status": "completed",
+      "duration_seconds": null,
+      "category": "other",
+      "restricted_path_reference": false
+    }
+  ],
+  "restricted_commands": [],
+  "task_unchanged": true,
+  "source_diff_present": true,
+  "source_diff_sha256": "e71c5b53edca91678dcf488402c3786c019148411b1e4800d9b708dc71765fa3",
+  "deleted_input_paths": [],
+  "missing_required_paths": [],
+  "output_files": [
+    {
+      "path": "entry/src/main/ets/cases/foreach_index_case.ets",
+      "sha256": "3385383fc44e3d1d7ca860ee4fe0feb463ab0e336fd1a77668fa2c9066bd0085",
+      "size_bytes": 451,
+      "content": "interface TaskSummary {\n  id: string;\n  title: string;\n}\n\n@Component\nstruct TaskSummaryList {\n  private tasks: TaskSummary[] = [\n    { id: 'task-a', title: 'Review' },\n    { id: 'task-b', title: 'Publish' }\n  ];\n\n  build() {\n    List() {\n      ForEach(this.tasks, (task: TaskSummary) => {\n        ListItem() {\n          Text(task.title)\n        }\n      }, (task: TaskSummary, index: number) => task.id)\n    }\n    .width('100%')\n    .height(220)\n  }\n}\n"
+    }
+  ],
+  "trace_sha256": "8a4feff72ca96a290f62ebb1adcf5bb92177648851931e4b20ca86f92a3a8f7a",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finished_at": "2026-08-07T10:11:11.731724+00:00",
+  "rejection_reasons": []
+}

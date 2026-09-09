@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-008",
+  "category": "performance",
+  "rule": "@performance/hp-arkui-remove-container-without-property",
+  "rule_description": "建议尽量减少视图嵌套层次",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/container_without_property_case.ets",
+      "line": 5,
+      "column": 5,
+      "severity": "suggestion",
+      "message": "Reduce redundant nested container",
+      "rule": "@performance/hp-arkui-remove-container-without-property"
+    },
+    {
+      "file": "entry/src/main/ets/cases/container_without_property_case.ets",
+      "line": 6,
+      "column": 7,
+      "severity": "suggestion",
+      "message": "Reduce redundant nested container",
+      "rule": "@performance/hp-arkui-remove-container-without-property"
+    },
+    {
+      "file": "entry/src/main/ets/cases/container_without_property_case.ets",
+      "line": 7,
+      "column": 9,
+      "severity": "suggestion",
+      "message": "Reduce redundant nested container",
+      "rule": "@performance/hp-arkui-remove-container-without-property"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/container_without_property_case.ets",
+      "content": "@Entry\n@Component\nstruct CompactProfile {\n  build() {\n    Column() {\n      Flex() {\n        Flex() {\n          Text('Account')\n        }\n      }\n    }\n  }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/container_without_property_case.ets",
+      "content": "@Entry\n@Component\nstruct CompactProfile {\n  build() {\n    Column() {\n      Text('Account')\n    }\n    .width('100%')\n  }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/container_without_property_case.ets",
+      "content": "@Entry\n@Component\nstruct CompactProfile {\n  build() {\n    Text('Account')\n  }\n}\n"
+    }
+  ]
+}

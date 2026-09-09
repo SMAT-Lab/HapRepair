@@ -1,0 +1,6 @@
+{
+  "content": "/*\n* Copyright (c) 2023 Hunan OpenValley Digital Industry Development Co., Ltd. All rights reserved.\n* Use of this source code is governed by a BSD-style license that can be\n* found in the LICENSE_KHZG file.\n*/\n\nimport BasicMessageChannel from '../plugin/common/BasicMessageChannel';\nimport { BinaryMessenger } from '../plugin/common/BinaryMessenger';\nimport StringUtils from './StringUtils';\n\nexport default class MessageChannelUtils {\n  static resizeChannelBuffer(messenger: BinaryMessenger, channel: string, newSize: number) {\n    const dataStr = `resize\\r${channel}\\r${newSize}`\n    messenger.send(BasicMessageChannel.CHANNEL_BUFFERS_CHANNEL, StringUtils.stringToArrayBuffer(dataStr));\n  }\n}",
+  "content_sha256": "0b2d767353ddd6c5d825a70870c897bccbe0456112ee50dd555cc0e40abe5c50",
+  "relative_path": "flutter/src/main/ets/util/MessageChannelUtils.ets",
+  "schema_version": 1
+}

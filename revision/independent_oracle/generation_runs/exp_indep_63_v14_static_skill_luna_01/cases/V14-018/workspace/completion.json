@@ -1,0 +1,45 @@
+{
+  "selected_rules": [
+    "@performance/hp-arkui-use-object-link-to-replace-prop"
+  ],
+  "consulted_specs": {
+    "@performance/hp-arkui-use-object-link-to-replace-prop": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md",
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/state-reactivity.md"
+    ]
+  },
+  "consulted_guides": {
+    "@performance/hp-arkui-use-object-link-to-replace-prop": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/repair-guides/performance--hp-arkui-use-object-link-to-replace-prop.md"
+    ]
+  },
+  "entity_repairs": [
+    {
+      "rule": "@performance/hp-arkui-use-object-link-to-replace-prop",
+      "relative_path": "entry/src/main/ets/cases/object_link_case.ets",
+      "locations": [
+        {
+          "line": 9,
+          "column": 3
+        }
+      ],
+      "entities": [
+        "ProfileName.profile component input"
+      ],
+      "invariants": [
+        "observed-object parent-child data flow",
+        "state ownership and reactive updates",
+        "initialization semantics"
+      ],
+      "evidence": [
+        "ProfileData is decorated with @Observed",
+        "ProfilePage owns profiles with @State and supplies profiles[0]",
+        "ProfileName only reads profile.name and does not mutate the object",
+        "The existing component declarations, field type, build method, and parent construction are retained"
+      ],
+      "transformation": "Changed only the child input decorator from @Prop to @ObjectLink, preserving the ProfileData type and parent argument.",
+      "status": "repaired"
+    }
+  ],
+  "unresolved_external": []
+}

@@ -1,0 +1,16 @@
+[2026-08-07T15:34:28.503] [INFO] [1772149] [HomeCheck] - [ConfigUtils] Checking started.
+[2026-08-07T15:34:28.505] [ERROR] [1772149] [HomeCheck] - [FileUtils] Error occurred while reading file list from .: Error: EISDIR: illegal operation on a directory, read
+[2026-08-07T15:34:28.537] [INFO] [1772149] [HomeCheck] - [CheckEntry] File count: 68
+[2026-08-07T15:34:28.539] [INFO] [1772149] [HomeCheck] - [CheckEntry] Build sceneConfig completed.
+[2026-08-07T15:34:38.208] [INFO] [1772149] [HomeCheck] - [CheckEntry] Build scene completed.
+[2026-08-07T15:34:38.796] [INFO] [1772149] [HomeCheck] - [CheckEntry] Infer types completed.
+[2026-08-07T15:34:38.798] [INFO] [1772149] [HomeCheck] - [ConfigUtils] The npmPath:npm
+[2026-08-07T15:34:38.798] [INFO] [1772149] [HomeCheck] - [ConfigUtils] The npmInstallDir:/home/zhihao/hdd/haprepair/homecheck
+[2026-08-07T15:34:38.855] [INFO] [1772149] [HomeCheck] - [Message] ===== progress: 20% ======
+[2026-08-07T15:34:38.879] [INFO] [1772149] [HomeCheck] - [Message] ===== progress: 40% ======
+[2026-08-07T15:34:38.908] [INFO] [1772149] [HomeCheck] - [Message] ===== progress: 60% ======
+[2026-08-07T15:34:38.946] [ERROR] [1772149] [ArkAnalyzer] - [ViewTreeBuilder] ViewTree->addCustomComponentNode @ohosSdk/../js/api/@ohos.arkui.advanced.TreeView.d.ets: TreeView build viewtree fail.
+[2026-08-07T15:34:38.972] [INFO] [1772149] [HomeCheck] - [Message] ===== progress: 100% ======
+[2026-08-07T15:34:38.972] [INFO] [1772149] [HomeCheck] - [CheckEntry] 91 issues from checker - @security/no-commented-code
+[2026-08-07T15:34:38.975] [INFO] [1772149] [HomeCheck] - [Main] Checking completed.
+[2026-08-07T15:34:38.976] [INFO] [1772149] [HomeCheck] - [Main] HomeCheck took: 10.483 s.

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "decision_id": "E3-05D",
+  "parent_run_id": "exp_indep_63_v14_static_skill_luna_01",
+  "resolved_at": "2026-08-07T20:39:43+08:00",
+  "verdict": "selected",
+  "canonical_action": "continue",
+  "selected_option": "transparent_capture_recovery",
+  "author_direction": "按推荐的来",
+  "action": "Include V14-016 as the sixtieth candidate through the immutable capture-recovery overlay; retain the other three frozen protocol rejections as generation failures.",
+  "reason": "The original single invocation, trace, and workspace preserve the complete V14-016 resource repair. The frozen runner misclassified it only because its output snapshot excluded JSON and JSON5 files. Recovery adds no model call, changes no original run artifact, and keeps the raw runner verdict visible.",
+  "counting_policy": {
+    "overall_case_denominator": 63,
+    "human_adjudication_candidate_count": 60,
+    "automatic_generation_failure_count": 3,
+    "capture_recovery_blind_ids": [
+      "V14-016"
+    ],
+    "automatic_generation_failure_blind_ids": [
+      "V14-030",
+      "V14-001",
+      "V14-029"
+    ],
+    "human_agreement_denominator": 60,
+    "overall_strict_correctness_rule": "Only human-final Correct candidates count as correct; the three protocol-rejected generation failures count as not correct in the fixed denominator of 63.",
+    "subgroup_denominators": {
+      "performance": 42,
+      "arkts_eslint": 1,
+      "security": 20
+    },
+    "human_candidate_counts_by_subgroup": {
+      "performance": 40,
+      "arkts_eslint": 1,
+      "security": 19
+    },
+    "generation_failure_counts_by_subgroup": {
+      "performance": 2,
+      "arkts_eslint": 0,
+      "security": 1
+    }
+  },
+  "invariants": [
+    "No benchmark case is rerun and no model call is added.",
+    "The original result.json, metrics.json, verification.json, traces, and workspaces remain unchanged.",
+    "The raw frozen-runner view remains 59 accepted and 4 rejected.",
+    "The three restricted-command rejections are not relaxed or semantically adjudicated.",
+    "The blind judge bundle excludes model identity, generation status, recovery status, traces, commands, and reference-access metadata.",
+    "Both authors independently label the same 60 candidate repairs; a third author sees only their disagreements."
+  ],
+  "rejected_alternative": {
+    "id": "frozen_runner_raw",
+    "reason": "It would discard a complete original output solely because of a verified output-capture defect, despite the availability of immutable trace and workspace evidence."
+  },
+  "evidence": {
+    "pending_decision_record": {
+      "path": "e3_05d_capture_recovery_pending.json",
+      "sha256": "206fa418a932799d3dd5723c85b43a879bf3d32ea802cb0409426ff7a3addd59"
+    },
+    "protocol_snapshot": {
+      "path": "../protocol_snapshot.json",
+      "sha256": "ea9cb0115cfbe113337d99f826fc6d9a476a92c94e0509b5fcb26dbc7d29b801"
+    },
+    "artifact_audit": {
+      "path": "../artifact_audit_v1/audit.json",
+      "sha256": "96f3231bdbc9ad25983d74c5da90045abf926c34775b948fdc04c4cd98e697ee"
+    },
+    "recovery_manifest": {
+      "path": "../artifact_audit_v1/capture_recovery_evidence/V14-016/recovery_manifest.json",
+      "sha256": "4394858d6ecc1a5b223ac5045cc6ec0d09f2ccd32a6cb2c515f6020671732890"
+    },
+    "recovered_patch": {
+      "path": "../artifact_audit_v1/capture_recovery_evidence/V14-016/candidate.patch",
+      "sha256": "714f3b0f5a98eaf357c808d3af9b64e5104517106f742e182a2afb8e4a10cf4a"
+    }
+  },
+  "next_stage": "E3-06: generate and validate a new blind package containing 60 human-adjudication candidates and a coordinator-only manifest for three automatic generation failures."
+}

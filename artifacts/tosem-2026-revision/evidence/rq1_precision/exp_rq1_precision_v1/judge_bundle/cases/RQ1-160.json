@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-160",
+  "category": "performance",
+  "finding": {
+    "column": 15,
+    "end_column": 15,
+    "end_line": 215,
+    "line": 215,
+    "message": "Avoid setting empty system callback listeners",
+    "relative_path": "entry/src/main/ets/pages/ArkUI/DraggingSizeChangeEffect.ets",
+    "rule": "@performance/hp-arkui-avoid-empty-callback",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-avoid-empty-callback",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/computation-api.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-avoid-empty-callback.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "2e39e0be1539c299c996893ec7eb2c17c0624bad4cf4bc4f90c37a557a49c907",
+    "path": "source_files/2e39e0be1539c299c996893ec7eb2c17c0624bad4cf4bc4f90c37a557a49c907.json",
+    "sha256": "781a298d07d57dce7d1d2d7a4ae045bce5217159a8f0754654f70bf889b03c80"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14-REJECTION-RETRY-SENSITIVITY",
+  "run_id": "exp_indep_3_v14_protocol_rejection_retry_luna_01",
+  "classification": "protocol-rejection retry sensitivity; not an API or endpoint retry",
+  "checks": {
+    "contract_hash_matches_snapshot": true,
+    "exactly_three_inputs": true,
+    "exactly_three_source_mappings": true,
+    "case_ids_match_contract": true,
+    "input_hashes_match": true,
+    "task_hashes_match": true,
+    "results_complete": true,
+    "all_candidates_accepted": true,
+    "no_systemic_failures": true,
+    "no_restricted_commands": true,
+    "all_source_diffs_present": true,
+    "parent_main_result_not_replaced": true
+  },
+  "all_passed": true,
+  "accepted_candidate_count": 3,
+  "next_action": "Build a separate three-case blind annotation package."
+}

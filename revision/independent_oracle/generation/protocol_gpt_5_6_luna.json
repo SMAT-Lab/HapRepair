@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63",
+  "run_id": "exp_indep_63_gpt_5_6_luna_frozen_01",
+  "tier": "main/test",
+  "research_question": "Can HapRepair's RAG-augmented gpt-5.6-luna patch-generation component produce semantically equivalent repairs for 63 separately authored, CodeLinter-confirmed cases without HomeCheck feedback?",
+  "protocol_amendment": {
+    "approved_by_user": true,
+    "approved_on": "2026-08-02",
+    "changed_field": "model.requested_id",
+    "previous_value": "gpt-5.1",
+    "new_value": "gpt-5.6-luna",
+    "reason": "The configured endpoint returned HTTP 404 model_not_found for gpt-5.1, and the user explicitly selected gpt-5.6-luna as the replacement.",
+    "unchanged_contract": "Benchmark, retrieval corpus and method, prompt template, temperature, single-generation policy, no-feedback policy, blind-ID seed, output schema, and adjudication protocol remain unchanged.",
+    "superseded_run": "exp_indep_63_gpt_5_1_frozen_01"
+  },
+  "model": {
+    "requested_id": "gpt-5.6-luna",
+    "api": "chat_completions",
+    "temperature": 0,
+    "top_p": "provider_default",
+    "max_output_tokens": "provider_default",
+    "seed": null,
+    "accepted_generations_per_case": 1,
+    "automatic_retries": 0
+  },
+  "retrieval": {
+    "corpus": "revision/knowledge_base/rule_complete_383.jsonl",
+    "corpus_sha256": "85c2f6f17799bed681201efec8ad3bf204d768d8150226e25369906ad10ae714",
+    "pair_count": 383,
+    "rule_count": 63,
+    "filter": "same_rule",
+    "top_k": 1,
+    "encoder": "dunzhang/stella_en_1.5B_v5",
+    "pooling": "unmasked mean of last_hidden_state for one input at a time",
+    "similarity": "cosine",
+    "tie_break": "pair_id ascending"
+  },
+  "benchmark": {
+    "case_manifest": "revision/independent_oracle/cases_manifest.json",
+    "case_manifest_sha256": "4e212948eb28e1766ac2e5ad58e44ba1a07708e17ed00cb8fb98c0f1996f2d5a",
+    "case_count": 63,
+    "rule_count": 63,
+    "defective_project": "revision/independent_oracle/benchmark/defective_project",
+    "validation_run": "independent_oracle_63_frozen_03",
+    "validation_summary_sha256": "a5f012a0f7d34f47ce71e7d95a5a29a16fcc4a1423b2b6dcf926d89ec0b7c065",
+    "defective_report_sha256": "6cb7a7de3c1d48aec31deb47191bd2131e75752b926ba5f6711f26ff63d1b227",
+    "case_results_sha256": "1c4c832073349250b920dd2bb80038fc6649b5b59dac51cfa5656ea13db3e37b",
+    "reference_project_access_during_generation": false
+  },
+  "leakage_gate": {
+    "report": "revision/independent_oracle/leakage_audit.json",
+    "report_sha256": "ee3b2c0022bb813cf7609c640e6a3c803432de017418e3243095b920c8f00172",
+    "required_pass": true
+  },
+  "blind_id_seed": 20260802,
+  "stop_condition": "Stop without further model substitution if gpt-5.6-luna is unavailable or if any frozen input hash differs.",
+  "resume_policy": "Skip cases with an accepted response. A failed case may be retried only explicitly, and every attempt remains recorded.",
+  "claim_boundary": "Generation completion is not semantic correctness. Correctness is determined later by two independent authors and a third adjudicator."
+}

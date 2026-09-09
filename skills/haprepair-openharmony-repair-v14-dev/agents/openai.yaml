@@ -1,0 +1,4 @@
+interface:
+  display_name: "HapRepair for OpenHarmony"
+  short_description: "Repair every HomeCheck alert by semantic entity"
+  default_prompt: "Use $haprepair-openharmony-repair to repair every localized HomeCheck alert in the current OpenHarmony project with semantic rule specifications and verification."

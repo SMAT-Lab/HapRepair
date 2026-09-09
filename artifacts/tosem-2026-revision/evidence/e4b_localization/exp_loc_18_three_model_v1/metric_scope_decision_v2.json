@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-08-07T22:38:42+08:00",
+  "verdict": "USE_LINE_FREE_FILE_RULE_DETECTION",
+  "action": "continue",
+  "paper_facing_primary_identity": "unique (relative_file, rule)",
+  "source_line_compared": false,
+  "positive_denominator": 30,
+  "manual_example_count": 38,
+  "reason": "The intended detector question is whether a condition identifies the violated rule in the correct file, not whether it reproduces HomeCheck's report-line convention.",
+  "denominator_reason": "The 38 manual examples collapse to 30 unique file-rule targets when line is removed. Repeated instances of one rule in one file cannot be distinguished by a line-free prediction and therefore cannot be counted as separate detection units.",
+  "evidence_paths": [
+    "HapRepair/revision/ace_ets_module_list02_gt.json",
+    "HapRepair/revision/e4b_localization/runs/exp_loc_18_three_model_v1/responses/",
+    "HapRepair/revision/e4b_localization/runs/exp_loc_18_homecheck_v1/scans/initial/findings.json"
+  ],
+  "next_direction": "Regenerate the joint E4b summary and reconciliation using file-rule detection only."
+}

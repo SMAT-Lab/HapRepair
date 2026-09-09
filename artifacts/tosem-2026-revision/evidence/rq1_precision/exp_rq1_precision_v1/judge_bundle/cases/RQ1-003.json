@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-003",
+  "category": "performance",
+  "finding": {
+    "column": 3,
+    "end_column": 3,
+    "end_line": 85,
+    "line": 85,
+    "message": "Remove state variables that are not associated with a UI component",
+    "relative_path": "entry/src/main/ets/pages/ArkUI/OnAccessibilityActionIntercept.ets",
+    "rule": "@performance/hp-arkui-remove-redundant-state-var",
+    "severity": "suggestion"
+  },
+  "rule": "@performance/hp-arkui-remove-redundant-state-var",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkui-remove-redundant-state-var.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "c8deab934e09ab5c25fa2380c9eb3932cd518dc1cafc0ad7a9ed3be62ac75806",
+    "path": "source_files/c8deab934e09ab5c25fa2380c9eb3932cd518dc1cafc0ad7a9ed3be62ac75806.json",
+    "sha256": "400557a8509e189b1a511d1eae9a48058de5c1ae0b9a4a21ead3f1a1229cf7d2"
+  }
+}

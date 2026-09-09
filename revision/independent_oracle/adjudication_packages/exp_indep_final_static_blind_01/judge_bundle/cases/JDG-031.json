@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-031",
+  "category": "security",
+  "rule": "@security/no-commented-code",
+  "rule_description": "禁止以注释形式保留废弃或敏感代码。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/commented_code_case.ets",
+      "line": 1,
+      "column": 1,
+      "severity": "warn",
+      "message": "Delete the related code completely when it is invalid.",
+      "rule": "@security/no-commented-code"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/commented_code_case.ets",
+      "content": "// console.info('temporary diagnostics');\n\nexport const diagnosticsEnabled: boolean = false;\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/commented_code_case.ets",
+      "content": "// Diagnostics are disabled in production builds.\n\nexport const diagnosticsEnabled: boolean = false;\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/commented_code_case.ets",
+      "content": "export const diagnosticsEnabled: boolean = false;\n"
+    }
+  ]
+}

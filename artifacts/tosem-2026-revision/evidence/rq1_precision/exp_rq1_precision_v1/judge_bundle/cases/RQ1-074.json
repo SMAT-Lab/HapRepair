@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-074",
+  "category": "performance",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 26,
+    "line": 26,
+    "message": "Do not use export * to export types and data defined in the other module",
+    "relative_path": "YFree/Index.ets",
+    "rule": "@performance/hp-arkts-no-use-any-export-other",
+    "severity": "warn"
+  },
+  "rule": "@performance/hp-arkts-no-use-any-export-other",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/state-reactivity.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/performance--hp-arkts-no-use-any-export-other.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "9a8bb36a805223f4e7f1e4fbc42224e0c48a01ca523e53dcefce1365950d5b3e",
+    "path": "source_files/9a8bb36a805223f4e7f1e4fbc42224e0c48a01ca523e53dcefce1365950d5b3e.json",
+    "sha256": "3e714cbef7f958a9512502eacaf1bdf752bf9dce0ed8ea17dbf61dbf2af0749e"
+  }
+}

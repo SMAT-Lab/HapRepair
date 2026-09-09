@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-V14",
+  "blind_id": "V14-045",
+  "target_rule": "@performance/typed-array-check",
+  "codelinter_rule": "@performance/typed-array-check",
+  "rule_description": "数值数组推荐使用TypedArray。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/typed_array_case.ets",
+      "line": 2,
+      "column": 9,
+      "severity": "suggestion",
+      "message": "Array used only for numeric calculation detected. TypedArray is recommended.",
+      "rule": "@performance/typed-array-check"
+    },
+    {
+      "file": "entry/src/main/ets/cases/typed_array_case.ets",
+      "line": 3,
+      "column": 9,
+      "severity": "suggestion",
+      "message": "Array used only for numeric calculation detected. TypedArray is recommended.",
+      "rule": "@performance/typed-array-check"
+    }
+  ],
+  "input_files": [
+    "entry/src/main/ets/cases/typed_array_case.ets"
+  ],
+  "controller_feedback_available": false,
+  "homecheck_scan_available": false,
+  "human_reference_available": false,
+  "accepted_candidates": 1
+}

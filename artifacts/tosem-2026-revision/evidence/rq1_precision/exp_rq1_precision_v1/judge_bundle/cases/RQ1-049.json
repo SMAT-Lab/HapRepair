@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-049",
+  "category": "security",
+  "finding": {
+    "column": 5,
+    "end_column": 5,
+    "end_line": 300,
+    "line": 300,
+    "message": "Delete the related code completely when it is invalid.",
+    "relative_path": "test/src/main/ets/app/app.ets",
+    "rule": "@security/no-commented-code",
+    "severity": "warn"
+  },
+  "rule": "@security/no-commented-code",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-commented-code.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "94be8bffaeaa0e42df2ab61f714739cb5500a0973b3cf6a2f828098dcadcf0d7",
+    "path": "source_files/94be8bffaeaa0e42df2ab61f714739cb5500a0973b3cf6a2f828098dcadcf0d7.json",
+    "sha256": "bc71bac8c17040c85c56dbefecdea0ab65cde9c6ee6cd93eafda64bd4763350d"
+  }
+}

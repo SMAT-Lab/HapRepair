@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "formal": true,
+  "run_id": "exp_loc_18_three_model_v1",
+  "model_requested": "deepseek-v4-flash",
+  "file": "entry/src/main/ets/MainAbility/pages/ListItemGroup/list_ux.ets",
+  "source_sha256": "fcab8cad5629555f26ea62a2e6b3eb4e4dc15a21a30f262433d92c90765407e4",
+  "prompt_sha256": "971671b9f185e4338b3b0ed22646436c2f6a535fca73ad41dad466f0d042ac62",
+  "protocol_sha256": "baaf76932d8013e8eaa0b1f840fb4ba02e37412caef5f0e3bc4903a3e9b6bbeb",
+  "ground_truth_sha256": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3",
+  "started_at": "2026-08-07T14:07:55.726458+00:00",
+  "provider_route": {
+    "api_base_env": "DS_API_BASE",
+    "api_key_env": "DS_API_KEY",
+    "api_base_sha256": "a34e2a4708ed1c61008a151688838dcf1c44d4e7f08054633e72ba7c0b16cfc1"
+  },
+  "status": "completed",
+  "model_reported": "deepseek-v4-flash",
+  "response_id": "921acbac-feb0-47e8-b625-f44ffdc9b3b8",
+  "usage": {
+    "prompt_tokens": 2264,
+    "completion_tokens": 63,
+    "total_tokens": 2327,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 2008
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": 200,
+      "elapsed_seconds": 1.0598852379916934,
+      "result": "success"
+    }
+  ],
+  "content": "{\n  \"defects\": [\n    {\"rule\": \"@performance/hp-arkui-remove-redundant-state-var\", \"line\": 25},\n    {\"rule\": \"@performance/hp-arkui-remove-unchanged-state-var\", \"line\": 25}\n  ]\n}",
+  "predicted_defects": [
+    {
+      "rule": "@performance/hp-arkui-remove-redundant-state-var",
+      "line": 25
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "line": 25
+    }
+  ],
+  "parse_ok": true,
+  "parse_error": null,
+  "raw_response": {
+    "id": "921acbac-feb0-47e8-b625-f44ffdc9b3b8",
+    "object": "chat.completion",
+    "created": 1786111675,
+    "model": "deepseek-v4-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"defects\": [\n    {\"rule\": \"@performance/hp-arkui-remove-redundant-state-var\", \"line\": 25},\n    {\"rule\": \"@performance/hp-arkui-remove-unchanged-state-var\", \"line\": 25}\n  ]\n}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2264,
+      "completion_tokens": 63,
+      "total_tokens": 2327,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 2008
+    },
+    "system_fingerprint": "fp_a18b46594c_prod0820_fp8_kvcache_20260402"
+  },
+  "completed_at": "2026-08-07T14:07:56.786862+00:00",
+  "elapsed_seconds": 1.0604322670114925
+}

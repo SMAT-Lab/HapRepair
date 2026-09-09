@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "package_id": "AN-FULL-PAIR-35-CLEAN-R2-20260811",
+  "parent_object": "EXP-HAPREPAIR-FULL-PAIR-35-R2 campaign_02",
+  "parent_claim": "HapRepair should be more reliable than a coding-agent-only baseline under matched inputs, model, analyzer feedback, and evaluator gates.",
+  "execution_envelope": {
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "projects": 35,
+    "conditions": 2,
+    "repetitions": 2,
+    "formal_condition_count": 140,
+    "maximum_concurrency": 16,
+    "maximum_validation_scans": 5,
+    "maximum_agent_turns_per_active_round": 6,
+    "resume_refreshes_allowance": false,
+    "additional_model_runs_after_terminal_campaign": 0
+  },
+  "comparison_baselines": [
+    "coding-agent-only baseline under the matched v6 protocol"
+  ],
+  "slices": [
+    {
+      "slice_id": "E5-A1",
+      "analysis_role": "claim-carrying full-population paired effectiveness",
+      "paper_role": "main_text",
+      "section_id": "evaluation-contemporary-reference",
+      "item_id": "AN-FULL-PAIR-35-CLEAN-R2-20260811",
+      "claim_links": [
+        "AE-C2",
+        "R1-C10",
+        "R3-C2",
+        "R3-C5",
+        "R3-C6"
+      ],
+      "reviewer_question": "Is the apparent advantage stable across clean repetitions and all 35 projects?",
+      "fixed_conditions": "Same frozen inputs, model, localization, five-scan budget, six-turn active-round allowance, and evaluator gates.",
+      "metrics": [
+        "final alerts",
+        "net reduction",
+        "introduced alerts",
+        "acceptable-candidate rate"
+      ],
+      "evidence_paths": [
+        "summary.json",
+        "project_repetition_rows.csv",
+        "audit.json"
+      ],
+      "claim_update": "The final-alert direction favors HapRepair in both repetitions (20.800 and 17.971 fewer alerts per project).",
+      "comparability": "direct and intention-to-treat; cluster by project",
+      "status": "completed_support",
+      "next_action": "Report both repetition effects and clustered uncertainty."
+    },
+    {
+      "slice_id": "E5-A2",
+      "analysis_role": "claim-carrying burden interaction",
+      "paper_role": "appendix_or_compact_main_text",
+      "section_id": "evaluation-contemporary-reference",
+      "item_id": "AN-PROJECT-STRATA",
+      "claim_links": [
+        "C2",
+        "R3-C5"
+      ],
+      "reviewer_question": "Does HapRepair's benefit increase with the frozen initial alert burden?",
+      "fixed_conditions": "Outcome-independent 12/11/12 strata and continuous log1p burden model with project clustering.",
+      "metrics": [
+        "paired final-alert benefit",
+        "acceptable-candidate benefit",
+        "continuous burden slope"
+      ],
+      "evidence_paths": [
+        "summary.json",
+        "project_repetition_rows.csv"
+      ],
+      "claim_update": "The log-burden slope is -0.672 (p=0.8262); retain this as a descriptive interaction.",
+      "comparability": "direct; strata frozen before outcomes",
+      "status": "completed_descriptive",
+      "next_action": "Avoid a categorical burden-interaction claim."
+    },
+    {
+      "slice_id": "E5-A3",
+      "analysis_role": "supporting failure and sensitivity audit",
+      "paper_role": "main_text_and_appendix",
+      "section_id": "evaluation-contemporary-reference",
+      "item_id": "AN-FAILURE",
+      "claim_links": [
+        "AE-C2",
+        "R1-C10",
+        "R3-C6"
+      ],
+      "reviewer_question": "Are condition gaps caused by repair behavior or by provider/infrastructure accidents?",
+      "fixed_conditions": "All conditions use the same inputs, model, analyzer feedback, budgets, and evaluator gates; method failures remain in the denominator.",
+      "metrics": [
+        "failure taxonomy",
+        "ITT disposition",
+        "leave-one-project-out direction"
+      ],
+      "evidence_paths": [
+        "summary.json",
+        "audit.json",
+        "project_repetition_rows.json"
+      ],
+      "claim_update": "All 70 Skill conditions completed; the 12 remaining failures belong to the baseline.",
+      "comparability": "Direct under matched inputs, model, budgets, and evaluator gates.",
+      "status": "completed",
+      "next_action": "Report the remaining failure mix."
+    }
+  ],
+  "evaluation_summary": {
+    "takeaway": "HapRepair produced an evaluator-acceptable candidate for all 70 project-repetition conditions and left fewer alerts than the fixed baseline in both repetitions.",
+    "acceptable_candidate_counts": {
+      "hapskill": 70,
+      "baseline": 58,
+      "denominator_each": 70
+    },
+    "comparability": "preserved",
+    "failure_mode": {
+      "structural_or_api_guard_exhaustion": 12
+    }
+  },
+  "stop_condition": "Met with all canonical results complete.",
+  "next_route": "write",
+  "next_action": "Reconcile the narrowed claims into the outline, then revise the manuscript and response letter without launching additional repair experiments."
+}

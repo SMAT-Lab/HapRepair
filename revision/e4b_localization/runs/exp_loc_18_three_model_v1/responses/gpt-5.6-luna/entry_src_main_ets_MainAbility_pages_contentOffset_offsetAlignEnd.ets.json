@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "formal": true,
+  "run_id": "exp_loc_18_three_model_v1",
+  "model_requested": "gpt-5.6-luna",
+  "file": "entry/src/main/ets/MainAbility/pages/contentOffset/offsetAlignEnd.ets",
+  "source_sha256": "13add6e7fe9833c942eac9012b49a0601c87069455971df447fe0ea18972007f",
+  "prompt_sha256": "17904450dc974d50b382c4d33eae53999cbfa09003082ac5631be39b535d1d5e",
+  "protocol_sha256": "baaf76932d8013e8eaa0b1f840fb4ba02e37412caef5f0e3bc4903a3e9b6bbeb",
+  "ground_truth_sha256": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3",
+  "started_at": "2026-08-07T14:07:42.283019+00:00",
+  "provider_route": {
+    "api_base_env": "OPENAI_API_BASE",
+    "api_key_env": "OPENAI_API_KEY",
+    "api_base_sha256": "0a2cad5028420559b4d734677727ec94f7edeabf6d6ca73df8ad4103695bf48d"
+  },
+  "status": "completed",
+  "model_reported": "gpt-5.6-luna",
+  "response_id": "resp_0f239baae3973822016a75e6aeba34819188031dd99eb1bb07",
+  "usage": {
+    "prompt_tokens": 766,
+    "completion_tokens": 71,
+    "total_tokens": 837
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": 200,
+      "elapsed_seconds": 3.604995122004766,
+      "result": "success"
+    }
+  ],
+  "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-remove-unchanged-state-var\",\"line\":19},{\"rule\":\"@performance/hp-arkui-remove-redundant-nest-container\",\"line\":43},{\"rule\":\"@performance/hp-arkui-remove-container-without-property\",\"line\":44}]}",
+  "predicted_defects": [
+    {
+      "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+      "line": 19
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+      "line": 43
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "line": 44
+    }
+  ],
+  "parse_ok": true,
+  "parse_error": null,
+  "raw_response": {
+    "id": "resp_0f239baae3973822016a75e6aeba34819188031dd99eb1bb07",
+    "object": "chat.completion",
+    "created": 1786111665,
+    "model": "gpt-5.6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-remove-unchanged-state-var\",\"line\":19},{\"rule\":\"@performance/hp-arkui-remove-redundant-nest-container\",\"line\":43},{\"rule\":\"@performance/hp-arkui-remove-container-without-property\",\"line\":44}]}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 766,
+      "completion_tokens": 71,
+      "total_tokens": 837
+    }
+  },
+  "completed_at": "2026-08-07T14:07:45.888411+00:00",
+  "elapsed_seconds": 3.605407770999591
+}

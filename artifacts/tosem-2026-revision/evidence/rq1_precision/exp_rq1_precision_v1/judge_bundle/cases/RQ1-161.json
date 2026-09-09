@@ -1,0 +1,29 @@
+{
+  "blind_id": "RQ1-161",
+  "category": "security",
+  "finding": {
+    "column": 1,
+    "end_column": 1,
+    "end_line": 15,
+    "line": 15,
+    "message": "Delete the related code completely when it is invalid.",
+    "relative_path": "entry/src/main/ets/pages/ImageInterface/slice.ets",
+    "rule": "@security/no-commented-code",
+    "severity": "warn"
+  },
+  "rule": "@security/no-commented-code",
+  "rule_evidence": {
+    "semantic_spec_paths": [
+      "rule_evidence/core-invariants.md",
+      "rule_evidence/security-structure.md"
+    ],
+    "static_reference_available": true,
+    "static_reference_path": "rule_evidence/security--no-commented-code.md"
+  },
+  "schema_version": 1,
+  "source_file": {
+    "content_sha256": "79f5cf8354533a5f27712c614970c02997bf5b090dfd9628e679908534eaea1f",
+    "path": "source_files/79f5cf8354533a5f27712c614970c02997bf5b090dfd9628e679908534eaea1f.json",
+    "sha256": "80c16e12339e8d214262cbfc0112be2dcb8ce47823a7a4329a7de6db41b7d7b4"
+  }
+}

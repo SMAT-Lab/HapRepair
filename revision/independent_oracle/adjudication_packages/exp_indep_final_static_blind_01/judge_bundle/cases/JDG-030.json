@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-030",
+  "category": "performance",
+  "rule": "@performance/hp-arkui-suggest-reuseid-for-if-else-reusable-component",
+  "rule_description": "建议使用reuseId标记不同结构的组件构成",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/reuseid_branch_case.ets",
+      "line": 50,
+      "column": 11,
+      "severity": "suggestion",
+      "message": "Use reusable components to define complex components whenever possible.",
+      "rule": "@performance/suggest-reuseid-for-if-else-reusable-component-check"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/reuseid_branch_case.ets",
+      "content": "import { ChatInfoEntry, ChatItem, PublicChatItem } from './reuseid_branch_components';\n\nclass ChatDataSource implements IDataSource {\n  private rows: ChatInfoEntry[] = [];\n  private listeners: DataChangeListener[] = [];\n\n  totalCount(): number { return this.rows.length; }\n  getData(index: number): ChatInfoEntry { return this.rows[index]; }\n  getReuseIdByIndex(index: number): string {\n    return this.rows[index].isPublicChat ? 'public-chat' : 'private-chat';\n  }\n  registerDataChangeListener(listener: DataChangeListener): void { this.listeners.push(listener); }\n  unregisterDataChangeListener(listener: DataChangeListener): void {\n    const position: number = this.listeners.indexOf(listener);\n    if (position >= 0) { this.listeners.splice(position, 1); }\n  }\n}\n\n@Reusable\n@Component\nstruct ChatRowView {\n  @State chatInfo: ChatInfoEntry = new ChatInfoEntry();\n\n  aboutToReuse(params: Record<string, ESObject>): void {\n    this.chatInfo = params.chatInfo as ChatInfoEntry;\n  }\n\n  build() {\n    Button() {\n      Row() {\n        if (this.chatInfo['isPublicChat']) {\n          PublicChatItem({ chatInfo: this.chatInfo })\n        } else {\n          ChatItem({ chatInfo: this.chatInfo })\n        }\n      }\n    }\n  }\n}\n\n@Entry\n@Component\nstruct ChatTimeline {\n  private rows: ChatDataSource = new ChatDataSource();\n\n  build() {\n    List() {\n      LazyForEach(this.rows, (item: ChatInfoEntry) => {\n        ListItem() {\n          ChatRowView({ chatInfo: item })\n        }\n      }, (item: ChatInfoEntry) => item.id)\n    }\n    .cachedCount(3)\n    .width('100%')\n    .height(320)\n  }\n}\n"
+    },
+    {
+      "path": "entry/src/main/ets/cases/reuseid_branch_components.ets",
+      "content": "export class ChatInfoEntry {\n  id: string = '';\n  isPublicChat: boolean = false;\n}\n\n@Reusable\n@Component\nexport struct PublicChatItem {\n  @State chatInfo: ChatInfoEntry = new ChatInfoEntry();\n\n  aboutToReuse(params: Record<string, ESObject>): void {\n    this.chatInfo = params.chatInfo as ChatInfoEntry;\n  }\n\n  build() { Text(`Public ${this.chatInfo.id}`) }\n}\n\n@Reusable\n@Component\nexport struct ChatItem {\n  @State chatInfo: ChatInfoEntry = new ChatInfoEntry();\n\n  aboutToReuse(params: Record<string, ESObject>): void {\n    this.chatInfo = params.chatInfo as ChatInfoEntry;\n  }\n\n  build() { Text(`Private ${this.chatInfo.id}`) }\n}\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/reuseid_branch_case.ets",
+      "content": "import { ChatInfoEntry, ChatItem, PublicChatItem } from './reuseid_branch_components';\n\nclass ChatDataSource implements IDataSource {\n  private rows: ChatInfoEntry[] = [];\n  private listeners: DataChangeListener[] = [];\n\n  totalCount(): number { return this.rows.length; }\n  getData(index: number): ChatInfoEntry { return this.rows[index]; }\n  getReuseIdByIndex(index: number): string {\n    return this.rows[index].isPublicChat ? 'public-chat' : 'private-chat';\n  }\n  registerDataChangeListener(listener: DataChangeListener): void { this.listeners.push(listener); }\n  unregisterDataChangeListener(listener: DataChangeListener): void {\n    const position: number = this.listeners.indexOf(listener);\n    if (position >= 0) { this.listeners.splice(position, 1); }\n  }\n}\n\n@Reusable\n@Component\nstruct ChatRowView {\n  @State chatInfo: ChatInfoEntry = new ChatInfoEntry();\n\n  aboutToReuse(params: Record<string, ESObject>): void {\n    this.chatInfo = params.chatInfo as ChatInfoEntry;\n  }\n\n  build() {\n    Button() {\n      Row() {\n        if (this.chatInfo['isPublicChat']) {\n          PublicChatItem({ chatInfo: this.chatInfo })\n        } else {\n          ChatItem({ chatInfo: this.chatInfo })\n        }\n      }\n    }\n  }\n}\n\n@Entry\n@Component\nstruct ChatTimeline {\n  private rows: ChatDataSource = new ChatDataSource();\n\n  build() {\n    List() {\n      LazyForEach(this.rows, (item: ChatInfoEntry, index: number) => {\n        ListItem() {\n          ChatRowView({ chatInfo: item }).reuseId(this.rows.getReuseIdByIndex(index))\n        }\n      }, (item: ChatInfoEntry) => item.id)\n    }\n    .cachedCount(3)\n    .width('100%')\n    .height(320)\n  }\n}\n"
+    },
+    {
+      "path": "entry/src/main/ets/cases/reuseid_branch_components.ets",
+      "content": "export class ChatInfoEntry {\n  id: string = '';\n  isPublicChat: boolean = false;\n}\n\n@Reusable\n@Component\nexport struct PublicChatItem {\n  @State chatInfo: ChatInfoEntry = new ChatInfoEntry();\n\n  aboutToReuse(params: Record<string, ESObject>): void {\n    this.chatInfo = params.chatInfo as ChatInfoEntry;\n  }\n\n  build() { Text(`Public ${this.chatInfo.id}`) }\n}\n\n@Reusable\n@Component\nexport struct ChatItem {\n  @State chatInfo: ChatInfoEntry = new ChatInfoEntry();\n\n  aboutToReuse(params: Record<string, ESObject>): void {\n    this.chatInfo = params.chatInfo as ChatInfoEntry;\n  }\n\n  build() { Text(`Private ${this.chatInfo.id}`) }\n}\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/reuseid_branch_case.ets",
+      "content": "import { ChatInfoEntry, ChatItem, PublicChatItem } from './reuseid_branch_components';\n\nclass ChatDataSource implements IDataSource {\n  private rows: ChatInfoEntry[] = [];\n  private listeners: DataChangeListener[] = [];\n\n  totalCount(): number { return this.rows.length; }\n  getData(index: number): ChatInfoEntry { return this.rows[index]; }\n  getReuseIdByIndex(index: number): string {\n    return this.rows[index].isPublicChat ? 'public-chat' : 'private-chat';\n  }\n  registerDataChangeListener(listener: DataChangeListener): void { this.listeners.push(listener); }\n  unregisterDataChangeListener(listener: DataChangeListener): void {\n    const position: number = this.listeners.indexOf(listener);\n    if (position >= 0) { this.listeners.splice(position, 1); }\n  }\n}\n\n@Reusable\n@Component\nstruct ChatRowView {\n  @State chatInfo: ChatInfoEntry = new ChatInfoEntry();\n\n  aboutToReuse(params: Record<string, ESObject>): void {\n    this.chatInfo = params.chatInfo as ChatInfoEntry;\n  }\n\n  build() {\n    Button() {\n      Row() {\n        if (this.chatInfo['isPublicChat']) {\n          PublicChatItem({ chatInfo: this.chatInfo })\n        } else {\n          ChatItem({ chatInfo: this.chatInfo })\n        }\n      }\n    }\n  }\n}\n\n@Entry\n@Component\nstruct ChatTimeline {\n  private rows: ChatDataSource = new ChatDataSource();\n\n  build() {\n    List() {\n      LazyForEach(this.rows, (item: ChatInfoEntry, index: number) => {\n        ListItem() {\n          ChatRowView({ chatInfo: item }).reuseId(this.rows.getReuseIdByIndex(index))\n        }\n      }, (item: ChatInfoEntry) => item.id)\n    }\n    .cachedCount(3)\n    .width('100%')\n    .height(320)\n  }\n}\n"
+    },
+    {
+      "path": "entry/src/main/ets/cases/reuseid_branch_components.ets",
+      "content": "export class ChatInfoEntry {\n  id: string = '';\n  isPublicChat: boolean = false;\n}\n\n@Reusable\n@Component\nexport struct PublicChatItem {\n  @State chatInfo: ChatInfoEntry = new ChatInfoEntry();\n\n  aboutToReuse(params: Record<string, ESObject>): void {\n    this.chatInfo = params.chatInfo as ChatInfoEntry;\n  }\n\n  build() { Text(`Public ${this.chatInfo.id}`) }\n}\n\n@Reusable\n@Component\nexport struct ChatItem {\n  @State chatInfo: ChatInfoEntry = new ChatInfoEntry();\n\n  aboutToReuse(params: Record<string, ESObject>): void {\n    this.chatInfo = params.chatInfo as ChatInfoEntry;\n  }\n\n  build() { Text(`Private ${this.chatInfo.id}`) }\n}\n"
+    }
+  ]
+}

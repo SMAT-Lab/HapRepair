@@ -1,0 +1,40 @@
+{
+  "selected_rules": [
+    "@performance/hp-performance-no-closures"
+  ],
+  "consulted_specs": {
+    "@performance/hp-performance-no-closures": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md",
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/computation-api.md"
+    ]
+  },
+  "consulted_guides": {},
+  "entity_repairs": [
+    {
+      "rule": "@performance/hp-performance-no-closures",
+      "relative_path": "entry/src/main/ets/cases/no_closures_case.ets",
+      "locations": [
+        {
+          "line": 4,
+          "column": 3
+        }
+      ],
+      "entities": [
+        "firstTwoDayTotal function and its module-level invocation"
+      ],
+      "invariants": [
+        "preserve the function's computed value and invocation timing",
+        "replace the captured module variable with an explicit parameter",
+        "preserve declarations and public interfaces"
+      ],
+      "evidence": [
+        "dailyTotals is read only by firstTwoDayTotal and passed from its sole call site",
+        "the function has no this binding, side effects, imports, exports, or additional callers",
+        "the source tree contains no related components, lifecycle hooks, persisted formats, or tests"
+      ],
+      "transformation": "Added a number array parameter to firstTwoDayTotal, changed its indexed reads to that parameter, and passed dailyTotals at the existing call site.",
+      "status": "repaired"
+    }
+  ],
+  "unresolved_external": []
+}

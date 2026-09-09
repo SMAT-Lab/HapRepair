@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "blind_id": "JDG-058",
+  "category": "security",
+  "rule": "@security/no-unsafe-ecdh",
+  "rule_description": "ECC 密钥生成必须选择安全曲线（例如 ECC256 及以上）。",
+  "target_findings": [
+    {
+      "file": "entry/src/main/ets/cases/unsafe_ecdh_case.ets",
+      "line": 3,
+      "column": 17,
+      "severity": "warn",
+      "message": "Do not use insecure key length Ecdh key negotiation algorithm ECC; it is recommended to use the secure ecdh interface in the Petal Aegis SDK.",
+      "rule": "@security/no-unsafe-ecdh"
+    }
+  ],
+  "defective_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_ecdh_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\ncryptoFramework.createAsyKeyGenerator('ECC');\n"
+    }
+  ],
+  "human_reference_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_ecdh_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\ncryptoFramework.createAsyKeyGenerator('ECC256');\n"
+    }
+  ],
+  "candidate_repair_files": [
+    {
+      "path": "entry/src/main/ets/cases/unsafe_ecdh_case.ets",
+      "content": "import cryptoFramework from '@ohos.security.cryptoFramework';\n\ncryptoFramework.createAsyKeyGenerator('ECC256');\n"
+    }
+  ]
+}

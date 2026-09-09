@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-07T14:43:56.686211+00:00",
+  "experiment": "EXP-LOC-18",
+  "benchmark": {
+    "source_root": "HapRepair/revision/ace_ets_module_list02",
+    "source_tree": "996268adca0141685c731a676ca08f6739418558",
+    "upstream_commit": "5b0be8e9ede379a68e85eef08f211f479d12ecd9",
+    "ground_truth": "HapRepair/revision/ace_ets_module_list02_gt.json",
+    "ground_truth_sha256": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3",
+    "file_count": 18,
+    "defect_count": 38,
+    "rule_count": 8,
+    "scope": "positive-enriched controlled benchmark; primary inference is recall over the 38 positives",
+    "protocol_sha256": "baaf76932d8013e8eaa0b1f840fb4ba02e37412caef5f0e3bc4903a3e9b6bbeb"
+  },
+  "comparison": [
+    {
+      "condition": "homecheck-codelinter-6.0.240",
+      "tp": 30,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "single_defect_files": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "multi_defect_files": {
+        "tp": 24,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "exact_match_file_count": 18,
+      "parse_failure_count": 0
+    },
+    {
+      "condition": "deepseek-v4-flash",
+      "tp": 10,
+      "fp": 12,
+      "fn": 20,
+      "precision": 0.45454545454545453,
+      "recall": 0.3333333333333333,
+      "f1": 0.3846153846153846,
+      "single_defect_files": {
+        "tp": 1,
+        "fp": 6,
+        "fn": 5,
+        "precision": 0.14285714285714285,
+        "recall": 0.16666666666666666,
+        "f1": 0.15384615384615383
+      },
+      "multi_defect_files": {
+        "tp": 9,
+        "fp": 6,
+        "fn": 15,
+        "precision": 0.6,
+        "recall": 0.375,
+        "f1": 0.4615384615384615
+      },
+      "exact_match_file_count": 3,
+      "parse_failure_count": 0
+    },
+    {
+      "condition": "gpt-5.6-luna",
+      "tp": 15,
+      "fp": 26,
+      "fn": 15,
+      "precision": 0.36585365853658536,
+      "recall": 0.5,
+      "f1": 0.4225352112676056,
+      "single_defect_files": {
+        "tp": 3,
+        "fp": 12,
+        "fn": 3,
+        "precision": 0.2,
+        "recall": 0.5,
+        "f1": 0.28571428571428575
+      },
+      "multi_defect_files": {
+        "tp": 12,
+        "fp": 14,
+        "fn": 12,
+        "precision": 0.46153846153846156,
+        "recall": 0.5,
+        "f1": 0.48000000000000004
+      },
+      "exact_match_file_count": 1,
+      "parse_failure_count": 0
+    },
+    {
+      "condition": "gpt-5.6-sol",
+      "tp": 15,
+      "fp": 10,
+      "fn": 15,
+      "precision": 0.6,
+      "recall": 0.5,
+      "f1": 0.5454545454545454,
+      "single_defect_files": {
+        "tp": 5,
+        "fp": 3,
+        "fn": 1,
+        "precision": 0.625,
+        "recall": 0.8333333333333334,
+        "f1": 0.7142857142857143
+      },
+      "multi_defect_files": {
+        "tp": 10,
+        "fp": 7,
+        "fn": 14,
+        "precision": 0.5882352941176471,
+        "recall": 0.4166666666666667,
+        "f1": 0.48780487804878053
+      },
+      "exact_match_file_count": 5,
+      "parse_failure_count": 0
+    }
+  ],
+  "error_taxonomy": {
+    "deepseek-v4-flash": {
+      "true_positive_file_rule_count": 10,
+      "missing_file_rule_count": 20,
+      "extra_file_rule_count": 12,
+      "parse_failure_file_count": 0
+    },
+    "gpt-5.6-luna": {
+      "true_positive_file_rule_count": 15,
+      "missing_file_rule_count": 15,
+      "extra_file_rule_count": 26,
+      "parse_failure_file_count": 0
+    },
+    "gpt-5.6-sol": {
+      "true_positive_file_rule_count": 15,
+      "missing_file_rule_count": 15,
+      "extra_file_rule_count": 10,
+      "parse_failure_file_count": 0
+    },
+    "homecheck-codelinter-6.0.240": {
+      "true_positive_file_rule_count": 30,
+      "missing_file_rule_count": 0,
+      "extra_file_rule_count": 0,
+      "parse_failure_file_count": 0
+    }
+  },
+  "metric_definition": "Unique (relative_file, rule) identity; source line is ignored.",
+  "error_taxonomy_definition": {
+    "missing_file_rule_count": "A frozen file-rule target not predicted in that file.",
+    "extra_file_rule_count": "A predicted file-rule identity absent from the frozen target set."
+  },
+  "claim_update": {
+    "status": "supported_with_scope_limit",
+    "supported": "HomeCheck detects all 38 manually constructed examples and covers all 30 unique file-rule targets; the three LLM-only conditions cover 10-15 of the 30 targets.",
+    "not_supported": "HomeCheck recall beyond these 38 controlled examples or on real projects generally."
+  },
+  "reporting_boundary": "The 38 positive examples were manually constructed from rule descriptions and source inspection before HomeCheck evaluation. HomeCheck recall is 100% on these examples; the line-free model comparison uses 30 unique file-rule targets because repeated instances of the same rule in one file are indistinguishable without locations. This controlled result is not an estimate of recall on arbitrary real projects."
+}

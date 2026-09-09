@@ -1,0 +1,1214 @@
+[
+  {
+    "case_id": "case_foreach_args_check",
+    "blind_id": "V14-040",
+    "rule": "@performance/foreach-args-check",
+    "case_dir": "cases/V14-040",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/foreach_args_case.ets",
+        "sha256": "c3631c0e6da2a7273930dff01258dbd5c40b9a65954d793c51404f5e95e3e445",
+        "size_bytes": 464
+      }
+    ],
+    "task_sha256": "2ecbf0187a8452679c4bcfbe3f6ac77ae6ee8d122ec005f976c2a02273966249",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_hw_ets_eslint_init_list_component",
+    "blind_id": "V14-062",
+    "rule": "@hw-ets-eslint/init-list-component",
+    "case_dir": "cases/V14-062",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/init_list_component_case.ets",
+        "sha256": "af0da0a1111eafb183570829d901cbd1f2672630bd854475271666cbc058f2b6",
+        "size_bytes": 303
+      }
+    ],
+    "task_sha256": "e4f736da046ee5c4d51f4a86a4c71d96525e7a8cbba2967f2f541baaf35f41a1",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_avoid_overusing_custom_component_check",
+    "blind_id": "V14-030",
+    "rule": "@performance/avoid-overusing-custom-component-check",
+    "case_dir": "cases/V14-030",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/avoid_custom_component_case.ets",
+        "sha256": "7548faec074757d9fb422fcc7dd03516c03806679e56f5677f13c2e98e0639ca",
+        "size_bytes": 392
+      }
+    ],
+    "task_sha256": "15f00a14215cad62b102b76f0eb1a46a66198879400b786b0a147a6c205bc736",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_constant_property_referencing_check_in_loops",
+    "blind_id": "V14-009",
+    "rule": "@performance/constant-property-referencing-check-in-loops",
+    "case_dir": "cases/V14-009",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/constant_property_loop_case.ets",
+        "sha256": "4d828bc04c5a6a8cd6c87bafc1eae468e5e789c7a3f8e28e291295be106bf472",
+        "size_bytes": 327
+      }
+    ],
+    "task_sha256": "b0dffb2a8af740f77a0a2bd9a7f6ee7ade769c4e2c41d57c3c17754f512a73d5",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_dark_color_mode_check",
+    "blind_id": "V14-016",
+    "rule": "@performance/dark-color-mode-check",
+    "case_dir": "cases/V14-016",
+    "input_files": [
+      {
+        "path": "entry/src/main/module.json5",
+        "sha256": "c2508935cba779425e539f48e801d0f084bbd8b72b5b98a1f4d17cec955b095c",
+        "size_bytes": 234
+      }
+    ],
+    "task_sha256": "3c749ef2fd4da1bf79f890f6645db2d3aa5ba52362bc9299f9452ccd28ae0e51",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_foreach_index_check",
+    "blind_id": "V14-013",
+    "rule": "@performance/foreach-index-check",
+    "case_dir": "cases/V14-013",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/foreach_index_case.ets",
+        "sha256": "32f17ed9fa83ae5e2388be225c7cbc5ec43368f32f794c8576021bc55904b507",
+        "size_bytes": 465
+      }
+    ],
+    "task_sha256": "76db6a9704e7afc73637e97d1580d04a82d1408321be84a6acab85f26f8408de",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_high_frequency_log_check",
+    "blind_id": "V14-008",
+    "rule": "@performance/high-frequency-log-check",
+    "case_dir": "cases/V14-008",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/high_frequency_log_case.ets",
+        "sha256": "92dbfa54f91863e678e4f9cdd35af8cf0341f600d569384ece5062330e228a09",
+        "size_bytes": 211
+      }
+    ],
+    "task_sha256": "1839f92f2fa01cc181ed53343fb5234e6770333bf55d712a45c545fc47ba9ce9",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkts_no_use_any_export_current",
+    "blind_id": "V14-017",
+    "rule": "@performance/hp-arkts-no-use-any-export-current",
+    "case_dir": "cases/V14-017",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/export_current_case.ets",
+        "sha256": "e817c4a03dd8f36709bed0252c165cd0edad371e67f7efeae5b89e6438f8df30",
+        "size_bytes": 86
+      }
+    ],
+    "task_sha256": "f91d40bb9f10df5d40b5a9cac3eb74710e8410ea2ca7f898c6568667d43c5fb8",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkts_no_use_any_export_other",
+    "blind_id": "V14-012",
+    "rule": "@performance/hp-arkts-no-use-any-export-other",
+    "case_dir": "cases/V14-012",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/export_other_case.ets",
+        "sha256": "783b1d9c7eba3359c704211e94683f5e9fa5a029ab02878da963baecf7092fd9",
+        "size_bytes": 108
+      },
+      {
+        "path": "entry/src/main/ets/cases/export_other_model.ets",
+        "sha256": "28d2cb8d28ae6a8c0702e65a47e32a972dc2000e35832d19102f16763b49ff08",
+        "size_bytes": 50
+      }
+    ],
+    "task_sha256": "d144b93cb9ae8e1caedc155b774c0ae467ba08b6a55ebaf7d21166faf6e3de2e",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_avoid_empty_callback",
+    "blind_id": "V14-038",
+    "rule": "@performance/hp-arkui-avoid-empty-callback",
+    "case_dir": "cases/V14-038",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/empty_callback_case.ets",
+        "sha256": "62fbd4d3baa4b7b0c93544404769fa26bb0d70ba958abfd61d8751f242fba399",
+        "size_bytes": 114
+      }
+    ],
+    "task_sha256": "8cf38087bfc5b8376703a9ce85cf1581fc7cd50e8a9d2319dc02e9e51b19c2b1",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_avoid_update_auto_state_var_in_abouttoreuse",
+    "blind_id": "V14-026",
+    "rule": "@performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse",
+    "case_dir": "cases/V14-026",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/about_to_reuse_state_case.ets",
+        "sha256": "313fd370517dd089aaf3d57b7a1baa9502a3d1593212b255cd2e187e1c3a0a8e",
+        "size_bytes": 221
+      }
+    ],
+    "task_sha256": "4f6f91e8cc14e19622b6b370ff4861bd18b415595553c24655e125d227e9f432",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_combine_same_arg_animateto",
+    "blind_id": "V14-001",
+    "rule": "@performance/hp-arkui-combine-same-arg-animateto",
+    "case_dir": "cases/V14-001",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/combine_animate_to_case.ets",
+        "sha256": "74db82588688e7b35a98f096a8e325859f58e75c2c52c7086900906efb0c7387",
+        "size_bytes": 563
+      }
+    ],
+    "task_sha256": "fb236ab93e358256c170dfbe480fd849323041bb1968608936c62fd7778c3008",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_image_async_load",
+    "blind_id": "V14-025",
+    "rule": "@performance/hp-arkui-image-async-load",
+    "case_dir": "cases/V14-025",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/image_async_load_case.ets",
+        "sha256": "229c96b5b33a034d7e05c8eeac44077a3dbec09e6315e5429630a494df5b0a76",
+        "size_bytes": 158
+      }
+    ],
+    "task_sha256": "8c5e960e48255cecc9c19b1f11f45fb06ca479c5b1969c5fa42c97656d7b9811",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_load_on_demand",
+    "blind_id": "V14-036",
+    "rule": "@performance/hp-arkui-load-on-demand",
+    "case_dir": "cases/V14-036",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/load_on_demand_case.ets",
+        "sha256": "3743434f7835835d86b62185e3ee0beeb486b61e9073a5fe10ec5e567be492c4",
+        "size_bytes": 830
+      }
+    ],
+    "task_sha256": "58ea5c641b9178bc64bcd383bcd64c08720b250ca04c03cf0ede21470857463b",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_no_func_as_arg_for_reusable_component",
+    "blind_id": "V14-056",
+    "rule": "@performance/hp-arkui-no-func-as-arg-for-reusable-component",
+    "case_dir": "cases/V14-056",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/reusable_func_arg_case.ets",
+        "sha256": "85b21a02a1823bb8819735a7848e3a4772564a5c1786995960724bb864e04ebf",
+        "size_bytes": 539
+      }
+    ],
+    "task_sha256": "eacd00e7f1a7bd5a56b5acf32c8ee98e66b5c860865baf423830770752113284",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_no_state_var_access_in_loop",
+    "blind_id": "V14-049",
+    "rule": "@performance/hp-arkui-no-state-var-access-in-loop",
+    "case_dir": "cases/V14-049",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/state_var_loop_case.ets",
+        "sha256": "324fa8c3b68f2f1d01a10f54c18cdd1901533068bb39ca1c9a25f341009fdbc6",
+        "size_bytes": 342
+      }
+    ],
+    "task_sha256": "e8dd2b07b9fab9b6caf668cc13c3bff81e94544612d8ee717ffbc99f2295ec6b",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_no_stringify_in_lazyforeach_key_generator",
+    "blind_id": "V14-020",
+    "rule": "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator",
+    "case_dir": "cases/V14-020",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/lazyforeach_stringify_case.ets",
+        "sha256": "0e46e16e4b4852abc926ec7c269d637efeb57ba47b7d93a6cc94008e9343b789",
+        "size_bytes": 329
+      }
+    ],
+    "task_sha256": "f14c52c128449946d088deae6d36a7a5d087e5060985064b9265c2642697a883",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_reduce_pan_gesture_distance",
+    "blind_id": "V14-063",
+    "rule": "@performance/hp-arkui-reduce-pan-gesture-distance",
+    "case_dir": "cases/V14-063",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/pan_gesture_distance_case.ets",
+        "sha256": "cb10cded943b0aa6b31777141a7747cc5fd8909af27921a924f08d4b8f0e9322",
+        "size_bytes": 359
+      }
+    ],
+    "task_sha256": "bc3422a063d7946fae3c2a30a76ca210f5dd5e81b18ba0fce613203395cb9f08",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_remove_container_without_property",
+    "blind_id": "V14-007",
+    "rule": "@performance/hp-arkui-remove-container-without-property",
+    "case_dir": "cases/V14-007",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/container_without_property_case.ets",
+        "sha256": "e6082d2338428588b7dd9180b3ffb9f7b011753e4bb98632e6adb8b660263ae2",
+        "size_bytes": 157
+      }
+    ],
+    "task_sha256": "78c0fb362ce1f2f7d2383cc72748927f936867343c20c4ecefb83e9e465cab48",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_remove_redundant_nest_container",
+    "blind_id": "V14-052",
+    "rule": "@performance/hp-arkui-remove-redundant-nest-container",
+    "case_dir": "cases/V14-052",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/redundant_nest_container_case.ets",
+        "sha256": "b8e12641444aa0c085cd621aca07db6e22692729261766c002c37a7e6ec72aa9",
+        "size_bytes": 266
+      }
+    ],
+    "task_sha256": "739e89e8c77d22badcf965b3c45664ab321ad61802605e6d9cf16c6ab5ca3662",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_remove_redundant_state_var",
+    "blind_id": "V14-058",
+    "rule": "@performance/hp-arkui-remove-redundant-state-var",
+    "case_dir": "cases/V14-058",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/redundant_state_var_case.ets",
+        "sha256": "0f0f3100c9264773bc2287f70a1d92238a44729e3ac48e2b4e39b55d70e36429",
+        "size_bytes": 240
+      }
+    ],
+    "task_sha256": "5b24da83d78532be6c9c94d89b33a4727844fb28d26c008bb4350202d8253e67",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_remove_unchanged_state_var",
+    "blind_id": "V14-044",
+    "rule": "@performance/hp-arkui-remove-unchanged-state-var",
+    "case_dir": "cases/V14-044",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unchanged_state_var_case.ets",
+        "sha256": "c43f07a78c1ea329c8170a04499e9b1f45d1ae9b577f0efe07e1a78c2c7a613d",
+        "size_bytes": 136
+      }
+    ],
+    "task_sha256": "598b920cc3d6a449261ce63c55a8e67a2eb8f00cc93aa69a5b1fc5aa3708c6bd",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_set_cache_count_for_lazyforeach_grid",
+    "blind_id": "V14-011",
+    "rule": "@performance/hp-arkui-set-cache-count-for-lazyforeach-grid",
+    "case_dir": "cases/V14-011",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/grid_cache_count_case.ets",
+        "sha256": "2f37b363d6f159deb830ef761c87694fce3c48bf044bac77c2c1ae0db5432044",
+        "size_bytes": 340
+      }
+    ],
+    "task_sha256": "603976e58d3c3ce0a5250badf393b42ba24639f2f4f76261166ce69ce6da9f03",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_suggest_cache_avplayer",
+    "blind_id": "V14-032",
+    "rule": "@performance/hp-arkui-suggest-cache-avplayer",
+    "case_dir": "cases/V14-032",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/avplayer_cache_case.ets",
+        "sha256": "078e745c929a8073311520539842eeb226b97da4bdf621a9d8cc62c352412bb3",
+        "size_bytes": 595
+      }
+    ],
+    "task_sha256": "6ae0f3f85f28c0efe6c55a2fa086297e2d05513e47ef218b6679dad6c6eaf326",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_suggest_reuseid_for_if_else_reusable_component",
+    "blind_id": "V14-061",
+    "rule": "@performance/hp-arkui-suggest-reuseid-for-if-else-reusable-component",
+    "case_dir": "cases/V14-061",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/reuseid_branch_case.ets",
+        "sha256": "924430efbd9dd6fc0368a04526f380d0c09432ef62b017fe0a9d51fa0a0b632e",
+        "size_bytes": 1580
+      },
+      {
+        "path": "entry/src/main/ets/cases/reuseid_branch_components.ets",
+        "sha256": "7cfa7dfe5dab670c1950259fb59d774bb6b17f392aabacf30043a915e07d8db8",
+        "size_bytes": 632
+      }
+    ],
+    "task_sha256": "bdcf9c1de72fdeccef1f30ea3cf8652d3e9650d50f54f4be9e7f3d7979b4ca5f",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_use_grid_layout_options",
+    "blind_id": "V14-014",
+    "rule": "@performance/hp-arkui-use-grid-layout-options",
+    "case_dir": "cases/V14-014",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/grid_layout_options_case.ets",
+        "sha256": "a018a2a7243dc47fa5507f006244ba8d7b0bc66deaf0c4b1e23f101ca56ecd63",
+        "size_bytes": 475
+      }
+    ],
+    "task_sha256": "1af34a4c6f6340dd1c512ed96cfdfa0a72efa551bd49166b3e990c7ea53474a1",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_use_local_var_to_replace_state_var",
+    "blind_id": "V14-041",
+    "rule": "@performance/hp-arkui-use-local-var-to-replace-state-var",
+    "case_dir": "cases/V14-041",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/local_state_calculation_case.ets",
+        "sha256": "157b5446226b8d77434fe4b40ea5a3c80ae504db423d183d897a8539cc97195f",
+        "size_bytes": 419
+      }
+    ],
+    "task_sha256": "b9afd27ce37728a4dc00479494e324b8cfc6e0c2b9631cd6c8268c385c3bc564",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_use_object_link_to_replace_prop",
+    "blind_id": "V14-018",
+    "rule": "@performance/hp-arkui-use-object-link-to-replace-prop",
+    "case_dir": "cases/V14-018",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/object_link_case.ets",
+        "sha256": "b3294af3ed2a90a1d12c1050ad85f1bf272c19be1d50bef27d175a664daf24e7",
+        "size_bytes": 361
+      }
+    ],
+    "task_sha256": "d35b2db3d78fda4351c04414aaeca854e203b340a839d56b6d7c87a5c12dc38f",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_use_reusable_component",
+    "blind_id": "V14-051",
+    "rule": "@performance/hp-arkui-use-reusable-component",
+    "case_dir": "cases/V14-051",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/reusable_component_case.ets",
+        "sha256": "e2a7e54850b725451f134ce4ddde03b9c92acf54dda03130b79c1e524b540e03",
+        "size_bytes": 456
+      }
+    ],
+    "task_sha256": "bb9e4612775783868a035cc63c920208c5d65ff79f40935facbc8c9899f45d94",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_use_row_column_to_replace_flex",
+    "blind_id": "V14-023",
+    "rule": "@performance/hp-arkui-use-row-column-to-replace-flex",
+    "case_dir": "cases/V14-023",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/flex_layout_case.ets",
+        "sha256": "18209e7e69921016bef6db673af41d0f806f5d6c0d02dede1d350033db9d2889",
+        "size_bytes": 563
+      }
+    ],
+    "task_sha256": "1eae683e7d0c7f655be77ee14d19e1f77d7b107b9c5ca529ee3178691ff257a1",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_use_scale_to_replace_attr_animateto",
+    "blind_id": "V14-042",
+    "rule": "@performance/hp-arkui-use-scale-to-replace-attr-animateto",
+    "case_dir": "cases/V14-042",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/scale_animation_case.ets",
+        "sha256": "78f0af95dcd5a824dd839507b0904e51e456f15953efd97ea7ce8e0c9f6c9109",
+        "size_bytes": 419
+      }
+    ],
+    "task_sha256": "f89e888ceba01b5d3b0a21c036da448dcdc6284bceb5e373a23540281835b943",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_arkui_use_transition_to_replace_animateto",
+    "blind_id": "V14-027",
+    "rule": "@performance/hp-arkui-use-transition-to-replace-animateto",
+    "case_dir": "cases/V14-027",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/transition_animation_case.ets",
+        "sha256": "271587daebf2c669a3e8be6ea262da3dbb3796fa200913d7cf3691a42ac43eac",
+        "size_bytes": 630
+      }
+    ],
+    "task_sha256": "ed2dccfe8145136e74b3c33c38cece6796453e82e589d845e36d324357653508",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_hp_performance_no_closures",
+    "blind_id": "V14-002",
+    "rule": "@performance/hp-performance-no-closures",
+    "case_dir": "cases/V14-002",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/no_closures_case.ets",
+        "sha256": "986af44bc3d4b2439a73806199080c423bfb9b71f7826e6cef5741c5c86ef9ff",
+        "size_bytes": 176
+      }
+    ],
+    "task_sha256": "e14fd771205713483c286f0f847f7b8795af9d252de6bfc98ab8aa7e76a2f86f",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_js_code_cache_by_precompile_check",
+    "blind_id": "V14-037",
+    "rule": "@performance/js-code-cache-by-precompile-check",
+    "case_dir": "cases/V14-037",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/web_precompile_case.ets",
+        "sha256": "dfbad9e075ce9a3da3fbc4e13b3340a71573b25168a165930fbe934c5b19a6bc",
+        "size_bytes": 271
+      }
+    ],
+    "task_sha256": "973ee86d3eb0bf7fe79583aedb9eee7fe3f4e7f3e185b7b7670ed2e8cc2d24ed",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_lottie_animation_destroy_check",
+    "blind_id": "V14-046",
+    "rule": "@performance/lottie-animation-destroy-check",
+    "case_dir": "cases/V14-046",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/lottie_destroy_case.ets",
+        "sha256": "ef05a31b0feeb3603e960fe53bd7a3fabcf1d933dd7555066d21c78af87d0e68",
+        "size_bytes": 684
+      }
+    ],
+    "task_sha256": "1d115f4a6aaab2a221dfe06cd93305ba9b36f1ec7e2c6d8d0bb827e2baa21ca7",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_multiple_associations_state_var_check",
+    "blind_id": "V14-034",
+    "rule": "@performance/multiple-associations-state-var-check",
+    "case_dir": "cases/V14-034",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/multiple_state_association_case.ets",
+        "sha256": "c6acc8465ed396b48d29f023b5cba75b79c72d14ffe8ffaac90410a8346b4217",
+        "size_bytes": 582
+      }
+    ],
+    "task_sha256": "4eb015168bf7652ce09c1f6682557f89cb209b55d4165db6509881717f94bf8d",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_no_high_loaded_frame_rate_range",
+    "blind_id": "V14-055",
+    "rule": "@performance/no-high-loaded-frame-rate-range",
+    "case_dir": "cases/V14-055",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/high_frame_rate_case.ets",
+        "sha256": "fd49f4b6a96a4ca15cc8b119c67a1d4124203fe974f9f84747c0a22312a3bbed",
+        "size_bytes": 404
+      }
+    ],
+    "task_sha256": "8d0e5db08ac4146c525dbb349a7d2e36193af37aa8999bd298f052313e374bb6",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_number_init_check",
+    "blind_id": "V14-033",
+    "rule": "@performance/number-init-check",
+    "case_dir": "cases/V14-033",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/number_init_case.ets",
+        "sha256": "2acb3a37f504f8246404c2d06b271b01689b8e02d075a13cb4f38b8d1bed8d1a",
+        "size_bytes": 140
+      }
+    ],
+    "task_sha256": "64775398a7f68d402b91b8eae5dea838744894f5d205783da6c0df7068355cc7",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_reuse_date_instances_check",
+    "blind_id": "V14-048",
+    "rule": "@performance/reuse-date-instances-check",
+    "case_dir": "cases/V14-048",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/reuse_date_instances_case.ets",
+        "sha256": "b66b00c9445a5318f7bb2d535cf07aa0993d11d070d9ba34ad076f6d3094201e",
+        "size_bytes": 210
+      }
+    ],
+    "task_sha256": "e444f9347b9de7d174558bf7b2a94a0c5fc27a4b3c4e45cb24c0606fa061b516",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_sparse_array_check",
+    "blind_id": "V14-010",
+    "rule": "@performance/sparse-array-check",
+    "case_dir": "cases/V14-010",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/sparse_array_case.ets",
+        "sha256": "c34ccc057cdf2e5e19e6bf48a4f3450c92ef833624a95c4de1debfc029ddbeb8",
+        "size_bytes": 146
+      }
+    ],
+    "task_sha256": "ec315881ffa0df3eaf993888f429b2fdb2cebdef8fb46edc98b5aa4395a1aeb5",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_timezone_interface_check",
+    "blind_id": "V14-047",
+    "rule": "@performance/timezone-interface-check",
+    "case_dir": "cases/V14-047",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/timezone_case.ets",
+        "sha256": "a1e806bbae3ca8bbe799bba914169c6d64f520c9ab93a96cb32ada1b1faf4621",
+        "size_bytes": 292
+      }
+    ],
+    "task_sha256": "74b1c5b471f273c919841567490801666dd9c87c92b5574db524070cb917fb12",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_typed_array_check",
+    "blind_id": "V14-045",
+    "rule": "@performance/typed-array-check",
+    "case_dir": "cases/V14-045",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/typed_array_case.ets",
+        "sha256": "0ec96f715c68f3b986d05b1ac2f0769b594add0babd568b4e0049750ce34a0b7",
+        "size_bytes": 323
+      }
+    ],
+    "task_sha256": "1a01be866960375329b75100ee56449bedc7fe2b99d9b6d64c6166ab3453bd54",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_performance_waterflow_data_preload_check",
+    "blind_id": "V14-043",
+    "rule": "@performance/waterflow-data-preload-check",
+    "case_dir": "cases/V14-043",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/waterflow_preload_case.ets",
+        "sha256": "7d01ce8f33c7f5fe98f59eaeff68ff95341e12c5851f8d9740c13df2c881ee9a",
+        "size_bytes": 1111
+      }
+    ],
+    "task_sha256": "094688e1cb326ba6e3532b87e9fbe0acb555f7f97c3919bfb6d74f09d3d7dd8a",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_commented_code",
+    "blind_id": "V14-015",
+    "rule": "@security/no-commented-code",
+    "case_dir": "cases/V14-015",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/commented_code_case.ets",
+        "sha256": "8b57cae0be86a393dd8f5607c0b4f3aef2d8692c2a42fe817d06281f9b1e4432",
+        "size_bytes": 93
+      }
+    ],
+    "task_sha256": "dd20a631e4677afed6ecb92e30a24ed909ca751f5f41ce83d4b523740c77d03e",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_cycle",
+    "blind_id": "V14-035",
+    "rule": "@security/no-cycle",
+    "case_dir": "cases/V14-035",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/cycle_alpha_case.ets",
+        "sha256": "3f86f79529bc54edd552a598a359bfbdef6b19b83bbad3cbc773138da0cac36d",
+        "size_bytes": 97
+      },
+      {
+        "path": "entry/src/main/ets/cases/cycle_beta_case.ets",
+        "sha256": "257e6f298ef9320d7690fb5fbe9fcb2965197e7e1ce619ad9e1712390a66cb76",
+        "size_bytes": 99
+      }
+    ],
+    "task_sha256": "5576d95cbfecf5b8e509f31d125a502dd8093be3dc795fe8d29d6f16007dfb63",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_3des",
+    "blind_id": "V14-057",
+    "rule": "@security/no-unsafe-3des",
+    "case_dir": "cases/V14-057",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_3des_case.ets",
+        "sha256": "160aa7f6be186f2281723beb56e34ebc01c2c415c5e16b78de5dc42a424d0ebd",
+        "size_bytes": 185
+      }
+    ],
+    "task_sha256": "7025c4592fa6fee047ad209def39da5764c167887e1ff7bccc9d1037b71d76ee",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_aes",
+    "blind_id": "V14-039",
+    "rule": "@security/no-unsafe-aes",
+    "case_dir": "cases/V14-039",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_aes_case.ets",
+        "sha256": "53c08370e7cb2652c0ec773a1703c186b72e7b66ce35582882b678930eb44451",
+        "size_bytes": 142
+      }
+    ],
+    "task_sha256": "263414641e55c3dfacc1c8d3fd90537ab37d03c6aa3687c452b545a2e79d7723",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_dh",
+    "blind_id": "V14-006",
+    "rule": "@security/no-unsafe-dh",
+    "case_dir": "cases/V14-006",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_dh_case.ets",
+        "sha256": "c10cb9ac763523b8516041e04939463f98b6053e14875641060325293ff4694e",
+        "size_bytes": 138
+      }
+    ],
+    "task_sha256": "06e0ab2752e04fb692b41a70a3f1eb9492c674cb972ab834e581cccec2acb5c2",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_dh_key",
+    "blind_id": "V14-005",
+    "rule": "@security/no-unsafe-dh-key",
+    "case_dir": "cases/V14-005",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_dh_key_case.ets",
+        "sha256": "93c86970d6b01b89080967c8f43d458bb651d5dfe0c505624f9f59ffc63853a7",
+        "size_bytes": 146
+      }
+    ],
+    "task_sha256": "ba56134b36bc4e6ef49f235882e7b73c1c2ec0c7aa0920933f0c5126602d5f43",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_dsa",
+    "blind_id": "V14-059",
+    "rule": "@security/no-unsafe-dsa",
+    "case_dir": "cases/V14-059",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_dsa_case.ets",
+        "sha256": "234857d02c10f04c79b71b50962c8b2bff4ccc4983c276c02ccd55fd87939a8a",
+        "size_bytes": 132
+      }
+    ],
+    "task_sha256": "e5224989cae9788d58c9d2bdad1b0c7dbc87a0e95519347bf0e2dd40b693f6af",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_dsa_key",
+    "blind_id": "V14-054",
+    "rule": "@security/no-unsafe-dsa-key",
+    "case_dir": "cases/V14-054",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_dsa_key_case.ets",
+        "sha256": "0aa07f2163dc556d96bd7becec97cfd5f27f295a1bef373fdc5e63bfda5e2e44",
+        "size_bytes": 141
+      }
+    ],
+    "task_sha256": "9a5cff7b5f77bfca7a06828b415ab9ab7d02844ad4765e14842be93edb3c1dcf",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_ecdh",
+    "blind_id": "V14-019",
+    "rule": "@security/no-unsafe-ecdh",
+    "case_dir": "cases/V14-019",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_ecdh_case.ets",
+        "sha256": "eecac26550427531d21031be33223baa0c65086ae2fa9f63c3824e7cc85028cb",
+        "size_bytes": 109
+      }
+    ],
+    "task_sha256": "099be37a67cd5b665e7811fec0573ea8bdac64255be00cdcfa93cc53fd82ffa0",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_ecdsa",
+    "blind_id": "V14-031",
+    "rule": "@security/no-unsafe-ecdsa",
+    "case_dir": "cases/V14-031",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_ecdsa_case.ets",
+        "sha256": "a745b2864095a497924af866dc94e971a1268a8d10445c94de315199e644a0fe",
+        "size_bytes": 128
+      }
+    ],
+    "task_sha256": "18027ef9f2912d689a3a593d9b3ff7a72ce2ff0f7c49f2fe1857d13529c4f4be",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_hash",
+    "blind_id": "V14-053",
+    "rule": "@security/no-unsafe-hash",
+    "case_dir": "cases/V14-053",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_hash_case.ets",
+        "sha256": "2ad7cf477c3ee598f281d559a570aa2ea75700b90856e6a7caf2b52e8fd4231f",
+        "size_bytes": 116
+      }
+    ],
+    "task_sha256": "96697f8ffa06ec915965854deb65377627b4c486229e2b91d628289816415621",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_huks",
+    "blind_id": "V14-028",
+    "rule": "@security/no-unsafe-huks",
+    "case_dir": "cases/V14-028",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_huks_case.ets",
+        "sha256": "a15b57fbf2ec98ec5020e9d2863fcbe8b111fb6e651a9812f882e00b25420ff3",
+        "size_bytes": 789
+      }
+    ],
+    "task_sha256": "73668d736d41c7ce4f64ce87c9ee413a0c31a96286139b8bfe559f2401852016",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_kdf",
+    "blind_id": "V14-021",
+    "rule": "@security/no-unsafe-kdf",
+    "case_dir": "cases/V14-021",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_kdf_case.ets",
+        "sha256": "a03004104f8132e4fc971e765e3eef7f7321bb8bbb3c32736254cbc72f721e22",
+        "size_bytes": 105
+      }
+    ],
+    "task_sha256": "938b79d0561bd80f22e073e0d06c474409860e1b21f3fb7254eab91411aa84db",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_mac",
+    "blind_id": "V14-004",
+    "rule": "@security/no-unsafe-mac",
+    "case_dir": "cases/V14-004",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_mac_case.ets",
+        "sha256": "cba00ec1231daf2a0067edf933d6facabf77222880fa088b1f2cd59777cd27ca",
+        "size_bytes": 127
+      }
+    ],
+    "task_sha256": "8d1d948def69bf32ed2c7fea8d79af5e68c8bade8bdf6e297495b15a5cf4574c",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_rsa_encrypt",
+    "blind_id": "V14-029",
+    "rule": "@security/no-unsafe-rsa-encrypt",
+    "case_dir": "cases/V14-029",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_rsa_encrypt_case.ets",
+        "sha256": "0978d625d0d681e54abc87d9652090cf88e7c05b64657edef33ccc08071f68f5",
+        "size_bytes": 131
+      }
+    ],
+    "task_sha256": "84a2ec1f99e4fbeeb3ff94610200f690c95302c93bf21790f074d1d093779405",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_rsa_key",
+    "blind_id": "V14-024",
+    "rule": "@security/no-unsafe-rsa-key",
+    "case_dir": "cases/V14-024",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_rsa_key_case.ets",
+        "sha256": "ab40d81c32b6b88fb7606268fc4490cf9f4f3f2d44f50f3095da52d7886953ca",
+        "size_bytes": 149
+      }
+    ],
+    "task_sha256": "0c3d0852f77d49bf23350a0874d4ad428916f8bafa02e8ab83d1e61eb14200ea",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_rsa_sign",
+    "blind_id": "V14-060",
+    "rule": "@security/no-unsafe-rsa-sign",
+    "case_dir": "cases/V14-060",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_rsa_sign_case.ets",
+        "sha256": "ab14a8742f48a5678505adc52b1458f885986b1d205b670c7963e693c202cd96",
+        "size_bytes": 142
+      }
+    ],
+    "task_sha256": "c3cf45627716fda86c337f6029c84f2f666ed400e8adaed426df406a2d3bf2cd",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_sm2_cipher",
+    "blind_id": "V14-050",
+    "rule": "@security/no-unsafe-sm2-cipher",
+    "case_dir": "cases/V14-050",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_sm2_cipher_case.ets",
+        "sha256": "2b9b27453745f6b19524d1e3b090ec93ec05363691e20531776c9d0498685e41",
+        "size_bytes": 109
+      }
+    ],
+    "task_sha256": "3ec83395a7ce77b8b69acb986ebdaca0785025401c80e5fac2dd664a65d35f0f",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_sm2_key",
+    "blind_id": "V14-022",
+    "rule": "@security/no-unsafe-sm2-key",
+    "case_dir": "cases/V14-022",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_sm2_key_case.ets",
+        "sha256": "e2efc0075153c1ae3dfae14f6f864de8a7b82657eb7e9907386767a6b197d4ed",
+        "size_bytes": 116
+      }
+    ],
+    "task_sha256": "3e71d148090a605a6575f121aa1c3e8fe6f7640f10856bc0bde92e747c1c7a06",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  },
+  {
+    "case_id": "case_security_no_unsafe_sm4",
+    "blind_id": "V14-003",
+    "rule": "@security/no-unsafe-sm4",
+    "case_dir": "cases/V14-003",
+    "input_files": [
+      {
+        "path": "entry/src/main/ets/cases/unsafe_sm4_case.ets",
+        "sha256": "a2cfdbe9d6ac51a5f556264f965660c2235ad45671969d3861bae6ffaa934352",
+        "size_bytes": 241
+      }
+    ],
+    "task_sha256": "d4f01460ca1f93828ae4bbd09879a8a2475b895c6af5c3a5a7e8daa7d9b7fd0d",
+    "prompt_sha256": "a03ddab2e9cd447ae51ee9257a3a7795af74970313c2463e8df8f8f386d00b86",
+    "skill_tree_sha256": "4dfe50239f4b1852b1cb7d4faf751a4e237e068a1508bae9dd5026f995cc527c",
+    "reference_project_mounted": false,
+    "knowledge_base_mounted": false,
+    "historical_outputs_mounted": false
+  }
+]

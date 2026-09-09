@@ -1,0 +1,14 @@
+--- a/entry/src/main/ets/cases/waterflow_preload_case.ets
++++ b/entry/src/main/ets/cases/waterflow_preload_case.ets
+@@ -36,6 +36,11 @@
+         FlowItem() {
+           Text(`Photo ${item}`)
+         }
++        .onAppear(() => {
++          if (item + 2 == this.dataSource.totalCount()) {
++            this.dataSource.addLastItem();
++          }
++        })
+       }, (item: number) => item.toString())
+     }
+     .cachedCount(4)

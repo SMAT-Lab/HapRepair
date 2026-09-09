@@ -1,0 +1,30 @@
+{
+  "selected_rules": ["@security/no-unsafe-mac"],
+  "consulted_specs": {
+    "@security/no-unsafe-mac": [
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/core-invariants.md",
+      "/codex-home/skills/haprepair-openharmony-repair/references/rule-specs/security-crypto.md"
+    ]
+  },
+  "consulted_guides": {},
+  "entity_repairs": [
+    {
+      "rule": "@security/no-unsafe-mac",
+      "relative_path": "entry/src/main/ets/cases/unsafe_mac_case.ets",
+      "locations": [{"line": 3, "column": 56}],
+      "entities": ["Module-scope requestAuthenticator MAC construction"],
+      "invariants": [
+        "cryptographic algorithm compatibility",
+        "execution and initialization behavior",
+        "public symbol and API preservation"
+      ],
+      "evidence": [
+        "The supplied source contains the only createMac call and no verifier, persisted format, peer contract, key material, or other call site.",
+        "The import, variable declaration, construction timing, and surrounding source remain unchanged."
+      ],
+      "transformation": "Changed the unsafe SHA1 MAC algorithm identifier to SHA256 while preserving the existing MAC construction and module API.",
+      "status": "repaired"
+    }
+  ],
+  "unresolved_external": []
+}

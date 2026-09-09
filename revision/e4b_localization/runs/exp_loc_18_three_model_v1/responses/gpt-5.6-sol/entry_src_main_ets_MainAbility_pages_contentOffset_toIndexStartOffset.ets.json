@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "formal": true,
+  "run_id": "exp_loc_18_three_model_v1",
+  "model_requested": "gpt-5.6-sol",
+  "file": "entry/src/main/ets/MainAbility/pages/contentOffset/toIndexStartOffset.ets",
+  "source_sha256": "36cae37d72f9524eb76ef9983e58e633dcfcd3e4908ace5def02de46ad582d16",
+  "prompt_sha256": "a5ee9b54a884d166cdba068dde09c1101d3be9f0b08e7bd6290155d422aeeb7b",
+  "protocol_sha256": "baaf76932d8013e8eaa0b1f840fb4ba02e37412caef5f0e3bc4903a3e9b6bbeb",
+  "ground_truth_sha256": "72dddda7a1bd63341b3b50133365c8c922fa5dca0cc7f85f3632afea8788bbe3",
+  "started_at": "2026-08-07T14:07:52.224605+00:00",
+  "provider_route": {
+    "api_base_env": "OPENAI_API_BASE",
+    "api_key_env": "OPENAI_API_KEY",
+    "api_base_sha256": "0a2cad5028420559b4d734677727ec94f7edeabf6d6ca73df8ad4103695bf48d"
+  },
+  "status": "completed",
+  "model_reported": "gpt-5.6-sol",
+  "response_id": "resp_00d1cac3cc1b15d1016a75e6b8b8f8819189801817b6856773",
+  "usage": {
+    "prompt_tokens": 848,
+    "completion_tokens": 86,
+    "total_tokens": 934
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": 200,
+      "elapsed_seconds": 6.121391319000395,
+      "result": "success"
+    }
+  ],
+  "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-remove-container-without-property\",\"line\":42},{\"rule\":\"@performance/hp-arkui-remove-container-without-property\",\"line\":43},{\"rule\":\"@performance/hp-arkui-remove-container-without-property\",\"line\":53},{\"rule\":\"@performance/hp-arkui-remove-container-without-property\",\"line\":54}]}",
+  "predicted_defects": [
+    {
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "line": 42
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "line": 43
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "line": 53
+    },
+    {
+      "rule": "@performance/hp-arkui-remove-container-without-property",
+      "line": 54
+    }
+  ],
+  "parse_ok": true,
+  "parse_error": null,
+  "raw_response": {
+    "id": "resp_00d1cac3cc1b15d1016a75e6b8b8f8819189801817b6856773",
+    "object": "chat.completion",
+    "created": 1786111678,
+    "model": "gpt-5.6-sol",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"defects\":[{\"rule\":\"@performance/hp-arkui-remove-container-without-property\",\"line\":42},{\"rule\":\"@performance/hp-arkui-remove-container-without-property\",\"line\":43},{\"rule\":\"@performance/hp-arkui-remove-container-without-property\",\"line\":53},{\"rule\":\"@performance/hp-arkui-remove-container-without-property\",\"line\":54}]}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 848,
+      "completion_tokens": 86,
+      "total_tokens": 934
+    }
+  },
+  "completed_at": "2026-08-07T14:07:58.346495+00:00",
+  "elapsed_seconds": 6.121908658999018
+}

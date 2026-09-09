@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "experiment": "EXP-INDEP-63-FINAL-STATIC",
+  "package_id": "exp_indep_final_static_blind_01",
+  "case_count": 60,
+  "category_counts": {
+    "arkts_eslint": 1,
+    "performance": 40,
+    "security": 19
+  },
+  "order_seed": 20260807,
+  "labels": [
+    "Correct",
+    "Suspicious",
+    "Incorrect"
+  ],
+  "strict_correct_labels": [
+    "Correct"
+  ],
+  "case_files": [
+    {
+      "blind_id": "JDG-001",
+      "path": "cases/JDG-001.json",
+      "sha256": "1149cd1cf8df90bb3f914705da254b2906509b1e2fab7d6356c9444a6a7d792e"
+    },
+    {
+      "blind_id": "JDG-002",
+      "path": "cases/JDG-002.json",
+      "sha256": "b07080fdae23bc6260d390c612874c63c7a2ecd0105e9045f3797ea1e8436c94"
+    },
+    {
+      "blind_id": "JDG-003",
+      "path": "cases/JDG-003.json",
+      "sha256": "e2908d98a8db156343cdf4120a3b9be3c6e4e6722461d216c7c0df4188508eac"
+    },
+    {
+      "blind_id": "JDG-004",
+      "path": "cases/JDG-004.json",
+      "sha256": "b8e16e768997576ff6969bae4dc431daf4d5138f4dbe2c013ef5a243ac54be79"
+    },
+    {
+      "blind_id": "JDG-005",
+      "path": "cases/JDG-005.json",
+      "sha256": "48d0e6279501e5cdcacf9421e28027085699b836bcc68f06a1ca272320a80b7c"
+    },
+    {
+      "blind_id": "JDG-006",
+      "path": "cases/JDG-006.json",
+      "sha256": "71981ffe61c471707a97a4d838a0698aece86ae0b0070839566cfb0098053b07"
+    },
+    {
+      "blind_id": "JDG-007",
+      "path": "cases/JDG-007.json",
+      "sha256": "95e2a8886b203a056dbb50a402ecfe076e3addf3a589d0be27c544200209ee01"
+    },
+    {
+      "blind_id": "JDG-008",
+      "path": "cases/JDG-008.json",
+      "sha256": "06b6f7fe48e5786e7eab1c43230b1a560a1b765991ca5936824567201382071a"
+    },
+    {
+      "blind_id": "JDG-009",
+      "path": "cases/JDG-009.json",
+      "sha256": "7d0e82a2f7e625c5e8ab9a94d3157009206400a948eb54ec68d94a329d9c9818"
+    },
+    {
+      "blind_id": "JDG-010",
+      "path": "cases/JDG-010.json",
+      "sha256": "8d15889ccda5e284381c04d196efe8806a474939b0fdd433ccf58145778e5477"
+    },
+    {
+      "blind_id": "JDG-011",
+      "path": "cases/JDG-011.json",
+      "sha256": "c849c4745606f674cd8f96413a3423feb4d7fe50bef0342c0132b486fc70cf2f"
+    },
+    {
+      "blind_id": "JDG-012",
+      "path": "cases/JDG-012.json",
+      "sha256": "a5f8bc78ae849ca336aba62c78c0b1e1107332e0081f1f7cba6360b6af731b8a"
+    },
+    {
+      "blind_id": "JDG-013",
+      "path": "cases/JDG-013.json",
+      "sha256": "71d49fd9709153b7d473d61a994635e0041a8bd3728067e7aed0ed467f97f4d2"
+    },
+    {
+      "blind_id": "JDG-014",
+      "path": "cases/JDG-014.json",
+      "sha256": "89e5f5a2b0ff46d030c2384f67c20e38ec04eb17330d9f118a2fd86e0a49e159"
+    },
+    {
+      "blind_id": "JDG-015",
+      "path": "cases/JDG-015.json",
+      "sha256": "3351a4179c38a2c747bf89a8236c8fa4f7b4f1ec57d3bd9d61127e2e75c23461"
+    },
+    {
+      "blind_id": "JDG-016",
+      "path": "cases/JDG-016.json",
+      "sha256": "4e5c33ec57bf756b61a14ab267fe397002c1b94631e4a44c71d69d50dc81e4ae"
+    },
+    {
+      "blind_id": "JDG-017",
+      "path": "cases/JDG-017.json",
+      "sha256": "3f8a04955863d274d4778c329a245289e6dd38335d88271eb37b0ab1e7209948"
+    },
+    {
+      "blind_id": "JDG-018",
+      "path": "cases/JDG-018.json",
+      "sha256": "470489cbe370e3e4cf690d51bb1c2918122c3b2f788f0de3a6b4a7de11332765"
+    },
+    {
+      "blind_id": "JDG-019",
+      "path": "cases/JDG-019.json",
+      "sha256": "0a3a89bc750964431d223b016c5b2b418629a01d8e7ccc464e326fd4f84c9b0b"
+    },
+    {
+      "blind_id": "JDG-020",
+      "path": "cases/JDG-020.json",
+      "sha256": "51858b5c21a7083df10933f1a0408031686e9fbc95be73670e4ea7a3dd180e0f"
+    },
+    {
+      "blind_id": "JDG-021",
+      "path": "cases/JDG-021.json",
+      "sha256": "9387b7f545211ade27d015d8263926f5df635f4136cbe9f15e722d31d7f40002"
+    },
+    {
+      "blind_id": "JDG-022",
+      "path": "cases/JDG-022.json",
+      "sha256": "47e991159892edd9180524636bf47f20d2feab687c3d7bcf3b8d525ef1f245fd"
+    },
+    {
+      "blind_id": "JDG-023",
+      "path": "cases/JDG-023.json",
+      "sha256": "e75ef6cb955388dcc24114bc187e5eb8990649e41c716c2986a23691b1f84681"
+    },
+    {
+      "blind_id": "JDG-024",
+      "path": "cases/JDG-024.json",
+      "sha256": "aafe9336f913722d4e0f9e7898cf37c489e35144938a6d1f99a920133072381d"
+    },
+    {
+      "blind_id": "JDG-025",
+      "path": "cases/JDG-025.json",
+      "sha256": "1f14612b4341f88b904f68b7dbe0a8f60668382757088ff2fa4bf79a3853a71f"
+    },
+    {
+      "blind_id": "JDG-026",
+      "path": "cases/JDG-026.json",
+      "sha256": "21f61937ba7f3c239c9832fe0809272c80d6f87156b993b840d959dfc7f8c172"
+    },
+    {
+      "blind_id": "JDG-027",
+      "path": "cases/JDG-027.json",
+      "sha256": "244405d1fb8079f7033f7ff25db6c2900d0026bf5974102edae7bb7ffa744aef"
+    },
+    {
+      "blind_id": "JDG-028",
+      "path": "cases/JDG-028.json",
+      "sha256": "faa53c09d5eb2eadf1e6638e8a039679ad3281ff02b83f35e50c7c064fd444c0"
+    },
+    {
+      "blind_id": "JDG-029",
+      "path": "cases/JDG-029.json",
+      "sha256": "b2541f63a768ee9a1198086ccb8e46c9cadc72de1b1cd32405e581ea4cbca05c"
+    },
+    {
+      "blind_id": "JDG-030",
+      "path": "cases/JDG-030.json",
+      "sha256": "2f2090a259eda1c2caba597062a76c31b394ae017641473a6a1686445196cd62"
+    },
+    {
+      "blind_id": "JDG-031",
+      "path": "cases/JDG-031.json",
+      "sha256": "d7eaeb07b422a38c2f7e52165298903f995bc1a39342ce59344d5d39a6031210"
+    },
+    {
+      "blind_id": "JDG-032",
+      "path": "cases/JDG-032.json",
+      "sha256": "066a8646a3ade0efc337e65b3d9280a968a1c0bbb8b10b3f794c6a4df971a3bd"
+    },
+    {
+      "blind_id": "JDG-033",
+      "path": "cases/JDG-033.json",
+      "sha256": "34d16e2581060baece0b81c9d872de6d6b2b9049533c39b091329402221d071e"
+    },
+    {
+      "blind_id": "JDG-034",
+      "path": "cases/JDG-034.json",
+      "sha256": "f30fbd0c701465536de513996137288f1dab853517c256e6ac002bbe8498dc24"
+    },
+    {
+      "blind_id": "JDG-035",
+      "path": "cases/JDG-035.json",
+      "sha256": "4e3af189af3625fc7c4fcbd1246f404e446184a9fc76816e3a621d5c394f87a7"
+    },
+    {
+      "blind_id": "JDG-036",
+      "path": "cases/JDG-036.json",
+      "sha256": "f00e2a42d8b4c331b4f9e040b55027bf16453cd80420d4bb1e810de7db86a6df"
+    },
+    {
+      "blind_id": "JDG-037",
+      "path": "cases/JDG-037.json",
+      "sha256": "a152eb5e0d17d77e5550a35b1e6a4b1b99b4b4886d69ca49e1dd35ae4ee63965"
+    },
+    {
+      "blind_id": "JDG-038",
+      "path": "cases/JDG-038.json",
+      "sha256": "bdf0f3cf03572c2d0a6f8c4fe4494c13c889bc5f780dc1d8572ae4e52aa2b9a8"
+    },
+    {
+      "blind_id": "JDG-039",
+      "path": "cases/JDG-039.json",
+      "sha256": "0b47613417852d757d48ac569f2eac6a4e98ddac00af0a7a774f08808a7efe07"
+    },
+    {
+      "blind_id": "JDG-040",
+      "path": "cases/JDG-040.json",
+      "sha256": "d4daf19f4587da6e563aee354b7e474c8fe5c942289e9e02ed0b00b6b5cd1901"
+    },
+    {
+      "blind_id": "JDG-041",
+      "path": "cases/JDG-041.json",
+      "sha256": "97c392078d8e3470b598c00e74d2dd974df0ab3ca436c3bd34ac35ab6ecade0c"
+    },
+    {
+      "blind_id": "JDG-042",
+      "path": "cases/JDG-042.json",
+      "sha256": "58332cecfbb4a48c6b41f66b763fb7af09a6612fc92b7e735e472ad6344667e4"
+    },
+    {
+      "blind_id": "JDG-043",
+      "path": "cases/JDG-043.json",
+      "sha256": "a3bfbcdc6b41d63076a244d295ce14fea2e9a5b73de3aefcf9d4f205bb9cff80"
+    },
+    {
+      "blind_id": "JDG-044",
+      "path": "cases/JDG-044.json",
+      "sha256": "0627d98e178b69288ad4ed5c3bd1d8735416c11c021d911716acd4ed942b669b"
+    },
+    {
+      "blind_id": "JDG-045",
+      "path": "cases/JDG-045.json",
+      "sha256": "6552a170cba6fd583fa4d7e7795b72816d1e42388a6869e26bb7ae8cab183669"
+    },
+    {
+      "blind_id": "JDG-046",
+      "path": "cases/JDG-046.json",
+      "sha256": "55455455cd9100c69b1ec9633547e2a7c1c19ace744b5c4c65ce3fa780de64e0"
+    },
+    {
+      "blind_id": "JDG-047",
+      "path": "cases/JDG-047.json",
+      "sha256": "547a14533b44d3221f32cfe5bba26161e479e9f746a072c0016f7a88c1100245"
+    },
+    {
+      "blind_id": "JDG-048",
+      "path": "cases/JDG-048.json",
+      "sha256": "4db2b07fb1e16d028dc57d6aeb45211d3d4ced4fcf0036f3def1614d49dbb6e7"
+    },
+    {
+      "blind_id": "JDG-049",
+      "path": "cases/JDG-049.json",
+      "sha256": "7a5d13be371495f7fd4d67ac38f38ebbccb5cf2bd27584855c19a6e76e346aad"
+    },
+    {
+      "blind_id": "JDG-050",
+      "path": "cases/JDG-050.json",
+      "sha256": "e5b294ee69a4bf607b5c545f1d140d543d008d02794bea10bf14d2c3b1e6c6e7"
+    },
+    {
+      "blind_id": "JDG-051",
+      "path": "cases/JDG-051.json",
+      "sha256": "4cf48e7a2124b6fcd1b4d21821ec181f03b4ef42280c7417f506db783578904c"
+    },
+    {
+      "blind_id": "JDG-052",
+      "path": "cases/JDG-052.json",
+      "sha256": "065583f9ca106f38a966f13a64071baf10ef390f03c2aa60309c4edecfd4d4fe"
+    },
+    {
+      "blind_id": "JDG-053",
+      "path": "cases/JDG-053.json",
+      "sha256": "db12d89dadf0817d56ca3d74f9361e71ff516aebdba014bf96f354081343dce4"
+    },
+    {
+      "blind_id": "JDG-054",
+      "path": "cases/JDG-054.json",
+      "sha256": "3e3511339b5604673a489beb8ff91b845b2ac92ea67f5c4de722a22aaf7f9d27"
+    },
+    {
+      "blind_id": "JDG-055",
+      "path": "cases/JDG-055.json",
+      "sha256": "6fe7c2eae9e2ed3c5de91aeb73a1e0ae2ab4a76bfceea22e87ceb39449f98f8b"
+    },
+    {
+      "blind_id": "JDG-056",
+      "path": "cases/JDG-056.json",
+      "sha256": "ac778c55f133d2ad4120961f8fc400a66558ff342bf6f75c20dc608258bed35f"
+    },
+    {
+      "blind_id": "JDG-057",
+      "path": "cases/JDG-057.json",
+      "sha256": "99fc3e911fad40387298a57d85306eaa59a4c432c748b2418cfe9532ad00aa2a"
+    },
+    {
+      "blind_id": "JDG-058",
+      "path": "cases/JDG-058.json",
+      "sha256": "80d9446d7e277bcc94879b88fa78a43ba81df1d95374a5f7e022823dca5bf44d"
+    },
+    {
+      "blind_id": "JDG-059",
+      "path": "cases/JDG-059.json",
+      "sha256": "823e67cf8a96c85eb6383b5bc8c05bc7bb02fafc234558f1e9eb289b39789df2"
+    },
+    {
+      "blind_id": "JDG-060",
+      "path": "cases/JDG-060.json",
+      "sha256": "5ac46992d2161a6a60596734e3bcbe020b9640faacf6711047493aee95366993"
+    }
+  ]
+}

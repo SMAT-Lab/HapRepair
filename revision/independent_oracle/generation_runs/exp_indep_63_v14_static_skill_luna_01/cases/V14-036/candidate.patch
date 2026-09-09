@@ -1,0 +1,49 @@
+--- a/entry/src/main/ets/cases/load_on_demand_case.ets
++++ b/entry/src/main/ets/cases/load_on_demand_case.ets
+@@ -1,3 +1,33 @@
++class AlertDataSource implements IDataSource {
++  private items: string[]
++  private listeners: DataChangeListener[] = []
++
++  constructor(items: string[]) {
++    this.items = items
++  }
++
++  totalCount(): number {
++    return this.items.length
++  }
++
++  getData(index: number): string {
++    return this.items[index]
++  }
++
++  registerDataChangeListener(listener: DataChangeListener): void {
++    if (this.listeners.indexOf(listener) < 0) {
++      this.listeners.push(listener)
++    }
++  }
++
++  unregisterDataChangeListener(listener: DataChangeListener): void {
++    const index: number = this.listeners.indexOf(listener)
++    if (index >= 0) {
++      this.listeners.splice(index, 1)
++    }
++  }
++}
++
+ @Entry
+ @Component
+ struct ServiceAlertInbox {
+@@ -23,10 +53,11 @@
+     'cpu-saturation',
+     'service-degraded'
+   ];
++  private alertDataSource: AlertDataSource = new AlertDataSource(this.alerts)
+ 
+   build() {
+     List({ space: 6 }) {
+-      ForEach(this.alerts, (alert: string) => {
++      LazyForEach(this.alertDataSource, (alert: string) => {
+         ListItem() {
+           Row({ space: 8 }) {
+             Text('!').fontColor(Color.Red)

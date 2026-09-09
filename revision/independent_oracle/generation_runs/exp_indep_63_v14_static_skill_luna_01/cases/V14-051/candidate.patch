@@ -1,0 +1,7 @@
+--- a/entry/src/main/ets/cases/reusable_component_case.ets
++++ b/entry/src/main/ets/cases/reusable_component_case.ets
+@@ -1,3 +1,4 @@
++@Reusable
+ @Component
+ struct ProductTile {
+   @State label: string = '';
